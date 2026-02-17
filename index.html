@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ukrán–orosz háború – interaktív térkép</title>
 
-  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
@@ -18,29 +17,25 @@
       z-index: 1000;
       top: 12px;
       left: 12px;
+      right: 12px;
+      max-width: 520px;
       background: rgba(255,255,255,0.95);
       padding: 10px 12px;
       border-radius: 10px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      font: 14px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      max-width: 360px;
+      font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
     }
-
-    .panel h1 {
-      font-size: 14px;
-      margin: 0 0 6px 0;
-    }
-
-    .muted {
-      color: #555;
+    .panel h1 { font-size: 14px; margin: 0 0 6px 0; }
+    .muted { color: #555; font-size: 12px; margin-bottom: 6px; }
+    .log {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 12px;
-    }
-
-    .error {
-      color: #b00020;
-      font-size: 12px;
-      margin-top: 6px;
       white-space: pre-wrap;
+      background: #f6f6f6;
+      border-radius: 8px;
+      padding: 8px;
+      max-height: 180px;
+      overflow: auto;
     }
   </style>
 </head>
@@ -50,28 +45,25 @@
 
   <div class="panel">
     <h1>Ukrán–orosz háború – interaktív térkép</h1>
-    <div class="muted">
-      Teszt GeoJSON réteg betöltve (frontvonal).
-    </div>
-    <div id="err" class="error" style="display:none;"></div>
+    <div class="muted">Hibakereső mód: kiírjuk a GeoJSON betöltés állapotát és rázoomolunk, ha sikerült.</div>
+    <div id="log" class="log">Indul…</div>
   </div>
 
   <script>
-    function showErr(msg) {
-      const el = document.getElementById('err');
-      el.style.display = 'block';
-      el.textContent = msg;
+    const logEl = document.getElementById('log');
+    function log(msg) {
+      logEl.textContent += "\n" + msg;
+    }
+
+    function panic(msg) {
+      log("HIBA: " + msg);
     }
 
     try {
-      if (typeof L === 'undefined') {
-        throw new Error('Leaflet nem töltődött be.');
-      }
+      if (typeof L === 'undefined') throw new Error('Leaflet nem töltődött be (L undefined).');
 
-      // Térkép
       const map = L.map('map', { zoomControl: true }).setView([49.0, 31.0], 6);
 
-      // Alaptérkép
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; OpenStreetMap közreműködők'
@@ -79,26 +71,53 @@
 
       L.control.scale({ imperial: false }).addTo(map);
 
-      // FRONTLINE GEOJSON BETÖLTÉSE
-      fetch('data/frontline.geojson')
-        .then(res => res.json())
-        .then(data => {
-          L.geoJSON(data, {
-            style: {
+      const url = './data/frontline.geojson';
+      log("Fetch: " + url);
+
+      fetch(url, { cache: "no-store" })
+        .then(async (res) => {
+          log("HTTP státusz: " + res.status + " " + res.statusText);
+          const text = await res.text();
+          log("Válasz eleje (200 char): " + text.slice(0, 200).replace(/\s+/g, ' '));
+
+          if (!res.ok) throw new Error("Nem OK HTTP: " + res.status);
+
+          let data;
+          try {
+            data = JSON.parse(text);
+          } catch (e) {
+            throw new Error("Nem JSON (parse hiba): " + e);
+          }
+
+          const layer = L.geoJSON(data, {
+            style: () => ({
               color: '#d00',
-              weight: 3
-            },
-            onEachFeature: (feature, layer) => {
-              if (feature.properties && feature.properties.name) {
-                layer.bindPopup(feature.properties.name);
+              weight: 5,
+              opacity: 0.95
+            }),
+            onEachFeature: (feature, lyr) => {
+              if (feature && feature.properties) {
+                const name = feature.properties.name || feature.properties.title || "Frontvonal";
+                lyr.bindPopup(String(name));
               }
             }
           }).addTo(map);
+
+          const b = layer.getBounds();
+          if (b && b.isValid && b.isValid()) {
+            map.fitBounds(b.pad(0.2));
+            log("Réteg hozzáadva ✔  Rázoomolva a bounds-ra.");
+          } else {
+            log("Réteg hozzáadva ✔  (Bounds érvénytelen — lehet üres geometria?)");
+          }
         })
-        .catch(err => showErr('GeoJSON betöltési hiba: ' + err));
+        .catch(err => {
+          panic(String(err && err.stack ? err.stack : err));
+          log("TIPP: ellenőrizd, hogy a repóban tényleg létezik-e: data/frontline.geojson (kis/nagybetű pontosan).");
+        });
 
     } catch (e) {
-      showErr(String(e && e.stack ? e.stack : e));
+      panic(String(e && e.stack ? e.stack : e));
     }
   </script>
 </body>
