@@ -18,12 +18,21 @@
       top: 12px;
       left: 12px;
       right: 12px;
-      max-width: 520px;
+      max-width: 560px;
       background: rgba(255,255,255,0.95);
       padding: 10px 12px;
       border-radius: 10px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
       font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+    .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:8px; }
+    .chip {
+      display:inline-flex; align-items:center; gap:8px;
+      background:#f2f2f2; padding:6px 10px; border-radius:999px; font-size:12px;
+    }
+    .btn {
+      border:0; border-radius:10px; padding:8px 10px;
+      background:#111; color:#fff; cursor:pointer; font-size:12px;
     }
 
     .legend {
@@ -36,120 +45,174 @@
       border-radius: 10px;
       font-size: 12px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      max-width: 280px;
     }
+    .legend b { display:block; margin-bottom:6px; }
+    .legend .item { display:flex; align-items:center; gap:8px; margin:4px 0; }
+    .swatch { width:12px; height:12px; border-radius:3px; border:1px solid rgba(0,0,0,0.2); }
 
-    .legend div { margin-bottom: 4px; }
-
-    .color-box {
-      width: 12px;
-      height: 12px;
-      display: inline-block;
-      margin-right: 6px;
-      border-radius: 3px;
-    }
-
-    .chip {
-      background: #f2f2f2;
-      padding: 6px 10px;
-      border-radius: 999px;
+    .log {
+      margin-top: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 12px;
+      white-space: pre-wrap;
+      background: #f6f6f6;
+      border-radius: 8px;
+      padding: 8px;
+      max-height: 170px;
+      overflow: auto;
     }
-
-    .btn {
-      border: 0;
-      border-radius: 10px;
-      padding: 8px 10px;
-      background: #111;
-      color: #fff;
-      cursor: pointer;
-      font-size: 12px;
-    }
+    .muted { color:#555; font-size:12px; }
   </style>
 </head>
 
 <body>
-<div id="map"></div>
+  <div id="map"></div>
 
-<div class="panel">
-  <b>Ukrán–orosz háború – DeepState térkép</b><br>
-  <small>Napi frissítés GitHub Actions-ből</small><br><br>
+  <div class="panel">
+    <b>Ukrán–orosz háború – DeepState térkép</b><br>
+    <span class="muted">Most “okos” színezés + debug, hogy kiderüljön mely mezők alapján kell színezni.</span>
 
-  <label class="chip">
-    <input id="toggleDeepState" type="checkbox" checked />
-    DeepState réteg
-  </label>
+    <div class="row">
+      <label class="chip">
+        <input id="toggleDeepState" type="checkbox" checked />
+        DeepState réteg
+      </label>
+      <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
+      <span class="chip">Forrás: <span id="sourceFile">betöltés…</span></span>
+    </div>
 
-  <button id="zoomBtn" class="btn">Rázoomolás</button>
-
-  <div style="margin-top:8px;font-size:12px;">
-    Forrás: <span id="sourceFile">betöltés...</span>
+    <div id="log" class="log">Indul…</div>
   </div>
-</div>
 
-<div class="legend">
-  <b>Jelmagyarázat</b><br>
-  <div><span class="color-box" style="background:#d00;"></span>Frontvonal</div>
-  <div><span class="color-box" style="background:#ff7b00;"></span>Vitatott terület</div>
-  <div><span class="color-box" style="background:#7f0000;"></span>Orosz megszállás</div>
-  <div><span class="color-box" style="background:#0057ff;"></span>Ukrán ellenőrzés</div>
-</div>
+  <div class="legend">
+    <b>Jelmagyarázat</b>
+    <div class="item"><span class="swatch" style="background:#7f0000;"></span>Orosz ellenőrzés / megszállás (heurisztika)</div>
+    <div class="item"><span class="swatch" style="background:#ff7b00;"></span>Vitatott / aktív harc (heurisztika)</div>
+    <div class="item"><span class="swatch" style="background:#0057ff;"></span>Ukrán ellenőrzés (heurisztika)</div>
+    <div class="item"><span class="swatch" style="background:#d00;"></span>Frontvonal / vonal jellegű elemek</div>
+  </div>
 
-<script>
-const map = L.map('map').setView([49.0, 31.0], 6);
+  <script>
+    const logEl = document.getElementById('log');
+    function log(msg) { logEl.textContent += "\n" + msg; }
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; OpenStreetMap'
-}).addTo(map);
-
-let deepStateLayer;
-
-function styleByStatus(feature) {
-  const p = feature.properties || {};
-  const status = (p.status || "").toLowerCase();
-
-  if (status.includes("occupied") || status.includes("russia"))
-    return { color:"#7f0000", fillColor:"#7f0000", weight:1, fillOpacity:0.3 };
-
-  if (status.includes("contested"))
-    return { color:"#ff7b00", fillColor:"#ff7b00", weight:1, fillOpacity:0.3 };
-
-  if (status.includes("ukraine"))
-    return { color:"#0057ff", fillColor:"#0057ff", weight:1, fillOpacity:0.3 };
-
-  return { color:"#d00", weight:2 };
-}
-
-fetch('./data/deepstate_latest.geojson')
-  .then(r => r.json())
-  .then(data => {
-    deepStateLayer = L.geoJSON(data, {
-      style: styleByStatus,
-      onEachFeature: (f, layer) => {
-        const p = f.properties || {};
-        layer.bindPopup(
-          "<b>DeepState adat</b><br>" +
-          (p.name || "") + "<br>" +
-          (p.status || "")
-        );
-      }
+    const map = L.map('map').setView([49.0, 31.0], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
     }).addTo(map);
 
-    map.fitBounds(deepStateLayer.getBounds());
-  });
+    let deepStateLayer = null;
 
-document.getElementById("zoomBtn").onclick = () => {
-  if (deepStateLayer) map.fitBounds(deepStateLayer.getBounds());
-};
+    // --- KATEGORIZÁLÁS (nem csak status mezőből) ---
+    function getCategory(feature) {
+      const p = (feature && feature.properties) ? feature.properties : {};
+      // MINDEN properties mezőt egyben vizsgálunk, mert nem tudjuk a séma mezőnevét
+      const blob = JSON.stringify(p).toLowerCase();
 
-document.getElementById("toggleDeepState").onchange = (e) => {
-  if (e.target.checked) map.addLayer(deepStateLayer);
-  else map.removeLayer(deepStateLayer);
-};
+      // Gyakori kulcsszavak többféle írásmóddal
+      const looksRussian = blob.includes("russia") || blob.includes("rf") || blob.includes("ru") ||
+                           blob.includes("occupied") || blob.includes("occupation") ||
+                           blob.includes("rus") || blob.includes("рос") || blob.includes("оккуп") || blob.includes("окуп");
+      const looksUkraine = blob.includes("ukraine") || blob.includes("ua") || blob.includes("ukr") ||
+                           blob.includes("ukrainan") || blob.includes("укра") || blob.includes("укр");
+      const looksContested = blob.includes("contested") || blob.includes("battle") || blob.includes("front") ||
+                             blob.includes("active") || blob.includes("clash") ||
+                             blob.includes("gray") || blob.includes("grey") ||
+                             blob.includes("disputed") || blob.includes("vitatott") ||
+                             blob.includes("сіра") || blob.includes("сер") || blob.includes("сір") ||
+                             blob.includes("спір") || blob.includes("бої");
 
-fetch('./data/deepstate_latest.source.txt')
-  .then(r => r.text())
-  .then(t => document.getElementById("sourceFile").innerText = t);
-</script>
+      if (looksContested) return "contested";
+      if (looksRussian && !looksUkraine) return "russia";
+      if (looksUkraine && !looksRussian) return "ukraine";
+      // ha mindkettőre utal, inkább vitatott
+      if (looksUkraine && looksRussian) return "contested";
+      return "line_or_unknown";
+    }
+
+    function styleFeature(feature) {
+      const geomType = feature && feature.geometry ? feature.geometry.type : "";
+      const isLine = (geomType === "LineString" || geomType === "MultiLineString");
+      const cat = getCategory(feature);
+
+      // vonalak: mindig piros, jól látható
+      if (isLine) {
+        return { color: "#d00", weight: 2.5, opacity: 0.95 };
+      }
+
+      // poligonok/pontok: kategória szerint
+      if (cat === "russia")   return { color:"#7f0000", fillColor:"#7f0000", weight:1, opacity:0.9, fillOpacity:0.28 };
+      if (cat === "contested")return { color:"#ff7b00", fillColor:"#ff7b00", weight:1, opacity:0.9, fillOpacity:0.28 };
+      if (cat === "ukraine")  return { color:"#0057ff", fillColor:"#0057ff", weight:1, opacity:0.9, fillOpacity:0.20 };
+
+      // ismeretlen poligon: halvány piros
+      return { color:"#d00", fillColor:"#d00", weight:1, opacity:0.7, fillOpacity:0.10 };
+    }
+
+    // UI
+    document.getElementById("zoomBtn").onclick = () => {
+      if (deepStateLayer) map.fitBounds(deepStateLayer.getBounds().pad(0.12));
+    };
+    document.getElementById("toggleDeepState").onchange = (e) => {
+      if (!deepStateLayer) return;
+      if (e.target.checked) deepStateLayer.addTo(map);
+      else map.removeLayer(deepStateLayer);
+    };
+
+    // Forrás fájlnév
+    fetch('./data/deepstate_latest.source.txt', { cache: "no-store" })
+      .then(r => r.ok ? r.text() : Promise.reject(new Error("source.txt HTTP " + r.status)))
+      .then(t => document.getElementById("sourceFile").innerText = (t.trim() || "(ismeretlen)"))
+      .catch(() => document.getElementById("sourceFile").innerText = "(nem elérhető)");
+
+    // --- DeepState betöltés ---
+    fetch('./data/deepstate_latest.geojson', { cache: "no-store" })
+      .then(r => r.json())
+      .then(data => {
+        // DEBUG: nézzük az első feature property kulcsait és pár mintát
+        const feats = (data && data.features) ? data.features : [];
+        log("Feature count: " + feats.length);
+
+        if (feats.length > 0) {
+          const p0 = feats[0].properties || {};
+          log("Első feature geometry: " + (feats[0].geometry ? feats[0].geometry.type : "(nincs)"));
+          log("Első feature property kulcsok: " + Object.keys(p0).slice(0, 25).join(", "));
+          log("Első feature properties (röviden): " + JSON.stringify(p0).slice(0, 300) + (JSON.stringify(p0).length > 300 ? "…" : ""));
+        }
+
+        // DEBUG: kategória számláló (heurisztika alapján)
+        const counts = { russia:0, contested:0, ukraine:0, line_or_unknown:0, lines:0, polys:0 };
+        for (const f of feats) {
+          const gt = f && f.geometry ? f.geometry.type : "";
+          const isLine = (gt === "LineString" || gt === "MultiLineString");
+          if (isLine) counts.lines++; else counts.polys++;
+          const cat = getCategory(f);
+          counts[cat] = (counts[cat] || 0) + 1;
+        }
+        log("Heurisztika számláló: " + JSON.stringify(counts));
+
+        deepStateLayer = L.geoJSON(data, {
+          style: styleFeature,
+          onEachFeature: (f, layer) => {
+            const p = f.properties || {};
+            const cat = getCategory(f);
+            const title = p.name || p.title || p.type || p.layer || "DeepState feature";
+            const extra = p.status || p.control || p.zone || "";
+            layer.bindPopup(
+              "<b>" + String(title) + "</b><br>" +
+              "Kategória (heur): " + cat + "<br>" +
+              (extra ? ("Mezők: " + String(extra)) : "")
+            );
+          }
+        }).addTo(map);
+
+        const b = deepStateLayer.getBounds();
+        if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+        log("DeepState betöltve ✔");
+      })
+      .catch(err => log("HIBA: " + String(err && err.stack ? err.stack : err)));
+  </script>
 </body>
 </html>
