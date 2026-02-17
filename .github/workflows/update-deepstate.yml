@@ -23,6 +23,7 @@ jobs:
 
       - name: Prepare folders
         run: |
+          set -euo pipefail
           mkdir -p data
 
       - name: Fetch latest DeepState GeoJSON from cyterat/deepstate-map-data
@@ -34,7 +35,6 @@ jobs:
 
           echo "Listing: $API_URL"
 
-          # Lekérés auth-tal (rate limit ellen) + alap headerek
           RESP_HEADERS="$(mktemp)"
           RESP_BODY="$(mktemp)"
 
@@ -44,28 +44,22 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "User-Agent: gh-actions" \
             -H "Authorization: Bearer $GH_TOKEN" \
-            "$API_URL" || true
+            "$API_URL"
 
-          echo "== Response status =="
-          head -n 20 "$RESP_HEADERS" || true
-
-          echo "== Body starts (first 300 chars) =="
-          head -c 300 "$RESP_BODY" || true
-          echo ""
-
-          # Ha nem JSON tömb, akkor azonnal megállunk értelmes hibával
+          # Ellenőrzés: JSON tömb kell legyen
           if ! jq -e 'type=="array"' "$RESP_BODY" >/dev/null 2>&1; then
-            echo "ERROR: A GitHub API nem a várt JSON tömböt adta vissza (lehet 403 rate limit / 404 / egyéb)."
+            echo "ERROR: A GitHub API nem a várt JSON tömböt adta vissza."
             exit 1
           fi
 
+          # A repo fájlnevei ilyenek: deepstatemap_data_20240708.geojson (YYYYMMDD)
           LATEST_NAME=$(jq -r '.[].name' "$RESP_BODY" \
-            | grep -E '^deepstatemap_data_[0-9]{4}-[0-9]{2}-[0-9]{2}\.geojson$' \
+            | grep -E '^deepstatemap_data_[0-9]{8}\.geojson$' \
             | sort \
             | tail -n 1)
 
           if [ -z "${LATEST_NAME:-}" ]; then
-            echo "ERROR: Nem találtam deepstatemap_data_YYYY-MM-DD.geojson fájlt a listában."
+            echo "ERROR: Nem találtam deepstatemap_data_YYYYMMDD.geojson fájlt a listában."
             exit 1
           fi
 
