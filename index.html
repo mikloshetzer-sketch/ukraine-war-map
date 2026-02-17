@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ukrán–orosz háború – interaktív térkép</title>
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #map { height: 100%; }
+    .panel {
+      position: absolute;
+      z-index: 1000;
+      top: 12px;
+      left: 12px;
+      background: rgba(255,255,255,0.95);
+      padding: 10px 12px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      font: 14px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      max-width: 340px;
+    }
+    .panel h1 {
+      font-size: 14px;
+      margin: 0 0 6px 0;
+    }
+    .muted { color: #555; font-size: 12px; }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+
+  <div class="panel">
+    <h1>Ukrán–orosz háború – interaktív térkép</h1>
+    <div class="muted">
+      2. lépés: alap térkép működik. Következő lépésben betöltjük a napi frissülő GeoJSON réteget.
+    </div>
+  </div>
+
+  <script>
+    // Alaptérkép
+    const map = L.map('map', { zoomControl: true }).setView([49.0, 31.0], 6);
+
+    // OpenStreetMap csempék
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap közreműködők'
+    }).addTo(map);
+
+    // Skála
+    L.control.scale({ imperial: false }).addTo(map);
+  </script>
+</body>
+</html>
