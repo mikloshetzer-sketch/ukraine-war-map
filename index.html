@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ukrán–orosz háború – interaktív térkép</title>
 
-  <!-- Leaflet (integrity nélkül, hogy ne legyen fehér oldal SRI hiba miatt) -->
+  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
   <style>
     html, body { height: 100%; margin: 0; }
     #map { height: 100%; }
+
     .panel {
       position: absolute;
       z-index: 1000;
@@ -24,9 +25,23 @@
       font: 14px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
       max-width: 360px;
     }
-    .panel h1 { font-size: 14px; margin: 0 0 6px 0; }
-    .muted { color: #555; font-size: 12px; }
-    .error { color: #b00020; font-size: 12px; margin-top: 6px; white-space: pre-wrap; }
+
+    .panel h1 {
+      font-size: 14px;
+      margin: 0 0 6px 0;
+    }
+
+    .muted {
+      color: #555;
+      font-size: 12px;
+    }
+
+    .error {
+      color: #b00020;
+      font-size: 12px;
+      margin-top: 6px;
+      white-space: pre-wrap;
+    }
   </style>
 </head>
 
@@ -35,7 +50,9 @@
 
   <div class="panel">
     <h1>Ukrán–orosz háború – interaktív térkép</h1>
-    <div class="muted">Ha mégis fehér lenne, itt kiírjuk a hibát.</div>
+    <div class="muted">
+      Teszt GeoJSON réteg betöltve (frontvonal).
+    </div>
     <div id="err" class="error" style="display:none;"></div>
   </div>
 
@@ -48,17 +65,38 @@
 
     try {
       if (typeof L === 'undefined') {
-        throw new Error('Leaflet nem töltődött be (L undefined).');
+        throw new Error('Leaflet nem töltődött be.');
       }
 
+      // Térkép
       const map = L.map('map', { zoomControl: true }).setView([49.0, 31.0], 6);
 
+      // Alaptérkép
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; OpenStreetMap közreműködők'
       }).addTo(map);
 
       L.control.scale({ imperial: false }).addTo(map);
+
+      // FRONTLINE GEOJSON BETÖLTÉSE
+      fetch('data/frontline.geojson')
+        .then(res => res.json())
+        .then(data => {
+          L.geoJSON(data, {
+            style: {
+              color: '#d00',
+              weight: 3
+            },
+            onEachFeature: (feature, layer) => {
+              if (feature.properties && feature.properties.name) {
+                layer.bindPopup(feature.properties.name);
+              }
+            }
+          }).addTo(map);
+        })
+        .catch(err => showErr('GeoJSON betöltési hiba: ' + err));
+
     } catch (e) {
       showErr(String(e && e.stack ? e.stack : e));
     }
