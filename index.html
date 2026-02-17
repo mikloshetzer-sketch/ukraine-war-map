@@ -18,7 +18,7 @@
       top: 12px;
       left: 12px;
       right: 12px;
-      max-width: 680px;
+      max-width: 760px;
       background: rgba(255,255,255,0.95);
       padding: 10px 12px;
       border-radius: 10px;
@@ -36,6 +36,7 @@
       background:#111; color:#fff; cursor:pointer; font-size:12px;
     }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    select { padding: 6px 8px; border-radius: 10px; border: 1px solid #ddd; background: #fff; }
 
     .slider-wrap {
       display:flex;
@@ -70,7 +71,7 @@
       background: #f6f6f6;
       border-radius: 8px;
       padding: 8px;
-      max-height: 140px;
+      max-height: 120px;
       overflow: auto;
     }
   </style>
@@ -82,7 +83,7 @@
   <div class="panel">
     <b>Ukrán–orosz háború – DeepState frontvonal (timeline)</b><br>
     <span class="muted">
-      Csúszkával visszajátszható napi állapotok. (DeepState export jelenleg 1 poligon, ezért “kontroll-terület” kitöltést mutat.)
+      Csúszkával visszajátszható napi állapotok. Lejátszás sebessége állítható.
     </span>
 
     <div class="row">
@@ -94,7 +95,17 @@
       <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
 
       <span class="chip">Dátum: <b id="dateLabel">…</b></span>
-      <span class="chip">Forrásfájl: <span id="fileLabel">…</span></span>
+      <span class="chip">Fájl: <span id="fileLabel">…</span></span>
+
+      <span class="chip">
+        Sebesség:
+        <select id="speedSel">
+          <option value="300">0.3s</option>
+          <option value="600" selected>0.6s</option>
+          <option value="1200">1.2s</option>
+          <option value="2000">2.0s</option>
+        </select>
+      </span>
     </div>
 
     <div class="slider-wrap">
@@ -119,6 +130,7 @@
     const playBtn = document.getElementById('playBtn');
     const zoomBtn = document.getElementById('zoomBtn');
     const toggle = document.getElementById('toggleDeepState');
+    const speedSel = document.getElementById('speedSel');
 
     function log(msg) { logEl.textContent += "\n" + msg; }
 
@@ -138,7 +150,6 @@
       if (visible) deepStateLayer.addTo(map);
       else map.removeLayer(deepStateLayer);
     }
-
     toggle.addEventListener('change', () => setLayerVisible(toggle.checked));
 
     zoomBtn.addEventListener('click', () => {
@@ -153,21 +164,32 @@
       if (timer) { clearInterval(timer); timer = null; }
     }
 
+    function stepOnce() {
+      let v = Number(slider.value);
+      if (v >= Number(slider.max)) v = Number(slider.min);
+      else v += 1;
+      slider.value = String(v);
+      loadByIndex(v, false);
+    }
+
     function startPlay() {
       playing = true;
       playBtn.textContent = "Megállítás";
-      timer = setInterval(() => {
-        let v = Number(slider.value);
-        if (v >= Number(slider.max)) v = Number(slider.min);
-        else v += 1;
-        slider.value = String(v);
-        loadByIndex(v, false);
-      }, 1200); // ~1.2 sec / nap
+      const intervalMs = Number(speedSel.value) || 600;
+
+      timer = setInterval(stepOnce, intervalMs);
     }
 
     playBtn.addEventListener('click', () => {
       if (playing) stopPlay();
       else startPlay();
+    });
+
+    speedSel.addEventListener('change', () => {
+      if (!playing) return;
+      // új időzítő a kiválasztott sebességgel
+      stopPlay();
+      startPlay();
     });
 
     async function loadGeoJson(url) {
@@ -184,20 +206,15 @@
 
       deepStateLayer = L.geoJSON(data, {
         style: () => ({
-          // kontúr
           color: "#d00",
           weight: 2.2,
           opacity: 0.95,
-          // kitöltés
           fillColor: "#6b0000",
           fillOpacity: 0.28
         })
       });
 
       if (toggle.checked) deepStateLayer.addTo(map);
-
-      const b = deepStateLayer.getBounds();
-      if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
     }
 
     async function loadByIndex(i, doZoom = true) {
@@ -208,13 +225,13 @@
       fileLabel.textContent = item.name;
 
       try {
-        log("Load: " + item.raw);
         const data = await loadGeoJson(item.raw);
         renderDeepState(data);
 
-        if (!doZoom) return;
-        const b = deepStateLayer.getBounds();
-        if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+        if (doZoom && deepStateLayer) {
+          const b = deepStateLayer.getBounds();
+          if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+        }
       } catch (e) {
         log("HIBA: " + String(e && e.stack ? e.stack : e));
         stopPlay();
@@ -232,8 +249,9 @@
 
         slider.min = "0";
         slider.max = String(dates.length - 1);
-        slider.value = String(dates.length - 1); // legfrissebb
+        slider.value = String(dates.length - 1);
         slider.disabled = false;
+
         playBtn.disabled = false;
 
         slider.addEventListener('input', () => {
@@ -241,9 +259,7 @@
           loadByIndex(Number(slider.value), false);
         });
 
-        // induljunk a legfrissebbel
         await loadByIndex(dates.length - 1, true);
-
       } catch (e) {
         log("HIBA init: " + String(e && e.stack ? e.stack : e));
       }
