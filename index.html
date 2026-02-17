@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrán–orosz háború – interaktív térkép (DeepState)</title>
+  <title>Ukrán–orosz háború – térkép (DeepState timeline)</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -18,13 +18,14 @@
       top: 12px;
       left: 12px;
       right: 12px;
-      max-width: 560px;
+      max-width: 680px;
       background: rgba(255,255,255,0.95);
       padding: 10px 12px;
       border-radius: 10px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
       font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
     }
+    .muted { color:#555; font-size:12px; }
     .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:8px; }
     .chip {
       display:inline-flex; align-items:center; gap:8px;
@@ -34,7 +35,16 @@
       border:0; border-radius:10px; padding:8px 10px;
       background:#111; color:#fff; cursor:pointer; font-size:12px;
     }
-    .muted { color:#555; font-size:12px; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .slider-wrap {
+      display:flex;
+      gap:10px;
+      align-items:center;
+      width:100%;
+      margin-top:8px;
+    }
+    input[type="range"] { width: 100%; }
 
     .legend {
       position: absolute;
@@ -60,7 +70,7 @@
       background: #f6f6f6;
       border-radius: 8px;
       padding: 8px;
-      max-height: 160px;
+      max-height: 140px;
       overflow: auto;
     }
   </style>
@@ -70,10 +80,9 @@
   <div id="map"></div>
 
   <div class="panel">
-    <b>Ukrán–orosz háború – DeepState térkép</b><br>
+    <b>Ukrán–orosz háború – DeepState frontvonal (timeline)</b><br>
     <span class="muted">
-      Megjegyzés: ebben a forrásban jelenleg 1 db poligon van üres properties-szel, ezért kategóriák (contested/UA) nem különíthetők el.
-      A poligont “orosz ellenőrzés” színnel töltjük, a kontúr “frontvonal/határ” stílus.
+      Csúszkával visszajátszható napi állapotok. (DeepState export jelenleg 1 poligon, ezért “kontroll-terület” kitöltést mutat.)
     </span>
 
     <div class="row">
@@ -81,8 +90,16 @@
         <input id="toggleDeepState" type="checkbox" checked />
         DeepState réteg
       </label>
+
       <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
-      <span class="chip">Forrás: <span id="sourceFile">betöltés…</span></span>
+
+      <span class="chip">Dátum: <b id="dateLabel">…</b></span>
+      <span class="chip">Forrásfájl: <span id="fileLabel">…</span></span>
+    </div>
+
+    <div class="slider-wrap">
+      <button id="playBtn" class="btn" type="button" disabled>Lejátszás</button>
+      <input id="daySlider" type="range" min="0" max="0" value="0" step="1" disabled />
     </div>
 
     <div id="log" class="log">Indul…</div>
@@ -96,6 +113,13 @@
 
   <script>
     const logEl = document.getElementById('log');
+    const dateLabel = document.getElementById('dateLabel');
+    const fileLabel = document.getElementById('fileLabel');
+    const slider = document.getElementById('daySlider');
+    const playBtn = document.getElementById('playBtn');
+    const zoomBtn = document.getElementById('zoomBtn');
+    const toggle = document.getElementById('toggleDeepState');
+
     function log(msg) { logEl.textContent += "\n" + msg; }
 
     const map = L.map('map').setView([49.0, 31.0], 6);
@@ -105,51 +129,127 @@
     }).addTo(map);
 
     let deepStateLayer = null;
+    let dates = [];
+    let playing = false;
+    let timer = null;
 
-    // UI
-    document.getElementById("zoomBtn").onclick = () => {
-      if (deepStateLayer) map.fitBounds(deepStateLayer.getBounds().pad(0.12));
-    };
-    document.getElementById("toggleDeepState").onchange = (e) => {
+    function setLayerVisible(visible) {
       if (!deepStateLayer) return;
-      if (e.target.checked) deepStateLayer.addTo(map);
+      if (visible) deepStateLayer.addTo(map);
       else map.removeLayer(deepStateLayer);
-    };
+    }
 
-    // Forrás fájlnév
-    fetch('./data/deepstate_latest.source.txt', { cache: "no-store" })
-      .then(r => r.ok ? r.text() : Promise.reject(new Error("source.txt HTTP " + r.status)))
-      .then(t => document.getElementById("sourceFile").innerText = (t.trim() || "(ismeretlen)"))
-      .catch(() => document.getElementById("sourceFile").innerText = "(nem elérhető)");
+    toggle.addEventListener('change', () => setLayerVisible(toggle.checked));
 
-    // DeepState betöltés
-    fetch('./data/deepstate_latest.geojson', { cache: "no-store" })
-      .then(r => r.json())
-      .then(data => {
-        const feats = (data && data.features) ? data.features : [];
-        log("Feature count: " + feats.length);
-        if (feats[0] && feats[0].geometry) log("Geometry: " + feats[0].geometry.type);
+    zoomBtn.addEventListener('click', () => {
+      if (!deepStateLayer) return;
+      const b = deepStateLayer.getBounds();
+      if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+    });
 
-        // Stílus: kitöltés (occupied) + piros kontúr (frontline/határ)
-        deepStateLayer = L.geoJSON(data, {
-          style: () => ({
-            // kontúr
-            color: "#d00",
-            weight: 2.2,
-            opacity: 0.95,
-            // kitöltés
-            fillColor: "#6b0000",
-            fillOpacity: 0.28
-          })
-        });
+    function stopPlay() {
+      playing = false;
+      playBtn.textContent = "Lejátszás";
+      if (timer) { clearInterval(timer); timer = null; }
+    }
 
-        deepStateLayer.addTo(map);
+    function startPlay() {
+      playing = true;
+      playBtn.textContent = "Megállítás";
+      timer = setInterval(() => {
+        let v = Number(slider.value);
+        if (v >= Number(slider.max)) v = Number(slider.min);
+        else v += 1;
+        slider.value = String(v);
+        loadByIndex(v, false);
+      }, 1200); // ~1.2 sec / nap
+    }
 
+    playBtn.addEventListener('click', () => {
+      if (playing) stopPlay();
+      else startPlay();
+    });
+
+    async function loadGeoJson(url) {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status + " " + res.statusText);
+      return await res.json();
+    }
+
+    function renderDeepState(data) {
+      if (deepStateLayer) {
+        map.removeLayer(deepStateLayer);
+        deepStateLayer = null;
+      }
+
+      deepStateLayer = L.geoJSON(data, {
+        style: () => ({
+          // kontúr
+          color: "#d00",
+          weight: 2.2,
+          opacity: 0.95,
+          // kitöltés
+          fillColor: "#6b0000",
+          fillOpacity: 0.28
+        })
+      });
+
+      if (toggle.checked) deepStateLayer.addTo(map);
+
+      const b = deepStateLayer.getBounds();
+      if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+    }
+
+    async function loadByIndex(i, doZoom = true) {
+      const item = dates[i];
+      if (!item) return;
+
+      dateLabel.textContent = item.date;
+      fileLabel.textContent = item.name;
+
+      try {
+        log("Load: " + item.raw);
+        const data = await loadGeoJson(item.raw);
+        renderDeepState(data);
+
+        if (!doZoom) return;
         const b = deepStateLayer.getBounds();
         if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
-        log("DeepState réteg betöltve ✔");
-      })
-      .catch(err => log("HIBA: " + String(err && err.stack ? err.stack : err)));
+      } catch (e) {
+        log("HIBA: " + String(e && e.stack ? e.stack : e));
+        stopPlay();
+      }
+    }
+
+    async function init() {
+      try {
+        log("Fetch: ./data/deepstate_dates.json");
+        const idx = await loadGeoJson('./data/deepstate_dates.json');
+        dates = Array.isArray(idx) ? idx : [];
+        log("Dates: " + dates.length);
+
+        if (dates.length === 0) throw new Error("Üres deepstate_dates.json");
+
+        slider.min = "0";
+        slider.max = String(dates.length - 1);
+        slider.value = String(dates.length - 1); // legfrissebb
+        slider.disabled = false;
+        playBtn.disabled = false;
+
+        slider.addEventListener('input', () => {
+          stopPlay();
+          loadByIndex(Number(slider.value), false);
+        });
+
+        // induljunk a legfrissebbel
+        await loadByIndex(dates.length - 1, true);
+
+      } catch (e) {
+        log("HIBA init: " + String(e && e.stack ? e.stack : e));
+      }
+    }
+
+    init();
   </script>
 </body>
 </html>
