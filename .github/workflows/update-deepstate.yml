@@ -1,45 +1,98 @@
-name: Inspect DeepState data folder
+name: Update DeepState GeoJSON (daily) + dates index
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "30 3 * * *"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inspect:
+  update:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Install jq
         run: |
           set -euo pipefail
           sudo apt-get update
           sudo apt-get install -y jq
 
-      - name: List files in cyterat/deepstate-map-data/data
+      - name: Prepare folders
+        run: |
+          set -euo pipefail
+          mkdir -p data
+
+      - name: Build dates index + download latest
         env:
           API_URL: https://api.github.com/repos/cyterat/deepstate-map-data/contents/data
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          echo "Listing: $API_URL"
 
+          echo "Listing: $API_URL"
           curl -sS -L \
             -H "Accept: application/vnd.github+json" \
             -H "User-Agent: gh-actions" \
             -H "Authorization: Bearer $GH_TOKEN" \
             "$API_URL" > listing.json
 
-          echo "== File names (filtered) =="
-          jq -r '.[].name' listing.json | sort | head -n 200
+          # Csak a deepstatemap_data_YYYYMMDD.geojson fájlok
+          jq -r '.[].name' listing.json \
+            | grep -E '^deepstatemap_data_[0-9]{8}\.geojson$' \
+            | sort > names.txt
 
-          echo ""
-          echo "== Hints: files containing keywords =="
-          echo "-- occupied/occupation:"
-          jq -r '.[].name' listing.json | grep -i "occup" || true
-          echo "-- contested/disputed/grey/gray:"
-          jq -r '.[].name' listing.json | egrep -i "contest|disput|grey|gray" || true
-          echo "-- frontline/line/front:"
-          jq -r '.[].name' listing.json | egrep -i "front|line" || true
-          echo "-- ukraine/ua:"
-          jq -r '.[].name' listing.json | egrep -i "ukr|ua" || true
+          if [ ! -s names.txt ]; then
+            echo "ERROR: Nem találtam deepstatemap_data_YYYYMMDD.geojson fájlokat."
+            exit 1
+          fi
+
+          LATEST_NAME=$(tail -n 1 names.txt)
+          echo "Latest file: $LATEST_NAME"
+
+          # Dátumindex JSON: [{date:"YYYY-MM-DD", name:"deepstatemap_data_YYYYMMDD.geojson", raw:"..."}...]
+          # Megjegyzés: raw URL CORS-oké, kliensből is be lehet tölteni.
+          RAW_BASE="https://raw.githubusercontent.com/cyterat/deepstate-map-data/main/data"
+
+          jq -R -s -c --arg rawbase "$RAW_BASE" '
+            split("\n")
+            | map(select(length>0))
+            | map({
+                name: .,
+                date: (
+                  capture("deepstatemap_data_(?<d>[0-9]{8})\\.geojson").d
+                  | (.[0:4] + "-" + .[4:6] + "-" + .[6:8])
+                ),
+                raw: ($rawbase + "/" + .)
+              })
+          ' names.txt > data/deepstate_dates.json
+
+          # Letöltjük a legfrissebbet a te repódba is (gyors megjelenítéshez / fallback)
+          DOWNLOAD_URL=$(jq -r --arg n "$LATEST_NAME" '.[] | select(.name==$n) | .download_url' listing.json)
+          if [ -z "${DOWNLOAD_URL:-}" ] || [ "$DOWNLOAD_URL" = "null" ]; then
+            echo "ERROR: Nincs download_url a latest fájlhoz."
+            exit 1
+          fi
+
+          curl -sS -L -H "User-Agent: gh-actions" -o data/deepstate_latest.geojson "$DOWNLOAD_URL"
+          echo "$LATEST_NAME" > data/deepstate_latest.source.txt
+
+          echo "Wrote: data/deepstate_dates.json"
+          echo "Wrote: data/deepstate_latest.geojson"
+          echo "Wrote: data/deepstate_latest.source.txt"
+
+      - name: Commit & push if changed
+        run: |
+          set -euo pipefail
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/deepstate_dates.json data/deepstate_latest.geojson data/deepstate_latest.source.txt
+            git commit -m "Update DeepState latest + dates index"
+            git push
+          else
+            echo "No changes to commit."
+          fi
