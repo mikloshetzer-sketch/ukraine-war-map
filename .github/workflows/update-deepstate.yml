@@ -1,95 +1,45 @@
-name: Update DeepState GeoJSON (daily)
+name: Inspect DeepState data folder
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "30 3 * * *"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  update:
+  inspect:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Install jq
         run: |
           set -euo pipefail
           sudo apt-get update
           sudo apt-get install -y jq
 
-      - name: Prepare folders
-        run: |
-          set -euo pipefail
-          mkdir -p data
-
-      - name: Fetch latest DeepState GeoJSON from cyterat/deepstate-map-data
+      - name: List files in cyterat/deepstate-map-data/data
         env:
           API_URL: https://api.github.com/repos/cyterat/deepstate-map-data/contents/data
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-
           echo "Listing: $API_URL"
 
-          RESP_HEADERS="$(mktemp)"
-          RESP_BODY="$(mktemp)"
-
           curl -sS -L \
-            -D "$RESP_HEADERS" \
-            -o "$RESP_BODY" \
             -H "Accept: application/vnd.github+json" \
             -H "User-Agent: gh-actions" \
             -H "Authorization: Bearer $GH_TOKEN" \
-            "$API_URL"
+            "$API_URL" > listing.json
 
-          # Ellenőrzés: JSON tömb kell legyen
-          if ! jq -e 'type=="array"' "$RESP_BODY" >/dev/null 2>&1; then
-            echo "ERROR: A GitHub API nem a várt JSON tömböt adta vissza."
-            exit 1
-          fi
+          echo "== File names (filtered) =="
+          jq -r '.[].name' listing.json | sort | head -n 200
 
-          # A repo fájlnevei ilyenek: deepstatemap_data_20240708.geojson (YYYYMMDD)
-          LATEST_NAME=$(jq -r '.[].name' "$RESP_BODY" \
-            | grep -E '^deepstatemap_data_[0-9]{8}\.geojson$' \
-            | sort \
-            | tail -n 1)
-
-          if [ -z "${LATEST_NAME:-}" ]; then
-            echo "ERROR: Nem találtam deepstatemap_data_YYYYMMDD.geojson fájlt a listában."
-            exit 1
-          fi
-
-          echo "Latest file: $LATEST_NAME"
-
-          DOWNLOAD_URL=$(jq -r --arg n "$LATEST_NAME" '.[] | select(.name==$n) | .download_url' "$RESP_BODY")
-
-          if [ -z "${DOWNLOAD_URL:-}" ] || [ "$DOWNLOAD_URL" = "null" ]; then
-            echo "ERROR: Nincs download_url a kiválasztott fájlhoz."
-            exit 1
-          fi
-
-          echo "Download: $DOWNLOAD_URL"
-
-          curl -sS -L \
-            -H "User-Agent: gh-actions" \
-            -o data/deepstate_latest.geojson \
-            "$DOWNLOAD_URL"
-
-          echo "$LATEST_NAME" > data/deepstate_latest.source.txt
-
-      - name: Commit & push if changed
-        run: |
-          set -euo pipefail
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add data/deepstate_latest.geojson data/deepstate_latest.source.txt
-            git commit -m "Update DeepState latest GeoJSON"
-            git push
-          else
-            echo "No changes to commit."
-          fi
+          echo ""
+          echo "== Hints: files containing keywords =="
+          echo "-- occupied/occupation:"
+          jq -r '.[].name' listing.json | grep -i "occup" || true
+          echo "-- contested/disputed/grey/gray:"
+          jq -r '.[].name' listing.json | egrep -i "contest|disput|grey|gray" || true
+          echo "-- frontline/line/front:"
+          jq -r '.[].name' listing.json | egrep -i "front|line" || true
+          echo "-- ukraine/ua:"
+          jq -r '.[].name' listing.json | egrep -i "ukr|ua" || true
