@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrán–orosz háború – interaktív térkép</title>
+  <title>Ukrán–orosz háború – interaktív térkép (DeepState)</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -26,15 +26,36 @@
       font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
     }
     .panel h1 { font-size: 14px; margin: 0 0 6px 0; }
-    .muted { color: #555; font-size: 12px; margin-bottom: 6px; }
+    .muted { color: #555; font-size: 12px; }
+    .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f2f2f2;
+      font-size: 12px;
+    }
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 8px 10px;
+      background: #111;
+      color: #fff;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .btn:active { transform: translateY(1px); }
     .log {
+      margin-top: 8px;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 12px;
       white-space: pre-wrap;
       background: #f6f6f6;
       border-radius: 8px;
       padding: 8px;
-      max-height: 180px;
+      max-height: 160px;
       overflow: auto;
     }
   </style>
@@ -45,80 +66,114 @@
 
   <div class="panel">
     <h1>Ukrán–orosz háború – interaktív térkép</h1>
-    <div class="muted">Hibakereső mód: kiírjuk a GeoJSON betöltés állapotát és rázoomolunk, ha sikerült.</div>
+    <div class="muted">
+      Réteg: DeepState (naponta frissítve GitHub Actions-szel). A forrásfájlt kiírjuk lent.
+    </div>
+
+    <div class="row">
+      <label class="chip">
+        <input id="toggleDeepState" type="checkbox" checked />
+        DeepState réteg
+      </label>
+
+      <button id="zoomBtn" class="btn" type="button">Rázoomolás a rétegre</button>
+
+      <span class="chip" id="sourceChip">Forrás: (betöltés…)</span>
+    </div>
+
     <div id="log" class="log">Indul…</div>
   </div>
 
   <script>
     const logEl = document.getElementById('log');
-    function log(msg) {
-      logEl.textContent += "\n" + msg;
+    function log(msg) { logEl.textContent += "\n" + msg; }
+
+    // Térkép
+    const map = L.map('map', { zoomControl: true }).setView([49.0, 31.0], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap közreműködők'
+    }).addTo(map);
+
+    L.control.scale({ imperial: false }).addTo(map);
+
+    // Rétegek
+    let deepStateLayer = null;
+
+    // UI elemek
+    const toggle = document.getElementById('toggleDeepState');
+    const zoomBtn = document.getElementById('zoomBtn');
+    const sourceChip = document.getElementById('sourceChip');
+
+    function zoomToLayer(layer) {
+      if (!layer) return;
+      const b = layer.getBounds();
+      if (b && b.isValid && b.isValid()) {
+        map.fitBounds(b.pad(0.15));
+      }
     }
 
-    function panic(msg) {
-      log("HIBA: " + msg);
-    }
+    zoomBtn.addEventListener('click', () => zoomToLayer(deepStateLayer));
 
-    try {
-      if (typeof L === 'undefined') throw new Error('Leaflet nem töltődött be (L undefined).');
+    toggle.addEventListener('change', () => {
+      if (!deepStateLayer) return;
+      if (toggle.checked) deepStateLayer.addTo(map);
+      else map.removeLayer(deepStateLayer);
+    });
 
-      const map = L.map('map', { zoomControl: true }).setView([49.0, 31.0], 6);
+    // Forrásfájl kiírása
+    fetch('./data/deepstate_latest.source.txt', { cache: "no-store" })
+      .then(r => r.ok ? r.text() : Promise.reject(new Error("source.txt HTTP " + r.status)))
+      .then(t => {
+        const name = t.trim() || "(ismeretlen)";
+        sourceChip.textContent = "Forrásfájl: " + name;
+      })
+      .catch(err => {
+        sourceChip.textContent = "Forrásfájl: (nem elérhető)";
+        log("FIGYELEM: source.txt betöltési hiba: " + err);
+      });
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; OpenStreetMap közreműködők'
-      }).addTo(map);
+    // DeepState GeoJSON betöltése + rajzolás
+    const url = './data/deepstate_latest.geojson';
+    log("Fetch: " + url);
 
-      L.control.scale({ imperial: false }).addTo(map);
+    fetch(url, { cache: "no-store" })
+      .then(async (res) => {
+        log("HTTP: " + res.status + " " + res.statusText);
+        const text = await res.text();
+        log("Body eleje: " + text.slice(0, 180).replace(/\s+/g, ' ') + (text.length > 180 ? "…" : ""));
 
-      const url = './data/frontline.geojson';
-      log("Fetch: " + url);
+        if (!res.ok) throw new Error("Nem OK HTTP: " + res.status);
 
-      fetch(url, { cache: "no-store" })
-        .then(async (res) => {
-          log("HTTP státusz: " + res.status + " " + res.statusText);
-          const text = await res.text();
-          log("Válasz eleje (200 char): " + text.slice(0, 200).replace(/\s+/g, ' '));
+        const data = JSON.parse(text);
 
-          if (!res.ok) throw new Error("Nem OK HTTP: " + res.status);
-
-          let data;
-          try {
-            data = JSON.parse(text);
-          } catch (e) {
-            throw new Error("Nem JSON (parse hiba): " + e);
+        // A DeepState GeoJSON többféle geometriát tartalmazhat (poligonok, vonalak).
+        // Leaflet stílus: vonalakra + poligon körvonalra egyaránt működik.
+        deepStateLayer = L.geoJSON(data, {
+          style: (feature) => ({
+            color: '#d00',
+            weight: 2,
+            opacity: 0.9,
+            fillOpacity: 0.15
+          }),
+          onEachFeature: (feature, layer) => {
+            const p = feature && feature.properties ? feature.properties : {};
+            const title = p.name || p.title || p.status || "DeepState";
+            layer.bindPopup(String(title));
           }
-
-          const layer = L.geoJSON(data, {
-            style: () => ({
-              color: '#d00',
-              weight: 5,
-              opacity: 0.95
-            }),
-            onEachFeature: (feature, lyr) => {
-              if (feature && feature.properties) {
-                const name = feature.properties.name || feature.properties.title || "Frontvonal";
-                lyr.bindPopup(String(name));
-              }
-            }
-          }).addTo(map);
-
-          const b = layer.getBounds();
-          if (b && b.isValid && b.isValid()) {
-            map.fitBounds(b.pad(0.2));
-            log("Réteg hozzáadva ✔  Rázoomolva a bounds-ra.");
-          } else {
-            log("Réteg hozzáadva ✔  (Bounds érvénytelen — lehet üres geometria?)");
-          }
-        })
-        .catch(err => {
-          panic(String(err && err.stack ? err.stack : err));
-          log("TIPP: ellenőrizd, hogy a repóban tényleg létezik-e: data/frontline.geojson (kis/nagybetű pontosan).");
         });
 
-    } catch (e) {
-      panic(String(e && e.stack ? e.stack : e));
-    }
+        // alapból a toggle szerint adjuk hozzá
+        if (toggle.checked) deepStateLayer.addTo(map);
+
+        // rázoomolunk, hogy biztos lásd
+        zoomToLayer(deepStateLayer);
+        log("DeepState réteg betöltve ✔");
+      })
+      .catch(err => {
+        log("HIBA: " + String(err && err.stack ? err.stack : err));
+      });
   </script>
 </body>
 </html>
