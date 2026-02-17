@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Teszt frontvonal szakasz"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [30.5, 49.2],
+          [31.2, 48.9],
+          [32.0, 48.6],
+          [33.1, 48.4]
+        ]
+      }
+    }
+  ]
+}
