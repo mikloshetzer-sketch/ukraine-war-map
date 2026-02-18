@@ -1,8 +1,8 @@
 import json
-import math
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
+import requests
 from shapely.geometry import shape
 from shapely.ops import unary_union
 from pyproj import Geod
@@ -17,7 +17,15 @@ OUT_CHANGE = DATA_DIR / "change_latest.json"
 geod = Geod(ellps="WGS84")
 
 
-def read_json(p: Path):
+def load_json_from_ref(ref: str):
+    """ref can be local path (./data/x.geojson) or https://..."""
+    ref = ref.strip()
+    if ref.startswith("http://") or ref.startswith("https://"):
+        r = requests.get(ref, timeout=120)
+        r.raise_for_status()
+        return r.json()
+    # local file
+    p = Path(ref.lstrip("./"))
     return json.loads(p.read_text(encoding="utf-8"))
 
 
@@ -36,8 +44,7 @@ def area_km2_of_geojson(geojson_obj) -> float:
         return 0.0
 
     merged = unary_union(geoms)
-    # geodesic area: pyproj.Geod can compute area from polygon coords;
-    # shapely -> we iterate polygons in merged
+
     def geom_area_m2(geom) -> float:
         if geom.is_empty:
             return 0.0
@@ -46,7 +53,6 @@ def area_km2_of_geojson(geojson_obj) -> float:
             lon, lat = geom.exterior.coords.xy
             a, _ = geod.polygon_area_perimeter(lon, lat)
             area = abs(a)
-            # subtract holes
             for interior in geom.interiors:
                 lonh, lath = interior.coords.xy
                 ah, _ = geod.polygon_area_perimeter(lonh, lath)
@@ -54,11 +60,9 @@ def area_km2_of_geojson(geojson_obj) -> float:
             return max(0.0, area)
         if gt == "MultiPolygon":
             return sum(geom_area_m2(p) for p in geom.geoms)
-        # other types (lines etc.)
         return 0.0
 
-    area_m2 = geom_area_m2(merged)
-    return area_m2 / 1_000_000.0
+    return geom_area_m2(merged) / 1_000_000.0
 
 
 def merged_geom(geojson_obj):
@@ -77,7 +81,8 @@ def merged_geom(geojson_obj):
     return unary_union(geoms)
 
 
-def side_from_delta(delta: float) -> str:
+def interpretation_from_delta(delta: float) -> str:
+    # your logic: occupied area grows => RU gain; shrinks => UA recapture
     if delta > 0:
         return "orosz területszerzés"
     if delta < 0:
@@ -86,7 +91,6 @@ def side_from_delta(delta: float) -> str:
 
 
 def fmt(delta: float) -> float:
-    # keep nice rounding but numeric
     if abs(delta) >= 100:
         return round(delta, 1)
     return round(delta, 2)
@@ -94,10 +98,10 @@ def fmt(delta: float) -> float:
 
 def centroid_lonlat_of_change(today_geom, prev_geom):
     if today_geom is None or prev_geom is None:
-        return None
+        return {"gained_centroid": None, "lost_centroid": None}
 
-    gained = today_geom.difference(prev_geom)   # RU gained (occupied grew)
-    lost = prev_geom.difference(today_geom)     # RU lost (occupied shrank)
+    gained = today_geom.difference(prev_geom)   # occupied grew here
+    lost = prev_geom.difference(today_geom)     # occupied shrank here
 
     def safe_centroid(g):
         if g is None or g.is_empty:
@@ -109,7 +113,7 @@ def centroid_lonlat_of_change(today_geom, prev_geom):
 
     return {
         "gained_centroid": safe_centroid(gained),
-        "lost_centroid": safe_centroid(lost)
+        "lost_centroid": safe_centroid(lost),
     }
 
 
@@ -117,11 +121,10 @@ def main():
     if not DATES_JSON.exists():
         raise SystemExit("Missing data/deepstate_dates.json")
 
-    dates = read_json(DATES_JSON)
+    dates = json.loads(DATES_JSON.read_text(encoding="utf-8"))
     if not isinstance(dates, list) or len(dates) < 2:
         raise SystemExit("deepstate_dates.json too short")
 
-    # dates list is chronological; last = latest
     i_latest = len(dates) - 1
     i_prev = len(dates) - 2
     i_week = max(0, i_latest - 7)
@@ -130,14 +133,9 @@ def main():
     prev = dates[i_prev]
     week = dates[i_week]
 
-    # Paths are stored as "raw" in your json (e.g. "./data/deepstatemap_data_YYYYMMDD.geojson")
-    p_latest = Path(latest["raw"].lstrip("./"))
-    p_prev = Path(prev["raw"].lstrip("./"))
-    p_week = Path(week["raw"].lstrip("./"))
-
-    gj_latest = read_json(p_latest)
-    gj_prev = read_json(p_prev)
-    gj_week = read_json(p_week)
+    gj_latest = load_json_from_ref(latest["raw"])
+    gj_prev = load_json_from_ref(prev["raw"])
+    gj_week = load_json_from_ref(week["raw"])
 
     a_latest = area_km2_of_geojson(gj_latest)
     a_prev = area_km2_of_geojson(gj_prev)
@@ -150,25 +148,21 @@ def main():
         "date": latest["date"],
         "occupied_km2": round(a_latest, 2),
         "delta_km2": fmt(d_day),
-        "interpretation": side_from_delta(d_day),
-        "vs_date": prev["date"]
+        "interpretation": interpretation_from_delta(d_day),
+        "vs_date": prev["date"],
     }
     weekly = {
         "date": latest["date"],
         "occupied_km2": round(a_latest, 2),
         "delta_km2": fmt(d_week),
-        "interpretation": side_from_delta(d_week),
-        "vs_date": week["date"]
+        "interpretation": interpretation_from_delta(d_week),
+        "vs_date": week["date"],
     }
 
-    # change centroids (optional helper for “hol történt”)
     g_latest = merged_geom(gj_latest)
     g_prev = merged_geom(gj_prev)
-    change = centroid_lonlat_of_change(g_latest, g_prev) or {"gained_centroid": None, "lost_centroid": None}
-    change.update({
-        "date": latest["date"],
-        "vs_date": prev["date"]
-    })
+    change = centroid_lonlat_of_change(g_latest, g_prev)
+    change.update({"date": latest["date"], "vs_date": prev["date"]})
 
     OUT_DAILY.write_text(json.dumps(daily, ensure_ascii=False, indent=2), encoding="utf-8")
     OUT_WEEKLY.write_text(json.dumps(weekly, ensure_ascii=False, indent=2), encoding="utf-8")
