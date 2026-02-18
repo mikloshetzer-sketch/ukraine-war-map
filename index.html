@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrajna háborús térkép – DeepState + FIRMS</title>
+  <title>Ukrán–orosz háború – DeepState timeline + FIRMS (Ukrajna)</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -18,7 +18,7 @@
       top: 12px;
       left: 12px;
       right: 12px;
-      max-width: 820px;
+      max-width: 860px;
       background: rgba(255,255,255,0.95);
       padding: 12px;
       border-radius: 12px;
@@ -29,6 +29,7 @@
     .muted { color:#555; font-size:12px; margin-top: 4px; }
 
     .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:10px; }
+
     .chip {
       display:inline-flex; align-items:center; gap:8px;
       background:#f2f2f2; padding:7px 10px; border-radius:999px; font-size:12px;
@@ -63,7 +64,7 @@
       border-radius: 12px;
       font-size: 12px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      max-width: 420px;
+      max-width: 460px;
     }
     .legend b { display:block; margin-bottom:6px; }
     .legend .item { display:flex; align-items:center; gap:8px; margin:4px 0; }
@@ -77,7 +78,7 @@
       background: #f6f6f6;
       border-radius: 10px;
       padding: 8px;
-      max-height: 120px;
+      max-height: 130px;
       overflow: auto;
     }
   </style>
@@ -89,13 +90,13 @@
   <div class="panel">
     <div class="title">Ukrán–orosz háború – DeepState timeline + FIRMS hőpontok (Ukrajna)</div>
     <div class="muted">
-      FIRMS pontok: az API “utolsó N nap” adatot ad. A csúszka csak ezen a tartományon belül fog sok pöttyöt mutatni.
-      (Ha régebbi dátumra tekered, kevés/0 pont normális.)
+      FIRMS = műholdas hőpontok (tűz/robbanás proxy). A FIRMS API “utolsó N nap” adatot ad.  
+      Tipp: legfrissebb napokon lesz a legtöbb pötty.
     </div>
 
     <div class="row">
-      <label class="chip"><input id="toggleDeepState" type="checkbox" checked> DeepState frontvonal</label>
-      <label class="chip"><input id="toggleFirms" type="checkbox" checked> FIRMS hőpontok</label>
+      <label class="chip"><input id="toggleDeep" type="checkbox" checked> DeepState frontvonal</label>
+      <label class="chip"><input id="toggleFirms" type="checkbox" checked> FIRMS pöttyök</label>
       <label class="chip"><input id="toggleGibs" type="checkbox"> NASA hőtérkép (GIBS overlay)</label>
 
       <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
@@ -104,7 +105,15 @@
       <span class="chip">Fájl: <span id="fileLabel">…</span></span>
 
       <span class="chip">
-        FIRMS napok (utolsó):
+        Alaptérkép:
+        <select id="baseSel">
+          <option value="osm" selected>OSM</option>
+          <option value="sat">Műhold (ESRI)</option>
+        </select>
+      </span>
+
+      <span class="chip">
+        FIRMS napok:
         <select id="firmsDaysSel">
           <option value="3">3</option>
           <option value="7">7</option>
@@ -120,9 +129,22 @@
           <option value="3000">3000</option>
         </select>
       </span>
+
+      <span class="chip">
+        Lejátszás:
+        <select id="speedSel">
+          <option value="300" selected>0.3s</option>
+          <option value="600">0.6s</option>
+          <option value="1200">1.2s</option>
+          <option value="2000">2.0s</option>
+        </select>
+      </span>
+
+      <span class="chip" id="keyStatus">FIRMS kulcs: …</span>
     </div>
 
     <div class="slider-wrap">
+      <button id="playBtn" class="btn" type="button" disabled>Lejátszás</button>
       <input id="daySlider" type="range" min="0" max="0" value="0" step="1" disabled />
     </div>
 
@@ -133,84 +155,60 @@
     <b>Jelmagyarázat</b>
     <div class="item"><span class="swatch" style="background:#6b0000;"></span>DeepState megszállt/ellenőrzött terület (kitöltés)</div>
     <div class="item"><span class="swatch" style="background:#d00;"></span>DeepState határ/frontvonal (kontúr)</div>
-    <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont (műhold detektált tűz/hőkibocsátás)</div>
+    <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont (pont)</div>
   </div>
 
 <script>
-  // 1) IDE írd be a saját kulcsod (idézőjelek maradnak!)
-  const FIRMS_MAP_KEY = "IDE_IRD_BE_A_KULCSOT";
+  // ===== 1) IDE írd be a saját FIRMS MAP_KEY-t (idézőjelek maradnak) =====
+  const FIRMS_MAP_KEY = "44b266fd8324db5a0a9866017429dc43";
 
-  // Ukrajna bbox: lon_min,lat_min,lon_max,lat_max
-  // (ez szándékosan Ukrajna-közeli, hogy ne legyen túl nagy)
+  // Ukrajna bbox (lon_min,lat_min,lon_max,lat_max)
   const UKRAINE_BBOX = "22,44,40,53";
 
   const logEl = document.getElementById("log");
   const dateLabel = document.getElementById("dateLabel");
   const fileLabel = document.getElementById("fileLabel");
   const slider = document.getElementById("daySlider");
+  const playBtn = document.getElementById("playBtn");
   const zoomBtn = document.getElementById("zoomBtn");
-  const toggleDeep = document.getElementById("toggleDeepState");
+
+  const toggleDeep = document.getElementById("toggleDeep");
   const toggleFirms = document.getElementById("toggleFirms");
   const toggleGibs = document.getElementById("toggleGibs");
+
+  const baseSel = document.getElementById("baseSel");
   const firmsDaysSel = document.getElementById("firmsDaysSel");
   const maxPtsSel = document.getElementById("maxPtsSel");
+  const speedSel = document.getElementById("speedSel");
+  const keyStatus = document.getElementById("keyStatus");
 
-  function log(msg) { logEl.textContent += "\n" + msg; }
+  function log(msg){ logEl.textContent += "\n" + msg; }
 
+  // ===== Base layers =====
   const map = L.map("map").setView([49.0, 31.0], 6);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+
+  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: "&copy; OpenStreetMap"
   }).addTo(map);
 
-  let deepStateLayer = null;
-  let gibsLayer = null;
-
-  // FIRMS cache: { "YYYY-MM-DD": [ {lat,lon,frp,bright,acq_date,acq_time,sat,conf,daynight} ... ] }
-  let firmsByDate = {};
-  let firmsLayer = L.layerGroup();
-  firmsLayer.addTo(map);
-
-  let dates = [];
-  let currentDate = null;
-
-  async function loadJson(url) {
-    const r = await fetch(url, { cache: "no-store" });
-    if (!r.ok) throw new Error("HTTP " + r.status + " " + r.statusText);
-    return await r.json();
-  }
-
-  function setVisible(layer, on) {
-    if (!layer) return;
-    if (on) layer.addTo(map);
-    else map.removeLayer(layer);
-  }
-
-  toggleDeep.addEventListener("change", () => setVisible(deepStateLayer, toggleDeep.checked));
-  toggleFirms.addEventListener("change", () => setVisible(firmsLayer, toggleFirms.checked));
-  toggleGibs.addEventListener("change", () => setVisible(gibsLayer, toggleGibs.checked));
-
-  zoomBtn.addEventListener("click", () => {
-    if (!deepStateLayer) return;
-    const b = deepStateLayer.getBounds();
-    if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+  const esriSat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom: 19,
+    attribution: "Tiles &copy; Esri"
   });
 
-  function renderDeepState(data) {
-    if (deepStateLayer) map.removeLayer(deepStateLayer);
-    deepStateLayer = L.geoJSON(data, {
-      style: () => ({
-        color: "#d00",
-        weight: 2.2,
-        opacity: 0.95,
-        fillColor: "#6b0000",
-        fillOpacity: 0.28
-      })
-    });
-    if (toggleDeep.checked) deepStateLayer.addTo(map);
-  }
+  baseSel.addEventListener("change", () => {
+    const v = baseSel.value;
+    if (v === "sat") { map.removeLayer(osm); esriSat.addTo(map); }
+    else { map.removeLayer(esriSat); osm.addTo(map); }
+  });
 
-  function setGibs(dateStr) {
+  // ===== DeepState =====
+  let deepStateLayer = null;
+
+  // ===== GIBS overlay =====
+  let gibsLayer = null;
+  function setGibs(dateStr){
     const url = `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_Thermal_Anomalies_375m_All/default/${dateStr}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png`;
     if (!gibsLayer) {
       gibsLayer = L.tileLayer(url, {
@@ -223,14 +221,55 @@
       gibsLayer.setUrl(url);
     }
     if (toggleGibs.checked) gibsLayer.addTo(map);
-    else map.removeLayer(gibsLayer);
+    else if (map.hasLayer(gibsLayer)) map.removeLayer(gibsLayer);
   }
 
-  function parseCSV(csvText) {
-    // FIRMS CSV tipikus fejléce:
-    // latitude,longitude,brightness,scan,track,acq_date,acq_time,satellite,confidence,version,bright_t31,frp,daynight
+  // ===== FIRMS cache and layer =====
+  let firmsByDate = {}; // { "YYYY-MM-DD": [points...] }
+  const firmsLayer = L.layerGroup().addTo(map);
+
+  function setVisible(layer, on){
+    if(!layer) return;
+    if(on) layer.addTo(map);
+    else map.removeLayer(layer);
+  }
+
+  toggleDeep.addEventListener("change", () => setVisible(deepStateLayer, toggleDeep.checked));
+  toggleFirms.addEventListener("change", () => {
+    if (toggleFirms.checked) firmsLayer.addTo(map);
+    else map.removeLayer(firmsLayer);
+  });
+  toggleGibs.addEventListener("change", () => setGibs(currentDate || new Date().toISOString().slice(0,10)));
+
+  zoomBtn.addEventListener("click", () => {
+    if (!deepStateLayer) return;
+    const b = deepStateLayer.getBounds();
+    if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+  });
+
+  async function loadJson(url){
+    const r = await fetch(url, { cache: "no-store" });
+    if(!r.ok) throw new Error("HTTP " + r.status + " " + r.statusText);
+    return await r.json();
+  }
+
+  function renderDeepState(data){
+    if(deepStateLayer) map.removeLayer(deepStateLayer);
+    deepStateLayer = L.geoJSON(data, {
+      style: () => ({
+        color:"#d00",
+        weight:2.2,
+        opacity:0.95,
+        fillColor:"#6b0000",
+        fillOpacity:0.28
+      })
+    });
+    if(toggleDeep.checked) deepStateLayer.addTo(map);
+  }
+
+  function parseCSV(csvText){
     const lines = csvText.split(/\r?\n/).filter(Boolean);
-    if (lines.length <= 1) return [];
+    if(lines.length <= 1) return [];
     const header = lines[0].split(",");
     const idx = (name) => header.indexOf(name);
 
@@ -245,12 +284,12 @@
     const iDN = idx("daynight");
 
     const out = [];
-    for (let k = 1; k < lines.length; k++) {
+    for(let k=1; k<lines.length; k++){
       const c = lines[k].split(",");
-      if (c.length < header.length) continue;
+      if(c.length < header.length) continue;
       const lat = parseFloat(c[iLat]);
       const lon = parseFloat(c[iLon]);
-      if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+      if(!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
 
       out.push({
         lat, lon,
@@ -266,78 +305,76 @@
     return out;
   }
 
-  async function fetchFIRMSCache() {
+  async function fetchFIRMSCache(){
     firmsByDate = {};
     firmsLayer.clearLayers();
 
-    if (!FIRMS_MAP_KEY || FIRMS_MAP_KEY === "IDE_IRD_BE_A_KULCSOT") {
+    const keyOk = (FIRMS_MAP_KEY && FIRMS_MAP_KEY !== "IDE_IRD_BE_A_KULCSOT" && FIRMS_MAP_KEY.length >= 10);
+    if(!keyOk){
+      keyStatus.textContent = "FIRMS kulcs: NINCS (index.html-ben írd be)";
       log("FIRMS: nincs beállítva a MAP_KEY (index.html-ben).");
       return;
     }
 
+    keyStatus.textContent = "FIRMS kulcs: OK (" + FIRMS_MAP_KEY.slice(0,4) + "… )";
+
     const days = Number(firmsDaysSel.value) || 10;
-    // FIRMS area endpoint: /api/area/csv/{MAP_KEY}/{PRODUCT}/{BBOX}/{DAYS}
     const url = `https://firms.modaps.eosdis.nasa.gov/api/area/csv/${encodeURIComponent(FIRMS_MAP_KEY)}/VIIRS_SNPP_NRT/${UKRAINE_BBOX}/${days}`;
 
-    log(`FIRMS fetch: last ${days} days, bbox=${UKRAINE_BBOX}`);
-    try {
-      const r = await fetch(url, { cache: "no-store" });
-      if (!r.ok) {
+    log(`FIRMS fetch: last ${days} days | bbox=${UKRAINE_BBOX}`);
+    try{
+      const r = await fetch(url, { cache:"no-store" });
+      if(!r.ok){
         log("FIRMS HTTP hiba: " + r.status);
         return;
       }
       const txt = await r.text();
       const pts = parseCSV(txt);
 
-      // csoportosítás napra
-      for (const p of pts) {
-        if (!p.acq_date) continue;
-        if (!firmsByDate[p.acq_date]) firmsByDate[p.acq_date] = [];
+      for(const p of pts){
+        if(!p.acq_date) continue;
+        if(!firmsByDate[p.acq_date]) firmsByDate[p.acq_date] = [];
         firmsByDate[p.acq_date].push(p);
       }
 
-      const allDates = Object.keys(firmsByDate).sort();
+      const ds = Object.keys(firmsByDate).sort();
       log(`FIRMS pontok összesen: ${pts.length}`);
-      log(`FIRMS napok a cache-ben: ${allDates.length} (${allDates[0] || "-"} .. ${allDates[allDates.length-1] || "-"})`);
+      log(`FIRMS napok: ${ds.length} (${ds[0] || "-"} .. ${ds[ds.length-1] || "-"})`);
 
-      // az aktuális dátumra rögtön rajzolunk
-      if (currentDate) renderFIRMSForDate(currentDate);
-    } catch (e) {
+      if(currentDate) renderFIRMSForDate(currentDate);
+    }catch(e){
       log("FIRMS fetch hiba: " + String(e));
     }
   }
 
-  function renderFIRMSForDate(dateStr) {
+  function renderFIRMSForDate(dateStr){
     firmsLayer.clearLayers();
-    if (!toggleFirms.checked) return;
+    if(!toggleFirms.checked) return;
 
-    const maxPts = Number(maxPtsSel.value) || 1500;
     const pts = firmsByDate[dateStr] || [];
+    const maxPts = Number(maxPtsSel.value) || 1500;
 
-    if (pts.length === 0) {
-      log(`FIRMS: 0 pont erre a napra (${dateStr}). (Lehet, hogy a FIRMS cache csak az utolsó N napot fedi.)`);
+    if(pts.length === 0){
+      log(`FIRMS: 0 pont erre a napra: ${dateStr}`);
       return;
     }
 
-    // egyszerű limit (sebesség miatt)
-    const use = pts.length > maxPts ? pts.slice(0, maxPts) : pts;
+    const use = (pts.length > maxPts) ? pts.slice(0, maxPts) : pts;
 
-    for (const p of use) {
+    for(const p of use){
       const frp = Number(p.frp);
-      const radius = Number.isFinite(frp) ? Math.max(3, Math.min(9, 2 + frp / 20)) : 4;
-
-      const m = L.circleMarker([p.lat, p.lon], {
-        radius,
-        color: "#ff5500",
-        weight: 1,
-        opacity: 0.9,
-        fillOpacity: 0.65
-      });
+      const radius = Number.isFinite(frp) ? Math.max(3, Math.min(9, 2 + frp/20)) : 4;
 
       const timeStr = (p.acq_time || "").toString().padStart(4, "0");
       const hh = timeStr.slice(0,2), mm = timeStr.slice(2,4);
 
-      m.bindPopup(
+      const m = L.circleMarker([p.lat, p.lon], {
+        radius,
+        color:"#ff5500",
+        weight: 1,
+        opacity: 0.9,
+        fillOpacity: 0.65
+      }).bindPopup(
         `<b>FIRMS hőpont</b><br>` +
         `Dátum: ${p.acq_date}<br>` +
         `Idő (UTC): ${hh}:${mm}<br>` +
@@ -351,40 +388,77 @@
       firmsLayer.addLayer(m);
     }
 
-    log(`FIRMS: ${use.length}/${pts.length} pont kirajzolva erre a napra: ${dateStr}`);
+    log(`FIRMS: ${use.length}/${pts.length} pont kirajzolva (${dateStr})`);
   }
 
-  async function loadByIndex(i, doZoom=true) {
+  // ===== Timeline (DeepState) =====
+  let dates = [];
+  let currentDate = null;
+
+  async function loadByIndex(i, doZoom=true){
     const item = dates[i];
-    if (!item) return;
+    if(!item) return;
 
     currentDate = item.date;
     dateLabel.textContent = item.date;
     fileLabel.textContent = item.name;
 
-    try {
+    try{
       const data = await loadJson(item.raw);
       renderDeepState(data);
-
       setGibs(item.date);
       renderFIRMSForDate(item.date);
 
-      if (doZoom && deepStateLayer) {
+      if(doZoom && deepStateLayer){
         const b = deepStateLayer.getBounds();
-        if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+        if(b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
       }
-    } catch (e) {
+    }catch(e){
       log("HIBA: " + String(e && e.stack ? e.stack : e));
     }
   }
 
-  async function init() {
-    try {
+  // ===== Play =====
+  let playing = false;
+  let timer = null;
+
+  function stopPlay(){
+    playing = false;
+    playBtn.textContent = "Lejátszás";
+    if(timer){ clearInterval(timer); timer = null; }
+  }
+  function stepOnce(){
+    let v = Number(slider.value);
+    if(v >= Number(slider.max)) v = Number(slider.min);
+    else v += 1;
+    slider.value = String(v);
+    loadByIndex(v, false);
+  }
+  function startPlay(){
+    playing = true;
+    playBtn.textContent = "Megállítás";
+    const ms = Number(speedSel.value) || 300;
+    timer = setInterval(stepOnce, ms);
+  }
+
+  playBtn.addEventListener("click", () => {
+    if(playing) stopPlay();
+    else startPlay();
+  });
+
+  speedSel.addEventListener("change", () => {
+    if(!playing) return;
+    stopPlay(); startPlay();
+  });
+
+  firmsDaysSel.addEventListener("change", () => fetchFIRMSCache());
+  maxPtsSel.addEventListener("change", () => { if(currentDate) renderFIRMSForDate(currentDate); });
+
+  async function init(){
+    try{
       log("Fetch: ./data/deepstate_dates.json");
-      const idx = await loadJson("./data/deepstate_dates.json");
-      dates = Array.isArray(idx) ? idx : [];
-      log("DeepState dates: " + dates.length);
-      if (dates.length === 0) throw new Error("Üres deepstate_dates.json");
+      dates = await loadJson("./data/deepstate_dates.json");
+      if(!Array.isArray(dates) || dates.length === 0) throw new Error("Üres deepstate_dates.json");
 
       slider.min = "0";
       slider.max = String(dates.length - 1);
@@ -392,25 +466,24 @@
       slider.disabled = false;
 
       slider.addEventListener("input", () => {
+        stopPlay();
         loadByIndex(Number(slider.value), false);
       });
 
       // induljunk a legfrissebbel
       await loadByIndex(dates.length - 1, true);
 
-      // FIRMS cache letöltése (utolsó N nap)
+      // FIRMS cache
       await fetchFIRMSCache();
 
+      // play gomb
+      playBtn.disabled = false;
+
       log("Kész ✔");
-    } catch (e) {
+    }catch(e){
       log("INIT HIBA: " + String(e && e.stack ? e.stack : e));
     }
   }
-
-  firmsDaysSel.addEventListener("change", () => fetchFIRMSCache());
-  maxPtsSel.addEventListener("change", () => {
-    if (currentDate) renderFIRMSForDate(currentDate);
-  });
 
   init();
 </script>
