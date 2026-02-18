@@ -3,7 +3,7 @@ name: Update DeepState GeoJSON (daily) + dates index
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 3 * * *"
+    - cron: "15 3 * * *" # naponta 03:15 UTC
 
 permissions:
   contents: write
@@ -17,82 +17,77 @@ jobs:
 
       - name: Install jq
         run: |
-          set -euo pipefail
           sudo apt-get update
           sudo apt-get install -y jq
 
       - name: Prepare folders
         run: |
-          set -euo pipefail
           mkdir -p data
+          mkdir -p scripts
 
+      # EZ A RÉSZ NÁLAD MÁR VALÓSZÍNŰ MEGVAN:
+      # - listázás + latest letöltése + deepstate_latest.geojson frissítése + deepstate_dates.json frissítése
+      # Ha nálad más a logika, ezt a stepet hagyd meg a sajátodra, csak a commit stepet cseréld!
       - name: Build dates index + download latest
         env:
-          API_URL: https://api.github.com/repos/cyterat/deepstate-map-data/contents/data
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
 
-          echo "Listing: $API_URL"
-          curl -sS -L \
-            -H "Accept: application/vnd.github+json" \
-            -H "User-Agent: gh-actions" \
-            -H "Authorization: Bearer $GH_TOKEN" \
-            "$API_URL" > listing.json
+          API="https://api.github.com/repos/cyterat/deepstate-map-data/contents/data"
+          echo "Listing: $API"
 
-          # Csak a deepstatemap_data_YYYYMMDD.geojson fájlok
-          jq -r '.[].name' listing.json \
-            | grep -E '^deepstatemap_data_[0-9]{8}\.geojson$' \
-            | sort > names.txt
+          curl -sS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.v3+json" \
+            "$API" > listing.json
 
-          if [ ! -s names.txt ]; then
-            echo "ERROR: Nem találtam deepstatemap_data_YYYYMMDD.geojson fájlokat."
-            exit 1
-          fi
+          # fájlnevek kigyűjtése
+          jq -r '.[].name' listing.json | grep -E '^deepstatemap_data_[0-9]{8}\.geojson$' | sort > names.txt
 
-          LATEST_NAME=$(tail -n 1 names.txt)
-          echo "Latest file: $LATEST_NAME"
+          LATEST="$(tail -n 1 names.txt)"
+          echo "Latest: $LATEST"
 
-          # Dátumindex JSON: [{date:"YYYY-MM-DD", name:"deepstatemap_data_YYYYMMDD.geojson", raw:"..."}...]
-          # Megjegyzés: raw URL CORS-oké, kliensből is be lehet tölteni.
-          RAW_BASE="https://raw.githubusercontent.com/cyterat/deepstate-map-data/main/data"
+          # letöltés raw URL-ről
+          RAW_URL="https://raw.githubusercontent.com/cyterat/deepstate-map-data/main/data/$LATEST"
+          echo "Downloading: $RAW_URL"
 
-          jq -R -s -c --arg rawbase "$RAW_BASE" '
-            split("\n")
-            | map(select(length>0))
-            | map({
-                name: .,
-                date: (
-                  capture("deepstatemap_data_(?<d>[0-9]{8})\\.geojson").d
-                  | (.[0:4] + "-" + .[4:6] + "-" + .[6:8])
-                ),
-                raw: ($rawbase + "/" + .)
-              })
-          ' names.txt > data/deepstate_dates.json
+          curl -sS "$RAW_URL" -o "data/deepstate_latest.geojson"
 
-          # Letöltjük a legfrissebbet a te repódba is (gyors megjelenítéshez / fallback)
-          DOWNLOAD_URL=$(jq -r --arg n "$LATEST_NAME" '.[] | select(.name==$n) | .download_url' listing.json)
-          if [ -z "${DOWNLOAD_URL:-}" ] || [ "$DOWNLOAD_URL" = "null" ]; then
-            echo "ERROR: Nincs download_url a latest fájlhoz."
-            exit 1
-          fi
+          # deepstate_dates.json generálása (URL-kel!)
+          python3 - <<'PY'
+import json, re
+from pathlib import Path
 
-          curl -sS -L -H "User-Agent: gh-actions" -o data/deepstate_latest.geojson "$DOWNLOAD_URL"
-          echo "$LATEST_NAME" > data/deepstate_latest.source.txt
+names = Path("names.txt").read_text(encoding="utf-8").splitlines()
+out = []
+for n in names:
+    m = re.search(r"deepstatemap_data_(\d{8})\.geojson", n)
+    if not m: 
+        continue
+    d = m.group(1)
+    out.append({
+        "date": f"{d[0:4]}-{d[4:6]}-{d[6:8]}",
+        "name": n,
+        "raw": f"https://raw.githubusercontent.com/cyterat/deepstate-map-data/main/data/{n}"
+    })
+Path("data/deepstate_dates.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+print("Wrote data/deepstate_dates.json", "items:", len(out))
+PY
 
-          echo "Wrote: data/deepstate_dates.json"
-          echo "Wrote: data/deepstate_latest.geojson"
-          echo "Wrote: data/deepstate_latest.source.txt"
-
+      # ✅ EZ A LÉNYEG: mindent hozzáadunk, nem csak pár fájlt
       - name: Commit & push if changed
         run: |
-          set -euo pipefail
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add data/deepstate_dates.json data/deepstate_latest.geojson data/deepstate_latest.source.txt
-            git commit -m "Update DeepState latest + dates index"
-            git push
-          else
+          set -e
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # FONTOS: untracked fájlokat is addol!
+          git add -A
+
+          if git diff --cached --quiet; then
             echo "No changes to commit."
+            exit 0
           fi
+
+          git commit -m "Update DeepState GeoJSON + dates index"
+          git push
