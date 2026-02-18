@@ -3,7 +3,7 @@ name: daily-summary-and-drones
 on:
   workflow_dispatch:
   schedule:
-    - cron: "20 3 * * *"  # naponta 03:20 UTC (Budapest reggel)
+    - cron: "45 3 * * *"
 
 permissions:
   contents: write
@@ -23,25 +23,40 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install shapely pyproj requests
+          python -m pip install requests
 
-      - name: Compute DeepState summaries (daily/weekly + change centroid)
+      - name: Prepare folders
         run: |
-          python scripts/compute_deepstate_summary.py
+          mkdir -p data
+          mkdir -p scripts
 
-      - name: Fetch drone-related geo points (GDELT GEO)
+      - name: Fetch drone-related points (GDELT DOC)
+        env:
+          DRONE_LOOKBACK_DAYS: "30"
+          DRONE_MAXRECORDS: "500"
         run: |
+          set -euo pipefail
           python scripts/fetch_drone_points_gdelt.py
+
+      # Ha nálad van summary script, itt hívd meg. Ha nincs, hagyd így, nem fog elhasalni.
+      - name: Compute summaries (optional)
+        run: |
+          set -euo pipefail
+          if [ -f "scripts/compute_deepstate_summary.py" ]; then
+            python scripts/compute_deepstate_summary.py
+          else
+            echo "No compute_deepstate_summary.py found, skipping."
+          fi
 
       - name: Commit & push if changed
         run: |
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/summary_daily.json data/summary_weekly.json data/change_latest.json data/drones_latest.geojson
+          git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "Update daily/weekly summary + drone points"
-            git push
+            exit 0
           fi
+          git commit -m "Update drones + summaries"
+          git push
