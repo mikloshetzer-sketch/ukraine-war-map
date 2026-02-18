@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrán–orosz háború – DeepState + FIRMS + Troops</title>
+  <title>Ukrán–orosz háború – DeepState + FIRMS + NASA GIBS</title>
 
   <!-- Leaflet (jsDelivr – stabil) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
@@ -19,19 +19,35 @@
       --radius: 12px;
       --gap: 10px;
       --font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      --border: 1px solid rgba(0,0,0,0.08);
     }
 
     .panel {
       position: absolute;
       z-index: 1000;
       background: var(--panel-bg);
-      padding: 10px 12px;
+      border: var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       font: var(--font);
-      max-width: 420px;
+      max-width: 440px;
+      overflow: hidden;
     }
-    .panel h3 { margin: 0; font-size: 13px; }
+    .panel .head {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 10px 12px;
+    }
+    .panel .head h3 { margin: 0; font-size: 13px; }
+    .panel .head .btnIcon{
+      border:0; background:#111; color:#fff;
+      border-radius: 10px; padding: 6px 9px;
+      cursor: pointer; font-size: 12px;
+    }
+    .panel .body { padding: 0 12px 12px; }
+
     .muted { color:#555; font-size:12px; margin-top: 4px; }
 
     .leftPanel { top: 12px; left: 12px; }
@@ -53,7 +69,7 @@
     .btn.secondary { background:#444; }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    select {
+    select, input[type="text"] {
       padding: 6px 8px;
       border-radius: 10px;
       border: 1px solid #ddd;
@@ -72,10 +88,28 @@
       background: #f6f6f6;
       border-radius: 10px;
       padding: 8px;
-      max-height: 120px;
+      max-height: 140px;
       overflow: auto;
     }
     .hidden { display:none; }
+
+    .summary {
+      margin-top: 10px;
+      background: #f7f7ff;
+      border-radius: 10px;
+      padding: 8px 10px;
+      border: 1px solid rgba(0,0,0,0.06);
+      font-size: 12px;
+    }
+    .summary b { display:block; margin-bottom: 6px; }
+    .summary .grid {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 10px;
+    }
+    .kpi { display:flex; gap:6px; align-items:baseline; }
+    .kpi .label { color:#444; }
+    .kpi .val { font-weight: 700; }
 
     .legend {
       position: absolute;
@@ -87,17 +121,24 @@
       border-radius: var(--radius);
       font-size: 12px;
       box-shadow: var(--shadow);
-      max-width: 520px;
+      border: var(--border);
+      max-width: 560px;
     }
     .legend b { display:block; margin-bottom:6px; }
     .legend .item { display:flex; align-items:center; gap:8px; margin:4px 0; }
     .swatch { width:12px; height:12px; border-radius:3px; border:1px solid rgba(0,0,0,0.2); }
 
-    /* Mobile */
-    @media (max-width: 700px){
-      .panel{ left: 10px; right: 10px; max-width: none; }
-      .leftPanel{ top: 10px; }
-      .rightPanel{ top: auto; bottom: 90px; }
+    /* collapsed state */
+    .collapsed .body { display:none; }
+
+    /* Mobile drawer behavior */
+    @media (max-width: 820px){
+      .leftPanel, .rightPanel {
+        left: 10px; right: 10px;
+        max-width: none;
+      }
+      .leftPanel { top: 10px; }
+      .rightPanel { top: auto; bottom: 96px; }
       .legend{ bottom: 10px; left: 10px; right: 10px; max-width: none; }
       .btn{ padding: 10px 12px; font-size: 13px; }
       .chip{ padding: 8px 10px; }
@@ -109,87 +150,125 @@
   <div id="map"></div>
 
   <!-- LEFT -->
-  <div class="panel leftPanel">
-    <h3>Rétegek & nézet</h3>
-    <div class="muted">Ha fehér a térkép, a Naplóban látod mi a hiba.</div>
-
-    <div class="row">
-      <label class="chip"><input id="toggleDeep" type="checkbox" checked> DeepState</label>
-      <label class="chip"><input id="toggleFirms" type="checkbox" checked> FIRMS</label>
-      <label class="chip"><input id="toggleGibs" type="checkbox"> GIBS overlay</label>
-      <label class="chip"><input id="toggleTroops" type="checkbox" checked> Csapatok</label>
+  <div id="leftPanel" class="panel leftPanel">
+    <div class="head">
+      <div>
+        <h3>Rétegek & nézet</h3>
+        <div class="muted">Mobilon csukd össze a ☰ gombbal.</div>
+      </div>
+      <button id="leftToggleBtn" class="btnIcon" type="button" title="Összecsuk/kinyit">☰</button>
     </div>
+    <div class="body">
+      <div class="row">
+        <label class="chip"><input id="toggleDeep" type="checkbox" checked> DeepState</label>
+        <label class="chip"><input id="toggleFirms" type="checkbox" checked> FIRMS pötty</label>
+        <label class="chip"><input id="toggleGibs" type="checkbox"> NASA GIBS hőtérkép</label>
+        <label class="chip"><input id="toggleTroops" type="checkbox" checked> Csapatok</label>
+      </div>
 
-    <div class="row">
-      <span class="chip">
-        Alaptérkép:
-        <select id="baseSel">
-          <option value="osm" selected>OSM</option>
-          <option value="sat">Műhold (ESRI)</option>
-        </select>
-      </span>
+      <div class="row">
+        <span class="chip">
+          Alaptérkép:
+          <select id="baseSel">
+            <option value="osm" selected>OSM</option>
+            <option value="sat">Műhold (ESRI)</option>
+          </select>
+        </span>
 
-      <span class="chip">
-        Zoom mód:
-        <select id="zoomSel">
-          <option value="front" selected>Frontvonal</option>
-          <option value="ukr">Ukrajna</option>
-          <option value="click">Kattintásra</option>
-        </select>
-      </span>
+        <span class="chip">
+          Zoom mód:
+          <select id="zoomSel">
+            <option value="front" selected>Frontvonal</option>
+            <option value="ukr">Ukrajna</option>
+            <option value="click">Kattintásra</option>
+          </select>
+        </span>
 
-      <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
+        <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
+      </div>
+
+      <div class="row">
+        <span class="chip">FIRMS napok:
+          <select id="firmsDaysSel">
+            <option value="3">3</option>
+            <option value="7">7</option>
+            <option value="10" selected>10</option>
+          </select>
+        </span>
+
+        <span class="chip">Max pötty/nap:
+          <select id="maxPtsSel">
+            <option value="500">500</option>
+            <option value="1500" selected>1500</option>
+            <option value="3000">3000</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="row">
+        <span class="chip">GIBS réteg:
+          <select id="gibsSel">
+            <option value="viirs375" selected>VIIRS Thermal Anomalies (375m)</option>
+            <option value="modis1k">MODIS Thermal Anomalies (1km)</option>
+          </select>
+        </span>
+
+        <span class="chip">GIBS áttetsző:
+          <input id="gibsOpacity" type="range" min="0" max="1" value="0.55" step="0.05" style="width:120px">
+        </span>
+      </div>
+
+      <div class="row">
+        <span class="chip" id="keyStatus">FIRMS kulcs: …</span>
+        <label class="chip"><input id="toggleLog" type="checkbox" checked> Napló</label>
+        <button id="reloadTroopsBtn" class="btn secondary" type="button">Csapatok újratöltése</button>
+      </div>
+
+      <div id="summaryBox" class="summary">
+        <b>Kivonat</b>
+        <div class="grid">
+          <div class="kpi"><span class="label">Terület Δ (nap):</span> <span class="val" id="kpiAreaDay">–</span></div>
+          <div class="kpi"><span class="label">Terület Δ (hét):</span> <span class="val" id="kpiAreaWeek">–</span></div>
+          <div class="kpi"><span class="label">FIRMS Δ (nap):</span> <span class="val" id="kpiFirmsDay">–</span></div>
+          <div class="kpi"><span class="label">FIRMS össz (7 nap):</span> <span class="val" id="kpiFirmsWeek">–</span></div>
+        </div>
+        <div class="muted" style="margin-top:6px;">A terület közelítő számítás (EPSG:3857), trendkövetésre jó.</div>
+      </div>
+
+      <div id="log" class="log">Indul…</div>
     </div>
-
-    <div class="row">
-      <span class="chip">FIRMS napok:
-        <select id="firmsDaysSel">
-          <option value="3">3</option>
-          <option value="7">7</option>
-          <option value="10" selected>10</option>
-        </select>
-      </span>
-
-      <span class="chip">Max pötty/nap:
-        <select id="maxPtsSel">
-          <option value="500">500</option>
-          <option value="1500" selected>1500</option>
-          <option value="3000">3000</option>
-        </select>
-      </span>
-    </div>
-
-    <div class="row">
-      <span class="chip" id="keyStatus">FIRMS kulcs: …</span>
-      <label class="chip"><input id="toggleLog" type="checkbox" checked> Napló</label>
-      <button id="reloadTroopsBtn" class="btn secondary" type="button">Csapatok újratöltése</button>
-    </div>
-
-    <div id="log" class="log">Indul…</div>
   </div>
 
   <!-- RIGHT -->
-  <div class="panel rightPanel">
-    <h3>Idősáv</h3>
-    <div class="row">
-      <span class="chip">Dátum: <b id="dateLabel">…</b></span>
-      <span class="chip">Fájl: <span id="fileLabel">…</span></span>
+  <div id="rightPanel" class="panel rightPanel">
+    <div class="head">
+      <div>
+        <h3>Idősáv</h3>
+        <div class="muted">Kattints a térképre “Kattintásra” módban: oda zoomol.</div>
+      </div>
+      <button id="rightToggleBtn" class="btnIcon" type="button" title="Összecsuk/kinyit">☰</button>
     </div>
+    <div class="body">
+      <div class="row">
+        <span class="chip">Dátum: <b id="dateLabel">…</b></span>
+        <span class="chip">Fájl: <span id="fileLabel">…</span></span>
+      </div>
 
-    <div class="row">
-      <span class="chip">Lejátszás:
-        <select id="speedSel">
-          <option value="300" selected>0.3s</option>
-          <option value="600">0.6s</option>
-          <option value="1200">1.2s</option>
-          <option value="2000">2.0s</option>
-        </select>
-      </span>
-    </div>
+      <div class="row">
+        <span class="chip">Lejátszás:
+          <select id="speedSel">
+            <option value="300" selected>0.3s</option>
+            <option value="600">0.6s</option>
+            <option value="1200">1.2s</option>
+            <option value="2000">2.0s</option>
+          </select>
+        </span>
+      </div>
 
-    <div class="slider-wrap">
-      <button id="playBtn" class="btn" type="button" disabled>Lejátszás</button>
-      <input id="daySlider" type="range" min="0" max="0" value="0" step="1" disabled />
+      <div class="slider-wrap">
+        <button id="playBtn" class="btn" type="button" disabled>Lejátszás</button>
+        <input id="daySlider" type="range" min="0" max="0" value="0" step="1" disabled />
+      </div>
     </div>
   </div>
 
@@ -197,19 +276,28 @@
     <b>Jelmagyarázat</b>
     <div class="item"><span class="swatch" style="background:#6b0000;"></span>DeepState terület (kitöltés)</div>
     <div class="item"><span class="swatch" style="background:#d00;"></span>DeepState határ/frontvonal</div>
-    <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont</div>
+    <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont (kattintás: lat/lon + település lekérdezés)</div>
     <div class="item"><span class="swatch" style="background:#2b6cff;"></span>UA csapat jelölő</div>
     <div class="item"><span class="swatch" style="background:#000;"></span>RU csapat jelölő</div>
   </div>
 
 <script>
 (() => {
-  // ===== Konfig =====
-  const FIRMS_MAP_KEY = "44b266fd8324db5a0a9866017429dc43"; // <-- a saját kulcsod
+  // =========================
+  // Konfig
+  // =========================
+  const FIRMS_MAP_KEY = "44b266fd8324db5a0a9866017429dc43"; // <-- a saját kulcsod idézőjelekkel!
   const UKRAINE_BBOX = "22,44,40,53";
   const UKRAINE_BOUNDS_RAW = { sw: [44.0, 22.0], ne: [52.7, 40.2] }; // lat,lon (L nélkül)
 
-  // ===== UI refs =====
+  // =========================
+  // UI refs
+  // =========================
+  const leftPanel = document.getElementById("leftPanel");
+  const rightPanel = document.getElementById("rightPanel");
+  const leftToggleBtn = document.getElementById("leftToggleBtn");
+  const rightToggleBtn = document.getElementById("rightToggleBtn");
+
   const logEl = document.getElementById("log");
   const dateLabel = document.getElementById("dateLabel");
   const fileLabel = document.getElementById("fileLabel");
@@ -231,25 +319,55 @@
   const zoomSel = document.getElementById("zoomSel");
   const reloadTroopsBtn = document.getElementById("reloadTroopsBtn");
 
+  const gibsSel = document.getElementById("gibsSel");
+  const gibsOpacity = document.getElementById("gibsOpacity");
+
+  const kpiAreaDay = document.getElementById("kpiAreaDay");
+  const kpiAreaWeek = document.getElementById("kpiAreaWeek");
+  const kpiFirmsDay = document.getElementById("kpiFirmsDay");
+  const kpiFirmsWeek = document.getElementById("kpiFirmsWeek");
+
   function log(msg){ logEl.textContent += "\n" + msg; }
+  function setText(el, v){ el.textContent = v; }
 
-  // Globális hiba naplózás
-  window.addEventListener("error", (e) => {
-    log("JS ERROR: " + (e.message || e.error || e));
-  });
-  window.addEventListener("unhandledrejection", (e) => {
-    log("PROMISE ERROR: " + (e.reason || e));
+  // Panel collapse / mobile friendliness
+  function setCollapsed(panelEl, collapsed){
+    panelEl.classList.toggle("collapsed", collapsed);
+  }
+  function isMobile(){ return window.matchMedia && window.matchMedia("(max-width: 820px)").matches; }
+
+  // default mobile: collapsed
+  setCollapsed(leftPanel, isMobile());
+  setCollapsed(rightPanel, isMobile());
+
+  leftToggleBtn.addEventListener("click", () => setCollapsed(leftPanel, !leftPanel.classList.contains("collapsed")));
+  rightToggleBtn.addEventListener("click", () => setCollapsed(rightPanel, !rightPanel.classList.contains("collapsed")));
+
+  window.addEventListener("resize", () => {
+    // if switching to mobile, collapse both; if back to desktop, open both
+    if(isMobile()){
+      setCollapsed(leftPanel, true);
+      setCollapsed(rightPanel, true);
+    }else{
+      setCollapsed(leftPanel, false);
+      setCollapsed(rightPanel, false);
+    }
   });
 
-  // Leaflet ellenőrzés
+  // Global error logging
+  window.addEventListener("error", (e) => log("JS ERROR: " + (e.message || e.error || e)));
+  window.addEventListener("unhandledrejection", (e) => log("PROMISE ERROR: " + (e.reason || e)));
+
   if (!window.L) {
-    log("HIBA: Leaflet (L) nem töltött be. Ellenőrizd, hogy a CDN elérhető-e.");
-    keyStatus.textContent = "FIRMS kulcs: (Leaflet hiba miatt nem indul)";
+    log("HIBA: Leaflet (L) nem töltött be. CDN gond lehet.");
+    keyStatus.textContent = "FIRMS kulcs: (Leaflet hiba)";
     return;
   }
 
-  // ===== Map init =====
-  const map = L.map("map").setView([49.0, 31.0], 6);
+  // =========================
+  // Map init
+  // =========================
+  const map = L.map("map", { zoomControl: true }).setView([49.0, 31.0], 6);
 
   const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
@@ -272,12 +390,14 @@
     L.latLng(UKRAINE_BOUNDS_RAW.ne[0], UKRAINE_BOUNDS_RAW.ne[1])
   );
 
+  // =========================
   // Layers
+  // =========================
   let deepStateLayer = null;
   let gibsLayer = null;
 
   const firmsLayer = L.layerGroup().addTo(map);
-  let firmsByDate = {};
+  let firmsByDate = {}; // { "YYYY-MM-DD": [pt,pt...] }
 
   const troopsLayer = L.layerGroup().addTo(map);
 
@@ -293,18 +413,44 @@
 
   toggleLog.addEventListener("change", () => logEl.classList.toggle("hidden", !toggleLog.checked));
 
+  // =========================
+  // GIBS overlay (NASA heatmap)
+  // =========================
+  function gibsTemplateFor(sel){
+    // Date format must be YYYY-MM-DD
+    if(sel === "modis1k"){
+      return "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Terra_Thermal_Anomalies_All/default/{date}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png";
+    }
+    // default: VIIRS SNPP 375m
+    return "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_Thermal_Anomalies_375m_All/default/{date}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png";
+  }
+
   function setGibs(dateStr){
-    const url = `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_Thermal_Anomalies_375m_All/default/${dateStr}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png`;
+    const tpl = gibsTemplateFor(gibsSel.value);
+    const url = tpl.replace("{date}", dateStr);
+
+    const op = Number(gibsOpacity.value || "0.55");
     if (!gibsLayer) {
-      gibsLayer = L.tileLayer(url, { opacity: 0.55, maxZoom: 19, maxNativeZoom: 9, attribution: "NASA GIBS" });
+      gibsLayer = L.tileLayer(url, {
+        opacity: op,
+        maxZoom: 19,
+        maxNativeZoom: 9,
+        attribution: "NASA GIBS"
+      });
     } else {
       gibsLayer.setUrl(url);
+      gibsLayer.setOpacity(op);
     }
     setVisible(gibsLayer, toggleGibs.checked);
   }
-  toggleGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
 
+  toggleGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
+  gibsSel.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
+  gibsOpacity.addEventListener("input", () => { if(gibsLayer) gibsLayer.setOpacity(Number(gibsOpacity.value || "0.55")); });
+
+  // =========================
   // Zoom
+  // =========================
   let clickZoomEnabled = false;
   zoomSel.addEventListener("change", () => { clickZoomEnabled = (zoomSel.value === "click"); });
 
@@ -326,13 +472,18 @@
   }
   zoomBtn.addEventListener("click", doZoom);
 
+  // =========================
   // Fetch helpers
+  // =========================
   async function loadJson(url){
     const r = await fetch(url, { cache: "no-store" });
     if(!r.ok) throw new Error(`Fetch hiba: ${url} → HTTP ${r.status}`);
     return await r.json();
   }
 
+  // =========================
+  // DeepState rendering + area calculation
+  // =========================
   function renderDeepState(data){
     if(deepStateLayer) map.removeLayer(deepStateLayer);
     deepStateLayer = L.geoJSON(data, {
@@ -341,7 +492,64 @@
     setVisible(deepStateLayer, toggleDeep.checked);
   }
 
+  // Project lon/lat to meters (EPSG3857) and compute polygon area (shoelace), with holes handling.
+  function ringAreaMeters2(ringLonLat){
+    // ringLonLat: [[lon,lat], ...]
+    if(!ringLonLat || ringLonLat.length < 4) return 0;
+    let area = 0;
+    for(let i=0; i<ringLonLat.length-1; i++){
+      const a = ringLonLat[i], b = ringLonLat[i+1];
+      const pa = L.CRS.EPSG3857.project(L.latLng(a[1], a[0]));
+      const pb = L.CRS.EPSG3857.project(L.latLng(b[1], b[0]));
+      area += (pa.x * pb.y - pb.x * pa.y);
+    }
+    return area / 2; // signed
+  }
+
+  function geomAreaMeters2(geom){
+    if(!geom) return 0;
+    const t = geom.type;
+    const coords = geom.coordinates;
+    let total = 0;
+
+    if(t === "Polygon"){
+      // coords: [outerRing, hole1, hole2...]
+      if(coords.length === 0) return 0;
+      const outer = Math.abs(ringAreaMeters2(coords[0]));
+      let holes = 0;
+      for(let i=1; i<coords.length; i++) holes += Math.abs(ringAreaMeters2(coords[i]));
+      total += Math.max(0, outer - holes);
+      return total;
+    }
+
+    if(t === "MultiPolygon"){
+      // coords: [ polygon, polygon, ... ] each polygon as above
+      for(const poly of coords){
+        if(!poly || poly.length === 0) continue;
+        const outer = Math.abs(ringAreaMeters2(poly[0]));
+        let holes = 0;
+        for(let i=1; i<poly.length; i++) holes += Math.abs(ringAreaMeters2(poly[i]));
+        total += Math.max(0, outer - holes);
+      }
+      return total;
+    }
+
+    return 0;
+  }
+
+  function featureCollectionAreaKm2(fc){
+    if(!fc || !Array.isArray(fc.features)) return 0;
+    let m2 = 0;
+    for(const f of fc.features){
+      if(!f || !f.geometry) continue;
+      m2 += geomAreaMeters2(f.geometry);
+    }
+    return m2 / 1e6;
+  }
+
+  // =========================
   // FIRMS
+  // =========================
   function parseCSV(csvText){
     const lines = csvText.split(/\r?\n/).filter(Boolean);
     if(lines.length <= 1) return [];
@@ -411,6 +619,30 @@
     if(currentDate) renderFIRMSForDate(currentDate);
   }
 
+  function fmtTime(acq){
+    const timeStr = (acq || "").toString().padStart(4, "0");
+    return timeStr.length === 4 ? (timeStr.slice(0,2) + ":" + timeStr.slice(2,4)) : timeStr;
+  }
+
+  // Reverse geocode on demand (button click in popup)
+  window.lookupPlace = async function(lat, lon, elId){
+    const el = document.getElementById(elId);
+    if(!el) return;
+    el.textContent = "Település: betöltés…";
+
+    // Nominatim rate limit-friendly: only on click.
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&zoom=12&addressdetails=1`;
+    try{
+      const r = await fetch(url, { cache: "no-store" });
+      if(!r.ok) throw new Error("HTTP " + r.status);
+      const j = await r.json();
+      const name = j?.name || j?.display_name || "Nincs találat";
+      el.textContent = "Település: " + name;
+    }catch(e){
+      el.textContent = "Település: hiba (" + String(e) + ")";
+    }
+  };
+
   function renderFIRMSForDate(dateStr){
     firmsLayer.clearLayers();
     if(!toggleFirms.checked) return;
@@ -425,23 +657,35 @@
 
     const use = (pts.length > maxPts) ? pts.slice(0, maxPts) : pts;
 
-    for(const p of use){
+    for(let idx=0; idx<use.length; idx++){
+      const p = use[idx];
       const frp = Number(p.frp);
       const radius = Number.isFinite(frp) ? Math.max(3, Math.min(9, 2 + frp/20)) : 4;
 
-      const timeStr = (p.acq_time || "").toString().padStart(4, "0");
-      const hh = timeStr.slice(0,2), mm = timeStr.slice(2,4);
+      const placeElId = `place_${dateStr.replaceAll("-","")}_${idx}_${Math.floor(Math.random()*1e6)}`;
+
+      const popupHtml =
+        `<b>FIRMS hőpont</b><br>` +
+        `Dátum: ${p.acq_date}<br>` +
+        `Idő (UTC): ${fmtTime(p.acq_time)}<br>` +
+        `Lat/Lon: ${p.lat.toFixed(5)}, ${p.lon.toFixed(5)}<br>` +
+        `FRP: ${p.frp || "-"} | Conf: ${p.conf || "-"} | Sat: ${p.sat || "-"}<br>` +
+        `<div id="${placeElId}" style="margin-top:6px;">Település: –</div>` +
+        `<button style="margin-top:6px;border:0;border-radius:10px;padding:7px 10px;background:#111;color:#fff;cursor:pointer;font-size:12px;" ` +
+        `onclick="lookupPlace(${p.lat},${p.lon},'${placeElId}')">Település betöltése</button>`;
 
       firmsLayer.addLayer(
         L.circleMarker([p.lat, p.lon], { radius, color:"#ff5500", weight:1, opacity:0.9, fillOpacity:0.65 })
-          .bindPopup(`<b>FIRMS hőpont</b><br>Dátum: ${p.acq_date}<br>Idő (UTC): ${hh}:${mm}<br>FRP: ${p.frp}<br>Műhold: ${p.sat}`)
+          .bindPopup(popupHtml)
       );
     }
 
     log(`FIRMS: ${use.length}/${pts.length} pont kirajzolva (${dateStr})`);
   }
 
-  // Troops
+  // =========================
+  // Troops (manual GeoJSON)
+  // =========================
   async function loadTroops(){
     troopsLayer.clearLayers();
     try{
@@ -463,8 +707,10 @@
   }
   reloadTroopsBtn.addEventListener("click", loadTroops);
 
+  // =========================
   // Timeline + play
-  let dates = [];
+  // =========================
+  let dates = []; // [{date,name,raw}]
   let currentDate = null;
 
   let playing = false;
@@ -496,28 +742,127 @@
 
   speedSel.addEventListener("change", () => { if(playing){ stopPlay(); startPlay(); } });
 
-  firmsDaysSel.addEventListener("change", fetchFIRMSCache);
+  firmsDaysSel.addEventListener("change", async () => {
+    await fetchFIRMSCache();
+    updateSummaryForIndex(Number(slider.value));
+  });
+
   maxPtsSel.addEventListener("change", () => { if(currentDate) renderFIRMSForDate(currentDate); });
 
+  // =========================
+  // Summary (daily & weekly)
+  // =========================
+  const deepStateAreaCache = new Map(); // rawUrl -> areaKm2
+
+  function fmtDeltaKm2(d){
+    if(d === null || d === undefined || !Number.isFinite(d)) return "n/a";
+    const sign = d > 0 ? "+" : (d < 0 ? "−" : "±");
+    const val = Math.abs(d);
+    if(val >= 1000) return `${sign}${val.toFixed(0)} km²`;
+    if(val >= 100) return `${sign}${val.toFixed(1)} km²`;
+    return `${sign}${val.toFixed(2)} km²`;
+  }
+  function fmtDeltaCount(d){
+    if(d === null || d === undefined || !Number.isFinite(d)) return "n/a";
+    const sign = d > 0 ? "+" : (d < 0 ? "−" : "±");
+    return `${sign}${Math.abs(d)}`;
+  }
+
+  async function getDeepStateAreaKm2ByIndex(i){
+    const item = dates[i];
+    if(!item) return null;
+    if(deepStateAreaCache.has(item.raw)) return deepStateAreaCache.get(item.raw);
+
+    try{
+      const data = await loadJson(item.raw);
+      const km2 = featureCollectionAreaKm2(data);
+      deepStateAreaCache.set(item.raw, km2);
+      return km2;
+    }catch(e){
+      return null;
+    }
+  }
+
+  function firmsCountForDate(dateStr){
+    const pts = firmsByDate[dateStr] || null;
+    return pts ? pts.length : null;
+  }
+
+  function firmsSumForLastNDatesFromIndex(i, n){
+    // sum only if firmsByDate has those dates; if not available => null
+    let sum = 0;
+    let any = false;
+    for(let k=0; k<n; k++){
+      const j = i - k;
+      if(j < 0) break;
+      const d = dates[j]?.date;
+      if(!d) continue;
+      const c = firmsCountForDate(d);
+      if(c === null) continue;
+      sum += c;
+      any = true;
+    }
+    return any ? sum : null;
+  }
+
+  async function updateSummaryForIndex(i){
+    // DeepState deltas
+    const areaNow = await getDeepStateAreaKm2ByIndex(i);
+    const areaPrev = await getDeepStateAreaKm2ByIndex(i-1);
+    const areaWeek = await getDeepStateAreaKm2ByIndex(i-7);
+
+    const dDay = (areaNow !== null && areaPrev !== null) ? (areaNow - areaPrev) : null;
+    const dWeek = (areaNow !== null && areaWeek !== null) ? (areaNow - areaWeek) : null;
+
+    kpiAreaDay.textContent = fmtDeltaKm2(dDay);
+    kpiAreaWeek.textContent = fmtDeltaKm2(dWeek);
+
+    // FIRMS deltas (only for recent days within FIRMS API window)
+    const dateNow = dates[i]?.date;
+    const datePrev = dates[i-1]?.date;
+
+    const cNow = dateNow ? firmsCountForDate(dateNow) : null;
+    const cPrev = datePrev ? firmsCountForDate(datePrev) : null;
+
+    const fdDay = (cNow !== null && cPrev !== null) ? (cNow - cPrev) : null;
+    const sum7 = firmsSumForLastNDatesFromIndex(i, 7);
+
+    kpiFirmsDay.textContent = (fdDay === null) ? "n/a" : fmtDeltaCount(fdDay);
+    kpiFirmsWeek.textContent = (sum7 === null) ? "n/a" : String(sum7);
+  }
+
+  // =========================
+  // Load by index
+  // =========================
   async function loadByIndex(i, doZoomNow=true){
     const item = dates[i];
     if(!item) return;
 
     currentDate = item.date;
-    dateLabel.textContent = item.date;
-    fileLabel.textContent = item.name;
+    setText(dateLabel, item.date);
+    setText(fileLabel, item.name);
 
     const data = await loadJson(item.raw);
     renderDeepState(data);
 
+    // Keep GIBS synced to selected date if enabled
     setGibs(item.date);
+
+    // FIRMS points for selected day
     renderFIRMSForDate(item.date);
+
+    // Summary update
+    updateSummaryForIndex(i);
 
     if(doZoomNow) doZoom();
   }
 
+  // =========================
+  // Init
+  // =========================
   async function init(){
     log("Leaflet OK. Térkép indul…");
+
     try{
       dates = await loadJson("./data/deepstate_dates.json");
       if(!Array.isArray(dates) || dates.length === 0) throw new Error("Üres deepstate_dates.json");
@@ -529,16 +874,30 @@
 
       slider.addEventListener("input", () => { stopPlay(); loadByIndex(Number(slider.value), false); });
 
+      // Initial day
       await loadByIndex(dates.length - 1, true);
+
+      // FIRMS (async cache)
       await fetchFIRMSCache();
+
+      // Troops (optional file)
       await loadTroops();
 
       playBtn.disabled = false;
       log("Kész ✔");
+
+      // If user enables GIBS, it is already synced (setGibs called in loadByIndex)
+      setVisible(gibsLayer, toggleGibs.checked);
     }catch(e){
       log("INIT HIBA: " + String(e));
     }
   }
+
+  // Layer toggles that depend on currentDate / gibsLayer existence
+  toggleGibs.addEventListener("change", () => {
+    if(!currentDate) return;
+    setGibs(currentDate);
+  });
 
   init();
 })();
