@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ukrán–orosz háború – DeepState + FIRMS + Troops</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <!-- Leaflet (jsDelivr – stabil) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <style>
     html, body { height: 100%; margin: 0; }
-    #map { height: 100%; }
+    #map { height: 100%; width: 100%; background: #fff; }
 
     :root{
       --panel-bg: rgba(255,255,255,0.95);
@@ -41,7 +42,6 @@
     .chip {
       display:inline-flex; align-items:center; gap:8px;
       background:#f2f2f2; padding:7px 10px; border-radius:999px; font-size:12px;
-      max-width: 100%;
       user-select:none;
     }
     .chip b { font-weight: 700; }
@@ -108,10 +108,10 @@
 <body>
   <div id="map"></div>
 
-  <!-- LEFT: Controls -->
+  <!-- LEFT -->
   <div class="panel leftPanel">
     <h3>Rétegek & nézet</h3>
-    <div class="muted">Kattintás zoom módban: kattints a térképre → oda nagyít.</div>
+    <div class="muted">Ha fehér a térkép, a Naplóban látod mi a hiba.</div>
 
     <div class="row">
       <label class="chip"><input id="toggleDeep" type="checkbox" checked> DeepState</label>
@@ -168,7 +168,7 @@
     <div id="log" class="log">Indul…</div>
   </div>
 
-  <!-- RIGHT: Timeline -->
+  <!-- RIGHT -->
   <div class="panel rightPanel">
     <h3>Idősáv</h3>
     <div class="row">
@@ -203,12 +203,13 @@
   </div>
 
 <script>
-  // ===== FIRMS MAP_KEY =====
-  const FIRMS_MAP_KEY = "";44b266fd8324db5a0a9866017429dc43
-
+(() => {
+  // ===== Konfig =====
+  const FIRMS_MAP_KEY = "44b266fd8324db5a0a9866017429dc43"; // <-- a saját kulcsod
   const UKRAINE_BBOX = "22,44,40,53";
-  const UKRAINE_BOUNDS = L.latLngBounds([44.0, 22.0], [52.7, 40.2]);
+  const UKRAINE_BOUNDS_RAW = { sw: [44.0, 22.0], ne: [52.7, 40.2] }; // lat,lon (L nélkül)
 
+  // ===== UI refs =====
   const logEl = document.getElementById("log");
   const dateLabel = document.getElementById("dateLabel");
   const fileLabel = document.getElementById("fileLabel");
@@ -232,6 +233,22 @@
 
   function log(msg){ logEl.textContent += "\n" + msg; }
 
+  // Globális hiba naplózás
+  window.addEventListener("error", (e) => {
+    log("JS ERROR: " + (e.message || e.error || e));
+  });
+  window.addEventListener("unhandledrejection", (e) => {
+    log("PROMISE ERROR: " + (e.reason || e));
+  });
+
+  // Leaflet ellenőrzés
+  if (!window.L) {
+    log("HIBA: Leaflet (L) nem töltött be. Ellenőrizd, hogy a CDN elérhető-e.");
+    keyStatus.textContent = "FIRMS kulcs: (Leaflet hiba miatt nem indul)";
+    return;
+  }
+
+  // ===== Map init =====
   const map = L.map("map").setView([49.0, 31.0], 6);
 
   const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -250,6 +267,12 @@
     else { map.removeLayer(esriSat); osm.addTo(map); }
   });
 
+  const UKRAINE_BOUNDS = L.latLngBounds(
+    L.latLng(UKRAINE_BOUNDS_RAW.sw[0], UKRAINE_BOUNDS_RAW.sw[1]),
+    L.latLng(UKRAINE_BOUNDS_RAW.ne[0], UKRAINE_BOUNDS_RAW.ne[1])
+  );
+
+  // Layers
   let deepStateLayer = null;
   let gibsLayer = null;
 
@@ -268,25 +291,17 @@
   toggleFirms.addEventListener("change", () => setVisible(firmsLayer, toggleFirms.checked));
   toggleTroops.addEventListener("change", () => setVisible(troopsLayer, toggleTroops.checked));
 
-  toggleLog.addEventListener("change", () => {
-    logEl.classList.toggle("hidden", !toggleLog.checked);
-  });
+  toggleLog.addEventListener("change", () => logEl.classList.toggle("hidden", !toggleLog.checked));
 
   function setGibs(dateStr){
     const url = `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_Thermal_Anomalies_375m_All/default/${dateStr}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png`;
     if (!gibsLayer) {
-      gibsLayer = L.tileLayer(url, {
-        opacity: 0.55,
-        maxZoom: 19,
-        maxNativeZoom: 9,
-        attribution: "NASA GIBS"
-      });
+      gibsLayer = L.tileLayer(url, { opacity: 0.55, maxZoom: 19, maxNativeZoom: 9, attribution: "NASA GIBS" });
     } else {
       gibsLayer.setUrl(url);
     }
     setVisible(gibsLayer, toggleGibs.checked);
   }
-
   toggleGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
 
   // Zoom
@@ -311,57 +326,44 @@
   }
   zoomBtn.addEventListener("click", doZoom);
 
+  // Fetch helpers
   async function loadJson(url){
     const r = await fetch(url, { cache: "no-store" });
-    if(!r.ok) throw new Error("HTTP " + r.status + " " + r.statusText);
+    if(!r.ok) throw new Error(`Fetch hiba: ${url} → HTTP ${r.status}`);
     return await r.json();
   }
 
   function renderDeepState(data){
     if(deepStateLayer) map.removeLayer(deepStateLayer);
     deepStateLayer = L.geoJSON(data, {
-      style: () => ({
-        color:"#d00",
-        weight:2.2,
-        opacity:0.95,
-        fillColor:"#6b0000",
-        fillOpacity:0.28
-      })
+      style: () => ({ color:"#d00", weight:2.2, opacity:0.95, fillColor:"#6b0000", fillOpacity:0.28 })
     });
     setVisible(deepStateLayer, toggleDeep.checked);
   }
 
-  // FIRMS CSV parse
+  // FIRMS
   function parseCSV(csvText){
     const lines = csvText.split(/\r?\n/).filter(Boolean);
     if(lines.length <= 1) return [];
     const header = lines[0].split(",");
     const idx = (name) => header.indexOf(name);
 
-    const iLat = idx("latitude");
-    const iLon = idx("longitude");
-    const iBright = idx("brightness");
-    const iDate = idx("acq_date");
-    const iTime = idx("acq_time");
-    const iSat = idx("satellite");
-    const iConf = idx("confidence");
-    const iFRP = idx("frp");
-    const iDN = idx("daynight");
+    const iLat = idx("latitude"), iLon = idx("longitude"), iDate = idx("acq_date"), iTime = idx("acq_time");
+    const iBright = idx("brightness"), iSat = idx("satellite"), iConf = idx("confidence"), iFRP = idx("frp"), iDN = idx("daynight");
 
     const out = [];
     for(let k=1; k<lines.length; k++){
       const c = lines[k].split(",");
       if(c.length < header.length) continue;
-      const lat = parseFloat(c[iLat]);
-      const lon = parseFloat(c[iLon]);
+      const lat = parseFloat(c[iLat]), lon = parseFloat(c[iLon]);
       if(!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
 
       out.push({
         lat, lon,
-        bright: c[iBright] ?? "",
-        frp: c[iFRP] ?? "",
         acq_date: c[iDate] ?? "",
         acq_time: c[iTime] ?? "",
+        bright: c[iBright] ?? "",
+        frp: c[iFRP] ?? "",
         sat: c[iSat] ?? "",
         conf: c[iConf] ?? "",
         daynight: c[iDN] ?? ""
@@ -389,20 +391,16 @@
     for(const prod of products){
       const url = `https://firms.modaps.eosdis.nasa.gov/api/area/csv/${encodeURIComponent(FIRMS_MAP_KEY)}/${prod}/${UKRAINE_BBOX}/${days}`;
       log(`FIRMS fetch: ${prod} | last ${days} days`);
-      try{
-        const r = await fetch(url, { cache:"no-store" });
-        if(!r.ok){ log(`FIRMS HTTP hiba (${prod}): ${r.status}`); continue; }
-        const txt = await r.text();
-        const pts = parseCSV(txt);
-        total += pts.length;
+      const r = await fetch(url, { cache:"no-store" });
+      if(!r.ok){ log(`FIRMS HTTP hiba (${prod}): ${r.status}`); continue; }
+      const txt = await r.text();
+      const pts = parseCSV(txt);
+      total += pts.length;
 
-        for(const p of pts){
-          if(!p.acq_date) continue;
-          if(!firmsByDate[p.acq_date]) firmsByDate[p.acq_date] = [];
-          firmsByDate[p.acq_date].push(p);
-        }
-      }catch(e){
-        log(`FIRMS fetch hiba (${prod}): ` + String(e));
+      for(const p of pts){
+        if(!p.acq_date) continue;
+        if(!firmsByDate[p.acq_date]) firmsByDate[p.acq_date] = [];
+        firmsByDate[p.acq_date].push(p);
       }
     }
 
@@ -434,61 +432,38 @@
       const timeStr = (p.acq_time || "").toString().padStart(4, "0");
       const hh = timeStr.slice(0,2), mm = timeStr.slice(2,4);
 
-      const m = L.circleMarker([p.lat, p.lon], {
-        radius,
-        color:"#ff5500",
-        weight: 1,
-        opacity: 0.9,
-        fillOpacity: 0.65
-      }).bindPopup(
-        `<b>FIRMS hőpont</b><br>` +
-        `Dátum: ${p.acq_date}<br>` +
-        `Idő (UTC): ${hh}:${mm}<br>` +
-        `Brightness: ${p.bright}<br>` +
-        `FRP: ${p.frp}<br>` +
-        `Műhold: ${p.sat}<br>` +
-        `Confidence: ${p.conf}<br>` +
-        `Day/Night: ${p.daynight}`
+      firmsLayer.addLayer(
+        L.circleMarker([p.lat, p.lon], { radius, color:"#ff5500", weight:1, opacity:0.9, fillOpacity:0.65 })
+          .bindPopup(`<b>FIRMS hőpont</b><br>Dátum: ${p.acq_date}<br>Idő (UTC): ${hh}:${mm}<br>FRP: ${p.frp}<br>Műhold: ${p.sat}`)
       );
-
-      firmsLayer.addLayer(m);
     }
 
     log(`FIRMS: ${use.length}/${pts.length} pont kirajzolva (${dateStr})`);
   }
 
-  // ===== Troops GeoJSON loader =====
+  // Troops
   async function loadTroops(){
     troopsLayer.clearLayers();
     try{
       const gj = await loadJson("./data/troops.geojson");
-
       const layer = L.geoJSON(gj, {
         pointToLayer: (f, latlng) => {
-          const side = (f.properties && f.properties.side) ? String(f.properties.side).toLowerCase() : "unknown";
-          const color = side === "ua" ? "#2b6cff" : (side === "ru" ? "#000000" : "#666");
-          const label = (f.properties && f.properties.label) ? f.properties.label : "Ismeretlen";
-
-          return L.circleMarker(latlng, {
-            radius: 7,
-            color,
-            weight: 2,
-            fillOpacity: 0.65
-          }).bindPopup(label);
+          const side = (f.properties?.side ?? "unknown").toString().toLowerCase();
+          const color = side === "ua" ? "#2b6cff" : (side === "ru" ? "#000" : "#666");
+          const label = f.properties?.label ?? "Ismeretlen";
+          return L.circleMarker(latlng, { radius: 7, color, weight: 2, fillOpacity: 0.65 }).bindPopup(label);
         }
       });
-
       troopsLayer.addLayer(layer);
       setVisible(troopsLayer, toggleTroops.checked);
-      log("Troops: betöltve (data/troops.geojson) ✔");
+      log("Troops: betöltve ✔ (data/troops.geojson)");
     }catch(e){
       log("Troops: NINCS data/troops.geojson → ezért nem látszik semmi.");
     }
   }
+  reloadTroopsBtn.addEventListener("click", loadTroops);
 
-  reloadTroopsBtn.addEventListener("click", () => loadTroops());
-
-  // ===== Timeline + play =====
+  // Timeline + play
   let dates = [];
   let currentDate = null;
 
@@ -519,12 +494,9 @@
     else startPlay();
   });
 
-  speedSel.addEventListener("change", () => {
-    if(!playing) return;
-    stopPlay(); startPlay();
-  });
+  speedSel.addEventListener("change", () => { if(playing){ stopPlay(); startPlay(); } });
 
-  firmsDaysSel.addEventListener("change", () => fetchFIRMSCache());
+  firmsDaysSel.addEventListener("change", fetchFIRMSCache);
   maxPtsSel.addEventListener("change", () => { if(currentDate) renderFIRMSForDate(currentDate); });
 
   async function loadByIndex(i, doZoomNow=true){
@@ -535,22 +507,18 @@
     dateLabel.textContent = item.date;
     fileLabel.textContent = item.name;
 
-    try{
-      const data = await loadJson(item.raw);
-      renderDeepState(data);
+    const data = await loadJson(item.raw);
+    renderDeepState(data);
 
-      setGibs(item.date);
-      renderFIRMSForDate(item.date);
+    setGibs(item.date);
+    renderFIRMSForDate(item.date);
 
-      if(doZoomNow) doZoom();
-    }catch(e){
-      log("HIBA: " + String(e && e.stack ? e.stack : e));
-    }
+    if(doZoomNow) doZoom();
   }
 
   async function init(){
+    log("Leaflet OK. Térkép indul…");
     try{
-      log("Fetch: ./data/deepstate_dates.json");
       dates = await loadJson("./data/deepstate_dates.json");
       if(!Array.isArray(dates) || dates.length === 0) throw new Error("Üres deepstate_dates.json");
 
@@ -559,23 +527,21 @@
       slider.value = String(dates.length - 1);
       slider.disabled = false;
 
-      slider.addEventListener("input", () => {
-        stopPlay();
-        loadByIndex(Number(slider.value), false);
-      });
+      slider.addEventListener("input", () => { stopPlay(); loadByIndex(Number(slider.value), false); });
 
       await loadByIndex(dates.length - 1, true);
       await fetchFIRMSCache();
       await loadTroops();
 
       playBtn.disabled = false;
-      log("Kész ✔ (Ha csapatokat akarsz: add hozzá a data/troops.geojson fájlt.)");
+      log("Kész ✔");
     }catch(e){
-      log("INIT HIBA: " + String(e && e.stack ? e.stack : e));
+      log("INIT HIBA: " + String(e));
     }
   }
 
   init();
+})();
 </script>
 </body>
 </html>
