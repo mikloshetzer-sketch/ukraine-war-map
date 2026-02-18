@@ -3,7 +3,7 @@ name: Update DeepState GeoJSON (daily) + dates index
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 3 * * *" # naponta 03:15 UTC
+    - cron: "15 3 * * *"
 
 permissions:
   contents: write
@@ -23,11 +23,7 @@ jobs:
       - name: Prepare folders
         run: |
           mkdir -p data
-          mkdir -p scripts
 
-      # EZ A RÉSZ NÁLAD MÁR VALÓSZÍNŰ MEGVAN:
-      # - listázás + latest letöltése + deepstate_latest.geojson frissítése + deepstate_dates.json frissítése
-      # Ha nálad más a logika, ezt a stepet hagyd meg a sajátodra, csak a commit stepet cseréld!
       - name: Build dates index + download latest
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -40,48 +36,35 @@ jobs:
           curl -sS -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.v3+json" \
             "$API" > listing.json
 
-          # fájlnevek kigyűjtése
           jq -r '.[].name' listing.json | grep -E '^deepstatemap_data_[0-9]{8}\.geojson$' | sort > names.txt
 
           LATEST="$(tail -n 1 names.txt)"
           echo "Latest: $LATEST"
 
-          # letöltés raw URL-ről
           RAW_URL="https://raw.githubusercontent.com/cyterat/deepstate-map-data/main/data/$LATEST"
           echo "Downloading: $RAW_URL"
 
           curl -sS "$RAW_URL" -o "data/deepstate_latest.geojson"
 
-          # deepstate_dates.json generálása (URL-kel!)
-          python3 - <<'PY'
-import json, re
-from pathlib import Path
+          python3 -c "import json,re; \
+from pathlib import Path; \
+names=Path('names.txt').read_text(encoding='utf-8').splitlines(); \
+out=[]; \
+import datetime; \
+for n in names: \
+ m=re.search(r'deepstatemap_data_(\\d{8})\\.geojson',n); \
+ if not m: continue; \
+ d=m.group(1); \
+ out.append({'date':f'{d[0:4]}-{d[4:6]}-{d[6:8]}','name':n,'raw':f'https://raw.githubusercontent.com/cyterat/deepstate-map-data/main/data/{n}'}); \
+Path('data/deepstate_dates.json').write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8'); \
+print('Wrote data/deepstate_dates.json items:',len(out))"
 
-names = Path("names.txt").read_text(encoding="utf-8").splitlines()
-out = []
-for n in names:
-    m = re.search(r"deepstatemap_data_(\d{8})\.geojson", n)
-    if not m: 
-        continue
-    d = m.group(1)
-    out.append({
-        "date": f"{d[0:4]}-{d[4:6]}-{d[6:8]}",
-        "name": n,
-        "raw": f"https://raw.githubusercontent.com/cyterat/deepstate-map-data/main/data/{n}"
-    })
-Path("data/deepstate_dates.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-print("Wrote data/deepstate_dates.json", "items:", len(out))
-PY
-
-      # ✅ EZ A LÉNYEG: mindent hozzáadunk, nem csak pár fájlt
       - name: Commit & push if changed
         run: |
           set -e
-
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # FONTOS: untracked fájlokat is addol!
           git add -A
 
           if git diff --cached --quiet; then
