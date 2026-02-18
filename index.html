@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrán–orosz háború – térkép (DeepState timeline)</title>
+  <title>Ukrán–orosz háború – térkép (DeepState timeline + hőpontok)</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -18,7 +18,7 @@
       top: 12px;
       left: 12px;
       right: 12px;
-      max-width: 760px;
+      max-width: 860px;
       background: rgba(255,255,255,0.95);
       padding: 10px 12px;
       border-radius: 10px;
@@ -57,7 +57,7 @@
       border-radius: 10px;
       font-size: 12px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      max-width: 320px;
+      max-width: 360px;
     }
     .legend b { display:block; margin-bottom:6px; }
     .legend .item { display:flex; align-items:center; gap:8px; margin:4px 0; }
@@ -81,15 +81,21 @@
   <div id="map"></div>
 
   <div class="panel">
-    <b>Ukrán–orosz háború – DeepState frontvonal (timeline)</b><br>
+    <b>Ukrán–orosz háború – DeepState frontvonal (timeline) + műholdas hőpontok</b><br>
     <span class="muted">
-      Csúszkával visszajátszható napi állapotok. Lejátszás sebessége állítható.
+      A “Hőpontok” réteg NASA GIBS (Thermal Anomalies/Fire) napi raszter overlay. Nem minden hőpont harci esemény (lehet mezőgazdasági/erdőtűz),
+      de OSINT-ben jó proxy.
     </span>
 
     <div class="row">
       <label class="chip">
         <input id="toggleDeepState" type="checkbox" checked />
         DeepState réteg
+      </label>
+
+      <label class="chip">
+        <input id="toggleFires" type="checkbox" checked />
+        Hőpontok (GIBS)
       </label>
 
       <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
@@ -100,11 +106,25 @@
       <span class="chip">
         Sebesség:
         <select id="speedSel">
-          <option value="300">0.3s</option>
-          <option value="600" selected>0.6s</option>
+          <option value="300" selected>0.3s</option>
+          <option value="600">0.6s</option>
           <option value="1200">1.2s</option>
           <option value="2000">2.0s</option>
         </select>
+      </span>
+
+      <span class="chip">
+        Szenzor:
+        <select id="sensorSel">
+          <option value="VIIRS_SNPP_Thermal_Anomalies_375m_All" selected>VIIRS (375m)</option>
+          <option value="MODIS_Terra_Thermal_Anomalies_All">MODIS Terra</option>
+          <option value="MODIS_Aqua_Thermal_Anomalies_All">MODIS Aqua</option>
+        </select>
+      </span>
+
+      <span class="chip">
+        Hőpont áttetszőség:
+        <input id="opacityRange" type="range" min="0" max="100" value="55" step="1" />
       </span>
     </div>
 
@@ -120,6 +140,7 @@
     <b>Jelmagyarázat</b>
     <div class="item"><span class="swatch" style="background:#6b0000;"></span>Orosz ellenőrzés / megszállt terület (poligon kitöltés)</div>
     <div class="item"><span class="swatch" style="background:#d00;"></span>Frontvonal / határ (poligon kontúr)</div>
+    <div class="item"><span class="swatch" style="background:#ff5a00;"></span>Hőpontok (műholdas thermal anomalies) – napi réteg</div>
   </div>
 
   <script>
@@ -130,7 +151,10 @@
     const playBtn = document.getElementById('playBtn');
     const zoomBtn = document.getElementById('zoomBtn');
     const toggle = document.getElementById('toggleDeepState');
+    const toggleFires = document.getElementById('toggleFires');
     const speedSel = document.getElementById('speedSel');
+    const sensorSel = document.getElementById('sensorSel');
+    const opacityRange = document.getElementById('opacityRange');
 
     function log(msg) { logEl.textContent += "\n" + msg; }
 
@@ -141,16 +165,21 @@
     }).addTo(map);
 
     let deepStateLayer = null;
+    let firesLayer = null;
+
     let dates = [];
     let playing = false;
     let timer = null;
+    let currentDate = null; // YYYY-MM-DD
 
-    function setLayerVisible(visible) {
-      if (!deepStateLayer) return;
-      if (visible) deepStateLayer.addTo(map);
-      else map.removeLayer(deepStateLayer);
+    function setLayerVisible(layer, visible) {
+      if (!layer) return;
+      if (visible) layer.addTo(map);
+      else map.removeLayer(layer);
     }
-    toggle.addEventListener('change', () => setLayerVisible(toggle.checked));
+
+    toggle.addEventListener('change', () => setLayerVisible(deepStateLayer, toggle.checked));
+    toggleFires.addEventListener('change', () => setLayerVisible(firesLayer, toggleFires.checked));
 
     zoomBtn.addEventListener('click', () => {
       if (!deepStateLayer) return;
@@ -175,8 +204,7 @@
     function startPlay() {
       playing = true;
       playBtn.textContent = "Megállítás";
-      const intervalMs = Number(speedSel.value) || 600;
-
+      const intervalMs = Number(speedSel.value) || 300;
       timer = setInterval(stepOnce, intervalMs);
     }
 
@@ -187,12 +215,11 @@
 
     speedSel.addEventListener('change', () => {
       if (!playing) return;
-      // új időzítő a kiválasztott sebességgel
       stopPlay();
       startPlay();
     });
 
-    async function loadGeoJson(url) {
+    async function loadJson(url) {
       const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error("HTTP " + res.status + " " + res.statusText);
       return await res.json();
@@ -217,16 +244,63 @@
       if (toggle.checked) deepStateLayer.addTo(map);
     }
 
+    // --- NASA GIBS daily tiles (no key), date-driven ---
+    function gibsTemplate(layerName, dateStr) {
+      // EPSG:3857 "GoogleMapsCompatible" matrix set; best endpoint
+      // Date must be YYYY-MM-DD
+      return `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/${layerName}/default/${dateStr}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png`;
+    }
+
+    function ensureFiresLayer() {
+      const layerName = sensorSel.value;
+      const dateStr = currentDate || new Date().toISOString().slice(0,10);
+      const tpl = gibsTemplate(layerName, dateStr);
+
+      if (!firesLayer) {
+        firesLayer = L.tileLayer(tpl, {
+          maxZoom: 9,   // GIBS Level9
+          opacity: Number(opacityRange.value) / 100,
+          attribution: "NASA GIBS (Thermal Anomalies/Fire)"
+        });
+        if (toggleFires.checked) firesLayer.addTo(map);
+        return;
+      }
+      firesLayer.setUrl(tpl);
+    }
+
+    function setFiresDate(dateStr) {
+      currentDate = dateStr;
+
+      // GIBS néha 1-2 nappal csúszik, de a legtöbb nap működik.
+      // Itt csak átállítjuk az URL-t.
+      ensureFiresLayer();
+    }
+
+    opacityRange.addEventListener('input', () => {
+      if (!firesLayer) return;
+      firesLayer.setOpacity(Number(opacityRange.value) / 100);
+    });
+
+    sensorSel.addEventListener('change', () => {
+      // új layer névvel frissítjük
+      ensureFiresLayer();
+    });
+
     async function loadByIndex(i, doZoom = true) {
       const item = dates[i];
       if (!item) return;
 
+      currentDate = item.date;
       dateLabel.textContent = item.date;
       fileLabel.textContent = item.name;
 
       try {
-        const data = await loadGeoJson(item.raw);
+        // DeepState polygon
+        const data = await loadJson(item.raw);
         renderDeepState(data);
+
+        // Fires overlay date sync
+        setFiresDate(item.date);
 
         if (doZoom && deepStateLayer) {
           const b = deepStateLayer.getBounds();
@@ -241,17 +315,15 @@
     async function init() {
       try {
         log("Fetch: ./data/deepstate_dates.json");
-        const idx = await loadGeoJson('./data/deepstate_dates.json');
+        const idx = await loadJson('./data/deepstate_dates.json');
         dates = Array.isArray(idx) ? idx : [];
         log("Dates: " + dates.length);
-
         if (dates.length === 0) throw new Error("Üres deepstate_dates.json");
 
         slider.min = "0";
         slider.max = String(dates.length - 1);
         slider.value = String(dates.length - 1);
         slider.disabled = false;
-
         playBtn.disabled = false;
 
         slider.addEventListener('input', () => {
@@ -259,7 +331,13 @@
           loadByIndex(Number(slider.value), false);
         });
 
+        // induljunk a legfrissebbel
         await loadByIndex(dates.length - 1, true);
+
+        // biztosan legyen fires layer inicializálva
+        ensureFiresLayer();
+
+        log("Kész ✔ (DeepState + Hőpontok)");
       } catch (e) {
         log("HIBA init: " + String(e && e.stack ? e.stack : e));
       }
