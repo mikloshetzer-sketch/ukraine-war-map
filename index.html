@@ -1,183 +1,360 @@
 <!doctype html>
 <html lang="hu">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ukrajna háború – DeepState + műholdas hőpontok</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ukrán–orosz háború – DeepState timeline + hőpontok</title>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
-<style>
-html, body { height:100%; margin:0; }
-#map { height:100%; }
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #map { height: 100%; }
 
-.panel {
- position:absolute;
- z-index:1000;
- top:12px;
- left:12px;
- background:white;
- padding:12px;
- border-radius:10px;
- box-shadow:0 4px 16px rgba(0,0,0,0.2);
- font-family:Arial;
- width:420px;
-}
+    .panel {
+      position: absolute;
+      z-index: 1000;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      max-width: 760px;
+      background: rgba(255,255,255,0.95);
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
 
-.legend {
- position:absolute;
- bottom:20px;
- left:12px;
- z-index:1000;
- background:white;
- padding:10px;
- border-radius:10px;
- box-shadow:0 4px 16px rgba(0,0,0,0.2);
- font-size:12px;
-}
+    .title { font-size: 14px; font-weight: 700; }
+    .muted { color:#555; font-size:12px; margin-top:4px; }
 
-.log {
- margin-top:8px;
- font-size:12px;
- background:#f3f3f3;
- padding:6px;
- border-radius:6px;
- height:100px;
- overflow:auto;
-}
-</style>
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f2f2f2;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      max-width: 100%;
+    }
+
+    .chip b { font-weight: 700; }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 8px 10px;
+      background: #111;
+      color: #fff;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    select {
+      padding: 6px 8px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      background: #fff;
+      font-size: 12px;
+    }
+
+    .slider-wrap {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    input[type="range"] { width: 100%; }
+
+    .legend {
+      position: absolute;
+      bottom: 20px;
+      left: 12px;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      max-width: 360px;
+    }
+
+    .legend b { display:block; margin-bottom:6px; }
+    .legend .item { display:flex; align-items:center; gap:8px; margin:4px 0; }
+    .swatch { width:12px; height:12px; border-radius:3px; border:1px solid rgba(0,0,0,0.2); }
+
+    .log {
+      margin-top: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+      background: #f6f6f6;
+      border-radius: 10px;
+      padding: 8px;
+      max-height: 120px;
+      overflow: auto;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="map"></div>
 
-<div id="map"></div>
+  <div class="panel">
+    <div class="title">Ukrán–orosz háború – DeepState timeline + műholdas hőpontok</div>
+    <div class="muted">
+      Hőpont réteg: NASA GIBS “Thermal Anomalies/Fire” (VIIRS/MODIS). Napi overlay, dátumhoz szinkronizálva.
+      Ha nem látszik, nagyíts rá (8–9 zoom) vagy válts szenzort.
+    </div>
 
-<div class="panel">
-<b>Ukrajna háborús térkép</b><br>
+    <div class="row">
+      <label class="chip"><input id="toggleDeepState" type="checkbox" checked> Frontvonal</label>
+      <label class="chip"><input id="toggleFires" type="checkbox" checked> Hőpontok</label>
 
-<label><input type="checkbox" id="toggleDeepState" checked> Frontvonal</label><br>
-<label><input type="checkbox" id="toggleFires" checked> Műholdas hőpontok</label><br>
+      <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
 
-Dátum: <span id="dateLabel">...</span><br>
+      <span class="chip">Dátum: <b id="dateLabel">…</b></span>
+      <span class="chip">Fájl: <span id="fileLabel">…</span></span>
 
-<input id="daySlider" type="range" min="0" max="0" value="0" step="1" style="width:100%">
+      <span class="chip">
+        Sebesség:
+        <select id="speedSel">
+          <option value="300" selected>0.3s</option>
+          <option value="600">0.6s</option>
+          <option value="1200">1.2s</option>
+          <option value="2000">2.0s</option>
+        </select>
+      </span>
 
-<div class="log" id="log">Indul...</div>
-</div>
+      <span class="chip">
+        Szenzor:
+        <select id="sensorSel">
+          <option value="VIIRS_SNPP_Thermal_Anomalies_375m_All" selected>VIIRS (375m)</option>
+          <option value="MODIS_Terra_Thermal_Anomalies_All">MODIS Terra</option>
+          <option value="MODIS_Aqua_Thermal_Anomalies_All">MODIS Aqua</option>
+        </select>
+      </span>
 
-<div class="legend">
-<b>Jelmagyarázat</b><br>
-■ Frontvonal / megszállt terület<br>
-■ Hőpont = robbanás / tűz / csapás (műhold)
-</div>
+      <span class="chip">
+        Hőpont áttetszőség:
+        <input id="opacityRange" type="range" min="0" max="100" value="60" step="1" />
+      </span>
+    </div>
+
+    <div class="slider-wrap">
+      <button id="playBtn" class="btn" type="button" disabled>Lejátszás</button>
+      <input id="daySlider" type="range" min="0" max="0" value="0" step="1" disabled />
+    </div>
+
+    <div id="log" class="log">Indul…</div>
+  </div>
+
+  <div class="legend">
+    <b>Jelmagyarázat</b>
+    <div class="item"><span class="swatch" style="background:#6b0000;"></span>Orosz ellenőrzés / megszállt terület (kitöltés)</div>
+    <div class="item"><span class="swatch" style="background:#d00;"></span>Frontvonal / határ (kontúr)</div>
+    <div class="item"><span class="swatch" style="background:#ff5a00;"></span>Műholdas hőpontok (thermal anomalies)</div>
+  </div>
 
 <script>
+  const logEl = document.getElementById('log');
+  const dateLabel = document.getElementById('dateLabel');
+  const fileLabel = document.getElementById('fileLabel');
+  const slider = document.getElementById('daySlider');
+  const playBtn = document.getElementById('playBtn');
+  const zoomBtn = document.getElementById('zoomBtn');
+  const toggleDeep = document.getElementById('toggleDeepState');
+  const toggleFires = document.getElementById('toggleFires');
+  const speedSel = document.getElementById('speedSel');
+  const sensorSel = document.getElementById('sensorSel');
+  const opacityRange = document.getElementById('opacityRange');
 
-const log = msg => document.getElementById("log").textContent += "\n"+msg;
-const dateLabel = document.getElementById("dateLabel");
-const slider = document.getElementById("daySlider");
+  function log(msg){ logEl.textContent += "\n" + msg; }
 
-let deepLayer = null;
-let fireLayer = null;
-let dates = [];
-let currentDate = null;
+  const map = L.map('map').setView([49.0, 31.0], 6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
 
-const map = L.map('map').setView([48.8,31.5],6);
+  let deepLayer = null;
+  let firesLayer = null;
+  let dates = [];
+  let playing = false;
+  let timer = null;
+  let currentDate = null;
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
- attribution:'OSM'
-}).addTo(map);
+  function setVisible(layer, on){
+    if(!layer) return;
+    if(on) layer.addTo(map);
+    else map.removeLayer(layer);
+  }
 
-async function loadJSON(url){
- const r = await fetch(url);
- if(!r.ok) throw new Error("HTTP "+r.status);
- return await r.json();
-}
+  toggleDeep.addEventListener('change', () => setVisible(deepLayer, toggleDeep.checked));
+  toggleFires.addEventListener('change', () => setVisible(firesLayer, toggleFires.checked));
 
-function renderDeepState(data){
- if(deepLayer) map.removeLayer(deepLayer);
+  zoomBtn.addEventListener('click', () => {
+    if (!deepLayer) return;
+    const b = deepLayer.getBounds();
+    if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+  });
 
- deepLayer = L.geoJSON(data,{
-   style:{
-     color:"#d00",
-     weight:2,
-     fillColor:"#6b0000",
-     fillOpacity:0.3
-   }
- });
+  function stopPlay(){
+    playing = false;
+    playBtn.textContent = "Lejátszás";
+    if(timer){ clearInterval(timer); timer = null; }
+  }
 
- if(document.getElementById("toggleDeepState").checked)
-   deepLayer.addTo(map);
-}
+  function stepOnce(){
+    let v = Number(slider.value);
+    if(v >= Number(slider.max)) v = Number(slider.min);
+    else v += 1;
+    slider.value = String(v);
+    loadByIndex(v, false);
+  }
 
-function loadFireLayer(date){
+  function startPlay(){
+    playing = true;
+    playBtn.textContent = "Megállítás";
+    const ms = Number(speedSel.value) || 300;
+    timer = setInterval(stepOnce, ms);
+  }
 
- const url =
- `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_Thermal_Anomalies_375m_All/default/${date}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png`;
+  playBtn.addEventListener('click', () => {
+    if(playing) stopPlay();
+    else startPlay();
+  });
 
- if(fireLayer) map.removeLayer(fireLayer);
+  speedSel.addEventListener('change', () => {
+    if(!playing) return;
+    stopPlay(); startPlay();
+  });
 
- fireLayer = L.tileLayer(url,{
-   opacity:0.65,
-   attribution:"NASA GIBS"
- });
+  async function loadJson(url){
+    const r = await fetch(url, { cache:"no-store" });
+    if(!r.ok) throw new Error("HTTP " + r.status + " " + r.statusText);
+    return await r.json();
+  }
 
- if(document.getElementById("toggleFires").checked)
-   fireLayer.addTo(map);
-}
+  function renderDeepState(data){
+    if(deepLayer){ map.removeLayer(deepLayer); deepLayer = null; }
+    deepLayer = L.geoJSON(data, {
+      style: () => ({
+        color:"#d00",
+        weight:2.2,
+        opacity:0.95,
+        fillColor:"#6b0000",
+        fillOpacity:0.28
+      })
+    });
+    if(toggleDeep.checked) deepLayer.addTo(map);
+  }
 
-async function loadDate(index){
- const item = dates[index];
- if(!item) return;
+  function gibsUrl(layerName, dateStr){
+    // IMPORTANT: Level8/9 tiling; Layer appears mostly at higher zoom.
+    return `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/${layerName}/default/${dateStr}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png`;
+  }
 
- currentDate = item.date;
- dateLabel.textContent = item.date;
+  function ensureFiresLayer(){
+    const layerName = sensorSel.value;
+    const dateStr = currentDate || new Date().toISOString().slice(0,10);
+    const url = gibsUrl(layerName, dateStr);
 
- try{
-   const data = await loadJSON(item.raw);
-   renderDeepState(data);
-   loadFireLayer(item.date);
- }catch(e){
-   log("Hiba: "+e);
- }
-}
+    if(!firesLayer){
+      firesLayer = L.tileLayer(url, {
+        maxZoom: 19,           // Leaflet oldalról lehet 19
+        maxNativeZoom: 9,      // de a GIBS tile Level9-ig van
+        opacity: Number(opacityRange.value)/100,
+        attribution: "NASA GIBS (Thermal Anomalies/Fire)"
+      });
+      if(toggleFires.checked) firesLayer.addTo(map);
+      return;
+    }
 
-async function init(){
- try{
-   const idx = await loadJSON("./data/deepstate_dates.json");
-   dates = idx;
+    firesLayer.setUrl(url);
+  }
 
-   slider.max = dates.length-1;
-   slider.value = dates.length-1;
+  function setFiresDate(dateStr){
+    currentDate = dateStr;
+    ensureFiresLayer();
+  }
 
-   slider.oninput = ()=> loadDate(slider.value);
+  opacityRange.addEventListener('input', () => {
+    if(!firesLayer) return;
+    firesLayer.setOpacity(Number(opacityRange.value)/100);
+  });
 
-   loadDate(slider.value);
+  sensorSel.addEventListener('change', () => {
+    ensureFiresLayer();
+  });
 
-   log("Kész ✔");
+  async function loadByIndex(i, doZoom=true){
+    const item = dates[i];
+    if(!item) return;
 
- }catch(e){
-   log("Init hiba "+e);
- }
-}
+    currentDate = item.date;
+    dateLabel.textContent = item.date;
+    fileLabel.textContent = item.name;
 
-document.getElementById("toggleDeepState").onchange=()=>{
- if(deepLayer){
-   if(toggleDeepState.checked) deepLayer.addTo(map);
-   else map.removeLayer(deepLayer);
- }
-};
+    try{
+      const data = await loadJson(item.raw);
+      renderDeepState(data);
 
-document.getElementById("toggleFires").onchange=()=>{
- if(fireLayer){
-   if(toggleFires.checked) fireLayer.addTo(map);
-   else map.removeLayer(fireLayer);
- }
-};
+      // sync fires
+      setFiresDate(item.date);
 
-init();
+      if(doZoom && deepLayer){
+        const b = deepLayer.getBounds();
+        if(b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+      }
+    }catch(e){
+      log("HIBA: " + String(e && e.stack ? e.stack : e));
+      stopPlay();
+    }
+  }
 
+  async function init(){
+    try{
+      log("Fetch: ./data/deepstate_dates.json");
+      const idx = await loadJson("./data/deepstate_dates.json");
+      dates = Array.isArray(idx) ? idx : [];
+      log("Dates: " + dates.length);
+      if(dates.length === 0) throw new Error("Üres deepstate_dates.json");
+
+      slider.min = "0";
+      slider.max = String(dates.length - 1);
+      slider.value = String(dates.length - 1);
+      slider.disabled = false;
+      playBtn.disabled = false;
+
+      slider.addEventListener('input', () => {
+        stopPlay();
+        loadByIndex(Number(slider.value), false);
+      });
+
+      await loadByIndex(dates.length - 1, true);
+      ensureFiresLayer();
+
+      log("Tipp: hőpontok főleg 8–9 zoomnál látszanak, és néha 1-2 nap csúszás van a publikálásban.");
+      log("Kész ✔");
+    }catch(e){
+      log("INIT HIBA: " + String(e && e.stack ? e.stack : e));
+    }
+  }
+
+  init();
 </script>
 </body>
 </html>
