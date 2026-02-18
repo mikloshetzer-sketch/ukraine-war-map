@@ -1,163 +1,418 @@
 <!doctype html>
 <html lang="hu">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ukrajna háborús térkép – FIRMS + DeepState</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ukrajna háborús térkép – DeepState + FIRMS</title>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
-<style>
-html,body{height:100%;margin:0;}
-#map{height:100%;}
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #map { height: 100%; }
 
-.panel{
-position:absolute;top:12px;left:12px;right:12px;max-width:760px;
-background:white;padding:12px;border-radius:12px;
-box-shadow:0 4px 16px rgba(0,0,0,.2);font-family:Arial;z-index:1000;
-}
+    .panel {
+      position: absolute;
+      z-index: 1000;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      max-width: 820px;
+      background: rgba(255,255,255,0.95);
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+    .title { font-size: 14px; font-weight: 700; }
+    .muted { color:#555; font-size:12px; margin-top: 4px; }
 
-.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
-.legend{position:absolute;bottom:20px;left:12px;background:white;padding:10px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,.2);font-size:12px;}
-.log{margin-top:8px;background:#f3f3f3;padding:6px;border-radius:6px;height:110px;overflow:auto;font-size:12px;}
-</style>
+    .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:10px; }
+    .chip {
+      display:inline-flex; align-items:center; gap:8px;
+      background:#f2f2f2; padding:7px 10px; border-radius:999px; font-size:12px;
+      max-width: 100%;
+    }
+    .chip b { font-weight: 700; }
+
+    .btn {
+      border:0; border-radius:10px; padding:8px 10px;
+      background:#111; color:#fff; cursor:pointer; font-size:12px;
+    }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    select {
+      padding: 6px 8px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      background: #fff;
+      font-size: 12px;
+    }
+
+    .slider-wrap { display:flex; gap:10px; align-items:center; width:100%; margin-top:10px; }
+    input[type="range"] { width: 100%; }
+
+    .legend {
+      position: absolute;
+      bottom: 20px;
+      left: 12px;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      max-width: 420px;
+    }
+    .legend b { display:block; margin-bottom:6px; }
+    .legend .item { display:flex; align-items:center; gap:8px; margin:4px 0; }
+    .swatch { width:12px; height:12px; border-radius:3px; border:1px solid rgba(0,0,0,0.2); }
+
+    .log {
+      margin-top: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+      background: #f6f6f6;
+      border-radius: 10px;
+      padding: 8px;
+      max-height: 120px;
+      overflow: auto;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="map"></div>
 
-<div id="map"></div>
+  <div class="panel">
+    <div class="title">Ukrán–orosz háború – DeepState timeline + FIRMS hőpontok (Ukrajna)</div>
+    <div class="muted">
+      FIRMS pontok: az API “utolsó N nap” adatot ad. A csúszka csak ezen a tartományon belül fog sok pöttyöt mutatni.
+      (Ha régebbi dátumra tekered, kevés/0 pont normális.)
+    </div>
 
-<div class="panel">
-<b>Ukrajna – háborús dashboard</b><br>
+    <div class="row">
+      <label class="chip"><input id="toggleDeepState" type="checkbox" checked> DeepState frontvonal</label>
+      <label class="chip"><input id="toggleFirms" type="checkbox" checked> FIRMS hőpontok</label>
+      <label class="chip"><input id="toggleGibs" type="checkbox"> NASA hőtérkép (GIBS overlay)</label>
 
-<label><input type="checkbox" id="toggleDeep" checked> Frontvonal</label>
-<label><input type="checkbox" id="toggleFirms" checked> FIRMS hőpontok</label>
-<label><input type="checkbox" id="toggleGibs"> NASA hőtérkép (overlay)</label>
+      <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
 
-<br><br>
+      <span class="chip">Dátum: <b id="dateLabel">…</b></span>
+      <span class="chip">Fájl: <span id="fileLabel">…</span></span>
 
-Dátum: <span id="dateLabel">...</span>
+      <span class="chip">
+        FIRMS napok (utolsó):
+        <select id="firmsDaysSel">
+          <option value="3">3</option>
+          <option value="7">7</option>
+          <option value="10" selected>10</option>
+        </select>
+      </span>
 
-<input id="slider" type="range" min="0" max="0" step="1" style="width:100%">
+      <span class="chip">
+        Max pötty/nap:
+        <select id="maxPtsSel">
+          <option value="500">500</option>
+          <option value="1500" selected>1500</option>
+          <option value="3000">3000</option>
+        </select>
+      </span>
+    </div>
 
-<div class="log" id="log">Indul...</div>
-</div>
+    <div class="slider-wrap">
+      <input id="daySlider" type="range" min="0" max="0" value="0" step="1" disabled />
+    </div>
 
-<div class="legend">
-<b>Jelmagyarázat</b><br>
-■ Frontvonal<br>
-● Hőpont (műhold detektált tűz / robbanás)
-</div>
+    <div id="log" class="log">Indul…</div>
+  </div>
+
+  <div class="legend">
+    <b>Jelmagyarázat</b>
+    <div class="item"><span class="swatch" style="background:#6b0000;"></span>DeepState megszállt/ellenőrzött terület (kitöltés)</div>
+    <div class="item"><span class="swatch" style="background:#d00;"></span>DeepState határ/frontvonal (kontúr)</div>
+    <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont (műhold detektált tűz/hőkibocsátás)</div>
+  </div>
 
 <script>
+  // 1) IDE írd be a saját kulcsod (idézőjelek maradnak!)
+  const FIRMS_MAP_KEY = "IDE_IRD_BE_A_KULCSOT";
 
-const FIRMS_MAP_KEY = "44b266fd8324db5a0a9866017429dc43";
+  // Ukrajna bbox: lon_min,lat_min,lon_max,lat_max
+  // (ez szándékosan Ukrajna-közeli, hogy ne legyen túl nagy)
+  const UKRAINE_BBOX = "22,44,40,53";
 
-const log = m => document.getElementById("log").textContent += "\n"+m;
-const map = L.map('map').setView([48.8,31.5],6);
+  const logEl = document.getElementById("log");
+  const dateLabel = document.getElementById("dateLabel");
+  const fileLabel = document.getElementById("fileLabel");
+  const slider = document.getElementById("daySlider");
+  const zoomBtn = document.getElementById("zoomBtn");
+  const toggleDeep = document.getElementById("toggleDeepState");
+  const toggleFirms = document.getElementById("toggleFirms");
+  const toggleGibs = document.getElementById("toggleGibs");
+  const firmsDaysSel = document.getElementById("firmsDaysSel");
+  const maxPtsSel = document.getElementById("maxPtsSel");
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19}).addTo(map);
+  function log(msg) { logEl.textContent += "\n" + msg; }
 
-let deepLayer=null;
-let firmsLayer=null;
-let gibsLayer=null;
-let dates=[];
+  const map = L.map("map").setView([49.0, 31.0], 6);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: "&copy; OpenStreetMap"
+  }).addTo(map);
 
-async function loadJSON(u){
-const r=await fetch(u);
-if(!r.ok)throw new Error(r.status);
-return await r.json();
-}
+  let deepStateLayer = null;
+  let gibsLayer = null;
 
-function renderDeep(data){
-if(deepLayer)map.removeLayer(deepLayer);
-deepLayer=L.geoJSON(data,{style:{color:"#d00",weight:2,fillColor:"#6b0000",fillOpacity:0.3}});
-if(toggleDeep.checked)deepLayer.addTo(map);
-}
+  // FIRMS cache: { "YYYY-MM-DD": [ {lat,lon,frp,bright,acq_date,acq_time,sat,conf,daynight} ... ] }
+  let firmsByDate = {};
+  let firmsLayer = L.layerGroup();
+  firmsLayer.addTo(map);
 
-async function loadFIRMS(date){
+  let dates = [];
+  let currentDate = null;
 
-if(!FIRMS_MAP_KEY || FIRMS_MAP_KEY==="IDE_IRD_BE_A_KULCSOT"){
-log("NINCS FIRMS KEY");
-return;
-}
+  async function loadJson(url) {
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status + " " + r.statusText);
+    return await r.json();
+  }
 
-// Ukrajna bounding box
-const bbox="22,44,40,53";
+  function setVisible(layer, on) {
+    if (!layer) return;
+    if (on) layer.addTo(map);
+    else map.removeLayer(layer);
+  }
 
-const url=`https://firms.modaps.eosdis.nasa.gov/api/area/csv/${FIRMS_MAP_KEY}/VIIRS_SNPP_NRT/${bbox}/1/${date}`;
+  toggleDeep.addEventListener("change", () => setVisible(deepStateLayer, toggleDeep.checked));
+  toggleFirms.addEventListener("change", () => setVisible(firmsLayer, toggleFirms.checked));
+  toggleGibs.addEventListener("change", () => setVisible(gibsLayer, toggleGibs.checked));
 
-try{
+  zoomBtn.addEventListener("click", () => {
+    if (!deepStateLayer) return;
+    const b = deepStateLayer.getBounds();
+    if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+  });
 
-const res=await fetch(url);
-const txt=await res.text();
+  function renderDeepState(data) {
+    if (deepStateLayer) map.removeLayer(deepStateLayer);
+    deepStateLayer = L.geoJSON(data, {
+      style: () => ({
+        color: "#d00",
+        weight: 2.2,
+        opacity: 0.95,
+        fillColor: "#6b0000",
+        fillOpacity: 0.28
+      })
+    });
+    if (toggleDeep.checked) deepStateLayer.addTo(map);
+  }
 
-const rows=txt.split("\n").slice(1);
+  function setGibs(dateStr) {
+    const url = `https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_Thermal_Anomalies_375m_All/default/${dateStr}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png`;
+    if (!gibsLayer) {
+      gibsLayer = L.tileLayer(url, {
+        opacity: 0.55,
+        maxZoom: 19,
+        maxNativeZoom: 9,
+        attribution: "NASA GIBS"
+      });
+    } else {
+      gibsLayer.setUrl(url);
+    }
+    if (toggleGibs.checked) gibsLayer.addTo(map);
+    else map.removeLayer(gibsLayer);
+  }
 
-if(firmsLayer)map.removeLayer(firmsLayer);
+  function parseCSV(csvText) {
+    // FIRMS CSV tipikus fejléce:
+    // latitude,longitude,brightness,scan,track,acq_date,acq_time,satellite,confidence,version,bright_t31,frp,daynight
+    const lines = csvText.split(/\r?\n/).filter(Boolean);
+    if (lines.length <= 1) return [];
+    const header = lines[0].split(",");
+    const idx = (name) => header.indexOf(name);
 
-firmsLayer=L.layerGroup();
+    const iLat = idx("latitude");
+    const iLon = idx("longitude");
+    const iBright = idx("brightness");
+    const iDate = idx("acq_date");
+    const iTime = idx("acq_time");
+    const iSat = idx("satellite");
+    const iConf = idx("confidence");
+    const iFRP = idx("frp");
+    const iDN = idx("daynight");
 
-rows.forEach(r=>{
-const c=r.split(",");
-if(c.length<6)return;
+    const out = [];
+    for (let k = 1; k < lines.length; k++) {
+      const c = lines[k].split(",");
+      if (c.length < header.length) continue;
+      const lat = parseFloat(c[iLat]);
+      const lon = parseFloat(c[iLon]);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
 
-const lat=parseFloat(c[0]);
-const lon=parseFloat(c[1]);
-const bright=c[2];
-const acq=c[5];
+      out.push({
+        lat, lon,
+        bright: c[iBright] ?? "",
+        frp: c[iFRP] ?? "",
+        acq_date: c[iDate] ?? "",
+        acq_time: c[iTime] ?? "",
+        sat: c[iSat] ?? "",
+        conf: c[iConf] ?? "",
+        daynight: c[iDN] ?? ""
+      });
+    }
+    return out;
+  }
 
-const m=L.circleMarker([lat,lon],{
-radius:4,
-color:"#ff5500",
-fillOpacity:.7
-}).bindPopup(`Hőpont<br>Idő:${acq}<br>Hő:${bright}`);
+  async function fetchFIRMSCache() {
+    firmsByDate = {};
+    firmsLayer.clearLayers();
 
-firmsLayer.addLayer(m);
-});
+    if (!FIRMS_MAP_KEY || FIRMS_MAP_KEY === "IDE_IRD_BE_A_KULCSOT") {
+      log("FIRMS: nincs beállítva a MAP_KEY (index.html-ben).");
+      return;
+    }
 
-if(toggleFirms.checked)firmsLayer.addTo(map);
+    const days = Number(firmsDaysSel.value) || 10;
+    // FIRMS area endpoint: /api/area/csv/{MAP_KEY}/{PRODUCT}/{BBOX}/{DAYS}
+    const url = `https://firms.modaps.eosdis.nasa.gov/api/area/csv/${encodeURIComponent(FIRMS_MAP_KEY)}/VIIRS_SNPP_NRT/${UKRAINE_BBOX}/${days}`;
 
-}catch(e){log("FIRMS hiba "+e);}
+    log(`FIRMS fetch: last ${days} days, bbox=${UKRAINE_BBOX}`);
+    try {
+      const r = await fetch(url, { cache: "no-store" });
+      if (!r.ok) {
+        log("FIRMS HTTP hiba: " + r.status);
+        return;
+      }
+      const txt = await r.text();
+      const pts = parseCSV(txt);
 
-}
+      // csoportosítás napra
+      for (const p of pts) {
+        if (!p.acq_date) continue;
+        if (!firmsByDate[p.acq_date]) firmsByDate[p.acq_date] = [];
+        firmsByDate[p.acq_date].push(p);
+      }
 
-function loadGIBS(date){
-const url=`https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_Thermal_Anomalies_375m_All/default/${date}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png`;
-if(gibsLayer)map.removeLayer(gibsLayer);
-gibsLayer=L.tileLayer(url,{opacity:.6,maxNativeZoom:9});
-if(toggleGibs.checked)gibsLayer.addTo(map);
-}
+      const allDates = Object.keys(firmsByDate).sort();
+      log(`FIRMS pontok összesen: ${pts.length}`);
+      log(`FIRMS napok a cache-ben: ${allDates.length} (${allDates[0] || "-"} .. ${allDates[allDates.length-1] || "-"})`);
 
-async function loadDate(i){
-const item=dates[i];
-if(!item)return;
+      // az aktuális dátumra rögtön rajzolunk
+      if (currentDate) renderFIRMSForDate(currentDate);
+    } catch (e) {
+      log("FIRMS fetch hiba: " + String(e));
+    }
+  }
 
-document.getElementById("dateLabel").textContent=item.date;
+  function renderFIRMSForDate(dateStr) {
+    firmsLayer.clearLayers();
+    if (!toggleFirms.checked) return;
 
-const data=await loadJSON(item.raw);
-renderDeep(data);
-loadFIRMS(item.date);
-loadGIBS(item.date);
-}
+    const maxPts = Number(maxPtsSel.value) || 1500;
+    const pts = firmsByDate[dateStr] || [];
 
-async function init(){
-try{
-dates=await loadJSON("./data/deepstate_dates.json");
-slider.max=dates.length-1;
-slider.value=dates.length-1;
-slider.oninput=()=>loadDate(slider.value);
-loadDate(slider.value);
-}catch(e){log(e);}
-}
+    if (pts.length === 0) {
+      log(`FIRMS: 0 pont erre a napra (${dateStr}). (Lehet, hogy a FIRMS cache csak az utolsó N napot fedi.)`);
+      return;
+    }
 
-toggleDeep.onchange=()=>deepLayer&& (toggleDeep.checked?deepLayer.addTo(map):map.removeLayer(deepLayer));
-toggleFirms.onchange=()=>firmsLayer&& (toggleFirms.checked?firmsLayer.addTo(map):map.removeLayer(firmsLayer));
-toggleGibs.onchange=()=>gibsLayer&& (toggleGibs.checked?gibsLayer.addTo(map):map.removeLayer(gibsLayer));
+    // egyszerű limit (sebesség miatt)
+    const use = pts.length > maxPts ? pts.slice(0, maxPts) : pts;
 
-init();
+    for (const p of use) {
+      const frp = Number(p.frp);
+      const radius = Number.isFinite(frp) ? Math.max(3, Math.min(9, 2 + frp / 20)) : 4;
 
+      const m = L.circleMarker([p.lat, p.lon], {
+        radius,
+        color: "#ff5500",
+        weight: 1,
+        opacity: 0.9,
+        fillOpacity: 0.65
+      });
+
+      const timeStr = (p.acq_time || "").toString().padStart(4, "0");
+      const hh = timeStr.slice(0,2), mm = timeStr.slice(2,4);
+
+      m.bindPopup(
+        `<b>FIRMS hőpont</b><br>` +
+        `Dátum: ${p.acq_date}<br>` +
+        `Idő (UTC): ${hh}:${mm}<br>` +
+        `Brightness: ${p.bright}<br>` +
+        `FRP: ${p.frp}<br>` +
+        `Műhold: ${p.sat}<br>` +
+        `Confidence: ${p.conf}<br>` +
+        `Day/Night: ${p.daynight}`
+      );
+
+      firmsLayer.addLayer(m);
+    }
+
+    log(`FIRMS: ${use.length}/${pts.length} pont kirajzolva erre a napra: ${dateStr}`);
+  }
+
+  async function loadByIndex(i, doZoom=true) {
+    const item = dates[i];
+    if (!item) return;
+
+    currentDate = item.date;
+    dateLabel.textContent = item.date;
+    fileLabel.textContent = item.name;
+
+    try {
+      const data = await loadJson(item.raw);
+      renderDeepState(data);
+
+      setGibs(item.date);
+      renderFIRMSForDate(item.date);
+
+      if (doZoom && deepStateLayer) {
+        const b = deepStateLayer.getBounds();
+        if (b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+      }
+    } catch (e) {
+      log("HIBA: " + String(e && e.stack ? e.stack : e));
+    }
+  }
+
+  async function init() {
+    try {
+      log("Fetch: ./data/deepstate_dates.json");
+      const idx = await loadJson("./data/deepstate_dates.json");
+      dates = Array.isArray(idx) ? idx : [];
+      log("DeepState dates: " + dates.length);
+      if (dates.length === 0) throw new Error("Üres deepstate_dates.json");
+
+      slider.min = "0";
+      slider.max = String(dates.length - 1);
+      slider.value = String(dates.length - 1);
+      slider.disabled = false;
+
+      slider.addEventListener("input", () => {
+        loadByIndex(Number(slider.value), false);
+      });
+
+      // induljunk a legfrissebbel
+      await loadByIndex(dates.length - 1, true);
+
+      // FIRMS cache letöltése (utolsó N nap)
+      await fetchFIRMSCache();
+
+      log("Kész ✔");
+    } catch (e) {
+      log("INIT HIBA: " + String(e && e.stack ? e.stack : e));
+    }
+  }
+
+  firmsDaysSel.addEventListener("change", () => fetchFIRMSCache());
+  maxPtsSel.addEventListener("change", () => {
+    if (currentDate) renderFIRMSForDate(currentDate);
+  });
+
+  init();
 </script>
 </body>
 </html>
