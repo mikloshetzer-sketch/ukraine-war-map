@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrán–orosz háború – DeepState + FIRMS + Műhold</title>
+  <title>Ukrán–orosz háború – DeepState + FIRMS + Troops</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -12,28 +12,37 @@
     html, body { height: 100%; margin: 0; }
     #map { height: 100%; }
 
+    :root{
+      --panel-bg: rgba(255,255,255,0.95);
+      --shadow: 0 6px 18px rgba(0,0,0,0.15);
+      --radius: 12px;
+      --gap: 10px;
+      --font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+
     .panel {
       position: absolute;
       z-index: 1000;
-      top: 12px;
-      left: 12px;
-      right: 12px;
-      max-width: 920px;
-      background: rgba(255,255,255,0.95);
-      padding: 12px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: var(--panel-bg);
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      font: var(--font);
+      max-width: 420px;
     }
-    .title { font-size: 14px; font-weight: 700; }
+    .panel h3 { margin: 0; font-size: 13px; }
     .muted { color:#555; font-size:12px; margin-top: 4px; }
 
-    .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:10px; }
+    .leftPanel { top: 12px; left: 12px; }
+    .rightPanel { top: 12px; right: 12px; }
+
+    .row { display:flex; gap: var(--gap); align-items:center; flex-wrap:wrap; margin-top:10px; }
 
     .chip {
       display:inline-flex; align-items:center; gap:8px;
       background:#f2f2f2; padding:7px 10px; border-radius:999px; font-size:12px;
       max-width: 100%;
+      user-select:none;
     }
     .chip b { font-weight: 700; }
 
@@ -41,6 +50,7 @@
       border:0; border-radius:10px; padding:8px 10px;
       background:#111; color:#fff; cursor:pointer; font-size:12px;
     }
+    .btn.secondary { background:#444; }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
     select {
@@ -54,22 +64,6 @@
     .slider-wrap { display:flex; gap:10px; align-items:center; width:100%; margin-top:10px; }
     input[type="range"] { width: 100%; }
 
-    .legend {
-      position: absolute;
-      bottom: 20px;
-      left: 12px;
-      z-index: 1000;
-      background: rgba(255,255,255,0.95);
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-size: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      max-width: 520px;
-    }
-    .legend b { display:block; margin-bottom:6px; }
-    .legend .item { display:flex; align-items:center; gap:8px; margin:4px 0; }
-    .swatch { width:12px; height:12px; border-radius:3px; border:1px solid rgba(0,0,0,0.2); }
-
     .log {
       margin-top: 10px;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -78,42 +72,55 @@
       background: #f6f6f6;
       border-radius: 10px;
       padding: 8px;
-      max-height: 130px;
+      max-height: 120px;
       overflow: auto;
     }
     .hidden { display:none; }
+
+    .legend {
+      position: absolute;
+      bottom: 16px;
+      left: 12px;
+      z-index: 1000;
+      background: var(--panel-bg);
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      font-size: 12px;
+      box-shadow: var(--shadow);
+      max-width: 520px;
+    }
+    .legend b { display:block; margin-bottom:6px; }
+    .legend .item { display:flex; align-items:center; gap:8px; margin:4px 0; }
+    .swatch { width:12px; height:12px; border-radius:3px; border:1px solid rgba(0,0,0,0.2); }
+
+    /* Mobile */
+    @media (max-width: 700px){
+      .panel{ left: 10px; right: 10px; max-width: none; }
+      .leftPanel{ top: 10px; }
+      .rightPanel{ top: auto; bottom: 90px; }
+      .legend{ bottom: 10px; left: 10px; right: 10px; max-width: none; }
+      .btn{ padding: 10px 12px; font-size: 13px; }
+      .chip{ padding: 8px 10px; }
+    }
   </style>
 </head>
 
 <body>
   <div id="map"></div>
 
-  <div class="panel">
-    <div class="title">Ukrán–orosz háború – DeepState timeline + FIRMS hőpontok + Műhold</div>
-    <div class="muted">
-      FIRMS: VIIRS S-NPP + VIIRS NOAA-20 együtt (több találat). Kattints a térképre → oda zoomol.
+  <!-- LEFT: Controls -->
+  <div class="panel leftPanel">
+    <h3>Rétegek & nézet</h3>
+    <div class="muted">Kattintás zoom módban: kattints a térképre → oda nagyít.</div>
+
+    <div class="row">
+      <label class="chip"><input id="toggleDeep" type="checkbox" checked> DeepState</label>
+      <label class="chip"><input id="toggleFirms" type="checkbox" checked> FIRMS</label>
+      <label class="chip"><input id="toggleGibs" type="checkbox"> GIBS overlay</label>
+      <label class="chip"><input id="toggleTroops" type="checkbox" checked> Csapatok</label>
     </div>
 
     <div class="row">
-      <label class="chip"><input id="toggleDeep" type="checkbox" checked> DeepState frontvonal</label>
-      <label class="chip"><input id="toggleFirms" type="checkbox" checked> FIRMS pöttyök</label>
-      <label class="chip"><input id="toggleGibs" type="checkbox"> NASA hőtérkép (GIBS overlay)</label>
-      <label class="chip"><input id="toggleTroops" type="checkbox" checked> Csapat jelölők</label>
-
-      <span class="chip">
-        Zoom:
-        <select id="zoomSel">
-          <option value="front" selected>Frontvonal</option>
-          <option value="ukr">Ukrajna</option>
-          <option value="click">Kattintásra</option>
-        </select>
-      </span>
-
-      <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
-
-      <span class="chip">Dátum: <b id="dateLabel">…</b></span>
-      <span class="chip">Fájl: <span id="fileLabel">…</span></span>
-
       <span class="chip">
         Alaptérkép:
         <select id="baseSel">
@@ -123,7 +130,19 @@
       </span>
 
       <span class="chip">
-        FIRMS napok:
+        Zoom mód:
+        <select id="zoomSel">
+          <option value="front" selected>Frontvonal</option>
+          <option value="ukr">Ukrajna</option>
+          <option value="click">Kattintásra</option>
+        </select>
+      </span>
+
+      <button id="zoomBtn" class="btn" type="button">Rázoomolás</button>
+    </div>
+
+    <div class="row">
+      <span class="chip">FIRMS napok:
         <select id="firmsDaysSel">
           <option value="3">3</option>
           <option value="7">7</option>
@@ -131,17 +150,34 @@
         </select>
       </span>
 
-      <span class="chip">
-        Max pötty/nap:
+      <span class="chip">Max pötty/nap:
         <select id="maxPtsSel">
           <option value="500">500</option>
           <option value="1500" selected>1500</option>
           <option value="3000">3000</option>
         </select>
       </span>
+    </div>
 
-      <span class="chip">
-        Lejátszás:
+    <div class="row">
+      <span class="chip" id="keyStatus">FIRMS kulcs: …</span>
+      <label class="chip"><input id="toggleLog" type="checkbox" checked> Napló</label>
+      <button id="reloadTroopsBtn" class="btn secondary" type="button">Csapatok újratöltése</button>
+    </div>
+
+    <div id="log" class="log">Indul…</div>
+  </div>
+
+  <!-- RIGHT: Timeline -->
+  <div class="panel rightPanel">
+    <h3>Idősáv</h3>
+    <div class="row">
+      <span class="chip">Dátum: <b id="dateLabel">…</b></span>
+      <span class="chip">Fájl: <span id="fileLabel">…</span></span>
+    </div>
+
+    <div class="row">
+      <span class="chip">Lejátszás:
         <select id="speedSel">
           <option value="300" selected>0.3s</option>
           <option value="600">0.6s</option>
@@ -149,36 +185,28 @@
           <option value="2000">2.0s</option>
         </select>
       </span>
-
-      <span class="chip" id="keyStatus">FIRMS kulcs: …</span>
-      <label class="chip"><input id="toggleLog" type="checkbox" checked> Napló</label>
     </div>
 
     <div class="slider-wrap">
       <button id="playBtn" class="btn" type="button" disabled>Lejátszás</button>
       <input id="daySlider" type="range" min="0" max="0" value="0" step="1" disabled />
     </div>
-
-    <div id="log" class="log">Indul…</div>
   </div>
 
   <div class="legend">
     <b>Jelmagyarázat</b>
     <div class="item"><span class="swatch" style="background:#6b0000;"></span>DeepState terület (kitöltés)</div>
     <div class="item"><span class="swatch" style="background:#d00;"></span>DeepState határ/frontvonal</div>
-    <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont (pont)</div>
-    <div class="item"><span class="swatch" style="background:#2b6cff;"></span>Ukrán csapat jelölő (példa)</div>
-    <div class="item"><span class="swatch" style="background:#000;"></span>Orosz csapat jelölő (példa)</div>
+    <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont</div>
+    <div class="item"><span class="swatch" style="background:#2b6cff;"></span>UA csapat jelölő</div>
+    <div class="item"><span class="swatch" style="background:#000;"></span>RU csapat jelölő</div>
   </div>
 
 <script>
-  // ===== IDE írd be a saját FIRMS MAP_KEY-t =====
-  const FIRMS_MAP_KEY = "44b266fd8324db5a0a9866017429dc43";
+  // ===== FIRMS MAP_KEY =====
+  const FIRMS_MAP_KEY = "";44b266fd8324db5a0a9866017429dc43
 
-  // Ukrajna bbox (lon_min,lat_min,lon_max,lat_max)
   const UKRAINE_BBOX = "22,44,40,53";
-
-  // Ukrajna kb. bounds (lat/lon)
   const UKRAINE_BOUNDS = L.latLngBounds([44.0, 22.0], [52.7, 40.2]);
 
   const logEl = document.getElementById("log");
@@ -200,10 +228,10 @@
   const speedSel = document.getElementById("speedSel");
   const keyStatus = document.getElementById("keyStatus");
   const zoomSel = document.getElementById("zoomSel");
+  const reloadTroopsBtn = document.getElementById("reloadTroopsBtn");
 
   function log(msg){ logEl.textContent += "\n" + msg; }
 
-  // ===== Map + base layers =====
   const map = L.map("map").setView([49.0, 31.0], 6);
 
   const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -222,15 +250,13 @@
     else { map.removeLayer(esriSat); osm.addTo(map); }
   });
 
-  // ===== Layers =====
   let deepStateLayer = null;
   let gibsLayer = null;
 
   const firmsLayer = L.layerGroup().addTo(map);
   let firmsByDate = {};
 
-  // Troops layer (optional file)
-  let troopsLayer = L.layerGroup().addTo(map);
+  const troopsLayer = L.layerGroup().addTo(map);
 
   function setVisible(layer, on){
     if(!layer) return;
@@ -261,12 +287,16 @@
     setVisible(gibsLayer, toggleGibs.checked);
   }
 
-  toggleGibs.addEventListener("change", () => {
-    if(currentDate) setGibs(currentDate);
-  });
+  toggleGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
 
-  // ===== Zoom behavior =====
+  // Zoom
   let clickZoomEnabled = false;
+  zoomSel.addEventListener("change", () => { clickZoomEnabled = (zoomSel.value === "click"); });
+
+  map.on("click", (e) => {
+    if(!clickZoomEnabled) return;
+    map.setView(e.latlng, Math.max(map.getZoom(), 10), { animate: true });
+  });
 
   function doZoom(){
     const mode = zoomSel.value;
@@ -277,23 +307,10 @@
     }
     if(mode === "ukr"){
       map.fitBounds(UKRAINE_BOUNDS.pad(0.08));
-      return;
     }
-    // click mode: no immediate zoom
   }
-
   zoomBtn.addEventListener("click", doZoom);
 
-  zoomSel.addEventListener("change", () => {
-    clickZoomEnabled = (zoomSel.value === "click");
-  });
-
-  map.on("click", (e) => {
-    if(!clickZoomEnabled) return;
-    map.setView(e.latlng, Math.max(map.getZoom(), 10), { animate: true });
-  });
-
-  // ===== Data helpers =====
   async function loadJson(url){
     const r = await fetch(url, { cache: "no-store" });
     if(!r.ok) throw new Error("HTTP " + r.status + " " + r.statusText);
@@ -314,6 +331,7 @@
     setVisible(deepStateLayer, toggleDeep.checked);
   }
 
+  // FIRMS CSV parse
   function parseCSV(csvText){
     const lines = csvText.split(/\r?\n/).filter(Boolean);
     if(lines.length <= 1) return [];
@@ -365,8 +383,6 @@
     keyStatus.textContent = "FIRMS kulcs: OK (" + FIRMS_MAP_KEY.slice(0,4) + "…)";
 
     const days = Number(firmsDaysSel.value) || 10;
-
-    // Két termék összeadva (több találat):
     const products = ["VIIRS_SNPP_NRT", "VIIRS_NOAA20_NRT"];
 
     let total = 0;
@@ -391,7 +407,7 @@
     }
 
     const ds = Object.keys(firmsByDate).sort();
-    log(`FIRMS pontok összesen (összeadva): ${total}`);
+    log(`FIRMS pontok összesen: ${total}`);
     log(`FIRMS napok: ${ds.length} (${ds[0] || "-"} .. ${ds[ds.length-1] || "-"})`);
 
     if(currentDate) renderFIRMSForDate(currentDate);
@@ -441,27 +457,36 @@
     log(`FIRMS: ${use.length}/${pts.length} pont kirajzolva (${dateStr})`);
   }
 
-  // ===== Troops (optional GeoJSON) =====
+  // ===== Troops GeoJSON loader =====
   async function loadTroops(){
     troopsLayer.clearLayers();
     try{
       const gj = await loadJson("./data/troops.geojson");
+
       const layer = L.geoJSON(gj, {
         pointToLayer: (f, latlng) => {
           const side = (f.properties && f.properties.side) ? String(f.properties.side).toLowerCase() : "unknown";
           const color = side === "ua" ? "#2b6cff" : (side === "ru" ? "#000000" : "#666");
           const label = (f.properties && f.properties.label) ? f.properties.label : "Ismeretlen";
-          return L.circleMarker(latlng, { radius: 6, color, weight: 2, fillOpacity: 0.6 }).bindPopup(label);
+
+          return L.circleMarker(latlng, {
+            radius: 7,
+            color,
+            weight: 2,
+            fillOpacity: 0.65
+          }).bindPopup(label);
         }
       });
+
       troopsLayer.addLayer(layer);
       setVisible(troopsLayer, toggleTroops.checked);
-      log("Troops: betöltve (data/troops.geojson)");
+      log("Troops: betöltve (data/troops.geojson) ✔");
     }catch(e){
-      // ha nincs fájl, ez nem hiba – csak jelzem
-      log("Troops: nincs data/troops.geojson (kihagyva)");
+      log("Troops: NINCS data/troops.geojson → ezért nem látszik semmi.");
     }
   }
+
+  reloadTroopsBtn.addEventListener("click", () => loadTroops());
 
   // ===== Timeline + play =====
   let dates = [];
@@ -502,7 +527,7 @@
   firmsDaysSel.addEventListener("change", () => fetchFIRMSCache());
   maxPtsSel.addEventListener("change", () => { if(currentDate) renderFIRMSForDate(currentDate); });
 
-  async function loadByIndex(i, doZoom=true){
+  async function loadByIndex(i, doZoomNow=true){
     const item = dates[i];
     if(!item) return;
 
@@ -517,7 +542,7 @@
       setGibs(item.date);
       renderFIRMSForDate(item.date);
 
-      if(doZoom) doZoom();
+      if(doZoomNow) doZoom();
     }catch(e){
       log("HIBA: " + String(e && e.stack ? e.stack : e));
     }
@@ -540,14 +565,11 @@
       });
 
       await loadByIndex(dates.length - 1, true);
-
       await fetchFIRMSCache();
       await loadTroops();
 
       playBtn.disabled = false;
-
-      log("Tipp: Zoom mód = Kattintásra → kattintasz és odaugrik (10-es zoom).");
-      log("Kész ✔");
+      log("Kész ✔ (Ha csapatokat akarsz: add hozzá a data/troops.geojson fájlt.)");
     }catch(e){
       log("INIT HIBA: " + String(e && e.stack ? e.stack : e));
     }
