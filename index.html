@@ -1,231 +1,720 @@
 <!doctype html>
 <html lang="hu">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Ukrajna háborús térkép – DeepState</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ukrajna – DeepState + FIRMS + NASA hőtérkép</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 
-<style>
-html,body{height:100%;margin:0}
-#map{height:100%;width:100%;background:#fff}
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #map { height: 100%; width: 100%; background: #fff; }
 
-/* PANELS */
-.panel{
- position:absolute;
- z-index:1000;
- background:rgba(255,255,255,.95);
- border-radius:12px;
- box-shadow:0 6px 18px rgba(0,0,0,.2);
- font:13px system-ui;
- max-width:560px;
- overflow:hidden;
-}
+    :root{
+      --bg: rgba(255,255,255,0.96);
+      --border: 1px solid rgba(0,0,0,0.08);
+      --shadow: 0 8px 22px rgba(0,0,0,0.18);
+      --radius: 14px;
+      --gap: 10px;
+      --font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      --btn: #111;
+      --btn2:#444;
+      --muted:#666;
+      --danger:#b00020;
+      --ok:#0a7a2f;
+    }
 
-.panel .head{
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:10px 12px;
- background:#fff;
-}
+    .panel{
+      position:absolute;
+      z-index:1000;
+      background: var(--bg);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      font: var(--font);
+      overflow:hidden;
+      width: 360px;
+      max-width: calc(100vw - 24px);
+    }
 
-.panel .body{padding:10px 12px}
-.panel .toggleBtn{background:#111;color:#fff;border:0;border-radius:10px;padding:8px 10px}
+    .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px 12px;
+      background: rgba(255,255,255,0.98);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .head .title{ font-weight: 700; font-size: 13px; }
+    .head .sub{ font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .headLeft{ display:flex; flex-direction:column; }
+    .toggleBtn{
+      border:0;
+      background: var(--btn);
+      color:#fff;
+      border-radius: 10px;
+      padding: 7px 10px;
+      cursor:pointer;
+      font-size: 12px;
+      line-height: 1;
+    }
 
-#panelLeft{top:12px;left:12px}
-#panelRight{top:12px;right:12px}
+    .body{ padding: 10px 12px 12px; }
+    .collapsed .body{ display:none; }
 
-.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .row{
+      display:flex;
+      gap: var(--gap);
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
 
-.chip{background:#f2f2f2;padding:7px 10px;border-radius:999px}
-.btn{background:#111;color:#fff;border:0;border-radius:10px;padding:8px 12px}
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      background:#f2f2f2;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      user-select:none;
+      white-space: nowrap;
+    }
 
-#legend{
- position:absolute;
- bottom:12px;
- left:12px;
- z-index:1000;
- background:rgba(255,255,255,.95);
- border-radius:12px;
- padding:10px;
- box-shadow:0 6px 18px rgba(0,0,0,.2);
- font-size:12px;
-}
+    .btn{
+      border:0;
+      border-radius: 10px;
+      padding: 9px 11px;
+      background: var(--btn);
+      color:#fff;
+      cursor:pointer;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .btn.secondary{ background: var(--btn2); }
+    .btn:disabled{ opacity:0.55; cursor:not-allowed; }
 
-/* MOBILE FIX */
-@media (max-width:820px){
+    select, input[type="text"]{
+      padding: 6px 8px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      background:#fff;
+      font-size: 12px;
+    }
 
- .panel{
-  left:8px!important;
-  right:8px!important;
-  max-width:none!important;
- }
+    .sliderRow{ display:flex; gap:10px; align-items:center; width:100%; margin-top:10px; }
+    input[type="range"]{ width: 100%; }
 
- #panelLeft{top:8px!important}
+    .notice{
+      margin-top: 8px;
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #fff3f3;
+      border: 1px solid rgba(176,0,32,0.18);
+      color: var(--danger);
+    }
+    .notice.ok{
+      background:#f1fff5;
+      border-color: rgba(10,122,47,0.20);
+      color: var(--ok);
+    }
 
- #panelRight{
-  top:auto!important;
-  bottom:90px!important;
- }
+    .log{
+      margin-top: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+      background:#f6f6f6;
+      border-radius: 10px;
+      padding: 8px;
+      max-height: 140px;
+      overflow:auto;
+    }
 
- #legend{
-  left:8px!important;
-  right:8px!important;
-  bottom:8px!important;
- }
+    /* Legend */
+    #legend{
+      position:absolute;
+      z-index:1000;
+      left: 12px;
+      bottom: 12px;
+      background: var(--bg);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 10px 12px;
+      font: var(--font);
+      max-width: calc(100vw - 24px);
+    }
+    #legend .legendHead{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    #legend .legendHead b{ margin:0; font-size:12px; }
+    #legend .legendToggle{
+      border:0;
+      background: var(--btn);
+      color:#fff;
+      border-radius: 10px;
+      padding: 6px 9px;
+      cursor:pointer;
+      font-size:12px;
+    }
+    #legend .legendBody{ margin-top: 8px; }
+    #legend .item{ display:flex; align-items:center; gap:8px; margin:4px 0; font-size:12px; }
+    .swatch{ width:12px; height:12px; border-radius:3px; border:1px solid rgba(0,0,0,0.2); }
+    #legend.collapsed .legendBody{ display:none; }
 
-}
-</style>
+    /* Positions (desktop) */
+    #panelLeft{ top: 12px; left: 12px; }
+    #panelRight{ top: 12px; right: 12px; width: 340px; }
+
+    /* Mobile: ne takarják egymást -> kisebb szélesség + külön sávok */
+    @media (max-width: 820px){
+      #panelLeft{
+        top: 10px !important;
+        left: 10px !important;
+        right: auto !important;
+        width: min(360px, calc(100vw - 20px)) !important;
+      }
+      #panelRight{
+        top: 10px !important;
+        right: 10px !important;
+        left: auto !important;
+        width: min(330px, calc(100vw - 20px)) !important;
+      }
+
+      /* ha nagyon kicsi a kijelző, egymás alá tesszük őket automatikusan */
+      @media (max-width: 540px){
+        #panelLeft{
+          left: 10px !important;
+          right: 10px !important;
+          width: auto !important;
+        }
+        #panelRight{
+          top: auto !important;
+          bottom: 110px !important; /* legenda fölé */
+          left: 10px !important;
+          right: 10px !important;
+          width: auto !important;
+        }
+        #legend{
+          left: 10px !important;
+          right: 10px !important;
+          bottom: 10px !important;
+        }
+      }
+    }
+  </style>
 </head>
 
 <body>
-<div id="map"></div>
+  <div id="map"></div>
 
-<div id="panelLeft" class="panel">
- <div class="head">
-  <b>Rétegek</b>
- </div>
- <div class="body">
+  <!-- LEFT PANEL -->
+  <div id="panelLeft" class="panel">
+    <div class="head">
+      <div class="headLeft">
+        <div class="title">Rétegek</div>
+        <div class="sub">DeepState + FIRMS + NASA hőtérkép</div>
+      </div>
+      <button id="toggleLeft" class="toggleBtn" type="button" title="Összecsukás">☰</button>
+    </div>
+    <div class="body">
+      <div class="row">
+        <label class="chip"><input id="chkDeep" type="checkbox" checked> DeepState</label>
+        <label class="chip"><input id="chkFirms" type="checkbox" checked> FIRMS</label>
+        <label class="chip"><input id="chkGibs" type="checkbox"> NASA hőtérkép</label>
+      </div>
 
-  <div class="row">
-   <label class="chip"><input id="chkDeep" type="checkbox" checked> DeepState</label>
-   <label class="chip"><input id="chkFirms" type="checkbox" checked> FIRMS</label>
-   <label class="chip"><input id="chkGibs" type="checkbox"> NASA hőtérkép</label>
+      <div id="todayNotice" class="notice" style="display:none;"></div>
+
+      <div class="row">
+        <span class="chip">Alaptérkép:
+          <select id="selBase">
+            <option value="osm" selected>OSM</option>
+            <option value="sat">Műhold (ESRI)</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="row">
+        <span class="chip">FIRMS napok:
+          <select id="selDays">
+            <option value="3">3</option>
+            <option value="7">7</option>
+            <option value="10" selected>10</option>
+          </select>
+        </span>
+
+        <span class="chip">Max pötty/nap:
+          <select id="selMaxPts">
+            <option value="500">500</option>
+            <option value="1500" selected>1500</option>
+            <option value="3000">3000</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="row">
+        <span class="chip">NASA réteg:
+          <select id="selGibs">
+            <option value="viirs375" selected>VIIRS Thermal (375m)</option>
+            <option value="modis1k">MODIS Thermal (1km)</option>
+          </select>
+        </span>
+        <span class="chip">Áttetsző:
+          <input id="rngGibs" type="range" min="0" max="1" value="0.55" step="0.05" style="width:140px">
+        </span>
+      </div>
+
+      <div class="row">
+        <button id="btnRefresh" class="btn" type="button">🔄 Adat frissítés</button>
+        <button id="btnZoomUkr" class="btn secondary" type="button">🎯 Ukrajna</button>
+        <button id="btnZoomFront" class="btn secondary" type="button">🎯 Front</button>
+      </div>
+
+      <div id="log" class="log">Indul…</div>
+    </div>
   </div>
 
-  <div id="latestNotice" style="margin-top:10px;color:#a00;font-size:12px"></div>
+  <!-- RIGHT PANEL -->
+  <div id="panelRight" class="panel">
+    <div class="head">
+      <div class="headLeft">
+        <div class="title">Idősáv</div>
+        <div class="sub">Lejátszás + csúszka + ugrások</div>
+      </div>
+      <button id="toggleRight" class="toggleBtn" type="button" title="Összecsukás">☰</button>
+    </div>
 
-  <div class="row">
-   <button id="btnRefresh" class="btn">🔄 Adat frissítés</button>
+    <div class="body">
+      <div class="row">
+        <span class="chip">Dátum: <b id="lblDate">…</b></span>
+      </div>
+
+      <div class="row">
+        <span class="chip">Sebesség:
+          <select id="selSpeed">
+            <option value="300" selected>0.3s</option>
+            <option value="600">0.6s</option>
+            <option value="1200">1.2s</option>
+            <option value="2000">2.0s</option>
+          </select>
+        </span>
+        <button id="btnPlay" class="btn" type="button" disabled>Lejátszás</button>
+      </div>
+
+      <div class="sliderRow">
+        <input id="rngDay" type="range" min="0" max="0" value="0" step="1" disabled />
+      </div>
+
+      <div class="row">
+        <span class="chip" style="flex:1;">
+          Ugrás:
+          <select id="selJump" style="width: 220px; max-width: 100%;">
+            <option value="">Legfrissebb</option>
+          </select>
+        </span>
+      </div>
+    </div>
   </div>
 
- </div>
-</div>
-
-<div id="panelRight" class="panel">
- <div class="head">
-  <b>Idősáv</b>
- </div>
- <div class="body">
-
-  <div class="row">
-   <span id="lblDate">…</span>
+  <!-- LEGEND -->
+  <div id="legend">
+    <div class="legendHead">
+      <b>Jelmagyarázat</b>
+      <button id="btnLegend" class="legendToggle" type="button">▼</button>
+    </div>
+    <div class="legendBody">
+      <div class="item"><span class="swatch" style="background:#6b0000;"></span> Megszállt terület (kitöltés)</div>
+      <div class="item"><span class="swatch" style="background:#d00;"></span> Határ/front</div>
+      <div class="item"><span class="swatch" style="background:#ff5500;"></span> FIRMS hőpont</div>
+      <div class="item"><span class="swatch" style="background:rgba(255,255,255,0); border:1px dashed rgba(0,0,0,0.35);"></span> NASA GIBS overlay</div>
+    </div>
   </div>
-
-  <div class="row">
-   <button id="btnPlay" class="btn">Lejátszás</button>
-  </div>
-
-  <input id="rngDay" type="range" min="0" max="0" value="0" style="width:100%">
-
-  <div class="row">
-   <select id="jumpSelect"></select>
-  </div>
-
- </div>
-</div>
-
-<div id="legend">
- <b>Jelmagyarázat</b><br>
- <span style="color:#6b0000">■</span> Megszállt terület<br>
- <span style="color:#ff5500">■</span> FIRMS hőpont
-</div>
 
 <script>
+(() => {
+  // ====== FIRMS MAP_KEY (idézőjelek maradnak!) ======
+  const FIRMS_MAP_KEY = "44b266fd8324db5a0a9866017429dc43";
+  const UKRAINE_BBOX = "22,44,40,53";
+  const UKRAINE_BOUNDS_RAW = { sw: [44.0, 22.0], ne: [52.7, 40.2] };
 
-const map=L.map("map").setView([49,31],6)
+  const el = (id) => document.getElementById(id);
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19}).addTo(map)
+  const panelLeft = el("panelLeft");
+  const panelRight = el("panelRight");
+  el("toggleLeft").addEventListener("click", () => panelLeft.classList.toggle("collapsed"));
+  el("toggleRight").addEventListener("click", () => panelRight.classList.toggle("collapsed"));
 
-let deepLayer=null
-let dates=[]
-let currentDate=null
+  const legend = el("legend");
+  const btnLegend = el("btnLegend");
+  btnLegend.addEventListener("click", () => {
+    legend.classList.toggle("collapsed");
+    btnLegend.textContent = legend.classList.contains("collapsed") ? "▲" : "▼";
+  });
 
-async function loadDates(){
- const r=await fetch("./data/deepstate_dates.json",{cache:"no-store"})
- dates=await r.json()
+  const chkDeep = el("chkDeep");
+  const chkFirms = el("chkFirms");
+  const chkGibs = el("chkGibs");
 
- document.getElementById("rngDay").max=dates.length-1
- document.getElementById("rngDay").value=dates.length-1
+  const selBase = el("selBase");
+  const selDays = el("selDays");
+  const selMaxPts = el("selMaxPts");
+  const selGibs = el("selGibs");
+  const rngGibs = el("rngGibs");
 
- buildJumpList()
- checkLatestDate()
+  const btnRefresh = el("btnRefresh");
+  const btnZoomUkr = el("btnZoomUkr");
+  const btnZoomFront = el("btnZoomFront");
 
- loadByIndex(dates.length-1)
-}
+  const lblDate = el("lblDate");
+  const selSpeed = el("selSpeed");
+  const btnPlay = el("btnPlay");
+  const rngDay = el("rngDay");
+  const selJump = el("selJump");
 
-function checkLatestDate(){
- const latest=dates[dates.length-1].date
- const today=new Date().toISOString().slice(0,10)
+  const todayNotice = el("todayNotice");
+  const logEl = el("log");
 
- if(latest!==today){
-  document.getElementById("latestNotice").textContent=
-   "Nincs mai DeepState fájl. Legutóbbi: "+latest
- }
-}
+  function log(msg){
+    logEl.textContent += "\n" + msg;
+    logEl.scrollTop = logEl.scrollHeight;
+  }
 
-function buildJumpList(){
- const sel=document.getElementById("jumpSelect")
- sel.innerHTML=""
+  // Map
+  const map = L.map("map", { zoomControl: true }).setView([49.0, 31.0], 6);
 
- const add=(txt,idx)=>{
-  const o=document.createElement("option")
-  o.textContent=txt
-  o.value=idx
-  sel.appendChild(o)
- }
+  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19, attribution: "&copy; OpenStreetMap"
+  }).addTo(map);
 
- add("Legfrissebb",dates.length-1)
- add("−7 nap",Math.max(0,dates.length-7))
- add("−30 nap",Math.max(0,dates.length-30))
- add("−180 nap",Math.max(0,dates.length-180))
- add("−365 nap",Math.max(0,dates.length-365))
+  const esriSat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom: 19, attribution: "Tiles &copy; Esri"
+  });
 
- sel.onchange=()=>loadByIndex(sel.value)
-}
+  const UKRAINE_BOUNDS = L.latLngBounds(
+    L.latLng(UKRAINE_BOUNDS_RAW.sw[0], UKRAINE_BOUNDS_RAW.sw[1]),
+    L.latLng(UKRAINE_BOUNDS_RAW.ne[0], UKRAINE_BOUNDS_RAW.ne[1])
+  );
 
-async function loadByIndex(i){
- const d=dates[i]
- currentDate=d.date
- document.getElementById("lblDate").textContent=d.date
+  selBase.addEventListener("change", () => {
+    if(selBase.value === "sat"){ map.removeLayer(osm); esriSat.addTo(map); }
+    else { map.removeLayer(esriSat); osm.addTo(map); }
+  });
 
- const r=await fetch(d.raw,{cache:"no-store"})
- const data=await r.json()
+  // Layers
+  let deepLayer = null;
+  let gibsLayer = null;
+  const firmsLayer = L.layerGroup().addTo(map);
 
- if(deepLayer)map.removeLayer(deepLayer)
+  function setVisible(layer, on){
+    if(!layer) return;
+    if(on) layer.addTo(map);
+    else if(map.hasLayer(layer)) map.removeLayer(layer);
+  }
 
- deepLayer=L.geoJSON(data,{
-  style:{color:"#d00",fillColor:"#6b0000",fillOpacity:.3}
- }).addTo(map)
-}
+  chkDeep.addEventListener("change", () => setVisible(deepLayer, chkDeep.checked));
+  chkFirms.addEventListener("change", () => setVisible(firmsLayer, chkFirms.checked));
+  chkGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
 
-document.getElementById("rngDay").oninput=e=>loadByIndex(e.target.value)
+  async function loadJson(url){
+    const r = await fetch(url, { cache:"no-store" });
+    if(!r.ok) throw new Error(`Fetch hiba: ${url} → HTTP ${r.status}`);
+    return await r.json();
+  }
 
-document.getElementById("btnRefresh").onclick=()=>location.reload()
+  function renderDeepState(data){
+    if(deepLayer) map.removeLayer(deepLayer);
+    deepLayer = L.geoJSON(data, {
+      style: () => ({
+        color:"#d00", weight:2.2, opacity:0.95,
+        fillColor:"#6b0000", fillOpacity:0.28
+      })
+    });
+    setVisible(deepLayer, chkDeep.checked);
+  }
 
-let playing=false
-let timer=null
+  function doZoomFront(){
+    if(!deepLayer) return;
+    const b = deepLayer.getBounds();
+    if(b && b.isValid && b.isValid()) map.fitBounds(b.pad(0.12));
+  }
+  function doZoomUkr(){ map.fitBounds(UKRAINE_BOUNDS.pad(0.08)); }
+  btnZoomFront.addEventListener("click", doZoomFront);
+  btnZoomUkr.addEventListener("click", doZoomUkr);
 
-document.getElementById("btnPlay").onclick=()=>{
- if(!playing){
-  playing=true
-  timer=setInterval(()=>{
-   let v=Number(document.getElementById("rngDay").value)
-   if(v<dates.length-1)v++
-   document.getElementById("rngDay").value=v
-   loadByIndex(v)
-  },400)
- }else{
-  playing=false
-  clearInterval(timer)
- }
-}
+  // GIBS
+  function gibsTemplateFor(sel){
+    if(sel === "modis1k"){
+      return "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Terra_Thermal_Anomalies_All/default/{date}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png";
+    }
+    return "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/VIIRS_SNPP_Thermal_Anomalies_375m_All/default/{date}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png";
+  }
 
-loadDates()
+  function setGibs(dateStr){
+    if(!chkGibs.checked){
+      if(gibsLayer && map.hasLayer(gibsLayer)) map.removeLayer(gibsLayer);
+      return;
+    }
+    const url = gibsTemplateFor(selGibs.value).replace("{date}", dateStr);
+    const op = Number(rngGibs.value || "0.55");
+    if(!gibsLayer){
+      gibsLayer = L.tileLayer(url, { opacity: op, maxZoom: 19, maxNativeZoom: 9, attribution:"NASA GIBS" });
+    } else {
+      gibsLayer.setUrl(url);
+      gibsLayer.setOpacity(op);
+    }
+    gibsLayer.addTo(map);
+  }
 
+  selGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
+  rngGibs.addEventListener("input", () => { if(gibsLayer) gibsLayer.setOpacity(Number(rngGibs.value||"0.55")); });
+
+  // FIRMS
+  let firmsByDate = {};
+
+  function parseCSV(csvText){
+    const lines = csvText.split(/\r?\n/).filter(Boolean);
+    if(lines.length <= 1) return [];
+    const header = lines[0].split(",");
+    const idx = (name) => header.indexOf(name);
+    const iLat = idx("latitude"), iLon = idx("longitude"), iDate = idx("acq_date"), iTime = idx("acq_time");
+    const iSat = idx("satellite"), iConf = idx("confidence"), iFRP = idx("frp");
+    const out = [];
+    for(let k=1; k<lines.length; k++){
+      const c = lines[k].split(",");
+      if(c.length < header.length) continue;
+      const lat = parseFloat(c[iLat]), lon = parseFloat(c[iLon]);
+      if(!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+      out.push({
+        lat, lon,
+        acq_date: c[iDate] ?? "",
+        acq_time: c[iTime] ?? "",
+        frp: c[iFRP] ?? "",
+        sat: c[iSat] ?? "",
+        conf: c[iConf] ?? ""
+      });
+    }
+    return out;
+  }
+
+  function fmtTime(acq){
+    const s = (acq||"").toString().padStart(4,"0");
+    return s.length===4 ? (s.slice(0,2)+":"+s.slice(2,4)) : s;
+  }
+
+  async function fetchFirms(){
+    firmsByDate = {};
+    firmsLayer.clearLayers();
+
+    const keyOk = (FIRMS_MAP_KEY && FIRMS_MAP_KEY.length >= 10);
+    if(!keyOk){
+      log("FIRMS: nincs MAP_KEY beállítva.");
+      return;
+    }
+
+    const days = Number(selDays.value) || 10;
+    const products = ["VIIRS_SNPP_NRT", "VIIRS_NOAA20_NRT"];
+    let total = 0;
+
+    for(const prod of products){
+      const url = `https://firms.modaps.eosdis.nasa.gov/api/area/csv/${encodeURIComponent(FIRMS_MAP_KEY)}/${prod}/${UKRAINE_BBOX}/${days}`;
+      log(`FIRMS fetch: ${prod} | last ${days} days`);
+      const r = await fetch(url, { cache:"no-store" });
+      if(!r.ok){ log(`FIRMS HTTP hiba (${prod}): ${r.status}`); continue; }
+      const txt = await r.text();
+      const pts = parseCSV(txt);
+      total += pts.length;
+      for(const p of pts){
+        if(!p.acq_date) continue;
+        (firmsByDate[p.acq_date] ||= []).push(p);
+      }
+    }
+    log(`FIRMS pontok összesen: ${total}`);
+    if(currentDate) renderFirmsForDate(currentDate);
+  }
+
+  function renderFirmsForDate(dateStr){
+    firmsLayer.clearLayers();
+    if(!chkFirms.checked) return;
+
+    const pts = firmsByDate[dateStr] || [];
+    const maxPts = Number(selMaxPts.value) || 1500;
+
+    if(pts.length === 0){
+      log(`FIRMS: 0 pont erre a napra: ${dateStr}`);
+      return;
+    }
+
+    const use = pts.length > maxPts ? pts.slice(0, maxPts) : pts;
+
+    for(const p of use){
+      const frp = Number(p.frp);
+      const radius = Number.isFinite(frp) ? Math.max(3, Math.min(9, 2 + frp/20)) : 4;
+
+      const popup =
+        `<b>FIRMS hőpont</b><br>` +
+        `Dátum: ${p.acq_date}<br>` +
+        `Idő (UTC): ${fmtTime(p.acq_time)}<br>` +
+        `Lat/Lon: ${p.lat.toFixed(5)}, ${p.lon.toFixed(5)}<br>` +
+        `FRP: ${p.frp||"-"} | Conf: ${p.conf||"-"} | Sat: ${p.sat||"-"}`;
+
+      firmsLayer.addLayer(
+        L.circleMarker([p.lat, p.lon], {
+          radius, color:"#ff5500", weight:1, opacity:0.9, fillOpacity:0.65
+        }).bindPopup(popup)
+      );
+    }
+    log(`FIRMS: ${use.length}/${pts.length} pont kirajzolva (${dateStr})`);
+  }
+
+  selDays.addEventListener("change", fetchFirms);
+  selMaxPts.addEventListener("change", () => { if(currentDate) renderFirmsForDate(currentDate); });
+
+  // Timeline + Jump
+  let dates = [];
+  let currentDate = null;
+  let playing = false;
+  let timer = null;
+
+  function stopPlay(){
+    playing = false;
+    btnPlay.textContent = "Lejátszás";
+    if(timer){ clearInterval(timer); timer = null; }
+  }
+  function stepOnce(){
+    let v = Number(rngDay.value);
+    if(v >= Number(rngDay.max)) v = Number(rngDay.min);
+    else v += 1;
+    rngDay.value = String(v);
+    loadByIndex(v, false);
+  }
+  function startPlay(){
+    playing = true;
+    btnPlay.textContent = "Megállítás";
+    timer = setInterval(stepOnce, Number(selSpeed.value) || 300);
+  }
+
+  btnPlay.addEventListener("click", () => playing ? stopPlay() : startPlay());
+  selSpeed.addEventListener("change", () => { if(playing){ stopPlay(); startPlay(); } });
+  rngDay.addEventListener("input", () => { stopPlay(); loadByIndex(Number(rngDay.value), false); });
+
+  function buildJumpOptions(){
+    selJump.innerHTML = "";
+    const add = (label, idx) => {
+      const o = document.createElement("option");
+      o.value = String(idx);
+      o.textContent = label;
+      selJump.appendChild(o);
+    };
+
+    const last = dates.length - 1;
+    add("Legfrissebb", last);
+    add("−7 nap", Math.max(0, last - 7));
+    add("−30 nap", Math.max(0, last - 30));
+    add("−180 nap", Math.max(0, last - 180));
+    add("−365 nap", Math.max(0, last - 365));
+
+    // “Hónap eleje” ugrások az utolsó 12 hónapból
+    const seen = new Set();
+    for(let i=last; i>=0; i--){
+      const d = dates[i]?.date;
+      if(!d) continue;
+      const ym = d.slice(0,7);
+      if(seen.has(ym)) continue;
+      seen.add(ym);
+      add(`📅 ${ym} eleje`, i);
+      if(seen.size >= 12) break;
+    }
+  }
+
+  selJump.addEventListener("change", () => {
+    const idx = Number(selJump.value);
+    if(Number.isFinite(idx)) {
+      rngDay.value = String(idx);
+      stopPlay();
+      loadByIndex(idx, true);
+    }
+  });
+
+  function setTodayNotice(){
+    const latest = dates[dates.length - 1]?.date;
+    if(!latest) return;
+    const today = new Date().toISOString().slice(0,10);
+
+    if(latest !== today){
+      todayNotice.style.display = "";
+      todayNotice.textContent = `Nincs mai DeepState fájl. Legfrissebb: ${latest}`;
+      todayNotice.classList.remove("ok");
+    }else{
+      todayNotice.style.display = "";
+      todayNotice.textContent = `Mai DeepState elérhető: ${latest}`;
+      todayNotice.classList.add("ok");
+    }
+  }
+
+  async function loadByIndex(i, doZoomNow=true){
+    const item = dates[i];
+    if(!item) return;
+
+    currentDate = item.date;
+    lblDate.textContent = item.date;
+
+    const data = await loadJson(item.raw);
+    renderDeepState(data);
+
+    setGibs(item.date);
+    renderFirmsForDate(item.date);
+
+    if(doZoomNow) doZoomFront();
+  }
+
+  // Refresh gomb: újraolvassa a deepstate_dates-t + újratölti a FIRMS adatot
+  btnRefresh.addEventListener("click", async () => {
+    stopPlay();
+    log("🔄 Frissítés…");
+    await init(true);
+  });
+
+  async function init(isRefresh=false){
+    try{
+      if(!isRefresh) log("Indul…");
+
+      dates = await loadJson("./data/deepstate_dates.json");
+      if(!Array.isArray(dates) || dates.length === 0) throw new Error("Üres deepstate_dates.json");
+
+      buildJumpOptions();
+      setTodayNotice();
+
+      rngDay.min = "0";
+      rngDay.max = String(dates.length - 1);
+      rngDay.value = String(dates.length - 1);
+      rngDay.disabled = false;
+
+      await loadByIndex(dates.length - 1, true);
+
+      await fetchFirms();
+
+      btnPlay.disabled = false;
+      log(isRefresh ? "✅ Frissítés kész" : "Kész ✔");
+    } catch(e){
+      log("INIT HIBA: " + String(e));
+    }
+  }
+
+  window.addEventListener("error", (e) => log("JS ERROR: " + (e.message || e.error || e)));
+  window.addEventListener("unhandledrejection", (e) => log("PROMISE ERROR: " + (e.reason || e)));
+
+  init(false);
+})();
 </script>
 </body>
 </html>
