@@ -1,0 +1,392 @@
+{
+  "ukraine ukraine": {
+    "ok": true,
+    "lon": 31.2718321,
+    "lat": 49.4871968,
+    "raw": {
+      "place_id": 178358164,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 60199,
+      "lat": "49.4871968",
+      "lon": "31.2718321",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 4,
+      "importance": 0.8898048326795,
+      "addresstype": "country",
+      "name": "Україна",
+      "display_name": "Україна",
+      "address": {
+        "country": "Україна",
+        "country_code": "ua"
+      },
+      "boundingbox": [
+        "44.1845980",
+        "52.3797464",
+        "22.1370590",
+        "40.2278093"
+      ]
+    }
+  },
+  "europe": {
+    "ok": true,
+    "lon": 41.0,
+    "lat": 57.5,
+    "raw": {
+      "place_id": 183390380,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 4863350633,
+      "lat": "57.5000000",
+      "lon": "41.0000000",
+      "category": "natural",
+      "type": "plain",
+      "place_rank": 22,
+      "importance": 0.5216673448928171,
+      "addresstype": "plain",
+      "name": "Восточно-Европейская равнина",
+      "display_name": "Восточно-Европейская равнина, Волжское сельское поселение, Нерехтский район, Костромская область, Центральный федеральный округ, Россия",
+      "address": {
+        "plain": "Восточно-Европейская равнина",
+        "municipality": "Волжское сельское поселение",
+        "county": "Нерехтский район",
+        "state": "Костромская область",
+        "ISO3166-2-lvl4": "RU-KOS",
+        "region": "Центральный федеральный округ",
+        "country": "Россия",
+        "country_code": "ru"
+      },
+      "boundingbox": [
+        "57.4999500",
+        "57.5000500",
+        "40.9999500",
+        "41.0000500"
+      ]
+    }
+  },
+  "the russian federation": {
+    "ok": true,
+    "lon": 23.6874332,
+    "lat": 52.094868,
+    "raw": {
+      "place_id": 165960502,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "way",
+      "osm_id": 57991242,
+      "lat": "52.0948680",
+      "lon": "23.6874332",
+      "category": "office",
+      "type": "diplomatic",
+      "place_rank": 30,
+      "importance": 6.726863508044583e-05,
+      "addresstype": "office",
+      "name": "Консульства Расіі",
+      "display_name": "Консульства Расіі, 10, Пушкінская вуліца, Італьянскі квартал, Цэнтр, Ленінскі раён, Брэст, Брэсцкая вобласць, 224005, Беларусь",
+      "address": {
+        "office": "Консульства Расіі",
+        "house_number": "10",
+        "road": "Пушкінская вуліца",
+        "neighbourhood": "Італьянскі квартал",
+        "suburb": "Цэнтр",
+        "city_district": "Ленінскі раён",
+        "city": "Брэст",
+        "state": "Брэсцкая вобласць",
+        "ISO3166-2-lvl4": "BY-BR",
+        "postcode": "224005",
+        "country": "Беларусь",
+        "country_code": "by"
+      },
+      "boundingbox": [
+        "52.0947277",
+        "52.0950043",
+        "23.6871753",
+        "23.6876860"
+      ]
+    }
+  },
+  "ukraine": {
+    "ok": true,
+    "lon": 31.2718321,
+    "lat": 49.4871968,
+    "raw": {
+      "place_id": 178528320,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 60199,
+      "lat": "49.4871968",
+      "lon": "31.2718321",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 4,
+      "importance": 0.8898048326795,
+      "addresstype": "country",
+      "name": "Україна",
+      "display_name": "Україна",
+      "address": {
+        "country": "Україна",
+        "country_code": "ua"
+      },
+      "boundingbox": [
+        "44.1845980",
+        "52.3797464",
+        "22.1370590",
+        "40.2278093"
+      ]
+    }
+  },
+  "the russo-ukrainian war": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "the sumy direction": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "the velykyi burluk direction": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "kharkiv oblast": {
+    "ok": true,
+    "lon": 36.3788957,
+    "lat": 49.8299582,
+    "raw": {
+      "place_id": 179617607,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 71254,
+      "lat": "49.8299582",
+      "lon": "36.3788957",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 8,
+      "importance": 0.660878808948466,
+      "addresstype": "state",
+      "name": "Харківська область",
+      "display_name": "Харківська область, Україна",
+      "address": {
+        "state": "Харківська область",
+        "ISO3166-2-lvl4": "UA-63",
+        "country": "Україна",
+        "country_code": "ua"
+      },
+      "boundingbox": [
+        "48.5311780",
+        "50.4594753",
+        "34.8563132",
+        "38.0935290"
+      ]
+    }
+  },
+  "donetsk oblast": {
+    "ok": true,
+    "lon": 37.7809825,
+    "lat": 47.9212914,
+    "raw": {
+      "place_id": 189918049,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 71973,
+      "lat": "47.9212914",
+      "lon": "37.7809825",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 8,
+      "importance": 0.674126849640414,
+      "addresstype": "state",
+      "name": "Донецька область",
+      "display_name": "Донецька область, 83000-87999, Україна",
+      "address": {
+        "state": "Донецька область",
+        "ISO3166-2-lvl4": "UA-14",
+        "postcode": "83000-87999",
+        "country": "Україна",
+        "country_code": "ua"
+      },
+      "boundingbox": [
+        "46.6876770",
+        "49.2339965",
+        "36.5419522",
+        "39.0914413"
+      ]
+    }
+  },
+  "kostyantynivka": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "the pokrovsk direction": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "eastern zaporizhia oblast": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "zaporizhia oblast": {
+    "ok": true,
+    "lon": 35.922969,
+    "lat": 47.4165079,
+    "raw": {
+      "place_id": 191520136,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 71980,
+      "lat": "47.4165079",
+      "lon": "35.9229690",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 8,
+      "importance": 0.6449975749949785,
+      "addresstype": "state",
+      "name": "Запорізька область",
+      "display_name": "Запорізька область, Україна",
+      "address": {
+        "state": "Запорізька область",
+        "ISO3166-2-lvl4": "UA-23",
+        "country": "Україна",
+        "country_code": "ua"
+      },
+      "boundingbox": [
+        "46.1464862",
+        "48.1449302",
+        "34.1394646",
+        "37.2486286"
+      ]
+    }
+  },
+  "the kherson direction": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "kupyansk": {
+    "ok": true,
+    "lon": 37.6141992,
+    "lat": 49.7132963,
+    "raw": {
+      "place_id": 178996349,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 3592314,
+      "lat": "49.7132963",
+      "lon": "37.6141992",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 16,
+      "importance": 0.5406791363601914,
+      "addresstype": "town",
+      "name": "Куп’янськ",
+      "display_name": "Куп’янськ, Куп'янська міська громада, Куп’янський район, Харківська область, Україна",
+      "address": {
+        "town": "Куп’янськ",
+        "municipality": "Куп'янська міська громада",
+        "district": "Куп’янський район",
+        "state": "Харківська область",
+        "ISO3166-2-lvl4": "UA-63",
+        "country": "Україна",
+        "country_code": "ua"
+      },
+      "boundingbox": [
+        "49.6753465",
+        "49.7446573",
+        "37.5725231",
+        "37.6527559"
+      ]
+    }
+  },
+  "the borova tactical area": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "the kostyantynivka-druzhkivka tactical area": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "the pokrovsk agglomeration": {
+    "ok": false,
+    "status": 200,
+    "empty": true
+  },
+  "eastern dnipropetrovsk oblast": {
+    "ok": true,
+    "lon": 33.4500405,
+    "lat": 47.9460829,
+    "raw": {
+      "place_id": 390453786,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "node",
+      "osm_id": 12389661585,
+      "lat": "47.9460829",
+      "lon": "33.4500405",
+      "category": "place",
+      "type": "neighbourhood",
+      "place_rank": 20,
+      "importance": 0.13339809491111618,
+      "addresstype": "neighbourhood",
+      "name": "2-й Східний мікрорайон",
+      "display_name": "2-й Східний мікрорайон, Селище цементників, Довгинцівський район, Кривий Ріг, Криворізька міська громада, Криворізький район, Дніпропетровська область, 50093, Україна",
+      "address": {
+        "neighbourhood": "2-й Східний мікрорайон",
+        "suburb": "Селище цементників",
+        "borough": "Довгинцівський район",
+        "city": "Кривий Ріг",
+        "municipality": "Криворізька міська громада",
+        "district": "Криворізький район",
+        "state": "Дніпропетровська область",
+        "ISO3166-2-lvl4": "UA-12",
+        "postcode": "50093",
+        "country": "Україна",
+        "country_code": "ua"
+      },
+      "boundingbox": [
+        "47.9360829",
+        "47.9560829",
+        "33.4400405",
+        "33.4600405"
+      ]
+    }
+  },
+  "oblast": {
+    "ok": true,
+    "lon": 38.0353929,
+    "lat": 55.5043158,
+    "raw": {
+      "place_id": 182463586,
+      "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+      "osm_type": "relation",
+      "osm_id": 51490,
+      "lat": "55.5043158",
+      "lon": "38.0353929",
+      "category": "boundary",
+      "type": "administrative",
+      "place_rank": 8,
+      "importance": 0.7038938630300783,
+      "addresstype": "state",
+      "name": "Московская область",
+      "display_name": "Московская область, Центральный федеральный округ, Россия",
+      "address": {
+        "state": "Московская область",
+        "ISO3166-2-lvl4": "RU-MOS",
+        "region": "Центральный федеральный округ",
+        "country": "Россия",
+        "country_code": "ru"
+      },
+      "boundingbox": [
+        "54.2556959",
+        "56.9585118",
+        "35.1484955",
+        "40.2047168"
+      ]
+    }
+  }
+}

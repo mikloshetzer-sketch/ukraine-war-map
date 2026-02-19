@@ -1,0 +1,255 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.2718321,
+          49.4871968
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "Ukraine Ukraine",
+        "tag": "UAV/drone/missile",
+        "confidence": "high",
+        "title": "ISW: UAV/drone/missile – Ukraine Ukraine",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "Україна",
+          "type": "administrative",
+          "class": null
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.0,
+          57.5
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "Europe",
+        "tag": "UAV/drone/missile",
+        "confidence": "high",
+        "title": "ISW: UAV/drone/missile – Europe",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "Восточно-Европейская равнина, Волжское сельское поселение, Нерехтский район, Костромская область, Центральный федеральный округ, Россия",
+          "type": "plain",
+          "class": null
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.6874332,
+          52.094868
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "the Russian Federation",
+        "tag": "UAV/drone/missile",
+        "confidence": "high",
+        "title": "ISW: UAV/drone/missile – the Russian Federation",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "Консульства Расіі, 10, Пушкінская вуліца, Італьянскі квартал, Цэнтр, Ленінскі раён, Брэст, Брэсцкая вобласць, 224005, Беларусь",
+          "type": "diplomatic",
+          "class": null
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.2718321,
+          49.4871968
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "Ukraine",
+        "tag": "UAV/drone/missile",
+        "confidence": "high",
+        "title": "ISW: UAV/drone/missile – Ukraine",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "Україна",
+          "type": "administrative",
+          "class": null
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.3788957,
+          49.8299582
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "Kharkiv Oblast",
+        "tag": "UAV/drone/missile",
+        "confidence": "high",
+        "title": "ISW: UAV/drone/missile – Kharkiv Oblast",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "Харківська область, Україна",
+          "type": "administrative",
+          "class": null
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7809825,
+          47.9212914
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "Donetsk Oblast",
+        "tag": "UAV/drone/missile",
+        "confidence": "high",
+        "title": "ISW: UAV/drone/missile – Donetsk Oblast",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "Донецька область, 83000-87999, Україна",
+          "type": "administrative",
+          "class": null
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.922969,
+          47.4165079
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "Zaporizhia Oblast",
+        "tag": "UAV/drone/missile",
+        "confidence": "high",
+        "title": "ISW: UAV/drone/missile – Zaporizhia Oblast",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "Запорізька область, Україна",
+          "type": "administrative",
+          "class": null
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6141992,
+          49.7132963
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "Kupyansk",
+        "tag": "UAV/drone/missile",
+        "confidence": "high",
+        "title": "ISW: UAV/drone/missile – Kupyansk",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "Куп’янськ, Куп'янська міська громада, Куп’янський район, Харківська область, Україна",
+          "type": "administrative",
+          "class": null
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.4500405,
+          47.9460829
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "Eastern Dnipropetrovsk Oblast",
+        "tag": "UAV/drone/missile",
+        "confidence": "high",
+        "title": "ISW: UAV/drone/missile – Eastern Dnipropetrovsk Oblast",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "2-й Східний мікрорайон, Селище цементників, Довгинцівський район, Кривий Ріг, Криворізька міська громада, Криворізький район, Дніпропетровська область, 50093, Україна",
+          "type": "neighbourhood",
+          "class": null
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.0353929,
+          55.5043158
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "source_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
+        "date": "2025-11-12",
+        "place": "Oblast",
+        "tag": "UAV/drone/missile",
+        "confidence": "med",
+        "title": "ISW: UAV/drone/missile – Oblast",
+        "snippet": "Other Key Product Lines From Russia &amp; Ukraine Team\n Russian Occupation Update \n Russian Force Generation &amp; Adaptation Update \n \n \n \n Related Map Series \n \n \r\n Battle of Bakhmut Battle for Kyiv Russia&#039;s Campaign for Mariupol Russian Offensive Operations in Ukraine Ukraine&#039;s Kursk Campaign Ukraine&#039;s Belgorod Campaign Ukrainian Counteroffensive Operations Russia&#039;s Campaign for the Donbas Russian Phase Zero Operations in Europe \r\n\r\n \n \n \n \n \n \n \n Russian Offensive Campaign Assessment\n Featured Insights \n \n \n \n \n \n \n Update \n Feb 18, 2026 \n \n \n \n \n Russia &amp; Ukraine \n",
+        "geocode": {
+          "display_name": "Московская область, Центральный федеральный округ, Россия",
+          "type": "administrative",
+          "class": null
+        }
+      }
+    }
+  ]
+}
