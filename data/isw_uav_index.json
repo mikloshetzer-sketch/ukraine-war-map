@@ -1,7 +1,6 @@
 {
-  "generated_utc": "2026-02-19T17:45:01.952941+00:00",
-  "source_latest_url": "https://understandingwar.org/analysis/russia-ukraine/russian-offensive-campaign-assessment/",
-  "source_date": "2025-11-12",
-  "points_latest": 10,
-  "note": "Heuristic extraction from ISW daily assessment; not a full reproduction of the report."
+  "generated_utc": "2026-02-19T19:49:02.740516",
+  "events_total": 2388,
+  "events_7d": 1503,
+  "events_30d": 1923
 }
