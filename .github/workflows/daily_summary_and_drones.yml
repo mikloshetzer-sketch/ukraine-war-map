@@ -1,12 +1,16 @@
-name: daily-summary-and-drones
+name: Daily summary and drones
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "45 3 * * *"
+    - cron: "40 3 * * *" # naponta 03:40 UTC (tetszés szerint)
 
 permissions:
   contents: write
+
+concurrency:
+  group: daily-summary-and-drones
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -14,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -22,41 +28,43 @@ jobs:
 
       - name: Install Python deps
         run: |
+          set -euo pipefail
           python -m pip install --upgrade pip
-          pip install shapely requests
+          # compute_deepstate_summary.py igényei:
+          pip install shapely pyproj
+          # drón script igényei:
+          pip install requests
 
-      - name: Prepare folders
+      - name: Compute DeepState summaries
         run: |
+          set -euo pipefail
           mkdir -p data
-          mkdir -p scripts
+          python scripts/compute_deepstate_summary.py
 
-      - name: Fetch drone-related points (GDELT DOC)
+      - name: Fetch drone points (GDELT)
         env:
-          DRONE_LOOKBACK_DAYS: "30"
-          DRONE_MAXRECORDS: "500"
+          DRONE_LOOKBACK_DAYS: "7"
+          DRONE_MAXRECORDS: "250"
+          # ha akarod, felülírhatod saját query-vel:
+          # DRONE_QUERY: '(drone OR UAV OR "Shahed") (Ukraine OR Russia)'
         run: |
           set -euo pipefail
+          mkdir -p data
           python scripts/fetch_drone_points_gdelt.py
-
-      # Ha nálad van summary script, itt hívd meg. Ha nincs, hagyd így, nem fog elhasalni.
-      - name: Compute summaries (optional)
-        run: |
-          set -euo pipefail
-          if [ -f "scripts/compute_deepstate_summary.py" ]; then
-            python scripts/compute_deepstate_summary.py
-          else
-            echo "No compute_deepstate_summary.py found, skipping."
-          fi
 
       - name: Commit & push if changed
         run: |
-          set -e
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
+          set -euo pipefail
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+
+          # mindent felveszünk, ami a data/ alatt frissülhet
+          git add -A data
+
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "Update drones + summaries"
+
+          git commit -m "Update daily summary + drones"
           git push
