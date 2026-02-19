@@ -3,7 +3,7 @@ name: Update DeepState GeoJSON (daily)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "25 3 * * *"  # naponta 03:25 UTC
+    - cron: "25 3 * * *"  # 03:25 UTC
 
 permissions:
   contents: write
@@ -16,7 +16,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (your repo)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -26,97 +26,76 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Update DeepState data + build dates index
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Fetch DeepState data from upstream (git clone) + build index
         run: |
           set -euo pipefail
           mkdir -p data
+          rm -rf /tmp/deepstate_upstream
+          git clone --depth 1 https://github.com/cytert/deepstate-map-data.git /tmp/deepstate_upstream
 
           python - <<'PY'
-          import json, os, re, shutil
+          import json, re, shutil
           from datetime import datetime
           from pathlib import Path
-          import urllib.request
 
-          REPO_API = "https://api.github.com/repos/cytert/deepstate-map-data/contents/data?ref=main"
-          HEADERS = {
-            "User-Agent": "ukraine-war-map-bot",
-            "Accept": "application/vnd.github+json",
-          }
-          token = os.environ.get("GH_TOKEN")
-          if token:
-            HEADERS["Authorization"] = f"Bearer {token}"
+          upstream_data = Path("/tmp/deepstate_upstream/data")
+          if not upstream_data.exists():
+              raise SystemExit("Upstream data folder not found: /tmp/deepstate_upstream/data")
 
-          def http_get(url: str) -> bytes:
-            req = urllib.request.Request(url, headers=HEADERS)
-            with urllib.request.urlopen(req, timeout=60) as r:
-              return r.read()
-
-          # 1) listázás a cytert/deepstate-map-data repóból
-          raw = http_get(REPO_API)
-          items = json.loads(raw.decode("utf-8"))
-
-          # olyan fájlokat keresünk, amikben van dátum: deepstate_map_data_YYYYMMDD.geojson
+          out_dir = Path("data")
           pat = re.compile(r"deepstate_map_data_(\d{8})\.geojson$", re.IGNORECASE)
+
+          # Upstreamből kigyűjtjük a dátumos geojsonokat
           candidates = []
-          for it in items:
-            name = it.get("name", "")
-            m = pat.search(name)
-            if not m:
-              continue
-            ymd = m.group(1)
-            try:
-              d = datetime.strptime(ymd, "%Y%m%d").date()
-            except Exception:
-              continue
-            candidates.append((d, name, it.get("download_url")))
+          for p in upstream_data.glob("deepstate_map_data_*.geojson"):
+              m = pat.search(p.name)
+              if not m:
+                  continue
+              ymd = m.group(1)
+              try:
+                  d = datetime.strptime(ymd, "%Y%m%d").date()
+              except Exception:
+                  continue
+              candidates.append((d, p))
 
           if not candidates:
-            raise SystemExit("No DeepState geojson candidates found in upstream repo.")
+              raise SystemExit("No DeepState candidates found in upstream.")
 
           candidates.sort(key=lambda x: x[0])
-          latest_date, latest_name, latest_url = candidates[-1]
+          latest_date, latest_path = candidates[-1]
 
-          data_dir = Path("data")
-          latest_local = data_dir / latest_name
+          # 1) legújabb átmásolása (és opcionálisan a teljes készlet szinkron)
+          # Ha akarod: csak a latest-et másoljuk. De a timeline-hoz jobb, ha megmaradnak a régiek is.
+          # Itt: a latest-et biztosan bemásoljuk; a többinek nem árt, ha marad.
+          target_latest = out_dir / latest_path.name
+          shutil.copyfile(latest_path, target_latest)
 
-          # 2) letöltjük a legújabbat, ha nincs meg
-          if not latest_local.exists():
-            print(f"Downloading latest: {latest_name} ({latest_date})")
-            blob = http_get(latest_url)
-            latest_local.write_bytes(blob)
-          else:
-            print(f"Latest already present: {latest_name}")
-
-          # 3) deepstate_dates.json generálás a helyi data/ mappából
-          local_files = sorted(data_dir.glob("deepstate_map_data_*.geojson"))
+          # 2) deepstate_dates.json generálás a HELYI data mappából (ami nálad felgyűlt)
+          local_files = sorted(out_dir.glob("deepstate_map_data_*.geojson"))
           out = []
           for p in local_files:
-            m = pat.search(p.name)
-            if not m:
-              continue
-            ymd = m.group(1)
-            d = datetime.strptime(ymd, "%Y%m%d").date()
-            out.append({
-              "date": d.isoformat(),
-              "name": p.name,
-              "raw": f"./data/{p.name}",
-            })
-
+              m = pat.search(p.name)
+              if not m:
+                  continue
+              ymd = m.group(1)
+              d = datetime.strptime(ymd, "%Y%m%d").date()
+              out.append({
+                  "date": d.isoformat(),
+                  "name": p.name,
+                  "raw": f"./data/{p.name}",
+              })
           out.sort(key=lambda x: x["date"])
 
-          (data_dir / "deepstate_dates.json").write_text(
-            json.dumps(out, ensure_ascii=False, indent=2),
-            encoding="utf-8"
+          (out_dir / "deepstate_dates.json").write_text(
+              json.dumps(out, ensure_ascii=False, indent=2),
+              encoding="utf-8"
           )
 
-          # 4) deepstate_latest.geojson (könnyű hivatkozás)
-          latest_copy = data_dir / "deepstate_latest.geojson"
-          shutil.copyfile(latest_local, latest_copy)
+          # 3) deepstate_latest.geojson
+          shutil.copyfile(target_latest, out_dir / "deepstate_latest.geojson")
 
+          print(f"Latest upstream: {latest_path.name} ({latest_date})")
           print(f"Wrote deepstate_dates.json with {len(out)} entries")
-          print("Done.")
           PY
 
       - name: Commit & push if changed
