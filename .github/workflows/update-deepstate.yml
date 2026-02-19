@@ -26,26 +26,39 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Fetch DeepState data from upstream (git clone) + build index
+      - name: Download upstream ZIP (no git auth prompt)
+        env:
+          UPSTREAM_ZIP: "https://codeload.github.com/cytert/deepstate-map-data/zip/refs/heads/main"
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/deepstate_upstream
+          mkdir -p /tmp/deepstate_upstream
+          echo "Downloading: $UPSTREAM_ZIP"
+          curl -L --fail "$UPSTREAM_ZIP" -o /tmp/deepstate_upstream/up.zip
+          cd /tmp/deepstate_upstream
+          unzip -q up.zip
+          ls -la
+
+      - name: Build DeepState index from upstream + copy latest
         run: |
           set -euo pipefail
           mkdir -p data
-          rm -rf /tmp/deepstate_upstream
-          git clone --depth 1 https://github.com/cytert/deepstate-map-data.git /tmp/deepstate_upstream
 
           python - <<'PY'
           import json, re, shutil
           from datetime import datetime
           from pathlib import Path
 
-          upstream_data = Path("/tmp/deepstate_upstream/data")
-          if not upstream_data.exists():
-              raise SystemExit("Upstream data folder not found: /tmp/deepstate_upstream/data")
+          base = Path("/tmp/deepstate_upstream")
+          # zip kibontás után a mappa neve tipikusan: deepstate-map-data-main
+          cand = list(base.glob("deepstate-map-data-*/data"))
+          if not cand:
+              raise SystemExit("Upstream extracted folder not found (deepstate-map-data-*/data).")
+          upstream_data = cand[0]
 
           out_dir = Path("data")
           pat = re.compile(r"deepstate_map_data_(\d{8})\.geojson$", re.IGNORECASE)
 
-          # Upstreamből kigyűjtjük a dátumos geojsonokat
           candidates = []
           for p in upstream_data.glob("deepstate_map_data_*.geojson"):
               m = pat.search(p.name)
@@ -64,13 +77,14 @@ jobs:
           candidates.sort(key=lambda x: x[0])
           latest_date, latest_path = candidates[-1]
 
-          # 1) legújabb átmásolása (és opcionálisan a teljes készlet szinkron)
-          # Ha akarod: csak a latest-et másoljuk. De a timeline-hoz jobb, ha megmaradnak a régiek is.
-          # Itt: a latest-et biztosan bemásoljuk; a többinek nem árt, ha marad.
+          # latest átmásolása a te repódba
           target_latest = out_dir / latest_path.name
           shutil.copyfile(latest_path, target_latest)
 
-          # 2) deepstate_dates.json generálás a HELYI data mappából (ami nálad felgyűlt)
+          # deepstate_latest.geojson
+          shutil.copyfile(target_latest, out_dir / "deepstate_latest.geojson")
+
+          # deepstate_dates.json generálás a HELYI data mappából (timeline)
           local_files = sorted(out_dir.glob("deepstate_map_data_*.geojson"))
           out = []
           for p in local_files:
@@ -90,9 +104,6 @@ jobs:
               json.dumps(out, ensure_ascii=False, indent=2),
               encoding="utf-8"
           )
-
-          # 3) deepstate_latest.geojson
-          shutil.copyfile(target_latest, out_dir / "deepstate_latest.geojson")
 
           print(f"Latest upstream: {latest_path.name} ({latest_date})")
           print(f"Wrote deepstate_dates.json with {len(out)} entries")
