@@ -21,46 +21,50 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Download upstream ZIP (no git auth prompt)
-        env:
-          UPSTREAM_ZIP: "https://codeload.github.com/cytert/deepstate-map-data/zip/refs/heads/main"
+      - name: Download upstream ZIP (cyterat/deepstate-map-data)
         run: |
           set -euo pipefail
           rm -rf /tmp/deepstate_upstream
           mkdir -p /tmp/deepstate_upstream
-          echo "Downloading: $UPSTREAM_ZIP"
-          curl -L --fail "$UPSTREAM_ZIP" -o /tmp/deepstate_upstream/up.zip
+
+          URL_MAIN="https://codeload.github.com/cyterat/deepstate-map-data/zip/refs/heads/main"
+          URL_MASTER="https://codeload.github.com/cyterat/deepstate-map-data/zip/refs/heads/master"
+
+          echo "Downloading (try main): $URL_MAIN"
+          if curl -L --fail "$URL_MAIN" -o /tmp/deepstate_upstream/up.zip; then
+            echo "Downloaded from main"
+          else
+            echo "main failed, trying master: $URL_MASTER"
+            curl -L --fail "$URL_MASTER" -o /tmp/deepstate_upstream/up.zip
+            echo "Downloaded from master"
+          fi
+
           cd /tmp/deepstate_upstream
           unzip -q up.zip
           ls -la
 
-      - name: Build DeepState index from upstream + copy latest
+      - name: Copy latest + build deepstate_dates.json
         run: |
           set -euo pipefail
           mkdir -p data
 
-          python - <<'PY'
+          python3 - <<'PY'
           import json, re, shutil
           from datetime import datetime
           from pathlib import Path
 
           base = Path("/tmp/deepstate_upstream")
-          # zip kibontás után a mappa neve tipikusan: deepstate-map-data-main
+          # zip kibontás után tipikusan: deepstate-map-data-main vagy deepstate-map-data-master
           cand = list(base.glob("deepstate-map-data-*/data"))
           if not cand:
-              raise SystemExit("Upstream extracted folder not found (deepstate-map-data-*/data).")
+              raise SystemExit("Upstream extracted folder not found: deepstate-map-data-*/data")
           upstream_data = cand[0]
 
           out_dir = Path("data")
-          pat = re.compile(r"deepstate_map_data_(\d{8})\.geojson$", re.IGNORECASE)
+          pat = re.compile(r"deepstatemap_data_(\d{8})\.geojson$", re.IGNORECASE)
 
           candidates = []
-          for p in upstream_data.glob("deepstate_map_data_*.geojson"):
+          for p in upstream_data.glob("deepstatemap_data_*.geojson"):
               m = pat.search(p.name)
               if not m:
                   continue
@@ -72,20 +76,20 @@ jobs:
               candidates.append((d, p))
 
           if not candidates:
-              raise SystemExit("No DeepState candidates found in upstream.")
+              raise SystemExit("No candidates found in upstream (deepstatemap_data_*.geojson).")
 
           candidates.sort(key=lambda x: x[0])
           latest_date, latest_path = candidates[-1]
 
-          # latest átmásolása a te repódba
+          # 1) legfrissebb fájl átmásolása a repódba
           target_latest = out_dir / latest_path.name
           shutil.copyfile(latest_path, target_latest)
 
-          # deepstate_latest.geojson
+          # 2) deepstate_latest.geojson (könnyű hivatkozás)
           shutil.copyfile(target_latest, out_dir / "deepstate_latest.geojson")
 
-          # deepstate_dates.json generálás a HELYI data mappából (timeline)
-          local_files = sorted(out_dir.glob("deepstate_map_data_*.geojson"))
+          # 3) deepstate_dates.json a HELYI data mappából (timeline)
+          local_files = sorted(out_dir.glob("deepstatemap_data_*.geojson"))
           out = []
           for p in local_files:
               m = pat.search(p.name)
@@ -106,7 +110,7 @@ jobs:
           )
 
           print(f"Latest upstream: {latest_path.name} ({latest_date})")
-          print(f"Wrote deepstate_dates.json with {len(out)} entries")
+          print(f"Wrote data/deepstate_dates.json with {len(out)} entries")
           PY
 
       - name: Commit & push if changed
@@ -115,7 +119,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
 
-          git add data/deepstate_dates.json data/deepstate_latest.geojson data/deepstate_map_data_*.geojson || true
+          git add -A data
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
