@@ -43,7 +43,7 @@ jobs:
           unzip -q up.zip
           ls -la
 
-      - name: Copy latest + build deepstate_dates.json
+      - name: Sync last 730 days + build deepstate_dates.json
         run: |
           set -euo pipefail
           mkdir -p data
@@ -53,8 +53,10 @@ jobs:
           from datetime import datetime
           from pathlib import Path
 
+          # Hány napot tartsunk meg a repo-ban (timeline)
+          KEEP_DAYS = 730
+
           base = Path("/tmp/deepstate_upstream")
-          # zip kibontás után tipikusan: deepstate-map-data-main vagy deepstate-map-data-master
           cand = list(base.glob("deepstate-map-data-*/data"))
           if not cand:
               raise SystemExit("Upstream extracted folder not found: deepstate-map-data-*/data")
@@ -81,14 +83,22 @@ jobs:
           candidates.sort(key=lambda x: x[0])
           latest_date, latest_path = candidates[-1]
 
-          # 1) legfrissebb fájl átmásolása a repódba
-          target_latest = out_dir / latest_path.name
-          shutil.copyfile(latest_path, target_latest)
+          # Dátumküszöb: utolsó KEEP_DAYS nap
+          cutoff = latest_date.toordinal() - KEEP_DAYS
+          window = [(d,p) for (d,p) in candidates if d.toordinal() >= cutoff]
 
-          # 2) deepstate_latest.geojson (könnyű hivatkozás)
-          shutil.copyfile(target_latest, out_dir / "deepstate_latest.geojson")
+          # Másoljuk be az ablak fájljait a te repódba
+          out_dir.mkdir(parents=True, exist_ok=True)
+          copied = 0
+          for d, p in window:
+              target = out_dir / p.name
+              shutil.copyfile(p, target)
+              copied += 1
 
-          # 3) deepstate_dates.json a HELYI data mappából (timeline)
+          # Latest alias
+          shutil.copyfile(out_dir / latest_path.name, out_dir / "deepstate_latest.geojson")
+
+          # deepstate_dates.json a helyi fájlokból (timeline)
           local_files = sorted(out_dir.glob("deepstatemap_data_*.geojson"))
           out = []
           for p in local_files:
@@ -110,6 +120,7 @@ jobs:
           )
 
           print(f"Latest upstream: {latest_path.name} ({latest_date})")
+          print(f"Copied window files: {copied}")
           print(f"Wrote data/deepstate_dates.json with {len(out)} entries")
           PY
 
@@ -126,5 +137,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Update DeepState data + dates index"
+          git commit -m "Update DeepState data (last 730 days) + dates index"
           git push
