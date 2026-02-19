@@ -145,6 +145,23 @@
     .kpi .label{ color:#444; }
     .kpi .val{ font-weight:700; }
 
+    /* ÚJ: mai hiány jelzés */
+    .notice{
+      margin-top: 10px;
+      background: #fff7e6;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-left: 4px solid #ff9800;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 12px;
+      color:#333;
+    }
+    .notice.ok{
+      background:#eef9f0;
+      border-left-color:#1b8f3a;
+    }
+    .notice .small{ color:#555; margin-top:4px; font-size: 12px; }
+
     #panelLeft{ top: 12px; left: 12px; }
     #panelRight{ top: 12px; right: 12px; }
 
@@ -185,6 +202,7 @@
     .swatch{ width:12px; height:12px; border-radius:3px; border:1px solid rgba(0,0,0,0.2); }
     #legend.collapsed .legendBody{ display:none; }
 
+    /* ÚJ: mapStamp zárható + kevésbé zavar mobilon */
     .mapStamp{
       position:absolute;
       z-index:1200;
@@ -196,8 +214,27 @@
       padding: 8px 10px;
       font: 12px/1.3 system-ui, -apple-system, Segoe UI, Roboto, Arial;
       box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      max-width: 300px;
+      max-width: 320px;
     }
+    .mapStamp .topline{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom: 6px;
+    }
+    .mapStamp .close{
+      border:0;
+      background:#111;
+      color:#fff;
+      border-radius: 8px;
+      padding: 4px 7px;
+      cursor:pointer;
+      font-size: 12px;
+      line-height:1;
+    }
+    .mapStamp.collapsed .content{ display:none; }
+    .mapStamp.collapsed{ max-width: 220px; padding: 8px 10px; }
 
     @media (max-width: 820px){
       #panelLeft, #panelRight{
@@ -216,12 +253,15 @@
         bottom: 10px !important;
         max-width: none !important;
       }
+
+      /* mobil: mapStamp ne takarjon — feljebb tesszük és kisebb */
       .mapStamp{
         left: 10px !important;
         right: 10px !important;
         bottom: 86px !important;
         max-width: none !important;
       }
+
       .panel .toggleBtn{ padding: 8px 12px; }
       .chip{ padding: 8px 10px; }
       .btn{ padding: 10px 12px; font-size: 13px; }
@@ -231,7 +271,15 @@
 
 <body>
   <div id="map"></div>
-  <div id="mapStamp" class="mapStamp">Adatok: betöltés…</div>
+
+  <!-- ÚJ: zárható mapStamp -->
+  <div id="mapStamp" class="mapStamp">
+    <div class="topline">
+      <b>Adat dátuma</b>
+      <button id="btnStamp" class="close" type="button" title="Összecsukás">✕</button>
+    </div>
+    <div class="content">Adatok: betöltés…</div>
+  </div>
 
   <!-- LEFT PANEL -->
   <div id="panelLeft" class="panel">
@@ -252,6 +300,20 @@
         <label class="chip"><input id="chkArcAdv" type="checkbox" checked> ArcGIS orosz advance</label>
         <label class="chip"><input id="chkLog" type="checkbox" checked> Napló</label>
       </div>
+
+      <!-- ÚJ: drón idősáv -->
+      <div class="row">
+        <span class="chip">Drón idősáv:
+          <select id="selDroneWindow">
+            <option value="latest" selected>Legfrissebb</option>
+            <option value="7d">Elmúlt 7 nap</option>
+            <option value="30d">Elmúlt 30 nap</option>
+          </select>
+        </span>
+      </div>
+
+      <!-- ÚJ: mai hiány jelzés -->
+      <div id="todayNotice" class="notice" style="display:none;"></div>
 
       <div class="row">
         <span class="chip">Alaptérkép:
@@ -423,6 +485,8 @@
   const chkArcAdv = el("chkArcAdv");
   const chkLog = el("chkLog");
 
+  const selDroneWindow = el("selDroneWindow"); // ÚJ
+
   const selBase = el("selBase");
   const selZoom = el("selZoom");
   const btnZoom = el("btnZoom");
@@ -439,6 +503,9 @@
 
   const logEl = el("log");
   const mapStamp = el("mapStamp");
+  const btnStamp = el("btnStamp");
+
+  const todayNotice = el("todayNotice"); // ÚJ
 
   const lblDate = el("lblDate");
   const lblFile = el("lblFile");
@@ -470,6 +537,7 @@
   function isMobile(){
     return window.matchMedia && window.matchMedia("(max-width: 820px)").matches;
   }
+
   function collapseForMobile(){
     if(isMobile()){
       panelLeft.classList.add("collapsed");
@@ -496,6 +564,12 @@
 
   chkLog.addEventListener("change", () => setLogVisible(chkLog.checked));
   setLogVisible(true);
+
+  // ÚJ: mapStamp csukás
+  btnStamp.addEventListener("click", () => {
+    mapStamp.classList.toggle("collapsed");
+    btnStamp.textContent = mapStamp.classList.contains("collapsed") ? "☰" : "✕";
+  });
 
   if(!window.L){
     alert("Leaflet nem töltött be.");
@@ -615,6 +689,7 @@
   // ---------- Map stamp (DeepState + ArcGIS meta) ----------
   let arcFrontInfo = { label: ARCGIS_FRONT_LABEL_FALLBACK, edited: null };
   let arcAdvInfo = { label: ARCGIS_ADV_LABEL_FALLBACK, edited: null };
+  let deepLatestDate = null;
 
   function fmtDateTime(ts){
     if(!ts || !Number.isFinite(ts)) return null;
@@ -622,11 +697,34 @@
     return d.toISOString().slice(0,16).replace("T"," ");
   }
 
+  function setTodayNotice(){
+    if(!deepLatestDate) { todayNotice.style.display="none"; return; }
+    const today = new Date().toISOString().slice(0,10);
+    todayNotice.style.display = "";
+    if(deepLatestDate !== today){
+      todayNotice.classList.remove("ok");
+      todayNotice.innerHTML = `<b>⚠ Nincs mai DeepState</b><div class="small">Legfrissebb: <b>${deepLatestDate}</b> (mai: ${today})</div>`;
+    }else{
+      todayNotice.classList.add("ok");
+      todayNotice.innerHTML = `<b>✅ Mai DeepState elérhető</b><div class="small">${deepLatestDate}</div>`;
+    }
+  }
+
   function updateStamp(){
     const deep = currentDate || "–";
+    const deepLatest = deepLatestDate || "–";
     const front = arcFrontInfo.edited ? `${arcFrontInfo.label} (edit: ${fmtDateTime(arcFrontInfo.edited)} UTC)` : arcFrontInfo.label;
     const adv = arcAdvInfo.edited ? `${arcAdvInfo.label} (edit: ${fmtDateTime(arcAdvInfo.edited)} UTC)` : arcAdvInfo.label;
-    mapStamp.innerHTML = `<b>Adat dátuma</b><br>DeepState: ${deep}<br>ArcGIS front: ${front}<br>ArcGIS advance: ${adv}`;
+
+    const miss = (deepLatestDate && deepLatestDate !== new Date().toISOString().slice(0,10))
+      ? `<div style="margin-top:6px;color:#b26a00;"><b>⚠ Mai hiány:</b> DeepState</div>`
+      : "";
+
+    mapStamp.querySelector(".content").innerHTML =
+      `DeepState (nézett): <b>${deep}</b><br>` +
+      `DeepState (legfrissebb): <b>${deepLatest}</b><br>` +
+      `ArcGIS front: ${front}<br>` +
+      `ArcGIS advance: ${adv}` + miss;
   }
 
   async function loadArcMeta(){
@@ -806,30 +904,77 @@
   selDays.addEventListener("change", fetchFirms);
   selMaxPts.addEventListener("change", () => { if(currentDate) renderFirmsForDate(currentDate); });
 
-  // ---------- Drones ----------
+  // ---------- Drones (ÚJ: idősáv + több fájlnév fallback) ----------
+  function droneCandidates(windowKey){
+    // rugalmas: ha csak egyet generáltok a workflow-ban, akkor is találjon
+    if(windowKey === "7d") return [
+      "./data/drones_7d.geojson",
+      "./data/drones_last7d.geojson",
+      "./data/drones_recent.geojson",
+      "./data/drones_latest.geojson"
+    ];
+    if(windowKey === "30d") return [
+      "./data/drones_30d.geojson",
+      "./data/drones_last30d.geojson",
+      "./data/drones_recent.geojson",
+      "./data/drones_latest.geojson"
+    ];
+    return [
+      "./data/drones_latest.geojson",
+      "./data/drones_recent.geojson",
+      "./data/drones_7d.geojson"
+    ];
+  }
+
+  async function tryLoadFirstGeoJSON(urls){
+    let lastErr = null;
+    for(const u of urls){
+      try{
+        const j = await loadJson(u);
+        return { url: u, geojson: j };
+      }catch(e){
+        lastErr = e;
+      }
+    }
+    throw lastErr || new Error("Nincs elérhető drón GeoJSON");
+  }
+
   async function loadDrones(){
     dronesLayer.clearLayers();
+    const mode = selDroneWindow.value || "latest";
     try{
-      const gj = await loadJson("./data/drones_latest.geojson");
+      const { url, geojson: gj } = await tryLoadFirstGeoJSON(droneCandidates(mode));
       const feats = gj.features || [];
+      let drawn = 0;
+
       for(const f of feats){
         if(!f.geometry || f.geometry.type !== "Point") continue;
         const [lon, lat] = f.geometry.coordinates || [];
         if(typeof lon !== "number" || typeof lat !== "number") continue;
         const p = f.properties || {};
-        const title = p.title || "Drone-related (OSINT)";
-        const url = p.url ? `<br><a href="${p.url}" target="_blank" rel="noopener">Forrás</a>` : "";
+        const title = p.title || "Drone/Rocket-related (OSINT)";
+        const when = p.date || p.time || p.datetime || "";
+        const urlLink = p.url ? `<br><a href="${p.url}" target="_blank" rel="noopener">Forrás</a>` : "";
+        const whenLine = when ? `<br><span style="color:#555">Idő: ${String(when)}</span>` : "";
+
         dronesLayer.addLayer(
           L.circleMarker([lat, lon], { radius: 5, color:"#0077ff", weight:2, fillOpacity:0.55 })
-            .bindPopup(`<b>Drón pont</b><br>${title}${url}<br><span style="color:#555">Lat/Lon: ${lat.toFixed(5)}, ${lon.toFixed(5)}</span>`)
+            .bindPopup(`<b>Drón / rakéta pont</b><br>${title}${whenLine}${urlLink}<br><span style="color:#555">Lat/Lon: ${lat.toFixed(5)}, ${lon.toFixed(5)}</span>`)
         );
+        drawn++;
       }
-      log(`Drón pontok: betöltve ✔ (${feats.length})`);
+
+      log(`Drón pontok: betöltve ✔ (${drawn}) [forrás: ${url.split("/").pop()}]`);
+      if(drawn === 0){
+        log("Drón pontok: a GeoJSON üres (features: 0).");
+      }
       setVisible(dronesLayer, chkDrones.checked);
     } catch(e){
-      log("Drón pontok: nincs még (vagy üres) – " + String(e));
+      log("Drón pontok: nincs még (vagy üres / nem elérhető) – " + String(e));
     }
   }
+
+  selDroneWindow.addEventListener("change", loadDrones);
 
   // ---------- ArcGIS ----------
   async function loadArcGIS(){
@@ -903,36 +1048,74 @@
     loadByIndex(Number(rngDay.value), false);
   });
 
+  // ÚJ: okos Jump lista (2 év + évkezdet + utolsó 12 hónap eleje + fix)
   function fillJumpOptions(){
     selJump.innerHTML = "";
     if(!dates.length) return;
 
     const last = dates.length - 1;
-    const picks = new Map();
 
-    // Fixed points: latest, -7, -30, first
-    picks.set("Legfrissebb", last);
-    picks.set("−7 nap", Math.max(0, last - 7));
-    picks.set("−30 nap", Math.max(0, last - 30));
-    picks.set("Első", 0);
-
-    // Month starts (approx): take first date per YYYY-MM
-    const seenMonth = new Set();
-    for(let i=0; i<dates.length; i++){
-      const d = dates[i].date || "";
-      const ym = d.slice(0,7);
-      if(ym.length === 7 && !seenMonth.has(ym)){
-        seenMonth.add(ym);
-        picks.set(ym + " (hó eleje)", i);
-      }
-    }
-
-    for(const [label, idx] of picks.entries()){
+    const addOpt = (label, idx) => {
       const opt = document.createElement("option");
       opt.value = String(idx);
       opt.textContent = label;
       selJump.appendChild(opt);
+    };
+
+    // Fix ugrások
+    addOpt("Legfrissebb", last);
+    addOpt("−7 nap", Math.max(0, last - 7));
+    addOpt("−30 nap", Math.max(0, last - 30));
+    addOpt("−90 nap", Math.max(0, last - 90));
+    addOpt("−180 nap", Math.max(0, last - 180));
+    addOpt("−365 nap", Math.max(0, last - 365));
+    addOpt("−730 nap (2 év)", Math.max(0, last - 730));
+
+    // Évkezdetek (utolsó 3 év)
+    const years = new Set();
+    for(let i=last; i>=0; i--){
+      const d = dates[i]?.date || "";
+      const y = d.slice(0,4);
+      if(y.length !== 4) continue;
+      if(!years.has(y)){
+        years.add(y);
+      }
+      if(years.size >= 3) break;
     }
+
+    for(const y of Array.from(years).sort().reverse()){
+      // első index adott évben
+      let idx = null;
+      for(let i=0;i<dates.length;i++){
+        if((dates[i]?.date||"").startsWith(y+"-")){
+          idx = i; break;
+        }
+      }
+      if(idx !== null) addOpt(`📅 ${y} eleje`, idx);
+    }
+
+    // Utolsó 12 hónap eleje (visszafelé)
+    const seenMonths = new Set();
+    let added = 0;
+    for(let i=last; i>=0; i--){
+      const d = dates[i]?.date || "";
+      const ym = d.slice(0,7);
+      if(ym.length !== 7) continue;
+      if(seenMonths.has(ym)) continue;
+      seenMonths.add(ym);
+
+      // találjuk meg a hónap első indexét
+      let idx = i;
+      while(idx > 0 && (dates[idx-1]?.date || "").startsWith(ym)) idx--;
+
+      addOpt(`🗓 ${ym} eleje`, idx);
+      added++;
+      if(added >= 12) break;
+    }
+
+    // Legalább az első nap
+    addOpt("Első", 0);
+
     selJump.value = String(last);
   }
 
@@ -976,10 +1159,12 @@
     log("🔄 Teljes frissítés…");
     btnRefreshAll.disabled = true;
     try{
-      // re-fetch deepstate index
       const ds = await loadJson("./data/deepstate_dates.json");
       if(!Array.isArray(ds) || ds.length === 0) throw new Error("Üres deepstate_dates.json");
       dates = ds;
+
+      deepLatestDate = dates[dates.length - 1]?.date || null;
+      setTodayNotice();
 
       rngDay.min = "0";
       rngDay.max = String(dates.length - 1);
@@ -1009,6 +1194,9 @@
     try{
       dates = await loadJson("./data/deepstate_dates.json");
       if(!Array.isArray(dates) || dates.length === 0) throw new Error("Üres deepstate_dates.json");
+
+      deepLatestDate = dates[dates.length - 1]?.date || null;
+      setTodayNotice();
 
       rngDay.min = "0";
       rngDay.max = String(dates.length - 1);
