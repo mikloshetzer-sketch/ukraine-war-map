@@ -1,242 +1,352 @@
 #!/usr/bin/env python3
-# -*- kódolás: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 """
-ISW földi rohamvezeték
-Földi támadások / előretörések ISW ROC cikkekből
+ISW ground operations pipeline (ground assaults / advances / counterattacks).
+
+Output:
+- data/isw_ground_latest.geojson
+- data/isw_ground_7d.geojson
+- data/isw_ground_30d.geojson
+- data/isw_ground_index.json
+
+Megjegyzés:
+- Alapból pontokat rak (place alapján).
+- Ha felismer "from <A> to/toward <B>" mintát, akkor vonalat (LineString) is készít.
 """
 
-import újra
-json importálása
-importálási idő
-dátum/idő importálása
-a pathlib import Path-ból
-importálási kérelmek
+import re
+import json
+import time
+import datetime
+from pathlib import Path
+import requests
 
-OUT_DIR = Path("adatok")
-OUT_DIR.mkdir(létezik_ok=Igaz)
 
-FEJLÉKEK = {
-„User-Agent”: „Mozilla/5.0 (Ukrajna-Háborús-Térkép kutatóbot)”
+# =========================
+# CONFIG
+# =========================
+
+OUT_DIR = Path("data")
+OUT_DIR.mkdir(exist_ok=True)
+
+UA = (
+    "Mozilla/5.0 (Ukraine-War-Map research bot; ISW ground pipeline; "
+    "contact: github actions)"
+)
+
+HEADERS = {
+    "User-Agent": UA
 }
 
-ROC_UPDATES_URL = " https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2 "
+ROC_UPDATES_URL = "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2"
 
-KULCSSZAVAK = [
-"támadás",
-"gépesített támadás",
-"ellentámadás",
-"áttörés",
-"fejlett",
-„tolta”,
-„lefoglalták”,
-„elfogott”,
-„eltaszított”,
-"támadó hadművelet"
+# ISW néha 403 — proxy fallback
+def fetch_url(url: str) -> str | None:
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=20)
+        if r.status_code == 200:
+            return r.text
+    except Exception:
+        pass
+
+    try:
+        proxy = "https://r.jina.ai/" + url
+        r = requests.get(proxy, timeout=25)
+        if r.status_code == 200:
+            return r.text
+    except Exception:
+        pass
+
+    return None
+
+
+# =========================
+# STEP 1 — ROC cikk linkek
+# =========================
+
+def collect_recent_article_links(limit: int = 40) -> list[str]:
+    html = fetch_url(ROC_UPDATES_URL)
+    if not html:
+        print("ISW index nem tölthető")
+        return []
+
+    links = set()
+    for m in re.findall(r'href="([^"]*russian-offensive-campaign-assessment[^"]*)"', html):
+        if "research" in m:
+            if not m.startswith("http"):
+                m = "https://understandingwar.org" + m
+            links.add(m)
+
+    # ROC oldal általában dátum szerinti URL-eket ad — reverse sort jó közelítés
+    links = sorted(links, reverse=True)
+    return links[:limit]
+
+
+# =========================
+# STEP 2 — kulcsszó + esemény kinyerés
+# =========================
+
+# Földi műveletekhez tipikus igék/kifejezések (angol, mert ISW cikk)
+GROUND_KEYWORDS = [
+    "assault", "attacked", "attack", "offensive",
+    "advanced", "advance", "made gains", "gains",
+    "seized", "captured", "took", "recaptured",
+    "pushed", "pushing", "breached", "breakthrough",
+    "counterattack", "counter-attacked", "counteroffensive",
+    "repelled", "repulse", "withdrew", "withdrawal",
+    "cleared", "secured",
 ]
 
-# =============================
-# FETCH
-# =============================
+# egyszerű “hely” kinyerés (in/near/around/toward)
+PLACE_PATTERNS = [
+    re.compile(r"\b(in|near|around|outside|south of|north of|east of|west of)\s+([A-Z][A-Za-z0-9\-\']+)", re.IGNORECASE),
+    re.compile(r"\b(toward|towards)\s+([A-Z][A-Za-z0-9\-\']+)", re.IGNORECASE),
+]
 
-def fetch_url(url):
-megpróbál:
-r = requests.get(url, fejlécek=FEJLÉKEK, időtúllépés=20)
-ha r.állapotkód == 200:
-return r.text
-kivéve:
-átmegy
+# mozgásvonal: "from A to/toward B"
+MOVE_PATTERN = re.compile(
+    r"\bfrom\s+([A-Z][A-Za-z0-9\-\']+)\s+(?:to|toward|towards)\s+([A-Z][A-Za-z0-9\-\']+)",
+    re.IGNORECASE
+)
 
-# proxy tartalék
-megpróbál:
-proxy = " https://r.jina.ai/ " + url
-r = kérések.get(proxy, időtúllépés=25)
-ha r.állapotkód == 200:
-return r.text
-kivéve:
-átmegy
+def strip_html_to_text(html: str) -> str:
+    text = re.sub("<[^<]+?>", " ", html)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
 
-vissza Nincs
+def infer_date_from_url(article_url: str) -> datetime.date:
+    # ISW URL-ben: Month-dd-YYYY
+    m = re.search(r"(\w+-\d{1,2}-\d{4})", article_url)
+    if m:
+        s = m.group(1)
+        try:
+            return datetime.datetime.strptime(s, "%B-%d-%Y").date()
+        except Exception:
+            return datetime.date.today()
+    return datetime.date.today()
 
+def extract_place(sentence: str) -> str | None:
+    for pat in PLACE_PATTERNS:
+        m = pat.search(sentence)
+        if m:
+            return m.group(2)
+    return None
 
-def gyűjtés_legutóbbi_cikk_linkek(korlát=40):
-html = fetch_url(ROC_FRISSÍTÉSEK_URL)
-ha nem html:
-vissza []
+def extract_events(article_url: str) -> list[dict]:
+    html = fetch_url(article_url)
+    if not html:
+        return []
 
-linkek = set()
+    text = strip_html_to_text(html)
+    date = infer_date_from_url(article_url)
 
-m karakterlánc a re.findall(r'href="([^"]*russian-offensive-campaign-assessment[^"]*)"', html fájlban):
-ha a „kutatás” az „m” betűben van:
-ha nem m.startswith("http"):
-m = " https://understandingwar.org " + m
-linkek.hozzáadás(m)
+    # mondatok (durva, de elég)
+    sentences = re.split(r"\.\s+", text)
 
-return rendezve(linkek, fordított=Igaz)[:korlát]
+    events: list[dict] = []
 
+    for s in sentences:
+        s = s.strip()
+        if len(s) < 40:
+            continue
 
-# =============================
-# ESEMÉNYEK KIVONÁSA
-# =============================
+        lower = s.lower()
+        if not any(k in lower for k in GROUND_KEYWORDS):
+            continue
 
-def extract_events(cikk_url):
+        # mozgás: from A to B
+        move = MOVE_PATTERN.search(s)
+        if move:
+            a = move.group(1)
+            b = move.group(2)
+            events.append({
+                "date": str(date),
+                "kind": "movement",
+                "from_place": a,
+                "to_place": b,
+                "place": b,  # fallback: célpontra is rá lehet tenni pontként
+                "text": s[:350],
+                "source_url": article_url
+            })
+            continue
 
-html = fetch_url(cikk_url)
-ha nem html:
-vissza []
+        # sima esemény ponttal
+        place = extract_place(s)
+        events.append({
+            "date": str(date),
+            "kind": "ground",
+            "place": place,
+            "text": s[:350],
+            "source_url": article_url
+        })
 
-szöveg = re.sub("<[^<]+?>", " ", html)
-szöveg = re.sub(r"\s+", " ", szöveg)
-
-date_match = re.search(r'(\w+-\d{1,2}-\d{4})', cikk_url)
-ha dátum_egyezés:
-megpróbál:
-dátum = datetime.datetime.strptime(date_match.group(1), "%B-%d-%Y").date()
-kivéve:
-dátum = dátum/idő.dátum.ma()
-más:
-dátum = dátum/idő.dátum.ma()
-
-események = []
-
-a re.split(r'\. ', text) függvényben található mondathoz:
-alsó = mondat.alsó()
-ha van ilyen (k az alsó értékben, ha k a KULCSSZAVAKBAN van):
-
-hely = Nincs
-m = re.search(r'(bent|közelben|körül)\s+([AZ][a-zA-Z\-]+)', mondat)
-ha m:
-hely = m.csoport(2)
-
-események.append({
-"dátum": str(dátum),
-"szöveg": mondat[:300],
-"hely": hely,
-"forrás_url": cikk_url
-})
-
-visszatérési események
-
-
-# =============================
-# GEOKÓD
-# =============================
-
-CACHE_FILE = KIMENETI_KÖNYVTÁR / "geocode_cache.json"
-
-ha CACHE_FILE.exists():
-gyorsítótár = json.loads(CACHE_FILE.read_text())
-más:
-gyorsítótár = {}
-
-def geocode(hely):
-
-ha nem hely:
-vissza Nincs
-
-ha a gyorsítótárban van:
-return cache[hely]
-
-megpróbál:
-url = f" https://nominatim.openstreetmap.org/search?format=json&q={place} "
-r = requests.get(url, fejlécek=FEJLÉKEK, időtúllépés=20)
-adatok = r.json()
-ha adatok:
-lat = float(adatok[0]["lat"])
-lon = float(adatok[0]["lon"])
-gyorsítótár[hely] = [hosszúság, szélesség]
-idő.alvás(1)
-visszatérés [hosszúság, szélesség]
-kivéve:
-átmegy
-
-vissza Nincs
+    return events
 
 
-# =============================
-# GEOJSON ÉPÍTÉSE
-# =============================
+# =========================
+# STEP 3 — geokód (Nominatim)
+# =========================
 
-def events_to_geojson(events):
+GEOCODE_CACHE = OUT_DIR / "geocode_cache.json"
+if GEOCODE_CACHE.exists():
+    cache = json.loads(GEOCODE_CACHE.read_text(encoding="utf-8"))
+else:
+    cache = {}
 
-jellemzők = []
+def geocode(place: str | None) -> list[float] | None:
+    if not place:
+        return None
 
-e esetén eseményekben:
-koordináták = geokód(e["hely"])
-ha nem koordináták:
-folytatás
+    key = place.strip()
+    if not key:
+        return None
 
-jellemzők.append({
-"típus": "Jellemző",
-"geometria": {
-"típus": "Pont",
-"koordináták": koordináták
-},
-"tulajdonságok": {
-"forrás": "ISW",
-"kategória": "talaj",
-"dátum": e["dátum"],
-"title": "ISW földi támadás",
-"hely": e["hely"],
-"részlet": e["szöveg"],
-"url": e["forrás_url"]
-}
-})
+    if key in cache:
+        return cache[key]
 
-visszatérés {
-"type": "Jellemzőgyűjtemény",
-„jellemzők”: jellemzők
-}
+    # opcionális szűkítés: Ukraine / Russia — de ez néha árt (pl. “Belgorod” ok, “Donetsk” több)
+    # ezért most simán q=place
+    try:
+        url = f"https://nominatim.openstreetmap.org/search?format=json&q={requests.utils.quote(key)}"
+        r = requests.get(url, headers=HEADERS, timeout=20)
+        data = r.json()
+        if data:
+            lat = float(data[0]["lat"])
+            lon = float(data[0]["lon"])
+            cache[key] = [lon, lat]
+            time.sleep(1)  # Nominatim rate limit barát
+            return [lon, lat]
+    except Exception:
+        pass
+
+    return None
 
 
-# =============================
-# FŐ
-# =============================
+# =========================
+# STEP 4 — GeoJSON
+# =========================
+
+def events_to_geojson(events: list[dict]) -> dict:
+    features: list[dict] = []
+
+    for e in events:
+        kind = e.get("kind")
+
+        if kind == "movement":
+            a = e.get("from_place")
+            b = e.get("to_place")
+            ca = geocode(a)
+            cb = geocode(b)
+            if ca and cb:
+                features.append({
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [ca, cb]
+                    },
+                    "properties": {
+                        "source": "ISW",
+                        "date": e["date"],
+                        "title": "ISW ground movement",
+                        "from": a,
+                        "to": b,
+                        "snippet": e["text"],
+                        "url": e["source_url"]
+                    }
+                })
+            else:
+                # fallback: pont a cél településre, ha az megvan
+                if cb:
+                    features.append({
+                        "type": "Feature",
+                        "geometry": {"type": "Point", "coordinates": cb},
+                        "properties": {
+                            "source": "ISW",
+                            "date": e["date"],
+                            "title": "ISW ground event (fallback)",
+                            "place": b,
+                            "snippet": e["text"],
+                            "url": e["source_url"]
+                        }
+                    })
+            continue
+
+        # sima ground pont
+        coords = geocode(e.get("place"))
+        if not coords:
+            continue
+
+        features.append({
+            "type": "Feature",
+            "geometry": {"type": "Point", "coordinates": coords},
+            "properties": {
+                "source": "ISW",
+                "date": e["date"],
+                "title": "ISW ground operation",
+                "place": e.get("place"),
+                "snippet": e["text"],
+                "url": e["source_url"]
+            }
+        })
+
+    return {"type": "FeatureCollection", "features": features}
+
+
+# =========================
+# MAIN
+# =========================
 
 def main():
+    print("ISW GROUND pipeline indul…")
 
-print("ISW földi csővezeték indul…")
+    links = collect_recent_article_links(limit=40)
+    print("Talált cikkek:", len(links))
 
-linkek = legutolsó_cikk_linkek_gyűjtése()
-minden_esemény = []
+    all_events: list[dict] = []
+    for url in links:
+        ev = extract_events(url)
+        all_events.extend(ev)
 
-linkekben található URL-hez:
-ev = események_kivonása(url)
-minden_esemény.kiterjesztés(esemény)
+    print("Talált események (nyers):", len(all_events))
 
-ma = dátum/idő.dátum.ma()
-utolsó7 = ma - datetime.timedelta(napok=7)
-utolsó30 = ma - dátum/idő.idődelta(napok=30)
+    # időszűrés
+    today = datetime.date.today()
+    last7 = today - datetime.timedelta(days=7)
+    last30 = today - datetime.timedelta(days=30)
 
-ev_latest = összes_esemény[:40]
-ev_7 = [e az összes_eseményben szereplő e értékhez, ha datetime.date.fromisoformat(e["date"]) >= last7]
-ev_30 = [e az összes_eseményben szereplő e értékhez, ha datetime.date.fromisoformat(e["date"]) >= last30]
+    # “latest” = legfrissebb 60 mondat-alapú event
+    ev_latest = all_events[:60]
+    ev_7 = [e for e in all_events if datetime.date.fromisoformat(e["date"]) >= last7]
+    ev_30 = [e for e in all_events if datetime.date.fromisoformat(e["date"]) >= last30]
 
-OUT_DIR.joinpath("isw_ground_latest.geojson").write_text(
-json.dumps(events_to_geojson(ev_latest), behúzás=2)
-)
+    OUT_DIR.joinpath("isw_ground_latest.geojson").write_text(
+        json.dumps(events_to_geojson(ev_latest), indent=2),
+        encoding="utf-8"
+    )
+    OUT_DIR.joinpath("isw_ground_7d.geojson").write_text(
+        json.dumps(events_to_geojson(ev_7), indent=2),
+        encoding="utf-8"
+    )
+    OUT_DIR.joinpath("isw_ground_30d.geojson").write_text(
+        json.dumps(events_to_geojson(ev_30), indent=2),
+        encoding="utf-8"
+    )
 
-OUT_DIR.joinpath("isw_ground_7d.geojson").write_text(
-json.dumps(events_to_geojson(ev_7), behúzás=2)
-)
+    OUT_DIR.joinpath("isw_ground_index.json").write_text(
+        json.dumps({
+            "generated_utc": datetime.datetime.utcnow().isoformat(),
+            "events_total_raw": len(all_events),
+            "events_7d_raw": len(ev_7),
+            "events_30d_raw": len(ev_30)
+        }, indent=2),
+        encoding="utf-8"
+    )
 
-OUT_DIR.joinpath("isw_ground_30d.geojson").write_text(
-json.dumps(events_to_geojson(ev_30), behúzás=2)
-)
+    GEOCODE_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
 
-OUT_DIR.joinpath("isw_ground_index.json").write_text(
-json.dumps({
-"generated_utc": datetime.datetime.utcnow().isoformat(),
-"események_összesen": len(összes_esemény),
-"events_7d": len(ev_7),
-"events_30d": len(ev_30)
-}, behúzás=2)
-)
-
-CACHE_FILE.write_text(json.dumps(gyorsítótár, behúzás=2))
-
-print("ISW Ground pipeline kész ")
+    print("ISW GROUND pipeline kész ✔")
 
 
-ha __név__ == "__main__":
-fő()
+if __name__ == "__main__":
+    main()
