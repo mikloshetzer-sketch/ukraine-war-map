@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrán–orosz háború – DeepState + FIRMS + GIBS + ArcGIS + Kivonat + Drón + Földi</title>
+  <title>Ukrán–orosz háború – DeepState + FIRMS + GIBS + ArcGIS + Kivonat + Drón + Földi + Front buborék</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -30,7 +30,7 @@
       box-shadow: var(--shadow);
       font: var(--font);
       overflow: hidden;
-      max-width: 640px;
+      max-width: 680px;
     }
 
     .panel .head{
@@ -223,7 +223,7 @@
       padding: 8px 10px;
       font: 12px/1.3 system-ui, -apple-system, Segoe UI, Roboto, Arial;
       box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      max-width: 340px;
+      max-width: 360px;
     }
     .mapStampHead{
       display:flex;
@@ -291,7 +291,7 @@
     <div class="head">
       <div>
         <h3>Rétegek & nézet</h3>
-        <div class="sub">DeepState + FIRMS + GIBS + ArcGIS + drón + földi + kivonat.</div>
+        <div class="sub">DeepState + FIRMS + GIBS + ArcGIS + drón + földi + front buborék + kivonat.</div>
       </div>
       <button id="toggleLeft" class="toggleBtn" type="button">☰</button>
     </div>
@@ -307,9 +307,29 @@
         <label class="chip"><input id="chkArcFront" type="checkbox" checked> ArcGIS frontvonal</label>
         <label class="chip"><input id="chkArcAdv" type="checkbox" checked> ArcGIS orosz advance</label>
 
+        <label class="chip"><input id="chkFrontBubbles" type="checkbox" checked> Front buborékok</label>
+
         <label class="chip"><input id="chkChangeCircle" type="checkbox" checked> Napi változás kör</label>
 
         <label class="chip"><input id="chkLog" type="checkbox" checked> Napló</label>
+      </div>
+
+      <div class="row">
+        <span class="chip">Front buborék sugár:
+          <select id="selBubbleRadius">
+            <option value="20">20 km</option>
+            <option value="35" selected>35 km</option>
+            <option value="50">50 km</option>
+          </select>
+        </span>
+        <span class="chip">Szegmens hossz:
+          <select id="selSegLen">
+            <option value="10">10 km</option>
+            <option value="20" selected>20 km</option>
+            <option value="30">30 km</option>
+          </select>
+        </span>
+        <button id="btnRebuildFront" class="btn secondary" type="button">Front buborék újraépítés</button>
       </div>
 
       <div class="row">
@@ -414,15 +434,14 @@
           <div class="mini" id="sumOsintNote" style="margin-top:6px; color:#555;">–</div>
         </div>
 
-        <!-- ÚJ: Elemző blokk -->
+        <!-- Elemzés (A) + Frontszegmens (A/B) -->
         <div class="mini" style="margin-top:10px;">
-          <b style="display:block; margin-bottom:6px;">Elemzés (frontszakasz becslés)</b>
+          <b style="display:block; margin-bottom:6px;">Elemzés (frontszegmens-alapú)</b>
           <div class="anaBox">
-            <div class="anaRow"><span class="anaName">Fő tengely (24h):</span><span class="anaVal" id="anaMain24">–</span></div>
-            <div class="anaRow"><span class="anaName">Fő tengely (7 nap):</span><span class="anaVal" id="anaMain7">–</span></div>
-            <div class="anaRow"><span class="anaName">Másodlagos (7 nap):</span><span class="anaVal" id="anaSecond7">–</span></div>
+            <div class="anaRow"><span class="anaName">Top szegmens (24h):</span><span class="anaVal" id="anaHot24">–</span></div>
+            <div class="anaRow"><span class="anaName">Top szegmens (7 nap):</span><span class="anaVal" id="anaHot7">–</span></div>
+            <div class="anaRow"><span class="anaName">Harcintenzitás (top 7d):</span><span class="anaVal" id="anaHotIdx">–</span></div>
           </div>
-
           <div class="mini" style="margin-top:8px; color:#555;">
             7 napos trend (drón / földi, napi bontás):
           </div>
@@ -432,6 +451,10 @@
         <div class="mini" style="margin-top:10px;">
           <b style="display:block; margin-bottom:6px;">Automatikus kivonat</b>
           <div id="sumAuto" style="color:#333;">–</div>
+        </div>
+
+        <div class="mini" style="margin-top:10px; color:#555;">
+          Tipp: “Front buborékok” popup-ban látszik szegmensenként a bontás (drón/földi/FIRMS) + index.
         </div>
 
         <div class="mini" style="margin-top:10px;">
@@ -497,6 +520,7 @@
       <div class="item"><span class="swatch" style="background:#0077ff;"></span>Drón pont</div>
       <div class="item"><span class="swatch" style="background:#00b3b3;"></span>Földi (ISW) pont/vonal</div>
       <div class="item"><span class="swatch" style="background:#00a000;"></span>ArcGIS frontvonal</div>
+      <div class="item"><span class="swatch" style="background:#2a2a2a;"></span>Front buborék (szegmens popup)</div>
       <div class="item"><span class="swatch" style="background:#7a00ff;"></span>ArcGIS orosz előretörés (polygon)</div>
       <div class="item"><span class="swatch" style="background:#00a000; opacity:0.2;"></span>Napi területi változás kör</div>
       <div class="item"><span class="swatch" style="background:rgba(255,255,255,0); border:1px dashed rgba(0,0,0,0.35);"></span>GIBS: hőtérkép overlay</div>
@@ -540,21 +564,6 @@
     isw_ground_30d:    { label: "ISW Ground (30 nap)", url: "./data/isw_ground_30d.geojson" },
   };
 
-  // ====== Szektorok (becslés) ======
-  // bbox: [minLat, minLon, maxLat, maxLon]
-  // Ha egy pont több bboxba esik: az első találat számít.
-  const SECTORS = [
-    { key:"kharkiv", name:"Harkiv–észak", bbox:[49.6, 35.6, 50.7, 37.9] },
-    { key:"kupiansk", name:"Kupjanszk–Liman", bbox:[48.7, 36.2, 49.9, 38.2] },
-    { key:"svatove", name:"Szvatove–Kreminna", bbox:[48.6, 37.6, 49.4, 39.2] },
-    { key:"bakhmut", name:"Csasziv Jar–Bahmut", bbox:[48.3, 37.7, 49.0, 38.4] },
-    { key:"avdiivka", name:"Avdijivka–Pokrovszk", bbox:[47.9, 36.4, 49.0, 38.2] },
-    { key:"vuhledar", name:"Vuhledar–Donyec", bbox:[47.4, 36.6, 48.2, 37.9] },
-    { key:"zap", name:"Zaporizzsja", bbox:[46.0, 34.9, 47.7, 36.6] },
-    { key:"kherson", name:"Herszon–Dnyeper", bbox:[46.1, 31.5, 47.3, 33.6] },
-    { key:"other", name:"Egyéb / távoli", bbox:[-90, -180, 90, 180] },
-  ];
-
   const el = (id) => document.getElementById(id);
 
   const panelLeft = el("panelLeft");
@@ -569,8 +578,13 @@
   const chkGround = el("chkGround");
   const chkArcFront = el("chkArcFront");
   const chkArcAdv = el("chkArcAdv");
+  const chkFrontBubbles = el("chkFrontBubbles");
   const chkChangeCircle = el("chkChangeCircle");
   const chkLog = el("chkLog");
+
+  const selBubbleRadius = el("selBubbleRadius");
+  const selSegLen = el("selSegLen");
+  const btnRebuildFront = el("btnRebuildFront");
 
   const selDroneSource = el("selDroneSource");
   const btnReloadDrones = el("btnReloadDrones");
@@ -624,10 +638,9 @@
   const sumOsintNote = el("sumOsintNote");
   const sumAuto = el("sumAuto");
 
-  // Analitika UI
-  const anaMain24 = el("anaMain24");
-  const anaMain7 = el("anaMain7");
-  const anaSecond7 = el("anaSecond7");
+  const anaHot24 = el("anaHot24");
+  const anaHot7 = el("anaHot7");
+  const anaHotIdx = el("anaHotIdx");
   const anaTrend = el("anaTrend");
 
   function log(msg){
@@ -712,6 +725,7 @@
   const dronesLayer = L.layerGroup().addTo(map);
   const groundLayer = L.layerGroup().addTo(map);
   const changeMarkerLayer = L.layerGroup().addTo(map);
+  const frontBubbleLayer = L.layerGroup().addTo(map);
 
   let arcFrontLayer = null;
   let arcAdvLayer = null;
@@ -730,13 +744,53 @@
   chkArcFront.addEventListener("change", () => setVisible(arcFrontLayer, chkArcFront.checked));
   chkArcAdv.addEventListener("change", () => setVisible(arcAdvLayer, chkArcAdv.checked));
   chkChangeCircle.addEventListener("change", () => setVisible(changeMarkerLayer, chkChangeCircle.checked));
+  chkFrontBubbles.addEventListener("change", () => setVisible(frontBubbleLayer, chkFrontBubbles.checked));
 
+  // ===== Helpers =====
   async function loadJson(url){
     const r = await fetch(url, { cache:"no-store" });
     if(!r.ok) throw new Error(`Fetch hiba: ${url} → HTTP ${r.status}`);
     return await r.json();
   }
 
+  function safeStr(x, max=1200){
+    const s = (x ?? "").toString();
+    return s.length > max ? (s.slice(0, max) + "…") : s;
+  }
+
+  function parseDateMaybe(x){
+    if(!x) return null;
+    const d = new Date(x);
+    return isNaN(d) ? null : d;
+  }
+
+  function haversineKm(a, b){
+    const R = 6371;
+    const toRad = (x) => x * Math.PI / 180;
+    const dLat = toRad(b.lat - a.lat);
+    const dLon = toRad(b.lng - a.lng);
+    const lat1 = toRad(a.lat);
+    const lat2 = toRad(b.lat);
+    const s = Math.sin(dLat/2)**2 + Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLon/2)**2;
+    return 2*R*Math.asin(Math.sqrt(s));
+  }
+
+  function fmtDeltaKm2(d){
+    if(d === null || d === undefined || !Number.isFinite(d)) return "n/a";
+    const sign = d > 0 ? "+" : (d < 0 ? "−" : "±");
+    const val = Math.abs(d);
+    if(val >= 1000) return `${sign}${val.toFixed(0)} km²`;
+    if(val >= 100) return `${sign}${val.toFixed(1)} km²`;
+    return `${sign}${val.toFixed(2)} km²`;
+  }
+
+  function humanInterpretDelta(d){
+    if(!Number.isFinite(d) || d === 0) return "nincs érdemi területi változás";
+    if(d > 0) return "orosz területszerzés";
+    return "ukrán visszafoglalás";
+  }
+
+  // ===== DeepState =====
   function renderDeepState(data){
     if(deepLayer) map.removeLayer(deepLayer);
     deepLayer = L.geoJSON(data, {
@@ -766,6 +820,7 @@
   }
   btnZoom.addEventListener("click", doZoom);
 
+  // ===== GIBS =====
   function gibsTemplateFor(sel){
     if(sel === "modis1k"){
       return "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Terra_Thermal_Anomalies_All/default/{date}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png";
@@ -792,7 +847,7 @@
   selGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
   rngGibs.addEventListener("input", () => { if(gibsLayer) gibsLayer.setOpacity(Number(rngGibs.value||"0.55")); });
 
-  // ---------- Stamp meta ----------
+  // ===== Stamp meta =====
   let arcFrontInfo = { label: ARCGIS_FRONT_LABEL_FALLBACK, edited: null };
   let arcAdvInfo = { label: ARCGIS_ADV_LABEL_FALLBACK, edited: null };
 
@@ -825,58 +880,7 @@
     updateStamp();
   }
 
-  // ---------- Helpers ----------
-  function safeStr(x, max=1200){
-    const s = (x ?? "").toString();
-    return s.length > max ? (s.slice(0, max) + "…") : s;
-  }
-
-  function parseDateMaybe(x){
-    if(!x) return null;
-    const d = new Date(x);
-    return isNaN(d) ? null : d;
-  }
-
-  function inBbox(lat, lon, bbox){
-    const [minLat, minLon, maxLat, maxLon] = bbox;
-    return (lat >= minLat && lat <= maxLat && lon >= minLon && lon <= maxLon);
-  }
-
-  function sectorForLatLon(lat, lon){
-    for(const s of SECTORS){
-      if(inBbox(lat, lon, s.bbox)) return s;
-    }
-    return SECTORS[SECTORS.length - 1];
-  }
-
-  function fmtDeltaKm2(d){
-    if(d === null || d === undefined || !Number.isFinite(d)) return "n/a";
-    const sign = d > 0 ? "+" : (d < 0 ? "−" : "±");
-    const val = Math.abs(d);
-    if(val >= 1000) return `${sign}${val.toFixed(0)} km²`;
-    if(val >= 100) return `${sign}${val.toFixed(1)} km²`;
-    return `${sign}${val.toFixed(2)} km²`;
-  }
-
-  function humanInterpretDelta(d){
-    if(!Number.isFinite(d) || d === 0) return "nincs érdemi területi változás";
-    if(d > 0) return "orosz területszerzés";
-    return "ukrán visszafoglalás";
-  }
-
-  async function reversePlaceName(lat, lon){
-    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&zoom=10&addressdetails=1`;
-    try{
-      const r = await fetch(url, { cache:"no-store" });
-      if(!r.ok) return null;
-      const j = await r.json();
-      return j?.name || j?.display_name || null;
-    } catch(e){
-      return null;
-    }
-  }
-
-  // ---------- Change circle ----------
+  // ===== Change circle =====
   function renderChangeCircle(deltaKm2, gained, lost){
     changeMarkerLayer.clearLayers();
     if(!chkChangeCircle.checked) return;
@@ -909,8 +913,9 @@
     setVisible(changeMarkerLayer, chkChangeCircle.checked);
   }
 
-  // ---------- FIRMS ----------
+  // ===== FIRMS =====
   let firmsByDate = {};
+  let firmsCurrentPts = []; // aktuális dátumhoz
 
   function parseCSV(csvText){
     const lines = csvText.split(/\r?\n/).filter(Boolean);
@@ -961,6 +966,7 @@
   async function fetchFirms(){
     firmsByDate = {};
     firmsLayer.clearLayers();
+    firmsCurrentPts = [];
 
     const keyOk = (FIRMS_MAP_KEY && FIRMS_MAP_KEY.length >= 10);
     if(!keyOk){
@@ -993,6 +999,7 @@
 
   function renderFirmsForDate(dateStr){
     firmsLayer.clearLayers();
+    firmsCurrentPts = [];
     if(!chkFirms.checked) return;
 
     const pts = firmsByDate[dateStr] || [];
@@ -1000,10 +1007,12 @@
 
     if(pts.length === 0){
       log(`FIRMS: 0 pont erre a napra: ${dateStr}`);
+      updateFrontBubbles();
       return;
     }
 
     const use = pts.length > maxPts ? pts.slice(0, maxPts) : pts;
+    firmsCurrentPts = use.map(p => ({ lat:p.lat, lon:p.lon }));
 
     for(const p of use){
       const frp = Number(p.frp);
@@ -1023,16 +1032,15 @@
       );
     }
     log(`FIRMS: ${use.length}/${pts.length} pont kirajzolva (${dateStr})`);
+    updateFrontBubbles();
   }
 
   btnReloadFirms.addEventListener("click", fetchFirms);
   selDays.addEventListener("change", fetchFirms);
   selMaxPts.addEventListener("change", () => { if(currentDate) renderFirmsForDate(currentDate); });
 
-  // ---------- Drones ----------
-  let lastDroneMeta = null;
-  let lastDroneFeatures = []; // analitikához
-
+  // ===== Drones =====
+  let lastDroneFeatures = [];
   function droneSourceSpec(){
     const key = selDroneSource.value;
     return DRONE_SOURCES[key] || DRONE_SOURCES.gdelt_latest;
@@ -1041,7 +1049,6 @@
   async function loadDrones(){
     dronesLayer.clearLayers();
     const spec = droneSourceSpec();
-    lastDroneMeta = null;
     lastDroneFeatures = [];
 
     try{
@@ -1049,14 +1056,7 @@
       const feats = gj.features || [];
       lastDroneFeatures = feats;
 
-      if(spec.url.includes("isw_uav_")){
-        try{
-          lastDroneMeta = await loadJson("./data/isw_uav_index.json");
-        } catch(e){ /* ignore */ }
-      }
-
       let shown = 0;
-
       for(const f of feats){
         if(!f.geometry || f.geometry.type !== "Point") continue;
         const [lon, lat] = f.geometry.coordinates || [];
@@ -1087,14 +1087,10 @@
       }
 
       setVisible(dronesLayer, chkDrones.checked);
+      log(`Drón pontok: betöltve ✔ (${shown}) | ${spec.label}`);
 
-      let metaLine = "";
-      if(lastDroneMeta?.source_date || lastDroneMeta?.generated_utc){
-        metaLine = ` | ISW dátum: ${lastDroneMeta.source_date || "–"} | gen: ${(lastDroneMeta.generated_utc||"").slice(0,19).replace("T"," ")}`;
-      }
-      log(`Drón pontok: betöltve ✔ (${shown}) | ${spec.label}${metaLine}`);
-
-      recomputeAnalyticsAndSummary();
+      recomputeTrendAndAuto();
+      updateFrontBubbles();
 
     } catch(e){
       log(`Drón pontok: nincs még / hiba – ${spec.label} – ` + String(e));
@@ -1104,7 +1100,7 @@
   selDroneSource.addEventListener("change", () => loadDrones());
   btnReloadDrones.addEventListener("click", loadDrones);
 
-  // ---------- Ground ----------
+  // ===== Ground =====
   let lastGroundFeatures = [];
   let lastGroundLineCount = 0;
 
@@ -1213,11 +1209,11 @@
       }
 
       lastGroundLineCount = shownLines;
-
       setVisible(groundLayer, chkGround.checked);
       log(`Földi (ISW): betöltve ✔ pont: ${shownPts}, vonal: ${shownLines} | ${spec.label}`);
 
-      recomputeAnalyticsAndSummary();
+      recomputeTrendAndAuto();
+      updateFrontBubbles();
 
     } catch(e){
       log(`Földi (ISW): nincs még / hiba – ${spec.label} – ` + String(e));
@@ -1227,7 +1223,7 @@
   selGroundSource.addEventListener("change", () => loadGround());
   btnReloadGround.addEventListener("click", loadGround);
 
-  // ---------- OSINT kivonat ----------
+  // ===== OSINT kivonat számok (ISW 7d) =====
   function countFeaturesByDate(geojson, daysBack){
     const feats = geojson?.features || [];
     const now = new Date();
@@ -1264,7 +1260,8 @@
       sumOsintNote.textContent = "Megj.: ISW geojson fájlokból (properties.date).";
       log("OSINT kivonat: betöltve ✔");
 
-      recomputeAnalyticsAndSummary(true);
+      recomputeTrendAndAuto();
+      updateFrontBubbles();
 
     }catch(e){
       sumOsintNote.textContent = "OSINT kivonat: nincs / hiba.";
@@ -1272,14 +1269,12 @@
     }
   }
 
-  // ---------- Elemzés + intelligens kivonat ----------
-  let lastTerr = null; // {deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp}
-  let lastMainAxis = { main24:null, main7:null, second7:null };
+  // ===== Auto kivonat + trend =====
+  let lastTerr = null;
 
   function dayKeyUTC(d){
     return d.toISOString().slice(0,10);
   }
-
   function build7dKeys(){
     const out = [];
     const now = new Date();
@@ -1289,61 +1284,11 @@
     }
     return out;
   }
-
   function sparkFromCounts(arr){
-    // arr: 7 elem
-    // 0..N -> ▁▂▃▄▅▆▇█
     const blocks = ["▁","▂","▃","▄","▅","▆","▇","█"];
     const max = Math.max(1, ...arr);
     return arr.map(v => blocks[Math.min(7, Math.floor((v/max)*7))]).join("");
   }
-
-  function countBySector(features, daysBack, useLineMid=false){
-    const now = new Date();
-    const cutoff = new Date(now.getTime() - daysBack*24*3600*1000);
-
-    const m = new Map(); // key -> count
-    for(const f of (features || [])){
-      const p = f.properties || {};
-      const d = parseDateMaybe(p.date);
-      if(!d || d < cutoff) continue;
-
-      const g = f.geometry || {};
-      let lat=null, lon=null;
-
-      if(g.type === "Point"){
-        lon = g.coordinates?.[0]; lat = g.coordinates?.[1];
-      } else if(useLineMid && g.type === "LineString"){
-        const coords = g.coordinates;
-        const mid = lineMidpoint(coords);
-        if(mid){ lat = mid[0]; lon = mid[1]; }
-      }
-
-      if(typeof lat !== "number" || typeof lon !== "number") continue;
-
-      const s = sectorForLatLon(lat, lon);
-      m.set(s.key, (m.get(s.key) || 0) + 1);
-    }
-    return m;
-  }
-
-  function topSectorsText(mapCounts, topN=2){
-    // mapCounts: Map(key->count)
-    const arr = [...mapCounts.entries()]
-      .filter(([k,_]) => k !== "other")
-      .sort((a,b) => b[1]-a[1]);
-
-    if(arr.length === 0) return null;
-
-    const parts = [];
-    for(let i=0;i<Math.min(topN, arr.length);i++){
-      const [k,c] = arr[i];
-      const name = SECTORS.find(s=>s.key===k)?.name || k;
-      parts.push(`${name} (${c})`);
-    }
-    return parts.join(", ");
-  }
-
   function buildTrend7d(droneFeats, groundFeats){
     const keys = build7dKeys();
     const now = new Date();
@@ -1359,7 +1304,6 @@
       const k = dayKeyUTC(d);
       if(droneByDay.has(k)) droneByDay.set(k, droneByDay.get(k)+1);
     }
-
     for(const f of (groundFeats||[])){
       const d = parseDateMaybe(f?.properties?.date);
       if(!d) continue;
@@ -1375,105 +1319,54 @@
     const hdr = keys.map(k=>k.slice(5)).join(" ");
     const dline = `D ${sparkFromCounts(droneArr)}  (${droneArr.join(",")})`;
     const gline = `G ${sparkFromCounts(groundArr)}  (${groundArr.join(",")})`;
-
     return `${hdr}\n${dline}\n${gline}`;
   }
 
-  function recomputeAnalyticsAndSummary(forceAuto=false){
-    // Elemzés a betöltött drón + földi featuresből (UI oldali)
-    // plusz auto kivonat frissítés
-
-    // 24h és 7 nap szektor eloszlás
-    const d24 = countBySector(lastDroneFeatures, 1, false);
-    const d7  = countBySector(lastDroneFeatures, 7, false);
-
-    // ground: pontok + line midpoint is számít (mert irány jelzés)
-    const g24p = countBySector(lastGroundFeatures, 1, false);
-    const g7p  = countBySector(lastGroundFeatures, 7, false);
-    const g24l = countBySector(lastGroundFeatures, 1, true);
-    const g7l  = countBySector(lastGroundFeatures, 7, true);
-
-    // összesített “aktivitás” (drón + földi pont + földi vonal)
-    const sumMap = (a,b,c)=>{
-      const out = new Map();
-      for(const m of [a,b,c]){
-        for(const [k,v] of m.entries()){
-          out.set(k, (out.get(k)||0)+v);
-        }
-      }
-      return out;
-    };
-
-    const tot24 = sumMap(d24, g24p, g24l);
-    const tot7  = sumMap(d7, g7p, g7l);
-
-    const main24 = topSectorsText(tot24, 1) || "–";
-    const main7  = topSectorsText(tot7, 1) || "–";
-    const second7 = topSectorsText(tot7, 2);
-    const second7Only = second7 ? (second7.split(", ").slice(1).join(", ") || "–") : "–";
-
-    anaMain24.textContent = main24;
-    anaMain7.textContent = main7;
-    anaSecond7.textContent = second7Only;
-
-    lastMainAxis = { main24, main7, second7: second7Only };
-
-    // trend
-    anaTrend.textContent = buildTrend7d(lastDroneFeatures, lastGroundFeatures);
-
-    if(forceAuto){
-      updateAutoSummary();
-    } else {
-      // ha már van terr adat: frissítjük az auto szöveget is
-      if(lastTerr) updateAutoSummary();
+  async function reversePlaceName(lat, lon){
+    const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&zoom=10&addressdetails=1`;
+    try{
+      const r = await fetch(url, { cache:"no-store" });
+      if(!r.ok) return null;
+      const j = await r.json();
+      return j?.name || j?.display_name || null;
+    } catch(e){
+      return null;
     }
   }
 
-  // ---------- Auto kivonat ----------
-  async function updateAutoSummary(terr){
-    if(terr) lastTerr = terr;
+  async function updateAutoSummary(){
     if(!lastTerr){
       sumAuto.textContent = "–";
       return;
     }
-
     const { deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp } = lastTerr;
     const dDay = Number(deltaDay);
     const dWeek = Number(deltaWeek);
 
-    const target = (Number.isFinite(dDay) && dDay > 0) ? gained : (Number.isFinite(dDay) && dDay < 0 ? lost : null);
-
     let placeTxt = "";
-    let sectorTxt = "";
+    const target = (Number.isFinite(dDay) && dDay > 0) ? gained : (Number.isFinite(dDay) && dDay < 0 ? lost : null);
     if(target && Array.isArray(target) && target.length === 2){
       const lon = target[0], lat = target[1];
       const name = await reversePlaceName(lat, lon);
       placeTxt = name ? ` A változás súlypontja: ${name}.` : ` A változás súlypontja: ${lat.toFixed(3)}, ${lon.toFixed(3)}.`;
-      const s = sectorForLatLon(lat, lon);
-      if(s && s.key !== "other") sectorTxt = ` (szektor: ${s.name})`;
     }
 
     const { d24, g24, d7, g7 } = lastOsintNumbers || {};
     const haveOsint = [d24,g24,d7,g7].every(v => typeof v === "number");
     const osintTxt = haveOsint
       ? ` OSINT (ISW): 24h ~${d24} drón és ~${g24} földi; 7 nap ~${d7} drón és ~${g7} földi.`
-      : " OSINT: (számok betöltése folyamatban / nincs adat).";
+      : ` OSINT: (számok betöltése folyamatban / nincs adat).`;
 
-    // tengely
-    const axis24 = lastMainAxis?.main24 && lastMainAxis.main24 !== "–" ? lastMainAxis.main24 : null;
-    const axis7  = lastMainAxis?.main7 && lastMainAxis.main7 !== "–" ? lastMainAxis.main7 : null;
-
-    const axisTxt = (axis24 || axis7)
-      ? ` Fő aktivitás: ${axis24 ? axis24 + " (24h)" : ""}${axis24 && axis7 ? ", " : ""}${axis7 ? axis7 + " (7 nap)" : ""}.`
-      : "";
+    const hot = frontHotSummary?.text || "";
+    const hotTxt = hot ? ` Front-intenzitás: ${hot}.` : "";
 
     const moveTxt = (lastGroundLineCount && lastGroundLineCount > 0)
-      ? ` Földi mozgásvonalak: ${lastGroundLineCount} (a kiválasztott idősávban).`
+      ? ` Földi mozgásvonalak: ${lastGroundLineCount} (kiválasztott idősávban).`
       : "";
 
     let dayLine = "";
     if(Number.isFinite(dDay) && dDay !== 0){
-      dayLine = `Napi területi változás: ${fmtDeltaKm2(dDay)} (${humanInterpretDelta(dDay)}).${sectorTxt}`;
+      dayLine = `Napi területi változás: ${fmtDeltaKm2(dDay)} (${humanInterpretDelta(dDay)}).`;
     } else if(Number.isFinite(dDay) && dDay === 0){
       dayLine = `Napi területi változás: ±0 (nincs érdemi elmozdulás).`;
     } else {
@@ -1490,11 +1383,16 @@
     if(weekInterp) interpBits.push(`Heti értelmezés: ${weekInterp}.`);
 
     sumAuto.textContent =
-      `${dayLine}${placeTxt}${weekLine}${axisTxt}${osintTxt}${moveTxt}` +
+      `${dayLine}${placeTxt}${weekLine}${hotTxt}${osintTxt}${moveTxt}` +
       `${interpBits.length ? " " + interpBits.join(" ") : ""}`;
   }
 
-  // ---------- Summary loader ----------
+  function recomputeTrendAndAuto(){
+    anaTrend.textContent = buildTrend7d(lastDroneFeatures, lastGroundFeatures);
+    updateAutoSummary();
+  }
+
+  // ===== Summary loader =====
   async function loadSummary(){
     try{
       const daily = await loadJson("./data/summary_daily.json");
@@ -1527,29 +1425,320 @@
       sumWhere.innerHTML = line + ` <span id="whereOut" style="margin-left:6px; color:#555;"></span>`;
       log("Kivonat: betöltve ✔");
 
-      await updateAutoSummary({
+      lastTerr = {
         deltaDay: dDay,
         deltaWeek: dWeek,
         gained, lost,
         dayInterp: daily.interpretation || "",
         weekInterp: weekly.interpretation || ""
-      });
+      };
+
+      await updateAutoSummary();
 
     }catch(e){
       log("Kivonat: nincs még (vagy nem elérhető) – " + String(e));
     }
   }
 
-  // ---------- ArcGIS ----------
+  // ===== FRONT SZEGMENSEK + BUBORÉKOK (A+B) =====
+  // A front geojsonból kinyerjük a pontokat, sűrítjük, majd szegmensezzük.
+  let frontDensified = [];     // [{lat,lng, cumKm}]
+  let frontSegments = [];      // [{id, center:{lat,lng}, fromKm, toKm}]
+  let frontHotSummary = null;  // {text, hot24, hot7, idx7}
+
+  function flattenFrontLatLngs(gj){
+    const pts = [];
+    const feats = gj?.features || [];
+    for(const f of feats){
+      const g = f.geometry || {};
+      if(g.type === "LineString"){
+        for(const c of (g.coordinates||[])){
+          if(Array.isArray(c) && c.length===2) pts.push({ lat:c[1], lng:c[0] });
+        }
+      } else if(g.type === "MultiLineString"){
+        for(const line of (g.coordinates||[])){
+          for(const c of (line||[])){
+            if(Array.isArray(c) && c.length===2) pts.push({ lat:c[1], lng:c[0] });
+          }
+        }
+      }
+    }
+    return pts;
+  }
+
+  function densifyPolyline(points, stepKm=5){
+    // linear interp lat/lon (jó közelítés ilyen léptékben)
+    if(points.length < 2) return [];
+    const out = [];
+    let cum = 0;
+
+    const push = (p) => out.push({ lat:p.lat, lng:p.lng, cumKm:cum });
+
+    push(points[0]);
+    for(let i=1;i<points.length;i++){
+      const a = points[i-1], b = points[i];
+      const dist = haversineKm(a,b);
+      if(!Number.isFinite(dist) || dist<=0) continue;
+
+      const n = Math.max(1, Math.floor(dist / stepKm));
+      for(let k=1;k<=n;k++){
+        const t = k / n;
+        const p = { lat: a.lat + (b.lat-a.lat)*t, lng: a.lng + (b.lng-a.lng)*t };
+        // cum hozzáadása:
+        const prev = out[out.length-1];
+        const d2 = haversineKm(prev, p);
+        cum += d2;
+        out.push({ lat:p.lat, lng:p.lng, cumKm:cum });
+      }
+    }
+    return out;
+  }
+
+  function buildSegments(densified, segLenKm=20){
+    if(!densified.length) return [];
+    const maxKm = densified[densified.length-1].cumKm || 0;
+    const nSeg = Math.max(1, Math.ceil(maxKm / segLenKm));
+    const segs = [];
+
+    for(let i=0;i<nSeg;i++){
+      const fromKm = i*segLenKm;
+      const toKm = Math.min(maxKm, (i+1)*segLenKm);
+      const midKm = (fromKm + toKm)/2;
+
+      // find closest point by cumKm
+      let best = densified[0];
+      let bestDiff = Infinity;
+      for(const p of densified){
+        const diff = Math.abs(p.cumKm - midKm);
+        if(diff < bestDiff){ bestDiff = diff; best = p; }
+      }
+
+      segs.push({
+        id: i,
+        fromKm, toKm,
+        center: { lat: best.lat, lng: best.lng }
+      });
+    }
+    return segs;
+  }
+
+  function nearestFrontIndex(pt){
+    // brute-force nearest densified point
+    if(!frontDensified.length) return null;
+    let bestIdx = 0;
+    let best = Infinity;
+    for(let i=0;i<frontDensified.length;i++){
+      const p = frontDensified[i];
+      const d = haversineKm({lat:pt.lat, lng:pt.lng}, p);
+      if(d < best){ best = d; bestIdx = i; }
+    }
+    return { idx: bestIdx, km: best, cumKm: frontDensified[bestIdx].cumKm };
+  }
+
+  function segIdFromCumKm(cumKm){
+    const segLenKm = Number(selSegLen.value) || 20;
+    return Math.max(0, Math.floor(cumKm / segLenKm));
+  }
+
+  function eventsWithinRadius(events, center, radiusKm){
+    // events: [{lat,lng,date}]
+    let c24=0, c7=0;
+    const now = new Date();
+    const cut24 = new Date(now.getTime() - 1*24*3600*1000);
+    const cut7  = new Date(now.getTime() - 7*24*3600*1000);
+
+    for(const e of events){
+      const d = haversineKm(center, e);
+      if(d > radiusKm) continue;
+      const dt = e.date ? parseDateMaybe(e.date) : null;
+      if(dt && dt >= cut24) c24++;
+      if(dt && dt >= cut7) c7++;
+      if(!dt){ /* ha nincs dátum, akkor csak 7d-nek nem számoljuk */ }
+    }
+    return { c24, c7 };
+  }
+
+  function firmsWithinRadius(center, radiusKm){
+    let c = 0;
+    for(const p of firmsCurrentPts){
+      const d = haversineKm(center, {lat:p.lat, lng:p.lon});
+      if(d <= radiusKm) c++;
+    }
+    return c;
+  }
+
+  function collectDroneEvents(){
+    const out = [];
+    for(const f of (lastDroneFeatures||[])){
+      if(f?.geometry?.type !== "Point") continue;
+      const [lon, lat] = f.geometry.coordinates || [];
+      if(typeof lat !== "number" || typeof lon !== "number") continue;
+      const date = f?.properties?.date || null;
+      out.push({ lat, lng: lon, date });
+    }
+    return out;
+  }
+
+  function collectGroundEvents(){
+    const out = [];
+    for(const f of (lastGroundFeatures||[])){
+      const g = f.geometry || {};
+      const date = f?.properties?.date || null;
+      if(g.type === "Point"){
+        const [lon, lat] = g.coordinates || [];
+        if(typeof lat !== "number" || typeof lon !== "number") continue;
+        out.push({ lat, lng: lon, date, kind:"pt" });
+      } else if(g.type === "LineString"){
+        const mid = lineMidpoint(g.coordinates || []);
+        if(!mid) continue;
+        out.push({ lat: mid[0], lng: mid[1], date, kind:"line" });
+      }
+    }
+    return out;
+  }
+
+  function intensityIndex(dr24, grPt24, grLn24, firmsN){
+    // súlyozás
+    return (1.0*dr24) + (2.0*grPt24) + (2.5*grLn24) + (1.0*firmsN);
+  }
+
+  function rebuildFrontBubbles(){
+    frontBubbleLayer.clearLayers();
+    frontHotSummary = null;
+
+    if(!frontSegments.length){
+      log("Front buborék: nincs frontszegmens (ArcGIS front kell).");
+      return;
+    }
+
+    const radiusKm = Number(selBubbleRadius.value) || 35;
+    const drones = collectDroneEvents();
+    const grounds = collectGroundEvents();
+
+    // per szegmens számolás + kirajzolás
+    let hot24 = null; // {seg, idx}
+    let hot7 = null;
+
+    for(const seg of frontSegments){
+      const center = seg.center;
+
+      const dCnt = eventsWithinRadius(drones, center, radiusKm);
+      const gCntAll = eventsWithinRadius(grounds, center, radiusKm);
+
+      // bontsuk szét a ground pt/line-t
+      let gPt24=0, gLn24=0, gPt7=0, gLn7=0;
+      const now = new Date();
+      const cut24 = new Date(now.getTime() - 1*24*3600*1000);
+      const cut7  = new Date(now.getTime() - 7*24*3600*1000);
+
+      for(const e of grounds){
+        const dist = haversineKm(center, e);
+        if(dist > radiusKm) continue;
+        const dt = e.date ? parseDateMaybe(e.date) : null;
+        if(!dt) continue;
+        if(dt >= cut24){
+          if(e.kind === "line") gLn24++; else gPt24++;
+        }
+        if(dt >= cut7){
+          if(e.kind === "line") gLn7++; else gPt7++;
+        }
+      }
+
+      const firmsN = firmsWithinRadius(center, radiusKm);
+
+      const idx24 = intensityIndex(dCnt.c24, gPt24, gLn24, firmsN);
+      const idx7  = intensityIndex(dCnt.c7,  gPt7,  gLn7,  firmsN);
+
+      if(!hot24 || idx24 > hot24.idx) hot24 = { seg, idx: idx24, breakdown: {d:dCnt.c24, gp:gPt24, gl:gLn24, f:firmsN} };
+      if(!hot7  || idx7  > hot7.idx)  hot7  = { seg, idx: idx7,  breakdown: {d:dCnt.c7,  gp:gPt7,  gl:gLn7,  f:firmsN} };
+
+      // kör méret: logikus skála
+      const r = Math.max(4, Math.min(14, 4 + idx7/4));
+      const marker = L.circleMarker([center.lat, center.lng], {
+        radius: r,
+        color: "#2a2a2a",
+        weight: 2,
+        opacity: 0.9,
+        fillOpacity: 0.20
+      });
+
+      const miniText = (() => {
+        const focus = (idx7 >= 15) ? "magas" : (idx7 >= 7 ? "közepes" : "alacsony");
+        return `Intenzitás: ${focus} (7 nap).`;
+      })();
+
+      marker.bindPopup(
+        `<b>Front szegmens #${seg.id}</b><br>` +
+        `Sugár: ${radiusKm} km | Szegmens: ${Number(selSegLen.value)||20} km<br>` +
+        `<hr style="border:0; border-top:1px dashed rgba(0,0,0,0.2); margin:6px 0;">` +
+        `<b>24h</b>: drón ${dCnt.c24}, földi pont ${gPt24}, földi vonal ${gLn24}, FIRMS ${firmsN}<br>` +
+        `<b>7 nap</b>: drón ${dCnt.c7}, földi pont ${gPt7}, földi vonal ${gLn7}, FIRMS ${firmsN}<br>` +
+        `<b>Index (7d)</b>: ${idx7.toFixed(1)}<br>` +
+        `<div style="margin-top:6px; color:#555;">${miniText}</div>` +
+        `<div style="margin-top:6px; color:#555;">Középpont: ${center.lat.toFixed(4)}, ${center.lng.toFixed(4)}</div>`
+      );
+
+      // hover open (kicsit “ISW”-s érzés)
+      marker.on("mouseover", function(){ this.openPopup(); });
+
+      frontBubbleLayer.addLayer(marker);
+    }
+
+    setVisible(frontBubbleLayer, chkFrontBubbles.checked);
+
+    // top összegzés UI + auto kivonatba
+    if(hot24 && hot7){
+      anaHot24.textContent = `#${hot24.seg.id} (idx: ${hot24.idx.toFixed(1)})`;
+      anaHot7.textContent  = `#${hot7.seg.id} (idx: ${hot7.idx.toFixed(1)})`;
+      anaHotIdx.textContent = `${hot7.idx.toFixed(1)} | D${hot7.breakdown.d} GP${hot7.breakdown.gp} GL${hot7.breakdown.gl} F${hot7.breakdown.f}`;
+
+      frontHotSummary = {
+        hot24,
+        hot7,
+        idx7: hot7.idx,
+        text: `Top szegmens 7d: #${hot7.seg.id} (idx ${hot7.idx.toFixed(1)}, D${hot7.breakdown.d}/GP${hot7.breakdown.gp}/GL${hot7.breakdown.gl}/F${hot7.breakdown.f})`
+      };
+    } else {
+      anaHot24.textContent = "–";
+      anaHot7.textContent = "–";
+      anaHotIdx.textContent = "–";
+      frontHotSummary = null;
+    }
+
+    updateAutoSummary();
+    log("Front buborék: újraépítve ✔");
+  }
+
+  function updateFrontBubbles(){
+    if(!frontSegments.length) return;
+    // egyszerű: rebuild (adatok változnak -> biztos friss)
+    rebuildFrontBubbles();
+  }
+
+  // ===== ArcGIS =====
+  let arcFrontRawGeojson = null;
+
   async function loadArcGIS(){
     try{
       if(arcFrontLayer) { map.removeLayer(arcFrontLayer); arcFrontLayer = null; }
       const gjFront = await loadJson(ARCGIS_FRONT_GEOJSON_URL);
+      arcFrontRawGeojson = gjFront;
+
       arcFrontLayer = L.geoJSON(gjFront, {
         style: () => ({ color:"#00a000", weight:3.0, opacity:0.95 })
       });
       setVisible(arcFrontLayer, chkArcFront.checked);
       log("ArcGIS front: betöltve ✔");
+
+      // build segments
+      const rawPts = flattenFrontLatLngs(gjFront);
+      const segLen = Number(selSegLen.value) || 20;
+      frontDensified = densifyPolyline(rawPts, 5);
+      frontSegments = buildSegments(frontDensified, segLen);
+
+      log(`Front szegmensek: ${frontSegments.length} (segLen=${segLen}km)`);
+      rebuildFrontBubbles();
+
     } catch(e){
       log("ArcGIS front: HIBA – " + String(e));
     }
@@ -1573,8 +1762,23 @@
   }
 
   btnReloadArc.addEventListener("click", loadArcGIS);
+  btnRebuildFront.addEventListener("click", rebuildFrontBubbles);
+  selBubbleRadius.addEventListener("change", rebuildFrontBubbles);
+  selSegLen.addEventListener("change", async () => {
+    // rebuild segments from stored raw geojson
+    try{
+      if(!arcFrontRawGeojson) return;
+      const rawPts = flattenFrontLatLngs(arcFrontRawGeojson);
+      const segLen = Number(selSegLen.value) || 20;
+      frontDensified = densifyPolyline(rawPts, 5);
+      frontSegments = buildSegments(frontDensified, segLen);
+      rebuildFrontBubbles();
+    } catch(e){
+      log("Front szegmens rebuild HIBA – " + String(e));
+    }
+  });
 
-  // ---------- Timeline ----------
+  // ===== Refresh / Timeline =====
   let dates = [];
   let currentDate = null;
   let playing = false;
@@ -1677,7 +1881,7 @@
     if(doZoomNow) doZoom();
   }
 
-  // ---------- Refresh all ----------
+  // ===== Refresh all =====
   async function refreshAll(){
     stopPlay();
     log("🔄 Teljes frissítés…");
@@ -1712,6 +1916,7 @@
   }
   btnRefreshAll.addEventListener("click", refreshAll);
 
+  // ===== init =====
   async function init(){
     log("Indul…");
     try{
