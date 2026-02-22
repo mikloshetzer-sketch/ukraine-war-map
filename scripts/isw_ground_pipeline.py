@@ -2,21 +2,18 @@
 # -*- coding: utf-8 -*-
 
 """
-ISW ground operations pipeline (ground assaults / advances / counterattacks),
-front-közeli szűréssel és csak UA/RU országokra korlátozott geokóddal.
+ISW ground operations pipeline (ground assaults / advances / counterattacks)
+- ONLY UA/RU geocoding (Nominatim countrycodes=ua,ru + addressdetails country_code)
+- FRONT-NEAR filter using ArcGIS frontline (km threshold)
+- MAX movement line length filter (drops absurd long lines)
+- V2 geocode cache with country_code + coords (avoids old bad cache hits)
 
-Output:
+Outputs:
 - data/isw_ground_latest.geojson
 - data/isw_ground_7d.geojson
 - data/isw_ground_30d.geojson
 - data/isw_ground_index.json
-- data/geocode_cache.json  (közös cache az UAV pipeline-nal)
-
-Fő elvek:
-- ISW ROC cikkekből mondat-szintű események
-- Geokód Nominatimmal, addressdetails=1, country_code szűréssel (UA/RU)
-- Front-közeli szűrés ArcGIS frontvonal GeoJSON alapján (km küszöb)
-- "from A to B" esetben LineString is készülhet, de csak ha front közelében van
+- data/geocode_cache_v2.json   (NEW cache; does NOT use old geocode_cache.json)
 """
 
 import re
@@ -35,16 +32,13 @@ import requests
 OUT_DIR = Path("data")
 OUT_DIR.mkdir(exist_ok=True)
 
-UA = (
-    "Mozilla/5.0 (Ukraine-War-Map research bot; ISW ground pipeline; "
-    "github actions)"
-)
-
-HEADERS = {"User-Agent": UA}
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Ukraine-War-Map research bot; ISW ground pipeline; github actions)"
+}
 
 ROC_UPDATES_URL = "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2"
 
-# ArcGIS frontvonal GeoJSON (ugyanaz, mint a HTML-ben)
+# ArcGIS frontline GeoJSON (ugyanaz, mint a HTML-ben)
 ARCGIS_FRONT_GEOJSON_URL = (
     "https://services-eu1.arcgis.com/fppoCYaq7HfVFbIV/ArcGIS/rest/services/"
     "UKR_Frontline_27072025/FeatureServer/0/query?"
@@ -54,16 +48,21 @@ ARCGIS_FRONT_GEOJSON_URL = (
 # Front-közeli küszöb (km)
 FRONT_NEAR_KM = 80.0
 
-# Geokód szűkített keresési doboz (lon/lat)
-# Ukrajna + nyugati/orosz harctér környéke (bőven elég)
-VIEW_MIN_LON, VIEW_MIN_LAT = 20.0, 43.0
-VIEW_MAX_LON, VIEW_MAX_LAT = 45.5, 56.5
+# Mozgásvonal maximális hossza (km) – ami ennél hosszabb, az szinte biztos téves geokód
+MAX_MOVE_KM = 200.0
+
+# Nominatim keresés "nézet doboz" (lon/lat) – UA + RU nyugati térség (Belgorod/Kursk/Rostov is belefér)
+VIEW_MIN_LON, VIEW_MIN_LAT = 20.0, 42.0
+VIEW_MAX_LON, VIEW_MAX_LAT = 60.0, 58.5
 
 # Csak ezek az országok maradhatnak
-ALLOWED_COUNTRY_CODES = {"ua", "ru"}  # Ukraine, Russia
+ALLOWED_COUNTRY_CODES = {"ua", "ru"}
 
-# Nominatim rate limit barát
+# Nominatim rate-limit barát
 NOMINATIM_SLEEP_SEC = 1.0
+
+# ÚJ cache (ne a régi geocode_cache.json-t használd!)
+GEOCODE_CACHE_V2 = OUT_DIR / "geocode_cache_v2.json"
 
 
 # =========================
@@ -164,7 +163,6 @@ def extract_events(article_url: str) -> list[dict]:
 
     text = strip_html_to_text(html)
     date = infer_date_from_url(article_url)
-
     sentences = re.split(r"\.\s+", text)
 
     events: list[dict] = []
@@ -187,7 +185,6 @@ def extract_events(article_url: str) -> list[dict]:
                 "kind": "movement",
                 "from_place": a,
                 "to_place": b,
-                "place": b,
                 "text": s[:350],
                 "source_url": article_url
             })
@@ -206,31 +203,44 @@ def extract_events(article_url: str) -> list[dict]:
 
 
 # =========================
-# STEP 3 — Geokód (Nominatim) csak UA/RU
+# STEP 3 — Geokód (Nominatim) V2 cache + countrycodes=ua,ru
 # =========================
 
-GEOCODE_CACHE = OUT_DIR / "geocode_cache.json"
-if GEOCODE_CACHE.exists():
-    cache = json.loads(GEOCODE_CACHE.read_text(encoding="utf-8"))
+if GEOCODE_CACHE_V2.exists():
+    geocache = json.loads(GEOCODE_CACHE_V2.read_text(encoding="utf-8"))
 else:
-    cache = {}
+    geocache = {}
 
-def geocode(place: str | None) -> list[float] | None:
+def _cache_get(place: str):
+    v = geocache.get(place)
+    if not isinstance(v, dict):
+        return None
+    cc = (v.get("cc") or "").lower()
+    coords = v.get("coords")
+    if cc in ALLOWED_COUNTRY_CODES and isinstance(coords, list) and len(coords) == 2:
+        lon, lat = coords
+        if isinstance(lon, (int, float)) and isinstance(lat, (int, float)):
+            return coords, cc
+    return None
+
+def _cache_set(place: str, coords, cc: str):
+    geocache[place] = {"coords": coords, "cc": cc}
+
+def geocode(place: str | None) -> tuple[list[float] | None, str | None]:
     """
-    Return [lon, lat] ONLY if result country_code is in ALLOWED_COUNTRY_CODES.
-    Uses bounded viewbox to reduce false matches.
+    Returns (coords [lon,lat] or None, country_code or None)
+    Only UA/RU allowed.
     """
     if not place:
-        return None
-
+        return None, None
     key = place.strip()
     if not key:
-        return None
+        return None, None
 
-    if key in cache:
-        # cache-ban lehet régi, “rossz” találat – de ha egyszer beengedted, megmarad.
-        # Ha full tisztítást akarsz, töröld a data/geocode_cache.json-t.
-        return cache[key]
+    cached = _cache_get(key)
+    if cached:
+        coords, cc = cached
+        return coords, cc
 
     try:
         viewbox = f"{VIEW_MIN_LON},{VIEW_MAX_LAT},{VIEW_MAX_LON},{VIEW_MIN_LAT}"
@@ -240,13 +250,13 @@ def geocode(place: str | None) -> list[float] | None:
             f"&q={requests.utils.quote(key)}"
             f"&addressdetails=1"
             f"&limit=1"
+            f"&countrycodes=ua,ru"
             f"&viewbox={viewbox}&bounded=1"
         )
-
         r = requests.get(url, headers=HEADERS, timeout=25)
         data = r.json()
         if not data:
-            return None
+            return None, None
 
         item = data[0]
         lat = float(item["lat"])
@@ -255,15 +265,17 @@ def geocode(place: str | None) -> list[float] | None:
         addr = item.get("address") or {}
         cc = (addr.get("country_code") or "").lower()
 
+        # dupla biztosíték
         if cc not in ALLOWED_COUNTRY_CODES:
-            return None
+            return None, None
 
-        cache[key] = [lon, lat]
+        coords = [lon, lat]
+        _cache_set(key, coords, cc)
         time.sleep(NOMINATIM_SLEEP_SEC)
-        return [lon, lat]
+        return coords, cc
 
     except Exception:
-        return None
+        return None, None
 
 
 # =========================
@@ -273,10 +285,6 @@ def geocode(place: str | None) -> list[float] | None:
 EARTH_R = 6371000.0  # meters
 
 def load_frontline_segments() -> list[dict]:
-    """
-    ArcGIS frontline GeoJSON-ból szegmensek listája:
-    [{lat1, lon1, lat2, lon2, minlat, maxlat, minlon, maxlon}, ...]
-    """
     print("Frontvonal letöltés…")
     r = requests.get(ARCGIS_FRONT_GEOJSON_URL, headers=HEADERS, timeout=40)
     r.raise_for_status()
@@ -285,7 +293,6 @@ def load_frontline_segments() -> list[dict]:
     segs: list[dict] = []
 
     def add_linestring(coords):
-        # coords: [[lon,lat], [lon,lat], ...]
         for i in range(len(coords) - 1):
             lon1, lat1 = coords[i]
             lon2, lat2 = coords[i + 1]
@@ -314,52 +321,36 @@ def load_frontline_segments() -> list[dict]:
     return segs
 
 def _to_xy_m(lat, lon, lat0):
-    # equirectangular projection around lat0
     x = math.radians(lon) * EARTH_R * math.cos(math.radians(lat0))
     y = math.radians(lat) * EARTH_R
     return x, y
 
 def _dist_point_to_segment_m(px, py, ax, ay, bx, by):
-    # 2D point-segment distance
     abx = bx - ax
     aby = by - ay
     apx = px - ax
     apy = py - ay
     ab2 = abx*abx + aby*aby
     if ab2 <= 1e-12:
-        dx = px - ax
-        dy = py - ay
-        return math.hypot(dx, dy)
+        return math.hypot(px - ax, py - ay)
     t = (apx*abx + apy*aby) / ab2
     if t < 0.0:
-        dx = px - ax
-        dy = py - ay
-        return math.hypot(dx, dy)
+        return math.hypot(px - ax, py - ay)
     if t > 1.0:
-        dx = px - bx
-        dy = py - by
-        return math.hypot(dx, dy)
+        return math.hypot(px - bx, py - by)
     cx = ax + t*abx
     cy = ay + t*aby
     return math.hypot(px - cx, py - cy)
 
 def min_distance_km_to_front(lat, lon, segments, threshold_km) -> float:
-    """
-    Minimum distance from (lat,lon) to frontline segments.
-    Pruning: segment bbox expanded by threshold degrees.
-    """
-    # ~ km to degrees for quick bbox prune
     deg_lat = threshold_km / 111.0
-    # lon degrees depends on latitude
     deg_lon = threshold_km / (111.0 * max(0.2, math.cos(math.radians(lat))))
 
     lat0 = lat
     px, py = _to_xy_m(lat, lon, lat0)
 
     best_m = float("inf")
-
     for s in segments:
-        # cheap bbox prune
         if lat < (s["minlat"] - deg_lat) or lat > (s["maxlat"] + deg_lat):
             continue
         if lon < (s["minlon"] - deg_lon) or lon > (s["maxlon"] + deg_lon):
@@ -370,22 +361,31 @@ def min_distance_km_to_front(lat, lon, segments, threshold_km) -> float:
         d = _dist_point_to_segment_m(px, py, ax, ay, bx, by)
         if d < best_m:
             best_m = d
-            # early stop if we are already very close
-            if best_m <= 1500:  # 1.5 km
+            if best_m <= 1500:
                 break
 
     return best_m / 1000.0
 
+def haversine_km(lat1, lon1, lat2, lon2):
+    r = 6371.0
+    p1 = math.radians(lat1)
+    p2 = math.radians(lat2)
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = math.sin(dlat/2)**2 + math.cos(p1)*math.cos(p2)*math.sin(dlon/2)**2
+    return 2*r*math.asin(min(1.0, math.sqrt(a)))
+
 
 # =========================
-# STEP 5 — GeoJSON (front-közeli szűrés)
+# STEP 5 — GeoJSON (front-közeli + UA/RU + max line length)
 # =========================
 
-def events_to_geojson(events: list[dict], frontline_segments: list[dict], near_km: float) -> dict:
+def events_to_geojson(events: list[dict], frontline_segments: list[dict]) -> dict:
     features: list[dict] = []
     kept = 0
     dropped_far = 0
     dropped_geocode = 0
+    dropped_long = 0
 
     for e in events:
         kind = e.get("kind")
@@ -393,18 +393,27 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict], near_k
         if kind == "movement":
             a = e.get("from_place")
             b = e.get("to_place")
-            ca = geocode(a)
-            cb = geocode(b)
-            if not (ca and cb):
+
+            ca, cca = geocode(a)
+            cb, ccb = geocode(b)
+            if not (ca and cb and cca and ccb):
                 dropped_geocode += 1
                 continue
 
-            # front-közeli feltétel: legalább az egyik végpont legyen közel a fronthoz
             lat_a, lon_a = ca[1], ca[0]
             lat_b, lon_b = cb[1], cb[0]
-            d_a = min_distance_km_to_front(lat_a, lon_a, frontline_segments, near_km)
-            d_b = min_distance_km_to_front(lat_b, lon_b, frontline_segments, near_km)
-            if min(d_a, d_b) > near_km:
+
+            # MAX line length filter
+            length_km = haversine_km(lat_a, lon_a, lat_b, lon_b)
+            if length_km > MAX_MOVE_KM:
+                dropped_long += 1
+                continue
+
+            # Front-közeli: mindkét végpontot mérjük, és legalább az egyik legyen közel
+            d_a = min_distance_km_to_front(lat_a, lon_a, frontline_segments, FRONT_NEAR_KM)
+            d_b = min_distance_km_to_front(lat_b, lon_b, frontline_segments, FRONT_NEAR_KM)
+            dmin = min(d_a, d_b)
+            if dmin > FRONT_NEAR_KM:
                 dropped_far += 1
                 continue
 
@@ -414,10 +423,11 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict], near_k
                 "properties": {
                     "source": "ISW",
                     "date": e["date"],
-                    "title": "ISW ground movement (front-near)",
-                    "from": a,
-                    "to": b,
-                    "distance_to_front_km_min": round(min(d_a, d_b), 1),
+                    "title": "ISW ground movement (filtered)",
+                    "from": a, "to": b,
+                    "from_cc": cca, "to_cc": ccb,
+                    "distance_to_front_km_min": round(dmin, 1),
+                    "length_km": round(length_km, 1),
                     "snippet": e["text"],
                     "url": e["source_url"]
                 }
@@ -425,15 +435,15 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict], near_k
             kept += 1
             continue
 
-        # sima ground pont
-        coords = geocode(e.get("place"))
-        if not coords:
+        # ground point
+        coords, cc = geocode(e.get("place"))
+        if not (coords and cc):
             dropped_geocode += 1
             continue
 
         lat, lon = coords[1], coords[0]
-        d = min_distance_km_to_front(lat, lon, frontline_segments, near_km)
-        if d > near_km:
+        d = min_distance_km_to_front(lat, lon, frontline_segments, FRONT_NEAR_KM)
+        if d > FRONT_NEAR_KM:
             dropped_far += 1
             continue
 
@@ -443,8 +453,9 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict], near_k
             "properties": {
                 "source": "ISW",
                 "date": e["date"],
-                "title": "ISW ground operation (front-near)",
+                "title": "ISW ground operation (filtered)",
                 "place": e.get("place"),
+                "cc": cc,
                 "distance_to_front_km": round(d, 1),
                 "snippet": e["text"],
                 "url": e["source_url"]
@@ -458,12 +469,15 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict], near_k
         "properties": {
             "filter": {
                 "allowed_country_codes": sorted(list(ALLOWED_COUNTRY_CODES)),
-                "front_near_km": near_km
+                "front_near_km": FRONT_NEAR_KM,
+                "max_move_km": MAX_MOVE_KM,
+                "viewbox": [VIEW_MIN_LON, VIEW_MIN_LAT, VIEW_MAX_LON, VIEW_MAX_LAT]
             },
             "stats": {
                 "kept": kept,
                 "dropped_far": dropped_far,
-                "dropped_geocode_or_country": dropped_geocode
+                "dropped_geocode_or_country": dropped_geocode,
+                "dropped_too_long_lines": dropped_long
             }
         }
     }
@@ -476,12 +490,7 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict], near_k
 def main():
     print("ISW GROUND pipeline indul…")
 
-    # Frontline szegmensek betöltése (front-közeli szűréshez)
-    try:
-        frontline_segments = load_frontline_segments()
-    except Exception as ex:
-        print("HIBA: frontvonal nem tölthető, pipeline leáll:", ex)
-        return
+    frontline_segments = load_frontline_segments()
 
     links = collect_recent_article_links(limit=40)
     print("Talált cikkek:", len(links))
@@ -500,11 +509,11 @@ def main():
     ev_7 = [e for e in all_events if datetime.date.fromisoformat(e["date"]) >= last7]
     ev_30 = [e for e in all_events if datetime.date.fromisoformat(e["date"]) >= last30]
 
-    latest_gj = events_to_geojson(ev_latest, frontline_segments, FRONT_NEAR_KM)
-    gj7 = events_to_geojson(ev_7, frontline_segments, FRONT_NEAR_KM)
-    gj30 = events_to_geojson(ev_30, frontline_segments, FRONT_NEAR_KM)
+    gj_latest = events_to_geojson(ev_latest, frontline_segments)
+    gj7 = events_to_geojson(ev_7, frontline_segments)
+    gj30 = events_to_geojson(ev_30, frontline_segments)
 
-    OUT_DIR.joinpath("isw_ground_latest.geojson").write_text(json.dumps(latest_gj, indent=2), encoding="utf-8")
+    OUT_DIR.joinpath("isw_ground_latest.geojson").write_text(json.dumps(gj_latest, indent=2), encoding="utf-8")
     OUT_DIR.joinpath("isw_ground_7d.geojson").write_text(json.dumps(gj7, indent=2), encoding="utf-8")
     OUT_DIR.joinpath("isw_ground_30d.geojson").write_text(json.dumps(gj30, indent=2), encoding="utf-8")
 
@@ -514,17 +523,14 @@ def main():
             "events_total_raw": len(all_events),
             "events_7d_raw": len(ev_7),
             "events_30d_raw": len(ev_30),
-            "front_near_km": FRONT_NEAR_KM,
-            "allowed_country_codes": sorted(list(ALLOWED_COUNTRY_CODES)),
-            "viewbox": [VIEW_MIN_LON, VIEW_MIN_LAT, VIEW_MAX_LON, VIEW_MAX_LAT],
-            "latest_stats": latest_gj.get("properties", {}).get("stats", {}),
+            "latest_stats": gj_latest.get("properties", {}).get("stats", {}),
             "d7_stats": gj7.get("properties", {}).get("stats", {}),
-            "d30_stats": gj30.get("properties", {}).get("stats", {})
+            "d30_stats": gj30.get("properties", {}).get("stats", {}),
         }, indent=2),
         encoding="utf-8"
     )
 
-    GEOCODE_CACHE.write_text(json.dumps(cache, indent=2), encoding="utf-8")
+    GEOCODE_CACHE_V2.write_text(json.dumps(geocache, indent=2), encoding="utf-8")
 
     print("ISW GROUND pipeline kész ✔")
 
