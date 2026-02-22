@@ -6,96 +6,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.9489381,
-          63.5338769
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "with",
-        "snippet": ":root, .__fb-light-mode:root, .__fb-light-mode {--fds-black:#000000;--fds-black-alpha-05:rgba(0, 0, 0, 0.05);--fds-black-alpha-10:rgba(0, 0, 0, 0.1);--fds-black-alpha-15:rgba(0, 0, 0, 0.15);--fds-black-alpha-20:rgba(0, 0, 0, 0.2);--fds-black-alpha-30:rgba(0, 0, 0, 0.3);--fds-black-alpha-40:rgba(0, 0, 0, 0.4);--fds-black-alpha-50:rgba(0, 0, 0, 0.5);",
-        "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Funderstandingwar.org%2Fresearch%2Frussia-ukraine%2Frussian-offensive-campaign-assessment-updates-2%2F"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "Russian Offensive Campaign Assessment | SEP\u2013NOV 2025 | ISW {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/#article\",\"isPartOf\":{\"@id\":\"https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-upd",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.9579471,
-          50.4497063
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Open-Source",
-        "snippet": "Petraeus Center for Emerging Leaders Hertog War Studies ISW\u2019s Premier Educational Program for Undergraduates Fellowships Enrichment and Advancement Opportunities for Entry-Level and Mid-Career Professionals Internships Launch your Career at ISW with an Internship in Open-Source Intelligence, Geospatial Intelligence, Cognitive Warfare, or Communicat",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -80.148379,
-          25.9812025
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Hallandale",
-        "snippet": "Russian Offensive Campaign Assessment, November 30, 2025 Toplines US Secretary of State Marco Rubio stated that the US-proposed peace plan aims to ensure Ukraine&#8217;s independence, sovereignty, and economic development, during the US-Ukrainian talks in Hallandale Beach, Florida on November 30",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "to impose punishments against Russia in the event of peace agreement violations",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           34.8027723,
           50.9119775
         ]
@@ -103,63 +13,10 @@
       "properties": {
         "source": "ISW",
         "date": "2026-02-22",
-        "title": "ISW ground operation",
+        "title": "ISW ground operation (front-near)",
         "place": "Sumy",
+        "distance_to_front_km": 22.6,
         "snippet": "[14] Girkin claimed the peace agreement is disadvantageous to Russia as it would force Russia to formally renunciate its claims over illegally-annexed parts of Ukraine; surrender &#8220;strategically vital&#8221; offensive positions in Sumy, Kharkiv, and Dnipropetrovsk oblasts; grant Ukrainian forces time to rest and reconstitute; sharply decrease ",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.3651823,
-          35.9071911
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "mid-November",
-        "snippet": "The columnist&#8217;s statements are consistent with Putin&#8217;s November 27 interpretation of the US-proposed peace plan as a mere suggestion for discussions and demands that Ukraine cede all illegally annexed oblasts to Russia.[17] Russian officials and ultranationalists have been consistently issuing similar public rejections of the 28-point p",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.2122799,
-          -4.12906
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "some",
-        "snippet": "ISW continues to assess that while the situation in some specific sectors of the front line is serious, particularly in Pokrovsk and Hulyaipole directions, the Kremlin&#8217;s efforts to present Russia&#8217;s victory in Ukraine as inevitable do not correspond to the battlefield reality.[25] It is notable that the Kremlin\u2019s misrepresentation of the",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "Russian forces continue to make slow advances and have failed to seize Pokrovsk entirely despite occupying positions within the town for over 120 days.[27] Ukrainian military observer Kostyantyn Mashovets reported on November 30 that Ukrainian forces pushed Russian forces to the southern outskirts of Rodynske during counterattacks.[28] Mashovets ad",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -175,261 +32,10 @@
       "properties": {
         "source": "ISW",
         "date": "2026-02-22",
-        "title": "ISW ground operation",
+        "title": "ISW ground operation (front-near)",
         "place": "Boikivka",
+        "distance_to_front_km": 3.0,
         "snippet": "Geolocated footage published on November 29 and 30 shows Ukrainian forces striking Russian bridge-laying vehicles and armored fighting vehicles (AFVs) east of Boikivka, south of Pankivka, and west of Novotoretske (all southeast of Dobropillya) as the vehicles attempted to cross the Kazennyi Torets River.[30] The deputy commander of a Ukrainian batt",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "Mashovets assessed that Russian presence in the area south of Chervonyi (Krasnyi) Lyman (northeast of Pokrovsk) and between Pokrovsk and Myrnohrad will force Ukrainian forces in Myrnohrad to conduct a fighting withdrawal to avoid encirclement in Myrnohrad.[33] The deputy commander of a Ukrainian battalion operating in the Pokrovsk direction reporte",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          18.8504173,
-          -33.9066532
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "September",
-        "snippet": "Ukrainian volunteer Serhiy Sternenko reported on November 30 that the Ukrainian forces successfully used the domestically produced Sting interceptor drone to shoot down several Geran-3 jet-powered long-range strike drones for the first time on the night of November 29 to 30.[38] Geran-3 drones have a shorter flight range than typical Geran drones b",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          13.2187279,
-          43.4801189
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "an",
-        "snippet": "The Kremlin continues to advance a false narrative that Ukraine\u2019s front line and political stability are on the verge of collapse in an effort to convince the West to capitulate to Russian demands that Russia cannot secure militarily",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          79.931296,
-          6.8275297
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "western",
-        "snippet": "Ukrainian forces recently advanced in western Zaporizhia Oblast and near Pokrovsk",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.2718321,
-          49.4871968
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Ukraine",
-        "snippet": "read the full Nov 30 report Russian Offensive Campaign Assessment, November 29, 2025 Toplines Russian state media is leveraging Russian President Vladimir Putin&#8217;s recent statements to intensify the false narrative that the frontline in Ukraine will imminently collapse, likely in an effort to coerce the West and Ukraine into capitulating to Ru",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.2718321,
-          49.4871968
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Ukraine",
-        "snippet": "Russian state media is also trying to reinforce the Kremlin&#8217;s efforts to create a perception that Russian forces will inevitably collapse sectors of the frontline in Ukraine, destroy Ukraine\u2019s most combat-capable elite units, and degrade the combat effectiveness of the Ukrainian military writ large \u2014 and that Ukraine and the West should there",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "The milblogger&#8217;s battlefield assessment notably contradicts Putin&#8217;s November 27 claim that Russian forces have completed the seizure of Kupyansk and seized most of Vovchansk, and that Ukrainian forces are unable to defend against Russian assaults near the Oskil River",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.5241361,
-          50.4500336
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Kyiv",
-        "snippet": "Ukrainian officials, including Ukraine&#8217;s Ministry of Energy, stated that Russian forces struck energy infrastructure facilities in Kyiv, Chernihiv, Sumy, Poltava, and Kharkiv oblasts, leaving over 500,000 energy customers in Kyiv City, 100,000 in Kyiv Oblast, and nearly 8,000 in Kharkiv Oblast without power.[6] Kyiv City and Kyiv Oblast offic",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -74.21273,
-          40.424966
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Geran-2",
-        "snippet": "A Kremlin-affiliated milblogger reported that Russian developers recently modernized communications and navigation systems in Geran-2 strike drones, allowing Russian forces to pilot these drones in real time.[9] Ukrainian Deputy Defense Minister for Innovation Lieutenant Colonel Yurii Myronenko told the Business Insider in an article published on N",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.2718321,
-          49.4871968
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Ukraine",
-        "snippet": "Ukraine&#8217;s Main Military Intelligence Directorate (GUR) also reported that Russian forces are actively using the new Iranian-produced Shahed-107 drones on the battlefield in Ukraine.[11] ISW reported that Russian forces augmented their offensive operations against Pokrovsk with Shahed drone strikes over Spring-Summer 2025 and began to pursue m",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.2718321,
-          49.4871968
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Ukraine",
-        "snippet": "A source in Ukraine&#8217;s Security Service (SBU) told Ukrainian broadcaster Suspilne on November 29 that the SBU and the Ukrainian Navy conducted a joint strike against the KAIRO and VIRAT oil tankers \u2014 both of which are sanctioned as being part of Russia\u2019s shadow fleet \u2014 in the Black Sea with modernized Sea Baby USVs.[13] The source shared foota",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "Geolocated footage published on November 28 and 29 shows the KAIRO tanker burning northeast of Istanbul in the Black Sea.[14] T\u00fcrkiye&#8217;s Ministry of Foreign Affairs (MFA) reported on November 29 that the Turkish General Directorate of Coastal Safety evacuated 25 personnel from the KAIROS tanker and that evacuation teams are waiting at a safe d",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "Lithuanian authorities reported on November 29 that they detected over 60 balloons flying into Lithuanian airspace from Belarus overnight and that an unspecified number of balloons forced the Vilnius International Airport to temporarily suspend operations in the early morning of November 29, impacting 22 flights and 3,000 travelers.[30] Aerial incu",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "Ukrainian forces recently struck two Russian shadow fleet oil tankers in the Black Sea \u2014 the first time Ukrainian forces attacked shadow fleet vessels",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -445,63 +51,10 @@
       "properties": {
         "source": "ISW",
         "date": "2026-02-22",
-        "title": "ISW ground operation",
+        "title": "ISW ground operation (front-near)",
         "place": "Novopavlivka",
+        "distance_to_front_km": 1.0,
         "snippet": "Ukrainian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "Russian forces recently advanced in the Kostyantynivka-Druzhkivka tactical area and near Kupyansk",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.2718321,
-          49.4871968
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Ukraine",
-        "snippet": "read the full Nov 29 report Russian Offensive Campaign Assessment, November 28, 2025 Toplines The frontline in Ukraine is not facing imminent collapse despite recent Russian gains and Kremlin assertions",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          74.6036724,
-          42.8761424
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Bishkek",
-        "snippet": "Russian President Vladimir Putin claimed during a press conference with Russian state media in Bishkek, Kyrgyzstan, on November 27 that Russia is making significant gains across the frontline such that Ukraine and the West should concede to Russia&#8217;s demands before the situation worsens for Ukraine.[1] Putin implied that some Western officials",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -517,63 +70,10 @@
       "properties": {
         "source": "ISW",
         "date": "2026-02-22",
-        "title": "ISW ground operation",
+        "title": "ISW ground operation (front-near)",
         "place": "Siversk",
+        "distance_to_front_km": 1.6,
         "snippet": "Putin then made a series of exaggerated claims about purported Russian battlefield gains, including that Russian forces have completed the seizure of Kupyansk; captured about 70 percent of Pokrovsk and completely encircled both Pokrovsk and Myrnohrad; seized just over 21 percent of all buildings in Siversk; seized most of Vovchansk; and advanced wi",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.2718321,
-          49.4871968
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Ukraine",
-        "snippet": "Putin also claimed that Russian forces have seized a &#8220;significant&#8221; amount of territory in &#8220;Komsomolsk,&#8221; even though there is no city in Ukraine with this name.[3] Putin may have been referring to Kostyantynivka, although ISW has observed evidence to assess that Russian forces have advanced in just 0.07 percent of Kostyantyni",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.5032346,
-          53.6816685
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "recent",
-        "snippet": "Putin&#8217;s theory of victory is predicated on the assumption that Russia&#8217;s military and economy can outlast the West&#8217;s will to support Ukraine to continue grinding advances on the frontline.[4] Putin and senior Russian defense officials have made several high-level public engagements in recent weeks to make exaggerated battlefield cl",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.2718321,
-          49.4871968
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Ukraine",
-        "snippet": "ISW continues to assess that a Russian victory in Ukraine is not inevitable, however.[7] The rate of Russian advances does not exceed a footpace in all the areas where Putin claimed that Russian forces have made significant advances",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -589,63 +89,10 @@
       "properties": {
         "source": "ISW",
         "date": "2026-02-22",
-        "title": "ISW ground operation",
+        "title": "ISW ground operation (front-near)",
         "place": "Kupyansk",
+        "distance_to_front_km": 1.9,
         "snippet": "Putin praised the claimed seizure of Kupyansk as the model by which Russian forces will make advances elsewhere on the frontline.[8] Russian forces have been using a new campaign design that utilizes battlefield air interdiction (BAI) efforts to degrade Ukrainian logistics and defenses such that Russian infantry can infiltrate into Ukrainian rear a",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8692099,
-          52.4577754
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "the",
-        "snippet": "Russian forces failed to sufficiently degrade Ukrainian defenses in the Kupyansk direction after first infiltrating into the town in August 2025, allowing Ukrainian forces to largely push back Russian forces.[12] Russian forces continue conducting infiltration operations into Kupyansk, but Ukraine has denied Russia the rapid seizure of the town.[13",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          31.2718321,
-          49.4871968
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Ukraine",
-        "snippet": "The war in Ukraine has become largely positional, and Russian forces writ large are sufficiently degraded such that they cannot currently conduct maneuver warfare at the scale necessary for rapid, operational-level advances that restore maneuver to the battlefield.[15] Russian forces have become optimized to fight positional warfare with low qualit",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          13.2187279,
-          43.4801189
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "an",
-        "snippet": "Putin is likely deliberately invoking the false narrative that the current Ukrainian government is illegitimate in an effort to indirectly reject the US-proposed peace deal by inventing a justification against concluding a peace deal on the Trump administration&#8217;s proposed rapid timeline, similar to the Kremlin&#8217;s use of the claimed illeg",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -661,8 +108,9 @@
       "properties": {
         "source": "ISW",
         "date": "2026-02-22",
-        "title": "ISW ground operation",
+        "title": "ISW ground operation (front-near)",
         "place": "Donetsk",
+        "distance_to_front_km": 50.5,
         "snippet": "Putin&#8217;s statement is not a compromise aimed at advancing the peace deal but is a repetition of his June 2024 demand that Ukraine cede territories that Russia does not occupy and has struggled and failed to seize since 2014 and 2022.[27] Such a concession would force Ukraine to abandon its Fortress Belt, the fortified defensive line in Donetsk",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
@@ -679,81 +127,10 @@
       "properties": {
         "source": "ISW",
         "date": "2026-02-22",
-        "title": "ISW ground operation",
+        "title": "ISW ground operation (front-near)",
         "place": "Hnativka",
+        "distance_to_front_km": 1.4,
         "snippet": "[35] The Donetsk Oblast Prosecutor\u2019s Office reported on November 28 that Russian forces executed a Ukrainian POW in Hnativka (immediately southeast of Pokrovsk) on an unspecified date in November 2025.[36] ISW observed an increase in Russian war crimes in the Hulyaipole and Pokrovsk directions in late October and November 2025, as Russian forces ha",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.4995913,
-          36.333438
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "February",
-        "snippet": "Yermak became head of the Ukrainian Presidential Office in February 2020 and has led several Ukrainian negotiating delegations over the last several months.[40] Key Takeaways The frontline in Ukraine is not facing imminent collapse despite recent Russian gains and Kremlin assertions",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.3943799,
-          9.6600005
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "northern",
-        "snippet": "Russian forces advanced in northern Kharkiv Oblast, the Slovyansk-Lyman direction, the Kostyantynivka tactical area, and the Pokrovsk and Novopavlivka directions",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.8095485,
-          45.7681746
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "observance",
-        "snippet": "read the full Nov 28 report In observance of Thanksgiving Day, ISW did not publish on November 27 Russian Offensive Campaign Assessment, November 26, 2025 Toplines Data on Russian forces\u2019 rate of advance indicates that a Russian military victory in Ukraine is not inevitable, and a rapid Russian seizure of the rest of Donetsk Oblast is not imminent",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -76.615249,
-          39.2974454
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "order",
-        "snippet": "A senior US military official reportedly stated that the war will only worsen for Ukraine as Russia can fight indefinitely and that it is better for Ukraine to negotiate a peace settlement now rather than negotiate from a weaker position later.[1] The Kremlin has consistently pushed a narrative claiming that a Russian victory is inevitable \u2014 partic",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -769,29 +146,26 @@
       "properties": {
         "source": "ISW",
         "date": "2026-02-22",
-        "title": "ISW ground operation",
+        "title": "ISW ground operation (front-near)",
         "place": "Donetsk",
+        "distance_to_front_km": 50.5,
         "snippet": "Russian President Vladimir Putin and Russian military commanders have been attempting to portray Russia as capable of rapidly seizing Donetsk Oblast militarily, but hard data on the rate of Russian advance in Donetsk Oblast does not indicate that Russian forces will imminently seize the rest of the oblast.[2] Russian forces have been prioritizing c",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          129.1540617,
-          61.48327
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation",
-        "place": "Pokrovsk",
-        "snippet": "Russian forces entered Pokrovsk for the first time by July 31, and Russian forces have advanced an average of 0.12 kilometers per day in Pokrovsk from July 31 to November 26",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
     }
-  ]
+  ],
+  "properties": {
+    "filter": {
+      "allowed_country_codes": [
+        "ru",
+        "ua"
+      ],
+      "front_near_km": 80.0
+    },
+    "stats": {
+      "kept": 8,
+      "dropped_far": 37,
+      "dropped_geocode_or_country": 15
+    }
+  }
 }

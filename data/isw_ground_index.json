@@ -1,6 +1,32 @@
 {
-  "generated_utc": "2026-02-22T12:18:18.961106",
-  "events_total_raw": 3684,
-  "events_7d_raw": 2298,
-  "events_30d_raw": 2872
+  "generated_utc": "2026-02-22T14:00:16.346767",
+  "events_total_raw": 3685,
+  "events_7d_raw": 2299,
+  "events_30d_raw": 2873,
+  "front_near_km": 80.0,
+  "allowed_country_codes": [
+    "ru",
+    "ua"
+  ],
+  "viewbox": [
+    20.0,
+    43.0,
+    45.5,
+    56.5
+  ],
+  "latest_stats": {
+    "kept": 8,
+    "dropped_far": 37,
+    "dropped_geocode_or_country": 15
+  },
+  "d7_stats": {
+    "kept": 206,
+    "dropped_far": 1518,
+    "dropped_geocode_or_country": 575
+  },
+  "d30_stats": {
+    "kept": 280,
+    "dropped_far": 1844,
+    "dropped_geocode_or_country": 749
+  }
 }
