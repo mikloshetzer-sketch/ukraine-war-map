@@ -1020,35 +1020,46 @@
 
   // ===== Change circle =====
   function renderChangeCircle(deltaKm2, gained, lost){
-    changeMarkerLayer.clearLayers();
-    if(!chkChangeCircle.checked) return;
 
-    const d = Number(deltaKm2);
-    if(!Number.isFinite(d) || d === 0) return;
+  changeMarkerLayer.clearLayers();
+  if(!chkChangeCircle.checked) return;
 
-    const absd = Math.abs(d);
-    const kmRadius = Math.max(6, Math.min(35, 6 + absd/10));
-    const target = d > 0 ? gained : lost;
-    if(!target || !Array.isArray(target) || target.length !== 2) return;
+  const d = Number(deltaKm2);
+  if(!Number.isFinite(d) || d === 0) return;
 
-    const lon = target[0], lat = target[1];
+  const absd = Math.abs(d);
+  const kmRadius = Math.max(6, Math.min(35, 6 + absd/10));
+  const target = d > 0 ? gained : lost;
 
-    const circle = L.circle([lat, lon], {
-      radius: kmRadius * 1000,
-      color: d > 0 ? "#00a000" : "#d00",
-      weight: 2,
-      opacity: 0.9,
-      fillOpacity: 0.18
-    }).bindPopup(
-      `<b>Napi területi változás</b><br>` +
-      `Δ: ${fmtDeltaKm2(d)}<br>` +
-      `Értelmezés: ${humanInterpretDelta(d)}<br>` +
-      `Középpont: ${lat.toFixed(4)}, ${lon.toFixed(4)}`
-    );
+  if(!target || !Array.isArray(target) || target.length !== 2) return;
 
-    changeMarkerLayer.addLayer(circle);
-    setVisible(changeMarkerLayer, chkChangeCircle.checked);
-  }
+  const lon = target[0];
+  const lat = target[1];
+
+  const circle = L.circle([lat, lon], {
+    radius: kmRadius * 1000,
+    color: d > 0 ? "#00a000" : "#d00",
+    weight: 2,
+    opacity: 0.9,
+    fillOpacity: 0.18
+  });
+
+  // ---- PERMANENS SZÖVEGBUBORÉK ----
+  const tipHtml =
+    `<b>Napi területi változás</b>` +
+    `<div>Δ: ${fmtDeltaKm2(d)}</div>` +
+    `<div class="sub">${humanInterpretDelta(d)}</div>`;
+
+  circle.bindTooltip(tipHtml, {
+    permanent: true,
+    direction: "top",
+    className: "hiTip",
+    offset: [0, -35]
+  });
+
+  circle.addTo(changeMarkerLayer);
+  setVisible(changeMarkerLayer, chkChangeCircle.checked);
+}
 
   // ===== FIRMS =====
   let firmsByDate = {};
