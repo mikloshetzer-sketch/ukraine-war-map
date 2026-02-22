@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrán–orosz háború – DeepState + FIRMS + GIBS + ArcGIS + Kivonat + Drón</title>
+  <title>Ukrán–orosz háború – DeepState + FIRMS + GIBS + ArcGIS + Kivonat + Drón + Földi</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -196,7 +196,7 @@
       padding: 8px 10px;
       font: 12px/1.3 system-ui, -apple-system, Segoe UI, Roboto, Arial;
       box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      max-width: 320px;
+      max-width: 340px;
     }
     .mapStampHead{
       display:flex;
@@ -250,7 +250,7 @@
 <body>
   <div id="map"></div>
 
-  <!-- map stamp (kikapcsolható) -->
+  <!-- map stamp (kikapcsolható / összecsukható) -->
   <div id="mapStamp" class="mapStamp">
     <div class="mapStampHead">
       <b>Adatok</b>
@@ -264,7 +264,7 @@
     <div class="head">
       <div>
         <h3>Rétegek & nézet</h3>
-        <div class="sub">DeepState + FIRMS + GIBS + ArcGIS + drón + kivonat.</div>
+        <div class="sub">DeepState + FIRMS + GIBS + ArcGIS + drón + földi + kivonat.</div>
       </div>
       <button id="toggleLeft" class="toggleBtn" type="button">☰</button>
     </div>
@@ -273,11 +273,15 @@
         <label class="chip"><input id="chkDeep" type="checkbox" checked> DeepState</label>
         <label class="chip"><input id="chkFirms" type="checkbox" checked> FIRMS pötty</label>
         <label class="chip"><input id="chkGibs" type="checkbox"> NASA GIBS overlay</label>
+
         <label class="chip"><input id="chkDrones" type="checkbox" checked> Drón pontok</label>
+
+        <!-- VISSZA: földi kapcsoló -->
+        <label class="chip"><input id="chkGround" type="checkbox" checked> Földi (ISW) pont/vonal</label>
+
         <label class="chip"><input id="chkArcFront" type="checkbox" checked> ArcGIS frontvonal</label>
         <label class="chip"><input id="chkArcAdv" type="checkbox" checked> ArcGIS orosz advance</label>
 
-        <!-- ÚJ: napi változás kör -->
         <label class="chip"><input id="chkChangeCircle" type="checkbox" checked> Napi változás kör</label>
 
         <label class="chip"><input id="chkLog" type="checkbox" checked> Napló</label>
@@ -293,6 +297,18 @@
           </select>
         </span>
         <button id="btnReloadDrones" class="btn secondary" type="button">Drón újratöltés</button>
+      </div>
+
+      <!-- ÚJ: földi forrásválasztó -->
+      <div class="row">
+        <span class="chip">Földi (ISW) forrás:
+          <select id="selGroundSource">
+            <option value="isw_ground_latest" selected>ISW Ground (latest)</option>
+            <option value="isw_ground_7d">ISW Ground (7 nap)</option>
+            <option value="isw_ground_30d">ISW Ground (30 nap)</option>
+          </select>
+        </span>
+        <button id="btnReloadGround" class="btn secondary" type="button">Földi újratöltés</button>
       </div>
 
       <div class="row">
@@ -362,7 +378,6 @@
         </div>
         <div class="mini" id="sumWhere">Változás helye: –</div>
 
-        <!-- ÚJ: OSINT esemény összesítő -->
         <div class="mini" style="margin-top:10px;">
           <b style="display:block; margin-bottom:6px;">OSINT események (ISW kivonat)</b>
           <div class="grid">
@@ -374,7 +389,6 @@
           <div class="mini" id="sumOsintNote" style="margin-top:6px; color:#555;">–</div>
         </div>
 
-        <!-- ÚJ: automatikus kivonat szöveg -->
         <div class="mini" style="margin-top:10px;">
           <b style="display:block; margin-bottom:6px;">Automatikus kivonat</b>
           <div id="sumAuto" style="color:#333;">–</div>
@@ -441,6 +455,10 @@
       <div class="item"><span class="swatch" style="background:#d00;"></span>DeepState határ/frontvonal</div>
       <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont</div>
       <div class="item"><span class="swatch" style="background:#0077ff;"></span>Drón pont (OSINT híralapú / ISW kivonat)</div>
+
+      <!-- ÚJ: földi -->
+      <div class="item"><span class="swatch" style="background:#00b3b3;"></span>Földi (ISW) pont/vonal</div>
+
       <div class="item"><span class="swatch" style="background:#00a000;"></span>ArcGIS frontvonal</div>
       <div class="item"><span class="swatch" style="background:#7a00ff;"></span>ArcGIS orosz előretörés (polygon)</div>
       <div class="item"><span class="swatch" style="background:#00a000; opacity:0.2;"></span>Napi területi változás kör</div>
@@ -478,6 +496,13 @@
     isw_30d:      { label: "ISW UAV (30 nap)", url: "./data/isw_uav_30d.geojson" },
   };
 
+  // ====== Ground sources (local files) ======
+  const GROUND_SOURCES = {
+    isw_ground_latest: { label: "ISW Ground (latest)", url: "./data/isw_ground_latest.geojson" },
+    isw_ground_7d:     { label: "ISW Ground (7 nap)",  url: "./data/isw_ground_7d.geojson" },
+    isw_ground_30d:    { label: "ISW Ground (30 nap)", url: "./data/isw_ground_30d.geojson" },
+  };
+
   const el = (id) => document.getElementById(id);
 
   const panelLeft = el("panelLeft");
@@ -489,6 +514,7 @@
   const chkFirms = el("chkFirms");
   const chkGibs = el("chkGibs");
   const chkDrones = el("chkDrones");
+  const chkGround = el("chkGround");
   const chkArcFront = el("chkArcFront");
   const chkArcAdv = el("chkArcAdv");
   const chkChangeCircle = el("chkChangeCircle");
@@ -496,6 +522,9 @@
 
   const selDroneSource = el("selDroneSource");
   const btnReloadDrones = el("btnReloadDrones");
+
+  const selGroundSource = el("selGroundSource");
+  const btnReloadGround = el("btnReloadGround");
 
   const selBase = el("selBase");
   const selZoom = el("selZoom");
@@ -536,7 +565,6 @@
   const sumWeekTxt = el("sumWeekTxt");
   const sumWhere = el("sumWhere");
 
-  // ÚJ: OSINT KPI + auto kivonat
   const sumDrone24 = el("sumDrone24");
   const sumDrone7  = el("sumDrone7");
   const sumGround24 = el("sumGround24");
@@ -579,7 +607,6 @@
     btnLegend.textContent = legend.classList.contains("collapsed") ? "▲" : "▼";
   });
 
-  // Stamp toggle (kikapcsolható)
   btnStamp.addEventListener("click", () => {
     mapStamp.classList.toggle("collapsed");
     btnStamp.textContent = mapStamp.classList.contains("collapsed") ? "▲" : "▼";
@@ -626,7 +653,10 @@
   const firmsLayer = L.layerGroup().addTo(map);
   const dronesLayer = L.layerGroup().addTo(map);
 
-  // ÚJ: napi változás kör réteg
+  // FÖLDI réteg (pont + vonal)
+  const groundLayer = L.layerGroup().addTo(map);
+
+  // napi változás kör réteg
   const changeMarkerLayer = L.layerGroup().addTo(map);
 
   let arcFrontLayer = null;
@@ -641,11 +671,10 @@
   chkDeep.addEventListener("change", () => setVisible(deepLayer, chkDeep.checked));
   chkFirms.addEventListener("change", () => setVisible(firmsLayer, chkFirms.checked));
   chkDrones.addEventListener("change", () => setVisible(dronesLayer, chkDrones.checked));
+  chkGround.addEventListener("change", () => setVisible(groundLayer, chkGround.checked));
   chkGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
   chkArcFront.addEventListener("change", () => setVisible(arcFrontLayer, chkArcFront.checked));
   chkArcAdv.addEventListener("change", () => setVisible(arcAdvLayer, chkArcAdv.checked));
-
-  // ÚJ: kör ki/be
   chkChangeCircle.addEventListener("change", () => setVisible(changeMarkerLayer, chkChangeCircle.checked));
 
   async function loadJson(url){
@@ -772,15 +801,12 @@
 
   function renderChangeCircle(deltaKm2, gained, lost){
     changeMarkerLayer.clearLayers();
-
     if(!chkChangeCircle.checked) return;
 
     const d = Number(deltaKm2);
     if(!Number.isFinite(d) || d === 0) return;
 
     const absd = Math.abs(d);
-
-    // vizuális sugár (km): min 6, max 35
     const kmRadius = Math.max(6, Math.min(35, 6 + absd/10));
 
     const target = d > 0 ? gained : lost;
@@ -805,9 +831,58 @@
     setVisible(changeMarkerLayer, chkChangeCircle.checked);
   }
 
-  function safeStr(x, max=1200){
-    const s = (x ?? "").toString();
-    return s.length > max ? (s.slice(0, max) + "…") : s;
+  // ---------- Auto kivonat generálás ----------
+  let lastTerr = null; // {deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp}
+  let lastOsintNumbers = { d24:null, d7:null, g24:null, g7:null };
+
+  async function updateAutoSummary(terr){
+    if(terr) lastTerr = terr;
+    if(!lastTerr){
+      sumAuto.textContent = "–";
+      return;
+    }
+
+    const { deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp } = lastTerr;
+
+    const dDay = Number(deltaDay);
+    const dWeek = Number(deltaWeek);
+
+    const target = (Number.isFinite(dDay) && dDay > 0) ? gained : (Number.isFinite(dDay) && dDay < 0 ? lost : null);
+
+    let placeTxt = "";
+    if(target && Array.isArray(target) && target.length === 2){
+      const lon = target[0], lat = target[1];
+      const name = await reversePlaceName(lat, lon);
+      placeTxt = name ? ` A változás súlypontja: ${name}.` : ` A változás súlypontja: ${lat.toFixed(3)}, ${lon.toFixed(3)}.`;
+    }
+
+    const { d24, g24, d7, g7 } = lastOsintNumbers || {};
+    let osintTxt = "";
+    if([d24,g24,d7,g7].every(v => typeof v === "number")){
+      osintTxt = ` OSINT (ISW): 24h ~${d24} drón és ~${g24} földi; 7 nap ~${d7} drón és ~${g7} földi.`;
+    } else {
+      osintTxt = " OSINT: (számok betöltése folyamatban / nincs adat).";
+    }
+
+    let dayLine = "";
+    if(Number.isFinite(dDay) && dDay !== 0){
+      dayLine = `Napi területi változás: ${fmtDeltaKm2(dDay)} (${humanInterpretDelta(dDay)}).`;
+    } else if(Number.isFinite(dDay) && dDay === 0){
+      dayLine = `Napi területi változás: ±0 (nincs érdemi elmozdulás).`;
+    } else {
+      dayLine = `Napi területi változás: n/a.`;
+    }
+
+    let weekLine = "";
+    if(Number.isFinite(dWeek)){
+      weekLine = ` Heti trend: ${fmtDeltaKm2(dWeek)}.`;
+    }
+
+    const interpBits = [];
+    if(dayInterp) interpBits.push(`Napi értelmezés: ${dayInterp}.`);
+    if(weekInterp) interpBits.push(`Heti értelmezés: ${weekInterp}.`);
+
+    sumAuto.textContent = `${dayLine}${placeTxt}${weekLine}${osintTxt}${interpBits.length ? " " + interpBits.join(" ") : ""}`;
   }
 
   async function loadSummary(){
@@ -827,10 +902,8 @@
       const gained = change.gained_centroid;
       const lost = change.lost_centroid;
 
-      // kör kirajzolás
       renderChangeCircle(dDay, gained, lost);
 
-      // "Változás helye" sor
       let line = `Változás helye: `;
       if (Number(dDay) > 0 && gained){
         line += `(+): ${gained[1]}, ${gained[0]} `;
@@ -844,7 +917,6 @@
       sumWhere.innerHTML = line + ` <span id="whereOut" style="margin-left:6px; color:#555;"></span>`;
       log("Kivonat: betöltve ✔");
 
-      // automatikus szöveg (OSINT számok nélkül, azt a loadOsintSummary egészíti ki)
       await updateAutoSummary({
         deltaDay: dDay,
         deltaWeek: dWeek,
@@ -978,12 +1050,17 @@
   selDays.addEventListener("change", fetchFirms);
   selMaxPts.addEventListener("change", () => { if(currentDate) renderFirmsForDate(currentDate); });
 
-  // ---------- Drones (multi-source: GDELT + ISW) ----------
+  // ---------- Drones ----------
   let lastDroneMeta = null;
 
   function droneSourceSpec(){
     const key = selDroneSource.value;
     return DRONE_SOURCES[key] || DRONE_SOURCES.gdelt_latest;
+  }
+
+  function safeStr(x, max=1200){
+    const s = (x ?? "").toString();
+    return s.length > max ? (s.slice(0, max) + "…") : s;
   }
 
   async function loadDrones(){
@@ -1010,7 +1087,6 @@
         const p = f.properties || {};
 
         const src = p.source || (spec.label.includes("ISW") ? "ISW" : "OSINT");
-        const title = p.title || p.place || "Drone-related";
         const url = p.url || p.source_url;
         const date = p.date ? `Dátum: ${p.date}<br>` : "";
         const place = p.place ? `Hely: <b>${p.place}</b><br>` : "";
@@ -1049,6 +1125,119 @@
   selDroneSource.addEventListener("change", () => loadDrones());
   btnReloadDrones.addEventListener("click", loadDrones);
 
+  // ---------- GROUND (pont + vonal) ----------
+  function groundSourceSpec(){
+    const key = selGroundSource.value;
+    return GROUND_SOURCES[key] || GROUND_SOURCES.isw_ground_latest;
+  }
+
+  function lineMidpoint(coords){
+    if(!Array.isArray(coords) || coords.length < 2) return null;
+    const a = coords[0], b = coords[coords.length - 1];
+    if(!a || !b) return null;
+    const lon = (a[0] + b[0]) / 2;
+    const lat = (a[1] + b[1]) / 2;
+    return [lat, lon];
+  }
+
+  async function loadGround(){
+    groundLayer.clearLayers();
+    const spec = groundSourceSpec();
+
+    try{
+      const gj = await loadJson(spec.url);
+      const feats = gj.features || [];
+
+      let shownPts = 0, shownLines = 0;
+
+      for(const f of feats){
+        const g = f.geometry || {};
+        const p = f.properties || {};
+        const url = p.url || p.source_url;
+        const date = p.date ? `Dátum: ${p.date}<br>` : "";
+        const snippet = p.snippet ? `<div style="margin-top:6px; color:#555;">${safeStr(p.snippet, 700)}</div>` : "";
+        const link = url ? `<a href="${url}" target="_blank" rel="noopener">Forrás</a>` : "";
+
+        if(g.type === "Point"){
+          const [lon, lat] = g.coordinates || [];
+          if(typeof lon !== "number" || typeof lat !== "number") continue;
+
+          const place = p.place ? `Hely: <b>${p.place}</b><br>` : "";
+          const dist = (p.distance_to_front_km ?? p.distance_to_front_km_min);
+          const distLine = (dist !== undefined && dist !== null) ? `Fronttól: ${Number(dist).toFixed(1)} km<br>` : "";
+
+          groundLayer.addLayer(
+            L.circleMarker([lat, lon], { radius: 5, color:"#00b3b3", weight:2, fillOpacity:0.50 })
+              .bindPopup(
+                `<b>Földi esemény (ISW)</b><br>` +
+                `Forrás: <b>${p.source || "ISW"}</b> (${spec.label})<br>` +
+                `${place}${date}${distLine}` +
+                `Lat/Lon: ${lat.toFixed(5)}, ${lon.toFixed(5)}<br>` +
+                `${link}${snippet}`
+              )
+          );
+          shownPts += 1;
+        }
+
+        if(g.type === "LineString"){
+          const coords = g.coordinates || [];
+          if(!Array.isArray(coords) || coords.length < 2) continue;
+
+          const isInferred = !!p.inferred;
+          const style = {
+            color: isInferred ? "#00b3b3" : "#008f8f",
+            weight: isInferred ? 3 : 3,
+            opacity: 0.85,
+            dashArray: isInferred ? "6 6" : null
+          };
+
+          const latlngs = coords
+            .map(c => Array.isArray(c) && c.length === 2 ? [c[1], c[0]] : null)
+            .filter(Boolean);
+
+          if(latlngs.length < 2) continue;
+
+          const fromTo =
+            (p.from || p.from_place) && (p.to || p.to_place)
+              ? `Mozgás: <b>${(p.from || p.from_place)}</b> → <b>${(p.to || p.to_place)}</b><br>`
+              : (p.to || p.to_place) ? `Irány: → <b>${(p.to || p.to_place)}</b><br>` : "";
+
+          const len = (p.length_km !== undefined && p.length_km !== null) ? `Hossz: ${Number(p.length_km).toFixed(1)} km<br>` : "";
+          const dmin = (p.distance_to_front_km_min !== undefined && p.distance_to_front_km_min !== null) ? `Fronttól (min): ${Number(p.distance_to_front_km_min).toFixed(1)} km<br>` : "";
+
+          const poly = L.polyline(latlngs, style).bindPopup(
+            `<b>Földi mozgás (ISW)</b><br>` +
+            `Forrás: <b>${p.source || "ISW"}</b> (${spec.label})<br>` +
+            `${fromTo}${date}${len}${dmin}` +
+            `${isInferred ? "Megj.: inferred (frontvonal → célpont)<br>" : ""}` +
+            `${link}${snippet}`
+          );
+
+          groundLayer.addLayer(poly);
+
+          // kis “info” marker a vonal közepén (könnyebb kattintani)
+          const mid = lineMidpoint(coords);
+          if(mid){
+            groundLayer.addLayer(
+              L.circleMarker(mid, { radius: 3.5, color:"#00b3b3", weight:2, fillOpacity:0.8 })
+                .bindPopup(poly.getPopup())
+            );
+          }
+
+          shownLines += 1;
+        }
+      }
+
+      setVisible(groundLayer, chkGround.checked);
+      log(`Földi (ISW): betöltve ✔ pont: ${shownPts}, vonal: ${shownLines} | ${spec.label}`);
+    } catch(e){
+      log(`Földi (ISW): nincs még / hiba – ${spec.label} – ` + String(e));
+    }
+  }
+
+  selGroundSource.addEventListener("change", () => loadGround());
+  btnReloadGround.addEventListener("click", loadGround);
+
   // ---------- OSINT kivonat (drón + földi) ----------
   function countFeaturesByDate(geojson, daysBack){
     const feats = geojson?.features || [];
@@ -1063,8 +1252,6 @@
     }
     return n;
   }
-
-  let lastOsintNumbers = { d24:null, d7:null, g24:null, g7:null };
 
   async function loadOsintSummary(){
     try{
@@ -1086,71 +1273,12 @@
       sumOsintNote.textContent = "Megj.: a számok ISW geojson fájlokból készülnek (properties.date alapján).";
       log("OSINT kivonat: betöltve ✔");
 
-      // frissítsük az auto szöveget is, ha már van területi adatunk
       await updateAutoSummary();
 
     }catch(e){
       sumOsintNote.textContent = "OSINT kivonat: nincs még / hiba.";
       log("OSINT kivonat: HIBA – " + String(e));
     }
-  }
-
-  // ---------- Auto kivonat generálás ----------
-  let lastTerr = null; // {deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp}
-
-  async function updateAutoSummary(terr){
-    if(terr) lastTerr = terr;
-    if(!lastTerr){
-      sumAuto.textContent = "–";
-      return;
-    }
-
-    const { deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp } = lastTerr;
-
-    const dDay = Number(deltaDay);
-    const dWeek = Number(deltaWeek);
-
-    // hely: gained/lost centroid (ha van)
-    const target = (Number.isFinite(dDay) && dDay > 0) ? gained : (Number.isFinite(dDay) && dDay < 0 ? lost : null);
-
-    let placeTxt = "";
-    if(target && Array.isArray(target) && target.length === 2){
-      const lon = target[0], lat = target[1];
-      const name = await reversePlaceName(lat, lon);
-      placeTxt = name ? ` A változás súlypontja: ${name}.` : ` A változás súlypontja: ${lat.toFixed(3)}, ${lon.toFixed(3)}.`;
-    }
-
-    // OSINT számok
-    const { d24, g24, d7, g7 } = lastOsintNumbers || {};
-    let osintTxt = "";
-    if([d24,g24,d7,g7].every(v => typeof v === "number")){
-      osintTxt =
-        ` OSINT (ISW): az elmúlt 24 órában ~${d24} drónesemény és ~${g24} földi esemény; 7 napra ~${d7} drón és ~${g7} földi.`;
-    } else {
-      osintTxt = " OSINT: (számok betöltése folyamatban / nincs adat).";
-    }
-
-    // értelmezés (napi)
-    let dayLine = "";
-    if(Number.isFinite(dDay) && dDay !== 0){
-      dayLine = `Napi területi változás: ${fmtDeltaKm2(dDay)} (${humanInterpretDelta(dDay)}).`;
-    } else if(Number.isFinite(dDay) && dDay === 0){
-      dayLine = `Napi területi változás: ±0 (nincs érdemi elmozdulás).`;
-    } else {
-      dayLine = `Napi területi változás: n/a.`;
-    }
-
-    let weekLine = "";
-    if(Number.isFinite(dWeek)){
-      weekLine = ` Heti trend: ${fmtDeltaKm2(dWeek)}.`;
-    }
-
-    // ha van “interpretation” string, fűzzük hozzá (nem kötelező)
-    const interpBits = [];
-    if(dayInterp) interpBits.push(`Napi értelmezés: ${dayInterp}.`);
-    if(weekInterp) interpBits.push(`Heti értelmezés: ${weekInterp}.`);
-
-    sumAuto.textContent = `${dayLine}${placeTxt}${weekLine}${osintTxt}${interpBits.length ? " " + interpBits.join(" ") : ""}`;
   }
 
   // ---------- ArcGIS ----------
@@ -1312,6 +1440,7 @@
       await loadSummary();
       await loadOsintSummary();
       await loadDrones();
+      await loadGround();
       await loadArcGIS();
 
       btnPlay.disabled = false;
@@ -1344,6 +1473,7 @@
       await loadSummary();
       await loadOsintSummary();
       await loadDrones();
+      await loadGround();
       await loadArcGIS();
 
       btnPlay.disabled = false;
