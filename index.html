@@ -2142,6 +2142,79 @@
   window.addEventListener("error", (e) => log("JS ERROR: " + (e.message || e.error || e)));
   window.addEventListener("unhandledrejection", (e) => log("PROMISE ERROR: " + (e.reason || e)));
 
+  /* =========================================================
+   BUBORÉK FIX PATCH – nem tör semmit, csak felülír
+   ========================================================= */
+
+(function(){
+
+  // ---- CSS runtime javítás (wrap + méret) ----
+  const style = document.createElement("style");
+  style.innerHTML = `
+    .hiTip{
+      background: rgba(255,255,255,0.97);
+      border: 1px solid rgba(0,0,0,0.18);
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+      padding: 10px 12px;
+      max-width: 280px;
+      min-width: 160px;
+      font: 12px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    .hiTip b{ display:block; margin-bottom:4px; }
+    .hiTip .sub{ color:#555; margin-top:4px; }
+  `;
+  document.head.appendChild(style);
+
+
+  // ---- ÚJ bubble attach (távolabb a ponttól) ----
+  window.attachPermanentTip = function(lat, lon, html){
+
+    const marker = L.marker([lat, lon], {
+      opacity: 0,
+      interactive: false
+    });
+
+    marker.bindTooltip(html, {
+      permanent: true,
+      direction: "top",
+      className: "hiTip",
+      offset: [0, -32] // <-- eltávolítás a ponttól
+    });
+
+    hiTipLayer.addLayer(marker);
+  };
+
+
+  // ---- CHANGE CIRCLE bubble hozzáadása ----
+  const oldRenderChangeCircle = window.renderChangeCircle;
+
+  window.renderChangeCircle = function(deltaKm2, gained, lost){
+
+    oldRenderChangeCircle(deltaKm2, gained, lost);
+
+    const d = Number(deltaKm2);
+    if(!Number.isFinite(d) || d === 0) return;
+
+    const target = d > 0 ? gained : lost;
+    if(!target) return;
+
+    const lon = target[0];
+    const lat = target[1];
+
+    const html =
+      `<b>Napi területi változás</b>` +
+      `<div>Δ: ${fmtDeltaKm2(d)}</div>` +
+      `<div class="sub">${humanInterpretDelta(d)}</div>`;
+
+    attachPermanentTip(lat, lon, html);
+  };
+
+
+})();
   init();
 })();
 </script>
