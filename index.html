@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrán–orosz háború – DeepState + FIRMS + GIBS + ArcGIS + Kivonat + Drón</title>
+  <title>Ukrán–orosz háború – DeepState + FIRMS + GIBS + ArcGIS + Kivonat + Drón + Földi</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -238,7 +238,7 @@
     <div class="head">
       <div>
         <h3>Rétegek & nézet</h3>
-        <div class="sub">DeepState + FIRMS + GIBS + ArcGIS + drón + kivonat.</div>
+        <div class="sub">DeepState + FIRMS + GIBS + ArcGIS + drón + földi + kivonat.</div>
       </div>
       <button id="toggleLeft" class="toggleBtn" type="button">☰</button>
     </div>
@@ -248,8 +248,10 @@
         <label class="chip"><input id="chkFirms" type="checkbox" checked> FIRMS pötty</label>
         <label class="chip"><input id="chkGibs" type="checkbox"> NASA GIBS overlay</label>
         <label class="chip"><input id="chkDrones" type="checkbox" checked> Drón pontok</label>
+        <label class="chip"><input id="chkGround" type="checkbox" checked> Földi műveletek (ISW)</label>
         <label class="chip"><input id="chkArcFront" type="checkbox" checked> ArcGIS frontvonal</label>
         <label class="chip"><input id="chkArcAdv" type="checkbox" checked> ArcGIS orosz advance</label>
+        <label class="chip"><input id="chkStamp" type="checkbox" checked> Adat panel</label>
         <label class="chip"><input id="chkLog" type="checkbox" checked> Napló</label>
       </div>
 
@@ -263,6 +265,17 @@
           </select>
         </span>
         <button id="btnReloadDrones" class="btn secondary" type="button">Drón újratöltés</button>
+      </div>
+
+      <div class="row">
+        <span class="chip">Földi forrás:
+          <select id="selGroundSource">
+            <option value="isw_ground_latest" selected>ISW Ground (latest)</option>
+            <option value="isw_ground_7d">ISW Ground (7 nap)</option>
+            <option value="isw_ground_30d">ISW Ground (30 nap)</option>
+          </select>
+        </span>
+        <button id="btnReloadGround" class="btn secondary" type="button">Földi újratöltés</button>
       </div>
 
       <div class="row">
@@ -392,6 +405,7 @@
       <div class="item"><span class="swatch" style="background:#d00;"></span>DeepState határ/frontvonal</div>
       <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont</div>
       <div class="item"><span class="swatch" style="background:#0077ff;"></span>Drón pont (OSINT híralapú / ISW kivonat)</div>
+      <div class="item"><span class="swatch" style="background:#0b6b3a;"></span>ISW földi műveletek (pont/vonal)</div>
       <div class="item"><span class="swatch" style="background:#00a000;"></span>ArcGIS frontvonal</div>
       <div class="item"><span class="swatch" style="background:#7a00ff;"></span>ArcGIS orosz előretörés (polygon)</div>
       <div class="item"><span class="swatch" style="background:rgba(255,255,255,0); border:1px dashed rgba(0,0,0,0.35);"></span>GIBS: hőtérkép overlay</div>
@@ -428,6 +442,13 @@
     isw_30d:      { label: "ISW UAV (30 nap)", url: "./data/isw_uav_30d.geojson" },
   };
 
+  // ====== Ground sources (local files) ======
+  const GROUND_SOURCES = {
+    isw_ground_latest: { label: "ISW Ground (latest)", url: "./data/isw_ground_latest.geojson" },
+    isw_ground_7d:     { label: "ISW Ground (7 nap)",  url: "./data/isw_ground_7d.geojson" },
+    isw_ground_30d:    { label: "ISW Ground (30 nap)", url: "./data/isw_ground_30d.geojson" },
+  };
+
   const el = (id) => document.getElementById(id);
 
   const panelLeft = el("panelLeft");
@@ -439,12 +460,17 @@
   const chkFirms = el("chkFirms");
   const chkGibs = el("chkGibs");
   const chkDrones = el("chkDrones");
+  const chkGround = el("chkGround");
   const chkArcFront = el("chkArcFront");
   const chkArcAdv = el("chkArcAdv");
+  const chkStamp = el("chkStamp");
   const chkLog = el("chkLog");
 
   const selDroneSource = el("selDroneSource");
   const btnReloadDrones = el("btnReloadDrones");
+
+  const selGroundSource = el("selGroundSource");
+  const btnReloadGround = el("btnReloadGround");
 
   const selBase = el("selBase");
   const selZoom = el("selZoom");
@@ -520,6 +546,10 @@
   chkLog.addEventListener("change", () => setLogVisible(chkLog.checked));
   setLogVisible(true);
 
+  // Adat panel (mapStamp) kikapcsolható
+  chkStamp.addEventListener("change", () => mapStamp.classList.toggle("hidden", !chkStamp.checked));
+  mapStamp.classList.toggle("hidden", !chkStamp.checked);
+
   if(!window.L){
     alert("Leaflet nem töltött be.");
     return;
@@ -557,6 +587,7 @@
 
   const firmsLayer = L.layerGroup().addTo(map);
   const dronesLayer = L.layerGroup().addTo(map);
+  const groundLayer = L.layerGroup().addTo(map);
 
   let arcFrontLayer = null;
   let arcAdvLayer = null;
@@ -570,6 +601,7 @@
   chkDeep.addEventListener("change", () => setVisible(deepLayer, chkDeep.checked));
   chkFirms.addEventListener("change", () => setVisible(firmsLayer, chkFirms.checked));
   chkDrones.addEventListener("change", () => setVisible(dronesLayer, chkDrones.checked));
+  chkGround.addEventListener("change", () => setVisible(groundLayer, chkGround.checked));
   chkGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
   chkArcFront.addEventListener("change", () => setVisible(arcFrontLayer, chkArcFront.checked));
   chkArcAdv.addEventListener("change", () => setVisible(arcAdvLayer, chkArcAdv.checked));
@@ -851,7 +883,6 @@
       const gj = await loadJson(spec.url);
       const feats = gj.features || [];
 
-      // try optional meta file (ISW pipeline writes isw_uav_index.json)
       if(spec.url.includes("isw_uav_")){
         try{
           lastDroneMeta = await loadJson("./data/isw_uav_index.json");
@@ -905,6 +936,74 @@
 
   selDroneSource.addEventListener("change", () => loadDrones());
   btnReloadDrones.addEventListener("click", loadDrones);
+
+  // ---------- Ground (ISW) ----------
+  function groundSourceSpec(){
+    const key = selGroundSource.value;
+    return GROUND_SOURCES[key] || GROUND_SOURCES.isw_ground_latest;
+  }
+
+  async function loadGround(){
+    groundLayer.clearLayers();
+    const spec = groundSourceSpec();
+
+    try{
+      const gj = await loadJson(spec.url);
+      const feats = gj.features || [];
+      let shown = 0;
+
+      for(const f of feats){
+        if(!f.geometry) continue;
+        const p = f.properties || {};
+
+        if(f.geometry.type === "Point"){
+          const [lon, lat] = f.geometry.coordinates || [];
+          if(typeof lon !== "number" || typeof lat !== "number") continue;
+
+          const title = p.title || "ISW ground operation";
+          const place = p.place ? `Hely: <b>${p.place}</b><br>` : "";
+          const date = p.date ? `Dátum: ${p.date}<br>` : "";
+          const url = p.url ? `<a href="${p.url}" target="_blank" rel="noopener">Forrás</a>` : "";
+          const snippet = p.snippet ? `<div style="margin-top:6px; color:#555;">${safeStr(p.snippet, 600)}</div>` : "";
+
+          groundLayer.addLayer(
+            L.circleMarker([lat, lon], { radius: 5, color:"#0b6b3a", weight:2, fillOpacity:0.55 })
+              .bindPopup(`<b>${title}</b><br>${place}${date}Lat/Lon: ${lat.toFixed(5)}, ${lon.toFixed(5)}<br>${url}${snippet}`)
+          );
+          shown += 1;
+        }
+
+        if(f.geometry.type === "LineString"){
+          const coords = f.geometry.coordinates || [];
+          const latlngs = coords
+            .filter(c => Array.isArray(c) && typeof c[0]==="number" && typeof c[1]==="number")
+            .map(c => [c[1], c[0]]);
+          if(latlngs.length < 2) continue;
+
+          const title = p.title || "ISW ground movement";
+          const date = p.date ? `Dátum: ${p.date}<br>` : "";
+          const fromto = (p.from || p.to) ? `From: <b>${p.from||"?"}</b> → To: <b>${p.to||"?"}</b><br>` : "";
+          const url = p.url ? `<a href="${p.url}" target="_blank" rel="noopener">Forrás</a>` : "";
+          const snippet = p.snippet ? `<div style="margin-top:6px; color:#555;">${safeStr(p.snippet, 600)}</div>` : "";
+
+          groundLayer.addLayer(
+            L.polyline(latlngs, { color:"#0b6b3a", weight:3, opacity:0.8 })
+              .bindPopup(`<b>${title}</b><br>${fromto}${date}${url}${snippet}`)
+          );
+          shown += 1;
+        }
+      }
+
+      setVisible(groundLayer, chkGround.checked);
+      log(`Földi műveletek: betöltve ✔ (${shown}) | ${spec.label}`);
+
+    } catch(e){
+      log(`Földi műveletek: hiba – ${spec.label} – ` + String(e));
+    }
+  }
+
+  selGroundSource.addEventListener("change", () => loadGround());
+  btnReloadGround.addEventListener("click", loadGround);
 
   // ---------- ArcGIS ----------
   async function loadArcGIS(){
@@ -1064,6 +1163,7 @@
       await fetchFirms();
       await loadSummary();
       await loadDrones();
+      await loadGround();
       await loadArcGIS();
 
       btnPlay.disabled = false;
@@ -1095,6 +1195,7 @@
       await fetchFirms();
       await loadSummary();
       await loadDrones();
+      await loadGround();
       await loadArcGIS();
 
       btnPlay.disabled = false;
