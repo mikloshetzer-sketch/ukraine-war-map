@@ -1,30 +1,39 @@
 {
-  "generated_utc": "2026-02-22T14:37:00.747222",
-  "events_total_raw": 3685,
-  "events_7d_raw": 2299,
-  "events_30d_raw": 2873,
+  "generated_utc": "2026-02-22T14:55:16.441586",
+  "events_total_raw": 5764,
+  "events_7d_raw": 2599,
+  "events_30d_raw": 3460,
   "latest_stats": {
-    "kept_points": 8,
+    "raw_total": 120,
+    "raw_movement_from_to": 4,
+    "raw_toward_only": 46,
+    "kept_points": 11,
     "kept_lines": 0,
-    "dropped_geocode": 55,
-    "dropped_far": 6,
+    "dropped_geocode": 97,
+    "dropped_far": 11,
     "dropped_long_lines": 1,
-    "movement_detected_raw": 2
+    "dropped_inferred_len": 0
   },
   "d7_stats": {
-    "kept_points": 44,
-    "kept_lines": 0,
-    "dropped_geocode": 2195,
-    "dropped_far": 59,
+    "raw_total": 2599,
+    "raw_movement_from_to": 67,
+    "raw_toward_only": 1015,
+    "kept_points": 59,
+    "kept_lines": 2,
+    "dropped_geocode": 2462,
+    "dropped_far": 72,
     "dropped_long_lines": 1,
-    "movement_detected_raw": 43
+    "dropped_inferred_len": 3
   },
   "d30_stats": {
-    "kept_points": 46,
-    "kept_lines": 0,
-    "dropped_geocode": 2763,
-    "dropped_far": 63,
+    "raw_total": 3460,
+    "raw_movement_from_to": 80,
+    "raw_toward_only": 1397,
+    "kept_points": 67,
+    "kept_lines": 9,
+    "dropped_geocode": 3297,
+    "dropped_far": 83,
     "dropped_long_lines": 1,
-    "movement_detected_raw": 47
+    "dropped_inferred_len": 3
   }
 }
