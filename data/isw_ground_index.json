@@ -1,24 +1,30 @@
 {
-  "generated_utc": "2026-02-22T14:20:39.147763",
-  "events_total_raw": 3686,
-  "events_7d_raw": 2300,
-  "events_30d_raw": 2874,
+  "generated_utc": "2026-02-22T14:37:00.747222",
+  "events_total_raw": 3685,
+  "events_7d_raw": 2299,
+  "events_30d_raw": 2873,
   "latest_stats": {
-    "kept": 11,
-    "dropped_far": 17,
-    "dropped_geocode_or_country": 32,
-    "dropped_too_long_lines": 0
+    "kept_points": 8,
+    "kept_lines": 0,
+    "dropped_geocode": 55,
+    "dropped_far": 6,
+    "dropped_long_lines": 1,
+    "movement_detected_raw": 2
   },
   "d7_stats": {
-    "kept": 132,
-    "dropped_far": 294,
-    "dropped_geocode_or_country": 1874,
-    "dropped_too_long_lines": 0
+    "kept_points": 44,
+    "kept_lines": 0,
+    "dropped_geocode": 2195,
+    "dropped_far": 59,
+    "dropped_long_lines": 1,
+    "movement_detected_raw": 43
   },
   "d30_stats": {
-    "kept": 160,
-    "dropped_far": 333,
-    "dropped_geocode_or_country": 2381,
-    "dropped_too_long_lines": 0
+    "kept_points": 46,
+    "kept_lines": 0,
+    "dropped_geocode": 2763,
+    "dropped_far": 63,
+    "dropped_long_lines": 1,
+    "movement_detected_raw": 47
   }
 }

@@ -26,26 +26,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.390576,
-          50.1597609
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation (filtered)",
-        "place": "some",
-        "cc": "ua",
-        "distance_to_front_km": 7.5,
-        "snippet": "ISW continues to assess that while the situation in some specific sectors of the front line is serious, particularly in Pokrovsk and Hulyaipole directions, the Kremlin&#8217;s efforts to present Russia&#8217;s victory in Ukraine as inevitable do not correspond to the battlefield reality.[25] It is notable that the Kremlin\u2019s misrepresentation of the",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           37.30811,
           48.40181
         ]
@@ -126,46 +106,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.6141992,
-          49.7132963
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation (filtered)",
-        "place": "Kupyansk",
-        "cc": "ua",
-        "distance_to_front_km": 1.9,
-        "snippet": "Putin praised the claimed seizure of Kupyansk as the model by which Russian forces will make advances elsewhere on the frontline.[8] Russian forces have been using a new campaign design that utilizes battlefield air interdiction (BAI) efforts to degrade Ukrainian logistics and defenses such that Russian infantry can infiltrate into Ukrainian rear a",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.7809825,
-          47.9212914
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-22",
-        "title": "ISW ground operation (filtered)",
-        "place": "Donetsk",
-        "cc": "ua",
-        "distance_to_front_km": 50.5,
-        "snippet": "Putin&#8217;s statement is not a compromise aimed at advancing the peace deal but is a repetition of his June 2024 demand that Ukraine cede territories that Russia does not occupy and has struggled and failed to seize since 2014 and 2022.[27] Such a concession would force Ukraine to abandon its Fortress Belt, the fortified defensive line in Donetsk",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           37.20906,
           48.26199
         ]
@@ -206,18 +146,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.7809825,
-          47.9212914
+          36.2584156,
+          50.0121732
         ]
       },
       "properties": {
         "source": "ISW",
         "date": "2026-02-22",
         "title": "ISW ground operation (filtered)",
-        "place": "Donetsk",
+        "place": "northern Kharkiv Oblast",
         "cc": "ua",
-        "distance_to_front_km": 50.5,
-        "snippet": "Russian President Vladimir Putin and Russian military commanders have been attempting to portray Russia as capable of rapidly seizing Donetsk Oblast militarily, but hard data on the rate of Russian advance in Donetsk Oblast does not indicate that Russian forces will imminently seize the rest of the oblast.[2] Russian forces have been prioritizing c",
+        "distance_to_front_km": 26.4,
+        "snippet": "Russian forces advanced in northern Kharkiv Oblast, the Slovyansk-Lyman direction, the Kostyantynivka tactical area, and the Pokrovsk and Novopavlivka directions",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     }
@@ -229,7 +169,7 @@
         "ua"
       ],
       "front_near_km": 80.0,
-      "max_move_km": 200.0,
+      "max_move_km": 160.0,
       "viewbox": [
         20.0,
         42.0,
@@ -238,10 +178,12 @@
       ]
     },
     "stats": {
-      "kept": 11,
-      "dropped_far": 17,
-      "dropped_geocode_or_country": 32,
-      "dropped_too_long_lines": 0
+      "kept_points": 8,
+      "kept_lines": 0,
+      "dropped_geocode": 55,
+      "dropped_far": 6,
+      "dropped_long_lines": 1,
+      "movement_detected_raw": 2
     }
   }
 }
