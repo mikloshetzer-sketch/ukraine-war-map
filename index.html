@@ -42,15 +42,8 @@
       background: rgba(255,255,255,0.98);
     }
 
-    .panel .head h3{
-      margin:0;
-      font-size: 13px;
-    }
-    .panel .head .sub{
-      margin-top:4px;
-      font-size: 12px;
-      color:#555;
-    }
+    .panel .head h3{ margin:0; font-size: 13px; }
+    .panel .head .sub{ margin-top:4px; font-size: 12px; color:#555; }
 
     .panel .toggleBtn{
       border:0;
@@ -144,6 +137,40 @@
     .kpi{ display:flex; gap:6px; align-items:baseline; }
     .kpi .label{ color:#444; }
     .kpi .val{ font-weight:700; }
+
+    .mini{
+      margin-top: 6px;
+      color:#333;
+    }
+
+    .anaBox{
+      margin-top:10px;
+      background:#fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .anaRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      padding: 4px 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.08);
+    }
+    .anaRow:last-child{ border-bottom:0; }
+    .anaName{ font-weight:600; }
+    .anaVal{ font-variant-numeric: tabular-nums; color:#111; }
+    .spark{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color:#111;
+      background:#f6f6f6;
+      border-radius: 8px;
+      padding: 6px 8px;
+      white-space: pre;
+      overflow:auto;
+    }
 
     #panelLeft{ top: 12px; left: 12px; }
     #panelRight{ top: 12px; right: 12px; }
@@ -250,7 +277,7 @@
 <body>
   <div id="map"></div>
 
-  <!-- map stamp (kikapcsolható / összecsukható) -->
+  <!-- map stamp (összecsukható) -->
   <div id="mapStamp" class="mapStamp">
     <div class="mapStampHead">
       <b>Adatok</b>
@@ -275,8 +302,6 @@
         <label class="chip"><input id="chkGibs" type="checkbox"> NASA GIBS overlay</label>
 
         <label class="chip"><input id="chkDrones" type="checkbox" checked> Drón pontok</label>
-
-        <!-- VISSZA: földi kapcsoló -->
         <label class="chip"><input id="chkGround" type="checkbox" checked> Földi (ISW) pont/vonal</label>
 
         <label class="chip"><input id="chkArcFront" type="checkbox" checked> ArcGIS frontvonal</label>
@@ -299,7 +324,6 @@
         <button id="btnReloadDrones" class="btn secondary" type="button">Drón újratöltés</button>
       </div>
 
-      <!-- ÚJ: földi forrásválasztó -->
       <div class="row">
         <span class="chip">Földi (ISW) forrás:
           <select id="selGroundSource">
@@ -376,6 +400,7 @@
           <div class="kpi"><span class="label">Napi értelmezés:</span> <span class="val" id="sumDayTxt">–</span></div>
           <div class="kpi"><span class="label">Heti értelmezés:</span> <span class="val" id="sumWeekTxt">–</span></div>
         </div>
+
         <div class="mini" id="sumWhere">Változás helye: –</div>
 
         <div class="mini" style="margin-top:10px;">
@@ -387,6 +412,21 @@
             <div class="kpi"><span class="label">Földi (7 nap):</span> <span class="val" id="sumGround7">–</span></div>
           </div>
           <div class="mini" id="sumOsintNote" style="margin-top:6px; color:#555;">–</div>
+        </div>
+
+        <!-- ÚJ: Elemző blokk -->
+        <div class="mini" style="margin-top:10px;">
+          <b style="display:block; margin-bottom:6px;">Elemzés (frontszakasz becslés)</b>
+          <div class="anaBox">
+            <div class="anaRow"><span class="anaName">Fő tengely (24h):</span><span class="anaVal" id="anaMain24">–</span></div>
+            <div class="anaRow"><span class="anaName">Fő tengely (7 nap):</span><span class="anaVal" id="anaMain7">–</span></div>
+            <div class="anaRow"><span class="anaName">Másodlagos (7 nap):</span><span class="anaVal" id="anaSecond7">–</span></div>
+          </div>
+
+          <div class="mini" style="margin-top:8px; color:#555;">
+            7 napos trend (drón / földi, napi bontás):
+          </div>
+          <div class="spark" id="anaTrend">–</div>
         </div>
 
         <div class="mini" style="margin-top:10px;">
@@ -454,11 +494,8 @@
       <div class="item"><span class="swatch" style="background:#6b0000;"></span>DeepState megszállt terület (kitöltés)</div>
       <div class="item"><span class="swatch" style="background:#d00;"></span>DeepState határ/frontvonal</div>
       <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont</div>
-      <div class="item"><span class="swatch" style="background:#0077ff;"></span>Drón pont (OSINT híralapú / ISW kivonat)</div>
-
-      <!-- ÚJ: földi -->
+      <div class="item"><span class="swatch" style="background:#0077ff;"></span>Drón pont</div>
       <div class="item"><span class="swatch" style="background:#00b3b3;"></span>Földi (ISW) pont/vonal</div>
-
       <div class="item"><span class="swatch" style="background:#00a000;"></span>ArcGIS frontvonal</div>
       <div class="item"><span class="swatch" style="background:#7a00ff;"></span>ArcGIS orosz előretörés (polygon)</div>
       <div class="item"><span class="swatch" style="background:#00a000; opacity:0.2;"></span>Napi területi változás kör</div>
@@ -502,6 +539,21 @@
     isw_ground_7d:     { label: "ISW Ground (7 nap)",  url: "./data/isw_ground_7d.geojson" },
     isw_ground_30d:    { label: "ISW Ground (30 nap)", url: "./data/isw_ground_30d.geojson" },
   };
+
+  // ====== Szektorok (becslés) ======
+  // bbox: [minLat, minLon, maxLat, maxLon]
+  // Ha egy pont több bboxba esik: az első találat számít.
+  const SECTORS = [
+    { key:"kharkiv", name:"Harkiv–észak", bbox:[49.6, 35.6, 50.7, 37.9] },
+    { key:"kupiansk", name:"Kupjanszk–Liman", bbox:[48.7, 36.2, 49.9, 38.2] },
+    { key:"svatove", name:"Szvatove–Kreminna", bbox:[48.6, 37.6, 49.4, 39.2] },
+    { key:"bakhmut", name:"Csasziv Jar–Bahmut", bbox:[48.3, 37.7, 49.0, 38.4] },
+    { key:"avdiivka", name:"Avdijivka–Pokrovszk", bbox:[47.9, 36.4, 49.0, 38.2] },
+    { key:"vuhledar", name:"Vuhledar–Donyec", bbox:[47.4, 36.6, 48.2, 37.9] },
+    { key:"zap", name:"Zaporizzsja", bbox:[46.0, 34.9, 47.7, 36.6] },
+    { key:"kherson", name:"Herszon–Dnyeper", bbox:[46.1, 31.5, 47.3, 33.6] },
+    { key:"other", name:"Egyéb / távoli", bbox:[-90, -180, 90, 180] },
+  ];
 
   const el = (id) => document.getElementById(id);
 
@@ -571,6 +623,12 @@
   const sumGround7  = el("sumGround7");
   const sumOsintNote = el("sumOsintNote");
   const sumAuto = el("sumAuto");
+
+  // Analitika UI
+  const anaMain24 = el("anaMain24");
+  const anaMain7 = el("anaMain7");
+  const anaSecond7 = el("anaSecond7");
+  const anaTrend = el("anaTrend");
 
   function log(msg){
     logEl.textContent += "\n" + msg;
@@ -652,11 +710,7 @@
 
   const firmsLayer = L.layerGroup().addTo(map);
   const dronesLayer = L.layerGroup().addTo(map);
-
-  // FÖLDI réteg (pont + vonal)
   const groundLayer = L.layerGroup().addTo(map);
-
-  // napi változás kör réteg
   const changeMarkerLayer = L.layerGroup().addTo(map);
 
   let arcFrontLayer = null;
@@ -738,7 +792,7 @@
   selGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
   rngGibs.addEventListener("input", () => { if(gibsLayer) gibsLayer.setOpacity(Number(rngGibs.value||"0.55")); });
 
-  // ---------- Map stamp (DeepState + ArcGIS meta) ----------
+  // ---------- Stamp meta ----------
   let arcFrontInfo = { label: ARCGIS_FRONT_LABEL_FALLBACK, edited: null };
   let arcAdvInfo = { label: ARCGIS_ADV_LABEL_FALLBACK, edited: null };
 
@@ -760,18 +814,41 @@
       const j1 = await loadJson(ARCGIS_FRONT_LAYER_META);
       arcFrontInfo.label = j1?.name || ARCGIS_FRONT_LABEL_FALLBACK;
       arcFrontInfo.edited = j1?.editingInfo?.lastEditDate || null;
-    }catch(e){ /* ignore */ }
+    }catch(e){}
 
     try{
       const j2 = await loadJson(ARCGIS_ADV_LAYER_META);
       arcAdvInfo.label = j2?.name || ARCGIS_ADV_LABEL_FALLBACK;
       arcAdvInfo.edited = j2?.editingInfo?.lastEditDate || null;
-    }catch(e){ /* ignore */ }
+    }catch(e){}
 
     updateStamp();
   }
 
-  // ---------- Summary ----------
+  // ---------- Helpers ----------
+  function safeStr(x, max=1200){
+    const s = (x ?? "").toString();
+    return s.length > max ? (s.slice(0, max) + "…") : s;
+  }
+
+  function parseDateMaybe(x){
+    if(!x) return null;
+    const d = new Date(x);
+    return isNaN(d) ? null : d;
+  }
+
+  function inBbox(lat, lon, bbox){
+    const [minLat, minLon, maxLat, maxLon] = bbox;
+    return (lat >= minLat && lat <= maxLat && lon >= minLon && lon <= maxLon);
+  }
+
+  function sectorForLatLon(lat, lon){
+    for(const s of SECTORS){
+      if(inBbox(lat, lon, s.bbox)) return s;
+    }
+    return SECTORS[SECTORS.length - 1];
+  }
+
   function fmtDeltaKm2(d){
     if(d === null || d === undefined || !Number.isFinite(d)) return "n/a";
     const sign = d > 0 ? "+" : (d < 0 ? "−" : "±");
@@ -799,6 +876,7 @@
     }
   }
 
+  // ---------- Change circle ----------
   function renderChangeCircle(deltaKm2, gained, lost){
     changeMarkerLayer.clearLayers();
     if(!chkChangeCircle.checked) return;
@@ -829,105 +907,6 @@
 
     changeMarkerLayer.addLayer(circle);
     setVisible(changeMarkerLayer, chkChangeCircle.checked);
-  }
-
-  // ---------- Auto kivonat generálás ----------
-  let lastTerr = null; // {deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp}
-  let lastOsintNumbers = { d24:null, d7:null, g24:null, g7:null };
-
-  async function updateAutoSummary(terr){
-    if(terr) lastTerr = terr;
-    if(!lastTerr){
-      sumAuto.textContent = "–";
-      return;
-    }
-
-    const { deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp } = lastTerr;
-
-    const dDay = Number(deltaDay);
-    const dWeek = Number(deltaWeek);
-
-    const target = (Number.isFinite(dDay) && dDay > 0) ? gained : (Number.isFinite(dDay) && dDay < 0 ? lost : null);
-
-    let placeTxt = "";
-    if(target && Array.isArray(target) && target.length === 2){
-      const lon = target[0], lat = target[1];
-      const name = await reversePlaceName(lat, lon);
-      placeTxt = name ? ` A változás súlypontja: ${name}.` : ` A változás súlypontja: ${lat.toFixed(3)}, ${lon.toFixed(3)}.`;
-    }
-
-    const { d24, g24, d7, g7 } = lastOsintNumbers || {};
-    let osintTxt = "";
-    if([d24,g24,d7,g7].every(v => typeof v === "number")){
-      osintTxt = ` OSINT (ISW): 24h ~${d24} drón és ~${g24} földi; 7 nap ~${d7} drón és ~${g7} földi.`;
-    } else {
-      osintTxt = " OSINT: (számok betöltése folyamatban / nincs adat).";
-    }
-
-    let dayLine = "";
-    if(Number.isFinite(dDay) && dDay !== 0){
-      dayLine = `Napi területi változás: ${fmtDeltaKm2(dDay)} (${humanInterpretDelta(dDay)}).`;
-    } else if(Number.isFinite(dDay) && dDay === 0){
-      dayLine = `Napi területi változás: ±0 (nincs érdemi elmozdulás).`;
-    } else {
-      dayLine = `Napi területi változás: n/a.`;
-    }
-
-    let weekLine = "";
-    if(Number.isFinite(dWeek)){
-      weekLine = ` Heti trend: ${fmtDeltaKm2(dWeek)}.`;
-    }
-
-    const interpBits = [];
-    if(dayInterp) interpBits.push(`Napi értelmezés: ${dayInterp}.`);
-    if(weekInterp) interpBits.push(`Heti értelmezés: ${weekInterp}.`);
-
-    sumAuto.textContent = `${dayLine}${placeTxt}${weekLine}${osintTxt}${interpBits.length ? " " + interpBits.join(" ") : ""}`;
-  }
-
-  async function loadSummary(){
-    try{
-      const daily = await loadJson("./data/summary_daily.json");
-      const weekly = await loadJson("./data/summary_weekly.json");
-      const change = await loadJson("./data/change_latest.json");
-
-      const dDay = Number(daily.delta_km2);
-      const dWeek = Number(weekly.delta_km2);
-
-      sumDay.textContent = fmtDeltaKm2(dDay);
-      sumWeek.textContent = fmtDeltaKm2(dWeek);
-      sumDayTxt.textContent = daily.interpretation || "–";
-      sumWeekTxt.textContent = weekly.interpretation || "–";
-
-      const gained = change.gained_centroid;
-      const lost = change.lost_centroid;
-
-      renderChangeCircle(dDay, gained, lost);
-
-      let line = `Változás helye: `;
-      if (Number(dDay) > 0 && gained){
-        line += `(+): ${gained[1]}, ${gained[0]} `;
-        line += `<button class="btn secondary" style="padding:6px 9px; margin-left:6px;" onclick="lookupPlace(${gained[1]},${gained[0]},'whereOut')">Település</button>`;
-      } else if (Number(dDay) < 0 && lost){
-        line += `(−): ${lost[1]}, ${lost[0]} `;
-        line += `<button class="btn secondary" style="padding:6px 9px; margin-left:6px;" onclick="lookupPlace(${lost[1]},${lost[0]},'whereOut')">Település</button>`;
-      } else {
-        line += "–";
-      }
-      sumWhere.innerHTML = line + ` <span id="whereOut" style="margin-left:6px; color:#555;"></span>`;
-      log("Kivonat: betöltve ✔");
-
-      await updateAutoSummary({
-        deltaDay: dDay,
-        deltaWeek: dWeek,
-        gained, lost,
-        dayInterp: daily.interpretation || "",
-        weekInterp: weekly.interpretation || ""
-      });
-
-    }catch(e){
-      log("Kivonat: nincs még (vagy nem elérhető) – " + String(e));
-    }
   }
 
   // ---------- FIRMS ----------
@@ -1052,25 +1031,23 @@
 
   // ---------- Drones ----------
   let lastDroneMeta = null;
+  let lastDroneFeatures = []; // analitikához
 
   function droneSourceSpec(){
     const key = selDroneSource.value;
     return DRONE_SOURCES[key] || DRONE_SOURCES.gdelt_latest;
   }
 
-  function safeStr(x, max=1200){
-    const s = (x ?? "").toString();
-    return s.length > max ? (s.slice(0, max) + "…") : s;
-  }
-
   async function loadDrones(){
     dronesLayer.clearLayers();
     const spec = droneSourceSpec();
     lastDroneMeta = null;
+    lastDroneFeatures = [];
 
     try{
       const gj = await loadJson(spec.url);
       const feats = gj.features || [];
+      lastDroneFeatures = feats;
 
       if(spec.url.includes("isw_uav_")){
         try{
@@ -1117,6 +1094,8 @@
       }
       log(`Drón pontok: betöltve ✔ (${shown}) | ${spec.label}${metaLine}`);
 
+      recomputeAnalyticsAndSummary();
+
     } catch(e){
       log(`Drón pontok: nincs még / hiba – ${spec.label} – ` + String(e));
     }
@@ -1125,7 +1104,10 @@
   selDroneSource.addEventListener("change", () => loadDrones());
   btnReloadDrones.addEventListener("click", loadDrones);
 
-  // ---------- GROUND (pont + vonal) ----------
+  // ---------- Ground ----------
+  let lastGroundFeatures = [];
+  let lastGroundLineCount = 0;
+
   function groundSourceSpec(){
     const key = selGroundSource.value;
     return GROUND_SOURCES[key] || GROUND_SOURCES.isw_ground_latest;
@@ -1143,10 +1125,13 @@
   async function loadGround(){
     groundLayer.clearLayers();
     const spec = groundSourceSpec();
+    lastGroundFeatures = [];
+    lastGroundLineCount = 0;
 
     try{
       const gj = await loadJson(spec.url);
       const feats = gj.features || [];
+      lastGroundFeatures = feats;
 
       let shownPts = 0, shownLines = 0;
 
@@ -1186,7 +1171,7 @@
           const isInferred = !!p.inferred;
           const style = {
             color: isInferred ? "#00b3b3" : "#008f8f",
-            weight: isInferred ? 3 : 3,
+            weight: 3,
             opacity: 0.85,
             dashArray: isInferred ? "6 6" : null
           };
@@ -1215,7 +1200,6 @@
 
           groundLayer.addLayer(poly);
 
-          // kis “info” marker a vonal közepén (könnyebb kattintani)
           const mid = lineMidpoint(coords);
           if(mid){
             groundLayer.addLayer(
@@ -1228,8 +1212,13 @@
         }
       }
 
+      lastGroundLineCount = shownLines;
+
       setVisible(groundLayer, chkGround.checked);
       log(`Földi (ISW): betöltve ✔ pont: ${shownPts}, vonal: ${shownLines} | ${spec.label}`);
+
+      recomputeAnalyticsAndSummary();
+
     } catch(e){
       log(`Földi (ISW): nincs még / hiba – ${spec.label} – ` + String(e));
     }
@@ -1238,7 +1227,7 @@
   selGroundSource.addEventListener("change", () => loadGround());
   btnReloadGround.addEventListener("click", loadGround);
 
-  // ---------- OSINT kivonat (drón + földi) ----------
+  // ---------- OSINT kivonat ----------
   function countFeaturesByDate(geojson, daysBack){
     const feats = geojson?.features || [];
     const now = new Date();
@@ -1247,11 +1236,13 @@
     let n = 0;
     for(const f of feats){
       const p = f.properties || {};
-      const d = p.date ? new Date(p.date) : null;
-      if(d && !isNaN(d) && d >= cutoff) n += 1;
+      const d = parseDateMaybe(p.date);
+      if(d && d >= cutoff) n += 1;
     }
     return n;
   }
+
+  let lastOsintNumbers = { d24:null, d7:null, g24:null, g7:null };
 
   async function loadOsintSummary(){
     try{
@@ -1270,14 +1261,282 @@
 
       lastOsintNumbers = { d24, d7, g24, g7 };
 
-      sumOsintNote.textContent = "Megj.: a számok ISW geojson fájlokból készülnek (properties.date alapján).";
+      sumOsintNote.textContent = "Megj.: ISW geojson fájlokból (properties.date).";
       log("OSINT kivonat: betöltve ✔");
 
-      await updateAutoSummary();
+      recomputeAnalyticsAndSummary(true);
 
     }catch(e){
-      sumOsintNote.textContent = "OSINT kivonat: nincs még / hiba.";
+      sumOsintNote.textContent = "OSINT kivonat: nincs / hiba.";
       log("OSINT kivonat: HIBA – " + String(e));
+    }
+  }
+
+  // ---------- Elemzés + intelligens kivonat ----------
+  let lastTerr = null; // {deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp}
+  let lastMainAxis = { main24:null, main7:null, second7:null };
+
+  function dayKeyUTC(d){
+    return d.toISOString().slice(0,10);
+  }
+
+  function build7dKeys(){
+    const out = [];
+    const now = new Date();
+    for(let i=6;i>=0;i--){
+      const dd = new Date(now.getTime() - i*24*3600*1000);
+      out.push(dayKeyUTC(dd));
+    }
+    return out;
+  }
+
+  function sparkFromCounts(arr){
+    // arr: 7 elem
+    // 0..N -> ▁▂▃▄▅▆▇█
+    const blocks = ["▁","▂","▃","▄","▅","▆","▇","█"];
+    const max = Math.max(1, ...arr);
+    return arr.map(v => blocks[Math.min(7, Math.floor((v/max)*7))]).join("");
+  }
+
+  function countBySector(features, daysBack, useLineMid=false){
+    const now = new Date();
+    const cutoff = new Date(now.getTime() - daysBack*24*3600*1000);
+
+    const m = new Map(); // key -> count
+    for(const f of (features || [])){
+      const p = f.properties || {};
+      const d = parseDateMaybe(p.date);
+      if(!d || d < cutoff) continue;
+
+      const g = f.geometry || {};
+      let lat=null, lon=null;
+
+      if(g.type === "Point"){
+        lon = g.coordinates?.[0]; lat = g.coordinates?.[1];
+      } else if(useLineMid && g.type === "LineString"){
+        const coords = g.coordinates;
+        const mid = lineMidpoint(coords);
+        if(mid){ lat = mid[0]; lon = mid[1]; }
+      }
+
+      if(typeof lat !== "number" || typeof lon !== "number") continue;
+
+      const s = sectorForLatLon(lat, lon);
+      m.set(s.key, (m.get(s.key) || 0) + 1);
+    }
+    return m;
+  }
+
+  function topSectorsText(mapCounts, topN=2){
+    // mapCounts: Map(key->count)
+    const arr = [...mapCounts.entries()]
+      .filter(([k,_]) => k !== "other")
+      .sort((a,b) => b[1]-a[1]);
+
+    if(arr.length === 0) return null;
+
+    const parts = [];
+    for(let i=0;i<Math.min(topN, arr.length);i++){
+      const [k,c] = arr[i];
+      const name = SECTORS.find(s=>s.key===k)?.name || k;
+      parts.push(`${name} (${c})`);
+    }
+    return parts.join(", ");
+  }
+
+  function buildTrend7d(droneFeats, groundFeats){
+    const keys = build7dKeys();
+    const now = new Date();
+
+    const droneByDay = new Map(keys.map(k=>[k,0]));
+    const groundByDay = new Map(keys.map(k=>[k,0]));
+
+    for(const f of (droneFeats||[])){
+      const d = parseDateMaybe(f?.properties?.date);
+      if(!d) continue;
+      const ageDays = (now - d) / (24*3600*1000);
+      if(ageDays < 0 || ageDays > 7.2) continue;
+      const k = dayKeyUTC(d);
+      if(droneByDay.has(k)) droneByDay.set(k, droneByDay.get(k)+1);
+    }
+
+    for(const f of (groundFeats||[])){
+      const d = parseDateMaybe(f?.properties?.date);
+      if(!d) continue;
+      const ageDays = (now - d) / (24*3600*1000);
+      if(ageDays < 0 || ageDays > 7.2) continue;
+      const k = dayKeyUTC(d);
+      if(groundByDay.has(k)) groundByDay.set(k, groundByDay.get(k)+1);
+    }
+
+    const droneArr = keys.map(k=>droneByDay.get(k)||0);
+    const groundArr = keys.map(k=>groundByDay.get(k)||0);
+
+    const hdr = keys.map(k=>k.slice(5)).join(" ");
+    const dline = `D ${sparkFromCounts(droneArr)}  (${droneArr.join(",")})`;
+    const gline = `G ${sparkFromCounts(groundArr)}  (${groundArr.join(",")})`;
+
+    return `${hdr}\n${dline}\n${gline}`;
+  }
+
+  function recomputeAnalyticsAndSummary(forceAuto=false){
+    // Elemzés a betöltött drón + földi featuresből (UI oldali)
+    // plusz auto kivonat frissítés
+
+    // 24h és 7 nap szektor eloszlás
+    const d24 = countBySector(lastDroneFeatures, 1, false);
+    const d7  = countBySector(lastDroneFeatures, 7, false);
+
+    // ground: pontok + line midpoint is számít (mert irány jelzés)
+    const g24p = countBySector(lastGroundFeatures, 1, false);
+    const g7p  = countBySector(lastGroundFeatures, 7, false);
+    const g24l = countBySector(lastGroundFeatures, 1, true);
+    const g7l  = countBySector(lastGroundFeatures, 7, true);
+
+    // összesített “aktivitás” (drón + földi pont + földi vonal)
+    const sumMap = (a,b,c)=>{
+      const out = new Map();
+      for(const m of [a,b,c]){
+        for(const [k,v] of m.entries()){
+          out.set(k, (out.get(k)||0)+v);
+        }
+      }
+      return out;
+    };
+
+    const tot24 = sumMap(d24, g24p, g24l);
+    const tot7  = sumMap(d7, g7p, g7l);
+
+    const main24 = topSectorsText(tot24, 1) || "–";
+    const main7  = topSectorsText(tot7, 1) || "–";
+    const second7 = topSectorsText(tot7, 2);
+    const second7Only = second7 ? (second7.split(", ").slice(1).join(", ") || "–") : "–";
+
+    anaMain24.textContent = main24;
+    anaMain7.textContent = main7;
+    anaSecond7.textContent = second7Only;
+
+    lastMainAxis = { main24, main7, second7: second7Only };
+
+    // trend
+    anaTrend.textContent = buildTrend7d(lastDroneFeatures, lastGroundFeatures);
+
+    if(forceAuto){
+      updateAutoSummary();
+    } else {
+      // ha már van terr adat: frissítjük az auto szöveget is
+      if(lastTerr) updateAutoSummary();
+    }
+  }
+
+  // ---------- Auto kivonat ----------
+  async function updateAutoSummary(terr){
+    if(terr) lastTerr = terr;
+    if(!lastTerr){
+      sumAuto.textContent = "–";
+      return;
+    }
+
+    const { deltaDay, deltaWeek, gained, lost, dayInterp, weekInterp } = lastTerr;
+    const dDay = Number(deltaDay);
+    const dWeek = Number(deltaWeek);
+
+    const target = (Number.isFinite(dDay) && dDay > 0) ? gained : (Number.isFinite(dDay) && dDay < 0 ? lost : null);
+
+    let placeTxt = "";
+    let sectorTxt = "";
+    if(target && Array.isArray(target) && target.length === 2){
+      const lon = target[0], lat = target[1];
+      const name = await reversePlaceName(lat, lon);
+      placeTxt = name ? ` A változás súlypontja: ${name}.` : ` A változás súlypontja: ${lat.toFixed(3)}, ${lon.toFixed(3)}.`;
+      const s = sectorForLatLon(lat, lon);
+      if(s && s.key !== "other") sectorTxt = ` (szektor: ${s.name})`;
+    }
+
+    const { d24, g24, d7, g7 } = lastOsintNumbers || {};
+    const haveOsint = [d24,g24,d7,g7].every(v => typeof v === "number");
+    const osintTxt = haveOsint
+      ? ` OSINT (ISW): 24h ~${d24} drón és ~${g24} földi; 7 nap ~${d7} drón és ~${g7} földi.`
+      : " OSINT: (számok betöltése folyamatban / nincs adat).";
+
+    // tengely
+    const axis24 = lastMainAxis?.main24 && lastMainAxis.main24 !== "–" ? lastMainAxis.main24 : null;
+    const axis7  = lastMainAxis?.main7 && lastMainAxis.main7 !== "–" ? lastMainAxis.main7 : null;
+
+    const axisTxt = (axis24 || axis7)
+      ? ` Fő aktivitás: ${axis24 ? axis24 + " (24h)" : ""}${axis24 && axis7 ? ", " : ""}${axis7 ? axis7 + " (7 nap)" : ""}.`
+      : "";
+
+    const moveTxt = (lastGroundLineCount && lastGroundLineCount > 0)
+      ? ` Földi mozgásvonalak: ${lastGroundLineCount} (a kiválasztott idősávban).`
+      : "";
+
+    let dayLine = "";
+    if(Number.isFinite(dDay) && dDay !== 0){
+      dayLine = `Napi területi változás: ${fmtDeltaKm2(dDay)} (${humanInterpretDelta(dDay)}).${sectorTxt}`;
+    } else if(Number.isFinite(dDay) && dDay === 0){
+      dayLine = `Napi területi változás: ±0 (nincs érdemi elmozdulás).`;
+    } else {
+      dayLine = `Napi területi változás: n/a.`;
+    }
+
+    let weekLine = "";
+    if(Number.isFinite(dWeek)){
+      weekLine = ` Heti trend: ${fmtDeltaKm2(dWeek)}.`;
+    }
+
+    const interpBits = [];
+    if(dayInterp) interpBits.push(`Napi értelmezés: ${dayInterp}.`);
+    if(weekInterp) interpBits.push(`Heti értelmezés: ${weekInterp}.`);
+
+    sumAuto.textContent =
+      `${dayLine}${placeTxt}${weekLine}${axisTxt}${osintTxt}${moveTxt}` +
+      `${interpBits.length ? " " + interpBits.join(" ") : ""}`;
+  }
+
+  // ---------- Summary loader ----------
+  async function loadSummary(){
+    try{
+      const daily = await loadJson("./data/summary_daily.json");
+      const weekly = await loadJson("./data/summary_weekly.json");
+      const change = await loadJson("./data/change_latest.json");
+
+      const dDay = Number(daily.delta_km2);
+      const dWeek = Number(weekly.delta_km2);
+
+      sumDay.textContent = fmtDeltaKm2(dDay);
+      sumWeek.textContent = fmtDeltaKm2(dWeek);
+      sumDayTxt.textContent = daily.interpretation || "–";
+      sumWeekTxt.textContent = weekly.interpretation || "–";
+
+      const gained = change.gained_centroid;
+      const lost = change.lost_centroid;
+
+      renderChangeCircle(dDay, gained, lost);
+
+      let line = `Változás helye: `;
+      if (Number(dDay) > 0 && gained){
+        line += `(+): ${gained[1]}, ${gained[0]} `;
+        line += `<button class="btn secondary" style="padding:6px 9px; margin-left:6px;" onclick="lookupPlace(${gained[1]},${gained[0]},'whereOut')">Település</button>`;
+      } else if (Number(dDay) < 0 && lost){
+        line += `(−): ${lost[1]}, ${lost[0]} `;
+        line += `<button class="btn secondary" style="padding:6px 9px; margin-left:6px;" onclick="lookupPlace(${lost[1]},${lost[0]},'whereOut')">Település</button>`;
+      } else {
+        line += "–";
+      }
+      sumWhere.innerHTML = line + ` <span id="whereOut" style="margin-left:6px; color:#555;"></span>`;
+      log("Kivonat: betöltve ✔");
+
+      await updateAutoSummary({
+        deltaDay: dDay,
+        deltaWeek: dWeek,
+        gained, lost,
+        dayInterp: daily.interpretation || "",
+        weekInterp: weekly.interpretation || ""
+      });
+
+    }catch(e){
+      log("Kivonat: nincs még (vagy nem elérhető) – " + String(e));
     }
   }
 
