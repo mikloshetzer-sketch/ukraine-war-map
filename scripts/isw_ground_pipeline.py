@@ -2,8 +2,17 @@
 # -*- coding: utf-8 -*-
 
 """
-ISW ground operations pipeline (ground assaults / advances / counterattacks)
-V2.1 – multiword movement parsing + UA/RU only + front-near filter + max line length
+ISW ground operations pipeline (front-közeli pontok + vonalak).
+
+Fő újítás:
+- Ha nincs "from A to B", de van "toward/to B", akkor INFERRED vonalat rajzolunk:
+  frontvonal legközelebbi pontja -> B
+
+Szűrők:
+- geokód csak UA/RU (countrycodes=ua,ru + country_code check)
+- front-közeli (FRONT_NEAR_KM)
+- max vonalhossz (MAX_MOVE_KM)
+- külön V2 cache: data/geocode_cache_v2.json
 
 Outputs:
 - data/isw_ground_latest.geojson
@@ -42,8 +51,10 @@ ARCGIS_FRONT_GEOJSON_URL = (
 )
 
 # Szűrők
-FRONT_NEAR_KM = 80.0
-MAX_MOVE_KM = 160.0  # szigorú, de még reális taktikai mozgásokhoz
+FRONT_NEAR_KM = 90.0        # kicsit engedékenyebb, több esemény marad
+MAX_MOVE_KM = 160.0         # ha ennél hosszabb, dobjuk
+MIN_INFERRED_KM = 2.0       # túl rövid vonalat ne rajzoljunk
+MAX_INFERRED_KM = 70.0      # inferred vonal ne legyen túl hosszú
 
 # Nominatim viewbox (UA + nyugat-orosz régió)
 VIEW_MIN_LON, VIEW_MIN_LAT = 20.0, 42.0
@@ -67,6 +78,7 @@ def fetch_url(url: str) -> str | None:
     except Exception:
         pass
 
+    # fallback proxy (ISW néha 403)
     try:
         proxy = "https://r.jina.ai/" + url
         r = requests.get(proxy, timeout=30)
@@ -82,7 +94,7 @@ def fetch_url(url: str) -> str | None:
 # STEP 1 — ROC cikk linkek
 # =========================
 
-def collect_recent_article_links(limit: int = 40) -> list[str]:
+def collect_recent_article_links(limit: int = 120) -> list[str]:
     html = fetch_url(ROC_UPDATES_URL)
     if not html:
         print("ISW index nem tölthető")
@@ -111,6 +123,7 @@ GROUND_KEYWORDS = [
     "counterattack", "counter-attacked", "counteroffensive",
     "repelled", "repulse", "withdrew", "withdrawal",
     "cleared", "secured",
+    "in the direction of",
 ]
 
 def strip_html_to_text(html: str) -> str:
@@ -128,24 +141,23 @@ def infer_date_from_url(article_url: str) -> datetime.date:
             return datetime.date.today()
     return datetime.date.today()
 
-# Többszavas helynevek támogatása:
-# "from Velyka Novosilka to Rivnopil"
-# "from the vicinity of Kupyansk toward Svatove"
-MOVE_PATTERN = re.compile(
+# Többszavas helynevek: "Velyka Novosilka", "New York" stb.
+# 1) from A to/toward B
+MOVE_FROM_TO = re.compile(
     r"\bfrom\s+(?:the\s+vicinity\s+of\s+|near\s+|around\s+|in\s+)?"
     r"(.+?)\s+(?:to|toward|towards)\s+(.+?)(?:[.;]|$)",
     re.IGNORECASE
 )
 
-# Egyszerű hely-kivonatolás (ha nincs movement)
-PLACE_PATTERN = re.compile(
-    r"\b(in|near|around|outside|south of|north of|east of|west of|within)\s+([A-Z][A-Za-z0-9\-\']+(?:\s+[A-Z][A-Za-z0-9\-\']+)*)",
+# 2) toward/to B (inferred)
+MOVE_TOWARD = re.compile(
+    r"\b(?:to|toward|towards|in the direction of)\s+([A-Z][A-Za-z0-9\-\']+(?:\s+[A-Z][A-Za-z0-9\-\']+)*)",
     re.IGNORECASE
 )
 
-# Olyan szavak, amik nem helyek, vagy “irány/axis” jellegűek
-BAD_TAIL = re.compile(
-    r"\b(direction|axis|area|region|sector|front|frontline|vicinity|oblast|raion)\b",
+# 3) single place fallback
+PLACE_PATTERN = re.compile(
+    r"\b(in|near|around|outside|south of|north of|east of|west of|within)\s+([A-Z][A-Za-z0-9\-\']+(?:\s+[A-Z][A-Za-z0-9\-\']+)*)",
     re.IGNORECASE
 )
 
@@ -154,22 +166,15 @@ def clean_place(raw: str | None) -> str | None:
         return None
     s = raw.strip()
 
-    # vágjuk le tipikus “záró” részeket, ha túl sok szemetet szedett fel
+    # vágások
     s = re.sub(r"\s+\(.*?\)\s*$", "", s).strip()
     s = re.sub(r"\s+(?:direction|axis|area|region|sector)\s*$", "", s, flags=re.IGNORECASE).strip()
 
-    # ha túl hosszú (valószínű mondatrész), engedjük el
-    if len(s) > 45:
+    # túl hosszú = valószínű mondatrész
+    if len(s) > 55:
         return None
-
-    # ha nincs benne betű, engedjük el
     if not re.search(r"[A-Za-z]", s):
         return None
-
-    # ha csak “direction/axis” maradt, engedjük el
-    if BAD_TAIL.fullmatch(s.lower()):
-        return None
-
     return s
 
 def extract_events(article_url: str) -> list[dict]:
@@ -180,6 +185,7 @@ def extract_events(article_url: str) -> list[dict]:
     text = strip_html_to_text(html)
     date = infer_date_from_url(article_url)
 
+    # egyszerű mondatbontás
     sentences = re.split(r"\.\s+", text)
 
     events: list[dict] = []
@@ -193,8 +199,8 @@ def extract_events(article_url: str) -> list[dict]:
         if not any(k in lower for k in GROUND_KEYWORDS):
             continue
 
-        # movement?
-        mm = MOVE_PATTERN.search(s)
+        # movement: from A to B
+        mm = MOVE_FROM_TO.search(s)
         if mm:
             a = clean_place(mm.group(1))
             b = clean_place(mm.group(2))
@@ -204,20 +210,33 @@ def extract_events(article_url: str) -> list[dict]:
                     "kind": "movement",
                     "from_place": a,
                     "to_place": b,
-                    "text": s[:350],
+                    "text": s[:380],
                     "source_url": article_url
                 })
                 continue
 
-        # fallback: single place
+        # movement: toward B (inferred)
+        tm = MOVE_TOWARD.search(s)
+        if tm:
+            b = clean_place(tm.group(1))
+            if b:
+                events.append({
+                    "date": str(date),
+                    "kind": "toward_only",
+                    "to_place": b,
+                    "text": s[:380],
+                    "source_url": article_url
+                })
+                continue
+
+        # fallback point
         pm = PLACE_PATTERN.search(s)
         place = clean_place(pm.group(2)) if pm else None
-
         events.append({
             "date": str(date),
             "kind": "ground",
             "place": place,
-            "text": s[:350],
+            "text": s[:380],
             "source_url": article_url
         })
 
@@ -281,7 +300,6 @@ def geocode(place: str | None) -> tuple[list[float] | None, str | None]:
         lon = float(item["lon"])
         addr = item.get("address") or {}
         cc = (addr.get("country_code") or "").lower()
-
         if cc not in ALLOWED_COUNTRY_CODES:
             return None, None
 
@@ -295,7 +313,7 @@ def geocode(place: str | None) -> tuple[list[float] | None, str | None]:
 
 
 # =========================
-# STEP 4 — Frontline distance
+# STEP 4 — Frontline: segments + nearest point
 # =========================
 
 EARTH_R = 6371000.0  # meters
@@ -341,22 +359,27 @@ def _to_xy_m(lat, lon, lat0):
     y = math.radians(lat) * EARTH_R
     return x, y
 
-def _dist_point_to_segment_m(px, py, ax, ay, bx, by):
+def _xy_to_latlon(x, y, lat0):
+    lat = math.degrees(y / EARTH_R)
+    lon = math.degrees(x / (EARTH_R * max(1e-9, math.cos(math.radians(lat0)))))
+    return lat, lon
+
+def _closest_point_on_segment_xy(px, py, ax, ay, bx, by):
     abx = bx - ax
     aby = by - ay
     apx = px - ax
     apy = py - ay
     ab2 = abx*abx + aby*aby
     if ab2 <= 1e-12:
-        return math.hypot(px - ax, py - ay)
+        return ax, ay, 0.0
     t = (apx*abx + apy*aby) / ab2
     if t < 0.0:
-        return math.hypot(px - ax, py - ay)
+        return ax, ay, 0.0
     if t > 1.0:
-        return math.hypot(px - bx, py - by)
+        return bx, by, 1.0
     cx = ax + t*abx
     cy = ay + t*aby
-    return math.hypot(px - cx, py - cy)
+    return cx, cy, t
 
 def min_distance_km_to_front(lat, lon, segments, threshold_km) -> float:
     deg_lat = threshold_km / 111.0
@@ -374,13 +397,49 @@ def min_distance_km_to_front(lat, lon, segments, threshold_km) -> float:
 
         ax, ay = _to_xy_m(s["lat1"], s["lon1"], lat0)
         bx, by = _to_xy_m(s["lat2"], s["lon2"], lat0)
-        d = _dist_point_to_segment_m(px, py, ax, ay, bx, by)
+        cx, cy, _ = _closest_point_on_segment_xy(px, py, ax, ay, bx, by)
+        d = math.hypot(px - cx, py - cy)
         if d < best_m:
             best_m = d
             if best_m <= 1500:
                 break
 
     return best_m / 1000.0
+
+def nearest_point_on_front(lat, lon, segments, threshold_km) -> tuple[float, float, float] | None:
+    """
+    Returns (front_lat, front_lon, dist_km) or None if not within threshold prune window.
+    """
+    deg_lat = threshold_km / 111.0
+    deg_lon = threshold_km / (111.0 * max(0.2, math.cos(math.radians(lat))))
+
+    lat0 = lat
+    px, py = _to_xy_m(lat, lon, lat0)
+
+    best_m = float("inf")
+    best_xy = None
+
+    for s in segments:
+        if lat < (s["minlat"] - deg_lat) or lat > (s["maxlat"] + deg_lat):
+            continue
+        if lon < (s["minlon"] - deg_lon) or lon > (s["maxlon"] + deg_lon):
+            continue
+
+        ax, ay = _to_xy_m(s["lat1"], s["lon1"], lat0)
+        bx, by = _to_xy_m(s["lat2"], s["lon2"], lat0)
+        cx, cy, _ = _closest_point_on_segment_xy(px, py, ax, ay, bx, by)
+        d = math.hypot(px - cx, py - cy)
+        if d < best_m:
+            best_m = d
+            best_xy = (cx, cy)
+            if best_m <= 1500:
+                break
+
+    if best_xy is None:
+        return None
+
+    front_lat, front_lon = _xy_to_latlon(best_xy[0], best_xy[1], lat0)
+    return front_lat, front_lon, best_m / 1000.0
 
 def haversine_km(lat1, lon1, lat2, lon2):
     r = 6371.0
@@ -393,26 +452,30 @@ def haversine_km(lat1, lon1, lat2, lon2):
 
 
 # =========================
-# STEP 5 — GeoJSON
+# STEP 5 — GeoJSON (pont + vonal)
 # =========================
 
 def events_to_geojson(events: list[dict], frontline_segments: list[dict]) -> dict:
     features: list[dict] = []
 
     stats = {
+        "raw_total": len(events),
+        "raw_movement_from_to": 0,
+        "raw_toward_only": 0,
         "kept_points": 0,
         "kept_lines": 0,
         "dropped_geocode": 0,
         "dropped_far": 0,
         "dropped_long_lines": 0,
-        "movement_detected_raw": 0,
+        "dropped_inferred_len": 0,
     }
 
     for e in events:
         kind = e.get("kind")
 
+        # 1) explicit movement: from A to B
         if kind == "movement":
-            stats["movement_detected_raw"] += 1
+            stats["raw_movement_from_to"] += 1
 
             a = e.get("from_place")
             b = e.get("to_place")
@@ -444,11 +507,12 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict]) -> dic
                 "properties": {
                     "source": "ISW",
                     "date": e["date"],
-                    "title": "ISW ground movement (filtered)",
+                    "title": "ISW ground movement",
                     "from": a, "to": b,
                     "from_cc": cca, "to_cc": ccb,
                     "distance_to_front_km_min": round(dmin, 1),
                     "length_km": round(length_km, 1),
+                    "inferred": False,
                     "snippet": e["text"],
                     "url": e["source_url"]
                 }
@@ -456,7 +520,65 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict]) -> dic
             stats["kept_lines"] += 1
             continue
 
-        # point event
+        # 2) toward only: inferred line front -> B
+        if kind == "toward_only":
+            stats["raw_toward_only"] += 1
+
+            b = e.get("to_place")
+            cb, ccb = geocode(b)
+            if not (cb and ccb):
+                stats["dropped_geocode"] += 1
+                continue
+
+            lat_b, lon_b = cb[1], cb[0]
+
+            # célpont front-közeli legyen
+            d_b = min_distance_km_to_front(lat_b, lon_b, frontline_segments, FRONT_NEAR_KM)
+            if d_b > FRONT_NEAR_KM:
+                stats["dropped_far"] += 1
+                continue
+
+            # frontvonal legközelebbi pontja
+            np = nearest_point_on_front(lat_b, lon_b, frontline_segments, FRONT_NEAR_KM)
+            if np is None:
+                stats["dropped_far"] += 1
+                continue
+            front_lat, front_lon, dist_km = np
+
+            # inferred vonal hossza (front -> cél)
+            length_km = haversine_km(front_lat, front_lon, lat_b, lon_b)
+            if length_km < MIN_INFERRED_KM or length_km > MAX_INFERRED_KM:
+                stats["dropped_inferred_len"] += 1
+                continue
+
+            if length_km > MAX_MOVE_KM:
+                stats["dropped_long_lines"] += 1
+                continue
+
+            # LineString coords: [lon,lat]
+            c_front = [front_lon, front_lat]
+
+            features.append({
+                "type": "Feature",
+                "geometry": {"type": "LineString", "coordinates": [c_front, cb]},
+                "properties": {
+                    "source": "ISW",
+                    "date": e["date"],
+                    "title": "ISW ground movement (inferred from frontline)",
+                    "from": "Frontline (nearest)",
+                    "to": b,
+                    "to_cc": ccb,
+                    "distance_to_front_km_min": round(dist_km, 1),
+                    "length_km": round(length_km, 1),
+                    "inferred": True,
+                    "snippet": e["text"],
+                    "url": e["source_url"]
+                }
+            })
+            stats["kept_lines"] += 1
+            continue
+
+        # 3) point event
         coords, cc = geocode(e.get("place"))
         if not (coords and cc):
             stats["dropped_geocode"] += 1
@@ -474,7 +596,7 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict]) -> dic
             "properties": {
                 "source": "ISW",
                 "date": e["date"],
-                "title": "ISW ground operation (filtered)",
+                "title": "ISW ground operation",
                 "place": e.get("place"),
                 "cc": cc,
                 "distance_to_front_km": round(d, 1),
@@ -492,7 +614,8 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict]) -> dic
                 "allowed_country_codes": sorted(list(ALLOWED_COUNTRY_CODES)),
                 "front_near_km": FRONT_NEAR_KM,
                 "max_move_km": MAX_MOVE_KM,
-                "viewbox": [VIEW_MIN_LON, VIEW_MIN_LAT, VIEW_MAX_LON, VIEW_MAX_LAT]
+                "min_inferred_km": MIN_INFERRED_KM,
+                "max_inferred_km": MAX_INFERRED_KM,
             },
             "stats": stats
         }
@@ -505,9 +628,10 @@ def events_to_geojson(events: list[dict], frontline_segments: list[dict]) -> dic
 
 def main():
     print("ISW GROUND pipeline indul…")
+
     frontline_segments = load_frontline_segments()
 
-    links = collect_recent_article_links(limit=40)
+    links = collect_recent_article_links(limit=120)
     print("Talált cikkek:", len(links))
 
     all_events: list[dict] = []
@@ -519,7 +643,7 @@ def main():
     last7 = today - datetime.timedelta(days=7)
     last30 = today - datetime.timedelta(days=30)
 
-    ev_latest = all_events[:70]
+    ev_latest = all_events[:120]
     ev_7 = [e for e in all_events if datetime.date.fromisoformat(e["date"]) >= last7]
     ev_30 = [e for e in all_events if datetime.date.fromisoformat(e["date"]) >= last30]
 
@@ -546,8 +670,7 @@ def main():
 
     GEOCODE_CACHE_V2.write_text(json.dumps(geocache, indent=2), encoding="utf-8")
 
-    st = gj_latest.get("properties", {}).get("stats", {})
-    print("STATS (latest):", st)
+    print("STATS latest:", gj_latest.get("properties", {}).get("stats", {}))
     print("ISW GROUND pipeline kész ✔")
 
 
