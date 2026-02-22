@@ -1,4 +1,4 @@
-name: ISW Ground (assault) pipeline
+name: ISW Ground pipeline
 
 on:
   workflow_dispatch:
@@ -50,5 +50,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Update ISW ground assault points"
+          git commit -m "Update ISW ground points"
           git push
