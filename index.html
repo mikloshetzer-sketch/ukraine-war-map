@@ -2217,6 +2217,50 @@
 })();
   init();
 })();
+  // ==== NAPI VÁLTOZÁS KÖR – PERMANENS SZÖVEGBUBORÉK FIX ====
+(function(){
+
+  const originalRender = window.renderChangeCircle;
+
+  if(!originalRender) return;
+
+  window.renderChangeCircle = function(deltaKm2, gained, lost){
+
+    // futtatjuk az eredeti kódot
+    originalRender(deltaKm2, gained, lost);
+
+    try{
+      if(!changeMarkerLayer) return;
+
+      changeMarkerLayer.eachLayer(layer => {
+
+        if(layer instanceof L.Circle){
+
+          const d = Number(deltaKm2);
+          if(!Number.isFinite(d) || d === 0) return;
+
+          const tipHtml =
+            `<b>Napi területi változás</b>` +
+            `<div>Δ: ${fmtDeltaKm2(d)}</div>` +
+            `<div class="sub">${humanInterpretDelta(d)}</div>`;
+
+          layer.bindTooltip(tipHtml,{
+            permanent:true,
+            direction:"top",
+            className:"hiTip",
+            offset:[0,-32]
+          });
+
+          try{ layer.openTooltip(); }catch(e){}
+        }
+
+      });
+
+    }catch(e){}
+
+  };
+
+})();
 </script>
 </body>
 </html>
