@@ -1,0 +1,54 @@
+név: ISW földi (rohamvezeték)
+
+on:
+munkafolyamat-feladás:
+menetrend:
+- cron: "0 7 * * *"
+
+jogosultságok:
+tartalom: írás
+
+párhuzamosság:
+csoport: isw-föld
+folyamatban lévő megszakítás: false
+
+állások:
+épít:
+futtatható: ubuntu-latest
+lépések:
+- név: Pénztár adattár
+használja: actions/checkout@v4
+vel:
+lekérésmélység: 0
+
+- név: Python beállítása
+használja: actions/setup-python@v5
+vel:
+python-verzió: "3.11"
+
+- név: Függőségek telepítése
+futás: |
+set -euo pipefail
+python -m pip install --pip frissítés
+pip telepítési kérelmek
+
+- név: ISW földi csővezeték futtatása
+futás: |
+set -euo pipefail
+python szkriptek/isw_ground_pipeline.py
+
+- név: Csatlakoztasd és küldd el, ha megváltozott
+futás: |
+set -euo pipefail
+git config user.name "github-actions[bot]"
+git config felhasználó.email "github-actions[bot]@ users.noreply.github.com "
+
+git add data/isw_ground_latest.geojson data/isw_ground_7d.geojson data/isw_ground_30d.geojson data/isw_ground_index.json data/geocode_cache.json || true
+
+ha git diff --cached --quiet; akkor
+echo "Nincsenek véglegesítendő változtatások."
+kijárat 0
+fi
+
+git commit -m "ISW földi támadási pontok frissítése"
+git push
