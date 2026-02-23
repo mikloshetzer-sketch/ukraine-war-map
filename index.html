@@ -808,6 +808,7 @@
   chkDroneHi.addEventListener("change", () => setVisible(droneHiLayer, chkDroneHi.checked));
   chkGroundHi.addEventListener("change", () => setVisible(groundHiLayer, chkGroundHi.checked));
   chkHiTips.addEventListener("change", () => setVisible(hiTipLayer, chkHiTips.checked));
+  resolveAllPermanentTips();
 
   chkGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
   chkArcFront.addEventListener("change", () => setVisible(arcFrontLayer, chkArcFront.checked));
