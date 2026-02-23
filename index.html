@@ -2153,6 +2153,108 @@
   window.addEventListener("error", (e) => log("JS ERROR: " + (e.message || e.error || e)));
   window.addEventListener("unhandledrejection", (e) => log("PROMISE ERROR: " + (e.reason || e)));
 
+  // ===== PERMANENS BUBORÉK ÜTKÖZÉS-ELKERÜLÉS (anti-overlap) =====
+(function(){
+
+  function rectsOverlap(a, b, pad=4){
+    return !(
+      a.right + pad < b.left ||
+      a.left > b.right + pad ||
+      a.bottom + pad < b.top ||
+      a.top > b.bottom + pad
+    );
+  }
+
+  function getTipEl(layer){
+    // Leaflet tooltip DOM elem: layer.getTooltip()._container
+    try{
+      const tt = layer.getTooltip && layer.getTooltip();
+      return tt && tt._container ? tt._container : null;
+    }catch(e){ return null; }
+  }
+
+  function setTipOffset(layer, offset){
+    try{
+      const tt = layer.getTooltip && layer.getTooltip();
+      if(!tt) return;
+      tt.options.offset = offset;
+      // Leaflet belső: pozíció frissítés
+      if(layer._map && tt._container){
+        tt.update && tt.update();
+      }
+    }catch(e){}
+  }
+
+  function resolveLayerGroupOverlaps(group, maxIter=6){
+    if(!group || !group.eachLayer) return;
+
+    const items = [];
+    group.eachLayer(l => {
+      const el = getTipEl(l);
+      if(el){
+        items.push({ layer:l, el, base:[0,-32], cur:[0,-32] });
+      }
+    });
+
+    if(items.length < 2) return;
+
+    // több iteráció, hogy stabilizáljon
+    for(let iter=0; iter<maxIter; iter++){
+      let moved = false;
+
+      // friss téglalapok
+      const rects = items.map(it => it.el.getBoundingClientRect());
+
+      for(let i=0;i<items.length;i++){
+        for(let j=0;j<i;j++){
+          const A = rects[i];
+          const B = rects[j];
+          if(rectsOverlap(A,B,6)){
+            // ütközik → az i-ediket eltoljuk
+            const it = items[i];
+
+            // “lépcső” eltolás: felfelé + kicsit oldalra
+            const stepY = -18;
+            const stepX = (iter % 2 === 0) ? 12 : -12;
+
+            it.cur = [ it.cur[0] + stepX, it.cur[1] + stepY ];
+            setTipOffset(it.layer, it.cur);
+
+            moved = true;
+          }
+        }
+      }
+
+      if(!moved) break;
+    }
+  }
+
+  // Globális helper: bármikor meghívható (pl. highlights után)
+  window.resolveAllPermanentTips = function(){
+    // a te kódodban: hiTipLayer tartalmazza a permanens tip marker-eket
+    try{
+      if(typeof hiTipLayer !== "undefined") resolveLayerGroupOverlaps(hiTipLayer);
+      // a changeMarkerLayer-en a kör is tooltipet kapott
+      if(typeof changeMarkerLayer !== "undefined") resolveLayerGroupOverlaps(changeMarkerLayer);
+    }catch(e){}
+  };
+
+  // automatikus: zoom/pan után is újrapakoljuk
+  // (mert a képernyő-koordináták változnak)
+  const hookMap = () => {
+    try{
+      if(typeof map === "undefined" || !map) return;
+      map.on("zoomend moveend", () => {
+        setTimeout(() => window.resolveAllPermanentTips(), 60);
+      });
+    }catch(e){}
+  };
+
+  // késleltetve, hogy map már létezzen
+  setTimeout(hookMap, 300);
+
+})();
+
   /* =========================================================
    BUBORÉK FIX PATCH – nem tör semmit, csak felülír
    ========================================================= */
