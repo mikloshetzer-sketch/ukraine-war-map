@@ -192,7 +192,7 @@
       overflow:auto;
     }
 
-    /* Permanens tooltip (buborék) */
+    /* Tooltip */
     .hiTip{
       background: rgba(255,255,255,0.97);
       border: 1px solid rgba(0,0,0,0.18);
@@ -202,10 +202,10 @@
       max-width: 280px;
       min-width: 160px;
       font: 12px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:#111;
       white-space: normal;
       word-wrap: break-word;
       overflow-wrap: break-word;
+      pointer-events:none; /* fontos: ne “fogja” az egeret */
     }
     .hiTip b{ display:block; margin-bottom:4px; }
     .hiTip .sub{ color:#555; margin-top:4px; }
@@ -282,49 +282,7 @@
     }
     .mapStamp.collapsed .mapStampBody{ display:none; }
 
-    /* ===== Bal panel: lenyitható szekciók (accordion) ===== */
-    .acc details{
-      margin-top: 10px;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.92);
-      overflow: hidden;
-    }
-    .acc summary{
-      list-style: none;
-      cursor: pointer;
-      user-select: none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-      padding: 10px 12px;
-      font-weight: 700;
-      font-size: 12px;
-    }
-    .acc summary::-webkit-details-marker{ display:none; }
-    .acc summary .hint{
-      font-weight: 600;
-      color:#666;
-      font-size: 12px;
-    }
-    .acc summary .chev{
-      width: 26px;
-      height: 26px;
-      border-radius: 10px;
-      display:grid;
-      place-items:center;
-      background:#111;
-      color:#fff;
-      font-weight: 900;
-      line-height:1;
-      flex: 0 0 auto;
-      transform: rotate(0deg);
-      transition: transform 120ms ease;
-    }
-    .acc details[open] summary .chev{ transform: rotate(180deg); }
-    .acc .secBody{ padding: 0 12px 12px; }
-
+    /* Kisebb képernyő */
     @media (max-width: 820px){
       #panelLeft, #panelRight{
         left: 10px !important;
@@ -376,173 +334,128 @@
       <button id="toggleLeft" class="toggleBtn" type="button">☰</button>
     </div>
 
-    <div class="body acc">
-      <details open>
-        <summary>
-          <span>Rétegek</span>
-          <span class="hint">ki/be</span>
-          <span class="chev">▼</span>
-        </summary>
-        <div class="secBody">
-          <div class="row">
-            <label class="chip"><input id="chkDeep" type="checkbox" checked> DeepState</label>
-            <label class="chip"><input id="chkFirms" type="checkbox" checked> FIRMS pötty</label>
-            <label class="chip"><input id="chkGibs" type="checkbox"> NASA GIBS overlay</label>
+    <div class="body">
+      <div class="row">
+        <label class="chip"><input id="chkDeep" type="checkbox" checked> DeepState</label>
+        <label class="chip"><input id="chkFirms" type="checkbox" checked> FIRMS pötty</label>
+        <label class="chip"><input id="chkGibs" type="checkbox"> NASA GIBS overlay</label>
 
-            <label class="chip"><input id="chkDrones" type="checkbox" checked> Drón pontok</label>
-            <label class="chip"><input id="chkGround" type="checkbox" checked> Földi (ISW) pont/vonal</label>
+        <label class="chip"><input id="chkDrones" type="checkbox" checked> Drón pontok</label>
+        <label class="chip"><input id="chkGround" type="checkbox" checked> Földi (ISW) pont/vonal</label>
 
-            <label class="chip"><input id="chkDroneHi" type="checkbox" checked> Kiemelt drón</label>
-            <label class="chip"><input id="chkGroundHi" type="checkbox" checked> Kiemelt földi</label>
-            <label class="chip"><input id="chkHiTips" type="checkbox" checked> Kiemelt buborék szöveg</label>
+        <label class="chip"><input id="chkDroneHi" type="checkbox" checked> Kiemelt drón</label>
+        <label class="chip"><input id="chkGroundHi" type="checkbox" checked> Kiemelt földi</label>
 
-            <label class="chip"><input id="chkArcFront" type="checkbox" checked> ArcGIS frontvonal</label>
-            <label class="chip"><input id="chkArcAdv" type="checkbox" checked> ArcGIS orosz advance</label>
-            <label class="chip"><input id="chkFrontInfo" type="checkbox" checked> Front info (vonalon)</label>
-            <label class="chip"><input id="chkChangeCircle" type="checkbox" checked> Napi változás kör</label>
+        <label class="chip"><input id="chkHiTips" type="checkbox" checked> Kiemelt buborék szöveg</label>
 
-            <!-- Országhatárok overlay (Leaflet GeoJSON) -->
-            <label class="chip"><input id="chkBorders" type="checkbox" checked> Országhatárok</label>
+        <label class="chip"><input id="chkArcFront" type="checkbox" checked> ArcGIS frontvonal</label>
+        <label class="chip"><input id="chkArcAdv" type="checkbox" checked> ArcGIS orosz advance</label>
+        <label class="chip"><input id="chkFrontInfo" type="checkbox" checked> Front info (vonalon)</label>
+        <label class="chip"><input id="chkChangeCircle" type="checkbox" checked> Napi változás kör</label>
 
-            <label class="chip"><input id="chkLog" type="checkbox" checked> Napló</label>
-          </div>
-        </div>
-      </details>
+        <label class="chip"><input id="chkLog" type="checkbox" checked> Napló</label>
+      </div>
 
-      <details>
-        <summary>
-          <span>Front elemzés</span>
-          <span class="hint">sugár + szegmens</span>
-          <span class="chev">▼</span>
-        </summary>
-        <div class="secBody">
-          <div class="row">
-            <span class="chip">Front info sugár:
-              <select id="selFrontRadius">
-                <option value="20">20 km</option>
-                <option value="35" selected>35 km</option>
-                <option value="50">50 km</option>
-              </select>
-            </span>
-            <span class="chip">Szegmens hossz:
-              <select id="selSegLen">
-                <option value="10">10 km</option>
-                <option value="20" selected>20 km</option>
-                <option value="30">30 km</option>
-              </select>
-            </span>
-            <button id="btnRebuildFront" class="btn secondary" type="button">Front info újraépítés</button>
-          </div>
-        </div>
-      </details>
+      <div class="row">
+        <span class="chip">Front info sugár:
+          <select id="selFrontRadius">
+            <option value="20">20 km</option>
+            <option value="35" selected>35 km</option>
+            <option value="50">50 km</option>
+          </select>
+        </span>
+        <span class="chip">Szegmens hossz:
+          <select id="selSegLen">
+            <option value="10">10 km</option>
+            <option value="20" selected>20 km</option>
+            <option value="30">30 km</option>
+          </select>
+        </span>
+        <button id="btnRebuildFront" class="btn secondary" type="button">Front info újraépítés</button>
+      </div>
 
-      <details>
-        <summary>
-          <span>Források</span>
-          <span class="hint">drón + földi</span>
-          <span class="chev">▼</span>
-        </summary>
-        <div class="secBody">
-          <div class="row">
-            <span class="chip">Drón forrás:
-              <select id="selDroneSource">
-                <option value="gdelt_latest" selected>GDELT (latest)</option>
-                <option value="isw_latest">ISW UAV (latest)</option>
-                <option value="isw_7d">ISW UAV (7 nap)</option>
-                <option value="isw_30d">ISW UAV (30 nap)</option>
-              </select>
-            </span>
-            <button id="btnReloadDrones" class="btn secondary" type="button">Drón újratöltés</button>
-          </div>
+      <div class="row">
+        <span class="chip">Drón forrás:
+          <select id="selDroneSource">
+            <option value="gdelt_latest" selected>GDELT (latest)</option>
+            <option value="isw_latest">ISW UAV (latest)</option>
+            <option value="isw_7d">ISW UAV (7 nap)</option>
+            <option value="isw_30d">ISW UAV (30 nap)</option>
+          </select>
+        </span>
+        <button id="btnReloadDrones" class="btn secondary" type="button">Drón újratöltés</button>
+      </div>
 
-          <div class="row">
-            <span class="chip">Földi (ISW) forrás:
-              <select id="selGroundSource">
-                <option value="isw_ground_latest" selected>ISW Ground (latest)</option>
-                <option value="isw_ground_7d">ISW Ground (7 nap)</option>
-                <option value="isw_ground_30d">ISW Ground (30 nap)</option>
-              </select>
-            </span>
-            <button id="btnReloadGround" class="btn secondary" type="button">Földi újratöltés</button>
-          </div>
-        </div>
-      </details>
+      <div class="row">
+        <span class="chip">Földi (ISW) forrás:
+          <select id="selGroundSource">
+            <option value="isw_ground_latest" selected>ISW Ground (latest)</option>
+            <option value="isw_ground_7d">ISW Ground (7 nap)</option>
+            <option value="isw_ground_30d">ISW Ground (30 nap)</option>
+          </select>
+        </span>
+        <button id="btnReloadGround" class="btn secondary" type="button">Földi újratöltés</button>
+      </div>
 
-      <details>
-        <summary>
-          <span>Alaptérkép & zoom</span>
-          <span class="hint">OSM / műhold</span>
-          <span class="chev">▼</span>
-        </summary>
-        <div class="secBody">
-          <div class="row">
-            <span class="chip">Alaptérkép:
-              <select id="selBase">
-                <option value="osm" selected>OSM</option>
-                <option value="sat">Műhold (ESRI)</option>
-              </select>
-            </span>
+      <div class="row">
+        <span class="chip">Alaptérkép:
+          <select id="selBase">
+            <option value="osm" selected>OSM</option>
+            <option value="sat">Műhold (ESRI)</option>
+          </select>
+        </span>
 
-            <span class="chip">Zoom mód:
-              <select id="selZoom">
-                <option value="front" selected>Frontvonal</option>
-                <option value="ukr">Ukrajna</option>
-                <option value="click">Kattintásra</option>
-              </select>
-            </span>
+        <span class="chip">Zoom mód:
+          <select id="selZoom">
+            <option value="front" selected>Frontvonal</option>
+            <option value="ukr">Ukrajna</option>
+            <option value="click">Kattintásra</option>
+          </select>
+        </span>
 
-            <button id="btnZoom" class="btn" type="button">Rázoomolás</button>
-          </div>
-        </div>
-      </details>
+        <button id="btnZoom" class="btn" type="button">Rázoomolás</button>
+      </div>
 
-      <details>
-        <summary>
-          <span>FIRMS & GIBS</span>
-          <span class="hint">napok + áttetsző</span>
-          <span class="chev">▼</span>
-        </summary>
-        <div class="secBody">
-          <div class="row">
-            <span class="chip">FIRMS napok:
-              <select id="selDays">
-                <option value="3">3</option>
-                <option value="7">7</option>
-                <option value="10" selected>10</option>
-              </select>
-            </span>
+      <div class="row">
+        <span class="chip">FIRMS napok:
+          <select id="selDays">
+            <option value="3">3</option>
+            <option value="7">7</option>
+            <option value="10" selected>10</option>
+          </select>
+        </span>
 
-            <span class="chip">Max pötty/nap:
-              <select id="selMaxPts">
-                <option value="500">500</option>
-                <option value="1500" selected>1500</option>
-                <option value="3000">3000</option>
-              </select>
-            </span>
-          </div>
+        <span class="chip">Max pötty/nap:
+          <select id="selMaxPts">
+            <option value="500">500</option>
+            <option value="1500" selected>1500</option>
+            <option value="3000">3000</option>
+          </select>
+        </span>
+      </div>
 
-          <div class="row">
-            <span class="chip">GIBS réteg:
-              <select id="selGibs">
-                <option value="viirs375" selected>VIIRS Thermal (375m)</option>
-                <option value="modis1k">MODIS Thermal (1km)</option>
-              </select>
-            </span>
+      <div class="row">
+        <span class="chip">GIBS réteg:
+          <select id="selGibs">
+            <option value="viirs375" selected>VIIRS Thermal (375m)</option>
+            <option value="modis1k">MODIS Thermal (1km)</option>
+          </select>
+        </span>
 
-            <span class="chip">Áttetsző:
-              <input id="rngGibs" type="range" min="0" max="1" value="0.55" step="0.05" style="width:140px">
-            </span>
-          </div>
+        <span class="chip">Áttetsző:
+          <input id="rngGibs" type="range" min="0" max="1" value="0.55" step="0.05" style="width:140px">
+        </span>
+      </div>
 
-          <div class="row">
-            <span class="chip" id="keyInfo">FIRMS kulcs: …</span>
-            <button id="btnReloadFirms" class="btn secondary" type="button">FIRMS újratöltés</button>
-            <button id="btnReloadArc" class="btn secondary" type="button">ArcGIS újratöltés</button>
-            <button id="btnRefreshAll" class="btn" type="button">🔄 Adat frissítés</button>
-          </div>
-        </div>
-      </details>
+      <!-- ✅ ITT VANNAK VISSZATÉVE A GOMBOK -->
+      <div class="row">
+        <span class="chip" id="keyInfo">FIRMS kulcs: …</span>
+        <button id="btnReloadFirms" class="btn secondary" type="button">FIRMS újratöltés</button>
+        <button id="btnReloadArc" class="btn secondary" type="button">ArcGIS újratöltés</button>
+        <button id="btnRefreshAll" class="btn" type="button">🔄 Adat frissítés</button>
+      </div>
 
+      <!-- KIVONAT -->
       <div id="summary" class="summary">
         <div class="summaryHead">
           <b>Napi/heti kivonat</b>
@@ -659,7 +572,6 @@
       <div class="item"><span class="swatch" style="background:#00a000;"></span>ArcGIS frontvonal (hover/click)</div>
       <div class="item"><span class="swatch" style="background:#7a00ff;"></span>ArcGIS advance</div>
       <div class="item"><span class="swatch" style="background:#00a000; opacity:0.2;"></span>Napi változás kör</div>
-      <div class="item"><span class="swatch" style="background:#999;"></span>Országhatárok</div>
     </div>
   </div>
 
@@ -684,10 +596,6 @@
 
   const UKRAINE_BBOX = "22,44,40,53";
   const UKRAINE_BOUNDS_RAW = { sw: [44.0, 22.0], ne: [52.7, 40.2] };
-
-  // ====== Országhatárok (GeoJSON overlay) ======
-  const COUNTRY_BORDERS_URL =
-    "https://raw.githubusercontent.com/datasets/geo-boundaries-world-110m/master/countries.geojson";
 
   // ====== Drone sources (local files) ======
   const DRONE_SOURCES = {
@@ -723,7 +631,6 @@
   const chkArcAdv = el("chkArcAdv");
   const chkFrontInfo = el("chkFrontInfo");
   const chkChangeCircle = el("chkChangeCircle");
-  const chkBorders = el("chkBorders");
   const chkLog = el("chkLog");
 
   const selFrontRadius = el("selFrontRadius");
@@ -882,7 +789,7 @@
   const droneHiLayer = L.layerGroup().addTo(map);
   const groundHiLayer = L.layerGroup().addTo(map);
 
-  // permanens tooltip réteg
+  // permanens tooltip réteg (csak a kiemeltekhez)
   const hiTipLayer = L.layerGroup().addTo(map);
 
   const changeMarkerLayer = L.layerGroup().addTo(map);
@@ -890,10 +797,6 @@
 
   let arcFrontLayer = null;
   let arcAdvLayer = null;
-
-  // országhatárok réteg
-  let bordersLayer = null;
-  let bordersLoaded = false;
 
   function setVisible(layer, on){
     if(!layer) return;
@@ -915,15 +818,6 @@
   chkArcAdv.addEventListener("change", () => setVisible(arcAdvLayer, chkArcAdv.checked));
   chkFrontInfo.addEventListener("change", () => setVisible(frontInfoLayer, chkFrontInfo.checked));
   chkChangeCircle.addEventListener("change", () => setVisible(changeMarkerLayer, chkChangeCircle.checked));
-
-  chkBorders.addEventListener("change", async () => {
-    if(chkBorders.checked){
-      await ensureBorders();
-      setVisible(bordersLayer, true);
-    }else{
-      setVisible(bordersLayer, false);
-    }
-  });
 
   // ===== Helpers =====
   async function loadJson(url){
@@ -1037,31 +931,6 @@
       return null;
     }
   }
-
-  // ===== Országhatárok betöltés =====
-  async function ensureBorders(){
-    if(bordersLoaded && bordersLayer) return;
-    try{
-      const gj = await loadJson(COUNTRY_BORDERS_URL);
-      bordersLayer = L.geoJSON(gj, {
-        style: () => ({
-          color: "#999",
-          weight: 1,
-          opacity: 0.75,
-          fillOpacity: 0
-        })
-      });
-      bordersLoaded = true;
-      log("Országhatárok: betöltve ✔");
-    }catch(e){
-      log("Országhatárok: HIBA – " + String(e));
-    }
-  }
-
-  // (Ha alapból be legyen kapcsolva)
-  ensureBorders().then(() => {
-    if(chkBorders && chkBorders.checked) setVisible(bordersLayer, true);
-  });
 
   // ===== DeepState =====
   function renderDeepState(data){
@@ -1187,16 +1056,18 @@
       permanent: true,
       direction: "top",
       className: "hiTip",
-      offset: [0, -60]
+      offset: [0, -70]
     });
 
     circle.addTo(changeMarkerLayer);
     setVisible(changeMarkerLayer, chkChangeCircle.checked);
 
-    setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 60);
+    // ✅ ütközésmentesítés (a motor a 2. részben van)
+    setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 80);
   }
-
-  // ===== FIRMS =====
+    // =========================
+  // FIRMS
+  // =========================
   let firmsByDate = {};
   let firmsCurrentPts = [];
 
@@ -1322,7 +1193,9 @@
   selDays.addEventListener("change", fetchFirms);
   selMaxPts.addEventListener("change", () => { if(currentDate) renderFirmsForDate(currentDate); });
 
-  // ===== Drón / Földi betöltés (innen folytatódik a 2. részben) =====
+  // =========================
+  // Drón / Földi betöltés
+  // =========================
   let lastDroneFeatures = [];
   let lastGroundFeatures = [];
 
@@ -1343,9 +1216,7 @@
     const lat = (a[1] + b[1]) / 2;
     return [lat, lon];
   }
-    // =========================
-  // DRÓN / FÖLDI BETÖLTÉS
-  // =========================
+
   async function loadDrones(){
     dronesLayer.clearLayers();
     droneHiLayer.clearLayers();
@@ -1907,10 +1778,8 @@
   });
 
   // =========================
-  // Kiemelt események + PERMANENS buborékok
-  // + ÜTKÖZÉS-ELKERÜLÉS (tiszta, egy darab megoldás)
+  // Kiemelt események + buborékok
   // =========================
-
   function nearestFrontDistanceKm(pt){
     if(!frontDensified.length) return null;
     let best = Infinity;
@@ -1927,7 +1796,6 @@
     hiTipLayer.clearLayers();
   }
 
-  // Láthatatlan marker, rajta permanens tooltip
   function attachPermanentTip(lat, lon, html){
     const m = L.marker([lat, lon], { opacity: 0.0, interactive: false });
     m.bindTooltip(html, {
@@ -1945,7 +1813,7 @@
     const now = new Date();
     const cut24 = new Date(now.getTime() - 1*24*3600*1000);
 
-    // best drone (24h + frontközeli)
+    // best drone
     let bestDrone = null;
     for(const f of (lastDroneFeatures||[])){
       if(f?.geometry?.type !== "Point") continue;
@@ -1990,7 +1858,7 @@
       attachPermanentTip(bestDrone.lat, bestDrone.lon, tipHtml);
     }
 
-    // best ground (24h + line prefer)
+    // best ground
     let bestGround = null;
     for(const f of (lastGroundFeatures||[])){
       const g = f.geometry || {};
@@ -2052,13 +1920,14 @@
     setVisible(groundHiLayer, chkGroundHi.checked);
     setVisible(hiTipLayer, chkHiTips.checked);
 
-    // ütközés-kerülés meghívás
     setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 80);
   }
 
-  // ===== ÜTKÖZÉS-ELKERÜLŐ MOTOR =====
+  // =========================
+  // ✅ ÜTKÖZÉSMENTES BUBORÉK ELHELYEZÉS (stabil)
+  // =========================
   (function(){
-    function rectsOverlap(a, b, pad=6){
+    function rectsOverlap(a, b, pad=8){
       return !(
         a.right + pad < b.left ||
         a.left > b.right + pad ||
@@ -2070,74 +1939,107 @@
     function getTipEl(layer){
       try{
         const tt = layer.getTooltip && layer.getTooltip();
-        return tt && tt._container ? tt._container : null;
+        return (tt && tt._container) ? tt._container : null;
       }catch(e){ return null; }
     }
 
-    function setTipOffset(layer, offset){
+    function setTip(layer, direction, offset){
       try{
         const tt = layer.getTooltip && layer.getTooltip();
-        if(!tt) return;
+        if(!tt) return false;
+        tt.options.direction = direction;
         tt.options.offset = offset;
         tt.update && tt.update();
-      }catch(e){}
+        return true;
+      }catch(e){ return false; }
     }
 
-    function resolveLayerGroupOverlaps(group, maxIter=10){
-      if(!group || !group.eachLayer) return;
+    const CANDIDATES = [
+      ["top",    [  0, -90]],
+      ["top",    [  0, -120]],
+      ["top",    [ 18, -105]],
+      ["top",    [-18, -105]],
 
+      ["right",  [ 26, -45]],
+      ["left",   [-26, -45]],
+
+      ["bottom", [  0,  22]],
+      ["bottom", [ 18,  22]],
+      ["bottom", [-18,  22]],
+
+      ["right",  [ 38, -70]],
+      ["left",   [-38, -70]],
+    ];
+
+    function collectTooltipLayers(group){
       const items = [];
+      if(!group || !group.eachLayer) return items;
       group.eachLayer(l => {
         const el = getTipEl(l);
-        if(el){
-          items.push({
-            layer:l,
-            el,
-            cur:[0, -90]
-          });
-        }
+        if(el) items.push({ layer: l, el });
       });
+      return items;
+    }
 
-      if(items.length < 2) return;
+    function layout(items){
+      const placedRects = [];
 
-      // több iteráció, hogy stabilizáljon
-      for(let iter=0; iter<maxIter; iter++){
-        let moved = false;
+      for(const it of items){
+        if(!it.el || !it.el.getBoundingClientRect) continue;
 
-        const rects = items.map(it => it.el.getBoundingClientRect());
+        let placed = false;
 
-        for(let i=0;i<items.length;i++){
-          for(let j=0;j<i;j++){
-            const A = rects[i];
-            const B = rects[j];
-            if(rectsOverlap(A,B,8)){
-              const it = items[i];
-              const stepY = -18;
-              const stepX = (iter % 2 === 0) ? 14 : -14;
-              it.cur = [ it.cur[0] + stepX, it.cur[1] + stepY ];
-              setTipOffset(it.layer, it.cur);
-              moved = true;
-            }
+        for(const [dir, off] of CANDIDATES){
+          setTip(it.layer, dir, off);
+
+          const r = it.el.getBoundingClientRect();
+          let ok = true;
+          for(const pr of placedRects){
+            if(rectsOverlap(r, pr, 8)){ ok = false; break; }
+          }
+          if(ok){
+            placedRects.push(r);
+            placed = true;
+            break;
           }
         }
-        if(!moved) break;
+
+        if(!placed){
+          setTip(it.layer, "top", [0, -90]);
+          placedRects.push(it.el.getBoundingClientRect());
+        }
       }
     }
 
-    window.resolveAllPermanentTips = function(){
+    function resolveNow(){
       try{
-        resolveLayerGroupOverlaps(hiTipLayer);
-        resolveLayerGroupOverlaps(changeMarkerLayer);
+        const a = collectTooltipLayers(hiTipLayer);
+        const b = collectTooltipLayers(changeMarkerLayer);
+        // előbb a kiemeltek, utána a napi változás
+        layout(a);
+        layout(b);
       }catch(e){}
+    }
+
+    let pending = false;
+    window.resolveAllPermanentTips = function(){
+      if(pending) return;
+      pending = true;
+
+      setTimeout(() => {
+        resolveNow();
+        requestAnimationFrame(() => {
+          resolveNow();
+          pending = false;
+        });
+      }, 60);
     };
 
-    map.on("zoomend moveend", () => {
-      setTimeout(() => window.resolveAllPermanentTips(), 70);
-    });
+    map.on("zoomend moveend", () => window.resolveAllPermanentTips());
   })();
 
   // =========================
-  // Narratíva (ISW-stílus)
+  // Narratíva
   // =========================
   async function buildNarrative(){
     const hot24 = frontHot?.hot24;
@@ -2317,6 +2219,8 @@
     await buildNarrative();
 
     if(doZoomNow) doZoom();
+
+    setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
   }
 
   // =========================
@@ -2348,6 +2252,9 @@
 
       btnPlay.disabled = false;
       log("🔄 Frissítés kész ✔");
+
+      setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 150);
+
     } catch(e){
       log("🔄 Frissítés HIBA: " + String(e));
     } finally {
@@ -2387,15 +2294,10 @@
       setVisible(groundHiLayer, chkGroundHi.checked);
       setVisible(hiTipLayer, chkHiTips.checked);
 
-      if(chkBorders.checked){
-        await ensureBorders();
-        setVisible(bordersLayer, true);
-      }
-
       btnPlay.disabled = false;
       log("Kész ✔");
 
-      setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
+      setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 180);
 
     } catch(e){
       log("INIT HIBA: " + String(e));
