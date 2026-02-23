@@ -12,7 +12,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "Sumy",
         "cc": "ua",
@@ -26,13 +26,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8436285,
-          49.4505833
+          36.8437576,
+          49.450518
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -52,7 +52,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
@@ -72,7 +72,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "Hnativka",
         "cc": "ua",
@@ -92,7 +92,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "February",
         "cc": "ua",
@@ -112,7 +112,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
@@ -132,7 +132,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "Belgorod Oblast",
         "cc": "ru",
@@ -152,7 +152,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
@@ -172,7 +172,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
@@ -192,7 +192,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -212,7 +212,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-22",
+        "date": "2026-02-23",
         "title": "ISW ground operation",
         "place": "Vovchansk",
         "cc": "ua",
@@ -236,11 +236,11 @@
     "stats": {
       "raw_total": 120,
       "raw_movement_from_to": 4,
-      "raw_toward_only": 46,
+      "raw_toward_only": 47,
       "kept_points": 11,
       "kept_lines": 0,
-      "dropped_geocode": 97,
-      "dropped_far": 11,
+      "dropped_geocode": 96,
+      "dropped_far": 12,
       "dropped_long_lines": 1,
       "dropped_inferred_len": 0
     }
