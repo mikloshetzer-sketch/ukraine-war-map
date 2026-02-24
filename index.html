@@ -1336,38 +1336,6 @@
     const lon = target[0];
     const lat = target[1];
 
-      // target centroid:
-  const target = d > 0 ? gained : lost;
-  if(!target || !Array.isArray(target) || target.length !== 2) return;
-
-  let lon = target[0];
-  let lat = target[1];
-
-  // 1) Biztonsági ellenőrzés: ha felcserélt lat/lon jönne
-  // (lat sose lehet > 90 abs, lon > 180 abs)
-  if(Math.abs(lat) > 90 || Math.abs(lon) > 180){
-    // próbáljuk megcserélni
-    const tmp = lat; lat = lon; lon = tmp;
-  }
-
-  // 2) SNAP a frontra: a centroid helyett a legközelebbi frontpontot használjuk
-  if(frontDensified && frontDensified.length){
-    let best = null;
-    let bestD = Infinity;
-    const pt = { lat, lng: lon };
-
-    for(const fp of frontDensified){
-      const dd = haversineKm(pt, fp);
-      if(dd < bestD){ bestD = dd; best = fp; }
-    }
-
-    // ha van értelmes találat, tegyük a kört a frontra
-    // (küszöb: ha 200 km-nél messzebb van a fronttól, akkor inkább hagyjuk centroidon)
-    if(best && bestD <= 200){
-      lat = best.lat;
-      lon = best.lng;
-    }
-  }
 
     const circle = L.circle([lat, lon], {
       radius: kmRadius * 1000,
