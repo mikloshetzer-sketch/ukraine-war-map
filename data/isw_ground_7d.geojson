@@ -12,7 +12,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Sumy",
         "cc": "ua",
@@ -26,13 +26,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8436285,
-          49.4505833
+          36.8437576,
+          49.450518
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -52,7 +52,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
@@ -72,7 +72,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Hnativka",
         "cc": "ua",
@@ -86,13 +86,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.954927,
-          48.6265363
+          37.9546958,
+          48.626562
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "February",
         "cc": "ua",
@@ -112,7 +112,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
@@ -132,7 +132,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Belgorod Oblast",
         "cc": "ru",
@@ -152,7 +152,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
@@ -172,7 +172,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
@@ -192,7 +192,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -212,7 +212,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Vovchansk",
         "cc": "ua",
@@ -232,7 +232,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
@@ -252,7 +252,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -272,7 +272,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
@@ -292,7 +292,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -312,7 +312,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
@@ -332,7 +332,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -352,7 +352,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -372,7 +372,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
@@ -398,7 +398,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground movement (inferred from frontline)",
         "from": "Frontline (nearest)",
         "to": "Hryshyne",
@@ -421,7 +421,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -441,7 +441,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
@@ -461,7 +461,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
@@ -481,7 +481,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -501,7 +501,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
@@ -521,7 +521,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -535,58 +535,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8436285,
-          49.4505833
+          36.8437576,
+          49.450518
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
         "distance_to_front_km": 58.3,
         "snippet": "This incident is very likely a continuation of a Russian military intelligence effort to ship incendiary packages throughout Europe that Lithuanian authorities reported in September 2025.[22] Polish Prime Minister Donald Tusk and Minister of Internal Affairs Tomasz Siemoniak announced on October 21 that the Polish Internal Security Agency detained eight other persons suspected ",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.3855052,
-          50.0597043
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-28",
-        "title": "ISW ground operation",
-        "place": "Velykyi Burluk",
-        "cc": "ua",
-        "distance_to_front_km": 14.8,
-        "snippet": "Russian forces advanced near Velykyi Burluk, Kupyansk, Pokrovsk, and Velykomykhailivka and in eastern Zaporizhia Oblast",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.3312,
-          48.43803
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-28",
-        "title": "ISW ground operation",
-        "place": "Pankivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.5,
-        "snippet": "Russian forces conducted an at least reinforced company-sized mechanized assault near Pankivka (east of Dobropillya) around October 6, during which Ukrainian forces damaged and destroyed four tanks and eight armored vehicles.[3] Russian forces conducted a reinforced battalion-sized mechanized assault south of Shakhove and Volodymyrivka (both immediately northeast of Pankivka) o",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -601,7 +561,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
@@ -615,13 +575,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8436285,
-          49.4505833
+          36.8437576,
+          49.450518
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -641,32 +601,12 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
         "distance_to_front_km": 9.0,
         "snippet": "Russian forces recently advanced near Lyman, Siversk, Pokrovsk, and Novopavlivka, and in northern Kharkiv Oblast, eastern Zaporizhia Oblast, and western Zaporizhia Oblast",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.3855052,
-          50.0597043
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-28",
-        "title": "ISW ground operation",
-        "place": "Velykyi Burluk",
-        "cc": "ua",
-        "distance_to_front_km": 14.8,
-        "snippet": "Russian forces advanced near Velykyi Burluk, Lyman, Siversk, Novopavlivka, and Velykomykhailivka and in the Kostyantynivka-Druzhkivka tactical area",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -681,7 +621,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -701,7 +641,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -721,7 +661,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
@@ -741,7 +681,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
@@ -761,7 +701,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
@@ -781,7 +721,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
@@ -801,7 +741,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -815,13 +755,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.954927,
-          48.6265363
+          37.9546958,
+          48.626562
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "February",
         "cc": "ua",
@@ -841,7 +781,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -861,7 +801,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
@@ -875,13 +815,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8436285,
-          49.4505833
+          36.8437576,
+          49.450518
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -901,7 +841,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -921,7 +861,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
@@ -936,18 +876,18 @@
         "type": "LineString",
         "coordinates": [
           [
-            37.89363502419911,
+            37.8936350241991,
             48.6921435284461
           ],
           [
-            37.954927,
-            48.6265363
+            37.9546958,
+            48.626562
           ]
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground movement (inferred from frontline)",
         "from": "Frontline (nearest)",
         "to": "February",
@@ -964,33 +904,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.3855052,
-          50.0597043
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-28",
-        "title": "ISW ground operation",
-        "place": "Velykyi Burluk",
-        "cc": "ua",
-        "distance_to_front_km": 14.8,
-        "snippet": "Ukrainian forces recently advanced near Velykyi Burluk",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           36.2584156,
           50.0121732
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
@@ -1010,7 +930,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Lyman",
         "cc": "ua",
@@ -1030,7 +950,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -1050,7 +970,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -1070,7 +990,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -1090,7 +1010,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -1110,7 +1030,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -1124,13 +1044,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8436285,
-          49.4505833
+          36.8437576,
+          49.450518
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -1150,7 +1070,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -1170,7 +1090,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -1190,7 +1110,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
@@ -1210,7 +1130,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
@@ -1230,7 +1150,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -1250,32 +1170,12 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
         "distance_to_front_km": 1.0,
         "snippet": "Ukrainian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.3855052,
-          50.0597043
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-28",
-        "title": "ISW ground operation",
-        "place": "Velykyi Burluk",
-        "cc": "ua",
-        "distance_to_front_km": 14.8,
-        "snippet": "Russian forces recently advanced near Velykyi Burluk, Kupyansk, Lyman, Siversk, Novopavlivka in the Kostyantynivka-Druzhkivka tactical area",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     },
@@ -1290,7 +1190,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Vovchansk",
         "cc": "ua",
@@ -1310,7 +1210,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-02-28",
+        "date": "2026-03-01",
         "title": "ISW ground operation",
         "place": "Pokrovsk",
         "cc": "ua",
@@ -1324,8 +1224,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.954927,
-          48.6265363
+          37.9546958,
+          48.626562
         ]
       },
       "properties": {
@@ -1418,26 +1318,6 @@
         "snippet": "Unconfirmed claims: A Russian milblogger claimed that Russian forces advanced east of Novopavlivka.[70] Russian forces attacked southwest of Novopavlivka near Filiya on February 22 and 23.[71] Ukrainian forces recently advanced in the Oleksandrivka direction",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-february-23-2026/"
       }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.22614,
-          48.24869
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-02-21",
-        "title": "ISW ground operation",
-        "place": "Novopavlivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "A Kremlin-affiliated Russian milblogger published a map on February 20 acknowledging that Ukrainian forces advanced east of Novopavlivka.[3] ISW has not observed visual evidence in 2026 to assess that Russian forces maintain positions in northern Novopavlivka, and geolocated footage published on February 20 shows Ukrainian forces operating in eastern Novopavlivka.[4] Geolocated",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-february-21-2026/"
-      }
     }
   ],
   "properties": {
@@ -1452,13 +1332,13 @@
       "max_inferred_km": 70.0
     },
     "stats": {
-      "raw_total": 2675,
-      "raw_movement_from_to": 71,
-      "raw_toward_only": 1036,
-      "kept_points": 69,
+      "raw_total": 2691,
+      "raw_movement_from_to": 72,
+      "raw_toward_only": 1044,
+      "kept_points": 63,
       "kept_lines": 2,
-      "dropped_geocode": 2501,
-      "dropped_far": 99,
+      "dropped_geocode": 2550,
+      "dropped_far": 72,
       "dropped_long_lines": 1,
       "dropped_inferred_len": 3
     }
