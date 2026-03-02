@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-03-01T05:45:02.968376",
-  "events_total_raw": 6155,
-  "events_7d_raw": 2691,
-  "events_30d_raw": 3578,
+  "generated_utc": "2026-03-02T05:41:15.261627",
+  "events_total_raw": 6199,
+  "events_7d_raw": 2701,
+  "events_30d_raw": 3590,
   "latest_stats": {
     "raw_total": 120,
     "raw_movement_from_to": 4,
@@ -15,23 +15,23 @@
     "dropped_inferred_len": 0
   },
   "d7_stats": {
-    "raw_total": 2691,
-    "raw_movement_from_to": 72,
-    "raw_toward_only": 1044,
+    "raw_total": 2701,
+    "raw_movement_from_to": 71,
+    "raw_toward_only": 1050,
     "kept_points": 63,
     "kept_lines": 2,
-    "dropped_geocode": 2550,
+    "dropped_geocode": 2560,
     "dropped_far": 72,
     "dropped_long_lines": 1,
     "dropped_inferred_len": 3
   },
   "d30_stats": {
-    "raw_total": 3578,
-    "raw_movement_from_to": 89,
-    "raw_toward_only": 1420,
-    "kept_points": 72,
+    "raw_total": 3590,
+    "raw_movement_from_to": 90,
+    "raw_toward_only": 1423,
+    "kept_points": 71,
     "kept_lines": 9,
-    "dropped_geocode": 3413,
+    "dropped_geocode": 3426,
     "dropped_far": 80,
     "dropped_long_lines": 1,
     "dropped_inferred_len": 3
