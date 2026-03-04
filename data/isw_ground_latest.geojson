@@ -12,7 +12,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-03",
+        "date": "2026-03-04",
         "title": "ISW ground operation",
         "place": "Sumy",
         "cc": "ua",
@@ -32,7 +32,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-03",
+        "date": "2026-03-04",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -52,7 +52,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-03",
+        "date": "2026-03-04",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
@@ -72,7 +72,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-03",
+        "date": "2026-03-04",
         "title": "ISW ground operation",
         "place": "Hnativka",
         "cc": "ua",
@@ -92,7 +92,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-03",
+        "date": "2026-03-04",
         "title": "ISW ground operation",
         "place": "February",
         "cc": "ua",
@@ -112,52 +112,12 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-03",
+        "date": "2026-03-04",
         "title": "ISW ground operation",
         "place": "northern Kharkiv Oblast",
         "cc": "ua",
         "distance_to_front_km": 26.4,
         "snippet": "Russian forces advanced in northern Kharkiv Oblast, the Slovyansk-Lyman direction, the Kostyantynivka tactical area, and the Pokrovsk and Novopavlivka directions",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.5837615,
-          50.7080119
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-03",
-        "title": "ISW ground operation",
-        "place": "Belgorod Oblast",
-        "cc": "ru",
-        "distance_to_front_km": 52.9,
-        "snippet": "A Russian milblogger stated on November 26 that Russian reserve units in Belgorod Oblast, including volunteer self-defense detachments, BARS (Russian Combat Army Reserve), and Orlan anti-drone units, recently received howitzers and other artillery systems, electronic warfare (EW) systems, thermobaric weapons, and all-terrain vehicles.[30] Reserve territorial defense units assig",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.8168012,
-          48.9801314
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-03",
-        "title": "ISW ground operation",
-        "place": "Lyman",
-        "cc": "ua",
-        "distance_to_front_km": 9.0,
-        "snippet": "Russian forces recently advanced near Lyman",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -172,52 +132,12 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-03",
+        "date": "2026-03-04",
         "title": "ISW ground operation",
         "place": "Novopavlivka",
         "cc": "ua",
         "distance_to_front_km": 1.0,
         "snippet": "Russian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.1772482,
-          48.2771086
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-03",
-        "title": "ISW ground operation",
-        "place": "Pokrovsk",
-        "cc": "ua",
-        "distance_to_front_km": 1.4,
-        "snippet": "A Ukrainian military source noted on November 24 that effective Ukrainian drone interdiction of Russian GLOCs has cut logistics to 90 percent of Russian assault groups within Pokrovsk, slowing the pace of the Russian advance within the town.[24] The Ukrainian military source added that Russian forces within Pokrovsk, who number over 500, are relatively uncoordinated and sometim",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.9370028,
-          50.2928843
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-03",
-        "title": "ISW ground operation",
-        "place": "Vovchansk",
-        "cc": "ua",
-        "distance_to_front_km": 1.4,
-        "snippet": "Russian forces recently advanced near Vovchansk, Velykyi Burluk, Siversk, Pokrovsk, Novopavlivka, Velykomykhailivka, and Hulyaipole and in the Kostyantynivka-Druzhkivka tactical area",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     }
@@ -236,11 +156,11 @@
     "stats": {
       "raw_total": 120,
       "raw_movement_from_to": 4,
-      "raw_toward_only": 47,
-      "kept_points": 11,
+      "raw_toward_only": 48,
+      "kept_points": 7,
       "kept_lines": 0,
-      "dropped_geocode": 96,
-      "dropped_far": 12,
+      "dropped_geocode": 102,
+      "dropped_far": 10,
       "dropped_long_lines": 1,
       "dropped_inferred_len": 0
     }
