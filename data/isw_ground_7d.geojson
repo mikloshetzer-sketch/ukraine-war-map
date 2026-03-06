@@ -12,7 +12,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
         "place": "Sumy",
         "cc": "ua",
@@ -32,7 +32,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -46,73 +46,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.22614,
-          48.24869
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Novopavlivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "Ukrainian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.22614,
-          48.24869
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Novopavlivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "Russian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.22614,
-          48.24869
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Novopavlivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "Ukrainian forces recently advanced in Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           36.8437576,
           49.450518
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -126,18 +66,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.8168012,
-          48.9801314
+          37.3312,
+          48.43803
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
-        "place": "Lyman",
+        "place": "Pankivka",
         "cc": "ua",
-        "distance_to_front_km": 9.0,
-        "snippet": "&nbsp;Russian forces recently advanced near Lyman, Siversk, Pokrovsk, and Velykomykhailivka",
+        "distance_to_front_km": 1.5,
+        "snippet": "Russian forces conducted an at least reinforced company-sized mechanized assault near Pankivka (east of Dobropillya) around October 6, during which Ukrainian forces damaged and destroyed four tanks and eight armored vehicles.[3] Russian forces conducted a reinforced battalion-sized mechanized assault south of Shakhove and Volodymyrivka (both immediately northeast of Pankivka) o",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
@@ -152,7 +92,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -166,19 +106,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.8168012,
-          48.9801314
+          37.6141992,
+          49.7132963
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
-        "place": "Lyman",
+        "place": "Kupyansk",
         "cc": "ua",
-        "distance_to_front_km": 9.0,
-        "snippet": "Russian forces recently advanced near Lyman, Siversk, Pokrovsk, and Novopavlivka, and in northern Kharkiv Oblast, eastern Zaporizhia Oblast, and western Zaporizhia Oblast",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+        "distance_to_front_km": 1.9,
+        "snippet": "Ukrainian forces recently advanced near Kupyansk, Novopavlivka, and Oleksandrivka",
+        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     },
     {
@@ -186,19 +126,49 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.3855052,
-          50.0597043
+          34.8217564,
+          50.9308432
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
-        "place": "Velykyi Burluk",
+        "place": "Sumy Oblast and",
         "cc": "ua",
-        "distance_to_front_km": 14.8,
-        "snippet": "Russian forces advanced near Velykyi Burluk, Lyman, Siversk, Novopavlivka, and Velykomykhailivka and in the Kostyantynivka-Druzhkivka tactical area",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+        "distance_to_front_km": 20.3,
+        "snippet": "Rudskoy claimed that elements of the Northern Grouping of Forces have seized 26 settlements in Sumy Oblast and 15 settlements and the town of Vovchansk in northern Kharkiv Oblast as of February 20 and that Russian forces are \u201cestablishing a security zone\u201d along the Ukraine-Russia international border",
+        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.6141992,
+            49.7132963
+          ],
+          [
+            37.8168012,
+            48.9801314
+          ]
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "date": "2026-03-06",
+        "title": "ISW ground movement",
+        "from": "Kupyansk",
+        "to": "Lyman)",
+        "from_cc": "ua",
+        "to_cc": "ua",
+        "distance_to_front_km_min": 1.9,
+        "length_km": 82.8,
+        "inferred": false,
+        "snippet": "ISW has only collected evidence to assess that Russian forces seized 17 settlements in the Western Grouping of Forces\u2019 area of responsibility (AoR) (roughly from Kupyansk to Lyman)",
+        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     },
     {
@@ -206,19 +176,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.22614,
-          48.24869
+          32.7425983,
+          46.6830539
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
-        "place": "Novopavlivka",
+        "place": "November",
         "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "Ukrainian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+        "distance_to_front_km": 2.1,
+        "snippet": "The far-right Russian paramilitary unit Rusich Sabotage Assault Reconnaissance Group also explicitly trumpeted imagery of executions of Ukrainian POWs and offered cash rewards for imagery of such executions in November 2025.[26] Russian forces\u2019 circulation and amplification of execution footage on social media further legitimizes violence within the Russian military narrative, ",
+        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     },
     {
@@ -226,78 +196,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.8168012,
-          48.9801314
+          37.6141992,
+          49.7132963
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
-        "place": "Lyman",
+        "place": "Kupyansk",
         "cc": "ua",
-        "distance_to_front_km": 9.0,
-        "snippet": "Russian forces recently advanced near Lyman, Velykomykhailivka, and in the Kostyantynivka-Druzhkivka tactical area",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.22614,
-          48.24869
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Novopavlivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "Russian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.22614,
-          48.24869
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Novopavlivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "Ukrainian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-3/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.22614,
-          48.24869
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Novopavlivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "A Kremlin-affiliated Russian milblogger published a map on February 20 acknowledging that Ukrainian forces advanced east of Novopavlivka.[3] ISW has not observed visual evidence in 2026 to assess that Russian forces maintain positions in northern Novopavlivka, and geolocated footage published on February 20 shows Ukrainian forces operating in eastern Novopavlivka.[4] Geolocated",
+        "distance_to_front_km": 1.9,
+        "snippet": "Ukrainian forces recently advanced near Kupyansk",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     },
@@ -312,7 +222,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -326,53 +236,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.3855052,
-          50.0597043
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Velykyi Burluk",
-        "cc": "ua",
-        "distance_to_front_km": 14.8,
-        "snippet": "Ukrainian forces recently advanced near Velykyi Burluk",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Slovyansk",
-        "cc": "ua",
-        "distance_to_front_km": 24.3,
-        "snippet": "Russian forces recently advanced near Slovyansk, Pokrovsk, and Hulyaipole",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           32.7425983,
           46.6830539
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
         "place": "November",
         "cc": "ua",
@@ -386,98 +256,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.6058241,
-          48.8522691
+          37.6141992,
+          49.7132963
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
-        "place": "Slovyansk",
+        "place": "Kupyansk",
         "cc": "ua",
-        "distance_to_front_km": 24.3,
-        "snippet": "Ukrainian forces recently advanced near Slovyansk",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.8168012,
-          48.9801314
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Lyman",
-        "cc": "ua",
-        "distance_to_front_km": 9.0,
-        "snippet": "Russian forces recently advanced near Lyman, in the Kostyantynivka-Druzhkivka tactical area, and in western Zaporizhia Oblast",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Slovyansk",
-        "cc": "ua",
-        "distance_to_front_km": 24.3,
-        "snippet": "Russian forces recently advanced near Slovyansk, in the Kostyantynivka-Druzhkivka tactical area, and near Pokrovsk",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Slovyansk",
-        "cc": "ua",
-        "distance_to_front_km": 24.3,
-        "snippet": "Russian forces recently advanced near Slovyansk, in the Dobropillya tactical area, and near Pokrovsk and Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Slovyansk",
-        "cc": "ua",
-        "distance_to_front_km": 24.3,
-        "snippet": "Russian forces recently advanced near Slovyansk, Pokrovsk, and Hulyaipole",
+        "distance_to_front_km": 1.9,
+        "snippet": "Ukrainian forces recently advanced near Kupyansk, Slovyansk, and in the Kostyantynivka-Druzhkivka tactical area",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     },
@@ -492,7 +282,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
         "place": "November",
         "cc": "ua",
@@ -506,18 +296,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.6127304,
-          49.711199
+          37.6141992,
+          49.7132963
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
-        "place": "the Kupyansk",
+        "place": "Kupyansk",
         "cc": "ua",
-        "distance_to_front_km": 2.1,
-        "snippet": "Ukrainian forces recently advanced in the Kupyansk direction",
+        "distance_to_front_km": 1.9,
+        "snippet": "Ukrainian forces recently advanced near Kupyansk",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     },
@@ -526,47 +316,58 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.7425983,
-          46.6830539
+          37.6141992,
+          49.7132963
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
-        "place": "November at",
+        "place": "Kupyansk",
         "cc": "ua",
-        "distance_to_front_km": 2.1,
-        "snippet": "The Russian rate of advance was highest in November at 20.99 square kilometers per day, but this high came after one of the slowest months in 2025 \u2014 8.8 square kilometers per day in October \u2014 and subsequently slowed to 15 square kilometers per day in December",
+        "distance_to_front_km": 1.9,
+        "snippet": "Ukrainian forces recently advanced near Kupyansk, and Russian forces recently advanced near Hulyaipole",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     },
     {
       "type": "Feature",
       "geometry": {
-        "type": "LineString",
+        "type": "Point",
         "coordinates": [
-          [
-            37.81227948766671,
-            48.681472126906094
-          ],
-          [
-            37.6058241,
-            48.8522691
-          ]
+          37.6141992,
+          49.7132963
         ]
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground movement (inferred from frontline)",
-        "from": "Frontline (nearest)",
-        "to": "Slovyansk",
-        "to_cc": "ua",
-        "distance_to_front_km_min": 24.3,
-        "length_km": 24.3,
-        "inferred": true,
-        "snippet": "The prominent milblogger involved in Russian crowdfunding efforts claimed that Ukrainian successes in the Kupyansk direction will prevent Russian forces from exploiting recent Russian advances near Lyman and Siversk, thus inhibiting Russia&#8217;s offensive toward Slovyansk.[26] The milblogger added that Russian forces will need to cross the Siverskyi Donets River in the Lyman ",
+        "date": "2026-03-06",
+        "title": "ISW ground operation",
+        "place": "Kupyansk",
+        "cc": "ua",
+        "distance_to_front_km": 1.9,
+        "snippet": "Russian forces recently advanced near Kupyansk, Siversk, Pokrovsk, and in western Zaporizhia Oblast",
+        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1338908,
+          47.8326667
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "date": "2026-03-06",
+        "title": "ISW ground operation",
+        "place": "western Zaporizhia Oblast",
+        "cc": "ua",
+        "distance_to_front_km": 32.4,
+        "snippet": "Ukrainian forces recently advanced in western Zaporizhia Oblast",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     },
@@ -581,113 +382,13 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-05",
+        "date": "2026-03-06",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
         "distance_to_front_km": 58.3,
         "snippet": "Ukrainian forces began counteroffensive operations in September 2025 after relatively rapid Russian advances in the Kupyansk direction and infiltrations into Kupyansk itself",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "the Kupyansk",
-        "cc": "ua",
-        "distance_to_front_km": 2.1,
-        "snippet": "read the full DEC 13 report Russian Offensive Campaign Assessment, December 12, 2025 Toplines Ukrainian forces recently liberated territory including part of the city of Kupyansk in a tactical counterattack in the Kupyansk direction",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.22614,
-          48.24869
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Novopavlivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "Ukrainian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.3855052,
-          50.0597043
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-05",
-        "title": "ISW ground operation",
-        "place": "Velykyi Burluk",
-        "cc": "ua",
-        "distance_to_front_km": 14.8,
-        "snippet": "Russian forces recently advanced near Velykyi Burluk, Kupyansk, Lyman, Siversk, Novopavlivka in the Kostyantynivka-Druzhkivka tactical area",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.22614,
-          48.24869
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-03",
-        "title": "ISW ground operation",
-        "place": "Novopavlivka",
-        "cc": "ua",
-        "distance_to_front_km": 1.0,
-        "snippet": "Ukrainian forces recently advanced near Novopavlivka",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-3-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "ISW",
-        "date": "2026-03-03",
-        "title": "ISW ground operation",
-        "place": "Slovyansk",
-        "cc": "ua",
-        "distance_to_front_km": 24.3,
-        "snippet": "Russian forces recently advanced near Slovyansk",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-3-2026/"
       }
     }
   ],
@@ -703,13 +404,13 @@
       "max_inferred_km": 70.0
     },
     "stats": {
-      "raw_total": 2714,
-      "raw_movement_from_to": 74,
-      "raw_toward_only": 1061,
-      "kept_points": 33,
+      "raw_total": 2701,
+      "raw_movement_from_to": 73,
+      "raw_toward_only": 1051,
+      "kept_points": 18,
       "kept_lines": 1,
-      "dropped_geocode": 2607,
-      "dropped_far": 73,
+      "dropped_geocode": 2642,
+      "dropped_far": 40,
       "dropped_long_lines": 0,
       "dropped_inferred_len": 0
     }
