@@ -12,7 +12,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-08",
+        "date": "2026-03-09",
         "title": "ISW ground operation",
         "place": "Sumy",
         "cc": "ua",
@@ -32,12 +32,52 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-08",
+        "date": "2026-03-09",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
         "distance_to_front_km": 58.3,
         "snippet": "Ukrainian volunteer Serhiy Sternenko reported on November 30 that the Ukrainian forces successfully used the domestically produced Sting interceptor drone to shoot down several Geran-3 jet-powered long-range strike drones for the first time on the night of November 29 to 30.[38] Geran-3 drones have a shorter flight range than typical Geran drones but can reach higher speeds and",
+        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5837615,
+          50.7080119
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "date": "2026-03-09",
+        "title": "ISW ground operation",
+        "place": "Belgorod Oblast",
+        "cc": "ru",
+        "distance_to_front_km": 52.9,
+        "snippet": "A Russian milblogger stated on November 26 that Russian reserve units in Belgorod Oblast, including volunteer self-defense detachments, BARS (Russian Combat Army Reserve), and Orlan anti-drone units, recently received howitzers and other artillery systems, electronic warfare (EW) systems, thermobaric weapons, and all-terrain vehicles.[30] Reserve territorial defense units assig",
+        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8168012,
+          48.9801314
+        ]
+      },
+      "properties": {
+        "source": "ISW",
+        "date": "2026-03-09",
+        "title": "ISW ground operation",
+        "place": "Lyman",
+        "cc": "ua",
+        "distance_to_front_km": 9.0,
+        "snippet": "Russian forces recently advanced near Lyman",
         "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     }
@@ -56,11 +96,11 @@
     "stats": {
       "raw_total": 120,
       "raw_movement_from_to": 4,
-      "raw_toward_only": 46,
-      "kept_points": 2,
+      "raw_toward_only": 47,
+      "kept_points": 4,
       "kept_lines": 0,
-      "dropped_geocode": 113,
-      "dropped_far": 5,
+      "dropped_geocode": 109,
+      "dropped_far": 7,
       "dropped_long_lines": 0,
       "dropped_inferred_len": 0
     }
