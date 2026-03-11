@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-03-11T16:55:58+00:00",
+  "count": 21,
+  "by_event_type": {
+    "missile_strike": 4,
+    "drone_attack": 11,
+    "artillery": 2,
+    "ground_clash": 3,
+    "airstrike": 1
+  },
+  "by_source": {
+    "ukrainenow": 9,
+    "deepstateua": 9,
+    "generalstaffzsu": 3
+  },
+  "by_confidence": {
+    "medium": 9,
+    "high": 12
+  },
+  "top_sectors": [
+    [
+      "pokrovsk",
+      2
+    ],
+    [
+      "lyman",
+      1
+    ],
+    [
+      "orikhiv",
+      1
+    ],
+    [
+      "siversk",
+      1
+    ],
+    [
+      "kherson",
+      1
+    ]
+  ]
+}
