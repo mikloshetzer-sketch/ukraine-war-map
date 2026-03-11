@@ -2,7 +2,7 @@ name: Daily WordPress Post
 
 on:
   schedule:
-    - cron: "10 5 * * *"   # minden nap 05:10 UTC
+    - cron: "10 5 * * *"   # every day at 05:10 UTC
   workflow_dispatch:
 
 jobs:
@@ -21,37 +21,44 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests markdown
+          pip install requests
 
-      # --- napi brief generálása ---
       - name: Generate daily brief
         run: |
           python scripts/generate_daily_brief.py
 
-      # --- token ellenőrzés (biztonságos debug) ---
+      - name: Verify generated files
+        run: |
+          test -f data/brief_daily.json
+          test -f data/brief_daily.txt
+          echo "brief_daily.json and brief_daily.txt exist"
+
       - name: Token sanity (safe)
         env:
           WPCOM_ACCESS_TOKEN: ${{ secrets.WPCOM_ACCESS_TOKEN }}
         run: |
           python - <<'PY'
-          import os, hashlib
-          t = os.getenv("WPCOM_ACCESS_TOKEN", "")
-          h = hashlib.sha256(t.encode("utf-8")).hexdigest()
-          print("token_len =", len(t))
-          print("token_sha256_prefix =", h[:12])
+          import os
+          import hashlib
+
+          token = os.getenv("WPCOM_ACCESS_TOKEN", "")
+          digest = hashlib.sha256(token.encode("utf-8")).hexdigest()
+
+          print("token_len =", len(token))
+          print("token_strip_len =", len(token.strip()))
+          print("token_sha256_prefix =", digest[:12])
           PY
 
-      # --- token validálás ---
       - name: Verify WordPress.com token
         env:
           WPCOM_ACCESS_TOKEN: ${{ secrets.WPCOM_ACCESS_TOKEN }}
         run: |
           set -euo pipefail
-          curl -sS -H "Authorization: Bearer ${WPCOM_ACCESS_TOKEN}" \
+          curl -sS \
+            -H "Authorization: Bearer ${WPCOM_ACCESS_TOKEN}" \
             "https://public-api.wordpress.com/oauth2/token-info" | python -m json.tool
 
-      # --- draft poszt publikálása ---
-      - name: Publish daily brief
+      - name: Publish daily brief to WordPress
         env:
           WPCOM_ACCESS_TOKEN: ${{ secrets.WPCOM_ACCESS_TOKEN }}
           WPCOM_SITE: ${{ secrets.WPCOM_SITE }}
