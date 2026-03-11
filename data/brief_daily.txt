@@ -1,0 +1,26 @@
+Napi hadihelyzeti brief – 2026-03-11
+
+Az adott napi összkép alapján a frontvonal továbbra is mozgásban van. A DeepState összesítés szerint a megszállt terület becsült nagysága 116 613.84 km², ami 2026-03-10-hez képest +7.99 km² változást jelent (orosz területszerzés).
+
+Fő számok:
+- Megszállt terület becslése: 116 613.84 km².
+- Napi változás: +7.99 km² (orosz területszerzés).
+- Heti változás: +51.1 km² 2026-03-04-hez viszonyítva (orosz területszerzés).
+- ISW ground napi nyers események: 120.
+- ISW ground megtartott térképezhető elemek: 2 pont, 0 vonal.
+- ISW UAV index: összesen 2563 esemény, ebből 1808 az elmúlt 7 napban.
+
+Fő események:
+- A napi területi mérleg alapján a frontvonal elmozdulása továbbra is mérhető, még ha nem is nagy léptékű.
+- A földi események száma önmagában magasabb, mint a végül térképre tehető pontoké, ami arra utal, hogy sok jelentés csak részben lokalizálható vagy túl bizonytalan a vizualizációhoz.
+- A drónaktivitás továbbra is a napi helyzetkép egyik fő alakító tényezője, mert a 7 napos UAV-eseményszám tartósan magas terhelést jelez.
+- A legutóbbi nyereség centroidja a jelenlegi adatfájl szerint kb. hosszúság 36.66334, szélesség 48.02486.
+- A legutóbbi veszteség centroidja kb. hosszúság 37.78408, szélesség 48.59607.
+
+Mi határozta meg az előző napot:
+- A napi területi mérleg pozitív az orosz fél számára (+7.99 km²), ezért a brief fókusza a frontvonal lassú eltolódása.
+- A heti trend továbbra is orosz előnyt mutat (+51.1 km²), vagyis az előző nap eseményeit nem elszigetelt incidensként, hanem folytatódó nyomásként érdemes értelmezni.
+- A földi aktivitás ISW-alapú napi szintje alacsony: a 120 nyers említésből 2 pont és 0 vonal maradt térképezhető formában.
+- A drón- és UAV-nyomás nagyon magas: az index 1808 eseményt jelez az elmúlt 7 napra, ami a front mögötti és mélységi nyomás fenntartását valószínűsíti.
+
+Megjegyzés: ez az első verzió még szám- és mintázatalapú brief. A 'miért történt' típusú okfejtés itt még közvetett mutatókból készül, mert a jelenlegi inputfájlok nem tartalmaznak egységes, név szerinti frontszakasz- vagy helyszínmagyarázatot.
