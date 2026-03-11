@@ -1,6 +1,6 @@
-Napi hadihelyzeti brief – 2026-03-11
+Napi hadihelyzeti brief – Folyamatos orosz nyomás a Velyka Novosilka szektorban
 
-Az adott napi összkép alapján a frontvonal továbbra is mozgásban van. A DeepState összesítés szerint a megszállt terület becsült nagysága 116 613.84 km², ami 2026-03-10-hez képest +7.99 km² változást jelent (orosz területszerzés).
+Az adott napi összkép alapján a harctéri dinamika továbbra is az orosz fél fokozatos nyomását tükrözi, különösen a Velyka Novosilka szektor térségében. A DeepState összesítés szerint a megszállt terület becsült nagysága 116 613.84 km², ami 2026-03-10-hez képest +7.99 km² változást jelent (orosz területszerzés). A heti mérleg összességében +51.1 km² elmozdulást mutat, ami arra utal, hogy az előző nap eseményei nem önmagukban, hanem egy szélesebb, folyamatos műveleti trend részeként értelmezhetők.
 
 Fő számok:
 - Megszállt terület becslése: 116 613.84 km².
@@ -11,16 +11,20 @@ Fő számok:
 - ISW UAV index: összesen 2563 esemény, ebből 1808 az elmúlt 7 napban.
 
 Fő események:
-- A napi területi mérleg alapján a frontvonal elmozdulása továbbra is mérhető, még ha nem is nagy léptékű.
-- A földi események száma önmagában magasabb, mint a végül térképre tehető pontoké, ami arra utal, hogy sok jelentés csak részben lokalizálható vagy túl bizonytalan a vizualizációhoz.
-- A drónaktivitás továbbra is a napi helyzetkép egyik fő alakító tényezője, mert a 7 napos UAV-eseményszám tartósan magas terhelést jelez.
-- A legutóbbi nyereség centroidja a jelenlegi adatfájl szerint kb. hosszúság 36.66334, szélesség 48.02486.
-- A legutóbbi veszteség centroidja kb. hosszúság 37.78408, szélesség 48.59607.
+- A legutóbbi megerősített területi nyereség a Velyka Novosilka szektorhoz köthető, ami azt jelzi, hogy a napi változás nem egyenletesen oszlik el a teljes fronton, hanem meghatározott súlypontok köré koncentrálódik.
+- A rendelkezésre álló adat külön veszteségi pontot is jelez a Bakhmut szektorban, ami arra utal, hogy a frontvonal egyes részein kétirányú lokális korrekciók is előfordulhatnak.
+- A földi műveleti aktivitás és a ténylegesen térképezhető elemek közötti különbség jelentős: 120 nyers említésből csak 2 pont és 0 vonal maradt meg. Ez inkább szétszórt, kis léptékű harctevékenységre utal, mintsem nagy, gyors gépesített áttörésre.
+- A UAV-aktivitás továbbra is a napi helyzetkép egyik fő alakító tényezője: az elmúlt 7 napban 1808 esemény szerepel az indexben, ami tartós felderítési és csapásmérő terhelést valószínűsít.
+- A legutóbbi nyereségi centroid koordinátája a jelenlegi adatfájl szerint kb. hosszúság 36.66334, szélesség 48.02486.
+- A legutóbbi veszteségi centroid koordinátája kb. hosszúság 37.78408, szélesség 48.59607.
 
 Mi határozta meg az előző napot:
-- A napi területi mérleg pozitív az orosz fél számára (+7.99 km²), ezért a brief fókusza a frontvonal lassú eltolódása.
-- A heti trend továbbra is orosz előnyt mutat (+51.1 km²), vagyis az előző nap eseményeit nem elszigetelt incidensként, hanem folytatódó nyomásként érdemes értelmezni.
-- A földi aktivitás ISW-alapú napi szintje alacsony: a 120 nyers említésből 2 pont és 0 vonal maradt térképezhető formában.
-- A drón- és UAV-nyomás nagyon magas: az index 1808 eseményt jelez az elmúlt 7 napra, ami a front mögötti és mélységi nyomás fenntartását valószínűsíti.
+- A napi területi mérleg pozitív az orosz fél számára (+7.99 km²), ezért a fő hangsúly a lassú, folyamatos frontnyomáson van.
+- A heti trend továbbra is orosz előnyt mutat (+51.1 km²), ami arra utal, hogy az előző nap nem elszigetelt esemény, hanem egy folytatódó nyomás része.
+- A földi aktivitás ISW-alapon alacsony: a 120 nyers említésből 2 pont és 0 vonal maradt térképezhető formában.
+- A drón- és UAV-nyomás nagyon magas: az index 1808 eseményt jelez az elmúlt 7 napban, ami tartós felderítési és csapásmérő nyomást valószínűsít.
 
-Megjegyzés: ez az első verzió még szám- és mintázatalapú brief. A 'miért történt' típusú okfejtés itt még közvetett mutatókból készül, mert a jelenlegi inputfájlok nem tartalmaznak egységes, név szerinti frontszakasz- vagy helyszínmagyarázatot.
+Értékelés:
+Összességében az előző napot a Velyka Novosilka szektor körüli fokozatos frontnyomás, a magas UAV-aktivitás és a korlátozott, de mérhető területi elmozdulás határozta meg. Ez a mintázat inkább felőrlő jellegű műveleti logikára, mintsem gyors manőverháborús változásra utal.
+
+Megjegyzés: ez a brief továbbra is strukturált adatokból készül. A frontszektor-azonosítás centroid alapú közelítés, vagyis jó operatív tájékozódási pont, de nem helyettesíti a manuális térképi ellenőrzést és a név szerinti településszintű elemzést.
