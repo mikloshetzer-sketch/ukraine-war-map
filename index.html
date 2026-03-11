@@ -491,8 +491,9 @@
 
             <label class="chip"><input id="chkDroneHi" type="checkbox" checked> Kiemelt drón</label>
             <label class="chip"><input id="chkGroundHi" type="checkbox" checked> Kiemelt földi</label>
+            <label class="chip"><input id="chkUaEvents" type="checkbox"> Ukrán források eseményei</label>
             <label class="chip"><input id="chkHiTips" type="checkbox" checked> Kiemelt buborék szöveg</label>
-
+    
             <label class="chip"><input id="chkArcFront" type="checkbox" checked> ArcGIS frontvonal</label>
             <label class="chip"><input id="chkArcAdv" type="checkbox" checked> ArcGIS orosz advance</label>
             <label class="chip"><input id="chkFrontInfo" type="checkbox" checked> Front info (vonalon)</label>
@@ -778,6 +779,7 @@
       <div class="item"><span class="swatch" style="background:#00a000;"></span>ArcGIS frontvonal (hover/click)</div>
       <div class="item"><span class="swatch" style="background:#7a00ff;"></span>ArcGIS advance</div>
       <div class="item"><span class="swatch" style="background:#00a000; opacity:0.2;"></span>Napi változás kör</div>
+      <div class="item"><span class="swatch" style="background:#ff00aa;"></span>Ukrán források eseményei</div>
     </div>
   </div>
 
@@ -830,6 +832,7 @@
   const chkGibs = el("chkGibs");
   const chkDrones = el("chkDrones");
   const chkGround = el("chkGround");
+  const chkUaEvents = el("chkUaEvents");
   const chkDroneHi = el("chkDroneHi");
   const chkGroundHi = el("chkGroundHi");
   const chkHiTips = el("chkHiTips");
@@ -1062,6 +1065,7 @@
   const firmsLayer = L.layerGroup().addTo(map);
   const dronesLayer = L.layerGroup().addTo(map);
   const groundLayer = L.layerGroup().addTo(map);
+  const uaEventsLayer = L.layerGroup();
 
   const droneHiLayer = L.layerGroup().addTo(map);
   const groundHiLayer = L.layerGroup().addTo(map);
@@ -1085,6 +1089,7 @@
   chkFirms.addEventListener("change", () => setVisible(firmsLayer, chkFirms.checked));
   chkDrones.addEventListener("change", () => setVisible(dronesLayer, chkDrones.checked));
   chkGround.addEventListener("change", () => setVisible(groundLayer, chkGround.checked));
+  chkUaEvents.addEventListener("change", () => setVisible(uaEventsLayer, chkUaEvents.checked));
 
   chkDroneHi.addEventListener("change", () => setVisible(droneHiLayer, chkDroneHi.checked));
   chkGroundHi.addEventListener("change", () => setVisible(groundHiLayer, chkGroundHi.checked));
@@ -1978,6 +1983,67 @@
     }
   }
 
+  async function loadUaEvents(){
+  uaEventsLayer.clearLayers();
+
+  try{
+    const gj = await loadJson("./data/ua_war_events_latest.geojson");
+    const feats = gj.features || [];
+    let shown = 0;
+
+    function colorForType(t){
+      switch(t){
+        case "drone_attack": return "#8e44ad";
+        case "missile_strike": return "#c0392b";
+        case "artillery": return "#d35400";
+        case "airstrike": return "#2980b9";
+        case "ground_clash": return "#27ae60";
+        case "frontline_update": return "#7f8c8d";
+        default: return "#ff00aa";
+      }
+    }
+
+    for(const f of feats){
+      if(!f.geometry || f.geometry.type !== "Point") continue;
+      const [lon, lat] = f.geometry.coordinates || [];
+      if(typeof lon !== "number" || typeof lat !== "number") continue;
+
+      if(lat < 43 || lat > 53 || lon < 21 || lon > 41) continue;
+
+      const p = f.properties || {};
+      const eventType = p.event_type || "other";
+      const color = colorForType(eventType);
+
+      const popup =
+        `<b>Ukrán forrás esemény</b><br>` +
+        `Típus: <b>${eventType}</b><br>` +
+        `Hely: ${p.matched_place || p.display_name || "-"}<br>` +
+        `Dátum: ${p.published_at || "-"}<br>` +
+        `Forrás: ${p.source || "-"}<br>` +
+        `Bizalom: ${p.confidence || "-"}<br>` +
+        `${p.title ? `<div style="margin-top:6px;">${safeStr(p.title, 220)}</div>` : ""}` +
+        `${p.url ? `<div style="margin-top:6px;"><a href="${p.url}" target="_blank">Forrás</a></div>` : ""}`;
+
+      uaEventsLayer.addLayer(
+        L.circleMarker([lat, lon], {
+          radius: 5,
+          color: color,
+          weight: 2,
+          fillColor: color,
+          fillOpacity: 0.55
+        }).bindPopup(popup)
+      );
+
+      shown++;
+    }
+
+    setVisible(uaEventsLayer, chkUaEvents.checked);
+    log(`Ukrán forrás események: betöltve ✔ (${shown})`);
+
+  } catch(e){
+    log("Ukrán forrás események: hiba – " + String(e));
+  }
+}
   // újra rákötjük a gombokra (biztonság)
   selDroneSource.addEventListener("change", () => loadDrones());
   btnReloadDrones.addEventListener("click", loadDrones);
@@ -2620,6 +2686,7 @@
       await loadOsintSummary();
       await loadDrones();
       await loadGround();
+      await loadUaEvents();
       await loadArcGIS();
 
       btnPlay.disabled = false;
@@ -2656,6 +2723,7 @@
       await loadOsintSummary();
       await loadDrones();
       await loadGround();
+      await loadUaEvents();
       await loadArcGIS();
 
       setVisible(changeMarkerLayer, chkChangeCircle.checked);
