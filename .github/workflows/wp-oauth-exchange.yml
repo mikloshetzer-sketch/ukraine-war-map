@@ -1,0 +1,46 @@
+name: WP OAuth exchange (stable)
+
+on:
+  workflow_dispatch:
+    inputs:
+      authorization_code:
+        description: "WordPress.com OAuth authorization code"
+        required: true
+        type: string
+
+jobs:
+  exchange:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Exchange code for WordPress.com token
+        env:
+          WPCOM_CLIENT_ID: ${{ secrets.WPCOM_CLIENT_ID }}
+          WPCOM_CLIENT_SECRET: ${{ secrets.WPCOM_CLIENT_SECRET }}
+          WPCOM_REDIRECT_URI: ${{ secrets.WPCOM_REDIRECT_URI }}
+          WPCOM_SITE: ${{ secrets.WPCOM_SITE }}
+          WPCOM_AUTHORIZATION_CODE: ${{ inputs.authorization_code }}
+        run: |
+          set -euo pipefail
+          python scripts/wpcom_exchange_code.py
+
+      - name: Upload token bundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wpcom-token-bundle
+          path: wpcom_token_bundle.zip
+          if-no-files-found: error
+          retention-days: 7
