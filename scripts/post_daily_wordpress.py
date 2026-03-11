@@ -8,7 +8,6 @@ from datetime import datetime, timezone
 import requests
 
 BRIEF_JSON = Path("data/brief_daily.json")
-
 WP_API_BASE = "https://public-api.wordpress.com/rest/v1.1"
 
 
@@ -338,6 +337,41 @@ def build_slug(brief: dict) -> str:
     return f"{date_value}-{title}"[:190]
 
 
+def wordpress_headers(token: str) -> dict:
+    return {"Authorization": f"Bearer {token}"}
+
+
+def find_existing_post(site: str, token: str, slug: str) -> dict | None:
+    url = f"{WP_API_BASE}/sites/{site}/posts/slug:{slug}"
+    resp = requests.get(url, headers=wordpress_headers(token), timeout=60)
+
+    if resp.status_code == 404:
+        return None
+
+    if resp.status_code >= 300:
+        raise SystemExit(f"WP duplicate-check failed ({resp.status_code}): {resp.text}")
+
+    data = resp.json()
+
+    if not data or data.get("error"):
+        return None
+
+    if data.get("slug") == slug:
+        return data
+
+    return None
+
+
+def create_post(site: str, token: str, payload: dict) -> dict:
+    url = f"{WP_API_BASE}/sites/{site}/posts/new"
+    resp = requests.post(url, headers=wordpress_headers(token), data=payload, timeout=60)
+
+    if resp.status_code >= 300:
+        raise SystemExit(f"WP post failed ({resp.status_code}): {resp.text}")
+
+    return resp.json()
+
+
 def main():
     token = os.environ.get("WPCOM_ACCESS_TOKEN", "").strip()
     site = os.environ.get("WPCOM_SITE", "").strip()
@@ -355,8 +389,20 @@ def main():
     excerpt = build_excerpt(brief)
     slug = build_slug(brief)
 
-    url = f"{WP_API_BASE}/sites/{site}/posts/new"
-    headers = {"Authorization": f"Bearer {token}"}
+    existing = find_existing_post(site, token, slug)
+
+    if existing:
+        post_url = existing.get("URL") or existing.get("url") or ""
+        post_id = existing.get("ID") or existing.get("id") or ""
+        existing_status = existing.get("status") or "unknown"
+
+        print("Daily brief post already exists. Skipping creation.")
+        print(f"Slug: {slug}")
+        print(f"Existing status: {existing_status}")
+        print(f"Existing Post ID: {post_id}")
+        if post_url:
+            print(f"URL: {post_url}")
+        return
 
     payload = {
         "title": title,
@@ -367,16 +413,14 @@ def main():
         "slug": slug,
     }
 
-    resp = requests.post(url, headers=headers, data=payload, timeout=60)
-    if resp.status_code >= 300:
-        raise SystemExit(f"WP post failed ({resp.status_code}): {resp.text}")
+    data = create_post(site, token, payload)
 
-    data = resp.json()
     post_url = data.get("URL") or data.get("url") or ""
     post_id = data.get("ID") or data.get("id") or ""
 
     print(f"Posted daily brief from: {BRIEF_JSON}")
     print(f"Status: {status}, Post ID: {post_id}")
+    print(f"Slug: {slug}")
     if post_url:
         print(f"URL: {post_url}")
 
