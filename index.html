@@ -2585,7 +2585,7 @@
   function startPlay(){
     playing = true;
     btnPlay.textContent = "Megállítás";
-    timer = setInterval(stepOnce, Number(selSpeed.value) || 300);
+    timer = setInterval(stepOnce, Number(selSpeed.value) || 800);
   }
 
   btnPlay.addEventListener("click", () => { if(playing) stopPlay(); else startPlay(); });
