@@ -37,6 +37,50 @@ jobs:
           set -euo pipefail
           python scripts/wpcom_exchange_code.py
 
+      - name: Verify token with token-info
+        env:
+          WPCOM_CLIENT_ID: ${{ secrets.WPCOM_CLIENT_ID }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import requests
+          import os
+
+          token_json = json.loads(Path("wpcom_token_bundle/token.json").read_text(encoding="utf-8"))
+          token = token_json["WPCOM_ACCESS_TOKEN"]
+          client_id = os.environ["WPCOM_CLIENT_ID"]
+
+          resp = requests.get(
+              "https://public-api.wordpress.com/oauth2/token-info",
+              params={"client_id": client_id, "token": token},
+              timeout=60,
+          )
+          print(resp.text)
+          resp.raise_for_status()
+          PY
+
+      - name: Verify token with /me
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import requests
+
+          token_json = json.loads(Path("wpcom_token_bundle/token.json").read_text(encoding="utf-8"))
+          token = token_json["WPCOM_ACCESS_TOKEN"]
+
+          resp = requests.get(
+              "https://public-api.wordpress.com/rest/v1.1/me",
+              headers={"Authorization": f"Bearer {token}"},
+              timeout=60,
+          )
+          print(resp.text)
+          resp.raise_for_status()
+          PY
+
       - name: Upload token bundle artifact
         uses: actions/upload-artifact@v4
         with:
