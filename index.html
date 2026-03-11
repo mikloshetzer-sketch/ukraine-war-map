@@ -2574,12 +2574,14 @@
     if(timer){ clearInterval(timer); timer = null; }
   }
   function stepOnce(){
-    let v = Number(rngDay.value);
-    if(v >= Number(rngDay.max)) v = Number(rngDay.min);
-    else v += 1;
-    rngDay.value = String(v);
-    loadByIndex(v, false);
-  }
+  let v = Number(rngDay.value);
+  if(v >= Number(rngDay.max)) v = Number(rngDay.min);
+  else v += 1;
+
+  rngDay.value = String(v);
+
+  loadByIndex(v, false, true);
+}
   function startPlay(){
     playing = true;
     btnPlay.textContent = "Megállítás";
@@ -2639,17 +2641,18 @@
     selJump.value = String(idx);
   });
 
-  async function loadByIndex(i, doZoomNow=true){
-    const item = dates[i];
-    if(!item) return;
+ async function loadByIndex(i, doZoomNow=true, fast=false){
+  const item = dates[i];
+  if(!item) return;
 
-    currentDate = item.date;
-    lblDate.textContent = item.date;
-    lblFile.textContent = item.name || item.date;
+  currentDate = item.date;
+  lblDate.textContent = item.date;
+  lblFile.textContent = item.name || item.date;
 
-    const data = await loadJson(item.raw);
-    renderDeepState(data);
+  const data = await loadJson(item.raw);
+  renderDeepState(data);
 
+  if(!fast){
     setGibs(item.date);
     renderFirmsForDate(item.date);
     updateStamp();
@@ -2658,11 +2661,11 @@
     await buildFrontText();
     await buildNarrative();
 
-    if(doZoomNow) doZoom();
-
     setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
   }
 
+  if(doZoomNow) doZoom();
+}
   // ===== Refresh all =====
   async function refreshAll(){
     stopPlay();
