@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ukrán–orosz háború – DeepState + FIRMS + GIBS + ArcGIS + Kivonat + Drón + Földi + Front info + Narratíva</title>
+  <title>Ukrán–orosz háború – DeepState + FIRMS + GIBS + ArcGIS + Kivonat + Drón + Földi + Ukrán források + Front info + Narratíva</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -192,7 +192,6 @@
       overflow:auto;
     }
 
-    /* Tooltip */
     .hiTip{
       background: rgba(255,255,255,0.97);
       border: 1px solid rgba(0,0,0,0.18);
@@ -282,7 +281,6 @@
     }
     .mapStamp.collapsed .mapStampBody{ display:none; }
 
-    /* ===== Accordion / szekciók a bal panelen ===== */
     .acc{
       margin-top: 10px;
       border: 1px solid rgba(0,0,0,0.08);
@@ -322,7 +320,6 @@
     .accContent{ padding: 10px 12px 12px; }
     .accContent .row{ margin-top: 8px; }
 
-    /* ===== Embed toolbar (blog mód) ===== */
     .embedBar{
       position:absolute;
       z-index:1400;
@@ -434,7 +431,6 @@
 <body>
   <div id="map"></div>
 
-  <!-- EMBED TOOLBAR (blog módhoz) -->
   <div id="embedBar" class="embedBar" style="display:none;">
     <button id="btnEmbedOpen" class="embedBtn" type="button">
       <span class="icon">⚙</span> Beállítások
@@ -460,20 +456,17 @@
     <div id="mapStampBody" class="mapStampBody">Adatok: betöltés…</div>
   </div>
 
-  <!-- LEFT PANEL -->
   <div id="panelLeft" class="panel">
     <div class="head">
       <div>
         <h3>Rétegek & nézet</h3>
-        <div class="sub">DeepState + FIRMS + GIBS + ArcGIS + drón + földi + front info + kivonat + narratíva.</div>
+        <div class="sub">DeepState + FIRMS + GIBS + ArcGIS + drón + földi + ukrán források + front info + kivonat + narratíva.</div>
       </div>
       <button id="toggleLeft" class="toggleBtn" type="button">☰</button>
     </div>
 
-    <!-- FONTOS: a BODY-t később embed módban átrakjuk a drawerbe -->
     <div class="body">
 
-      <!-- 1) Rétegek -->
       <details class="acc" open>
         <summary>
           <span>Rétegek</span>
@@ -488,6 +481,7 @@
 
             <label class="chip"><input id="chkDrones" type="checkbox" checked> Drón pontok</label>
             <label class="chip"><input id="chkGround" type="checkbox" checked> Földi (ISW) pont/vonal</label>
+            <label class="chip"><input id="chkUaEvents" type="checkbox" checked> Ukrán források eseményei</label>
 
             <label class="chip"><input id="chkDroneHi" type="checkbox" checked> Kiemelt drón</label>
             <label class="chip"><input id="chkGroundHi" type="checkbox" checked> Kiemelt földi</label>
@@ -503,7 +497,6 @@
         </div>
       </details>
 
-      <!-- 2) Front info -->
       <details class="acc" open>
         <summary>
           <span>Front info</span>
@@ -531,7 +524,6 @@
         </div>
       </details>
 
-      <!-- 3) OSINT források -->
       <details class="acc">
         <summary>
           <span>OSINT források</span>
@@ -564,7 +556,6 @@
         </div>
       </details>
 
-      <!-- 4) Nézet -->
       <details class="acc" open>
         <summary>
           <span>Nézet</span>
@@ -593,7 +584,6 @@
         </div>
       </details>
 
-      <!-- 5) FIRMS/GIBS -->
       <details class="acc">
         <summary>
           <span>FIRMS / GIBS</span>
@@ -641,7 +631,6 @@
         </div>
       </details>
 
-      <!-- 6) Kivonat -->
       <details class="acc" open>
         <summary>
           <span>Kivonat</span>
@@ -706,7 +695,6 @@
         </div>
       </details>
 
-      <!-- 7) Napló -->
       <details class="acc">
         <summary>
           <span>Napló</span>
@@ -721,7 +709,6 @@
     </div>
   </div>
 
-  <!-- RIGHT PANEL -->
   <div id="panelRight" class="panel">
     <div class="head">
       <div>
@@ -762,7 +749,6 @@
     </div>
   </div>
 
-  <!-- LEGEND -->
   <div id="legend">
     <div class="legendHead">
       <b>Jelmagyarázat</b>
@@ -774,6 +760,7 @@
       <div class="item"><span class="swatch" style="background:#ff5500;"></span>FIRMS hőpont</div>
       <div class="item"><span class="swatch" style="background:#0077ff;"></span>Drón pont</div>
       <div class="item"><span class="swatch" style="background:#00b3b3;"></span>Földi pont/vonal</div>
+      <div class="item"><span class="swatch" style="background:#ff00aa;"></span>Ukrán források eseményei</div>
       <div class="item"><span class="swatch" style="background:#111;"></span>Kiemelt esemény</div>
       <div class="item"><span class="swatch" style="background:#00a000;"></span>ArcGIS frontvonal (hover/click)</div>
       <div class="item"><span class="swatch" style="background:#7a00ff;"></span>ArcGIS advance</div>
@@ -783,10 +770,8 @@
 
 <script>
 (() => {
-  // ====== FIRMS MAP_KEY ======
   const FIRMS_MAP_KEY = "44b266fd8324db5a0a9866017429dc43";
 
-  // ====== ArcGIS rétegek ======
   const ARCGIS_FRONT_GEOJSON_URL =
     "https://services-eu1.arcgis.com/fppoCYaq7HfVFbIV/ArcGIS/rest/services/UKR_Frontline_27072025/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson";
   const ARCGIS_ADVANCE_GEOJSON_URL =
@@ -803,7 +788,6 @@
   const UKRAINE_BBOX = "22,44,40,53";
   const UKRAINE_BOUNDS_RAW = { sw: [44.0, 22.0], ne: [52.7, 40.2] };
 
-  // ====== Drone sources (local files) ======
   const DRONE_SOURCES = {
     gdelt_latest: { label: "GDELT (latest)", url: "./data/drones_latest.geojson" },
     isw_latest:   { label: "ISW UAV (latest)", url: "./data/isw_uav_latest.geojson" },
@@ -811,7 +795,6 @@
     isw_30d:      { label: "ISW UAV (30 nap)", url: "./data/isw_uav_30d.geojson" },
   };
 
-  // ====== Ground sources (local files) ======
   const GROUND_SOURCES = {
     isw_ground_latest: { label: "ISW Ground (latest)", url: "./data/isw_ground_latest.geojson" },
     isw_ground_7d:     { label: "ISW Ground (7 nap)",  url: "./data/isw_ground_7d.geojson" },
@@ -830,6 +813,7 @@
   const chkGibs = el("chkGibs");
   const chkDrones = el("chkDrones");
   const chkGround = el("chkGround");
+  const chkUaEvents = el("chkUaEvents");
   const chkDroneHi = el("chkDroneHi");
   const chkGroundHi = el("chkGroundHi");
   const chkHiTips = el("chkHiTips");
@@ -905,7 +889,6 @@
   const sumNarr = el("sumNarr");
   const frontText = el("frontText");
 
-  // ===== EMBED MODE =====
   const embedBar = el("embedBar");
   const embedDrawer = el("embedDrawer");
   const embedDrawerBody = el("embedDrawerBody");
@@ -949,7 +932,6 @@
     btnEmbedClose.addEventListener("click", closeEmbedDrawer);
     embedBackdrop.addEventListener("click", closeEmbedDrawer);
 
-    // Teljes nézet: ugyanaz az URL, embed param nélkül
     btnEmbedFull.addEventListener("click", () => {
       const u = new URL(location.href);
       u.searchParams.delete("embed");
@@ -989,12 +971,10 @@
   collapseForMobile();
   window.addEventListener("resize", collapseForMobile);
 
-  // embed aktiválás a mobile-collapse után
   if(isEmbedMode()){
     enableEmbedMode();
   }
 
-  // Accordion nyilak szinkron
   document.querySelectorAll('.acc').forEach(d => {
     const chev = d.querySelector('.chev');
     if(!chev) return;
@@ -1031,7 +1011,7 @@
 
   const map = L.map("map").setView([49.0, 31.0], 6);
 
-  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{y}/{x}.png", {
     maxZoom: 19, attribution: "&copy; OpenStreetMap"
   }).addTo(map);
 
@@ -1062,14 +1042,14 @@
   const firmsLayer = L.layerGroup().addTo(map);
   const dronesLayer = L.layerGroup().addTo(map);
   const groundLayer = L.layerGroup().addTo(map);
+  const uaEventsLayer = L.layerGroup().addTo(map);
 
   const droneHiLayer = L.layerGroup().addTo(map);
   const groundHiLayer = L.layerGroup().addTo(map);
 
-  // permanens tooltip réteg: kiemeltek + napi buborék is itt lesz
   const hiTipLayer = L.layerGroup().addTo(map);
 
-  const changeMarkerLayer = L.layerGroup().addTo(map); // csak a kör vizuálisan
+  const changeMarkerLayer = L.layerGroup().addTo(map);
   const frontInfoLayer = L.layerGroup().addTo(map);
 
   let arcFrontLayer = null;
@@ -1085,6 +1065,7 @@
   chkFirms.addEventListener("change", () => setVisible(firmsLayer, chkFirms.checked));
   chkDrones.addEventListener("change", () => setVisible(dronesLayer, chkDrones.checked));
   chkGround.addEventListener("change", () => setVisible(groundLayer, chkGround.checked));
+  chkUaEvents.addEventListener("change", () => setVisible(uaEventsLayer, chkUaEvents.checked));
 
   chkDroneHi.addEventListener("change", () => setVisible(droneHiLayer, chkDroneHi.checked));
   chkGroundHi.addEventListener("change", () => setVisible(groundHiLayer, chkGroundHi.checked));
@@ -1096,11 +1077,9 @@
   chkFrontInfo.addEventListener("change", () => setVisible(frontInfoLayer, chkFrontInfo.checked));
   chkChangeCircle.addEventListener("change", () => {
     setVisible(changeMarkerLayer, chkChangeCircle.checked);
-    // a napi buborék is a hiTipLayer-en van → ott is újrarendezünk
     setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 80);
   });
 
-  // ===== Helpers =====
   async function loadJson(url){
     const r = await fetch(url, { cache:"no-store" });
     if(!r.ok) throw new Error(`Fetch hiba: ${url} → HTTP ${r.status}`);
@@ -1211,7 +1190,6 @@
     }
   }
 
-  // ===== DeepState =====
   function renderDeepState(data){
     if(deepLayer) map.removeLayer(deepLayer);
     deepLayer = L.geoJSON(data, {
@@ -1241,7 +1219,6 @@
   }
   btnZoom.addEventListener("click", doZoom);
 
-  // ===== GIBS =====
   function gibsTemplateFor(sel){
     if(sel === "modis1k"){
       return "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MODIS_Terra_Thermal_Anomalies_All/default/{date}/GoogleMapsCompatible_Level9/{z}/{y}/{x}.png";
@@ -1268,7 +1245,6 @@
   selGibs.addEventListener("change", () => { if(currentDate) setGibs(currentDate); });
   rngGibs.addEventListener("input", () => { if(gibsLayer) gibsLayer.setOpacity(Number(rngGibs.value||"0.55")); });
 
-  // ===== Stamp meta =====
   let arcFrontInfo = { label: ARCGIS_FRONT_LABEL_FALLBACK, edited: null };
   let arcAdvInfo = { label: ARCGIS_ADV_LABEL_FALLBACK, edited: null };
 
@@ -1301,7 +1277,6 @@
     updateStamp();
   }
 
-  // ===== NAPI VÁLTOZÁS KÖR + NAPI BUBORÉK (A buborék a hiTipLayer-be kerül) =====
   let dailyTipMarker = null;
 
   function attachPermanentTip(lat, lon, html){
@@ -1336,7 +1311,6 @@
     const lon = target[0];
     const lat = target[1];
 
-
     const circle = L.circle([lat, lon], {
       radius: kmRadius * 1000,
       color: d > 0 ? "#00a000" : "#d00",
@@ -1348,7 +1322,6 @@
     circle.addTo(changeMarkerLayer);
     setVisible(changeMarkerLayer, chkChangeCircle.checked);
 
-    // NAPI BUBORÉK (láthatatlan marker tooltip)
     const tipHtml =
       `<b>Napi területi változás</b>` +
       `<div>Δ: ${fmtDeltaKm2(d)}</div>` +
@@ -1361,7 +1334,6 @@
     setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
   }
 
-  // ===== FIRMS =====
   let firmsByDate = {};
   let firmsCurrentPts = [];
 
@@ -1487,7 +1459,6 @@
   selDays.addEventListener("change", fetchFirms);
   selMaxPts.addEventListener("change", () => { if(currentDate) renderFirmsForDate(currentDate); });
 
-  // ===== Drón / Földi betöltés: változatlan logika, csak a végén resolveAllPermanentTips() =====
   let lastDroneFeatures = [];
   let lastGroundFeatures = [];
 
@@ -1508,11 +1479,11 @@
     const lat = (a[1] + b[1]) / 2;
     return [lat, lon];
   }
-    async function loadDrones(){
+
+  async function loadDrones(){
     dronesLayer.clearLayers();
     droneHiLayer.clearLayers();
-    hiTipLayer.clearLayers();
-    clearDailyTip(); // a daily marker maradhat csak a renderChangeCircle-ből
+    clearHighlights();
 
     const spec = droneSourceSpec();
     lastDroneFeatures = [];
@@ -1557,6 +1528,8 @@
       pickHighlights();
       updateFrontInfo();
 
+      setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
+
     } catch(e){
       log(`Drón pontok: hiba – ${spec.label} – ` + String(e));
     }
@@ -1565,8 +1538,7 @@
   async function loadGround(){
     groundLayer.clearLayers();
     groundHiLayer.clearLayers();
-    hiTipLayer.clearLayers();
-    clearDailyTip();
+    clearHighlights();
 
     const spec = groundSourceSpec();
     lastGroundFeatures = [];
@@ -1643,8 +1615,71 @@
       pickHighlights();
       updateFrontInfo();
 
+      setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
+
     } catch(e){
       log(`Földi (ISW): hiba – ${spec.label} – ` + String(e));
+    }
+  }
+
+  async function loadUaEvents(){
+    uaEventsLayer.clearLayers();
+
+    try{
+      const gj = await loadJson("./data/ua_war_events_latest.geojson");
+      const feats = gj.features || [];
+
+      let shown = 0;
+
+      function colorForType(t){
+        switch(t){
+          case "drone_attack": return "#8e44ad";
+          case "missile_strike": return "#c0392b";
+          case "artillery": return "#d35400";
+          case "airstrike": return "#2980b9";
+          case "ground_clash": return "#27ae60";
+          case "frontline_update": return "#7f8c8d";
+          default: return "#ff00aa";
+        }
+      }
+
+      for(const f of feats){
+        if(!f.geometry || f.geometry.type !== "Point") continue;
+        const [lon, lat] = f.geometry.coordinates || [];
+        if(typeof lon !== "number" || typeof lat !== "number") continue;
+
+        const p = f.properties || {};
+        const eventType = p.event_type || "other";
+        const color = colorForType(eventType);
+
+        const popup =
+          `<b>Ukrán forrás esemény</b><br>` +
+          `Típus: <b>${eventType}</b><br>` +
+          `Hely: ${p.matched_place || p.display_name || "-"}<br>` +
+          `Dátum: ${p.published_at || "-"}<br>` +
+          `Forrás: ${p.source || "-"}<br>` +
+          `Bizalom: ${p.confidence || "-"}<br>` +
+          `${p.title ? `<div style="margin-top:6px;">${safeStr(p.title, 220)}</div>` : ""}` +
+          `${p.url ? `<div style="margin-top:6px;"><a href="${p.url}" target="_blank" rel="noopener">Forrás megnyitása</a></div>` : ""}`;
+
+        uaEventsLayer.addLayer(
+          L.circleMarker([lat, lon], {
+            radius: 5,
+            color: color,
+            weight: 2,
+            fillColor: color,
+            fillOpacity: 0.55
+          }).bindPopup(popup)
+        );
+
+        shown++;
+      }
+
+      setVisible(uaEventsLayer, chkUaEvents.checked);
+      log(`Ukrán forrás események: betöltve ✔ (${shown})`);
+
+    } catch(e){
+      log("Ukrán forrás események: hiba – " + String(e));
     }
   }
 
@@ -1653,7 +1688,6 @@
   selGroundSource.addEventListener("change", () => loadGround());
   btnReloadGround.addEventListener("click", loadGround);
 
-  // ===== OSINT Summary =====
   function countFeaturesByDate(geojson, daysBack){
     const feats = geojson?.features || [];
     const now = new Date();
@@ -1695,12 +1729,10 @@
     }
   }
 
-  // ===== Trend =====
   function recomputeTrend(){
     anaTrend.textContent = buildTrend7d(lastDroneFeatures, lastGroundFeatures);
   }
 
-  // ===== Summary (DeepState delta + kör) =====
   let lastTerr = null;
 
   async function loadSummary(){
@@ -1742,14 +1774,10 @@
       log("Kivonat: hiba – " + String(e));
     }
   }
-    // ===== FRONT INFO / ArcGIS / Highlights / Anti-overlap / Timeline / init =====
-
-  // --- FONTOS PATCH: a hiTipLayer-ből ne töröljük a napi buborékot ---
-  function clearHighlights(){
+    function clearHighlights(){
     droneHiLayer.clearLayers();
     groundHiLayer.clearLayers();
 
-    // hiTipLayer: csak a kiemelt tip-eket töröljük, a dailyTipMarker maradjon
     const toRemove = [];
     hiTipLayer.eachLayer(l => {
       if(dailyTipMarker && l === dailyTipMarker) return;
@@ -1758,7 +1786,6 @@
     toRemove.forEach(l => { try{ hiTipLayer.removeLayer(l); }catch(e){} });
   }
 
-  // ====== PERMANENS BUBORÉK ÜTKÖZÉS-ELKERÜLÉS (anti-overlap) =====
   (function(){
     function rectsOverlap(a, b, pad=6){
       return !(
@@ -1812,7 +1839,6 @@
               it.cur = [ it.cur[0] + stepX, it.cur[1] + stepY ];
               setTipOffset(it.layer, it.cur);
               moved = true;
-              // frissítsük a rectet is, hogy a következő ellenőrzés jobban kövesse
               rects[i] = it.el.getBoundingClientRect();
             }
           }
@@ -1827,7 +1853,6 @@
       }catch(e){}
     };
 
-    // zoom/pan után is rendezzük újra
     try{
       map.on("zoomend moveend", () => {
         setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 80);
@@ -1835,156 +1860,6 @@
     }catch(e){}
   })();
 
-  // ===== Drón / Földi betöltés PATCH: ne clear-eljük a hiTipLayer-t globálisan =====
-  // (Felülírjuk a korábbi loadDrones/loadGround függvényeket, hogy a daily tip megmaradjon.)
-
-  async function loadDrones(){
-    dronesLayer.clearLayers();
-    droneHiLayer.clearLayers();
-    clearHighlights(); // ez már megőrzi a dailyTipMarker-t
-
-    const spec = droneSourceSpec();
-    lastDroneFeatures = [];
-
-    try{
-      const gj = await loadJson(spec.url);
-      const feats = gj.features || [];
-      lastDroneFeatures = feats;
-
-      let shown = 0;
-      for(const f of feats){
-        if(!f.geometry || f.geometry.type !== "Point") continue;
-        const [lon, lat] = f.geometry.coordinates || [];
-        if(typeof lon !== "number" || typeof lat !== "number") continue;
-
-        const p = f.properties || {};
-        const src = p.source || (spec.label.includes("ISW") ? "ISW" : "OSINT");
-        const url = p.url || p.source_url;
-        const date = p.date ? `Dátum: ${p.date}<br>` : "";
-        const place = p.place ? `Hely: <b>${p.place}</b><br>` : "";
-        const snippet = p.snippet ? `<div style="margin-top:6px; color:#555;">${safeStr(p.snippet, 600)}</div>` : "";
-        const link = url ? `<a href="${url}" target="_blank" rel="noopener">Forrás</a>` : "";
-
-        dronesLayer.addLayer(
-          L.circleMarker([lat, lon], { radius: 5, color:"#0077ff", weight:2, fillOpacity:0.55 })
-            .bindPopup(
-              `<b>Drón / UAV / rakéta</b><br>` +
-              `Forrás: <b>${src}</b> (${spec.label})<br>` +
-              `${place}${date}` +
-              `Lat/Lon: ${lat.toFixed(5)}, ${lon.toFixed(5)}<br>` +
-              `${link}${snippet}`
-            )
-        );
-        shown++;
-      }
-
-      setVisible(dronesLayer, chkDrones.checked);
-      log(`Drón pontok: betöltve ✔ (${shown}) | ${spec.label}`);
-
-      recomputeTrend();
-      pickHighlights();
-      updateFrontInfo();
-
-      setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
-
-    } catch(e){
-      log(`Drón pontok: hiba – ${spec.label} – ` + String(e));
-    }
-  }
-
-  async function loadGround(){
-    groundLayer.clearLayers();
-    groundHiLayer.clearLayers();
-    clearHighlights();
-
-    const spec = groundSourceSpec();
-    lastGroundFeatures = [];
-
-    try{
-      const gj = await loadJson(spec.url);
-      const feats = gj.features || [];
-      lastGroundFeatures = feats;
-
-      let shownPts = 0, shownLines = 0;
-
-      for(const f of feats){
-        const g = f.geometry || {};
-        const p = f.properties || {};
-        const url = p.url || p.source_url;
-        const date = p.date ? `Dátum: ${p.date}<br>` : "";
-        const snippet = p.snippet ? `<div style="margin-top:6px; color:#555;">${safeStr(p.snippet, 700)}</div>` : "";
-        const link = url ? `<a href="${url}" target="_blank" rel="noopener">Forrás</a>` : "";
-
-        if(g.type === "Point"){
-          const [lon, lat] = g.coordinates || [];
-          if(typeof lon !== "number" || typeof lat !== "number") continue;
-
-          const place = p.place ? `Hely: <b>${p.place}</b><br>` : "";
-          groundLayer.addLayer(
-            L.circleMarker([lat, lon], { radius: 5, color:"#00b3b3", weight:2, fillOpacity:0.50 })
-              .bindPopup(
-                `<b>Földi esemény (ISW)</b><br>` +
-                `Forrás: <b>${p.source || "ISW"}</b> (${spec.label})<br>` +
-                `${place}${date}` +
-                `Lat/Lon: ${lat.toFixed(5)}, ${lon.toFixed(5)}<br>` +
-                `${link}${snippet}`
-              )
-          );
-          shownPts++;
-        }
-
-        if(g.type === "LineString"){
-          const coords = g.coordinates || [];
-          if(!Array.isArray(coords) || coords.length < 2) continue;
-
-          const latlngs = coords
-            .map(c => Array.isArray(c) && c.length === 2 ? [c[1], c[0]] : null)
-            .filter(Boolean);
-          if(latlngs.length < 2) continue;
-
-          const poly = L.polyline(latlngs, {
-            color:"#00b3b3", weight: 3, opacity: 0.85, dashArray: (p.inferred ? "6 6" : null)
-          }).bindPopup(
-            `<b>Földi mozgás (ISW)</b><br>` +
-            `Forrás: <b>${p.source || "ISW"}</b> (${spec.label})<br>` +
-            `${date}` +
-            `${link}${snippet}`
-          );
-
-          groundLayer.addLayer(poly);
-
-          const mid = lineMidpoint(coords);
-          if(mid){
-            groundLayer.addLayer(
-              L.circleMarker(mid, { radius: 3.5, color:"#00b3b3", weight:2, fillOpacity:0.8 })
-                .bindPopup(poly.getPopup())
-            );
-          }
-          shownLines++;
-        }
-      }
-
-      setVisible(groundLayer, chkGround.checked);
-      log(`Földi (ISW): betöltve ✔ pont: ${shownPts}, vonal: ${shownLines} | ${spec.label}`);
-
-      recomputeTrend();
-      pickHighlights();
-      updateFrontInfo();
-
-      setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
-
-    } catch(e){
-      log(`Földi (ISW): hiba – ${spec.label} – ` + String(e));
-    }
-  }
-
-  // újra rákötjük a gombokra (biztonság)
-  selDroneSource.addEventListener("change", () => loadDrones());
-  btnReloadDrones.addEventListener("click", loadDrones);
-  selGroundSource.addEventListener("change", () => loadGround());
-  btnReloadGround.addEventListener("click", loadGround);
-
-  // ===== FRONT INFO =====
   let arcFrontRawGeojson = null;
   let frontDensified = [];
   let frontSegments = [];
@@ -2304,7 +2179,6 @@
     setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
   });
 
-  // ===== Kiemelt események + permanens buborék =====
   function nearestFrontDistanceKm(pt){
     if(!frontDensified.length) return null;
     let best = Infinity;
@@ -2321,7 +2195,6 @@
     const now = new Date();
     const cut24 = new Date(now.getTime() - 1*24*3600*1000);
 
-    // --- best drone
     let bestDrone = null;
     for(const f of (lastDroneFeatures||[])){
       if(f?.geometry?.type !== "Point") continue;
@@ -2359,7 +2232,6 @@
       attachPermanentTip(bestDrone.lat, bestDrone.lon, tipHtml);
     }
 
-    // --- best ground
     let bestGround = null;
     for(const f of (lastGroundFeatures||[])){
       const g = f.geometry || {};
@@ -2417,7 +2289,6 @@
     setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
   }
 
-  // ===== Narratíva =====
   async function buildNarrative(){
     const hot24 = frontHot?.hot24;
     const dDay = lastTerr?.dDay;
@@ -2450,7 +2321,6 @@
       `Az elmúlt 24 órában a legnagyobb aktivitás a(z) ${axisTxt} tengelyen koncentrálódott, ${bothTxt}.${osintTxt} ${deltaTxt}`;
   }
 
-  // ===== ArcGIS betöltés =====
   async function loadArcGIS(){
     try{
       if(arcFrontLayer) { map.removeLayer(arcFrontLayer); arcFrontLayer = null; }
@@ -2496,7 +2366,6 @@
 
   btnReloadArc.addEventListener("click", loadArcGIS);
 
-  // ===== Timeline =====
   let dates = [];
   let currentDate = null;
   let playing = false;
@@ -2597,7 +2466,6 @@
     setTimeout(() => window.resolveAllPermanentTips && window.resolveAllPermanentTips(), 120);
   }
 
-  // ===== Refresh all =====
   async function refreshAll(){
     stopPlay();
     log("🔄 Teljes frissítés…");
@@ -2620,6 +2488,7 @@
       await loadOsintSummary();
       await loadDrones();
       await loadGround();
+      await loadUaEvents();
       await loadArcGIS();
 
       btnPlay.disabled = false;
@@ -2635,7 +2504,6 @@
   }
   btnRefreshAll.addEventListener("click", refreshAll);
 
-  // ===== init =====
   async function init(){
     log("Indul…");
     try{
@@ -2656,6 +2524,7 @@
       await loadOsintSummary();
       await loadDrones();
       await loadGround();
+      await loadUaEvents();
       await loadArcGIS();
 
       setVisible(changeMarkerLayer, chkChangeCircle.checked);
@@ -2663,6 +2532,7 @@
       setVisible(droneHiLayer, chkDroneHi.checked);
       setVisible(groundHiLayer, chkGroundHi.checked);
       setVisible(hiTipLayer, chkHiTips.checked);
+      setVisible(uaEventsLayer, chkUaEvents.checked);
 
       btnPlay.disabled = false;
       log("Kész ✔");
@@ -2679,18 +2549,6 @@
 
   init();
 })();
-</script>
-</body>
-</html>
-
-  // ===== FRONT INFO / ArcGIS / Highlights / Anti-overlap / Timeline / init =====
-  // (A további kód: megegyezik a korábbi működő logikáddal, de a végén a buborékok ütközésmentesek.)
-
-  // -----------------------------
-  // A hátralévő teljes JS rész a következő üzenetben túl hosszú lenne,
-  // ezért ha ezt a 2/2-t bemásoltad, írd: "folytasd a maradék 2/2 végét"
-  // és azonnal küldöm a tényleges lezáró szakaszt is (ArcGIS, front, timeline, anti-overlap, init, záró tagek).
-  // -----------------------------
 </script>
 </body>
 </html>
