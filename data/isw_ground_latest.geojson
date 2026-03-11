@@ -12,7 +12,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-10",
+        "date": "2026-03-11",
         "title": "ISW ground operation",
         "place": "Sumy",
         "cc": "ua",
@@ -32,7 +32,7 @@
       },
       "properties": {
         "source": "ISW",
-        "date": "2026-03-10",
+        "date": "2026-03-11",
         "title": "ISW ground operation",
         "place": "September",
         "cc": "ua",
@@ -56,11 +56,11 @@
     "stats": {
       "raw_total": 120,
       "raw_movement_from_to": 4,
-      "raw_toward_only": 46,
+      "raw_toward_only": 47,
       "kept_points": 2,
       "kept_lines": 0,
-      "dropped_geocode": 113,
-      "dropped_far": 5,
+      "dropped_geocode": 112,
+      "dropped_far": 6,
       "dropped_long_lines": 0,
       "dropped_inferred_len": 0
     }
