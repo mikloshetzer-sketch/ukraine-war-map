@@ -47,9 +47,15 @@ def exchange_code(
     return data
 
 
-def get_token_info(access_token: str) -> dict:
-    headers = {"Authorization": f"Bearer {access_token}"}
-    resp = requests.get(TOKEN_INFO_URL, headers=headers, timeout=60)
+def get_token_info(access_token: str, client_id: str) -> dict:
+    resp = requests.get(
+        TOKEN_INFO_URL,
+        params={
+            "client_id": client_id,
+            "token": access_token,
+        },
+        timeout=60,
+    )
 
     if resp.status_code >= 300:
         raise SystemExit(f"Token info failed ({resp.status_code}): {resp.text}")
@@ -160,7 +166,7 @@ def main() -> None:
 
     access_token = token_response["access_token"]
 
-    token_info = get_token_info(access_token)
+    token_info = get_token_info(access_token, client_id)
     me_info = get_me(access_token)
 
     write_bundle(
