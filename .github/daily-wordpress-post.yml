@@ -1,0 +1,61 @@
+name: Daily WordPress Post
+
+on:
+  schedule:
+    - cron: "10 5 * * *"   # minden nap 05:10 UTC
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests markdown
+
+      # --- napi brief generálása ---
+      - name: Generate daily brief
+        run: |
+          python scripts/generate_daily_brief.py
+
+      # --- token ellenőrzés (biztonságos debug) ---
+      - name: Token sanity (safe)
+        env:
+          WPCOM_ACCESS_TOKEN: ${{ secrets.WPCOM_ACCESS_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os, hashlib
+          t = os.getenv("WPCOM_ACCESS_TOKEN", "")
+          h = hashlib.sha256(t.encode("utf-8")).hexdigest()
+          print("token_len =", len(t))
+          print("token_sha256_prefix =", h[:12])
+          PY
+
+      # --- token validálás ---
+      - name: Verify WordPress.com token
+        env:
+          WPCOM_ACCESS_TOKEN: ${{ secrets.WPCOM_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl -sS -H "Authorization: Bearer ${WPCOM_ACCESS_TOKEN}" \
+            "https://public-api.wordpress.com/oauth2/token-info" | python -m json.tool
+
+      # --- draft poszt publikálása ---
+      - name: Publish daily brief
+        env:
+          WPCOM_ACCESS_TOKEN: ${{ secrets.WPCOM_ACCESS_TOKEN }}
+          WPCOM_SITE: ${{ secrets.WPCOM_SITE }}
+          WPCOM_STATUS: draft
+        run: |
+          set -euo pipefail
+          python scripts/post_daily_wordpress.py
