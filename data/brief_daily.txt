@@ -1,30 +1,31 @@
-Napi hadihelyzeti brief – Folyamatos orosz nyomás a Velyka Novosilka szektorban
+Ukraine War Daily Brief – Russian pressure continues near Kupiansk
 
-Az adott napi összkép alapján a harctéri dinamika továbbra is az orosz fél fokozatos nyomását tükrözi, különösen a Velyka Novosilka szektor térségében. A DeepState összesítés szerint a megszállt terület becsült nagysága 116 613.84 km², ami 2026-03-10-hez képest +7.99 km² változást jelent (orosz területszerzés). A heti mérleg összességében +51.1 km² elmozdulást mutat, ami arra utal, hogy az előző nap eseményei nem önmagukban, hanem egy szélesebb, folyamatos műveleti trend részeként értelmezhetők.
+The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 615.65 km². The daily change amounts to +1.81 km² compared with 2026-03-11 (orosz területszerzés). The weekly balance shows +44.7 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Kupiansk sector as a likely focal area.
 
-Fő számok:
-- Megszállt terület becslése: 116 613.84 km².
-- Napi változás: +7.99 km² (orosz területszerzés).
-- Heti változás: +51.1 km² 2026-03-04-hez viszonyítva (orosz területszerzés).
-- ISW ground napi nyers események: 120.
-- ISW ground megtartott térképezhető elemek: 2 pont, 0 vonal.
-- ISW UAV index: összesen 2563 esemény, ebből 1808 az elmúlt 7 napban.
+Key numbers:
+- Occupied territory: 116 615.65 km²
+- Daily change: +1.81 km²
+- Weekly change: +44.7 km²
+- Ground raw events: 120
+- Mapped points: 2
+- Mapped lines: 0
+- UAV events (7d): 1806
 
-Fő események:
-- A legutóbbi megerősített területi nyereség a Velyka Novosilka szektorhoz köthető, ami azt jelzi, hogy a napi változás nem egyenletesen oszlik el a teljes fronton, hanem meghatározott súlypontok köré koncentrálódik.
-- A rendelkezésre álló adat külön veszteségi pontot is jelez a Bakhmut szektorban, ami arra utal, hogy a frontvonal egyes részein kétirányú lokális korrekciók is előfordulhatnak.
-- A földi műveleti aktivitás és a ténylegesen térképezhető elemek közötti különbség jelentős: 120 nyers említésből csak 2 pont és 0 vonal maradt meg. Ez inkább szétszórt, kis léptékű harctevékenységre utal, mintsem nagy, gyors gépesített áttörésre.
-- A UAV-aktivitás továbbra is a napi helyzetkép egyik fő alakító tényezője: az elmúlt 7 napban 1808 esemény szerepel az indexben, ami tartós felderítési és csapásmérő terhelést valószínűsít.
-- A legutóbbi nyereségi centroid koordinátája a jelenlegi adatfájl szerint kb. hosszúság 36.66334, szélesség 48.02486.
-- A legutóbbi veszteségi centroid koordinátája kb. hosszúság 37.78408, szélesség 48.59607.
+Operational picture:
+The latest mapped territorial activity appears concentrated in the Kupiansk sector. A total of 120 ground combat mentions were identified in source reporting, of which 2 could be mapped with sufficient geographic precision. Drone and UAV activity remains a central operational factor, with 1806 recorded events in the past seven days.
 
-Mi határozta meg az előző napot:
-- A napi területi mérleg pozitív az orosz fél számára (+7.99 km²), ezért a fő hangsúly a lassú, folyamatos frontnyomáson van.
-- A heti trend továbbra is orosz előnyt mutat (+51.1 km²), ami arra utal, hogy az előző nap nem elszigetelt esemény, hanem egy folytatódó nyomás része.
-- A földi aktivitás ISW-alapon alacsony: a 120 nyers említésből 2 pont és 0 vonal maradt térképezhető formában.
-- A drón- és UAV-nyomás nagyon magas: az index 1808 eseményt jelez az elmúlt 7 napban, ami tartós felderítési és csapásmérő nyomást valószínűsít.
+Key events:
+- Recent territorial change appears to be located in the Kupiansk sector.
+- The gap between raw reporting and mapped events remains notable: 120 raw mentions resulted in 2 mapped points and 0 mapped lines.
+- Sustained UAV activity continues to support reconnaissance and strike operations, with 1806 events recorded over the past seven days.
 
-Értékelés:
-Összességében az előző napot a Velyka Novosilka szektor körüli fokozatos frontnyomás, a magas UAV-aktivitás és a korlátozott, de mérhető területi elmozdulás határozta meg. Ez a mintázat inkább felőrlő jellegű műveleti logikára, mintsem gyors manőverháborús változásra utal.
+Drivers of the day:
+- Ground combat activity level assessed as low.
+- UAV operational pressure assessed as very high.
+- Territorial change remains gradual rather than breakthrough-driven.
 
-Megjegyzés: ez a brief továbbra is strukturált adatokból készül. A frontszektor-azonosítás centroid alapú közelítés, vagyis jó operatív tájékozódási pont, de nem helyettesíti a manuális térképi ellenőrzést és a név szerinti településszintű elemzést.
+Assessment:
+The data indicates continued Russian positional pressure combined with attritional warfare dynamics.
+
+Outlook:
+If the current operational tempo continues, gradual territorial pressure is likely to persist in the coming days.
