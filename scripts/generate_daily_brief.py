@@ -242,21 +242,124 @@ def build_outlook(stats: dict) -> str:
     return "Short-term developments will likely remain driven by localized tactical engagements."
 
 
-def build_text(daily: dict, weekly: dict, stats: dict):
-    gained = stats.get("gained_centroid")
-    lost = stats.get("lost_centroid")
+def build_metrics(stats: dict) -> list[dict]:
+    kept_points = stats.get("ground_kept_points")
+    kept_lines = stats.get("ground_kept_lines")
+    mapped_total = None
+    if kept_points is not None and kept_lines is not None:
+        mapped_total = kept_points + kept_lines
 
-    gained_sector = detect_sector(gained[0], gained[1]) if gained and len(gained) >= 2 else None
-    lost_sector = detect_sector(lost[0], lost[1]) if lost and len(lost) >= 2 else None
+    return [
+        {
+            "label": "Occupied territory",
+            "value": f"{fmt_num(stats.get('occupied_km2'))} km²",
+        },
+        {
+            "label": "Daily change",
+            "value": f"{sign_prefix(stats.get('daily_delta_km2'))}{fmt_num(stats.get('daily_delta_km2'))} km²",
+        },
+        {
+            "label": "Weekly change",
+            "value": f"{sign_prefix(stats.get('weekly_delta_km2'))}{fmt_num(stats.get('weekly_delta_km2'), 1)} km²",
+        },
+        {
+            "label": "Ground combat reports",
+            "value": str(stats.get("ground_raw_total", "n/a")) if stats.get("ground_raw_total") is not None else "n/a",
+        },
+        {
+            "label": "Mapped events",
+            "value": str(mapped_total) if mapped_total is not None else "n/a",
+        },
+        {
+            "label": "UAV activity (7d)",
+            "value": str(stats.get("uav_events_7d", "n/a")) if stats.get("uav_events_7d") is not None else "n/a",
+        },
+    ]
 
-    title = build_title(stats, gained_sector)
-    intro = build_intro(daily, weekly, stats, gained_sector)
-    operational_picture = build_operational_picture(gained_sector, stats)
-    events = build_events(gained_sector, lost_sector, stats)
-    drivers = build_drivers(stats)
-    assessment = build_assessment(stats)
-    outlook = build_outlook(stats)
 
+def build_analysis(daily: dict, weekly: dict, stats: dict, gained_sector: str | None, lost_sector: str | None) -> str:
+    occupied = fmt_num(stats.get("occupied_km2"))
+    daily_delta = stats.get("daily_delta_km2")
+    weekly_delta = stats.get("weekly_delta_km2")
+    raw = stats.get("ground_raw_total")
+    kept_points = stats.get("ground_kept_points")
+    kept_lines = stats.get("ground_kept_lines")
+    uav7 = stats.get("uav_events_7d")
+
+    kept_total = None if kept_points is None or kept_lines is None else kept_points + kept_lines
+
+    p1 = (
+        f"Russian forces continue to apply gradual positional pressure along the frontline. "
+        f"According to the latest DeepState estimate, Russian-occupied territory stands at {occupied} km²."
+    )
+
+    if daily_delta is not None:
+        p1 += f" The daily change amounts to {sign_prefix(daily_delta)}{fmt_num(daily_delta)} km²"
+        if daily.get("vs_date"):
+            p1 += f" compared with {daily['vs_date']}"
+        if daily.get("interpretation"):
+            p1 += f" ({daily['interpretation']})"
+        p1 += "."
+    else:
+        p1 += " No confirmed daily territorial delta is currently available."
+
+    if weekly_delta is not None:
+        p1 += (
+            f" On a weekly basis, the balance shows {sign_prefix(weekly_delta)}"
+            f"{fmt_num(weekly_delta, 1)} km² change"
+        )
+        if weekly.get("interpretation"):
+            p1 += f" ({weekly['interpretation']})"
+        p1 += ", indicating that recent developments remain part of a continuing pattern of incremental pressure rather than a sudden operational shift."
+    else:
+        p1 += " No confirmed weekly territorial delta is currently available."
+
+    if gained_sector:
+        p1 += f" The latest mapped activity points toward the {gained_sector} sector as the most likely focal area."
+
+    p2 = ""
+    if raw is not None and kept_total is not None:
+        p2 += (
+            f"Source reporting recorded {raw} mentions of ground combat activity during the reporting period, "
+            f"although only {kept_total} events could be mapped with sufficient geographic precision."
+        )
+    else:
+        p2 += (
+            "Source reporting continues to indicate ground combat activity, although the currently usable mapped-event totals remain incomplete."
+        )
+
+    p2 += " This gap between raw reporting and confirmed mapped activity remains characteristic of the current phase of the war."
+
+    if lost_sector:
+        p2 += f" A localized loss or regain signal was also detected in the {lost_sector} sector."
+
+    p3 = "Drone warfare continues to shape battlefield dynamics."
+    if uav7 is not None:
+        p3 += (
+            f" Over the past seven days, {uav7} UAV-related events were recorded, "
+            f"highlighting the scale of reconnaissance and strike operations."
+        )
+    else:
+        p3 += " Current seven-day UAV totals are unavailable, but drone activity remains a major operational factor."
+
+    p4 = (
+        f"Overall, {build_assessment(stats)} "
+        f"{build_outlook(stats)}"
+    )
+
+    return "\n\n".join([p1, p2, p3, p4])
+
+
+def build_legacy_text(
+    title: str,
+    intro: str,
+    operational_picture: str,
+    events: list[str],
+    drivers: list[str],
+    assessment: str,
+    outlook: str,
+    stats: dict,
+) -> str:
     numbers = [
         f"Occupied territory: {fmt_num(stats.get('occupied_km2'))} km²",
         f"Daily change: {sign_prefix(stats.get('daily_delta_km2'))}{fmt_num(stats.get('daily_delta_km2'))} km²",
@@ -291,10 +394,52 @@ def build_text(daily: dict, weekly: dict, stats: dict):
     lines.append("Outlook:")
     lines.append(outlook)
 
-    return "\n".join(lines), title, gained_sector, lost_sector
+    return "\n".join(lines)
 
 
-def build_json(text: str, title: str, gained_sector: str | None, lost_sector: str | None, daily: dict, stats: dict) -> dict:
+def build_text(daily: dict, weekly: dict, stats: dict):
+    gained = stats.get("gained_centroid")
+    lost = stats.get("lost_centroid")
+
+    gained_sector = detect_sector(gained[0], gained[1]) if gained and len(gained) >= 2 else None
+    lost_sector = detect_sector(lost[0], lost[1]) if lost and len(lost) >= 2 else None
+
+    title = build_title(stats, gained_sector)
+    intro = build_intro(daily, weekly, stats, gained_sector)
+    operational_picture = build_operational_picture(gained_sector, stats)
+    events = build_events(gained_sector, lost_sector, stats)
+    drivers = build_drivers(stats)
+    assessment = build_assessment(stats)
+    outlook = build_outlook(stats)
+
+    legacy_text = build_legacy_text(
+        title=title,
+        intro=intro,
+        operational_picture=operational_picture,
+        events=events,
+        drivers=drivers,
+        assessment=assessment,
+        outlook=outlook,
+        stats=stats,
+    )
+
+    metrics = build_metrics(stats)
+    analysis = build_analysis(daily, weekly, stats, gained_sector, lost_sector)
+
+    return legacy_text, title, gained_sector, lost_sector, metrics, analysis
+
+
+def build_json(
+    text: str,
+    title: str,
+    gained_sector: str | None,
+    lost_sector: str | None,
+    daily: dict,
+    weekly: dict,
+    stats: dict,
+    metrics: list[dict],
+    analysis: str,
+) -> dict:
     return {
         "date": daily.get("date"),
         "title": title,
@@ -312,9 +457,11 @@ def build_json(text: str, title: str, gained_sector: str | None, lost_sector: st
             "gained_sector": gained_sector,
             "lost_sector": lost_sector,
         },
-        "text": text,
+        "metrics": metrics,
+        "analysis": analysis,
+        "text": text,  # legacy compatibility
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "version": 3,
+        "version": 4,
     }
 
 
@@ -323,8 +470,18 @@ def main():
     weekly = load_json(DATA_DIR / "summary_weekly.json")
     stats = calculate_daily_stats()
 
-    text, title, gained_sector, lost_sector = build_text(daily, weekly, stats)
-    payload = build_json(text, title, gained_sector, lost_sector, daily, stats)
+    text, title, gained_sector, lost_sector, metrics, analysis = build_text(daily, weekly, stats)
+    payload = build_json(
+        text=text,
+        title=title,
+        gained_sector=gained_sector,
+        lost_sector=lost_sector,
+        daily=daily,
+        weekly=weekly,
+        stats=stats,
+        metrics=metrics,
+        analysis=analysis,
+    )
 
     OUT_TXT.write_text(text, encoding="utf-8")
     OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
