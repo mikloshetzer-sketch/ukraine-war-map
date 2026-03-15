@@ -1,23 +1,23 @@
-Ukraine War Daily Brief – Russian pressure continues near Kupiansk
+Ukraine War Daily Brief – Russian pressure continues near Velyka Novosilka
 
-The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 621.99 km². The daily change amounts to +4.46 km² compared with 2026-03-13 (orosz területszerzés). The weekly balance shows +36.7 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Kupiansk sector as a likely focal area.
+The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 631.03 km². The daily change amounts to +9.03 km² compared with 2026-03-14 (orosz területszerzés). The weekly balance shows +30.8 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Velyka Novosilka sector as a likely focal area.
 
 Key numbers:
-- Occupied territory: 116 621.99 km²
-- Daily change: +4.46 km²
-- Weekly change: +36.7 km²
+- Occupied territory: 116 631.03 km²
+- Daily change: +9.03 km²
+- Weekly change: +30.8 km²
 - Ground raw events: 120
 - Mapped points: 2
 - Mapped lines: 0
-- UAV events (7d): 1815
+- UAV events (7d): 1819
 
 Operational picture:
-The latest mapped territorial activity appears concentrated in the Kupiansk sector. A total of 120 ground combat mentions were identified in source reporting, of which 2 could be mapped with sufficient geographic precision. Drone and UAV activity remains a central operational factor, with 1815 recorded events in the past seven days.
+The latest mapped territorial activity appears concentrated in the Velyka Novosilka sector. A total of 120 ground combat mentions were identified in source reporting, of which 2 could be mapped with sufficient geographic precision. Drone and UAV activity remains a central operational factor, with 1819 recorded events in the past seven days.
 
 Key events:
-- Recent territorial change appears to be located in the Kupiansk sector.
+- Recent territorial change appears to be located in the Velyka Novosilka sector.
 - The gap between raw reporting and mapped events remains notable: 120 raw mentions resulted in 2 mapped points and 0 mapped lines.
-- Sustained UAV activity continues to support reconnaissance and strike operations, with 1815 events recorded over the past seven days.
+- Sustained UAV activity continues to support reconnaissance and strike operations, with 1819 events recorded over the past seven days.
 
 Drivers of the day:
 - Ground combat activity level assessed as low.
