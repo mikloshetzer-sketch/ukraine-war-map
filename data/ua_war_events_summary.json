@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-03-22T17:46:30+00:00",
-  "count": 9,
+  "generated_at": "2026-03-23T06:18:10+00:00",
+  "count": 11,
   "by_event_type": {
-    "missile_strike": 3,
-    "drone_attack": 5,
-    "artillery": 1
+    "drone_attack": 7,
+    "missile_strike": 2,
+    "ground_clash": 2
   },
   "by_source": {
-    "generalstaffzsu": 5,
-    "ukrainenow": 2,
+    "generalstaffzsu": 4,
+    "ukrainenow": 5,
     "deepstateua": 2
   },
   "by_confidence": {
-    "high": 7,
-    "medium": 2
+    "high": 6,
+    "medium": 5
   },
   "top_sectors": [
     [
@@ -29,8 +29,16 @@
       2
     ],
     [
+      "huliaipole",
+      2
+    ],
+    [
       "orikhiv",
       2
+    ],
+    [
+      "kherson",
+      1
     ]
   ]
 }
