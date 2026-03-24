@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-03-24T19:16:56Z",
-  "started_at_utc": "2026-03-24T19:16:11Z",
+  "generated_at_utc": "2026-03-24T19:29:13Z",
+  "started_at_utc": "2026-03-24T19:28:29Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -14,7 +14,9 @@
       "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
       "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)"
     ],
-    "known_places_count": 41
+    "known_places_count": 53,
+    "known_front_places_count": 35,
+    "broad_places_count": 18
   },
   "stats": {
     "articles_after_filters": 19,
@@ -29,13 +31,14 @@
     "dropped_not_front_near": 10,
     "dropped_geocode": 5,
     "frontline_available": true,
-    "geocode_cache_hits": 8,
-    "geocode_cache_negative_hits": 3,
-    "geocode_new_success": 2,
-    "geocode_new_fail": 2,
-    "geocode_calls_this_run": 4,
+    "geocode_cache_hits": 10,
+    "geocode_cache_negative_hits": 5,
+    "geocode_new_success": 0,
+    "geocode_new_fail": 0,
+    "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
     "cache_entries_total": 197,
+    "rejections_saved": 19,
     "collect_debug": {
       "queries_total": 3,
       "queries_with_response": 2,
@@ -53,10 +56,10 @@
           "channel_found": true,
           "item_count_raw": 80,
           "sample_date_fields": [
-            "24 Mar 2026 18:45:00 +0000",
-            "24 Mar 2026 18:45:00 +0000",
-            "24 Mar 2026 18:45:00 +0000",
-            "24 Mar 2026 18:45:00 +0000",
+            "24 Mar 2026 19:00:00 +0000",
+            "24 Mar 2026 19:00:00 +0000",
+            "24 Mar 2026 19:00:00 +0000",
+            "24 Mar 2026 19:00:00 +0000",
             "24 Mar 2026 18:45:00 +0000"
           ]
         },
@@ -81,6 +84,7 @@
     "latest": "data/gdelt_ground_latest.geojson",
     "7d": "data/gdelt_ground_7d.geojson",
     "30d": "data/gdelt_ground_30d.geojson",
-    "cache": "data/geocode_cache_v2.json"
+    "cache": "data/geocode_cache_v2.json",
+    "rejections": "data/gdelt_ground_rejections.json"
   }
 }
