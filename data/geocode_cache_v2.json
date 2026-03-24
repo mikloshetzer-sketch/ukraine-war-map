@@ -1041,5 +1041,31 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Drones": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Largest Russian": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "March": {
+    "coords": [
+      30.4871232,
+      50.4314323
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Kiev": {
+    "coords": [
+      30.5241361,
+      50.4500336
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
