@@ -17,10 +17,6 @@ Outputok:
 - data/gdelt_ground_30d.geojson
 - data/gdelt_ground_index.json
 - data/geocode_cache_v2.json
-
-Megjegyzés:
-- ez nem DeepState API, hanem nyilvános híralapú második forrás.
-- így jogilag és technikailag is kisebb a kockázat.
 """
 
 from __future__ import annotations
@@ -55,22 +51,17 @@ GEOJSON_30D = OUT_DIR / "gdelt_ground_30d.geojson"
 INDEX_JSON = OUT_DIR / "gdelt_ground_index.json"
 GEOCODE_CACHE_V2 = OUT_DIR / "geocode_cache_v2.json"
 
-# Front line source - ugyanaz, mint az ISW ground pipeline-ban
 ARCGIS_FRONT_GEOJSON_URL = (
     "https://services-eu1.arcgis.com/fppoCYaq7HfVFbIV/ArcGIS/rest/services/"
     "UKR_Frontline_27072025/FeatureServer/0/query?"
     "where=1%3D1&outFields=*&f=geojson"
 )
 
-# Időablakok
 LOOKBACK_DAYS = 30
 LATEST_WINDOW_DAYS = 1
-
-# Feldolgozási korlátok
-MAX_ARTICLES_TOTAL = 120
+MAX_ARTICLES_TOTAL = 150
 MAX_GEOCODE_CALLS_PER_RUN = 80
 
-# Geokódolás / front
 VIEW_MIN_LON, VIEW_MIN_LAT = 20.0, 42.0
 VIEW_MAX_LON, VIEW_MAX_LAT = 60.0, 58.5
 ALLOWED_COUNTRY_CODES = {"ua", "ru"}
@@ -82,24 +73,11 @@ HTTP_TIMEOUT = 30
 FRONT_TIMEOUT = 35
 EARTH_R = 6371000.0
 
-# Keresések:
-# szándékosan több, rövidebb query, hogy ne egyetlen túl általános találathalmazt kapjunk
+# Keresések: lazább, általánosabb
 QUERIES = [
-    '("Pokrovsk" OR "Toretsk" OR "Chasiv Yar" OR "Kupiansk" OR "Lyman") AND (attack OR assault OR advance OR fighting)',
-    '("Kurakhove" OR "Vovchansk" OR "Robotyne" OR "Orikhiv" OR "Siversk") AND (attack OR assault OR advance OR fighting)',
-    '("Donetsk Oblast" OR "Zaporizhzhia Oblast" OR "Kharkiv Oblast" OR "Kherson Oblast") AND (frontline OR fighting OR assault)',
-]
-
-# Csak általános, megbízhatóbb ukrajnai háborús hírforrások
-# domain-lista szűk, hogy ne ömöljön be minden zaj
-SOURCE_DOMAINS = [
-    "reuters.com",
-    "kyivindependent.com",
-    "euromaidanpress.com",
-    "pravda.com.ua",
-    "interfax.com.ua",
-    "ukrinform.net",
-    "unian.net",
+    '"Ukraine" AND (attack OR assault OR advance OR fighting OR clashes)',
+    '("Donetsk" OR "Luhansk" OR "Kharkiv" OR "Zaporizhzhia" OR "Kherson") AND (attack OR fighting OR assault OR advance)',
+    '("Pokrovsk" OR "Toretsk" OR "Chasiv Yar" OR "Kupiansk" OR "Lyman" OR "Vovchansk" OR "Orikhiv") AND (attack OR fighting OR assault)',
 ]
 
 GROUND_KEYWORDS = [
@@ -130,6 +108,7 @@ ACTION_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Egyszerű helykinyerés
 PLACE_PATTERN = re.compile(
     r"\b(?:in|near|around|outside|south of|north of|east of|west of|toward|towards)\s+"
     r"([A-Z][A-Za-z0-9\-\']+(?:\s+[A-Z][A-Za-z0-9\-\']+)*)",
@@ -140,6 +119,14 @@ TITLE_PLACE_PATTERN = re.compile(
     r"\b([A-Z][A-Za-z0-9\-\']+(?:\s+[A-Z][A-Za-z0-9\-\']+)*)\b"
 )
 
+KNOWN_PLACES = {
+    "Pokrovsk", "Toretsk", "Chasiv Yar", "Kupiansk", "Lyman", "Siversk",
+    "Orikhiv", "Robotyne", "Vovchansk", "Kurakhove", "Kramatorsk",
+    "Sloviansk", "Avdiivka", "Bakhmut", "Kherson", "Kharkiv",
+    "Donetsk", "Luhansk", "Zaporizhzhia", "Sumy", "Kupyansk",
+    "Velyka Novosilka", "Selydove", "Kostiantynivka"
+}
+
 NOISE_EXACT = {
     "russian forces",
     "ukrainian forces",
@@ -149,6 +136,9 @@ NOISE_EXACT = {
     "russia",
     "frontline",
     "the frontline",
+    "the area",
+    "this area",
+    "the direction",
     "donetsk oblast",
     "luhansk oblast",
     "kharkiv oblast",
@@ -156,9 +146,6 @@ NOISE_EXACT = {
     "kherson oblast",
     "sumy oblast",
     "kursk oblast",
-    "the area",
-    "this area",
-    "the direction",
 }
 
 NOISE_CONTAINS = [
@@ -285,7 +272,7 @@ def xml_text(elem: ET.Element | None, tag: str) -> str:
 # GDELT FETCH
 # =========================================================
 
-def make_gdelt_rss_url(query: str, max_records: int = 50) -> str:
+def make_gdelt_rss_url(query: str, max_records: int = 80) -> str:
     encoded_query = requests.utils.quote(query)
     return (
         "https://api.gdeltproject.org/api/v2/doc/doc?"
@@ -331,39 +318,53 @@ def parse_gdelt_rss(xml_text_data: str) -> list[dict]:
     return items
 
 
-def collect_articles() -> list[dict]:
+def collect_articles() -> tuple[list[dict], dict]:
     today = today_utc_date()
     all_items: list[dict] = []
 
+    debug = {
+        "queries_total": len(QUERIES),
+        "queries_with_response": 0,
+        "items_before_filters": 0,
+        "items_with_date": 0,
+        "items_in_lookback_window": 0,
+        "items_keyword_matched": 0,
+        "items_action_matched": 0,
+        "items_after_dedup": 0,
+    }
+
     for q in QUERIES:
-        rss_url = make_gdelt_rss_url(q, max_records=50)
+        rss_url = make_gdelt_rss_url(q, max_records=80)
         log(f"GDELT query: {q}")
         xml_data = safe_get_text(rss_url, timeout=HTTP_TIMEOUT)
         if not xml_data:
             continue
 
+        debug["queries_with_response"] += 1
         items = parse_gdelt_rss(xml_data)
+        debug["items_before_filters"] += len(items)
 
         for item in items:
             d = parse_date_str(item.get("published_raw"))
             if d is None:
                 continue
+            debug["items_with_date"] += 1
+
             if not in_last_days(d, LOOKBACK_DAYS, today):
                 continue
-
-            url_low = (item.get("url") or "").lower()
-            if not any(domain in url_low for domain in SOURCE_DOMAINS):
-                continue
+            debug["items_in_lookback_window"] += 1
 
             text_blob = f"{item.get('title', '')} {item.get('description', '')}".lower()
             if not any(k in text_blob for k in GROUND_KEYWORDS):
                 continue
+            debug["items_keyword_matched"] += 1
+
             if not ACTION_RE.search(text_blob):
                 continue
+            debug["items_action_matched"] += 1
 
             all_items.append(item)
 
-    # dedupe URL alapján
     dedup: dict[str, dict] = {}
     for item in all_items:
         dedup[item["url"]] = item
@@ -374,8 +375,9 @@ def collect_articles() -> list[dict]:
     if len(out) > MAX_ARTICLES_TOTAL:
         out = out[:MAX_ARTICLES_TOTAL]
 
+    debug["items_after_dedup"] = len(out)
     log(f"GDELT cikkek összesen szűrés után: {len(out)}")
-    return out
+    return out, debug
 
 
 # =========================================================
@@ -410,6 +412,9 @@ def looks_like_reasonable_place(place: str | None) -> bool:
     if not p:
         return False
 
+    if p in KNOWN_PLACES:
+        return True
+
     low = p.lower()
 
     if low in NOISE_EXACT:
@@ -442,21 +447,27 @@ def looks_like_reasonable_place(place: str | None) -> bool:
 def best_place_from_text(title: str, description: str) -> str | None:
     candidates: list[str] = []
 
-    # 1) strukturáltabb minták
+    # 0) ismert helyek explicit keresése
+    joined = f"{title} {description}"
+    for place in KNOWN_PLACES:
+        if re.search(rf"\b{re.escape(place)}\b", joined, flags=re.IGNORECASE):
+            candidates.append(place)
+
+    # 1) minták
     for blob in (title, description):
         for m in PLACE_PATTERN.findall(blob):
             c = clean_place(m)
             if looks_like_reasonable_place(c):
                 candidates.append(c)
 
-    # 2) title-ból nagybetűs szekvenciák
+    # 2) cím nagybetűs töredékek
     if not candidates:
         for m in TITLE_PLACE_PATTERN.findall(title):
             c = clean_place(m)
             if looks_like_reasonable_place(c):
                 candidates.append(c)
 
-    # 3) description-ből utolsó fallback
+    # 3) leírás töredékek
     if not candidates:
         for m in TITLE_PLACE_PATTERN.findall(description):
             c = clean_place(m)
@@ -466,7 +477,6 @@ def best_place_from_text(title: str, description: str) -> str | None:
     if not candidates:
         return None
 
-    # gyakoriság + rövidebb forma előny
     scored: dict[str, int] = {}
     for c in candidates:
         scored[c] = scored.get(c, 0) + 1
@@ -819,7 +829,7 @@ def main() -> int:
     today = today_utc_date()
     log("GDELT ground pipeline start")
 
-    articles = collect_articles()
+    articles, collect_debug = collect_articles()
 
     raw_events: list[dict] = []
     for idx, article in enumerate(articles, start=1):
@@ -830,7 +840,6 @@ def main() -> int:
         if event:
             raw_events.append(event)
 
-    # dedupe: azonos URL + place + date ne ismétlődjön
     dedup_map: dict[tuple, dict] = {}
     for e in raw_events:
         key = (
@@ -866,8 +875,8 @@ def main() -> int:
             "max_articles_total": MAX_ARTICLES_TOTAL,
             "max_geocode_calls_per_run": MAX_GEOCODE_CALLS_PER_RUN,
             "front_near_km": FRONT_NEAR_KM,
-            "source_domains": SOURCE_DOMAINS,
             "queries": QUERIES,
+            "known_places_count": len(KNOWN_PLACES),
         },
         "stats": {
             "articles_after_filters": len(articles),
@@ -884,6 +893,7 @@ def main() -> int:
             "geocode_calls_this_run": geocode_calls_this_run,
             "rejected_before_geocode": rejected_before_geocode,
             "cache_entries_total": len(geocache),
+            "collect_debug": collect_debug,
         },
         "files": {
             "latest": str(LATEST_GEOJSON),
@@ -899,7 +909,7 @@ def main() -> int:
     log(f"Latest features: {len(features_latest)}")
     log(f"7d features: {len(features_7d)}")
     log(f"30d features: {len(features_30d)}")
-    log(f"Geocode cache hits: {geocode_cache_hits}")
+    log(f"Articles after filters: {len(articles)}")
     log(f"New geocode success/fail: {geocode_new_success}/{geocode_new_fail}")
 
     return 0
