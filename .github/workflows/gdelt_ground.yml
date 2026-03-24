@@ -1,0 +1,62 @@
+name: gdelt-ground-pipeline
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "15 5 * * *" # naponta 05:15 UTC (nem ütközik az ISW-vel)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gdelt-ground-pipeline
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run GDELT ground pipeline
+        run: |
+          python scripts/gdelt_ground_pipeline.py
+
+      - name: Show generated files
+        run: |
+          ls -lah data || true
+          echo "---- gdelt_ground_index.json ----"
+          cat data/gdelt_ground_index.json || true
+
+      - name: Commit and push data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+
+          git add \
+            data/gdelt_ground_latest.geojson \
+            data/gdelt_ground_7d.geojson \
+            data/gdelt_ground_30d.geojson \
+            data/gdelt_ground_index.json \
+            data/geocode_cache_v2.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update GDELT ground events"
+          git push
