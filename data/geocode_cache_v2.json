@@ -1020,5 +1020,26 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "With": {
+    "coords": [
+      30.5286211,
+      50.4450683
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Iran": {
+    "coords": [
+      44.088177,
+      43.308723
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Europa aus": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
