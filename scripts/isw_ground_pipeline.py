@@ -2,14 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-ISW ground operations pipeline (30 napos időablak + külön dátummezők)
-
-Outputok:
-- data/isw_ground_latest.geojson
-- data/isw_ground_7d.geojson
-- data/isw_ground_30d.geojson
-- data/isw_ground_index.json
-- data/geocode_cache_v2.json
+ISW ground operations pipeline
+- 30 napos időablak
+- külön article_date / event_date / ingested_at
+- szigorúbb esemény- és helyszűrés a geocode-zaj csökkentésére
 """
 
 from __future__ import annotations
@@ -54,31 +50,26 @@ GEOJSON_30D = OUT_DIR / "isw_ground_30d.geojson"
 INDEX_JSON = OUT_DIR / "isw_ground_index.json"
 GEOCODE_CACHE_V2 = OUT_DIR / "geocode_cache_v2.json"
 
-# Időablak
 LOOKBACK_DAYS = 30
-
-# Futási korlátok
 MAX_ARTICLES = 30
-MAX_GEOCODE_CALLS_PER_RUN = 80
+MAX_EVENTS_PER_ARTICLE = 20
+MAX_GEOCODE_CALLS_PER_RUN = 60
+
 HTTP_TIMEOUT_MAIN = 20
 HTTP_TIMEOUT_FALLBACK = 25
 FRONT_TIMEOUT = 35
 
-# Geokód szűkítés
 VIEW_MIN_LON, VIEW_MIN_LAT = 20.0, 42.0
 VIEW_MAX_LON, VIEW_MAX_LAT = 60.0, 58.5
 ALLOWED_COUNTRY_CODES = {"ua", "ru"}
 
-# Szűrők
 FRONT_NEAR_KM = 90.0
 MAX_MOVE_KM = 160.0
 MIN_INFERRED_KM = 2.0
 MAX_INFERRED_KM = 70.0
 
-# Nominatim rate-limit
 NOMINATIM_SLEEP_SEC = 1.0
-
-EARTH_R = 6371000.0  # meters
+EARTH_R = 6371000.0
 
 
 # =========================================================
@@ -202,7 +193,6 @@ def collect_recent_article_links(limit: int = MAX_ARTICLES, lookback_days: int =
         article_date = infer_date_from_url(raw)
         if article_date is None:
             continue
-
         if not in_last_days(article_date, lookback_days, today):
             continue
 
@@ -252,8 +242,16 @@ GROUND_KEYWORDS = [
     "withdrawal",
     "cleared",
     "secured",
-    "in the direction of",
 ]
+
+STRONG_ACTION_RE = re.compile(
+    r"\b("
+    r"advanced?|attacked?|assaulted?|captured?|seized|recaptured?|"
+    r"pushed|breached|secured|cleared|counterattacked?|repelled|withdrew|"
+    r"made gains?|launched assaults?"
+    r")\b",
+    re.IGNORECASE,
+)
 
 MOVE_FROM_TO = re.compile(
     r"\bfrom\s+(?:the\s+vicinity\s+of\s+|near\s+|around\s+|in\s+)?"
@@ -268,10 +266,69 @@ MOVE_TOWARD = re.compile(
 )
 
 PLACE_PATTERN = re.compile(
-    r"\b(in|near|around|outside|south of|north of|east of|west of|within)\s+"
+    r"\b(?:in|near|around|outside|south of|north of|east of|west of|within)\s+"
     r"([A-Z][A-Za-z0-9\-\']+(?:\s+[A-Z][A-Za-z0-9\-\']+)*)",
     re.IGNORECASE,
 )
+
+NOISE_EXACT = {
+    "russian forces",
+    "ukrainian forces",
+    "russian troops",
+    "ukrainian troops",
+    "russian military",
+    "ukrainian military",
+    "the frontline",
+    "frontline",
+    "the front",
+    "front",
+    "ukraine",
+    "russia",
+    "donetsk oblast",
+    "luhansk oblast",
+    "kharkiv oblast",
+    "zaporizhia oblast",
+    "kherson oblast",
+    "sumy oblast",
+    "kursk oblast",
+    "belgorod oblast",
+    "bryansk oblast",
+    "the area",
+    "this area",
+    "the direction",
+    "this direction",
+}
+
+NOISE_CONTAINS = [
+    "forces",
+    "troops",
+    "military",
+    "grouping",
+    "unit",
+    "units",
+    "elements",
+    "personnel",
+    "axis",
+    "direction",
+    "frontline",
+    "front line",
+    "campaign",
+    "offensive",
+    "defense",
+    "defence",
+    "operation",
+    "operations",
+    "ministry",
+    "staff",
+    "command",
+    "commander",
+]
+
+BAD_PLACE_TOKENS = {
+    "the", "a", "an", "and", "or", "of", "for", "to", "toward", "towards",
+    "near", "around", "within", "outside", "north", "south", "east", "west",
+    "from", "by", "on", "at", "in"
+}
 
 
 def strip_html_to_text(html: str) -> str:
@@ -295,29 +352,65 @@ def clean_place(raw: str | None) -> str | None:
     s = re.sub(r"^[,;:\-]+", "", s).strip()
     s = re.sub(r"[,;:\-]+$", "", s).strip()
 
-    noise_suffixes = [
-        "that",
-        "which",
-        "where",
-        "when",
-        "after",
-        "before",
-        "because",
-        "while",
-        "as",
-        "and",
-        "but",
-    ]
-    parts = s.split()
-    if parts and parts[-1].lower() in noise_suffixes:
-        s = " ".join(parts[:-1]).strip()
+    s = re.split(r"\b(?:that|which|where|when|after|before|because|while|although|but|and)\b", s, maxsplit=1, flags=re.IGNORECASE)[0].strip()
+    s = re.sub(r"\s+", " ", s).strip()
 
-    if len(s) < 2 or len(s) > 55:
+    if len(s) < 3 or len(s) > 45:
         return None
     if not re.search(r"[A-Za-z]", s):
         return None
 
     return s
+
+
+def looks_like_reasonable_place(place: str | None) -> bool:
+    if not place:
+        return False
+
+    p = place.strip()
+    if not p:
+        return False
+
+    low = p.lower()
+
+    if low in NOISE_EXACT:
+        return False
+
+    for frag in NOISE_CONTAINS:
+        if frag in low:
+            return False
+
+    tokens = re.findall(r"[A-Za-z][A-Za-z'\-]*", p)
+    if not tokens:
+        return False
+
+    if len(tokens) > 4:
+        return False
+
+    useful_tokens = [t for t in tokens if t.lower() not in BAD_PLACE_TOKENS]
+    if not useful_tokens:
+        return False
+
+    # legalább egy token kezdődjön nagybetűvel
+    if not any(t[:1].isupper() for t in useful_tokens):
+        return False
+
+    # nagyon rövid, generikus tokenek kiszűrése
+    if len(useful_tokens) == 1 and len(useful_tokens[0]) < 4:
+        return False
+
+    return True
+
+
+def sentence_is_actionable(sentence: str) -> bool:
+    low = sentence.lower()
+    if len(sentence) < 50 or len(sentence) > 420:
+        return False
+    if not any(k in low for k in GROUND_KEYWORDS):
+        return False
+    if not STRONG_ACTION_RE.search(sentence):
+        return False
+    return True
 
 
 def extract_events(article_meta: dict) -> list[dict]:
@@ -335,62 +428,73 @@ def extract_events(article_meta: dict) -> list[dict]:
     ingested_at = utc_now_iso()
 
     events: list[dict] = []
+    local_seen = set()
 
     for sentence in sentences:
         s = sentence.strip()
-        if len(s) < 40:
-            continue
-
-        lower = s.lower()
-        if not any(k in lower for k in GROUND_KEYWORDS):
+        if not sentence_is_actionable(s):
             continue
 
         base = {
             "article_date": str(article_date),
-            "event_date": str(article_date),  # fallback: ha nincs jobb, a cikk dátuma
+            "event_date": str(article_date),
             "ingested_at": ingested_at,
             "text": s[:420],
             "source_url": article_url,
         }
 
+        accepted = False
+
         mm = MOVE_FROM_TO.search(s)
         if mm:
             a = clean_place(mm.group(1))
             b = clean_place(mm.group(2))
-            if a and b and a != b:
-                events.append(
-                    {
-                        **base,
-                        "kind": "movement",
-                        "from_place": a,
-                        "to_place": b,
-                    }
-                )
-                continue
+            if looks_like_reasonable_place(a) and looks_like_reasonable_place(b) and a != b:
+                item = {
+                    **base,
+                    "kind": "movement",
+                    "from_place": a,
+                    "to_place": b,
+                }
+                key = ("movement", a, b, base["text"])
+                if key not in local_seen:
+                    local_seen.add(key)
+                    events.append(item)
+                    accepted = True
 
-        tm = MOVE_TOWARD.search(s)
-        if tm:
-            b = clean_place(tm.group(1))
-            if b:
-                events.append(
-                    {
+        if not accepted:
+            tm = MOVE_TOWARD.search(s)
+            if tm:
+                b = clean_place(tm.group(1))
+                if looks_like_reasonable_place(b):
+                    item = {
                         **base,
                         "kind": "toward_only",
                         "to_place": b,
                     }
-                )
-                continue
+                    key = ("toward_only", b, base["text"])
+                    if key not in local_seen:
+                        local_seen.add(key)
+                        events.append(item)
+                        accepted = True
 
-        pm = PLACE_PATTERN.search(s)
-        place = clean_place(pm.group(2)) if pm else None
-        if place:
-            events.append(
-                {
+        if not accepted:
+            pm = PLACE_PATTERN.search(s)
+            place = clean_place(pm.group(1)) if pm else None
+            if looks_like_reasonable_place(place):
+                item = {
                     **base,
                     "kind": "ground",
                     "place": place,
                 }
-            )
+                key = ("ground", place, base["text"])
+                if key not in local_seen:
+                    local_seen.add(key)
+                    events.append(item)
+                    accepted = True
+
+        if len(events) >= MAX_EVENTS_PER_ARTICLE:
+            break
 
     return events
 
@@ -412,6 +516,7 @@ geocode_cache_hits = 0
 geocode_cache_negative_hits = 0
 geocode_new_success = 0
 geocode_new_fail = 0
+rejected_before_geocode = 0
 
 
 def save_cache() -> None:
@@ -449,14 +554,13 @@ def _cache_set_negative(place: str) -> None:
 
 def geocode(place: str | None) -> tuple[list[float] | None, str | None]:
     global geocode_calls_this_run, geocode_cache_hits, geocode_cache_negative_hits
-    global geocode_new_success, geocode_new_fail
+    global geocode_new_success, geocode_new_fail, rejected_before_geocode
 
-    if not place:
+    if not looks_like_reasonable_place(place):
+        rejected_before_geocode += 1
         return None, None
 
     key = place.strip()
-    if not key:
-        return None, None
 
     cached_coords, cached_cc, known_negative = _cache_get(key)
     if known_negative:
@@ -735,9 +839,7 @@ def feature_event_date(feature: dict) -> dt.date | None:
     event_date = parse_date_str(props.get("event_date") or "")
     if event_date is not None:
         return event_date
-
-    article_date = parse_date_str(props.get("article_date") or "")
-    return article_date
+    return parse_date_str(props.get("article_date") or "")
 
 
 def feature_in_last_days(feature: dict, days: int, ref: dt.date) -> bool:
@@ -929,18 +1031,9 @@ def main() -> int:
     segments = load_frontline_segments()
     features_all, stats = build_features(dedup_events, segments)
 
-    features_latest = [
-        f for f in features_all
-        if feature_event_date(f) == today
-    ]
-    features_7d = [
-        f for f in features_all
-        if feature_in_last_days(f, 7, today)
-    ]
-    features_30d = [
-        f for f in features_all
-        if feature_in_last_days(f, 30, today)
-    ]
+    features_latest = [f for f in features_all if feature_event_date(f) == today]
+    features_7d = [f for f in features_all if feature_in_last_days(f, 7, today)]
+    features_30d = [f for f in features_all if feature_in_last_days(f, 30, today)]
 
     write_geojson(LATEST_GEOJSON, features_latest)
     write_geojson(GEOJSON_7D, features_7d)
@@ -954,6 +1047,7 @@ def main() -> int:
         "config": {
             "lookback_days": LOOKBACK_DAYS,
             "max_articles": MAX_ARTICLES,
+            "max_events_per_article": MAX_EVENTS_PER_ARTICLE,
             "max_geocode_calls_per_run": MAX_GEOCODE_CALLS_PER_RUN,
             "front_near_km": FRONT_NEAR_KM,
             "max_move_km": MAX_MOVE_KM,
@@ -974,6 +1068,7 @@ def main() -> int:
             "geocode_new_success": geocode_new_success,
             "geocode_new_fail": geocode_new_fail,
             "geocode_calls_this_run": geocode_calls_this_run,
+            "rejected_before_geocode": rejected_before_geocode,
             "cache_entries_total": len(geocache),
         },
         "files": {
@@ -992,6 +1087,7 @@ def main() -> int:
     log(f"30d features: {len(features_30d)}")
     log(f"Geocode cache hits: {geocode_cache_hits}")
     log(f"New geocode success/fail: {geocode_new_success}/{geocode_new_fail}")
+    log(f"Rejected before geocode: {rejected_before_geocode}")
 
     return 0
 
