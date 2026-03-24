@@ -7,8 +7,9 @@ Második publikus forrás az ISW mellé.
 
 Cél:
 - frontközeli, földi harccselekményekről szóló friss hírek begyűjtése GDELT-ből
-- helyszínkinyerés cím/szöveg alapján
+- több lehetséges helyszín kinyerése cím/szöveg alapján
 - geokódolás
+- legjobb frontközeli jelölt kiválasztása
 - 7 napos és 30 napos GeoJSON rétegek előállítása
 - rejection debug export
 """
@@ -58,11 +59,13 @@ LATEST_WINDOW_DAYS = 1
 MAX_ARTICLES_TOTAL = 150
 MAX_GEOCODE_CALLS_PER_RUN = 80
 MAX_REJECTIONS_SAVED = 200
+MAX_CANDIDATES_PER_ARTICLE = 8
 
 VIEW_MIN_LON, VIEW_MIN_LAT = 20.0, 42.0
 VIEW_MAX_LON, VIEW_MAX_LAT = 60.0, 58.5
 ALLOWED_COUNTRY_CODES = {"ua", "ru"}
 
+# GDELT-nél lazább frontközeli szűrés kell, mert a hírek gyakran tágabb helyet neveznek meg
 FRONT_NEAR_KM = 180.0
 KNOWN_PLACE_FALLBACK_FRONT_KM = 240.0
 
@@ -126,7 +129,7 @@ KNOWN_FRONT_PLACES = {
     "Stepove", "Novodanylivka", "Ocheretyne", "Marinka", "Vuhledar", "Shevchenko"
 }
 
-# Túl tág / regionális helyek, amiket csak végső fallbackként se nagyon akarunk
+# Túl tág / regionális helyek, amiket nem akarunk végső eseménypontnak
 BROAD_PLACES = {
     "Ukraine", "Russia", "Donetsk", "Luhansk", "Kharkiv", "Kherson",
     "Zaporizhzhia", "Sumy", "Dnipro", "Kyiv", "Moscow",
@@ -340,7 +343,7 @@ def parse_gdelt_rss(xml_text_data: str) -> tuple[list[dict], dict]:
         return items, debug
 
     debug["parse_ok"] = True
-    debug["root_tag"] = root.tag
+    debug["root_tag"] = local_name(root.tag)
 
     channel = None
     if local_name(root.tag).lower() == "rss":
@@ -560,24 +563,24 @@ def place_priority(place: str) -> tuple[int, int]:
     return (1, len(p))
 
 
-def best_place_from_text(title: str, description: str) -> str | None:
-    scored_candidates: list[tuple[str, int, str]] = []
-    joined = f"{title} {description}"
+def extract_candidate_places(title: str, description: str) -> list[tuple[str, int, str]]:
+    candidates: list[tuple[str, int, str]] = []
 
-    # 1) explicit known place matches - title gets higher score
+    # 1) explicit known front places - highest priority
     for place in KNOWN_FRONT_PLACES:
-        if re.search(rf"\b{re.escape(place)}\b", title, flags=re.IGNORECASE):
-            scored_candidates.append((place, 100, "known_front_title"))
-        elif re.search(rf"\b{re.escape(place)}\b", description, flags=re.IGNORECASE):
-            scored_candidates.append((place, 80, "known_front_description"))
+        if re.search(rf"\b{re.escape(place)}\b", title, re.IGNORECASE):
+            candidates.append((place, 100, "known_front_title"))
+        elif re.search(rf"\b{re.escape(place)}\b", description, re.IGNORECASE):
+            candidates.append((place, 80, "known_front_description"))
 
+    # 2) explicit broad places - low priority
     for place in BROAD_PLACES:
-        if re.search(rf"\b{re.escape(place)}\b", title, flags=re.IGNORECASE):
-            scored_candidates.append((place, 10, "broad_title"))
-        elif re.search(rf"\b{re.escape(place)}\b", description, flags=re.IGNORECASE):
-            scored_candidates.append((place, 5, "broad_description"))
+        if re.search(rf"\b{re.escape(place)}\b", title, re.IGNORECASE):
+            candidates.append((place, 15, "broad_title"))
+        elif re.search(rf"\b{re.escape(place)}\b", description, re.IGNORECASE):
+            candidates.append((place, 5, "broad_description"))
 
-    # 2) structured preposition-based extraction
+    # 3) preposition-based extraction
     for blob_name, blob, base_score in (
         ("title", title, 60),
         ("description", description, 40),
@@ -585,46 +588,32 @@ def best_place_from_text(title: str, description: str) -> str | None:
         for m in PLACE_PATTERN.findall(blob):
             c = clean_place(m)
             if looks_like_reasonable_place(c):
-                scored_candidates.append((normalize_known_place(c), base_score, f"pattern_{blob_name}"))
+                candidates.append((normalize_known_place(c), base_score, f"pattern_{blob_name}"))
 
-    # 3) fallback title chunks
+    # 4) title chunks
     for m in TITLE_PLACE_PATTERN.findall(title):
         c = clean_place(m)
         if looks_like_reasonable_place(c):
-            scored_candidates.append((normalize_known_place(c), 20, "title_chunk"))
+            candidates.append((normalize_known_place(c), 25, "title_chunk"))
 
-    # 4) fallback description chunks
+    # 5) description chunks
     for m in TITLE_PLACE_PATTERN.findall(description):
         c = clean_place(m)
         if looks_like_reasonable_place(c):
-            scored_candidates.append((normalize_known_place(c), 8, "description_chunk"))
+            candidates.append((normalize_known_place(c), 10, "description_chunk"))
 
-    if not scored_candidates:
-        return None
+    # dedupe by best score
+    unique: dict[str, tuple[int, str]] = {}
+    for p, score, src in candidates:
+        if p not in unique or unique[p][0] < score:
+            unique[p] = (score, src)
 
-    best: tuple[str, int, str] | None = None
-    for place, score, source in scored_candidates:
-        if place in BROAD_PLACES:
-            score -= 40
-        prio, length = place_priority(place)
-        ranking = (score, -prio, -length)
-        if best is None:
-            best = (place, score, source)
-            best_rank = ranking
-        else:
-            if ranking > best_rank:
-                best = (place, score, source)
-                best_rank = ranking
+    result = [(p, sc, src) for p, (sc, src) in unique.items()]
 
-    if best is None:
-        return None
+    # sort by score desc, then priority, then shorter length
+    result.sort(key=lambda x: (-x[1], place_priority(x[0])[0], len(x[0])))
 
-    chosen = best[0]
-    if chosen in BROAD_PLACES:
-        # ha csak túl tág hely maradt, inkább dobjuk
-        return None
-
-    return chosen
+    return result[:MAX_CANDIDATES_PER_ARTICLE]
 
 
 def classify_location_confidence(place: str) -> str:
@@ -649,8 +638,12 @@ def article_to_event(article: dict) -> dict | None:
     if not ACTION_RE.search(text_blob):
         return None
 
-    place = best_place_from_text(title, description)
-    if not place:
+    candidates = extract_candidate_places(title, description)
+
+    # broad place only = gyenge találat, ne engedjük át
+    candidates = [c for c in candidates if c[0] not in BROAD_PLACES]
+
+    if not candidates:
         add_rejection(
             "no_specific_place_selected",
             {
@@ -667,8 +660,7 @@ def article_to_event(article: dict) -> dict | None:
         "article_date": str(event_date),
         "event_date": str(event_date),
         "ingested_at": utc_now_iso(),
-        "place": place,
-        "location_confidence": classify_location_confidence(place),
+        "candidates": candidates,
         "title": title[:260],
         "text": text_blob[:420],
         "source_url": article.get("url"),
@@ -925,6 +917,7 @@ def make_point_feature(
         "ingested_at": event.get("ingested_at"),
         "place": event.get("place"),
         "location_confidence": event.get("location_confidence"),
+        "candidate_score": event.get("candidate_score"),
         "country_code": country_code,
         "front_dist_km": None if front_dist_km is None or math.isinf(front_dist_km) else round(front_dist_km, 2),
         "title": event.get("title"),
@@ -968,43 +961,90 @@ def build_features(events: list[dict], segments: list[dict]) -> tuple[list[dict]
         if idx % 20 == 0:
             log(f"Feature build progress: {idx}/{len(events)}")
 
-        place = event.get("place")
-        coords, cc = geocode(place)
-        if not coords:
-            stats["dropped_geocode"] += 1
-            add_rejection(
-                "geocode_failed",
-                {
+        candidates = event.get("candidates") or []
+        best_feature = None
+        best_rank: tuple[float, float, float] | None = None
+        had_geocoded_candidate = False
+        candidate_debug: list[dict[str, Any]] = []
+
+        for place, score, source in candidates:
+            coords, cc = geocode(place)
+            if not coords:
+                candidate_debug.append({
                     "place": place,
-                    "title": event.get("title"),
-                    "source_url": event.get("source_url"),
-                },
+                    "score": score,
+                    "source": source,
+                    "status": "geocode_failed",
+                })
+                continue
+
+            had_geocoded_candidate = True
+            stats["events_with_any_geo"] += 1
+
+            lon, lat = coords
+            allowed_dist = place_front_threshold_km(place)
+            front_dist = min_distance_km_to_front(lat, lon, segments, allowed_dist)
+
+            candidate_debug.append({
+                "place": place,
+                "score": score,
+                "source": source,
+                "status": "ok" if front_dist <= allowed_dist else "too_far",
+                "front_dist_km": round(front_dist, 2) if not math.isinf(front_dist) else None,
+                "allowed_front_dist_km": allowed_dist,
+            })
+
+            if segments and front_dist > allowed_dist:
+                continue
+
+            # ranking: higher score first, then smaller dist, then known-front preferred
+            rank = (
+                float(score),
+                -float(front_dist),
+                -float(place_priority(place)[0]),
             )
+
+            feature = make_point_feature(
+                coords,
+                {
+                    **event,
+                    "place": place,
+                    "location_confidence": source,
+                    "candidate_score": score,
+                },
+                cc,
+                front_dist,
+            )
+
+            if best_feature is None or rank > best_rank:
+                best_feature = feature
+                best_rank = rank
+
+        if best_feature is not None:
+            features.append(best_feature)
+            stats["point_features"] += 1
             continue
 
-        stats["events_with_any_geo"] += 1
-
-        lon, lat = coords
-        allowed_dist = place_front_threshold_km(place)
-        front_dist = min_distance_km_to_front(lat, lon, segments, allowed_dist)
-
-        if segments and front_dist > allowed_dist:
+        if had_geocoded_candidate:
             stats["dropped_not_front_near"] += 1
             add_rejection(
-                "too_far_from_front",
+                "all_candidates_too_far_from_front",
                 {
-                    "place": place,
-                    "front_dist_km": round(front_dist, 2) if not math.isinf(front_dist) else None,
-                    "allowed_front_dist_km": allowed_dist,
-                    "location_confidence": event.get("location_confidence"),
                     "title": event.get("title"),
                     "source_url": event.get("source_url"),
+                    "candidate_debug": candidate_debug,
                 },
             )
-            continue
-
-        features.append(make_point_feature(coords, event, cc, front_dist))
-        stats["point_features"] += 1
+        else:
+            stats["dropped_geocode"] += 1
+            add_rejection(
+                "all_candidates_failed_geocode",
+                {
+                    "title": event.get("title"),
+                    "source_url": event.get("source_url"),
+                    "candidate_debug": candidate_debug,
+                },
+            )
 
     return features, stats
 
@@ -1033,8 +1073,8 @@ def main() -> int:
     for e in raw_events:
         key = (
             e.get("source_url"),
-            e.get("place"),
             e.get("event_date"),
+            tuple((p, s, src) for p, s, src in e.get("candidates", [])),
         )
         dedup_map[key] = e
 
@@ -1064,6 +1104,7 @@ def main() -> int:
             "latest_window_days": LATEST_WINDOW_DAYS,
             "max_articles_total": MAX_ARTICLES_TOTAL,
             "max_geocode_calls_per_run": MAX_GEOCODE_CALLS_PER_RUN,
+            "max_candidates_per_article": MAX_CANDIDATES_PER_ARTICLE,
             "front_near_km": FRONT_NEAR_KM,
             "known_place_fallback_front_km": KNOWN_PLACE_FALLBACK_FRONT_KM,
             "queries": QUERIES,
