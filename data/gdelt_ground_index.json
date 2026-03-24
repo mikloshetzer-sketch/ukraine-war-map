@@ -1,27 +1,19 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-03-24T17:25:17Z",
-  "started_at_utc": "2026-03-24T17:24:54Z",
+  "generated_at_utc": "2026-03-24T18:56:34Z",
+  "started_at_utc": "2026-03-24T18:56:05Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
-    "max_articles_total": 120,
+    "max_articles_total": 150,
     "max_geocode_calls_per_run": 80,
     "front_near_km": 90.0,
-    "source_domains": [
-      "reuters.com",
-      "kyivindependent.com",
-      "euromaidanpress.com",
-      "pravda.com.ua",
-      "interfax.com.ua",
-      "ukrinform.net",
-      "unian.net"
-    ],
     "queries": [
-      "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\") AND (attack OR assault OR advance OR fighting)",
-      "(\"Kurakhove\" OR \"Vovchansk\" OR \"Robotyne\" OR \"Orikhiv\" OR \"Siversk\") AND (attack OR assault OR advance OR fighting)",
-      "(\"Donetsk Oblast\" OR \"Zaporizhzhia Oblast\" OR \"Kharkiv Oblast\" OR \"Kherson Oblast\") AND (frontline OR fighting OR assault)"
-    ]
+      "\"Ukraine\" AND (attack OR assault OR advance OR fighting OR clashes)",
+      "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
+      "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)"
+    ],
+    "known_places_count": 24
   },
   "stats": {
     "articles_after_filters": 0,
@@ -42,7 +34,17 @@
     "geocode_new_fail": 0,
     "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 190
+    "cache_entries_total": 190,
+    "collect_debug": {
+      "queries_total": 3,
+      "queries_with_response": 1,
+      "items_before_filters": 80,
+      "items_with_date": 0,
+      "items_in_lookback_window": 0,
+      "items_keyword_matched": 0,
+      "items_action_matched": 0,
+      "items_after_dedup": 0
+    }
   },
   "files": {
     "latest": "data/gdelt_ground_latest.geojson",
