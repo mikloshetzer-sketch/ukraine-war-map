@@ -60,7 +60,10 @@ VIEW_MIN_LON, VIEW_MIN_LAT = 20.0, 42.0
 VIEW_MAX_LON, VIEW_MAX_LAT = 60.0, 58.5
 ALLOWED_COUNTRY_CODES = {"ua", "ru"}
 
-FRONT_NEAR_KM = 90.0
+# GDELT-nél lazább frontközeli szűrés kell, mert a hírek gyakran tágabb helyet neveznek meg
+FRONT_NEAR_KM = 180.0
+KNOWN_PLACE_FALLBACK_FRONT_KM = 240.0
+
 NOMINATIM_SLEEP_SEC = 1.0
 
 HTTP_TIMEOUT = 30
@@ -116,7 +119,11 @@ KNOWN_PLACES = {
     "Orikhiv", "Robotyne", "Vovchansk", "Kurakhove", "Kramatorsk",
     "Sloviansk", "Avdiivka", "Bakhmut", "Kherson", "Kharkiv",
     "Donetsk", "Luhansk", "Zaporizhzhia", "Sumy", "Kupyansk",
-    "Velyka Novosilka", "Selydove", "Kostiantynivka"
+    "Velyka Novosilka", "Selydove", "Kostiantynivka", "Kurakhivka",
+    "Novopavlivka", "Myrnohrad", "Kupyansk", "Borova", "Terny",
+    "Yampil", "Bilohorivka", "New York", "Huliaipole", "Hulyaipole",
+    "Mala Tokmachka", "Stepove", "Novodanylivka", "Ocheretyne",
+    "Marinka", "Vuhledar", "Velyka Novosilka", "Shevchenko"
 }
 
 NOISE_EXACT = {
@@ -196,7 +203,6 @@ def parse_date_str(s: str | None) -> dt.date | None:
     if not s:
         return None
 
-    # RFC822 / RSS pubDate
     try:
         d = parsedate_to_datetime(s)
         if d is not None:
@@ -206,7 +212,6 @@ def parse_date_str(s: str | None) -> dt.date | None:
     except Exception:
         pass
 
-    # ISO / hasonló
     iso_candidate = s.replace("Z", "+00:00")
     try:
         d = dt.datetime.fromisoformat(iso_candidate)
@@ -214,7 +219,6 @@ def parse_date_str(s: str | None) -> dt.date | None:
     except Exception:
         pass
 
-    # Egyszerű regex fallbackek
     patterns = [
         (r"(\d{4}-\d{2}-\d{2})", "%Y-%m-%d"),
         (r"(\d{8})", "%Y%m%d"),
@@ -343,7 +347,6 @@ def parse_gdelt_rss(xml_text_data: str) -> tuple[list[dict], dict]:
         pub_date_raw = child_text_any(item, ["pubDate", "published", "updated", "seendate"])
         description = child_text_any(item, ["description", "summary"])
 
-        # Atom link fallback: href attribútum
         if not link:
             for child in list(item):
                 if local_name(child.tag).lower() == "link":
@@ -352,7 +355,6 @@ def parse_gdelt_rss(xml_text_data: str) -> tuple[list[dict], dict]:
                         link = href
                         break
 
-        # GDELT gyakran rak egyedi mezőket is; ha nincs még dátum, végigpróbáljuk
         if not pub_date_raw:
             for child in list(item):
                 lname = local_name(child.tag).lower()
@@ -557,6 +559,12 @@ def best_place_from_text(title: str, description: str) -> str | None:
     return ranked[0][0]
 
 
+def classify_location_confidence(place: str) -> str:
+    if place in KNOWN_PLACES:
+        return "known_front_place"
+    return "inferred_place"
+
+
 def article_to_event(article: dict) -> dict | None:
     title = article.get("title", "") or ""
     description = article.get("description", "") or ""
@@ -581,6 +589,7 @@ def article_to_event(article: dict) -> dict | None:
         "event_date": str(event_date),
         "ingested_at": utc_now_iso(),
         "place": place,
+        "location_confidence": classify_location_confidence(place),
         "title": title[:260],
         "text": text_blob[:420],
         "source_url": article.get("url"),
@@ -813,6 +822,12 @@ def min_distance_km_to_front(lat: float, lon: float, segments: list[dict], thres
     return best_m / 1000.0
 
 
+def place_front_threshold_km(place: str | None) -> float:
+    if place and place in KNOWN_PLACES:
+        return KNOWN_PLACE_FALLBACK_FRONT_KM
+    return FRONT_NEAR_KM
+
+
 # =========================================================
 # FEATURES
 # =========================================================
@@ -830,6 +845,7 @@ def make_point_feature(
         "event_date": event.get("event_date"),
         "ingested_at": event.get("ingested_at"),
         "place": event.get("place"),
+        "location_confidence": event.get("location_confidence"),
         "country_code": country_code,
         "front_dist_km": None if front_dist_km is None or math.isinf(front_dist_km) else round(front_dist_km, 2),
         "title": event.get("title"),
@@ -873,7 +889,8 @@ def build_features(events: list[dict], segments: list[dict]) -> tuple[list[dict]
         if idx % 20 == 0:
             log(f"Feature build progress: {idx}/{len(events)}")
 
-        coords, cc = geocode(event.get("place"))
+        place = event.get("place")
+        coords, cc = geocode(place)
         if not coords:
             stats["dropped_geocode"] += 1
             continue
@@ -881,8 +898,10 @@ def build_features(events: list[dict], segments: list[dict]) -> tuple[list[dict]
         stats["events_with_any_geo"] += 1
 
         lon, lat = coords
-        front_dist = min_distance_km_to_front(lat, lon, segments, FRONT_NEAR_KM)
-        if segments and front_dist > FRONT_NEAR_KM:
+        front_dist = min_distance_km_to_front(lat, lon, segments, place_front_threshold_km(place))
+        allowed_dist = place_front_threshold_km(place)
+
+        if segments and front_dist > allowed_dist:
             stats["dropped_not_front_near"] += 1
             continue
 
@@ -947,6 +966,7 @@ def main() -> int:
             "max_articles_total": MAX_ARTICLES_TOTAL,
             "max_geocode_calls_per_run": MAX_GEOCODE_CALLS_PER_RUN,
             "front_near_km": FRONT_NEAR_KM,
+            "known_place_fallback_front_km": KNOWN_PLACE_FALLBACK_FRONT_KM,
             "queries": QUERIES,
             "known_places_count": len(KNOWN_PLACES),
         },
