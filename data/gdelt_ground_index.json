@@ -1,0 +1,53 @@
+{
+  "source": "gdelt_ground",
+  "generated_at_utc": "2026-03-24T17:25:17Z",
+  "started_at_utc": "2026-03-24T17:24:54Z",
+  "config": {
+    "lookback_days": 30,
+    "latest_window_days": 1,
+    "max_articles_total": 120,
+    "max_geocode_calls_per_run": 80,
+    "front_near_km": 90.0,
+    "source_domains": [
+      "reuters.com",
+      "kyivindependent.com",
+      "euromaidanpress.com",
+      "pravda.com.ua",
+      "interfax.com.ua",
+      "ukrinform.net",
+      "unian.net"
+    ],
+    "queries": [
+      "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\") AND (attack OR assault OR advance OR fighting)",
+      "(\"Kurakhove\" OR \"Vovchansk\" OR \"Robotyne\" OR \"Orikhiv\" OR \"Siversk\") AND (attack OR assault OR advance OR fighting)",
+      "(\"Donetsk Oblast\" OR \"Zaporizhzhia Oblast\" OR \"Kharkiv Oblast\" OR \"Kherson Oblast\") AND (frontline OR fighting OR assault)"
+    ]
+  },
+  "stats": {
+    "articles_after_filters": 0,
+    "raw_events_total": 0,
+    "dedup_events_total": 0,
+    "features_latest": 0,
+    "features_7d": 0,
+    "features_30d": 0,
+    "events_total": 0,
+    "events_with_any_geo": 0,
+    "point_features": 0,
+    "dropped_not_front_near": 0,
+    "dropped_geocode": 0,
+    "frontline_available": true,
+    "geocode_cache_hits": 0,
+    "geocode_cache_negative_hits": 0,
+    "geocode_new_success": 0,
+    "geocode_new_fail": 0,
+    "geocode_calls_this_run": 0,
+    "rejected_before_geocode": 0,
+    "cache_entries_total": 190
+  },
+  "files": {
+    "latest": "data/gdelt_ground_latest.geojson",
+    "7d": "data/gdelt_ground_7d.geojson",
+    "30d": "data/gdelt_ground_30d.geojson",
+    "cache": "data/geocode_cache_v2.json"
+  }
+}
