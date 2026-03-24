@@ -10,13 +10,6 @@ Cél:
 - helyszínkinyerés cím/szöveg alapján
 - geokódolás
 - 7 napos és 30 napos GeoJSON rétegek előállítása
-
-Outputok:
-- data/gdelt_ground_latest.geojson
-- data/gdelt_ground_7d.geojson
-- data/gdelt_ground_30d.geojson
-- data/gdelt_ground_index.json
-- data/geocode_cache_v2.json
 """
 
 from __future__ import annotations
@@ -28,6 +21,7 @@ import re
 import sys
 import time
 import xml.etree.ElementTree as ET
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any
 
@@ -73,7 +67,6 @@ HTTP_TIMEOUT = 30
 FRONT_TIMEOUT = 35
 EARTH_R = 6371000.0
 
-# Keresések: lazább, általánosabb
 QUERIES = [
     '"Ukraine" AND (attack OR assault OR advance OR fighting OR clashes)',
     '("Donetsk" OR "Luhansk" OR "Kharkiv" OR "Zaporizhzhia" OR "Kherson") AND (attack OR fighting OR assault OR advance)',
@@ -108,7 +101,6 @@ ACTION_RE = re.compile(
     re.IGNORECASE,
 )
 
-# Egyszerű helykinyerés
 PLACE_PATTERN = re.compile(
     r"\b(?:in|near|around|outside|south of|north of|east of|west of|toward|towards)\s+"
     r"([A-Z][A-Za-z0-9\-\']+(?:\s+[A-Z][A-Za-z0-9\-\']+)*)",
@@ -196,26 +188,47 @@ def today_utc_date() -> dt.date:
     return dt.datetime.utcnow().date()
 
 
-def parse_iso_dt(s: str | None) -> dt.datetime | None:
-    if not s:
-        return None
-    try:
-        return dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
-    except Exception:
-        return None
-
-
 def parse_date_str(s: str | None) -> dt.date | None:
     if not s:
         return None
-    for fmt in ("%Y-%m-%d", "%a, %d %b %Y %H:%M:%S %Z"):
+
+    s = s.strip()
+    if not s:
+        return None
+
+    # RFC822 / RSS pubDate
+    try:
+        d = parsedate_to_datetime(s)
+        if d is not None:
+            if d.tzinfo is not None:
+                d = d.astimezone(dt.timezone.utc)
+            return d.date()
+    except Exception:
+        pass
+
+    # ISO / hasonló
+    iso_candidate = s.replace("Z", "+00:00")
+    try:
+        d = dt.datetime.fromisoformat(iso_candidate)
+        return d.date()
+    except Exception:
+        pass
+
+    # Egyszerű regex fallbackek
+    patterns = [
+        (r"(\d{4}-\d{2}-\d{2})", "%Y-%m-%d"),
+        (r"(\d{8})", "%Y%m%d"),
+        (r"([A-Z][a-z]{2}, \d{2} [A-Z][a-z]{2} \d{4})", "%a, %d %b %Y"),
+    ]
+    for pat, fmt in patterns:
+        m = re.search(pat, s)
+        if not m:
+            continue
         try:
-            return dt.datetime.strptime(s, fmt).date()
+            return dt.datetime.strptime(m.group(1), fmt).date()
         except Exception:
             continue
-    dt_obj = parse_iso_dt(s)
-    if dt_obj is not None:
-        return dt_obj.date()
+
     return None
 
 
@@ -259,13 +272,18 @@ def safe_get_json(url: str, timeout: int = HTTP_TIMEOUT) -> Any | None:
         return None
 
 
-def xml_text(elem: ET.Element | None, tag: str) -> str:
-    if elem is None:
-        return ""
-    found = elem.find(tag)
-    if found is None or found.text is None:
-        return ""
-    return found.text.strip()
+def local_name(tag: str) -> str:
+    if "}" in tag:
+        return tag.split("}", 1)[1]
+    return tag
+
+
+def child_text_any(item: ET.Element, names: list[str]) -> str:
+    wanted = {n.lower() for n in names}
+    for child in list(item):
+        if local_name(child.tag).lower() in wanted:
+            return (child.text or "").strip()
+    return ""
 
 
 # =========================================================
@@ -284,38 +302,84 @@ def make_gdelt_rss_url(query: str, max_records: int = 80) -> str:
     )
 
 
-def parse_gdelt_rss(xml_text_data: str) -> list[dict]:
+def parse_gdelt_rss(xml_text_data: str) -> tuple[list[dict], dict]:
     items: list[dict] = []
+    debug = {
+        "parse_ok": False,
+        "root_tag": "",
+        "channel_found": False,
+        "item_count_raw": 0,
+        "sample_date_fields": [],
+    }
 
     try:
         root = ET.fromstring(xml_text_data)
     except Exception:
-        return items
+        return items, debug
 
-    channel = root.find("channel")
+    debug["parse_ok"] = True
+    debug["root_tag"] = root.tag
+
+    channel = None
+    if local_name(root.tag).lower() == "rss":
+        for child in list(root):
+            if local_name(child.tag).lower() == "channel":
+                channel = child
+                break
+    elif local_name(root.tag).lower() == "feed":
+        channel = root
+
     if channel is None:
-        return items
+        return items, debug
 
-    for item in channel.findall("item"):
-        title = xml_text(item, "title")
-        link = xml_text(item, "link")
-        pub_date = xml_text(item, "pubDate")
-        desc = xml_text(item, "description")
+    debug["channel_found"] = True
 
-        if not title or not link:
+    raw_items = [child for child in list(channel) if local_name(child.tag).lower() in {"item", "entry"}]
+    debug["item_count_raw"] = len(raw_items)
+
+    for idx, item in enumerate(raw_items):
+        title = child_text_any(item, ["title"])
+        link = child_text_any(item, ["link", "url"])
+        pub_date_raw = child_text_any(item, ["pubDate", "published", "updated", "seendate"])
+        description = child_text_any(item, ["description", "summary"])
+
+        # Atom link fallback: href attribútum
+        if not link:
+            for child in list(item):
+                if local_name(child.tag).lower() == "link":
+                    href = child.attrib.get("href", "").strip()
+                    if href:
+                        link = href
+                        break
+
+        # GDELT gyakran rak egyedi mezőket is; ha nincs még dátum, végigpróbáljuk
+        if not pub_date_raw:
+            for child in list(item):
+                lname = local_name(child.tag).lower()
+                if lname in {"pubdate", "published", "updated", "seendate", "date"}:
+                    pub_date_raw = (child.text or "").strip()
+                    if pub_date_raw:
+                        break
+
+        if idx < 5:
+            debug["sample_date_fields"].append(pub_date_raw)
+
+        published_date = parse_date_str(pub_date_raw)
+
+        if not title and not link:
             continue
 
         items.append(
             {
                 "title": title,
                 "url": link,
-                "published_raw": pub_date,
-                "published_date": str(parse_date_str(pub_date)) if parse_date_str(pub_date) else None,
-                "description": desc,
+                "published_raw": pub_date_raw,
+                "published_date": str(published_date) if published_date else None,
+                "description": description,
             }
         )
 
-    return items
+    return items, debug
 
 
 def collect_articles() -> tuple[list[dict], dict]:
@@ -331,6 +395,7 @@ def collect_articles() -> tuple[list[dict], dict]:
         "items_keyword_matched": 0,
         "items_action_matched": 0,
         "items_after_dedup": 0,
+        "parser_debug": [],
     }
 
     for q in QUERIES:
@@ -341,11 +406,19 @@ def collect_articles() -> tuple[list[dict], dict]:
             continue
 
         debug["queries_with_response"] += 1
-        items = parse_gdelt_rss(xml_data)
+        items, parse_debug = parse_gdelt_rss(xml_data)
+        debug["parser_debug"].append({
+            "query": q,
+            **parse_debug,
+        })
+
         debug["items_before_filters"] += len(items)
 
         for item in items:
             d = parse_date_str(item.get("published_raw"))
+            if d is None and item.get("published_date"):
+                d = parse_date_str(item.get("published_date"))
+
             if d is None:
                 continue
             debug["items_with_date"] += 1
@@ -363,11 +436,13 @@ def collect_articles() -> tuple[list[dict], dict]:
                 continue
             debug["items_action_matched"] += 1
 
+            item["published_date"] = str(d)
             all_items.append(item)
 
     dedup: dict[str, dict] = {}
     for item in all_items:
-        dedup[item["url"]] = item
+        key = item.get("url") or f"{item.get('title')}|{item.get('published_date')}"
+        dedup[key] = item
 
     out = list(dedup.values())
     out.sort(key=lambda x: (x.get("published_date") or "", x.get("url") or ""), reverse=True)
@@ -447,27 +522,24 @@ def looks_like_reasonable_place(place: str | None) -> bool:
 def best_place_from_text(title: str, description: str) -> str | None:
     candidates: list[str] = []
 
-    # 0) ismert helyek explicit keresése
     joined = f"{title} {description}"
+
     for place in KNOWN_PLACES:
         if re.search(rf"\b{re.escape(place)}\b", joined, flags=re.IGNORECASE):
             candidates.append(place)
 
-    # 1) minták
     for blob in (title, description):
         for m in PLACE_PATTERN.findall(blob):
             c = clean_place(m)
             if looks_like_reasonable_place(c):
                 candidates.append(c)
 
-    # 2) cím nagybetűs töredékek
     if not candidates:
         for m in TITLE_PLACE_PATTERN.findall(title):
             c = clean_place(m)
             if looks_like_reasonable_place(c):
                 candidates.append(c)
 
-    # 3) leírás töredékek
     if not candidates:
         for m in TITLE_PLACE_PATTERN.findall(description):
             c = clean_place(m)
