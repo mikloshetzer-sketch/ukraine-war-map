@@ -1067,5 +1067,62 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Russia Launches Nearly": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Major Overnight Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Politics": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Government": {
+    "coords": [
+      37.7956458,
+      55.7182533
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Kreml": {
+    "coords": [
+      37.618122,
+      55.7516212
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Chefs": {
+    "coords": [
+      37.5810438,
+      55.7477892
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Europa": {
+    "coords": [
+      23.669289,
+      48.2963694
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Wladimir Putin": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Neue Offensive": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

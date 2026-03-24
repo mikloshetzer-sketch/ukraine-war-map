@@ -1,12 +1,13 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-03-24T19:29:13Z",
-  "started_at_utc": "2026-03-24T19:28:29Z",
+  "generated_at_utc": "2026-03-24T19:51:05Z",
+  "started_at_utc": "2026-03-24T19:50:49Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
     "max_articles_total": 150,
     "max_geocode_calls_per_run": 80,
+    "max_candidates_per_article": 8,
     "front_near_km": 180.0,
     "known_place_fallback_front_km": 240.0,
     "queries": [
@@ -19,35 +20,35 @@
     "broad_places_count": 18
   },
   "stats": {
-    "articles_after_filters": 19,
-    "raw_events_total": 15,
-    "dedup_events_total": 15,
+    "articles_after_filters": 7,
+    "raw_events_total": 4,
+    "dedup_events_total": 4,
     "features_latest": 0,
     "features_7d": 0,
     "features_30d": 0,
-    "events_total": 15,
-    "events_with_any_geo": 10,
+    "events_total": 4,
+    "events_with_any_geo": 5,
     "point_features": 0,
-    "dropped_not_front_near": 10,
-    "dropped_geocode": 5,
+    "dropped_not_front_near": 2,
+    "dropped_geocode": 2,
     "frontline_available": true,
-    "geocode_cache_hits": 10,
-    "geocode_cache_negative_hits": 5,
-    "geocode_new_success": 0,
-    "geocode_new_fail": 0,
-    "geocode_calls_this_run": 0,
+    "geocode_cache_hits": 1,
+    "geocode_cache_negative_hits": 3,
+    "geocode_new_success": 4,
+    "geocode_new_fail": 5,
+    "geocode_calls_this_run": 9,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 197,
-    "rejections_saved": 19,
+    "cache_entries_total": 206,
+    "rejections_saved": 7,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 2,
-      "items_before_filters": 160,
-      "items_with_date": 160,
-      "items_in_lookback_window": 160,
-      "items_keyword_matched": 24,
-      "items_action_matched": 23,
-      "items_after_dedup": 19,
+      "queries_with_response": 1,
+      "items_before_filters": 80,
+      "items_with_date": 80,
+      "items_in_lookback_window": 80,
+      "items_keyword_matched": 8,
+      "items_action_matched": 7,
+      "items_after_dedup": 7,
       "parser_debug": [
         {
           "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
@@ -61,20 +62,6 @@
             "24 Mar 2026 19:00:00 +0000",
             "24 Mar 2026 19:00:00 +0000",
             "24 Mar 2026 18:45:00 +0000"
-          ]
-        },
-        {
-          "query": "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)",
-          "parse_ok": true,
-          "root_tag": "rss",
-          "channel_found": true,
-          "item_count_raw": 80,
-          "sample_date_fields": [
-            "24 Mar 2026 17:30:00 +0000",
-            "24 Mar 2026 17:15:00 +0000",
-            "24 Mar 2026 16:45:00 +0000",
-            "24 Mar 2026 16:30:00 +0000",
-            "24 Mar 2026 16:30:00 +0000"
           ]
         }
       ]
