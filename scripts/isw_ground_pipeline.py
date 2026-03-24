@@ -2,14 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-ISW ground operations pipeline (stabilizált verzió)
-
-Cél:
-- ISW Russian Offensive Campaign Assessment cikkekből földi események kinyerése
-- pontok és egyszerű mozgásvonalak előállítása
-- frontközeli szűrés
-- cache-elt geokódolás
-- robusztusabb futás GitHub Actions alatt
+ISW ground operations pipeline (30 napos időablak + külön dátummezők)
 
 Outputok:
 - data/isw_ground_latest.geojson
@@ -61,8 +54,11 @@ GEOJSON_30D = OUT_DIR / "isw_ground_30d.geojson"
 INDEX_JSON = OUT_DIR / "isw_ground_index.json"
 GEOCODE_CACHE_V2 = OUT_DIR / "geocode_cache_v2.json"
 
+# Időablak
+LOOKBACK_DAYS = 30
+
 # Futási korlátok
-MAX_ARTICLES = 45
+MAX_ARTICLES = 30
 MAX_GEOCODE_CALLS_PER_RUN = 80
 HTTP_TIMEOUT_MAIN = 20
 HTTP_TIMEOUT_FALLBACK = 25
@@ -100,6 +96,10 @@ def log(msg: str) -> None:
 
 def utc_now_iso() -> str:
     return dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+
+
+def today_utc_date() -> dt.date:
+    return dt.datetime.utcnow().date()
 
 
 def write_json(path: Path, data: Any) -> None:
@@ -143,30 +143,82 @@ def fetch_url(url: str) -> str | None:
     return None
 
 
+def parse_date_str(s: str) -> dt.date | None:
+    try:
+        return dt.datetime.strptime(s, "%Y-%m-%d").date()
+    except Exception:
+        return None
+
+
+def days_old(d: dt.date, ref: dt.date | None = None) -> int:
+    if ref is None:
+        ref = today_utc_date()
+    return (ref - d).days
+
+
+def in_last_days(d: dt.date | None, n: int, ref: dt.date | None = None) -> bool:
+    if d is None:
+        return False
+    age = days_old(d, ref)
+    return 0 <= age <= n
+
+
 # =========================================================
 # STEP 1 — ARTICLE LINKS
 # =========================================================
 
-ARTICLE_LINK_RE = re.compile(r'href="([^"]*russian-offensive-campaign-assessment[^"]*)"', re.IGNORECASE)
+ARTICLE_LINK_RE = re.compile(
+    r'href="([^"]*russian-offensive-campaign-assessment[^"]*)"',
+    re.IGNORECASE,
+)
 
 
-def collect_recent_article_links(limit: int = MAX_ARTICLES) -> list[str]:
+def infer_date_from_url(article_url: str) -> dt.date | None:
+    m = re.search(r"([A-Za-z]+-\d{1,2}-\d{4})", article_url)
+    if not m:
+        return None
+    try:
+        return dt.datetime.strptime(m.group(1), "%B-%d-%Y").date()
+    except Exception:
+        return None
+
+
+def collect_recent_article_links(limit: int = MAX_ARTICLES, lookback_days: int = LOOKBACK_DAYS) -> list[dict]:
     log("ISW index letöltése...")
     html = fetch_url(ROC_UPDATES_URL)
     if not html:
         log("ISW index nem tölthető.")
         return []
 
-    links: set[str] = set()
+    today = today_utc_date()
+    links: dict[str, dict] = {}
+
     for raw in ARTICLE_LINK_RE.findall(html):
         if "research" not in raw:
             continue
         if not raw.startswith("http"):
             raw = "https://understandingwar.org" + raw
-        links.add(raw)
 
-    out = sorted(links, reverse=True)[:limit]
-    log(f"Talált cikklinkek: {len(out)}")
+        article_date = infer_date_from_url(raw)
+        if article_date is None:
+            continue
+
+        if not in_last_days(article_date, lookback_days, today):
+            continue
+
+        links[raw] = {
+            "url": raw,
+            "article_date": str(article_date),
+            "days_old": days_old(article_date, today),
+        }
+
+    out = sorted(
+        links.values(),
+        key=lambda x: (x["article_date"], x["url"]),
+        reverse=True,
+    )[:limit]
+
+    log(f"30 napon belüli cikklinkek: {len(out)}")
     return out
 
 
@@ -233,27 +285,16 @@ def strip_html_to_text(html: str) -> str:
     return text.strip()
 
 
-def infer_date_from_url(article_url: str) -> dt.date:
-    m = re.search(r"([A-Za-z]+-\d{1,2}-\d{4})", article_url)
-    if not m:
-        return dt.date.today()
-    try:
-        return dt.datetime.strptime(m.group(1), "%B-%d-%Y").date()
-    except Exception:
-        return dt.date.today()
-
-
 def clean_place(raw: str | None) -> str | None:
     if not raw:
         return None
-    s = raw.strip()
 
+    s = raw.strip()
     s = re.sub(r"\s+\(.*?\)\s*$", "", s).strip()
     s = re.sub(r"\s+(?:direction|axis|area|region|sector)\s*$", "", s, flags=re.IGNORECASE).strip()
     s = re.sub(r"^[,;:\-]+", "", s).strip()
     s = re.sub(r"[,;:\-]+$", "", s).strip()
 
-    # tipikus mondatrész zajok
     noise_suffixes = [
         "that",
         "which",
@@ -279,15 +320,20 @@ def clean_place(raw: str | None) -> str | None:
     return s
 
 
-def extract_events(article_url: str) -> list[dict]:
+def extract_events(article_meta: dict) -> list[dict]:
+    article_url = article_meta["url"]
+    article_date = parse_date_str(article_meta["article_date"])
+    if article_date is None:
+        return []
+
     html = fetch_url(article_url)
     if not html:
         return []
 
     text = strip_html_to_text(html)
-    article_date = infer_date_from_url(article_url)
-
     sentences = re.split(r"(?<=[\.\!\?])\s+", text)
+    ingested_at = utc_now_iso()
+
     events: list[dict] = []
 
     for sentence in sentences:
@@ -299,6 +345,14 @@ def extract_events(article_url: str) -> list[dict]:
         if not any(k in lower for k in GROUND_KEYWORDS):
             continue
 
+        base = {
+            "article_date": str(article_date),
+            "event_date": str(article_date),  # fallback: ha nincs jobb, a cikk dátuma
+            "ingested_at": ingested_at,
+            "text": s[:420],
+            "source_url": article_url,
+        }
+
         mm = MOVE_FROM_TO.search(s)
         if mm:
             a = clean_place(mm.group(1))
@@ -306,12 +360,10 @@ def extract_events(article_url: str) -> list[dict]:
             if a and b and a != b:
                 events.append(
                     {
-                        "date": str(article_date),
+                        **base,
                         "kind": "movement",
                         "from_place": a,
                         "to_place": b,
-                        "text": s[:420],
-                        "source_url": article_url,
                     }
                 )
                 continue
@@ -322,11 +374,9 @@ def extract_events(article_url: str) -> list[dict]:
             if b:
                 events.append(
                     {
-                        "date": str(article_date),
+                        **base,
                         "kind": "toward_only",
                         "to_place": b,
-                        "text": s[:420],
-                        "source_url": article_url,
                     }
                 )
                 continue
@@ -336,11 +386,9 @@ def extract_events(article_url: str) -> list[dict]:
         if place:
             events.append(
                 {
-                    "date": str(article_date),
+                    **base,
                     "kind": "ground",
                     "place": place,
-                    "text": s[:420],
-                    "source_url": article_url,
                 }
             )
 
@@ -359,7 +407,6 @@ if GEOCODE_CACHE_V2.exists():
 else:
     geocache = {}
 
-# stat counters
 geocode_calls_this_run = 0
 geocode_cache_hits = 0
 geocode_cache_negative_hits = 0
@@ -372,10 +419,6 @@ def save_cache() -> None:
 
 
 def _cache_get(place: str) -> tuple[list[float] | None, str | None, bool]:
-    """
-    Returns:
-      (coords, cc, known_negative)
-    """
     entry = geocache.get(place)
     if not isinstance(entry, dict):
         return None, None, False
@@ -462,7 +505,6 @@ def geocode(place: str | None) -> tuple[list[float] | None, str | None]:
         _cache_set_positive(key, coords, cc)
         geocode_new_success += 1
 
-        # mentés közben is, hogy ne vesszen el a cache egy megszakadt futásnál
         if geocode_calls_this_run % 10 == 0:
             save_cache()
 
@@ -646,7 +688,9 @@ def make_point_feature(
     props = {
         "source": "isw_ground",
         "kind": event.get("kind"),
-        "date": event.get("date"),
+        "article_date": event.get("article_date"),
+        "event_date": event.get("event_date"),
+        "ingested_at": event.get("ingested_at"),
         "place": place,
         "country_code": country_code,
         "front_dist_km": None if front_dist_km is None or math.isinf(front_dist_km) else round(front_dist_km, 2),
@@ -670,7 +714,9 @@ def make_line_feature(
     props = {
         "source": "isw_ground",
         "kind": line_kind,
-        "date": event.get("date"),
+        "article_date": event.get("article_date"),
+        "event_date": event.get("event_date"),
+        "ingested_at": event.get("ingested_at"),
         "from_place": event.get("from_place"),
         "to_place": event.get("to_place"),
         "length_km": round(length_km, 2),
@@ -684,16 +730,19 @@ def make_line_feature(
     }
 
 
-def parse_date(s: str) -> dt.date:
-    return dt.datetime.strptime(s, "%Y-%m-%d").date()
+def feature_event_date(feature: dict) -> dt.date | None:
+    props = feature.get("properties") or {}
+    event_date = parse_date_str(props.get("event_date") or "")
+    if event_date is not None:
+        return event_date
+
+    article_date = parse_date_str(props.get("article_date") or "")
+    return article_date
 
 
-def event_in_last_days(event: dict, days: int, today: dt.date) -> bool:
-    try:
-        d = parse_date(event["date"])
-    except Exception:
-        return False
-    return (today - d).days <= days
+def feature_in_last_days(feature: dict, days: int, ref: dt.date) -> bool:
+    d = feature_event_date(feature)
+    return in_last_days(d, days, ref)
 
 
 def build_features(events: list[dict], segments: list[dict]) -> tuple[list[dict], dict]:
@@ -747,7 +796,6 @@ def build_features(events: list[dict], segments: list[dict]) -> tuple[list[dict]
             stats["line_features"] += 1
             stats["movement_lines"] += 1
 
-            # célpontot pontként is kirakjuk
             features.append(
                 make_point_feature(
                     to_coords,
@@ -786,7 +834,6 @@ def build_features(events: list[dict], segments: list[dict]) -> tuple[list[dict]
             )
             stats["point_features"] += 1
 
-            # inferred vonal csak ha van front
             nearest = nearest_point_on_front(to_lat, to_lon, segments, FRONT_NEAR_KM)
             if nearest:
                 front_lat, front_lon, _ = nearest
@@ -807,7 +854,6 @@ def build_features(events: list[dict], segments: list[dict]) -> tuple[list[dict]
                     stats["inferred_lines"] += 1
             continue
 
-        # sima pont
         place = event.get("place")
         coords, cc = geocode(place)
         if not coords:
@@ -842,17 +888,18 @@ def build_features(events: list[dict], segments: list[dict]) -> tuple[list[dict]
 
 def main() -> int:
     started = utc_now_iso()
+    today = today_utc_date()
     log("ISW ground pipeline start")
 
-    links = collect_recent_article_links(MAX_ARTICLES)
+    article_metas = collect_recent_article_links(MAX_ARTICLES, LOOKBACK_DAYS)
 
     all_events: list[dict] = []
     articles_ok = 0
 
-    for i, link in enumerate(links, start=1):
-        log(f"Cikk feldolgozás {i}/{len(links)}: {link}")
+    for i, meta in enumerate(article_metas, start=1):
+        log(f"Cikk feldolgozás {i}/{len(article_metas)}: {meta['url']} | article_date={meta['article_date']}")
         try:
-            ev = extract_events(link)
+            ev = extract_events(meta)
             if ev:
                 articles_ok += 1
             all_events.extend(ev)
@@ -860,12 +907,12 @@ def main() -> int:
         except Exception as e:
             log(f"  -> hiba cikk feldolgozás közben: {e}")
 
-    # deduplikálás
     dedup_seen = set()
     dedup_events: list[dict] = []
     for e in all_events:
         key = (
-            e.get("date"),
+            e.get("article_date"),
+            e.get("event_date"),
             e.get("kind"),
             e.get("from_place"),
             e.get("to_place"),
@@ -880,18 +927,19 @@ def main() -> int:
     log(f"Nyers események: {len(all_events)} | deduplikált: {len(dedup_events)}")
 
     segments = load_frontline_segments()
-
     features_all, stats = build_features(dedup_events, segments)
 
-    today = dt.date.today()
-    features_latest = [f for f in features_all if f["properties"].get("date") == str(today)]
+    features_latest = [
+        f for f in features_all
+        if feature_event_date(f) == today
+    ]
     features_7d = [
         f for f in features_all
-        if event_in_last_days({"date": f["properties"].get("date")}, 7, today)
+        if feature_in_last_days(f, 7, today)
     ]
     features_30d = [
         f for f in features_all
-        if event_in_last_days({"date": f["properties"].get("date")}, 30, today)
+        if feature_in_last_days(f, 30, today)
     ]
 
     write_geojson(LATEST_GEOJSON, features_latest)
@@ -904,6 +952,7 @@ def main() -> int:
         "generated_at_utc": utc_now_iso(),
         "started_at_utc": started,
         "config": {
+            "lookback_days": LOOKBACK_DAYS,
             "max_articles": MAX_ARTICLES,
             "max_geocode_calls_per_run": MAX_GEOCODE_CALLS_PER_RUN,
             "front_near_km": FRONT_NEAR_KM,
@@ -912,7 +961,7 @@ def main() -> int:
             "max_inferred_km": MAX_INFERRED_KM,
         },
         "stats": {
-            "article_links_found": len(links),
+            "article_links_found_in_window": len(article_metas),
             "articles_with_events": articles_ok,
             "raw_events_total": len(all_events),
             "dedup_events_total": len(dedup_events),
@@ -951,7 +1000,6 @@ if __name__ == "__main__":
     try:
         sys.exit(main())
     except Exception as e:
-        # fail-soft: írjunk legalább egy használható indexet
         fallback = {
             "source": "isw_ground",
             "generated_at_utc": utc_now_iso(),
