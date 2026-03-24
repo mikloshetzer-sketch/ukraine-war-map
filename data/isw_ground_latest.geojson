@@ -11,14 +11,14 @@
         ]
       },
       "properties": {
-        "source": "ISW",
-        "date": "2026-03-11",
-        "title": "ISW ground operation",
+        "source": "isw_ground",
+        "kind": "ground",
+        "date": "2026-03-24",
         "place": "Sumy",
-        "cc": "ua",
-        "distance_to_front_km": 22.6,
-        "snippet": "[14] Girkin claimed the peace agreement is disadvantageous to Russia as it would force Russia to formally renunciate its claims over illegally-annexed parts of Ukraine; surrender &#8220;strategically vital&#8221; offensive positions in Sumy, Kharkiv, and Dnipropetrovsk oblasts; grant Ukrainian forces time to rest and reconstitute; sharply decrease Russian forces&#8217; combat r",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+        "country_code": "ua",
+        "front_dist_km": 22.62,
+        "text": "[14] Girkin claimed the peace agreement is disadvantageous to Russia as it would force Russia to formally renunciate its claims over illegally-annexed parts of Ukraine; surrender &#8220;strategically vital&#8221; offensive positions in Sumy, Kharkiv, and Dnipropetrovsk oblasts; grant Ukrainian forces time to rest and reconstitute; sharply decrease Russian forces&#8217; combat readiness; and lead to a &#8220;strategic",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
       }
     },
     {
@@ -31,38 +31,95 @@
         ]
       },
       "properties": {
-        "source": "ISW",
-        "date": "2026-03-11",
-        "title": "ISW ground operation",
+        "source": "isw_ground",
+        "kind": "ground",
+        "date": "2026-03-24",
         "place": "September",
-        "cc": "ua",
-        "distance_to_front_km": 58.3,
-        "snippet": "Ukrainian volunteer Serhiy Sternenko reported on November 30 that the Ukrainian forces successfully used the domestically produced Sting interceptor drone to shoot down several Geran-3 jet-powered long-range strike drones for the first time on the night of November 29 to 30.[38] Geran-3 drones have a shorter flight range than typical Geran drones but can reach higher speeds and",
-        "url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+        "country_code": "ua",
+        "front_dist_km": 58.3,
+        "text": "Ukrainian volunteer Serhiy Sternenko reported on November 30 that the Ukrainian forces successfully used the domestically produced Sting interceptor drone to shoot down several Geran-3 jet-powered long-range strike drones for the first time on the night of November 29 to 30.[38] Geran-3 drones have a shorter flight range than typical Geran drones but can reach higher speeds and can more easily outmaneuver air defense",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8437243,
+          49.4505348
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "date": "2026-03-24",
+        "place": "September",
+        "country_code": "ua",
+        "front_dist_km": 58.3,
+        "text": "This incident is very likely a continuation of a Russian military intelligence effort to ship incendiary packages throughout Europe that Lithuanian authorities reported in September 2025.[22] Polish Prime Minister Donald Tusk and Minister of Internal Affairs Tomasz Siemoniak announced on October 21 that the Polish Internal Security Agency detained eight other persons suspected of preparing acts of sabotage, including",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8437243,
+          49.4505348
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "date": "2026-03-24",
+        "place": "September",
+        "country_code": "ua",
+        "front_dist_km": 58.3,
+        "text": "Ukrainian Commander-in-Chief General Oleksandr Syrskyi reported on October 2 that Russian forces launched 6,900 drones against Ukraine in September 2025, including more than 3,600 Shahed-type drones.[5] Russian forces do not regularly launch missiles in nightly strike packages against Ukraine and often go several days without using missiles in these packages.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8437243,
+          49.4505348
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "date": "2026-03-24",
+        "place": "September",
+        "country_code": "ua",
+        "front_dist_km": 58.3,
+        "text": "Russian society, including ultranationalist milbloggers, has consistently complained about Russia&#8217;s poor conduct of the September 2022 partial involuntary reserve call-up and the need for Russia to provide some relief to mobilized personnel still fighting on the frontline.[34] A Russian source suggested that about 78,000 Russian personnel mobilized in September 2022 were fighting against Ukraine as of May 2025.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8437243,
+          49.4505348
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "date": "2026-03-24",
+        "place": "September",
+        "country_code": "ua",
+        "front_dist_km": 58.3,
+        "text": "Ukrainian forces began counteroffensive operations in September 2025 after relatively rapid Russian advances in the Kupyansk direction and infiltrations into Kupyansk itself.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-updates-2/"
       }
     }
-  ],
-  "properties": {
-    "filter": {
-      "allowed_country_codes": [
-        "ru",
-        "ua"
-      ],
-      "front_near_km": 90.0,
-      "max_move_km": 160.0,
-      "min_inferred_km": 2.0,
-      "max_inferred_km": 70.0
-    },
-    "stats": {
-      "raw_total": 120,
-      "raw_movement_from_to": 4,
-      "raw_toward_only": 47,
-      "kept_points": 2,
-      "kept_lines": 0,
-      "dropped_geocode": 112,
-      "dropped_far": 6,
-      "dropped_long_lines": 0,
-      "dropped_inferred_len": 0
-    }
-  }
+  ]
 }
