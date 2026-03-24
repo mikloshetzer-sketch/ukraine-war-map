@@ -6,180 +6,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          34.918324,
-          51.084797
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "toward_only",
-        "article_date": "2026-03-23",
-        "event_date": "2026-03-23",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "place": "Nova Sich",
-        "country_code": "ua",
-        "front_dist_km": 4.09,
-        "text": "Unconfirmed claims: A Russian milblogger claimed that Russian forces advanced south of Bobylivka (northwest of Sumy City).[33] Russian forces attacked in the Sumy direction, including northwest of Sumy City near Potapivka, north of Sumy City toward Nova Sich, and southeast of Sumy City near Pokrovka and Hrabovske, on March 22 and 23.[34] Order of Battle: Artillery elements of the Russian 106th Airborne (VDV) Division",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-23-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            34.8811520231516,
-            51.11323290138821
-          ],
-          [
-            34.918324,
-            51.084797
-          ]
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "inferred_line",
-        "article_date": "2026-03-23",
-        "event_date": "2026-03-23",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "from_place": "frontline",
-        "to_place": "Nova Sich",
-        "length_km": 4.09,
-        "text": "Unconfirmed claims: A Russian milblogger claimed that Russian forces advanced south of Bobylivka (northwest of Sumy City).[33] Russian forces attacked in the Sumy direction, including northwest of Sumy City near Potapivka, north of Sumy City toward Nova Sich, and southeast of Sumy City near Pokrovka and Hrabovske, on March 22 and 23.[34] Order of Battle: Artillery elements of the Russian 106th Airborne (VDV) Division",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-23-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.770309,
-          49.348518
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "toward_only",
-        "article_date": "2026-03-23",
-        "event_date": "2026-03-23",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "place": "Shyikivka",
-        "country_code": "ua",
-        "front_dist_km": 5.25,
-        "text": "Drone operators of the 16th Spetsnaz Brigade (Russian General Staff&#8217;s Main Directorate [GRU]) are reportedly striking Ukrainian tanks in the Kupyansk direction.[50] Russian forces continued offensive operations north of Borova near Novoplatonivka and Bohuslavka; northeast of Borova near Borivska Andriivka and toward Shyikivka; southeast of Borova near Hrekivka, Novomykhailivka, and Olhivka; and south of Borova ",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-23-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            37.8030212643973,
-            49.3906092886665
-          ],
-          [
-            37.770309,
-            49.348518
-          ]
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "inferred_line",
-        "article_date": "2026-03-23",
-        "event_date": "2026-03-23",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "from_place": "frontline",
-        "to_place": "Shyikivka",
-        "length_km": 5.25,
-        "text": "Drone operators of the 16th Spetsnaz Brigade (Russian General Staff&#8217;s Main Directorate [GRU]) are reportedly striking Ukrainian tanks in the Kupyansk direction.[50] Russian forces continued offensive operations north of Borova near Novoplatonivka and Bohuslavka; northeast of Borova near Borivska Andriivka and toward Shyikivka; southeast of Borova near Hrekivka, Novomykhailivka, and Olhivka; and south of Borova ",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-23-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.770309,
-          49.348518
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "toward_only",
-        "article_date": "2026-03-22",
-        "event_date": "2026-03-22",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "place": "Shyikivka",
-        "country_code": "ua",
-        "front_dist_km": 5.25,
-        "text": "Russian forces attacked north of Borova near Novoplatonivka; northeast of Borova near Borivska Andriivka; east of Borova toward Shyikivka; and southeast of Borova near Serednie on March 21 and 22.[32] Order of Battle: First-person view (FPV) drone operators of the Russian 237th Tank Regiment (3rd Motorized Rifle Division, 20th CAA, Moscow Military District [MMD]) are striking Ukrainian unmanned ground vehicles (UGVs)",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-22-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            37.8030212643973,
-            49.3906092886665
-          ],
-          [
-            37.770309,
-            49.348518
-          ]
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "inferred_line",
-        "article_date": "2026-03-22",
-        "event_date": "2026-03-22",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "from_place": "frontline",
-        "to_place": "Shyikivka",
-        "length_km": 5.25,
-        "text": "Russian forces attacked north of Borova near Novoplatonivka; northeast of Borova near Borivska Andriivka; east of Borova toward Shyikivka; and southeast of Borova near Serednie on March 21 and 22.[32] Order of Battle: First-person view (FPV) drone operators of the Russian 237th Tank Regiment (3rd Motorized Rifle Division, 20th CAA, Moscow Military District [MMD]) are striking Ukrainian unmanned ground vehicles (UGVs)",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-22-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.6174221,
-          46.6714828
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-03-22",
-        "event_date": "2026-03-22",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "place": "the Kherson",
-        "country_code": "ua",
-        "front_dist_km": 4.14,
-        "text": "Russian forces attacked in the Kherson direction, including southwest of Kherson City near Bilohrudskyi Island, on March 21 and 22.[70] Order of Battle: Drone operators of the Russian 4th Military Base (58th CAA) are reportedly striking Ukrainian drone positions in the Kherson direction.[71] Russian Air, Missile, and Drone Campaign Russian Objective: Target Ukrainian military and civilian infrastructure in the rear a",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-22-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.0902435,
-          48.8676267
+          37.6058241,
+          48.8522691
         ]
       },
       "properties": {
@@ -187,11 +15,11 @@
         "kind": "ground",
         "article_date": "2026-03-21",
         "event_date": "2026-03-21",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "place": "Siversk",
+        "ingested_at": "2026-03-24T17:07:54Z",
+        "place": "Slovyansk",
         "country_code": "ua",
-        "front_dist_km": 1.63,
-        "text": "The Ukrainian control of dominant heightseast of Slovyansk will likely complicate Russian advances toward Slovyansk from the comparatively low-lying terrain around Siversk.[10] The exhausted, poorly trained, and overstretched Russian troops in the Slovyansk direction will likely further limit Russian gains in the area.",
+        "front_dist_km": 24.27,
+        "text": "Zaporozhets reported that Russian forces are attempting to capture key heights east of Slovyansk, including near Kryva Luka, which Ukrainian forces currently use as drone operator positions.[9] Zaporozhets noted that Russian forces will continue ground assaults to secure their flanks because Ukrainian forces maintain positions on favorable terrain.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-21-2026/"
       }
     },
@@ -200,48 +28,20 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          34.918324,
-          51.084797
+          37.6141992,
+          49.7132963
         ]
       },
       "properties": {
         "source": "isw_ground",
-        "kind": "toward_only",
+        "kind": "ground",
         "article_date": "2026-03-21",
         "event_date": "2026-03-21",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "place": "Nova Sich",
+        "ingested_at": "2026-03-24T17:07:54Z",
+        "place": "Kupyansk",
         "country_code": "ua",
-        "front_dist_km": 4.09,
-        "text": "Assessed Russian infiltrations: Geolocated footage published on March 20 shows Ukrainian forces striking a Russian-occupied building in southeastern Yunakivka (northeast of Sumy City) in what ISW assesses was a Russian infiltration mission that did not change the control of terrain or the forward edge of the battle area (FEBA) at this time.[27] Russian forces attacked north of Sumy City near Oleksiivka, Korchakivka, ",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-21-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            34.8811520231516,
-            51.11323290138821
-          ],
-          [
-            34.918324,
-            51.084797
-          ]
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "inferred_line",
-        "article_date": "2026-03-21",
-        "event_date": "2026-03-21",
-        "ingested_at": "2026-03-24T16:53:47Z",
-        "from_place": "frontline",
-        "to_place": "Nova Sich",
-        "length_km": 4.09,
-        "text": "Assessed Russian infiltrations: Geolocated footage published on March 20 shows Ukrainian forces striking a Russian-occupied building in southeastern Yunakivka (northeast of Sumy City) in what ISW assesses was a Russian infiltration mission that did not change the control of terrain or the forward edge of the battle area (FEBA) at this time.[27] Russian forces attacked north of Sumy City near Oleksiivka, Korchakivka, ",
+        "front_dist_km": 1.92,
+        "text": "Ukrainian forces recently advanced near Kupyansk and Pokrovsk and in the Kostyantynivka-Druzhkivka tactical area.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-21-2026/"
       }
     },
@@ -259,12 +59,84 @@
         "kind": "ground",
         "article_date": "2026-03-21",
         "event_date": "2026-03-21",
-        "ingested_at": "2026-03-24T16:53:47Z",
+        "ingested_at": "2026-03-24T17:07:54Z",
         "place": "Pishchane",
         "country_code": "ua",
         "front_dist_km": 3.12,
         "text": "Assessed Ukrainian advances: Geolocated footage published on March 21 indicates that Ukrainian forces recently advanced south of Pishchane (southeast of Kupyansk).[32] The geolocated footage reportedly showed drone operators of the Russian 375th Anti-Tank Artillery Battalion (47th Tank Division, 1st Guards Tank Army [GTA], Moscow Military District [MMD]) striking communications equipment at a Ukrainian position.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8373367,
+          48.5873911
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "toward_only",
+        "article_date": "2026-03-21",
+        "event_date": "2026-03-21",
+        "ingested_at": "2026-03-24T17:07:54Z",
+        "place": "Chasiv Yar",
+        "country_code": "ua",
+        "front_dist_km": 3.41,
+        "text": "Assessed Ukrainian advances: Geolocated footage published on March 18 and 21 indicates that Ukrainian forces have recently recaptured some positions in central Chasiv Yar.[45] Russian milbloggers claimed that Ukrainian forces have been counterattacking toward Chasiv Yar but that Russian forces repelled the attacks.[46] The current extent of Ukrainian positions within Chasiv Yar remains unclear.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37.79908891904897,
+            48.57008969613399
+          ],
+          [
+            37.8373367,
+            48.5873911
+          ]
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "inferred_line",
+        "article_date": "2026-03-21",
+        "event_date": "2026-03-21",
+        "ingested_at": "2026-03-24T17:07:54Z",
+        "from_place": "frontline",
+        "to_place": "Chasiv Yar",
+        "length_km": 3.41,
+        "text": "Assessed Ukrainian advances: Geolocated footage published on March 18 and 21 indicates that Ukrainian forces have recently recaptured some positions in central Chasiv Yar.[45] Russian milbloggers claimed that Ukrainian forces have been counterattacking toward Chasiv Yar but that Russian forces repelled the attacks.[46] The current extent of Ukrainian positions within Chasiv Yar remains unclear.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-20",
+        "event_date": "2026-03-20",
+        "ingested_at": "2026-03-24T17:07:54Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": 24.27,
+        "text": "Ukrainian forces recently advanced near Slovyansk and Hulyaipole and in the Kostyantynivka-Druzhkivka tactical area.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-20-2026/"
       }
     }
   ]

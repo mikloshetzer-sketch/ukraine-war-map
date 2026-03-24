@@ -837,5 +837,188 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Okhrimivka": {
+    "coords": [
+      35.288578,
+      46.507278
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Kurylivka": {
+    "coords": [
+      34.60075,
+      48.57983
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Slovyansk": {
+    "coords": [
+      37.6058241,
+      48.8522691
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Kupyansk": {
+    "coords": [
+      37.6141992,
+      49.7132963
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Chasiv Yar": {
+    "coords": [
+      37.8373367,
+      48.5873911
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Rodynske indicates": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "occupied Khliborobne": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "support Iran": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "the November": {
+    "coords": [
+      33.5267802,
+      44.6171603
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "the Kostyantynivka-Druzhkivka tactical area": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Borova near Novoplatonivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "western Stavky": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Muravka": {
+    "coords": [
+      36.89724,
+      48.17737
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Zaliznychne": {
+    "coords": [
+      28.614741,
+      45.7486605
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "northern Sumy Oblast": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Kleban-Byk": {
+    "coords": [
+      37.76627,
+      48.42525
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Kucheriv Yar": {
+    "coords": [
+      37.2790838,
+      48.5098678
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Tykhe": {
+    "coords": [
+      26.5516199,
+      50.9651638
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "occupied Novozlatopil": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Pokrovsk since late January": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Pokrovsk since December 2025": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "even seize Hryshyne": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "take Pokrovsk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "southeastern Bilytske": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "occupied Myrolyubivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "occupied Novohryhorivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "operate in the Dobropillya": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Staroukrainka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Vyshneve on February": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "northern Kalenyky": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
