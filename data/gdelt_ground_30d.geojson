@@ -1,4 +1,57 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-25",
+        "event_date": "2026-03-25",
+        "ingested_at": "2026-03-25T06:13:00Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": 5.93,
+        "title": "RIGHT SPEAK : 152 C - Clashes in F - Line : 27 in Pokrovsk Dir , 16 in Kostiantynivka Dir , 16 in Huliaipole Dir ; UKR Deep Strikes Make RUs Feel the War ; RU Lgst Oil Port Crippled in Huge UKR Attack ; UKR Killing RUs Faster RU Can Replace Them ; EU...",
+        "text": "RIGHT SPEAK : 152 C - Clashes in F - Line : 27 in Pokrovsk Dir , 16 in Kostiantynivka Dir , 16 in Huliaipole Dir ; UKR Deep Strikes Make RUs Feel the War ; RU Lgst Oil Port Crippled in Huge UKR Attack ; UKR Killing RUs Faster RU Can Replace Them ; EU....",
+        "source_url": "http://www.rightspeak.net/2026/03/152-c-clashes-in-f-line-27-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/03/152-c-clashes-in-f-line-27-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-25",
+        "event_date": "2026-03-25",
+        "ingested_at": "2026-03-25T06:13:00Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": 5.93,
+        "title": "RIGHT SPEAK : 138 C - Clashes in F - Line : 28 in Pokrovsk Dir , 17 in Kostiantynivka Dir , 11 in Huliaipole Dir ; UKR Launches Nearly 300 Drones at RU in One of Its Largest Attacks of the War ; HITS : Saratov Oil Depot , Com - Post of Elite RU Rubik...",
+        "text": "RIGHT SPEAK : 138 C - Clashes in F - Line : 28 in Pokrovsk Dir , 17 in Kostiantynivka Dir , 11 in Huliaipole Dir ; UKR Launches Nearly 300 Drones at RU in One of Its Largest Attacks of the War ; HITS : Saratov Oil Depot , Com - Post of Elite RU Rubik....",
+        "source_url": "http://www.rightspeak.net/2026/03/138-c-clashes-in-f-line-28-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/03/138-c-clashes-in-f-line-28-in-pokrovsk.html"
+      }
+    }
+  ]
 }

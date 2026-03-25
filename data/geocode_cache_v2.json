@@ -1132,5 +1132,78 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Russian": {
+    "coords": [
+      36.8,
+      52.6
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Zelensky": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Huliaipole": {
+    "coords": [
+      36.2656849,
+      47.6655382
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Kostiantynivka": {
+    "coords": [
+      37.6923754,
+      48.534905
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Pokrovsk Dir": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Huliaipole Dir": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Huge UKR Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Kostiantynivka Dir": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Line": {
+    "coords": [
+      32.4631442,
+      57.4405143
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "HITS": {
+    "coords": [
+      25.5727488,
+      49.5459531
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Another": {
+    "coords": [
+      37.5068575,
+      55.6190365
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
