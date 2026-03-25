@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.37411,
+          48.56335
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-24",
+        "event_date": "2026-03-24",
+        "ingested_at": "2026-03-25T05:44:22Z",
+        "place": "Novomykolaivka",
+        "country_code": "ua",
+        "front_dist_km": 7.11,
+        "text": "Russian forces continued offensive operations northeast of Novopavlivka near Novomykolaivka and southeast of Novopavlivka near Filiya on March 23 and 24 but did not advance.[57] Russian forces continued offensive operations in the Oleksandrivka direction on March 24 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-24-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6058241,
           48.8522691
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-03-21",
         "event_date": "2026-03-21",
-        "ingested_at": "2026-03-24T17:07:54Z",
+        "ingested_at": "2026-03-25T05:44:22Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": 24.27,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-03-21",
         "event_date": "2026-03-21",
-        "ingested_at": "2026-03-24T17:07:54Z",
+        "ingested_at": "2026-03-25T05:44:22Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": 1.92,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-03-21",
         "event_date": "2026-03-21",
-        "ingested_at": "2026-03-24T17:07:54Z",
+        "ingested_at": "2026-03-25T05:44:22Z",
         "place": "Pishchane",
         "country_code": "ua",
         "front_dist_km": 3.12,
@@ -81,7 +103,7 @@
         "kind": "toward_only",
         "article_date": "2026-03-21",
         "event_date": "2026-03-21",
-        "ingested_at": "2026-03-24T17:07:54Z",
+        "ingested_at": "2026-03-25T05:44:22Z",
         "place": "Chasiv Yar",
         "country_code": "ua",
         "front_dist_km": 3.41,
@@ -109,34 +131,12 @@
         "kind": "inferred_line",
         "article_date": "2026-03-21",
         "event_date": "2026-03-21",
-        "ingested_at": "2026-03-24T17:07:54Z",
+        "ingested_at": "2026-03-25T05:44:22Z",
         "from_place": "frontline",
         "to_place": "Chasiv Yar",
         "length_km": 3.41,
         "text": "Assessed Ukrainian advances: Geolocated footage published on March 18 and 21 indicates that Ukrainian forces have recently recaptured some positions in central Chasiv Yar.[45] Russian milbloggers claimed that Ukrainian forces have been counterattacking toward Chasiv Yar but that Russian forces repelled the attacks.[46] The current extent of Ukrainian positions within Chasiv Yar remains unclear.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-21-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-03-20",
-        "event_date": "2026-03-20",
-        "ingested_at": "2026-03-24T17:07:54Z",
-        "place": "Slovyansk",
-        "country_code": "ua",
-        "front_dist_km": 24.27,
-        "text": "Ukrainian forces recently advanced near Slovyansk and Hulyaipole and in the Kostyantynivka-Druzhkivka tactical area.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-20-2026/"
       }
     },
     {
@@ -153,7 +153,7 @@
         "kind": "ground",
         "article_date": "2026-02-27",
         "event_date": "2026-02-27",
-        "ingested_at": "2026-03-24T17:07:54Z",
+        "ingested_at": "2026-03-25T05:44:23Z",
         "place": "Muravka",
         "country_code": "ua",
         "front_dist_km": 1.29,
@@ -175,7 +175,7 @@
         "kind": "ground",
         "article_date": "2026-02-26",
         "event_date": "2026-02-26",
-        "ingested_at": "2026-03-24T17:07:54Z",
+        "ingested_at": "2026-03-25T05:44:23Z",
         "place": "Kleban-Byk",
         "country_code": "ua",
         "front_dist_km": 1.45,
@@ -197,7 +197,7 @@
         "kind": "toward_only",
         "article_date": "2026-02-26",
         "event_date": "2026-02-26",
-        "ingested_at": "2026-03-24T17:07:54Z",
+        "ingested_at": "2026-03-25T05:44:23Z",
         "place": "Kucheriv Yar",
         "country_code": "ua",
         "front_dist_km": 0.79,
@@ -219,7 +219,7 @@
         "kind": "ground",
         "article_date": "2026-02-23",
         "event_date": "2026-02-23",
-        "ingested_at": "2026-03-24T17:07:55Z",
+        "ingested_at": "2026-03-25T05:44:24Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": 1.92,

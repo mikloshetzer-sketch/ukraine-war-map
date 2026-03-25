@@ -1124,5 +1124,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Novomykolaivka": {
+    "coords": [
+      37.37411,
+      48.56335
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
