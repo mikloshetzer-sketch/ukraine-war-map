@@ -1205,5 +1205,15 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "the Hulyaipole": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Novoyakovlivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
