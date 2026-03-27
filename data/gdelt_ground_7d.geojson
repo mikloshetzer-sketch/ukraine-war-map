@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1304407,
+          47.8423669
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-27",
+        "event_date": "2026-03-27",
+        "ingested_at": "2026-03-27T06:20:05Z",
+        "place": "Jobs",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": 33.43,
+        "title": "Emboldened Russia starts spring offensive | News , Sports , Jobs",
+        "text": "Emboldened Russia starts spring offensive | News , Sports , Jobs.",
+        "source_url": "https://www.ironmountaindailynews.com/news/2026/03/emboldened-russia-starts-spring-offensive/",
+        "publisher_hint": "https://www.ironmountaindailynews.com/news/2026/03/emboldened-russia-starts-spring-offensive/"
+      }
+    }
+  ]
 }

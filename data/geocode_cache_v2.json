@@ -1244,5 +1244,83 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Like": {
+    "coords": [
+      37.7466704,
+      55.6638233
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Lion": {
+    "coords": [
+      37.7961408,
+      55.7458636
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "In Like": {
+    "coords": [
+      47.5507381,
+      45.7733147
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Spring Weather": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "New Fighting Season": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Big Russian Assault": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "On Ukraine Battlefield": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Iran War Deflects Attention": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "News": {
+    "coords": [
+      30.5038015,
+      50.4411207
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Jobs": {
+    "coords": [
+      35.1304407,
+      47.8423669
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Sports": {
+    "coords": [
+      37.5537673,
+      55.7157445
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Emboldened Russia": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
