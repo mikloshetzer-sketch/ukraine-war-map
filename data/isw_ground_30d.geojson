@@ -6,6 +6,94 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-26",
+        "event_date": "2026-03-26",
+        "ingested_at": "2026-03-27T05:58:14Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": 46.24,
+        "text": "Ukrainian forces recently advanced in the Oleksandrivka direction, in western Zaporizhia Oblast, and in northern Kharkiv Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.2746326,
+          47.9863996
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-26",
+        "event_date": "2026-03-26",
+        "ingested_at": "2026-03-27T05:58:14Z",
+        "place": "Donbas",
+        "country_code": "ua",
+        "front_dist_km": 26.74,
+        "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces recently advanced in the Slovyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.3488998,
+          48.4594232
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-26",
+        "event_date": "2026-03-26",
+        "ingested_at": "2026-03-27T05:58:14Z",
+        "place": "Shakhove",
+        "country_code": "ua",
+        "front_dist_km": 1.49,
+        "text": "[70] Order of Battle: FPV drone operators of the Russian 33rd Motorized Rifle Regiment (20th Motorized Rifle Division) are reportedly intercepting Ukrainian drones near Shakhove (east of Dobropillya).[71] Russian forces recently advanced in the Pokrovsk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-26",
+        "event_date": "2026-03-26",
+        "ingested_at": "2026-03-27T05:58:14Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": 46.24,
+        "text": "[79] Ukrainian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.37411,
           48.56335
         ]
@@ -15,78 +103,12 @@
         "kind": "ground",
         "article_date": "2026-03-24",
         "event_date": "2026-03-24",
-        "ingested_at": "2026-03-26T05:57:58Z",
+        "ingested_at": "2026-03-27T05:58:14Z",
         "place": "Novomykolaivka",
         "country_code": "ua",
         "front_dist_km": 7.11,
         "text": "Russian forces continued offensive operations northeast of Novopavlivka near Novomykolaivka and southeast of Novopavlivka near Filiya on March 23 and 24 but did not advance.[57] Russian forces continued offensive operations in the Oleksandrivka direction on March 24 but did not advance.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-24-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.89724,
-          48.17737
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-02-27",
-        "event_date": "2026-02-27",
-        "ingested_at": "2026-03-26T05:57:59Z",
-        "place": "Muravka",
-        "country_code": "ua",
-        "front_dist_km": 1.29,
-        "text": "Unconfirmed claims: The Russian Ministry of Defense (MoD) claimed on February 27 that Russian forces seized Bilyakivka (northeast of Novopavlivka).[80] Russian forces attacked northeast of Novopavlivka near Muravka and south of Novopavlivka near FIliya on February 26 and 27.[81] Ukrainian forces recently advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-february-27-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.76627,
-          48.42525
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-02-26",
-        "event_date": "2026-02-26",
-        "ingested_at": "2026-03-26T05:57:59Z",
-        "place": "Kleban-Byk",
-        "country_code": "ua",
-        "front_dist_km": 1.45,
-        "text": "Assessed Russian advances: Geolocated footage published on February 25 indicates that Russian forces recently advanced north of Kleban-Byk (south of Kostyantynivka) and west of Pleshchiivka (southeast of Kostyantynivka).[67] The footage also indicates that Russian forces likely seized Kleban-Byk itself at a prior date.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-february-26-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.2790838,
-          48.5098678
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "toward_only",
-        "article_date": "2026-02-26",
-        "event_date": "2026-02-26",
-        "ingested_at": "2026-03-26T05:57:59Z",
-        "place": "Kucheriv Yar",
-        "country_code": "ua",
-        "front_dist_km": 0.79,
-        "text": "Russian forces attacked northeast of Dobropillya toward Kucheriv Yar and southeast of Dobropillya near Dorozhnie on February 26.[77] Order of Battle: Elements of the Russian 33rd Motorized Rifle Regiment (20th Motorized Rifle Division) reportedly continue to operate in the Dobropillya tactical area.[78] Russian forces recently advanced in the Pokrovsk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-february-26-2026/"
       }
     }
   ]

@@ -1215,5 +1215,34 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "the Oleksandrivka": {
+    "coords": [
+      33.2984727,
+      47.3139025
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "operate in the Kupyansk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Donbas": {
+    "coords": [
+      37.2746326,
+      47.9863996
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Shakhove": {
+    "coords": [
+      37.3488998,
+      48.4594232
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
