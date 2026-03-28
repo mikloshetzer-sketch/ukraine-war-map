@@ -6,25 +6,311 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.1304407,
-          47.8423669
+          37.7466704,
+          55.6638233
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-03-27",
-        "event_date": "2026-03-27",
-        "ingested_at": "2026-03-27T06:20:05Z",
-        "place": "Jobs",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "Like",
+        "location_confidence": "pattern_title",
+        "candidate_score": 60,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "In Like A Lion : On Ukraine Battlefield , Spring Weather , New Fighting Season , A Big Russian Assault",
+        "text": "In Like A Lion : On Ukraine Battlefield , Spring Weather , New Fighting Season , A Big Russian Assault.",
+        "source_url": "https://www.rferl.org/a/ukraine-russia-war-battlefield-spring-offensive/33717112.html",
+        "publisher_hint": "https://www.rferl.org/a/ukraine-russia-war-battlefield-spring-offensive/33717112.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.5286211,
+          50.4450683
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "With",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ua",
-        "front_dist_km": 33.43,
-        "title": "Emboldened Russia starts spring offensive | News , Sports , Jobs",
-        "text": "Emboldened Russia starts spring offensive | News , Sports , Jobs.",
-        "source_url": "https://www.ironmountaindailynews.com/news/2026/03/emboldened-russia-starts-spring-offensive/",
-        "publisher_hint": "https://www.ironmountaindailynews.com/news/2026/03/emboldened-russia-starts-spring-offensive/"
+        "front_dist_km": null,
+        "title": "With signs its spring offensive has started , Russia fires nearly 400 drones at Ukraine | Politics and Government",
+        "text": "With signs its spring offensive has started , Russia fires nearly 400 drones at Ukraine | Politics and Government.",
+        "source_url": "https://www.reviewjournal.com/news/politics-and-government/russia-fires-nearly-400-drones-at-ukraine-with-signs-its-spring-offensive-has-started-3728845/",
+        "publisher_hint": "https://www.reviewjournal.com/news/politics-and-government/russia-fires-nearly-400-drones-at-ukraine-with-signs-its-spring-offensive-has-started-3728845/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.669289,
+          48.2963694
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "Europa",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Wladimir Putin : Neue Offensive des Kremlchefs löst Militäralarm in Europa aus",
+        "text": "Wladimir Putin : Neue Offensive des Kremlchefs löst Militäralarm in Europa aus.",
+        "source_url": "https://www.news.de/politik/859460567/wladimir-putin-neue-angriffswelle-loest-alarm-der-nato-aus-kreml-chef-loest-mit-neuer-offensive-grosse-angst-in-europa-aus/1/",
+        "publisher_hint": "https://www.news.de/politik/859460567/wladimir-putin-neue-angriffswelle-loest-alarm-der-nato-aus-kreml-chef-loest-mit-neuer-offensive-grosse-angst-in-europa-aus/1/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukraine braces for new Russian offensive on its  Fortress Belt",
+        "text": "Ukraine braces for new Russian offensive on its  Fortress Belt.",
+        "source_url": "https://www.independent.ie/world-news/europe/ukraine-braces-for-new-russian-offensive-on-its-fortress-belt/a1404231606.html",
+        "publisher_hint": "https://www.independent.ie/world-news/europe/ukraine-braces-for-new-russian-offensive-on-its-fortress-belt/a1404231606.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7466704,
+          55.6638233
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "Like",
+        "location_confidence": "pattern_title",
+        "candidate_score": 60,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "In Like A Lion : On Ukraine Battlefield , Spring Weather , New Fighting Season , A Big Russian Assault",
+        "text": "In Like A Lion : On Ukraine Battlefield , Spring Weather , New Fighting Season , A Big Russian Assault.",
+        "source_url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/03/ukraine-260326-rferl01.htm",
+        "publisher_hint": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/03/ukraine-260326-rferl01.htm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.5286211,
+          50.4450683
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "With",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "With talks on back burner , Ukraine faces Russian spring offensive",
+        "text": "With talks on back burner , Ukraine faces Russian spring offensive.",
+        "source_url": "https://www.dailysabah.com/world/mid-east/with-talks-on-back-burner-ukraine-faces-russian-spring-offensive",
+        "publisher_hint": "https://www.dailysabah.com/world/mid-east/with-talks-on-back-burner-ukraine-faces-russian-spring-offensive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.5286211,
+          50.4450683
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "With",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "With talks on back burner , Ukraine faces Russian spring offensive",
+        "text": "With talks on back burner , Ukraine faces Russian spring offensive.",
+        "source_url": "https://www.dailysabah.com/world/europe/with-talks-on-back-burner-ukraine-faces-russian-spring-offensive",
+        "publisher_hint": "https://www.dailysabah.com/world/europe/with-talks-on-back-burner-ukraine-faces-russian-spring-offensive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukraine finally got battlefield momentum . Now comes a Russian offensive .",
+        "text": "Ukraine finally got battlefield momentum . Now comes a Russian offensive ..",
+        "source_url": "https://www.bostonglobe.com/2026/03/25/world/ukraine-finally-got-battlefield-momentum-now-comes-russian-offensive/",
+        "publisher_hint": "https://www.bostonglobe.com/2026/03/25/world/ukraine-finally-got-battlefield-momentum-now-comes-russian-offensive/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.4871232,
+          50.4314323
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "March",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Russian Offensive Campaign Assessment , March 25 , 2026",
+        "text": "Russian Offensive Campaign Assessment , March 25 , 2026.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-25-2026/",
+        "publisher_hint": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-25-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 176 C - Clashes in F - Line : 45 in Pokrovsk Dir , 37 in Kostiantynivka Dir , 18 in Huliaipole Dir ; UKR Testing Exoskeletons That Help Troops Run 12mph , Carry More Ammo ; UKR SS Delivered Explosive Insoles To RU Troops , RU Lauched 94...",
+        "text": "RIGHT SPEAK : 176 C - Clashes in F - Line : 45 in Pokrovsk Dir , 37 in Kostiantynivka Dir , 18 in Huliaipole Dir ; UKR Testing Exoskeletons That Help Troops Run 12mph , Carry More Ammo ; UKR SS Delivered Explosive Insoles To RU Troops , RU Lauched 94....",
+        "source_url": "http://www.rightspeak.net/2026/03/176-c-clashes-in-f-line-45-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/03/176-c-clashes-in-f-line-45-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 152 C - Clashes in F - Line : 27 in Pokrovsk Dir , 16 in Kostiantynivka Dir , 16 in Huliaipole Dir ; UKR Deep Strikes Make RUs Feel the War ; RU Lgst Oil Port Crippled in Huge UKR Attack ; UKR Killing RUs Faster RU Can Replace Them ; EU...",
+        "text": "RIGHT SPEAK : 152 C - Clashes in F - Line : 27 in Pokrovsk Dir , 16 in Kostiantynivka Dir , 16 in Huliaipole Dir ; UKR Deep Strikes Make RUs Feel the War ; RU Lgst Oil Port Crippled in Huge UKR Attack ; UKR Killing RUs Faster RU Can Replace Them ; EU....",
+        "source_url": "http://www.rightspeak.net/2026/03/152-c-clashes-in-f-line-27-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/03/152-c-clashes-in-f-line-27-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.5241361,
+          50.4500336
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-03-28",
+        "event_date": "2026-03-28",
+        "ingested_at": "2026-03-28T06:11:15Z",
+        "place": "Kiev",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Another setback for Kiev : Ukraine spring push stalls amid Russian gains",
+        "text": "Another setback for Kiev : Ukraine spring push stalls amid Russian gains.",
+        "source_url": "http://www.bignewsnetwork.com/news/278940688/another-setback-for-kiev-ukraine-spring-push-stalls-amid-russian-gains",
+        "publisher_hint": "http://www.bignewsnetwork.com/news/278940688/another-setback-for-kiev-ukraine-spring-push-stalls-amid-russian-gains"
       }
     }
   ]

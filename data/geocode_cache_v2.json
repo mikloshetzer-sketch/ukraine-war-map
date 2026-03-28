@@ -1346,5 +1346,33 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Kremlchefs": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Fortress Belt": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Russia Launches": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Signals Spring Offensive": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Clashes": {
+    "coords": [
+      30.7445902,
+      46.4665022
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
