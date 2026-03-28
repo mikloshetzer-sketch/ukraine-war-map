@@ -1322,5 +1322,29 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Dorozhnie": {
+    "coords": [
+      37.2225351,
+      48.4244484
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Prymorske": {
+    "coords": [
+      30.2823947,
+      45.9705543
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Vasylkivske": {
+    "coords": [
+      35.624538,
+      48.03635
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
