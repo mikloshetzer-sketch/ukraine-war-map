@@ -1374,5 +1374,13 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Mala Tokmachka": {
+    "coords": [
+      35.896801,
+      47.532688
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
