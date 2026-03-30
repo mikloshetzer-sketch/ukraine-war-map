@@ -1400,5 +1400,33 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "eastern Ukraine": {
+    "coords": [
+      25.3313028,
+      50.7517455
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Smarter": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "More Modern": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "More Advanced": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Inside Ukraine Drone War": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

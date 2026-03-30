@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-03-28T06:11:18Z",
-  "started_at_utc": "2026-03-28T06:10:06Z",
+  "generated_at_utc": "2026-03-30T07:01:01Z",
+  "started_at_utc": "2026-03-30T07:00:02Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -23,47 +23,33 @@
     "articles_after_filters": 23,
     "raw_events_total": 14,
     "dedup_events_total": 14,
-    "features_latest": 12,
-    "features_7d": 12,
-    "features_30d": 12,
+    "features_latest": 11,
+    "features_7d": 11,
+    "features_30d": 11,
     "events_total": 14,
-    "events_with_any_geo": 26,
-    "point_features": 12,
+    "events_with_any_geo": 24,
+    "point_features": 11,
     "dropped_not_front_near": 0,
-    "dropped_geocode": 2,
+    "dropped_geocode": 3,
     "frontline_available": false,
-    "geocode_cache_hits": 25,
-    "geocode_cache_negative_hits": 25,
+    "geocode_cache_hits": 23,
+    "geocode_cache_negative_hits": 20,
     "geocode_new_success": 1,
     "geocode_new_fail": 4,
     "geocode_calls_this_run": 5,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 244,
-    "rejections_saved": 11,
+    "cache_entries_total": 253,
+    "rejections_saved": 12,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 2,
-      "items_before_filters": 160,
-      "items_with_date": 160,
-      "items_in_lookback_window": 160,
-      "items_keyword_matched": 31,
-      "items_action_matched": 24,
+      "queries_with_response": 1,
+      "items_before_filters": 80,
+      "items_with_date": 80,
+      "items_in_lookback_window": 80,
+      "items_keyword_matched": 27,
+      "items_action_matched": 23,
       "items_after_dedup": 23,
       "parser_debug": [
-        {
-          "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
-          "parse_ok": true,
-          "root_tag": "rss",
-          "channel_found": true,
-          "item_count_raw": 80,
-          "sample_date_fields": [
-            "28 Mar 2026 05:30:00 +0000",
-            "28 Mar 2026 05:30:00 +0000",
-            "28 Mar 2026 05:15:00 +0000",
-            "28 Mar 2026 04:30:00 +0000",
-            "28 Mar 2026 03:00:00 +0000"
-          ]
-        },
         {
           "query": "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)",
           "parse_ok": true,
@@ -71,11 +57,11 @@
           "channel_found": true,
           "item_count_raw": 80,
           "sample_date_fields": [
-            "28 Mar 2026 05:15:00 +0000",
-            "28 Mar 2026 00:00:00 +0000",
-            "28 Mar 2026 17:45:00 +0000",
-            "28 Mar 2026 15:45:00 +0000",
-            "28 Mar 2026 15:45:00 +0000"
+            "30 Mar 2026 17:00:00 +0000",
+            "30 Mar 2026 14:15:00 +0000",
+            "30 Mar 2026 08:00:00 +0000",
+            "30 Mar 2026 07:00:00 +0000",
+            "30 Mar 2026 07:00:00 +0000"
           ]
         }
       ]
