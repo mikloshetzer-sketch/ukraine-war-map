@@ -6,6 +6,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-29",
+        "event_date": "2026-03-29",
+        "ingested_at": "2026-03-30T06:16:36Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-29-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.247822,
+          51.846882
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "toward_only",
+        "article_date": "2026-03-29",
+        "event_date": "2026-03-29",
+        "ingested_at": "2026-03-30T06:16:36Z",
+        "place": "Tovstodubove",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Supporting Effort: Northern Axis Russian objective: Create defensible buffer zones in Sumy Oblast along the international border Russian milbloggers claimed that Russian forces continued limited offensive operations northwest of Sumy City toward Tovstodubove and Ulanove and southeast of Sumy City near Novodmytrivka on March 29 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-29-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-29",
+        "event_date": "2026-03-29",
+        "ingested_at": "2026-03-30T06:16:36Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[64] Russian forces advanced during a recent mechanized assault in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-29-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.2746326,
           47.9863996
         ]
@@ -15,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-03-28",
         "event_date": "2026-03-28",
-        "ingested_at": "2026-03-29T05:58:05Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-03-28",
         "event_date": "2026-03-28",
-        "ingested_at": "2026-03-29T05:58:05Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Zaliznychne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-03-28",
         "event_date": "2026-03-28",
-        "ingested_at": "2026-03-29T05:58:05Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-03-27",
         "event_date": "2026-03-27",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Dorozhnie",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-03-27",
         "event_date": "2026-03-27",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Prymorske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +191,7 @@
         "kind": "ground",
         "article_date": "2026-03-27",
         "event_date": "2026-03-27",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Vasylkivske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,7 +213,7 @@
         "kind": "ground",
         "article_date": "2026-03-26",
         "event_date": "2026-03-26",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:37Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -169,7 +235,7 @@
         "kind": "ground",
         "article_date": "2026-03-26",
         "event_date": "2026-03-26",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:37Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -191,7 +257,7 @@
         "kind": "ground",
         "article_date": "2026-03-26",
         "event_date": "2026-03-26",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:37Z",
         "place": "Shakhove",
         "country_code": "ua",
         "front_dist_km": null,
@@ -213,56 +279,12 @@
         "kind": "ground",
         "article_date": "2026-03-26",
         "event_date": "2026-03-26",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:37Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[79] Ukrainian forces recently advanced in the Oleksandrivka direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-26-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.89724,
-          48.17737
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-02-27",
-        "event_date": "2026-02-27",
-        "ingested_at": "2026-03-29T05:58:06Z",
-        "place": "Muravka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Unconfirmed claims: The Russian Ministry of Defense (MoD) claimed on February 27 that Russian forces seized Bilyakivka (northeast of Novopavlivka).[80] Russian forces attacked northeast of Novopavlivka near Muravka and south of Novopavlivka near FIliya on February 26 and 27.[81] Ukrainian forces recently advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-february-27-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.614741,
-          45.7486605
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-02-27",
-        "event_date": "2026-02-27",
-        "ingested_at": "2026-03-29T05:58:06Z",
-        "place": "Zaliznychne",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Order of Battle: Drone operators of the Russian Martyn Pushkar Detachment are reportedly striking Ukrainian forces near Zaliznychne, Staroukrainka, and Svyatopetrivka.[97] Russian forces continued offensive operations in western Zaporizhia Oblast on February 27 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-february-27-2026/"
       }
     }
   ]

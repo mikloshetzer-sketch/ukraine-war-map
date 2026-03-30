@@ -6,6 +6,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-29",
+        "event_date": "2026-03-29",
+        "ingested_at": "2026-03-30T06:16:36Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-29-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.247822,
+          51.846882
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "toward_only",
+        "article_date": "2026-03-29",
+        "event_date": "2026-03-29",
+        "ingested_at": "2026-03-30T06:16:36Z",
+        "place": "Tovstodubove",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Supporting Effort: Northern Axis Russian objective: Create defensible buffer zones in Sumy Oblast along the international border Russian milbloggers claimed that Russian forces continued limited offensive operations northwest of Sumy City toward Tovstodubove and Ulanove and southeast of Sumy City near Novodmytrivka on March 29 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-29-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-29",
+        "event_date": "2026-03-29",
+        "ingested_at": "2026-03-30T06:16:36Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[64] Russian forces advanced during a recent mechanized assault in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-29-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.2746326,
           47.9863996
         ]
@@ -15,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-03-28",
         "event_date": "2026-03-28",
-        "ingested_at": "2026-03-29T05:58:05Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-03-28",
         "event_date": "2026-03-28",
-        "ingested_at": "2026-03-29T05:58:05Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Zaliznychne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-03-28",
         "event_date": "2026-03-28",
-        "ingested_at": "2026-03-29T05:58:05Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-03-27",
         "event_date": "2026-03-27",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Dorozhnie",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-03-27",
         "event_date": "2026-03-27",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Prymorske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +191,7 @@
         "kind": "ground",
         "article_date": "2026-03-27",
         "event_date": "2026-03-27",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:36Z",
         "place": "Vasylkivske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,7 +213,7 @@
         "kind": "ground",
         "article_date": "2026-03-26",
         "event_date": "2026-03-26",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:37Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -169,7 +235,7 @@
         "kind": "ground",
         "article_date": "2026-03-26",
         "event_date": "2026-03-26",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:37Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -191,7 +257,7 @@
         "kind": "ground",
         "article_date": "2026-03-26",
         "event_date": "2026-03-26",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:37Z",
         "place": "Shakhove",
         "country_code": "ua",
         "front_dist_km": null,
@@ -213,7 +279,7 @@
         "kind": "ground",
         "article_date": "2026-03-26",
         "event_date": "2026-03-26",
-        "ingested_at": "2026-03-29T05:58:06Z",
+        "ingested_at": "2026-03-30T06:16:37Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
