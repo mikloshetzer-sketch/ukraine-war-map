@@ -1428,5 +1428,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "the Kharkiv": {
+    "coords": [
+      36.2505902,
+      49.9992818
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
