@@ -1436,5 +1436,18 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "the Kupyansk": {
+    "coords": [
+      37.6127304,
+      49.711199
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Verkhnya Pysarivka on March": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

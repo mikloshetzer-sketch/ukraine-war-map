@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-03-31",
+        "event_date": "2026-03-31",
+        "ingested_at": "2026-04-01T06:12:26Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces advanced in the Kupyansk and Pokrovsk directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-31-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6058241,
           48.8522691
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-03-30",
         "event_date": "2026-03-30",
-        "ingested_at": "2026-03-31T06:04:48Z",
+        "ingested_at": "2026-04-01T06:12:26Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-03-30",
         "event_date": "2026-03-30",
-        "ingested_at": "2026-03-31T06:04:48Z",
+        "ingested_at": "2026-04-01T06:12:26Z",
         "place": "the Kharkiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-03-29",
         "event_date": "2026-03-29",
-        "ingested_at": "2026-03-31T06:04:48Z",
+        "ingested_at": "2026-04-01T06:12:26Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "toward_only",
         "article_date": "2026-03-29",
         "event_date": "2026-03-29",
-        "ingested_at": "2026-03-31T06:04:48Z",
+        "ingested_at": "2026-04-01T06:12:26Z",
         "place": "Tovstodubove",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-03-29",
         "event_date": "2026-03-29",
-        "ingested_at": "2026-03-31T06:04:48Z",
+        "ingested_at": "2026-04-01T06:12:26Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-03-28",
         "event_date": "2026-03-28",
-        "ingested_at": "2026-03-31T06:04:49Z",
+        "ingested_at": "2026-04-01T06:12:26Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-03-28",
         "event_date": "2026-03-28",
-        "ingested_at": "2026-03-31T06:04:49Z",
+        "ingested_at": "2026-04-01T06:12:26Z",
         "place": "Zaliznychne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -169,78 +191,12 @@
         "kind": "ground",
         "article_date": "2026-03-28",
         "event_date": "2026-03-28",
-        "ingested_at": "2026-03-31T06:04:49Z",
+        "ingested_at": "2026-04-01T06:12:26Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces attacked southeast of Orikhiv near Mala Tokmachka; south of Orikhiv near Novodanylivka; west of Orikhiv near Mali Shcherbaky and Stepove; and northwest of Orikhiv near Prymorske and Stepnohirsk on March 27 and 28.[81] Russian forces conducted two mechanized assaults in western Zaporizhia Oblast on March 28.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-28-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.2225351,
-          48.4244484
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-03-27",
-        "event_date": "2026-03-27",
-        "ingested_at": "2026-03-31T06:04:49Z",
-        "place": "Dorozhnie",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "The Ukrainian General Staff reported on March 27 that Ukrainian forces struck a Russian manpower concentration near Dorozhnie (southeast of Dobropillya) on the night of March 26 to 27.[62] Russian forces continued offensive operations in the Pokrovsk direction on March 27 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-27-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.2823947,
-          45.9705543
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-03-27",
-        "event_date": "2026-03-27",
-        "ingested_at": "2026-03-31T06:04:49Z",
-        "place": "Prymorske",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces attacked northwest of Orikhiv near Prymorske and Stepnohirsk, southeast of Orikhiv near Mala Tokmachka, and west of Orikhiv near Stepove and Shcherbaky on March 26 and 27.[78] Russian forces recently struck a reported Ukrainian Patriot air defense system in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-27-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.624538,
-          48.03635
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-03-27",
-        "event_date": "2026-03-27",
-        "ingested_at": "2026-03-31T06:04:49Z",
-        "place": "Vasylkivske",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on March 27 shows Lancet loitering munitions operators of the Russian Rubikon Center for Advanced Unmanned Technologies reportedly striking two launchers and an AN/MPQ-53 radar station of a Patriot air defense system near Vasylkivske (northeast of Zaporizhzhia City and roughly 58 kilometers from the frontline).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-27-2026/"
       }
     }
   ]
