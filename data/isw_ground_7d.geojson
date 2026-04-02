@@ -6,6 +6,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          30.1033125,
+          50.1699295
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-01",
+        "event_date": "2026-04-01",
+        "ingested_at": "2026-04-02T05:57:32Z",
+        "place": "Borova",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Russian MoD claimed on April 1 that Russian forces seized all of Luhansk Oblast.[1] ISW has observed evidence to assess that Russian forces control 99.84 percent of Luhansk Oblast as of April 1 but have not seized Nadiya and Novoyehorivka (both east of Borova).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.0805393,
+          48.3262489
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-01",
+        "event_date": "2026-04-01",
+        "ingested_at": "2026-04-02T05:57:32Z",
+        "place": "the Pokrovsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Pokrovsk and Hulyaipole directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.2746326,
+          47.9863996
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-01",
+        "event_date": "2026-04-01",
+        "ingested_at": "2026-04-02T05:57:32Z",
+        "place": "Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[59] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Ukrainian forces recently advanced in the Slovyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6127304,
           49.711199
         ]
@@ -15,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-03-31",
         "event_date": "2026-03-31",
-        "ingested_at": "2026-04-01T06:12:26Z",
+        "ingested_at": "2026-04-02T05:57:32Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-03-30",
         "event_date": "2026-03-30",
-        "ingested_at": "2026-04-01T06:12:26Z",
+        "ingested_at": "2026-04-02T05:57:32Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-03-30",
         "event_date": "2026-03-30",
-        "ingested_at": "2026-04-01T06:12:26Z",
+        "ingested_at": "2026-04-02T05:57:32Z",
         "place": "the Kharkiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-03-29",
         "event_date": "2026-03-29",
-        "ingested_at": "2026-04-01T06:12:26Z",
+        "ingested_at": "2026-04-02T05:57:33Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +169,7 @@
         "kind": "toward_only",
         "article_date": "2026-03-29",
         "event_date": "2026-03-29",
-        "ingested_at": "2026-04-01T06:12:26Z",
+        "ingested_at": "2026-04-02T05:57:33Z",
         "place": "Tovstodubove",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,78 +191,12 @@
         "kind": "ground",
         "article_date": "2026-03-29",
         "event_date": "2026-03-29",
-        "ingested_at": "2026-04-01T06:12:26Z",
+        "ingested_at": "2026-04-02T05:57:33Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[64] Russian forces advanced during a recent mechanized assault in the Oleksandrivka direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-29-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.2746326,
-          47.9863996
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-03-28",
-        "event_date": "2026-03-28",
-        "ingested_at": "2026-04-01T06:12:26Z",
-        "place": "Donbas",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[37] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Ukrainian forces recently advanced in eastern Lyman as Russian forces continued infiltration missions in the area.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-28-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.614741,
-          45.7486605
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-03-28",
-        "event_date": "2026-03-28",
-        "ingested_at": "2026-04-01T06:12:26Z",
-        "place": "Zaliznychne",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Assessed Russian advances: Geolocated footage published on March 20 shows destroyed Russian armored fighting vehicles (AFVs) north of Zaliznychne (west of Hulyaipole), indicating that Russian forces advanced in the area.[77] ISW assesses that this change did not occur within the last 24 hours.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-28-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.896801,
-          47.532688
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-03-28",
-        "event_date": "2026-03-28",
-        "ingested_at": "2026-04-01T06:12:26Z",
-        "place": "Mala Tokmachka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces attacked southeast of Orikhiv near Mala Tokmachka; south of Orikhiv near Novodanylivka; west of Orikhiv near Mali Shcherbaky and Stepove; and northwest of Orikhiv near Prymorske and Stepnohirsk on March 27 and 28.[81] Russian forces conducted two mechanized assaults in western Zaporizhia Oblast on March 28.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-28-2026/"
       }
     }
   ]

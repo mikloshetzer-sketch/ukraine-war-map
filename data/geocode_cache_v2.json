@@ -1449,5 +1449,21 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Borova": {
+    "coords": [
+      30.1033125,
+      50.1699295
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "the Pokrovsk": {
+    "coords": [
+      37.0805393,
+      48.3262489
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
