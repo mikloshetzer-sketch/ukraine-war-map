@@ -1465,5 +1465,31 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Zelenskyy Easter": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Rostov": {
+    "coords": [
+      39.7198736,
+      47.2222596
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Those": {
+    "coords": [
+      30.4597112,
+      50.4769555
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Caucasian Knot": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

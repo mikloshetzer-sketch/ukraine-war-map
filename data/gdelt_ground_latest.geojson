@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.7198736,
+          47.2222596
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-02",
+        "event_date": "2026-04-02",
+        "ingested_at": "2026-04-02T06:19:53Z",
+        "place": "Rostov",
+        "location_confidence": "pattern_title",
+        "candidate_score": 60,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Caucasian Knot | Those accused of plotting a terrorist attack were sentenced to lengthy prison terms in Rostov - on - Don .",
+        "text": "Caucasian Knot | Those accused of plotting a terrorist attack were sentenced to lengthy prison terms in Rostov - on - Don ..",
+        "source_url": "https://www.eng.kavkaz-uzel.eu/articles/74126",
+        "publisher_hint": "https://www.eng.kavkaz-uzel.eu/articles/74126"
+      }
+    }
+  ]
 }
