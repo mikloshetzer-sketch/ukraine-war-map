@@ -6,25 +6,103 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          39.7198736,
-          47.2222596
+          30.4871232,
+          50.4314323
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-04-02",
-        "event_date": "2026-04-02",
-        "ingested_at": "2026-04-02T06:19:53Z",
-        "place": "Rostov",
+        "article_date": "2026-04-03",
+        "event_date": "2026-04-03",
+        "ingested_at": "2026-04-03T06:19:38Z",
+        "place": "March",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Russia made no territorial gains in Ukraine in March",
+        "text": "Russia made no territorial gains in Ukraine in March.",
+        "source_url": "https://www.freemalaysiatoday.com/category/world/2026/04/03/russia-made-no-territorial-gains-in-ukraine-in-march",
+        "publisher_hint": "https://www.freemalaysiatoday.com/category/world/2026/04/03/russia-made-no-territorial-gains-in-ukraine-in-march"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.0441837,
+          50.0113971
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-03",
+        "event_date": "2026-04-03",
+        "ingested_at": "2026-04-03T06:19:38Z",
+        "place": "Ukraine Offensive",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Russia Launches 2026 Ukraine Offensive : What Moscow Is ...",
+        "text": "Russia Launches 2026 Ukraine Offensive : What Moscow Is ....",
+        "source_url": "https://sofrep.com/news/russia-launches-2026-ukraine-offensive-what-moscow-is-really-trying-to-achieve/",
+        "publisher_hint": "https://sofrep.com/news/russia-launches-2026-ukraine-offensive-what-moscow-is-really-trying-to-achieve/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.4871232,
+          50.4314323
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-03",
+        "event_date": "2026-04-03",
+        "ingested_at": "2026-04-03T06:19:38Z",
+        "place": "March",
         "location_confidence": "pattern_title",
         "candidate_score": 60,
-        "country_code": "ru",
+        "country_code": "ua",
         "front_dist_km": null,
-        "title": "Caucasian Knot | Those accused of plotting a terrorist attack were sentenced to lengthy prison terms in Rostov - on - Don .",
-        "text": "Caucasian Knot | Those accused of plotting a terrorist attack were sentenced to lengthy prison terms in Rostov - on - Don ..",
-        "source_url": "https://www.eng.kavkaz-uzel.eu/articles/74126",
-        "publisher_hint": "https://www.eng.kavkaz-uzel.eu/articles/74126"
+        "title": "Ukraine … Russia Day 1 , 500 ….. Russia Makes NO Ukraine Territorial Gains in March …",
+        "text": "Ukraine … Russia Day 1 , 500 ….. Russia Makes NO Ukraine Territorial Gains in March ….",
+        "source_url": "https://politicaldog101.com/2026/04/ukrainerussia-day-1500-russia-makes-no-ukraine-territorial-gains-in-march/",
+        "publisher_hint": "https://politicaldog101.com/2026/04/ukrainerussia-day-1500-russia-makes-no-ukraine-territorial-gains-in-march/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.3145456,
+          48.5727918
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-03",
+        "event_date": "2026-04-03",
+        "ingested_at": "2026-04-03T06:19:38Z",
+        "place": "Ukraine Russia",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Ukraine Russia - type counter - attack went badly , causing some 100 deaths ( Ukraine Battlefield update , Day 1 , 497 ) – EUobserver",
+        "text": "Ukraine Russia - type counter - attack went badly , causing some 100 deaths ( Ukraine Battlefield update , Day 1 , 497 ) – EUobserver.",
+        "source_url": "https://euobserver.com/209417/ukraines-russia-type-counter-attack-went-badly-causing-some-100-deaths-ukraine-battlefield-update-day-1497/",
+        "publisher_hint": "https://euobserver.com/209417/ukraines-russia-type-counter-attack-went-badly-causing-some-100-deaths-ukraine-battlefield-update-day-1497/"
       }
     }
   ]

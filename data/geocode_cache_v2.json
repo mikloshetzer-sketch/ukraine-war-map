@@ -1491,5 +1491,64 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Hegseth": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ya Libnan": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "US Army Chief": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukraine in March": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "What Moscow Is": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukraine Offensive": {
+    "coords": [
+      36.0441837,
+      50.0113971
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Russia Day": {
+    "coords": [
+      45.8573155,
+      42.7678486
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "EUobserver": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukraine Russia": {
+    "coords": [
+      39.3145456,
+      48.5727918
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Ukraine Battlefield": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
