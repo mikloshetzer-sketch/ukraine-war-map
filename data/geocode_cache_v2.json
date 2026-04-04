@@ -1550,5 +1550,26 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "western Zaporizhia Oblast": {
+    "coords": [
+      35.1338908,
+      47.8326667
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Stepove": {
+    "coords": [
+      37.6789981,
+      48.1958532
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "occupied Uspenivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
