@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-04-03",
         "event_date": "2026-04-03",
-        "ingested_at": "2026-04-04T05:41:28Z",
+        "ingested_at": "2026-04-05T06:01:10Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "toward_only",
         "article_date": "2026-04-03",
         "event_date": "2026-04-03",
-        "ingested_at": "2026-04-04T05:41:28Z",
+        "ingested_at": "2026-04-05T06:01:10Z",
         "place": "Stepove",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-02",
         "event_date": "2026-04-02",
-        "ingested_at": "2026-04-04T05:41:29Z",
+        "ingested_at": "2026-04-05T06:01:10Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-04-02",
         "event_date": "2026-04-02",
-        "ingested_at": "2026-04-04T05:41:29Z",
+        "ingested_at": "2026-04-05T06:01:10Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-04-01",
         "event_date": "2026-04-01",
-        "ingested_at": "2026-04-04T05:41:29Z",
+        "ingested_at": "2026-04-05T06:01:11Z",
         "place": "Borova",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-04-01",
         "event_date": "2026-04-01",
-        "ingested_at": "2026-04-04T05:41:29Z",
+        "ingested_at": "2026-04-05T06:01:11Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,34 +147,12 @@
         "kind": "ground",
         "article_date": "2026-04-01",
         "event_date": "2026-04-01",
-        "ingested_at": "2026-04-04T05:41:29Z",
+        "ingested_at": "2026-04-05T06:01:11Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[59] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Ukrainian forces recently advanced in the Slovyansk direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-03-31",
-        "event_date": "2026-03-31",
-        "ingested_at": "2026-04-04T05:41:29Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces advanced in the Kupyansk and Pokrovsk directions.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-march-31-2026/"
       }
     }
   ]
