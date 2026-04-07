@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-04-05",
         "event_date": "2026-04-05",
-        "ingested_at": "2026-04-06T06:16:53Z",
+        "ingested_at": "2026-04-07T06:06:47Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-04-05",
         "event_date": "2026-04-05",
-        "ingested_at": "2026-04-06T06:16:53Z",
+        "ingested_at": "2026-04-07T06:06:47Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-03",
         "event_date": "2026-04-03",
-        "ingested_at": "2026-04-06T06:16:54Z",
+        "ingested_at": "2026-04-07T06:06:47Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,56 +81,12 @@
         "kind": "toward_only",
         "article_date": "2026-04-03",
         "event_date": "2026-04-03",
-        "ingested_at": "2026-04-06T06:16:54Z",
+        "ingested_at": "2026-04-07T06:06:47Z",
         "place": "Stepove",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces attacked northeast of Oleksandrivka near Sichneve, Ivanivka, and Andriivka-Klevtsove and southeast of Oleksandrivka near Krasnohirske, Oleksandrohrad, Vorone, and Zlahoda and toward Stepove, Vyshneve, Verbove, and Sosnivka on April 2 and 3.[54] Ukrainian forces continued their frontline strike campaign against the Russian forces near rear in the Oleksandrivka direction overnight on April 1 to 2.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-3-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-02",
-        "event_date": "2026-04-02",
-        "ingested_at": "2026-04-06T06:16:54Z",
-        "place": "Slovyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced near Slovyansk and in the Kostyantynivka-Druzhkivka tactical area.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-2-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-02",
-        "event_date": "2026-04-02",
-        "ingested_at": "2026-04-06T06:16:54Z",
-        "place": "Slovyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently advanced near Slovyansk and Borova.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-2-2026/"
       }
     }
   ]
