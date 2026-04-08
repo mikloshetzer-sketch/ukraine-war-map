@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6840775,
+          49.6295221
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "toward_only",
+        "article_date": "2026-04-07",
+        "event_date": "2026-04-07",
+        "ingested_at": "2026-04-08T06:07:43Z",
+        "place": "Kivsharivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces attacked within Kupyansk itself; east of Kupyansk near Petropavlivka; and southeast of Kupyansk near Pishchane and Kurylivka and toward Kivsharivka and Novoosynove on April 6 and 7.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-7-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.0805393,
           48.3262489
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-04-05",
         "event_date": "2026-04-05",
-        "ingested_at": "2026-04-07T06:06:47Z",
+        "ingested_at": "2026-04-08T06:07:43Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,56 +59,12 @@
         "kind": "ground",
         "article_date": "2026-04-05",
         "event_date": "2026-04-05",
-        "ingested_at": "2026-04-07T06:06:47Z",
+        "ingested_at": "2026-04-08T06:07:43Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces recently advanced in the Kupyansk direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.1338908,
-          47.8326667
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-03",
-        "event_date": "2026-04-03",
-        "ingested_at": "2026-04-07T06:06:47Z",
-        "place": "western Zaporizhia Oblast",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-3-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6789981,
-          48.1958532
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "toward_only",
-        "article_date": "2026-04-03",
-        "event_date": "2026-04-03",
-        "ingested_at": "2026-04-07T06:06:47Z",
-        "place": "Stepove",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces attacked northeast of Oleksandrivka near Sichneve, Ivanivka, and Andriivka-Klevtsove and southeast of Oleksandrivka near Krasnohirske, Oleksandrohrad, Vorone, and Zlahoda and toward Stepove, Vyshneve, Verbove, and Sosnivka on April 2 and 3.[54] Ukrainian forces continued their frontline strike campaign against the Russian forces near rear in the Oleksandrivka direction overnight on April 1 to 2.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-3-2026/"
       }
     }
   ]

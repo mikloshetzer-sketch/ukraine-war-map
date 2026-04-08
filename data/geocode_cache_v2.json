@@ -1586,5 +1586,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Kivsharivka": {
+    "coords": [
+      37.6840775,
+      49.6295221
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
