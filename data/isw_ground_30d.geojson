@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.0805393,
+          48.3262489
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-08",
+        "event_date": "2026-04-08",
+        "ingested_at": "2026-04-09T06:08:07Z",
+        "place": "the Pokrovsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Pokrovsk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-8-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6840775,
           49.6295221
         ]
@@ -15,7 +37,7 @@
         "kind": "toward_only",
         "article_date": "2026-04-07",
         "event_date": "2026-04-07",
-        "ingested_at": "2026-04-08T06:07:43Z",
+        "ingested_at": "2026-04-09T06:08:07Z",
         "place": "Kivsharivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-05",
         "event_date": "2026-04-05",
-        "ingested_at": "2026-04-08T06:07:43Z",
+        "ingested_at": "2026-04-09T06:08:07Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-04-05",
         "event_date": "2026-04-05",
-        "ingested_at": "2026-04-08T06:07:43Z",
+        "ingested_at": "2026-04-09T06:08:07Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,

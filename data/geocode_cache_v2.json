@@ -1594,5 +1594,26 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "January 1": {
+    "coords": [
+      35.059621,
+      48.4348922
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "March 31, 2026)": {
+    "coords": [
+      29.3331687,
+      45.5664447
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "the Dobropillya": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
