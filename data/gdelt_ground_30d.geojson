@@ -1,4 +1,109 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.1779793,
+          43.1947829
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-10",
+        "event_date": "2026-04-10",
+        "ingested_at": "2026-04-10T07:01:16Z",
+        "place": "Russia AK",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russia AK - 47 manufacturer is making special bullets for its assault rifles to knock drones out of the sky",
+        "text": "Russia AK - 47 manufacturer is making special bullets for its assault rifles to knock drones out of the sky.",
+        "source_url": "https://www.yahoo.com/news/articles/russias-ak-47-manufacturer-making-043813349.html",
+        "publisher_hint": "https://www.yahoo.com/news/articles/russias-ak-47-manufacturer-making-043813349.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-10",
+        "event_date": "2026-04-10",
+        "ingested_at": "2026-04-10T07:01:16Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "UK says it deployed military to deter Russian submarines from attack on undersea cables",
+        "text": "UK says it deployed military to deter Russian submarines from attack on undersea cables.",
+        "source_url": "https://www.bworldonline.com/world/2026/04/10/742065/uk-says-it-deployed-military-to-deter-russian-submarines-from-attack-on-undersea-cables/",
+        "publisher_hint": "https://www.bworldonline.com/world/2026/04/10/742065/uk-says-it-deployed-military-to-deter-russian-submarines-from-attack-on-undersea-cables/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6387672,
+          55.7565821
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-10",
+        "event_date": "2026-04-10",
+        "ingested_at": "2026-04-10T07:01:16Z",
+        "place": "April",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian Offensive Campaign Assessment , April 9 , 2026",
+        "text": "Russian Offensive Campaign Assessment , April 9 , 2026.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-9-2026/",
+        "publisher_hint": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-9-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.4608165,
+          54.8355698
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-10",
+        "event_date": "2026-04-10",
+        "ingested_at": "2026-04-10T07:01:16Z",
+        "place": "Gulf",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Why an attack on Bushehr nuclear plant would be catastrophic for the Gulf",
+        "text": "Why an attack on Bushehr nuclear plant would be catastrophic for the Gulf.",
+        "source_url": "https://nuclear-news.net/2026/04/10/2-a-why-an-attack-on-bushehr-nuclear-plant-would-be-catastrophic-for-the-gulf/",
+        "publisher_hint": "https://nuclear-news.net/2026/04/10/2-a-why-an-attack-on-bushehr-nuclear-plant-would-be-catastrophic-for-the-gulf/"
+      }
+    }
+  ]
 }

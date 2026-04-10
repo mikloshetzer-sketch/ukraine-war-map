@@ -1615,5 +1615,34 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Russia AK": {
+    "coords": [
+      43.1779793,
+      43.1947829
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "April": {
+    "coords": [
+      37.6387672,
+      55.7565821
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Gulf": {
+    "coords": [
+      37.4608165,
+      54.8355698
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Bushehr": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
