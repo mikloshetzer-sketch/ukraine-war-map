@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-09",
+        "event_date": "2026-04-09",
+        "ingested_at": "2026-04-10T06:17:17Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Kupyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-9-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.2823947,
+          45.9705543
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-09",
+        "event_date": "2026-04-09",
+        "ingested_at": "2026-04-10T06:17:17Z",
+        "place": "Prymorske",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed that Russian forces attacked northwest of Orikhiv near Prymorske and Stepnohirsk on April 9.[68] Russian forces are intensifying drone strikes and cognitive warfare efforts targeting the civilian population of Nikopol, Dnipropetrovsk Oblast (southwest of Zaporizhzhia City).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-9-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.0805393,
           48.3262489
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-08",
         "event_date": "2026-04-08",
-        "ingested_at": "2026-04-09T06:08:07Z",
+        "ingested_at": "2026-04-10T06:17:17Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,56 +81,12 @@
         "kind": "toward_only",
         "article_date": "2026-04-07",
         "event_date": "2026-04-07",
-        "ingested_at": "2026-04-09T06:08:07Z",
+        "ingested_at": "2026-04-10T06:17:18Z",
         "place": "Kivsharivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces attacked within Kupyansk itself; east of Kupyansk near Petropavlivka; and southeast of Kupyansk near Pishchane and Kurylivka and toward Kivsharivka and Novoosynove on April 6 and 7.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-7-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.0805393,
-          48.3262489
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-05",
-        "event_date": "2026-04-05",
-        "ingested_at": "2026-04-09T06:08:07Z",
-        "place": "the Pokrovsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Pokrovsk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-05",
-        "event_date": "2026-04-05",
-        "ingested_at": "2026-04-09T06:08:07Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently advanced in the Kupyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-5-2026/"
       }
     }
   ]
