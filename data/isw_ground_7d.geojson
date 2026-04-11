@@ -13,9 +13,31 @@
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
+        "article_date": "2026-04-10",
+        "event_date": "2026-04-10",
+        "ingested_at": "2026-04-11T05:45:38Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces advanced in the Kupyansk, Slovyansk, Pokrovsk, and Hulyaipole directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-10-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
         "article_date": "2026-04-09",
         "event_date": "2026-04-09",
-        "ingested_at": "2026-04-10T06:17:17Z",
+        "ingested_at": "2026-04-11T05:45:38Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-09",
         "event_date": "2026-04-09",
-        "ingested_at": "2026-04-10T06:17:17Z",
+        "ingested_at": "2026-04-11T05:45:38Z",
         "place": "Prymorske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-04-08",
         "event_date": "2026-04-08",
-        "ingested_at": "2026-04-10T06:17:17Z",
+        "ingested_at": "2026-04-11T05:45:38Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "toward_only",
         "article_date": "2026-04-07",
         "event_date": "2026-04-07",
-        "ingested_at": "2026-04-10T06:17:18Z",
+        "ingested_at": "2026-04-11T05:45:38Z",
         "place": "Kivsharivka",
         "country_code": "ua",
         "front_dist_km": null,
