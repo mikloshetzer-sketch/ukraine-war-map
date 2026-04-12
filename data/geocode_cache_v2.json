@@ -1659,5 +1659,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Kalynivske": {
+    "coords": [
+      32.974091,
+      47.114868
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
