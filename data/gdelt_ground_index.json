@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-04-12T06:47:39Z",
-  "started_at_utc": "2026-04-12T06:47:31Z",
+  "generated_at_utc": "2026-04-13T07:22:29Z",
+  "started_at_utc": "2026-04-13T07:22:25Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -38,7 +38,7 @@
     "geocode_new_fail": 0,
     "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 290,
+    "cache_entries_total": 292,
     "rejections_saved": 0,
     "collect_debug": {
       "queries_total": 3,
@@ -51,17 +51,17 @@
       "items_after_dedup": 0,
       "parser_debug": [
         {
-          "query": "\"Ukraine\" AND (attack OR assault OR advance OR fighting OR clashes)",
+          "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
           "parse_ok": true,
           "root_tag": "rss",
           "channel_found": true,
           "item_count_raw": 80,
           "sample_date_fields": [
-            "12 Apr 2026 06:15:00 +0000",
-            "12 Apr 2026 06:15:00 +0000",
-            "12 Apr 2026 06:15:00 +0000",
-            "12 Apr 2026 06:15:00 +0000",
-            "12 Apr 2026 06:00:00 +0000"
+            "13 Apr 2026 06:45:00 +0000",
+            "13 Apr 2026 06:45:00 +0000",
+            "13 Apr 2026 06:45:00 +0000",
+            "13 Apr 2026 06:45:00 +0000",
+            "13 Apr 2026 06:45:00 +0000"
           ]
         }
       ]
