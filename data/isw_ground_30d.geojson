@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-12",
+        "event_date": "2026-04-12",
+        "ingested_at": "2026-04-13T06:31:49Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-12-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-12",
+        "event_date": "2026-04-12",
+        "ingested_at": "2026-04-13T06:31:49Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[39] The Russian Ministry of Defense (MoD) also claimed that Ukrainian forces counterattacked toward Hai and Vidradne (both south of Oleksandrivka).[40] Order of Battle: Drone operators of the Russian 656th Motorized Rifle Regiment (29th CAA, Eastern Military District [EMD]) are reportedly striking Ukrainian forces near Pokrovske (just north of Oleksandrivka).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-12-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           32.974091,
           47.114868
         ]
@@ -15,7 +59,7 @@
         "kind": "toward_only",
         "article_date": "2026-04-11",
         "event_date": "2026-04-11",
-        "ingested_at": "2026-04-12T06:10:34Z",
+        "ingested_at": "2026-04-13T06:31:49Z",
         "place": "Kalynivske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-04-10",
         "event_date": "2026-04-10",
-        "ingested_at": "2026-04-12T06:10:34Z",
+        "ingested_at": "2026-04-13T06:31:49Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-04-09",
         "event_date": "2026-04-09",
-        "ingested_at": "2026-04-12T06:10:34Z",
+        "ingested_at": "2026-04-13T06:31:49Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,34 +125,12 @@
         "kind": "ground",
         "article_date": "2026-04-09",
         "event_date": "2026-04-09",
-        "ingested_at": "2026-04-12T06:10:34Z",
+        "ingested_at": "2026-04-13T06:31:49Z",
         "place": "Prymorske",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "A Russian milblogger claimed that Russian forces attacked northwest of Orikhiv near Prymorske and Stepnohirsk on April 9.[68] Russian forces are intensifying drone strikes and cognitive warfare efforts targeting the civilian population of Nikopol, Dnipropetrovsk Oblast (southwest of Zaporizhzhia City).",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-9-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.0805393,
-          48.3262489
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-08",
-        "event_date": "2026-04-08",
-        "ingested_at": "2026-04-12T06:10:34Z",
-        "place": "the Pokrovsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Pokrovsk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-8-2026/"
       }
     }
   ]

@@ -1667,5 +1667,18 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Kharkiv City near Veterynarne": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Oleksandrivka": {
+    "coords": [
+      38.5372813,
+      48.6252414
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
