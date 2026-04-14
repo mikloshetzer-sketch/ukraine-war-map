@@ -1680,5 +1680,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "clear Stepnohirsk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

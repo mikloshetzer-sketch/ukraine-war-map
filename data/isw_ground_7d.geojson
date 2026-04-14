@@ -13,9 +13,31 @@
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
+        "article_date": "2026-04-13",
+        "event_date": "2026-04-13",
+        "ingested_at": "2026-04-14T06:17:28Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-13-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
         "article_date": "2026-04-12",
         "event_date": "2026-04-12",
-        "ingested_at": "2026-04-13T06:31:49Z",
+        "ingested_at": "2026-04-14T06:17:28Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-12",
         "event_date": "2026-04-12",
-        "ingested_at": "2026-04-13T06:31:49Z",
+        "ingested_at": "2026-04-14T06:17:28Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "toward_only",
         "article_date": "2026-04-11",
         "event_date": "2026-04-11",
-        "ingested_at": "2026-04-13T06:31:49Z",
+        "ingested_at": "2026-04-14T06:17:28Z",
         "place": "Kalynivske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,56 +103,12 @@
         "kind": "ground",
         "article_date": "2026-04-10",
         "event_date": "2026-04-10",
-        "ingested_at": "2026-04-13T06:31:49Z",
+        "ingested_at": "2026-04-14T06:17:28Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces advanced in the Kupyansk, Slovyansk, Pokrovsk, and Hulyaipole directions.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-10-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-09",
-        "event_date": "2026-04-09",
-        "ingested_at": "2026-04-13T06:31:49Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Kupyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-9-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.2823947,
-          45.9705543
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-09",
-        "event_date": "2026-04-09",
-        "ingested_at": "2026-04-13T06:31:49Z",
-        "place": "Prymorske",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed that Russian forces attacked northwest of Orikhiv near Prymorske and Stepnohirsk on April 9.[68] Russian forces are intensifying drone strikes and cognitive warfare efforts targeting the civilian population of Nikopol, Dnipropetrovsk Oblast (southwest of Zaporizhzhia City).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-9-2026/"
       }
     }
   ]
