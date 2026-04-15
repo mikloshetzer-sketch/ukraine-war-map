@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          36.079788,
+          47.747269
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "toward_only",
+        "article_date": "2026-04-14",
+        "event_date": "2026-04-14",
+        "ingested_at": "2026-04-15T06:18:19Z",
+        "place": "Vozdvyzhivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces attacked near Hulyaipole itself, northwest of Hulyaipole near Pryluky and toward Vozdvyzhivka, Kosivtseve, and Verkhnya Tersa, southwest of Hulyaipole near Hulyaipilske and toward Charivne, and west of Hulyaipole near Zaliznychne and Hirke on April 13 and 14.[69] Russian forces reportedly violated the April 12 to 13 Orthodox Easter ceasefire in the Hulyaipole direction .",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-14-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.2984727,
           47.3139025
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-04-13",
         "event_date": "2026-04-13",
-        "ingested_at": "2026-04-14T06:17:28Z",
+        "ingested_at": "2026-04-15T06:18:20Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-12",
         "event_date": "2026-04-12",
-        "ingested_at": "2026-04-14T06:17:28Z",
+        "ingested_at": "2026-04-15T06:18:20Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-04-12",
         "event_date": "2026-04-12",
-        "ingested_at": "2026-04-14T06:17:28Z",
+        "ingested_at": "2026-04-15T06:18:20Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,34 +103,12 @@
         "kind": "toward_only",
         "article_date": "2026-04-11",
         "event_date": "2026-04-11",
-        "ingested_at": "2026-04-14T06:17:28Z",
+        "ingested_at": "2026-04-15T06:18:20Z",
         "place": "Kalynivske",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces attacked east of Oleksandrivka near Oleksandrohrad and Sichneve and southeast of Oleksandrivka toward Kalynivske, Verbove, Ternove, and Novohryhorivka on April 10 and 11.[64] Ukrainian forces continue to maintain the tactical initiative in the Oleksandrivka direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-11-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-10",
-        "event_date": "2026-04-10",
-        "ingested_at": "2026-04-14T06:17:28Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces advanced in the Kupyansk, Slovyansk, Pokrovsk, and Hulyaipole directions.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-10-2026/"
       }
     }
   ]

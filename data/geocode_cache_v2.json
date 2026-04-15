@@ -1685,5 +1685,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Muravka on April": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Vozdvyzhivka": {
+    "coords": [
+      36.079788,
+      47.747269
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
