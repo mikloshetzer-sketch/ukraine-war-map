@@ -1698,5 +1698,15 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Oleksandrivka near Oleksandrohrad": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "occupied Terpinnya": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

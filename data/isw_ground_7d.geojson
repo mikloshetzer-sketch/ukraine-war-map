@@ -15,7 +15,7 @@
         "kind": "toward_only",
         "article_date": "2026-04-14",
         "event_date": "2026-04-14",
-        "ingested_at": "2026-04-15T06:18:19Z",
+        "ingested_at": "2026-04-16T06:20:10Z",
         "place": "Vozdvyzhivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-04-13",
         "event_date": "2026-04-13",
-        "ingested_at": "2026-04-15T06:18:20Z",
+        "ingested_at": "2026-04-16T06:20:10Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-12",
         "event_date": "2026-04-12",
-        "ingested_at": "2026-04-15T06:18:20Z",
+        "ingested_at": "2026-04-16T06:20:11Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,34 +81,12 @@
         "kind": "ground",
         "article_date": "2026-04-12",
         "event_date": "2026-04-12",
-        "ingested_at": "2026-04-15T06:18:20Z",
+        "ingested_at": "2026-04-16T06:20:11Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[39] The Russian Ministry of Defense (MoD) also claimed that Ukrainian forces counterattacked toward Hai and Vidradne (both south of Oleksandrivka).[40] Order of Battle: Drone operators of the Russian 656th Motorized Rifle Regiment (29th CAA, Eastern Military District [EMD]) are reportedly striking Ukrainian forces near Pokrovske (just north of Oleksandrivka).",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-12-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.974091,
-          47.114868
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "toward_only",
-        "article_date": "2026-04-11",
-        "event_date": "2026-04-11",
-        "ingested_at": "2026-04-15T06:18:20Z",
-        "place": "Kalynivske",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces attacked east of Oleksandrivka near Oleksandrohrad and Sichneve and southeast of Oleksandrivka toward Kalynivske, Verbove, Ternove, and Novohryhorivka on April 10 and 11.[64] Ukrainian forces continue to maintain the tactical initiative in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-11-2026/"
       }
     }
   ]
