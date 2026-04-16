@@ -1708,5 +1708,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Ukraine Kyiv": {
+    "coords": [
+      30.5241361,
+      50.4500336
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
