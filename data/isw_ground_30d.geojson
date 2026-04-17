@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.14211,
+          48.22191
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-16",
+        "event_date": "2026-04-16",
+        "ingested_at": "2026-04-17T06:21:12Z",
+        "place": "Shevchenko",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[66] Order of Battle: FPV drone operators of the Russian 56th Separate Spetsnaz Battalion (51st CAA, formerly 1st DNR AC, SMD) are reportedly striking Ukrainian equipment near Shevchenko.[67] Russian forces continued offensive operations in the Oleksandrivka direction on April 16 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-16-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           36.079788,
           47.747269
         ]
@@ -15,7 +37,7 @@
         "kind": "toward_only",
         "article_date": "2026-04-14",
         "event_date": "2026-04-14",
-        "ingested_at": "2026-04-16T06:20:10Z",
+        "ingested_at": "2026-04-17T06:21:12Z",
         "place": "Vozdvyzhivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,56 +59,12 @@
         "kind": "ground",
         "article_date": "2026-04-13",
         "event_date": "2026-04-13",
-        "ingested_at": "2026-04-16T06:20:10Z",
+        "ingested_at": "2026-04-17T06:21:12Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces recently advanced in the Oleksandrivka direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-13-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-12",
-        "event_date": "2026-04-12",
-        "ingested_at": "2026-04-16T06:20:11Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-12-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.5372813,
-          48.6252414
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-12",
-        "event_date": "2026-04-12",
-        "ingested_at": "2026-04-16T06:20:11Z",
-        "place": "Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[39] The Russian Ministry of Defense (MoD) also claimed that Ukrainian forces counterattacked toward Hai and Vidradne (both south of Oleksandrivka).[40] Order of Battle: Drone operators of the Russian 656th Motorized Rifle Regiment (29th CAA, Eastern Military District [EMD]) are reportedly striking Ukrainian forces near Pokrovske (just north of Oleksandrivka).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-12-2026/"
       }
     }
   ]

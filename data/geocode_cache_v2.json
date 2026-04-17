@@ -1716,5 +1716,23 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "the Slovyansk-Lyman tactical": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Shevchenko": {
+    "coords": [
+      37.14211,
+      48.22191
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "the Antonivskyi Bridge": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
