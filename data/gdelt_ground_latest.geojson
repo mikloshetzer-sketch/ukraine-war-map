@@ -1,31 +1,4 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.5038015,
-          50.4411207
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-04-16",
-        "event_date": "2026-04-16",
-        "ingested_at": "2026-04-16T07:03:11Z",
-        "place": "News",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "Russian attack on Ukraine Kyiv kills 12 - year - old child , wounds 10 | Russia - Ukraine war News",
-        "text": "Russian attack on Ukraine Kyiv kills 12 - year - old child , wounds 10 | Russia - Ukraine war News.",
-        "source_url": "https://www.aljazeera.com/news/2026/4/16/russian-attack-on-ukraines-kyiv-kills-12-year-old-child-wounds-10",
-        "publisher_hint": "https://www.aljazeera.com/news/2026/4/16/russian-attack-on-ukraines-kyiv-kills-12-year-old-child-wounds-10"
-      }
-    }
-  ]
+  "features": []
 }
