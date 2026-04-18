@@ -3213,5 +3213,10 @@
     "date": "2026-04-17",
     "name": "deepstatemap_data_20260417.geojson",
     "raw": "./data/deepstatemap_data_20260417.geojson"
+  },
+  {
+    "date": "2026-04-18",
+    "name": "deepstatemap_data_20260418.geojson",
+    "raw": "./data/deepstatemap_data_20260418.geojson"
   }
 ]
