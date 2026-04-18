@@ -1734,5 +1734,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "northern Toretske": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Vasylivka": {
+    "coords": [
+      35.2803026,
+      47.4431859
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

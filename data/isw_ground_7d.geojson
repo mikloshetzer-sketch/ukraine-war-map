@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-17",
+        "event_date": "2026-04-17",
+        "ingested_at": "2026-04-18T05:57:53Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced near Slovyansk and in the Dobropillya tactical area.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-17-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2803026,
+          47.4431859
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-17",
+        "event_date": "2026-04-17",
+        "ingested_at": "2026-04-18T05:57:53Z",
+        "place": "Vasylivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[37] A Russian milblogger claimed that Russian forces advanced on the western outskirts of Hryshyne and near Vasylivka (both northwest of Pokrovsk).[38] Neither Russian nor Ukrainian sources reported Russian ground activity in the Novopavlivka direction on April 17.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-17-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.14211,
           48.22191
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-16",
         "event_date": "2026-04-16",
-        "ingested_at": "2026-04-17T06:21:12Z",
+        "ingested_at": "2026-04-18T05:57:53Z",
         "place": "Shevchenko",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +81,12 @@
         "kind": "toward_only",
         "article_date": "2026-04-14",
         "event_date": "2026-04-14",
-        "ingested_at": "2026-04-17T06:21:12Z",
+        "ingested_at": "2026-04-18T05:57:54Z",
         "place": "Vozdvyzhivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces attacked near Hulyaipole itself, northwest of Hulyaipole near Pryluky and toward Vozdvyzhivka, Kosivtseve, and Verkhnya Tersa, southwest of Hulyaipole near Hulyaipilske and toward Charivne, and west of Hulyaipole near Zaliznychne and Hirke on April 13 and 14.[69] Russian forces reportedly violated the April 12 to 13 Orthodox Easter ceasefire in the Hulyaipole direction .",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-14-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-13",
-        "event_date": "2026-04-13",
-        "ingested_at": "2026-04-17T06:21:12Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-13-2026/"
       }
     }
   ]
