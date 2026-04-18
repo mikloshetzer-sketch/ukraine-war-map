@@ -1747,5 +1747,18 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Ukraine News": {
+    "coords": [
+      30.5038015,
+      50.4411207
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Rejects EU": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
