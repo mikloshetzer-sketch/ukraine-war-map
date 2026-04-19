@@ -1,18 +1,18 @@
 {
-  "date": "2026-04-18",
-  "title": "Ukraine War Daily Brief – Russian pressure continues near Pokrovsk",
+  "date": "2026-04-19",
+  "title": "Ukraine War Daily Brief – Limited territorial movement along the frontline",
   "summary": {
     "occupied_km2": 116836.74,
-    "daily_delta_km2": 0.89,
-    "daily_interpretation": "orosz területszerzés",
-    "weekly_delta_km2": 61.85,
+    "daily_delta_km2": 0.0,
+    "daily_interpretation": "nincs érdemi változás",
+    "weekly_delta_km2": 56.61,
     "weekly_interpretation": "orosz területszerzés",
     "ground_raw_total": null,
     "ground_kept_points": null,
     "ground_kept_lines": null,
-    "uav_events_total": 2862,
-    "uav_events_7d": 2007,
-    "gained_sector": "Pokrovsk",
+    "uav_events_total": 2874,
+    "uav_events_7d": 2019,
+    "gained_sector": null,
     "lost_sector": null
   },
   "metrics": [
@@ -22,11 +22,11 @@
     },
     {
       "label": "Daily change",
-      "value": "+0.89 km²"
+      "value": "0.00 km²"
     },
     {
       "label": "Weekly change",
-      "value": "+61.9 km²"
+      "value": "+56.6 km²"
     },
     {
       "label": "Ground combat reports",
@@ -38,11 +38,11 @@
     },
     {
       "label": "UAV activity (7d)",
-      "value": "2007"
+      "value": "2019"
     }
   ],
-  "analysis": "Russian forces continue to apply gradual positional pressure along the frontline. According to the latest DeepState estimate, Russian-occupied territory stands at 116 836.74 km². The daily change amounts to +0.89 km² compared with 2026-04-17 (orosz területszerzés). On a weekly basis, the balance shows +61.9 km² change (orosz területszerzés), indicating that recent developments remain part of a continuing pattern of incremental pressure rather than a sudden operational shift. The latest mapped activity points toward the Pokrovsk sector as the most likely focal area.\n\nSource reporting continues to indicate ground combat activity, although the currently usable mapped-event totals remain incomplete. This gap between raw reporting and confirmed mapped activity remains characteristic of the current phase of the war.\n\nDrone warfare continues to shape battlefield dynamics. Over the past seven days, 2007 UAV-related events were recorded, highlighting the scale of reconnaissance and strike operations.\n\nOverall, The data indicates continued Russian positional pressure combined with attritional warfare dynamics. If the current operational tempo continues, gradual territorial pressure is likely to persist in the coming days.",
-  "text": "Ukraine War Daily Brief – Russian pressure continues near Pokrovsk\n\nThe frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 836.74 km². The daily change amounts to +0.89 km² compared with 2026-04-17 (orosz területszerzés). The weekly balance shows +61.9 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Pokrovsk sector as a likely focal area.\n\nKey numbers:\n- Occupied territory: 116 836.74 km²\n- Daily change: +0.89 km²\n- Weekly change: +61.9 km²\n- Ground raw events: n/a\n- Mapped points: n/a\n- Mapped lines: n/a\n- UAV events (7d): 2007\n\nOperational picture:\nThe latest mapped territorial activity appears concentrated in the Pokrovsk sector. Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 2007 recorded events in the past seven days.\n\nKey events:\n- Recent territorial change appears to be located in the Pokrovsk sector.\n- The gap between raw reporting and mapped events remains notable, suggesting that many reports are still only partially geolocated.\n- Sustained UAV activity continues to support reconnaissance and strike operations, with 2007 events recorded over the past seven days.\n\nDrivers of the day:\n- Ground combat activity level assessed as unknown.\n- UAV operational pressure assessed as very high.\n- Territorial change remains gradual rather than breakthrough-driven.\n\nAssessment:\nThe data indicates continued Russian positional pressure combined with attritional warfare dynamics.\n\nOutlook:\nIf the current operational tempo continues, gradual territorial pressure is likely to persist in the coming days.",
-  "generated_at": "2026-04-18T06:04:11.971168+00:00",
+  "analysis": "Russian forces continue to apply gradual positional pressure along the frontline. According to the latest DeepState estimate, Russian-occupied territory stands at 116 836.74 km². The daily change amounts to 0.00 km² compared with 2026-04-18 (nincs érdemi változás). On a weekly basis, the balance shows +56.6 km² change (orosz területszerzés), indicating that recent developments remain part of a continuing pattern of incremental pressure rather than a sudden operational shift.\n\nSource reporting continues to indicate ground combat activity, although the currently usable mapped-event totals remain incomplete. This gap between raw reporting and confirmed mapped activity remains characteristic of the current phase of the war.\n\nDrone warfare continues to shape battlefield dynamics. Over the past seven days, 2019 UAV-related events were recorded, highlighting the scale of reconnaissance and strike operations.\n\nOverall, Operational activity remains high despite limited territorial movement. The next phase of operations will likely depend on localized offensives rather than large-scale maneuver.",
+  "text": "Ukraine War Daily Brief – Limited territorial movement along the frontline\n\nThe frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 836.74 km². The daily change amounts to 0.00 km² compared with 2026-04-18 (nincs érdemi változás). The weekly balance shows +56.6 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend.\n\nKey numbers:\n- Occupied territory: 116 836.74 km²\n- Daily change: 0.00 km²\n- Weekly change: +56.6 km²\n- Ground raw events: n/a\n- Mapped points: n/a\n- Mapped lines: n/a\n- UAV events (7d): 2019\n\nOperational picture:\nGround combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 2019 recorded events in the past seven days.\n\nKey events:\n- The gap between raw reporting and mapped events remains notable, suggesting that many reports are still only partially geolocated.\n- Sustained UAV activity continues to support reconnaissance and strike operations, with 2019 events recorded over the past seven days.\n\nDrivers of the day:\n- Ground combat activity level assessed as unknown.\n- UAV operational pressure assessed as very high.\n- Territorial change remains gradual rather than breakthrough-driven.\n\nAssessment:\nOperational activity remains high despite limited territorial movement.\n\nOutlook:\nThe next phase of operations will likely depend on localized offensives rather than large-scale maneuver.",
+  "generated_at": "2026-04-19T06:21:07.171434+00:00",
   "version": 4
 }
