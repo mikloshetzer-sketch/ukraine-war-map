@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-04-20T12:14:52+00:00",
+  "generated_at": "2026-04-20T18:12:26+00:00",
   "count": 6,
   "by_event_type": {
+    "drone_attack": 2,
     "ground_clash": 2,
-    "drone_attack": 4
+    "artillery": 2
   },
   "by_source": {
     "ukrainenow": 4,
@@ -19,23 +20,11 @@
       1
     ],
     [
-      "kostiantynivka",
-      1
-    ],
-    [
       "pokrovsk",
       1
     ],
     [
       "orikhiv",
-      1
-    ],
-    [
-      "kherson",
-      1
-    ],
-    [
-      "zaporizhzhia",
       1
     ]
   ]
