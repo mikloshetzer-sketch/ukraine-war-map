@@ -1765,5 +1765,23 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Massiv": {
+    "coords": [
+      30.594267,
+      50.452107
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Explosioner": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Rysk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

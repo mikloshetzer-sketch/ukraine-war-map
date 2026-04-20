@@ -1,4 +1,57 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.594267,
+          50.452107
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-20",
+        "event_date": "2026-04-20",
+        "ingested_at": "2026-04-20T07:24:14Z",
+        "place": "Massiv",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Explosioner i rysk oljehamn :  Massiv attack",
+        "text": "Explosioner i rysk oljehamn :  Massiv attack.",
+        "source_url": "https://www.gp.se/nyheter/varlden/explosioner-i-rysk-oljehamn-massiv-attack.a166feff-7dca-5d47-a979-5d884ecd5131",
+        "publisher_hint": "https://www.gp.se/nyheter/varlden/explosioner-i-rysk-oljehamn-massiv-attack.a166feff-7dca-5d47-a979-5d884ecd5131"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.594267,
+          50.452107
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-20",
+        "event_date": "2026-04-20",
+        "ingested_at": "2026-04-20T07:24:14Z",
+        "place": "Massiv",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Rysk oljehamn i lågor :  Massiv attack  – en person dödad",
+        "text": "Rysk oljehamn i lågor :  Massiv attack  – en person dödad.",
+        "source_url": "https://nyheter24.se/nyheter/utrikes/1476514-massiv-ukrainsk-dronarattack-mot-ryssland-en-dod",
+        "publisher_hint": "https://nyheter24.se/nyheter/utrikes/1476514-massiv-ukrainsk-dronarattack-mot-ryssland-en-dod"
+      }
+    }
+  ]
 }
