@@ -1783,5 +1783,38 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Zakharivka": {
+    "coords": [
+      29.758089,
+      47.3316351
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Russian claims": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "seize Slovyansk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "southwestern Verkhnya Tersa": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "western Zaporizhia Oblast on": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "occupied Melitopol": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

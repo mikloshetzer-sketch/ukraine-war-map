@@ -6,6 +6,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          35.288578,
+          46.507278
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-20",
+        "event_date": "2026-04-20",
+        "ingested_at": "2026-04-21T06:20:52Z",
+        "place": "Okhrimivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Kremlin-affiliated Russian milblogger claimed that large numbers of Ukrainian drones are complicating Russia’s ability to advance.[22] The milblogger also claimed that Ukrainian forces are counterattacking from Karaichne (northeast of Kharkiv City) and that Ukrainian counterattacks prevented Russian forces from consolidating positions seized near Okhrimivka (northeast of Kharkiv City).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-20-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.758089,
+          47.3316351
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-20",
+        "event_date": "2026-04-20",
+        "ingested_at": "2026-04-21T06:20:52Z",
+        "place": "Zakharivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Another milblogger claimed that Ukrainian forces counterattacked near Zakharivka (northeast of Kharkiv City).[23] Russian Subordinate Main Effort #2 – Oskil River Russian objective: Cross the Oskil River in Kharkiv Oblast and push westward into eastern Kharkiv Oblast and northern Donetsk Oblast Russian forces continued offensive operations in the Kupyansk direction on April 20 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-20-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.2746326,
+          47.9863996
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-20",
+        "event_date": "2026-04-20",
+        "ingested_at": "2026-04-21T06:20:52Z",
+        "place": "Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces continued offensive operations in the Slovyansk direction on April 20 as Ukrainian forces conducted limited counterattacks.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-20-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6058241,
           48.8522691
         ]
@@ -15,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-04-17",
         "event_date": "2026-04-17",
-        "ingested_at": "2026-04-20T06:32:47Z",
+        "ingested_at": "2026-04-21T06:20:52Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +103,12 @@
         "kind": "ground",
         "article_date": "2026-04-17",
         "event_date": "2026-04-17",
-        "ingested_at": "2026-04-20T06:32:47Z",
+        "ingested_at": "2026-04-21T06:20:52Z",
         "place": "Vasylivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[37] A Russian milblogger claimed that Russian forces advanced on the western outskirts of Hryshyne and near Vasylivka (both northwest of Pokrovsk).[38] Neither Russian nor Ukrainian sources reported Russian ground activity in the Novopavlivka direction on April 17.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-17-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.14211,
-          48.22191
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-16",
-        "event_date": "2026-04-16",
-        "ingested_at": "2026-04-20T06:32:47Z",
-        "place": "Shevchenko",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[66] Order of Battle: FPV drone operators of the Russian 56th Separate Spetsnaz Battalion (51st CAA, formerly 1st DNR AC, SMD) are reportedly striking Ukrainian equipment near Shevchenko.[67] Russian forces continued offensive operations in the Oleksandrivka direction on April 16 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-16-2026/"
       }
     }
   ]
