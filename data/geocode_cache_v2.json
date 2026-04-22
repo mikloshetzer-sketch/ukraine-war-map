@@ -1829,5 +1829,21 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Sunday": {
+    "coords": [
+      30.6118937,
+      50.397309
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Logi": {
+    "coords": [
+      39.9409795,
+      48.6121595
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
