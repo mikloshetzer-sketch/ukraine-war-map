@@ -1,6 +1,6 @@
 Ukraine War Daily Brief – Limited territorial movement along the frontline
 
-The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 846.39 km². The daily change amounts to 0.00 km² compared with 2026-04-20 (nincs érdemi változás). The weekly balance shows +35.7 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend.
+The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 846.39 km². The daily change amounts to 0.00 km² compared with 2026-04-21 (nincs érdemi változás). The weekly balance shows +35.7 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend.
 
 Key numbers:
 - Occupied territory: 116 846.39 km²
@@ -9,14 +9,14 @@ Key numbers:
 - Ground raw events: n/a
 - Mapped points: n/a
 - Mapped lines: n/a
-- UAV events (7d): 2035
+- UAV events (7d): 2044
 
 Operational picture:
-Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 2035 recorded events in the past seven days.
+Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 2044 recorded events in the past seven days.
 
 Key events:
 - The gap between raw reporting and mapped events remains notable, suggesting that many reports are still only partially geolocated.
-- Sustained UAV activity continues to support reconnaissance and strike operations, with 2035 events recorded over the past seven days.
+- Sustained UAV activity continues to support reconnaissance and strike operations, with 2044 events recorded over the past seven days.
 
 Drivers of the day:
 - Ground combat activity level assessed as unknown.
