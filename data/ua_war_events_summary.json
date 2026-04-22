@@ -1,20 +1,24 @@
 {
-  "generated_at": "2026-04-22T07:07:03+00:00",
+  "generated_at": "2026-04-22T12:10:06+00:00",
   "count": 5,
   "by_event_type": {
+    "ground_clash": 2,
     "missile_strike": 1,
-    "drone_attack": 3,
-    "artillery": 1
+    "drone_attack": 2
   },
   "by_source": {
-    "ukrainenow": 4,
-    "generalstaffzsu": 1
+    "generalstaffzsu": 2,
+    "ukrainenow": 3
   },
   "by_confidence": {
-    "medium": 4,
-    "high": 1
+    "high": 2,
+    "medium": 3
   },
   "top_sectors": [
+    [
+      "pokrovsk",
+      2
+    ],
     [
       "zaporizhzhia",
       1
