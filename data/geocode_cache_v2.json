@@ -1816,5 +1816,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "seven kilometers of Kramatorsk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Sumy City": {
+    "coords": [
+      34.8027723,
+      50.9119775
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

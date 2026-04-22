@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          34.8027723,
+          50.9119775
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-21",
+        "event_date": "2026-04-21",
+        "ingested_at": "2026-04-22T06:20:30Z",
+        "place": "Sumy City",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[27] Russian milbloggers claimed that Russian forces advanced southeast of Myropillya (northeast of Sumy City), northeast of Myropilske, southeast of Prokhody (both east of Sumy City), and east of Taratutyne (southeast of Sumy City).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.288578,
+          46.507278
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-21",
+        "event_date": "2026-04-21",
+        "ingested_at": "2026-04-22T06:20:30Z",
+        "place": "Okhrimivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[33] Russian milbloggers claimed that Russian forces advanced north of Okhrimivka (northeast of Kharkiv City).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           35.288578,
           46.507278
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-20",
         "event_date": "2026-04-20",
-        "ingested_at": "2026-04-21T06:20:52Z",
+        "ingested_at": "2026-04-22T06:20:30Z",
         "place": "Okhrimivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-04-20",
         "event_date": "2026-04-20",
-        "ingested_at": "2026-04-21T06:20:52Z",
+        "ingested_at": "2026-04-22T06:20:30Z",
         "place": "Zakharivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,56 +103,12 @@
         "kind": "ground",
         "article_date": "2026-04-20",
         "event_date": "2026-04-20",
-        "ingested_at": "2026-04-21T06:20:52Z",
+        "ingested_at": "2026-04-22T06:20:30Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces continued offensive operations in the Slovyansk direction on April 20 as Ukrainian forces conducted limited counterattacks.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-20-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-17",
-        "event_date": "2026-04-17",
-        "ingested_at": "2026-04-21T06:20:52Z",
-        "place": "Slovyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced near Slovyansk and in the Dobropillya tactical area.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-17-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.2803026,
-          47.4431859
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-17",
-        "event_date": "2026-04-17",
-        "ingested_at": "2026-04-21T06:20:52Z",
-        "place": "Vasylivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[37] A Russian milblogger claimed that Russian forces advanced on the western outskirts of Hryshyne and near Vasylivka (both northwest of Pokrovsk).[38] Neither Russian nor Ukrainian sources reported Russian ground activity in the Novopavlivka direction on April 17.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-17-2026/"
       }
     }
   ]
