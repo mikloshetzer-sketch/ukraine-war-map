@@ -1845,5 +1845,10 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Charivne in areas": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
