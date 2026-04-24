@@ -1,4 +1,57 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5389971,
+          55.6544719
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-24",
+        "event_date": "2026-04-24",
+        "ingested_at": "2026-04-24T07:12:30Z",
+        "place": "Direkt",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Direkt – Kriget i Ukraina – Dödlig attack mot Odessa",
+        "text": "Direkt – Kriget i Ukraina – Dödlig attack mot Odessa.",
+        "source_url": "https://www.dn.se/direkt/ukraina/2026-04-24/dodlig-attack-mot-odessa/",
+        "publisher_hint": "https://www.dn.se/direkt/ukraina/2026-04-24/dodlig-attack-mot-odessa/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.2226978,
+          53.2511516
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-24",
+        "event_date": "2026-04-24",
+        "ingested_at": "2026-04-24T07:12:30Z",
+        "place": "Attack",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Attack on Leadership of Russian Media Watchdog Thwarted",
+        "text": "Attack on Leadership of Russian Media Watchdog Thwarted.",
+        "source_url": "https://sputnikglobe.com/20260424/attack-on-leadership-of-russian-media-watchdog-thwarted---fsb-1124033152.html",
+        "publisher_hint": "https://sputnikglobe.com/20260424/attack-on-leadership-of-russian-media-watchdog-thwarted---fsb-1124033152.html"
+      }
+    }
+  ]
 }

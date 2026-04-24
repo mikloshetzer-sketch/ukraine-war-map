@@ -1850,5 +1850,55 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Direkt": {
+    "coords": [
+      37.5389971,
+      55.6544719
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Kriget": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Odessa": {
+    "coords": [
+      30.7322878,
+      46.4843023
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Ukraina": {
+    "coords": [
+      31.2718321,
+      49.4871968
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Attack": {
+    "coords": [
+      50.2226978,
+      53.2511516
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Leadership": {
+    "coords": [
+      36.3110332,
+      49.9528861
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Russian Media Watchdog Thwarted": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
