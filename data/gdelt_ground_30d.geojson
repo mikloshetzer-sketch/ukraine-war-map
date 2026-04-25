@@ -6,25 +6,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.5389971,
-          55.6544719
+          36.8,
+          52.6
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-04-24",
-        "event_date": "2026-04-24",
-        "ingested_at": "2026-04-24T07:12:30Z",
-        "place": "Direkt",
+        "article_date": "2026-04-25",
+        "event_date": "2026-04-25",
+        "ingested_at": "2026-04-25T06:46:36Z",
+        "place": "Russian",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ru",
         "front_dist_km": null,
-        "title": "Direkt – Kriget i Ukraina – Dödlig attack mot Odessa",
-        "text": "Direkt – Kriget i Ukraina – Dödlig attack mot Odessa.",
-        "source_url": "https://www.dn.se/direkt/ukraina/2026-04-24/dodlig-attack-mot-odessa/",
-        "publisher_hint": "https://www.dn.se/direkt/ukraina/2026-04-24/dodlig-attack-mot-odessa/"
+        "title": "Ukraine says it killed 12 Russian officers in drone swarm ? attack on FSB headquarters",
+        "text": "Ukraine says it killed 12 Russian officers in drone swarm ? attack on FSB headquarters.",
+        "source_url": "https://www.independent.ie/world-news/europe/ukraine-says-it-killed-12-russian-officers-in-drone-swarmattack-on-fsb-headquarters/a377750535.html",
+        "publisher_hint": "https://www.independent.ie/world-news/europe/ukraine-says-it-killed-12-russian-officers-in-drone-swarmattack-on-fsb-headquarters/a377750535.html"
       }
     },
     {
@@ -32,25 +32,77 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          50.2226978,
-          53.2511516
+          37.6923754,
+          48.534905
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-04-24",
-        "event_date": "2026-04-24",
-        "ingested_at": "2026-04-24T07:12:30Z",
-        "place": "Attack",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ru",
+        "article_date": "2026-04-25",
+        "event_date": "2026-04-25",
+        "ingested_at": "2026-04-25T06:46:36Z",
+        "place": "Kostiantynivka",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
         "front_dist_km": null,
-        "title": "Attack on Leadership of Russian Media Watchdog Thwarted",
-        "text": "Attack on Leadership of Russian Media Watchdog Thwarted.",
-        "source_url": "https://sputnikglobe.com/20260424/attack-on-leadership-of-russian-media-watchdog-thwarted---fsb-1124033152.html",
-        "publisher_hint": "https://sputnikglobe.com/20260424/attack-on-leadership-of-russian-media-watchdog-thwarted---fsb-1124033152.html"
+        "title": "RIGHT SPEAK : 204 C - Clashes in F - Line : 54 in Pokrovsk Dir , 23 in Kostiantynivka Dir , 13 in Lyman Dir ; Syrskyi : UKR Strikes Have Wiped $25 . 5B Off RU War Machine ; NATO : RU Not Planning New Mobilization ; Putin Approval Falls to Lowest Sinc...",
+        "text": "RIGHT SPEAK : 204 C - Clashes in F - Line : 54 in Pokrovsk Dir , 23 in Kostiantynivka Dir , 13 in Lyman Dir ; Syrskyi : UKR Strikes Have Wiped $25 . 5B Off RU War Machine ; NATO : RU Not Planning New Mobilization ; Putin Approval Falls to Lowest Sinc....",
+        "source_url": "http://www.rightspeak.net/2026/04/204-c-clashes-in-f-line-54-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/04/204-c-clashes-in-f-line-54-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6923754,
+          48.534905
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-25",
+        "event_date": "2026-04-25",
+        "ingested_at": "2026-04-25T06:46:36Z",
+        "place": "Kostiantynivka",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 194 C - Clashes in F - Line : 43 in Pokrovsk Dir , 25 in Kostiantynivka Dir , 12 in Oleksandrivka Dir ; UKR Drones Hunting Down RU Troops Sneaking Behind Enemy Lines on Horseback ; UKR Offered to Rename Donbas Sliver to  Donnyland ; UKR...",
+        "text": "RIGHT SPEAK : 194 C - Clashes in F - Line : 43 in Pokrovsk Dir , 25 in Kostiantynivka Dir , 12 in Oleksandrivka Dir ; UKR Drones Hunting Down RU Troops Sneaking Behind Enemy Lines on Horseback ; UKR Offered to Rename Donbas Sliver to  Donnyland ; UKR....",
+        "source_url": "http://www.rightspeak.net/2026/04/194-c-clashes-in-f-line-43-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/04/194-c-clashes-in-f-line-43-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-04-25",
+        "event_date": "2026-04-25",
+        "ingested_at": "2026-04-25T06:46:36Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 144 C - Clashes in F - Line : 28 in Pokrovsk Dir , 13 in Kostiantynivka Dir , 14 in Huliaipole Dir ;  A nightmare  RUs in Tuapse in Disbelief After UKR Drones Bring War Home ; UKR Destroys FSB Com Post in Killing 12 Officers ; UKR Repel...",
+        "text": "RIGHT SPEAK : 144 C - Clashes in F - Line : 28 in Pokrovsk Dir , 13 in Kostiantynivka Dir , 14 in Huliaipole Dir ;  A nightmare  RUs in Tuapse in Disbelief After UKR Drones Bring War Home ; UKR Destroys FSB Com Post in Killing 12 Officers ; UKR Repel....",
+        "source_url": "http://www.rightspeak.net/2026/04/144-c-clashes-in-f-line-28-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/04/144-c-clashes-in-f-line-28-in-pokrovsk.html"
       }
     }
   ]

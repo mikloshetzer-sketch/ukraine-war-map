@@ -1900,5 +1900,71 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Massive Overnight Drone": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Missile Attack Targets Ukraine": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Futile State": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Russia Spring Offensive": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "ADAPTIVE INDOMITABLE UKRAINE": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Mark Sumner Excellent Analysis": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Lyman Dir": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "NATO": {
+    "coords": [
+      30.4628723,
+      50.4971663
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Oleksandrivka Dir": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Horseback": {
+    "coords": [
+      40.310727,
+      43.6249005
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Killing": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Tuapse in Disbelief": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
