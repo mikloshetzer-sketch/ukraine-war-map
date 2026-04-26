@@ -15,56 +15,12 @@
         "kind": "ground",
         "article_date": "2026-04-24",
         "event_date": "2026-04-24",
-        "ingested_at": "2026-04-25T06:08:11Z",
+        "ingested_at": "2026-04-26T06:25:16Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian Head of Slovyansk Military Administration Vadym Lyakh reported on April 24 that Russian multiple launch rocket system (MLRS) fire, aerial bombs, and drone strikes has damaged 50 percent of high-rise buildings and 25 percent of private houses in Slovyansk.[38] Ukrainian forces recently advanced in the Kostyantynivka-Druzhkivka tactical area, and Russian forces conducted an infiltration mission.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-24-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          34.8027723,
-          50.9119775
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-21",
-        "event_date": "2026-04-21",
-        "ingested_at": "2026-04-25T06:08:11Z",
-        "place": "Sumy City",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[27] Russian milbloggers claimed that Russian forces advanced southeast of Myropillya (northeast of Sumy City), northeast of Myropilske, southeast of Prokhody (both east of Sumy City), and east of Taratutyne (southeast of Sumy City).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-21-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.288578,
-          46.507278
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-21",
-        "event_date": "2026-04-21",
-        "ingested_at": "2026-04-25T06:08:11Z",
-        "place": "Okhrimivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[33] Russian milbloggers claimed that Russian forces advanced north of Okhrimivka (northeast of Kharkiv City).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-21-2026/"
       }
     }
   ]
