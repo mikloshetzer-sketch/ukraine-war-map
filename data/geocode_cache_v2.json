@@ -1966,5 +1966,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Seven": {
+    "coords": [
+      37.616209,
+      55.7621918
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }

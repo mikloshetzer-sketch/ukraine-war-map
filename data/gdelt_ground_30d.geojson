@@ -6,25 +6,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8,
-          52.6
+          37.616209,
+          55.7621918
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-04-25",
-        "event_date": "2026-04-25",
-        "ingested_at": "2026-04-25T06:46:36Z",
-        "place": "Russian",
+        "article_date": "2026-04-26",
+        "event_date": "2026-04-26",
+        "ingested_at": "2026-04-26T07:05:18Z",
+        "place": "Seven",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ru",
         "front_dist_km": null,
-        "title": "Ukraine says it killed 12 Russian officers in drone swarm ? attack on FSB headquarters",
-        "text": "Ukraine says it killed 12 Russian officers in drone swarm ? attack on FSB headquarters.",
-        "source_url": "https://www.independent.ie/world-news/europe/ukraine-says-it-killed-12-russian-officers-in-drone-swarmattack-on-fsb-headquarters/a377750535.html",
-        "publisher_hint": "https://www.independent.ie/world-news/europe/ukraine-says-it-killed-12-russian-officers-in-drone-swarmattack-on-fsb-headquarters/a377750535.html"
+        "title": "Seven dead in major Russian attack on Ukraine",
+        "text": "Seven dead in major Russian attack on Ukraine.",
+        "source_url": "https://www.surinametimes.com/artikel/seven-dead-in-major-russian-attack-on-ukraine",
+        "publisher_hint": "https://www.surinametimes.com/artikel/seven-dead-in-major-russian-attack-on-ukraine"
       }
     },
     {
@@ -39,9 +39,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-04-25",
-        "event_date": "2026-04-25",
-        "ingested_at": "2026-04-25T06:46:36Z",
+        "article_date": "2026-04-26",
+        "event_date": "2026-04-26",
+        "ingested_at": "2026-04-26T07:05:18Z",
         "place": "Kostiantynivka",
         "location_confidence": "known_front_title",
         "candidate_score": 100,
@@ -58,32 +58,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.6923754,
-          48.534905
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-04-25",
-        "event_date": "2026-04-25",
-        "ingested_at": "2026-04-25T06:46:36Z",
-        "place": "Kostiantynivka",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "RIGHT SPEAK : 194 C - Clashes in F - Line : 43 in Pokrovsk Dir , 25 in Kostiantynivka Dir , 12 in Oleksandrivka Dir ; UKR Drones Hunting Down RU Troops Sneaking Behind Enemy Lines on Horseback ; UKR Offered to Rename Donbas Sliver to  Donnyland ; UKR...",
-        "text": "RIGHT SPEAK : 194 C - Clashes in F - Line : 43 in Pokrovsk Dir , 25 in Kostiantynivka Dir , 12 in Oleksandrivka Dir ; UKR Drones Hunting Down RU Troops Sneaking Behind Enemy Lines on Horseback ; UKR Offered to Rename Donbas Sliver to  Donnyland ; UKR....",
-        "source_url": "http://www.rightspeak.net/2026/04/194-c-clashes-in-f-line-43-in-pokrovsk.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/04/194-c-clashes-in-f-line-43-in-pokrovsk.html"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           36.2656849,
           47.6655382
         ]
@@ -91,9 +65,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-04-25",
-        "event_date": "2026-04-25",
-        "ingested_at": "2026-04-25T06:46:36Z",
+        "article_date": "2026-04-26",
+        "event_date": "2026-04-26",
+        "ingested_at": "2026-04-26T07:05:18Z",
         "place": "Huliaipole",
         "location_confidence": "known_front_title",
         "candidate_score": 100,
