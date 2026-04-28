@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-26",
+        "event_date": "2026-04-26",
+        "ingested_at": "2026-04-28T07:14:45Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.2746326,
+          47.9863996
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-26",
+        "event_date": "2026-04-26",
+        "ingested_at": "2026-04-28T07:14:45Z",
+        "place": "Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces continued offensive operations in the Slovyansk direction on April 26 but did not advance.[12] Russian forces continue to conduct infiltration missions within and around Kostyantynivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6058241,
           48.8522691
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-24",
         "event_date": "2026-04-24",
-        "ingested_at": "2026-04-27T07:17:22Z",
+        "ingested_at": "2026-04-28T07:14:45Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
