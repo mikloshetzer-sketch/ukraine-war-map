@@ -1974,5 +1974,107 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Ukrainian": {
+    "coords": [
+      23.4200824,
+      48.6499199
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Held": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "In Russia": {
+    "coords": [
+      45.0324624,
+      42.7007074
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Russian Drone Attack Wounds": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Odesa": {
+    "coords": [
+      30.7322878,
+      46.4843023
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Ziel": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Extra": {
+    "coords": [
+      56.24367,
+      58.013308
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Putin": {
+    "coords": [
+      38.2047592,
+      44.4220236
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Soldaten": {
+    "coords": [
+      37.6160495,
+      55.7548368
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Offensive": {
+    "coords": [
+      36.0441837,
+      50.0113971
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Worker Killed": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukrainian Drone Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Zaporizhzhia Nuclear Power Plant": {
+    "coords": [
+      34.5894872,
+      47.5125684
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Russians": {
+    "coords": [
+      34.5434033,
+      49.6329354
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Airborne Corps": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
