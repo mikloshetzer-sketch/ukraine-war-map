@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-04-29T07:36:18+00:00",
+  "generated_at": "2026-04-29T12:56:32+00:00",
   "count": 9,
   "by_event_type": {
-    "drone_attack": 8,
-    "artillery": 1
+    "drone_attack": 9
   },
   "by_source": {
     "ukrainenow": 4,
