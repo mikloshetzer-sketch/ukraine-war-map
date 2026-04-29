@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          36.2505902,
+          49.9992818
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-28",
+        "event_date": "2026-04-28",
+        "ingested_at": "2026-04-29T07:05:23Z",
+        "place": "the Kharkiv",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Kharkiv and Orikhiv directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-28-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.203369,
+          48.3539878
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-28",
+        "event_date": "2026-04-28",
+        "ingested_at": "2026-04-29T07:05:23Z",
+        "place": "Rodynske",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Ukrainian General Staff reported that Ukrainian forces struck a Russian troop concentration near Rodynske (north of Pokrovsk) on April 27.[30] Russian forces continued offensive operations in the Novopavlivka direction on April 28 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-28-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.2984727,
           47.3139025
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-26",
         "event_date": "2026-04-26",
-        "ingested_at": "2026-04-28T07:14:45Z",
+        "ingested_at": "2026-04-29T07:05:23Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +81,12 @@
         "kind": "ground",
         "article_date": "2026-04-26",
         "event_date": "2026-04-26",
-        "ingested_at": "2026-04-28T07:14:45Z",
+        "ingested_at": "2026-04-29T07:05:23Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces continued offensive operations in the Slovyansk direction on April 26 but did not advance.[12] Russian forces continue to conduct infiltration missions within and around Kostyantynivka.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-26-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-24",
-        "event_date": "2026-04-24",
-        "ingested_at": "2026-04-28T07:14:45Z",
-        "place": "Slovyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian Head of Slovyansk Military Administration Vadym Lyakh reported on April 24 that Russian multiple launch rocket system (MLRS) fire, aerial bombs, and drone strikes has damaged 50 percent of high-rise buildings and 25 percent of private houses in Slovyansk.[38] Ukrainian forces recently advanced in the Kostyantynivka-Druzhkivka tactical area, and Russian forces conducted an infiltration mission.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-24-2026/"
       }
     }
   ]

@@ -2076,5 +2076,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Rodynske": {
+    "coords": [
+      37.203369,
+      48.3539878
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
