@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.082291,
+          50.306049
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-29",
+        "event_date": "2026-04-29",
+        "ingested_at": "2026-04-30T07:10:38Z",
+        "place": "Zybyne",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed that Russian forces advanced east of Zybyne (northeast of Kharkiv City).[47] Neither Ukrainian nor Russian sources reported Russian ground attacks in the Velykyi Burluk direction on April 29.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-29-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6374432,
+          50.1094063
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-04-29",
+        "event_date": "2026-04-29",
+        "ingested_at": "2026-04-30T07:10:38Z",
+        "place": "Ambarne",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on April 28 that Russian forces advanced north of Ambarne (northeast of Velykyi Burluk).[48] Russian Subordinate Main Effort #2 – Oskil River Russian objective: Cross the Oskil River in Kharkiv Oblast and push westward into eastern Kharkiv Oblast and northern Donetsk Oblast Russian forces recently conducted an infiltration mission in the Kupyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-29-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           36.2505902,
           49.9992818
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-28",
         "event_date": "2026-04-28",
-        "ingested_at": "2026-04-29T07:05:23Z",
+        "ingested_at": "2026-04-30T07:10:38Z",
         "place": "the Kharkiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-04-28",
         "event_date": "2026-04-28",
-        "ingested_at": "2026-04-29T07:05:23Z",
+        "ingested_at": "2026-04-30T07:10:38Z",
         "place": "Rodynske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-04-26",
         "event_date": "2026-04-26",
-        "ingested_at": "2026-04-29T07:05:23Z",
+        "ingested_at": "2026-04-30T07:10:39Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-04-26",
         "event_date": "2026-04-26",
-        "ingested_at": "2026-04-29T07:05:23Z",
+        "ingested_at": "2026-04-30T07:10:39Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,

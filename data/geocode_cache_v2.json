@@ -2084,5 +2084,21 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Zybyne": {
+    "coords": [
+      37.082291,
+      50.306049
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Ambarne": {
+    "coords": [
+      37.6374432,
+      50.1094063
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
