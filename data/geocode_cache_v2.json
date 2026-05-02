@@ -2100,5 +2100,23 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Chaikivka": {
+    "coords": [
+      30.225109,
+      47.7071
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Dobropillya on May": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "the Novopavlivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          30.225109,
+          47.7071
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-01",
+        "event_date": "2026-05-01",
+        "ingested_at": "2026-05-02T06:26:25Z",
+        "place": "Chaikivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed that Russian forces advanced north of Chaikivka (northeast of Kharkiv City).[19] Neither Russian nor Ukrainian sources reported ground activity in the Velykyi Burluk direction on May 1.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.082291,
           50.306049
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-04-29",
         "event_date": "2026-04-29",
-        "ingested_at": "2026-05-01T07:14:51Z",
+        "ingested_at": "2026-05-02T06:26:26Z",
         "place": "Zybyne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-29",
         "event_date": "2026-04-29",
-        "ingested_at": "2026-05-01T07:14:51Z",
+        "ingested_at": "2026-05-02T06:26:26Z",
         "place": "Ambarne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-04-28",
         "event_date": "2026-04-28",
-        "ingested_at": "2026-05-01T07:14:51Z",
+        "ingested_at": "2026-05-02T06:26:26Z",
         "place": "the Kharkiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-04-28",
         "event_date": "2026-04-28",
-        "ingested_at": "2026-05-01T07:14:51Z",
+        "ingested_at": "2026-05-02T06:26:26Z",
         "place": "Rodynske",
         "country_code": "ua",
         "front_dist_km": null,
