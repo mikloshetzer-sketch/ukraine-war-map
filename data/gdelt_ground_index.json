@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-05-02T07:07:48Z",
-  "started_at_utc": "2026-05-02T07:07:05Z",
+  "generated_at_utc": "2026-05-03T07:26:07Z",
+  "started_at_utc": "2026-05-03T07:26:01Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -38,35 +38,18 @@
     "geocode_new_fail": 0,
     "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 361,
+    "cache_entries_total": 363,
     "rejections_saved": 0,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 2,
+      "queries_with_response": 0,
       "items_before_filters": 0,
       "items_with_date": 0,
       "items_in_lookback_window": 0,
       "items_keyword_matched": 0,
       "items_action_matched": 0,
       "items_after_dedup": 0,
-      "parser_debug": [
-        {
-          "query": "\"Ukraine\" AND (attack OR assault OR advance OR fighting OR clashes)",
-          "parse_ok": false,
-          "root_tag": "",
-          "channel_found": false,
-          "item_count_raw": 0,
-          "sample_date_fields": []
-        },
-        {
-          "query": "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)",
-          "parse_ok": false,
-          "root_tag": "",
-          "channel_found": false,
-          "item_count_raw": 0,
-          "sample_date_fields": []
-        }
-      ]
+      "parser_debug": []
     }
   },
   "files": {
