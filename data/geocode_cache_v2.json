@@ -2118,5 +2118,21 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "November 2025": {
+    "coords": [
+      28.4781895,
+      56.2928482
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "April 2026": {
+    "coords": [
+      37.6387672,
+      55.7565821
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }

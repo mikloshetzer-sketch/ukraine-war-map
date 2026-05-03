@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          35.1338908,
+          47.8326667
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-02",
+        "event_date": "2026-05-02",
+        "ingested_at": "2026-05-03T07:06:08Z",
+        "place": "western Zaporizhia Oblast",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently advanced in western Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-2-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           30.225109,
           47.7071
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-05-01",
         "event_date": "2026-05-01",
-        "ingested_at": "2026-05-02T06:26:25Z",
+        "ingested_at": "2026-05-03T07:06:08Z",
         "place": "Chaikivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-04-29",
         "event_date": "2026-04-29",
-        "ingested_at": "2026-05-02T06:26:26Z",
+        "ingested_at": "2026-05-03T07:06:09Z",
         "place": "Zybyne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,56 +81,12 @@
         "kind": "ground",
         "article_date": "2026-04-29",
         "event_date": "2026-04-29",
-        "ingested_at": "2026-05-02T06:26:26Z",
+        "ingested_at": "2026-05-03T07:06:09Z",
         "place": "Ambarne",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "A Russian milblogger claimed on April 28 that Russian forces advanced north of Ambarne (northeast of Velykyi Burluk).[48] Russian Subordinate Main Effort #2 – Oskil River Russian objective: Cross the Oskil River in Kharkiv Oblast and push westward into eastern Kharkiv Oblast and northern Donetsk Oblast Russian forces recently conducted an infiltration mission in the Kupyansk direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-29-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.2505902,
-          49.9992818
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-28",
-        "event_date": "2026-04-28",
-        "ingested_at": "2026-05-02T06:26:26Z",
-        "place": "the Kharkiv",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Kharkiv and Orikhiv directions.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-28-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.203369,
-          48.3539878
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-04-28",
-        "event_date": "2026-04-28",
-        "ingested_at": "2026-05-02T06:26:26Z",
-        "place": "Rodynske",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "The Ukrainian General Staff reported that Ukrainian forces struck a Russian troop concentration near Rodynske (north of Pokrovsk) on April 27.[30] Russian forces continued offensive operations in the Novopavlivka direction on April 28 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-april-28-2026/"
       }
     }
   ]
