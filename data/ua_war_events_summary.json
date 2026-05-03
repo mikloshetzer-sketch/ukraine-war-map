@@ -1,39 +1,24 @@
 {
-  "generated_at": "2026-05-03T07:27:30+00:00",
-  "count": 11,
+  "generated_at": "2026-05-03T11:59:28+00:00",
+  "count": 13,
   "by_event_type": {
-    "ground_clash": 4,
-    "drone_attack": 7
+    "missile_strike": 2,
+    "drone_attack": 6,
+    "ground_clash": 5
   },
   "by_source": {
-    "ukrainenow": 6,
+    "ukrainenow": 8,
     "generalstaffzsu": 3,
     "deepstateua": 2
   },
   "by_confidence": {
-    "medium": 6,
+    "medium": 8,
     "high": 5
   },
   "top_sectors": [
     [
       "kherson",
-      4
-    ],
-    [
-      "lyman",
-      1
-    ],
-    [
-      "kostiantynivka",
-      1
-    ],
-    [
-      "pokrovsk",
-      1
-    ],
-    [
-      "orikhiv",
-      1
+      3
     ]
   ]
 }
