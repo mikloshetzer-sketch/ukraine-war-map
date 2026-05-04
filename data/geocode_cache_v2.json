@@ -2142,5 +2142,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Ukraine Drone Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

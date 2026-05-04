@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-05-03T07:26:07Z",
-  "started_at_utc": "2026-05-03T07:26:01Z",
+  "generated_at_utc": "2026-05-04T08:03:28Z",
+  "started_at_utc": "2026-05-04T08:02:55Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -20,36 +20,51 @@
     "broad_places_count": 18
   },
   "stats": {
-    "articles_after_filters": 0,
-    "raw_events_total": 0,
-    "dedup_events_total": 0,
-    "features_latest": 0,
-    "features_7d": 0,
-    "features_30d": 0,
-    "events_total": 0,
-    "events_with_any_geo": 0,
-    "point_features": 0,
+    "articles_after_filters": 3,
+    "raw_events_total": 3,
+    "dedup_events_total": 3,
+    "features_latest": 2,
+    "features_7d": 2,
+    "features_30d": 2,
+    "events_total": 3,
+    "events_with_any_geo": 2,
+    "point_features": 2,
     "dropped_not_front_near": 0,
-    "dropped_geocode": 0,
+    "dropped_geocode": 1,
     "frontline_available": false,
-    "geocode_cache_hits": 0,
+    "geocode_cache_hits": 2,
     "geocode_cache_negative_hits": 0,
     "geocode_new_success": 0,
-    "geocode_new_fail": 0,
-    "geocode_calls_this_run": 0,
+    "geocode_new_fail": 1,
+    "geocode_calls_this_run": 1,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 363,
-    "rejections_saved": 0,
+    "cache_entries_total": 365,
+    "rejections_saved": 1,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 0,
-      "items_before_filters": 0,
-      "items_with_date": 0,
-      "items_in_lookback_window": 0,
-      "items_keyword_matched": 0,
-      "items_action_matched": 0,
-      "items_after_dedup": 0,
-      "parser_debug": []
+      "queries_with_response": 1,
+      "items_before_filters": 80,
+      "items_with_date": 80,
+      "items_in_lookback_window": 80,
+      "items_keyword_matched": 10,
+      "items_action_matched": 3,
+      "items_after_dedup": 3,
+      "parser_debug": [
+        {
+          "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
+          "parse_ok": true,
+          "root_tag": "rss",
+          "channel_found": true,
+          "item_count_raw": 80,
+          "sample_date_fields": [
+            "4 May 2026 07:30:00 +0000",
+            "4 May 2026 07:30:00 +0000",
+            "4 May 2026 07:30:00 +0000",
+            "4 May 2026 07:15:00 +0000",
+            "4 May 2026 07:15:00 +0000"
+          ]
+        }
+      ]
     }
   },
   "files": {
