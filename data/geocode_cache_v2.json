@@ -2134,5 +2134,13 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Podoly": {
+    "coords": [
+      37.667278,
+      49.692577
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
