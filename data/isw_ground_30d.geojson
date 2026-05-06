@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-05-03",
         "event_date": "2026-05-03",
-        "ingested_at": "2026-05-05T06:35:35Z",
+        "ingested_at": "2026-05-06T07:17:10Z",
         "place": "Podoly",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +37,12 @@
         "kind": "ground",
         "article_date": "2026-05-02",
         "event_date": "2026-05-02",
-        "ingested_at": "2026-05-05T06:35:35Z",
+        "ingested_at": "2026-05-06T07:17:10Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces recently advanced in western Zaporizhia Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-2-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.225109,
-          47.7071
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-01",
-        "event_date": "2026-05-01",
-        "ingested_at": "2026-05-05T06:35:35Z",
-        "place": "Chaikivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed that Russian forces advanced north of Chaikivka (northeast of Kharkiv City).[19] Neither Russian nor Ukrainian sources reported ground activity in the Velykyi Burluk direction on May 1.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-1-2026/"
       }
     }
   ]
