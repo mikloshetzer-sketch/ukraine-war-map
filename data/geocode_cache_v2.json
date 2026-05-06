@@ -2147,5 +2147,26 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "People": {
+    "coords": [
+      37.5887266,
+      55.7658761
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Security": {
+    "coords": [
+      30.4710864,
+      50.3923001
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Scotland": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
