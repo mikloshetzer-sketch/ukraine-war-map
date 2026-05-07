@@ -2168,5 +2168,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Western Zaporizhia Oblast": {
+    "coords": [
+      35.1338908,
+      47.8326667
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
