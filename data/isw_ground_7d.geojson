@@ -15,34 +15,12 @@
         "kind": "ground",
         "article_date": "2026-05-06",
         "event_date": "2026-05-06",
-        "ingested_at": "2026-05-07T07:26:14Z",
+        "ingested_at": "2026-05-08T06:16:34Z",
         "place": "Western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces advanced in Western Zaporizhia Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.667278,
-          49.692577
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-03",
-        "event_date": "2026-05-03",
-        "ingested_at": "2026-05-07T07:26:15Z",
-        "place": "Podoly",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed that Russian forces advanced within Podoly (east of Kupyansk).[30] A source reporting on the Russian Western Grouping of Forces claimed that Russian forces attacked south and southwest of Borova on May 3.[31] Ukrainian forces continued their mid to long-range strike campaign against Russian military assets in occupied Luhansk Oblast on the night of May 2 to 3.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-3-2026/"
       }
     }
   ]
