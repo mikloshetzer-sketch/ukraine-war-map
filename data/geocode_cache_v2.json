@@ -2176,5 +2176,18 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "WWII": {
+    "coords": [
+      35.9007115,
+      56.0625895
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Las Vegas Sun News": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

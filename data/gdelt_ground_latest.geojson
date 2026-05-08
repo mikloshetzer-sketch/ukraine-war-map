@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.9007115,
+          56.0625895
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-08",
+        "event_date": "2026-05-08",
+        "ingested_at": "2026-05-08T06:59:49Z",
+        "place": "WWII",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukraine launches major drone attack on Russia ahead of WWII parade",
+        "text": "Ukraine launches major drone attack on Russia ahead of WWII parade.",
+        "source_url": "https://www.wsbradio.com/news/world/russia-says-ukraine/UXV5DBMLFE575K44LV3BDBYPA4/",
+        "publisher_hint": "https://www.wsbradio.com/news/world/russia-says-ukraine/UXV5DBMLFE575K44LV3BDBYPA4/"
+      }
+    }
+  ]
 }
