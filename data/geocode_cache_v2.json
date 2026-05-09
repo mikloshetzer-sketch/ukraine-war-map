@@ -2199,5 +2199,26 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Trump": {
+    "coords": [
+      37.6168871,
+      55.7616251
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Zelenskyy": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Red Square": {
+    "coords": [
+      37.6215013,
+      55.7535908
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
