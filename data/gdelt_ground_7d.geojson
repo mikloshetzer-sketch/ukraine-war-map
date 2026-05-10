@@ -1,31 +1,4 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6168871,
-          55.7616251
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-05-09",
-        "event_date": "2026-05-09",
-        "ingested_at": "2026-05-09T07:20:35Z",
-        "place": "Trump",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ru",
-        "front_dist_km": null,
-        "title": "Trump confirms Ukraine - Russia ceasefire as Zelenskyy orders army not to attack Red Square",
-        "text": "Trump confirms Ukraine - Russia ceasefire as Zelenskyy orders army not to attack Red Square.",
-        "source_url": "https://www.thejournal.ie/trump-russia-ukraine-ceasefire-7034817-May2026/",
-        "publisher_hint": "https://www.thejournal.ie/trump-russia-ukraine-ceasefire-7034817-May2026/"
-      }
-    }
-  ]
+  "features": []
 }
