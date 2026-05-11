@@ -1,35 +1,48 @@
 {
-  "generated_at": "2026-05-10T18:10:37+00:00",
-  "count": 8,
+  "generated_at": "2026-05-11T08:38:16+00:00",
+  "count": 7,
   "by_event_type": {
-    "drone_attack": 2,
-    "artillery": 4,
-    "ground_clash": 2
+    "missile_strike": 1,
+    "ground_clash": 2,
+    "drone_attack": 3,
+    "artillery": 1
   },
   "by_source": {
-    "ukrainenow": 5,
     "generalstaffzsu": 2,
+    "ukrainenow": 4,
     "deepstateua": 1
   },
   "by_confidence": {
-    "medium": 5,
-    "high": 3
+    "high": 3,
+    "medium": 4
   },
   "top_sectors": [
     [
       "lyman",
-      2
+      1
     ],
     [
-      "pokrovsk",
-      2
+      "toretsk",
+      1
     ],
     [
       "kostiantynivka",
       1
     ],
     [
+      "pokrovsk",
+      1
+    ],
+    [
+      "huliaipole",
+      1
+    ],
+    [
       "orikhiv",
+      1
+    ],
+    [
+      "zaporizhzhia",
       1
     ]
   ]
