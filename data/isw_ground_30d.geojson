@@ -6,21 +6,43 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.1338908,
-          47.8326667
+          37.6127304,
+          49.711199
         ]
       },
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
-        "article_date": "2026-05-06",
-        "event_date": "2026-05-06",
-        "ingested_at": "2026-05-10T07:14:27Z",
-        "place": "Western Zaporizhia Oblast",
+        "article_date": "2026-05-10",
+        "event_date": "2026-05-10",
+        "ingested_at": "2026-05-11T08:02:16Z",
+        "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
-        "text": "Ukrainian forces advanced in Western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-6-2026/"
+        "text": "A source reporting on the Russian Western Grouping of Forces claimed on May 10 that the ceasefire did not hold in the Kupyansk direction, however, and that both sides had resumed activity.[26] Ukrainian forces recently advanced in the Borova direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-10-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8013654,
+          47.9645198
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-10",
+        "event_date": "2026-05-10",
+        "ingested_at": "2026-05-11T08:02:16Z",
+        "place": "Novodanylivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian military observer Kostyantyn Mashovets reported on May 10 that Ukrainian forces reduced the size of the Russian infiltration area south of Novodanylivka (south of Orikhiv) and pushed back Russian forces in central Stepnohirsk (northwest of Orikhiv).[48] Mashovets added that Ukrainian forces eliminated most Russian assault groups southeast of Stepnohirsk.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-10-2026/"
       }
     }
   ]

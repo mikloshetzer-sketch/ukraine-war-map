@@ -2225,5 +2225,28 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "the Borova": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "the Hulyaipole-Omelnyk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Novodanylivka": {
+    "coords": [
+      32.8013654,
+      47.9645198
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "most parts of Prymorske": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
