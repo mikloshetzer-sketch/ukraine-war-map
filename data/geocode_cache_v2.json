@@ -2248,5 +2248,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Depth": {
+    "coords": [
+      24.0343757,
+      49.837412
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Worthy News In": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.0343757,
+          49.837412
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-11",
+        "event_date": "2026-05-11",
+        "ingested_at": "2026-05-11T08:35:34Z",
+        "place": "Depth",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Moscow Parade Scaled Back Amid Drone Attack Fears ( Worthy News In - Depth )",
+        "text": "Moscow Parade Scaled Back Amid Drone Attack Fears ( Worthy News In - Depth ).",
+        "source_url": "https://www.worthynews.com/114250-moscow-parade-scaled-back-amid-drone-attack-fears-worthy-news-in-depth",
+        "publisher_hint": "https://www.worthynews.com/114250-moscow-parade-scaled-back-amid-drone-attack-fears-worthy-news-in-depth"
+      }
+    }
+  ]
 }
