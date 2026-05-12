@@ -2261,5 +2261,21 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Efter": {
+    "coords": [
+      36.2278056,
+      50.0043326
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Fire": {
+    "coords": [
+      54.9960072,
+      51.1575242
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }

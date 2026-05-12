@@ -6,25 +6,51 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.0343757,
-          49.837412
+          30.5241361,
+          50.4500336
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-11",
-        "event_date": "2026-05-11",
-        "ingested_at": "2026-05-11T08:35:34Z",
-        "place": "Depth",
+        "article_date": "2026-05-12",
+        "event_date": "2026-05-12",
+        "ingested_at": "2026-05-12T08:05:02Z",
+        "place": "Kiev",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ua",
         "front_dist_km": null,
-        "title": "Moscow Parade Scaled Back Amid Drone Attack Fears ( Worthy News In - Depth )",
-        "text": "Moscow Parade Scaled Back Amid Drone Attack Fears ( Worthy News In - Depth ).",
-        "source_url": "https://www.worthynews.com/114250-moscow-parade-scaled-back-amid-drone-attack-fears-worthy-news-in-depth",
-        "publisher_hint": "https://www.worthynews.com/114250-moscow-parade-scaled-back-amid-drone-attack-fears-worthy-news-in-depth"
+        "title": "Direkt – Kriget i Ukraina – Efter vapenvilan : Kiev under attack",
+        "text": "Direkt – Kriget i Ukraina – Efter vapenvilan : Kiev under attack.",
+        "source_url": "https://www.dn.se/direkt/ukraina/2026-05-12/efter-vapenvilan-kiev-under-attack/",
+        "publisher_hint": "https://www.dn.se/direkt/ukraina/2026-05-12/efter-vapenvilan-kiev-under-attack/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-12",
+        "event_date": "2026-05-12",
+        "ingested_at": "2026-05-12T08:05:02Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 200 C - Clashes in F - Line : 30 in Pokrovsk Dir , 17 in Kostiantynivka Dir , 13 in Huliaipole Dir ; Trump Announces 3 - day UKR - RU Cease - Fire , Prisoner Swap ; UKR and RU Have Agreed to Request ; RU Launches 52 Attacks During Putin...",
+        "text": "RIGHT SPEAK : 200 C - Clashes in F - Line : 30 in Pokrovsk Dir , 17 in Kostiantynivka Dir , 13 in Huliaipole Dir ; Trump Announces 3 - day UKR - RU Cease - Fire , Prisoner Swap ; UKR and RU Have Agreed to Request ; RU Launches 52 Attacks During Putin....",
+        "source_url": "http://www.rightspeak.net/2026/05/200-c-clashes-in-f-line-30-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/200-c-clashes-in-f-line-30-in-pokrovsk.html"
       }
     }
   ]
