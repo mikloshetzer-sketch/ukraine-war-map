@@ -2277,5 +2277,13 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Short": {
+    "coords": [
+      26.316587,
+      50.5145824
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
