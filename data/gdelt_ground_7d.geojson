@@ -6,25 +6,129 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.316587,
-          50.5145824
+          30.4628723,
+          50.4971663
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-13",
-        "event_date": "2026-05-13",
-        "ingested_at": "2026-05-13T08:11:27Z",
-        "place": "Short",
+        "article_date": "2026-05-14",
+        "event_date": "2026-05-14",
+        "ingested_at": "2026-05-14T08:03:22Z",
+        "place": "NATO",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ua",
         "front_dist_km": null,
-        "title": "Short of blue - collar worker : Ukraine battle for labour",
-        "text": "Short of blue - collar worker : Ukraine battle for labour.",
-        "source_url": "https://www.yahoo.com/news/articles/short-blue-collar-workers-ukraines-053704927.html",
-        "publisher_hint": "https://www.yahoo.com/news/articles/short-blue-collar-workers-ukraines-053704927.html"
+        "title": "Russia launches huge drone attack on western Ukraine by NATO border , killing six",
+        "text": "Russia launches huge drone attack on western Ukraine by NATO border , killing six.",
+        "source_url": "https://www.yahoo.com/news/articles/ukraines-zelenskiy-warns-incoming-russian-075051774.html",
+        "publisher_hint": "https://www.yahoo.com/news/articles/ukraines-zelenskiy-warns-incoming-russian-075051774.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-14",
+        "event_date": "2026-05-14",
+        "ingested_at": "2026-05-14T08:03:22Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukrainian capital Kyiv under attack from Russian drones , missiles , officials say",
+        "text": "Ukrainian capital Kyiv under attack from Russian drones , missiles , officials say.",
+        "source_url": "https://www.dailymaverick.co.za/article/2026-05-14-ukrainian-capital-kyiv-under-attack-from-russian-drones-missiles-officials-say/",
+        "publisher_hint": "https://www.dailymaverick.co.za/article/2026-05-14-ukrainian-capital-kyiv-under-attack-from-russian-drones-missiles-officials-say/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.1112011,
+          55.7975792
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-14",
+        "event_date": "2026-05-14",
+        "ingested_at": "2026-05-14T08:03:22Z",
+        "place": "More",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukraine Invasion Day 1 , 540 : More than 892 UAVs attacked in one day",
+        "text": "Ukraine Invasion Day 1 , 540 : More than 892 UAVs attacked in one day.",
+        "source_url": "https://www.dailykos.com/stories/2026/5/13/800038603/community/ukraine-invasion-day-1540/",
+        "publisher_hint": "https://www.dailykos.com/stories/2026/5/13/800038603/community/ukraine-invasion-day-1540/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.2047592,
+          44.4220236
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-14",
+        "event_date": "2026-05-14",
+        "ingested_at": "2026-05-14T08:03:22Z",
+        "place": "Putin",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "The final battle for Ukraine , Putin secret , and the coming great war – 25 brigades unleashed on Donbass",
+        "text": "The final battle for Ukraine , Putin secret , and the coming great war – 25 brigades unleashed on Donbass.",
+        "source_url": "https://www.bankingnews.gr/diethni/articles/874563/the-final-battle-for-ukraine-putin-s-secret-and-the-coming-great-war-25-brigades-unleashed-on-donbass",
+        "publisher_hint": "https://www.bankingnews.gr/diethni/articles/874563/the-final-battle-for-ukraine-putin-s-secret-and-the-coming-great-war-25-brigades-unleashed-on-donbass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.4628723,
+          50.4971663
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-14",
+        "event_date": "2026-05-14",
+        "ingested_at": "2026-05-14T08:03:22Z",
+        "place": "NATO",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Russia launches huge drone attack on western Ukraine by NATO border , killing six",
+        "text": "Russia launches huge drone attack on western Ukraine by NATO border , killing six.",
+        "source_url": "https://www.arabnews.com/node/2643512/world",
+        "publisher_hint": "https://www.arabnews.com/node/2643512/world"
       }
     }
   ]

@@ -2285,5 +2285,56 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "More": {
+    "coords": [
+      49.1112011,
+      55.7975792
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "UAVs": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukraine Invasion Day": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Maybe The New": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Russia Agonistes": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Fewer Meat Assaults": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Infiltrations Arent Working Either": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Donbass": {
+    "coords": [
+      37.954765,
+      48.0279261
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "NATO Allies Respond": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
