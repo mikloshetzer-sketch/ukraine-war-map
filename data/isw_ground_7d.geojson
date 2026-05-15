@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6141992,
+          49.7132963
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-14",
+        "event_date": "2026-05-14",
+        "ingested_at": "2026-05-15T07:42:19Z",
+        "place": "Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The milblogger claimed that Russian forces pushed Ukrainian forces out of most of Petropavlivka (west of Kupyansk) and that only a limited number of Ukrainian forces remain on its southern outskirts.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-14-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-14",
+        "event_date": "2026-05-14",
+        "ingested_at": "2026-05-15T07:42:19Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[43] Geolocated footage published on May 13 and likely taken on a prior date indicates that Ukrainian forces advanced into central Zakitne (northeast of Slovyansk).[44] Russian forces appear to be concentrating attacks on Rai-Oleksandrivka (east of Slovyansk).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-14-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.0805393,
           48.3262489
         ]
@@ -15,56 +59,12 @@
         "kind": "ground",
         "article_date": "2026-05-11",
         "event_date": "2026-05-11",
-        "ingested_at": "2026-05-14T07:31:10Z",
+        "ingested_at": "2026-05-15T07:42:19Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces recently advanced in the Pokrovsk direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-11-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-10",
-        "event_date": "2026-05-10",
-        "ingested_at": "2026-05-14T07:31:11Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A source reporting on the Russian Western Grouping of Forces claimed on May 10 that the ceasefire did not hold in the Kupyansk direction, however, and that both sides had resumed activity.[26] Ukrainian forces recently advanced in the Borova direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-10-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.8013654,
-          47.9645198
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-10",
-        "event_date": "2026-05-10",
-        "ingested_at": "2026-05-14T07:31:11Z",
-        "place": "Novodanylivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian military observer Kostyantyn Mashovets reported on May 10 that Ukrainian forces reduced the size of the Russian infiltration area south of Novodanylivka (south of Orikhiv) and pushed back Russian forces in central Stepnohirsk (northwest of Orikhiv).[48] Mashovets added that Ukrainian forces eliminated most Russian assault groups southeast of Stepnohirsk.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-10-2026/"
       }
     }
   ]
