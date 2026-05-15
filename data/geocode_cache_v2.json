@@ -2346,5 +2346,10 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Other Cities": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
