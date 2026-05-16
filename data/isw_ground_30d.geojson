@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          36.2505902,
+          49.9992818
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-15",
+        "event_date": "2026-05-15",
+        "ingested_at": "2026-05-16T06:40:05Z",
+        "place": "the Kharkiv",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces advanced in the Kharkiv and Kostyantynivka directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-15-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5347682,
+          55.6546954
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "toward_only",
+        "article_date": "2026-05-15",
+        "event_date": "2026-05-15",
+        "ingested_at": "2026-05-16T06:40:05Z",
+        "place": "support the Russian",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "The source had reported on May 12 that the Russian command similarly attached a company of the Russian 423rd Motorized Rifle Regiment (4th Tank Division, 1st GTA, MMD) operating in the Borova direction to support the Russian 144th Motorized Rifle Division.[44] Ukrainian forces recently advanced in and near Kostyantynivka as Russian forces continued infiltration missions into the city.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-15-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6141992,
           49.7132963
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-05-14",
         "event_date": "2026-05-14",
-        "ingested_at": "2026-05-15T07:42:19Z",
+        "ingested_at": "2026-05-16T06:40:05Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +81,12 @@
         "kind": "ground",
         "article_date": "2026-05-14",
         "event_date": "2026-05-14",
-        "ingested_at": "2026-05-15T07:42:19Z",
+        "ingested_at": "2026-05-16T06:40:05Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[43] Geolocated footage published on May 13 and likely taken on a prior date indicates that Ukrainian forces advanced into central Zakitne (northeast of Slovyansk).[44] Russian forces appear to be concentrating attacks on Rai-Oleksandrivka (east of Slovyansk).",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-14-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.0805393,
-          48.3262489
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-11",
-        "event_date": "2026-05-11",
-        "ingested_at": "2026-05-15T07:42:19Z",
-        "place": "the Pokrovsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently advanced in the Pokrovsk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-11-2026/"
       }
     }
   ]

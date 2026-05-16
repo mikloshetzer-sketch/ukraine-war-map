@@ -2351,5 +2351,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "support the Russian": {
+    "coords": [
+      37.5347682,
+      55.6546954
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
