@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-05-16T07:25:10Z",
-  "started_at_utc": "2026-05-16T07:24:59Z",
+  "generated_at_utc": "2026-05-17T07:42:51Z",
+  "started_at_utc": "2026-05-17T07:42:48Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -20,7 +20,7 @@
     "broad_places_count": 18
   },
   "stats": {
-    "articles_after_filters": 1,
+    "articles_after_filters": 0,
     "raw_events_total": 0,
     "dedup_events_total": 0,
     "features_latest": 0,
@@ -38,33 +38,18 @@
     "geocode_new_fail": 0,
     "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 399,
-    "rejections_saved": 1,
+    "cache_entries_total": 401,
+    "rejections_saved": 0,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 1,
-      "items_before_filters": 80,
-      "items_with_date": 80,
-      "items_in_lookback_window": 80,
-      "items_keyword_matched": 1,
-      "items_action_matched": 1,
-      "items_after_dedup": 1,
-      "parser_debug": [
-        {
-          "query": "\"Ukraine\" AND (attack OR assault OR advance OR fighting OR clashes)",
-          "parse_ok": true,
-          "root_tag": "rss",
-          "channel_found": true,
-          "item_count_raw": 80,
-          "sample_date_fields": [
-            "16 May 2026 07:00:00 +0000",
-            "16 May 2026 07:00:00 +0000",
-            "16 May 2026 07:00:00 +0000",
-            "16 May 2026 07:00:00 +0000",
-            "16 May 2026 07:00:00 +0000"
-          ]
-        }
-      ]
+      "queries_with_response": 0,
+      "items_before_filters": 0,
+      "items_with_date": 0,
+      "items_in_lookback_window": 0,
+      "items_keyword_matched": 0,
+      "items_action_matched": 0,
+      "items_after_dedup": 0,
+      "parser_debug": []
     }
   },
   "files": {
