@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6141992,
+          49.7132963
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-16",
+        "event_date": "2026-05-16",
+        "ingested_at": "2026-05-17T07:22:27Z",
+        "place": "Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Gerasimov also claimed that Russian forces entered Velyka Shapkivka (northwest of Kupyansk), seized all of Borova (south of Kupyansk) and Kutkivka (north of Kupyansk); and seized about 50 percent of Shyikivka (southeast of Borova) and 85 percent of Lyman.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-16-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.1689358,
+          44.4987874
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-16",
+        "event_date": "2026-05-16",
+        "ingested_at": "2026-05-17T07:22:27Z",
+        "place": "Yalta",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Ukrainian General Staff reported on May 16 that Ukrainian forces struck a Russian personnel concentration near Yalta (south of Novopavlivka and roughly five kilometers from the frontline) on May 15 or overnight on May 15 to 16.[35] Russian forces continued limited ground assaults in the Oleksandrivka direction on May 16 but did not advance, as Ukrainian forces reportedly counterattacked in the area.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-16-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           36.2505902,
           49.9992818
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-05-15",
         "event_date": "2026-05-15",
-        "ingested_at": "2026-05-16T06:40:05Z",
+        "ingested_at": "2026-05-17T07:22:27Z",
         "place": "the Kharkiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "toward_only",
         "article_date": "2026-05-15",
         "event_date": "2026-05-15",
-        "ingested_at": "2026-05-16T06:40:05Z",
+        "ingested_at": "2026-05-17T07:22:27Z",
         "place": "support the Russian",
         "country_code": "ru",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-05-14",
         "event_date": "2026-05-14",
-        "ingested_at": "2026-05-16T06:40:05Z",
+        "ingested_at": "2026-05-17T07:22:27Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-05-14",
         "event_date": "2026-05-14",
-        "ingested_at": "2026-05-16T06:40:05Z",
+        "ingested_at": "2026-05-17T07:22:27Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,

@@ -2359,5 +2359,18 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "support the Russian MoD": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Yalta": {
+    "coords": [
+      34.1689358,
+      44.4987874
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
