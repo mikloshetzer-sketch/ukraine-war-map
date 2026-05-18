@@ -2372,5 +2372,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "southwestern Kostyantynivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
