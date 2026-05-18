@@ -1,4 +1,83 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.319152,
+          49.9630861
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-18",
+        "event_date": "2026-05-18",
+        "ingested_at": "2026-05-18T08:52:20Z",
+        "place": "Ukraine Attack",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Ukraine Attack on Russia : यूक्रेन ने रूस पर किया ड्रोन अटैक , चार की मौत",
+        "text": "Ukraine Attack on Russia : यूक्रेन ने रूस पर किया ड्रोन अटैक , चार की मौत.",
+        "source_url": "https://www.aajsamaaj.com/ukraine-launches-drone-attack-on-russia-four-dead/",
+        "publisher_hint": "https://www.aajsamaaj.com/ukraine-launches-drone-attack-on-russia-four-dead/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.0353454,
+          49.8808312
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-18",
+        "event_date": "2026-05-18",
+        "ingested_at": "2026-05-18T08:52:20Z",
+        "place": "India",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Dangerous escalation : India expresses concerns on drone attack targeting UAE Barakah nuclear facility",
+        "text": "Dangerous escalation : India expresses concerns on drone attack targeting UAE Barakah nuclear facility.",
+        "source_url": "https://news.webindia123.com/news/Articles/World/20260518/4451473.html",
+        "publisher_hint": "https://news.webindia123.com/news/Articles/World/20260518/4451473.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.0353454,
+          49.8808312
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-18",
+        "event_date": "2026-05-18",
+        "ingested_at": "2026-05-18T08:52:20Z",
+        "place": "India",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Dangerous escalation : India expresses concerns on drone attack targeting UAE Barakah nuclear facility",
+        "text": "Dangerous escalation : India expresses concerns on drone attack targeting UAE Barakah nuclear facility.",
+        "source_url": "http://www.middleeaststar.com/news/279057863/dangerous-escalation-india-expresses-concerns-on-drone-attack-targeting-uae-barakah-nuclear-facility",
+        "publisher_hint": "http://www.middleeaststar.com/news/279057863/dangerous-escalation-india-expresses-concerns-on-drone-attack-targeting-uae-barakah-nuclear-facility"
+      }
+    }
+  ]
 }

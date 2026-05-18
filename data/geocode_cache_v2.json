@@ -2377,5 +2377,31 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Ukraine Attack": {
+    "coords": [
+      36.319152,
+      49.9630861
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "India": {
+    "coords": [
+      24.0353454,
+      49.8808312
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Dangerous": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "UAE Barakah": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
