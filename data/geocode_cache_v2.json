@@ -2403,5 +2403,31 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Budarky on May": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Dvorichna": {
+    "coords": [
+      37.682613,
+      49.8509377
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Verkhnya Tersa": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Kamyanske": {
+    "coords": [
+      34.6068797,
+      48.5167748
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
