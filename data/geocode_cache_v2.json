@@ -2429,5 +2429,57 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Over": {
+    "coords": [
+      34.3729886,
+      46.2191155
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Year": {
+    "coords": [
+      34.1036782,
+      44.9510361
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Half": {
+    "coords": [
+      30.500809,
+      50.4578103
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Eastern Ukraine": {
+    "coords": [
+      25.3313028,
+      50.7517455
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Ukraine fails": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Kostyantynivka Dir": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Hails": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "UKR is Over": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
