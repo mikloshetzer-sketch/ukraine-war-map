@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-05-18",
         "event_date": "2026-05-18",
-        "ingested_at": "2026-05-19T08:02:20Z",
+        "ingested_at": "2026-05-20T08:01:39Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-05-18",
         "event_date": "2026-05-18",
-        "ingested_at": "2026-05-19T08:02:20Z",
+        "ingested_at": "2026-05-20T08:01:39Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-05-18",
         "event_date": "2026-05-18",
-        "ingested_at": "2026-05-19T08:02:20Z",
+        "ingested_at": "2026-05-20T08:01:39Z",
         "place": "Dvorichna",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-05-18",
         "event_date": "2026-05-18",
-        "ingested_at": "2026-05-19T08:02:20Z",
+        "ingested_at": "2026-05-20T08:01:39Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-05-18",
         "event_date": "2026-05-18",
-        "ingested_at": "2026-05-19T08:02:20Z",
+        "ingested_at": "2026-05-20T08:01:39Z",
         "place": "Kamyanske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-05-16",
         "event_date": "2026-05-16",
-        "ingested_at": "2026-05-19T08:02:21Z",
+        "ingested_at": "2026-05-20T08:01:39Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,56 +147,12 @@
         "kind": "ground",
         "article_date": "2026-05-16",
         "event_date": "2026-05-16",
-        "ingested_at": "2026-05-19T08:02:21Z",
+        "ingested_at": "2026-05-20T08:01:39Z",
         "place": "Yalta",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "The Ukrainian General Staff reported on May 16 that Ukrainian forces struck a Russian personnel concentration near Yalta (south of Novopavlivka and roughly five kilometers from the frontline) on May 15 or overnight on May 15 to 16.[35] Russian forces continued limited ground assaults in the Oleksandrivka direction on May 16 but did not advance, as Ukrainian forces reportedly counterattacked in the area.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-16-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.2505902,
-          49.9992818
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-15",
-        "event_date": "2026-05-15",
-        "ingested_at": "2026-05-19T08:02:21Z",
-        "place": "the Kharkiv",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces advanced in the Kharkiv and Kostyantynivka directions.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-15-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.5347682,
-          55.6546954
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "toward_only",
-        "article_date": "2026-05-15",
-        "event_date": "2026-05-15",
-        "ingested_at": "2026-05-19T08:02:21Z",
-        "place": "support the Russian",
-        "country_code": "ru",
-        "front_dist_km": null,
-        "text": "The source had reported on May 12 that the Russian command similarly attached a company of the Russian 423rd Motorized Rifle Regiment (4th Tank Division, 1st GTA, MMD) operating in the Borova direction to support the Russian 144th Motorized Rifle Division.[44] Ukrainian forces recently advanced in and near Kostyantynivka as Russian forces continued infiltration missions into the city.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-15-2026/"
       }
     }
   ]
