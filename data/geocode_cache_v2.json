@@ -2489,5 +2489,34 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Syzran": {
+    "coords": [
+      48.474121,
+      53.15538
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Governor": {
+    "coords": [
+      39.8972736,
+      57.6283744
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Russia Samara": {
+    "coords": [
+      50.1014927,
+      53.1956255
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Youll": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
