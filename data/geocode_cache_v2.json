@@ -2481,5 +2481,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "the Sumy": {
+    "coords": [
+      36.2576246,
+      49.9997827
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
