@@ -2523,5 +2523,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Bild": {
+    "coords": [
+      30.5085455,
+      50.4002475
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

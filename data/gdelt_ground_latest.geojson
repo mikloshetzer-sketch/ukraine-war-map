@@ -6,58 +6,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.4628723,
-          50.4971663
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
-        "place": "NATO",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "Russia launches huge drone attack on western Ukraine by NATO border , killing six",
-        "text": "Russia launches huge drone attack on western Ukraine by NATO border , killing six.",
-        "source_url": "https://www.yahoo.com/news/articles/ukraines-zelenskiy-warns-incoming-russian-075051774.html",
-        "publisher_hint": "https://www.yahoo.com/news/articles/ukraines-zelenskiy-warns-incoming-russian-075051774.html"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          48.474121,
-          53.15538
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
-        "place": "Syzran",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ru",
-        "front_dist_km": null,
-        "title": "Two killed after drone attack on Syzran , says Russia Samara region Governor",
-        "text": "Two killed after drone attack on Syzran , says Russia Samara region Governor.",
-        "source_url": "https://www.thehindu.com/news/international/two-killed-after-drone-attack-on-syzran-says-russias-samara-region-governor/article71005045.ece",
-        "publisher_hint": "https://www.thehindu.com/news/international/two-killed-after-drone-attack-on-syzran-says-russias-samara-region-governor/article71005045.ece"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           34.3729886,
           46.2191155
         ]
@@ -65,9 +13,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
+        "article_date": "2026-05-22",
+        "event_date": "2026-05-22",
+        "ingested_at": "2026-05-22T08:31:53Z",
         "place": "Over",
         "location_confidence": "pattern_title",
         "candidate_score": 60,
@@ -84,32 +32,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.4628723,
-          50.4971663
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
-        "place": "NATO",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "Russia launches huge drone attack on western Ukraine by NATO border , killing six",
-        "text": "Russia launches huge drone attack on western Ukraine by NATO border , killing six.",
-        "source_url": "https://www.arabnews.com/node/2643512/world",
-        "publisher_hint": "https://www.arabnews.com/node/2643512/world"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           25.3313028,
           50.7517455
         ]
@@ -117,9 +39,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
+        "article_date": "2026-05-22",
+        "event_date": "2026-05-22",
+        "ingested_at": "2026-05-22T08:31:53Z",
         "place": "Eastern Ukraine",
         "location_confidence": "pattern_title",
         "candidate_score": 60,
@@ -143,9 +65,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
+        "article_date": "2026-05-22",
+        "event_date": "2026-05-22",
+        "ingested_at": "2026-05-22T08:31:53Z",
         "place": "Russian",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
@@ -169,9 +91,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
+        "article_date": "2026-05-22",
+        "event_date": "2026-05-22",
+        "ingested_at": "2026-05-22T08:31:53Z",
         "place": "Huliaipole",
         "location_confidence": "known_front_title",
         "candidate_score": 100,
@@ -195,9 +117,35 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
+        "article_date": "2026-05-22",
+        "event_date": "2026-05-22",
+        "ingested_at": "2026-05-22T08:31:53Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 197 C - Clashes in F - Line : 43 in Pokrovsk Dir , 23 in Huliaipole Dir , 19 in Kostyantynivka Dir ; Bild : Putin Losing War On 3 Fronts Simultaneously ; ISW : UKR Regains Tactical Initiative Across Front line ; UKR Aims to Inflict 200 ...",
+        "text": "RIGHT SPEAK : 197 C - Clashes in F - Line : 43 in Pokrovsk Dir , 23 in Huliaipole Dir , 19 in Kostyantynivka Dir ; Bild : Putin Losing War On 3 Fronts Simultaneously ; ISW : UKR Regains Tactical Initiative Across Front line ; UKR Aims to Inflict 200 ....",
+        "source_url": "http://www.rightspeak.net/2026/05/197-c-clashes-in-f-line-43-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/197-c-clashes-in-f-line-43-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-22",
+        "event_date": "2026-05-22",
+        "ingested_at": "2026-05-22T08:31:53Z",
         "place": "Huliaipole",
         "location_confidence": "known_front_title",
         "candidate_score": 100,
@@ -221,9 +169,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
+        "article_date": "2026-05-22",
+        "event_date": "2026-05-22",
+        "ingested_at": "2026-05-22T08:31:53Z",
         "place": "Huliaipole",
         "location_confidence": "known_front_title",
         "candidate_score": 100,
@@ -247,9 +195,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-21T08:42:44Z",
+        "article_date": "2026-05-22",
+        "event_date": "2026-05-22",
+        "ingested_at": "2026-05-22T08:31:53Z",
         "place": "Huliaipole",
         "location_confidence": "known_front_title",
         "candidate_score": 100,
