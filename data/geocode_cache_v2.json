@@ -2531,5 +2531,13 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Yunakivka": {
+    "coords": [
+      35.032302,
+      51.1227143
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
