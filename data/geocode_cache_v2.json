@@ -2539,5 +2539,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Channel Africa": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

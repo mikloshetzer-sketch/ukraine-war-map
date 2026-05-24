@@ -1,4 +1,109 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-24",
+        "event_date": "2026-05-24",
+        "ingested_at": "2026-05-24T07:59:45Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukrainian drone attack triggers fire at a Russian oil terminal",
+        "text": "Ukrainian drone attack triggers fire at a Russian oil terminal.",
+        "source_url": "https://www.journalgazette.net/business/ukrainian-drone-attack-triggers-fire-at-a-russian-oil-terminal/article_b5e1c897-86ae-5b79-871e-c040dd8f5310.html",
+        "publisher_hint": "https://www.journalgazette.net/business/ukrainian-drone-attack-triggers-fire-at-a-russian-oil-terminal/article_b5e1c897-86ae-5b79-871e-c040dd8f5310.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-24",
+        "event_date": "2026-05-24",
+        "ingested_at": "2026-05-24T07:59:45Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukrainian drone attack triggers fire at a Russian oil terminal",
+        "text": "Ukrainian drone attack triggers fire at a Russian oil terminal.",
+        "source_url": "https://www.asiaone.com:443/world/ukrainian-drone-attack-triggers-fire-russian-oil-terminal",
+        "publisher_hint": "https://www.asiaone.com:443/world/ukrainian-drone-attack-triggers-fire-russian-oil-terminal"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.5241361,
+          50.4500336
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-24",
+        "event_date": "2026-05-24",
+        "ingested_at": "2026-05-24T07:59:45Z",
+        "place": "Kiev",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Efter nattens attack :  Fruktansvärd natt för Kiev",
+        "text": "Efter nattens attack :  Fruktansvärd natt för Kiev.",
+        "source_url": "https://www.aftonbladet.se/nyheter/a/BxyMvl/efter-nattens-attack-fruktansvard-natt-for-kiev",
+        "publisher_hint": "https://www.aftonbladet.se/nyheter/a/BxyMvl/efter-nattens-attack-fruktansvard-natt-for-kiev"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-24",
+        "event_date": "2026-05-24",
+        "ingested_at": "2026-05-24T07:59:45Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukrainian drone attack causes fire at Russian oil terminal used for exports",
+        "text": "Ukrainian drone attack causes fire at Russian oil terminal used for exports.",
+        "source_url": "https://fortune.com/2026/05/23/ukrainian-drone-attack-russian-oil-terminal-exports-black-sea-long-range-strike-capabilities/",
+        "publisher_hint": "https://fortune.com/2026/05/23/ukrainian-drone-attack-russian-oil-terminal-exports-black-sea-long-range-strike-capabilities/"
+      }
+    }
+  ]
 }
