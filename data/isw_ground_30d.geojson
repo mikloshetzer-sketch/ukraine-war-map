@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-05-22",
         "event_date": "2026-05-22",
-        "ingested_at": "2026-05-24T07:37:56Z",
+        "ingested_at": "2026-05-25T08:45:47Z",
         "place": "Yunakivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-05-22",
         "event_date": "2026-05-22",
-        "ingested_at": "2026-05-24T07:37:56Z",
+        "ingested_at": "2026-05-25T08:45:47Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-05-21",
         "event_date": "2026-05-21",
-        "ingested_at": "2026-05-24T07:37:57Z",
+        "ingested_at": "2026-05-25T08:45:47Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-05-21",
         "event_date": "2026-05-21",
-        "ingested_at": "2026-05-24T07:37:57Z",
+        "ingested_at": "2026-05-25T08:45:47Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,56 +103,12 @@
         "kind": "ground",
         "article_date": "2026-05-21",
         "event_date": "2026-05-21",
-        "ingested_at": "2026-05-24T07:37:57Z",
+        "ingested_at": "2026-05-25T08:45:47Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[62] Geolocated footage published on May 17 indicates that Ukrainian forces recently advanced south of Mala Tokmachka (southeast of Orikhiv), supporting Ukrainian military observer Kostyantyn Mashovets&#8217; May 20 statement that Ukrainian forces liberated Mala Tokmachka.[63] Ukrainian forces continue their mid-range strike campaign against Russian military and logistics assets in occupied Zaporizhia Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-21-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-20",
-        "event_date": "2026-05-20",
-        "ingested_at": "2026-05-24T07:37:57Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces advanced in the Kupyansk direction, the Kostyantynivka-Druzhkivka tactical area, and in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-20-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.2576246,
-          49.9997827
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-20",
-        "event_date": "2026-05-20",
-        "ingested_at": "2026-05-24T07:37:57Z",
-        "place": "the Sumy",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces advanced in the Sumy and Pokrovsk directions.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-20-2026/"
       }
     }
   ]
