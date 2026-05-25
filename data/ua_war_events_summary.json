@@ -1,28 +1,24 @@
 {
-  "generated_at": "2026-05-24T18:14:42+00:00",
-  "count": 15,
+  "generated_at": "2026-05-25T14:18:04+00:00",
+  "count": 12,
   "by_event_type": {
-    "ground_clash": 3,
-    "drone_attack": 5,
-    "artillery": 4,
-    "missile_strike": 3
+    "artillery": 3,
+    "ground_clash": 4,
+    "drone_attack": 3,
+    "missile_strike": 2
   },
   "by_source": {
+    "generalstaffzsu": 2,
     "ukrainenow": 7,
-    "generalstaffzsu": 6,
-    "deepstateua": 2
+    "deepstateua": 3
   },
   "by_confidence": {
-    "medium": 7,
-    "high": 8
+    "high": 5,
+    "medium": 7
   },
   "top_sectors": [
     [
       "lyman",
-      1
-    ],
-    [
-      "toretsk",
       1
     ],
     [
