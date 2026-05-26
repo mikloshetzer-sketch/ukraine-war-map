@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          35.1338908,
+          47.8326667
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-25",
+        "event_date": "2026-05-25",
+        "ingested_at": "2026-05-26T08:06:39Z",
+        "place": "western Zaporizhia Oblast",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in western Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-25-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.7855471,
+          47.5754426
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-25",
+        "event_date": "2026-05-25",
+        "ingested_at": "2026-05-26T08:06:39Z",
+        "place": "Orikhiv",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on May 24 shows Russian forces striking a Ukrainian position southwest of Novodanylivka (south of Orikhiv), indicating that Ukrainian forces recently advanced in the area.[75] Russian forces are reportedly suffering from drone shortages in western Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-25-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           35.032302,
           51.1227143
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-05-22",
         "event_date": "2026-05-22",
-        "ingested_at": "2026-05-25T08:45:47Z",
+        "ingested_at": "2026-05-26T08:06:39Z",
         "place": "Yunakivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,78 +81,12 @@
         "kind": "ground",
         "article_date": "2026-05-22",
         "event_date": "2026-05-22",
-        "ingested_at": "2026-05-25T08:45:47Z",
+        "ingested_at": "2026-05-26T08:06:39Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Geolocated footage published on May 21 indicates that Ukrainian forces recently advanced southeast of Kryva Luka (east of Slovyansk).[31] The presence of Ukrainian forces southeast of Kryva Luka indicates that Russian forces likely infiltrated around existing Ukrainian positions east of Kryva Luka.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-22-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.1338908,
-          47.8326667
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-25T08:45:47Z",
-        "place": "western Zaporizhia Oblast",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces advanced in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-21-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.2746326,
-          47.9863996
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-25T08:45:47Z",
-        "place": "Donbas",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[41] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces continued offensive operations in the Slovyansk direction on May 21 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-21-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.896801,
-          47.532688
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-21",
-        "event_date": "2026-05-21",
-        "ingested_at": "2026-05-25T08:45:47Z",
-        "place": "Mala Tokmachka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[62] Geolocated footage published on May 17 indicates that Ukrainian forces recently advanced south of Mala Tokmachka (southeast of Orikhiv), supporting Ukrainian military observer Kostyantyn Mashovets&#8217; May 20 statement that Ukrainian forces liberated Mala Tokmachka.[63] Ukrainian forces continue their mid-range strike campaign against Russian military and logistics assets in occupied Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-21-2026/"
       }
     }
   ]

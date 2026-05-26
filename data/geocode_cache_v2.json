@@ -2544,5 +2544,23 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "the Kostyantynivka-Druzhkivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "seize Verkhnya Tersa": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Orikhiv": {
+    "coords": [
+      35.7855471,
+      47.5754426
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
