@@ -2562,5 +2562,55 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Among": {
+    "coords": [
+      37.5765825,
+      55.8445181
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Victims": {
+    "coords": [
+      24.0246275,
+      49.8514992
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Russia May": {
+    "coords": [
+      33.7106576,
+      54.2076541
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Ukraine National Art Museum": {
+    "coords": [
+      30.5307955,
+      50.4494077
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Fewer Germans": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Stubb": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "VIDEOS": {
+    "coords": [
+      47.5035387,
+      42.9782254
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }

@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-05-24T07:59:46Z",
-  "started_at_utc": "2026-05-24T07:59:27Z",
+  "generated_at_utc": "2026-05-26T08:42:58Z",
+  "started_at_utc": "2026-05-26T08:42:07Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -21,33 +21,33 @@
   },
   "stats": {
     "articles_after_filters": 11,
-    "raw_events_total": 5,
-    "dedup_events_total": 5,
-    "features_latest": 4,
-    "features_7d": 4,
-    "features_30d": 4,
-    "events_total": 5,
-    "events_with_any_geo": 8,
-    "point_features": 4,
+    "raw_events_total": 9,
+    "dedup_events_total": 9,
+    "features_latest": 9,
+    "features_7d": 9,
+    "features_30d": 9,
+    "events_total": 9,
+    "events_with_any_geo": 24,
+    "point_features": 9,
     "dropped_not_front_near": 0,
-    "dropped_geocode": 1,
+    "dropped_geocode": 0,
     "frontline_available": false,
-    "geocode_cache_hits": 8,
-    "geocode_cache_negative_hits": 0,
-    "geocode_new_success": 0,
-    "geocode_new_fail": 1,
-    "geocode_calls_this_run": 1,
+    "geocode_cache_hits": 19,
+    "geocode_cache_negative_hits": 25,
+    "geocode_new_success": 5,
+    "geocode_new_fail": 2,
+    "geocode_calls_this_run": 7,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 427,
-    "rejections_saved": 7,
+    "cache_entries_total": 437,
+    "rejections_saved": 2,
     "collect_debug": {
       "queries_total": 3,
       "queries_with_response": 2,
       "items_before_filters": 160,
       "items_with_date": 160,
       "items_in_lookback_window": 160,
-      "items_keyword_matched": 13,
-      "items_action_matched": 12,
+      "items_keyword_matched": 15,
+      "items_action_matched": 11,
       "items_after_dedup": 11,
       "parser_debug": [
         {
@@ -57,25 +57,25 @@
           "channel_found": true,
           "item_count_raw": 80,
           "sample_date_fields": [
-            "24 May 2026 07:15:00 +0000",
-            "24 May 2026 07:15:00 +0000",
-            "24 May 2026 07:15:00 +0000",
-            "24 May 2026 07:15:00 +0000",
-            "24 May 2026 07:15:00 +0000"
+            "26 May 2026 08:15:00 +0000",
+            "26 May 2026 08:15:00 +0000",
+            "26 May 2026 08:15:00 +0000",
+            "26 May 2026 08:15:00 +0000",
+            "26 May 2026 08:15:00 +0000"
           ]
         },
         {
-          "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
+          "query": "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)",
           "parse_ok": true,
           "root_tag": "rss",
           "channel_found": true,
           "item_count_raw": 80,
           "sample_date_fields": [
-            "24 May 2026 07:15:00 +0000",
-            "24 May 2026 07:15:00 +0000",
-            "24 May 2026 07:00:00 +0000",
-            "24 May 2026 07:00:00 +0000",
-            "24 May 2026 07:00:00 +0000"
+            "26 May 2026 07:30:00 +0000",
+            "26 May 2026 06:15:00 +0000",
+            "26 May 2026 06:00:00 +0000",
+            "26 May 2026 05:00:00 +0000",
+            "26 May 2026 05:00:00 +0000"
           ]
         }
       ]

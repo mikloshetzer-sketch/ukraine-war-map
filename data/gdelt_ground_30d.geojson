@@ -6,25 +6,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8,
-          52.6
+          37.5765825,
+          55.8445181
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-24",
-        "event_date": "2026-05-24",
-        "ingested_at": "2026-05-24T07:59:45Z",
-        "place": "Russian",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-26T08:42:50Z",
+        "place": "Among",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ru",
         "front_dist_km": null,
-        "title": "Ukrainian drone attack triggers fire at a Russian oil terminal",
-        "text": "Ukrainian drone attack triggers fire at a Russian oil terminal.",
-        "source_url": "https://www.journalgazette.net/business/ukrainian-drone-attack-triggers-fire-at-a-russian-oil-terminal/article_b5e1c897-86ae-5b79-871e-c040dd8f5310.html",
-        "publisher_hint": "https://www.journalgazette.net/business/ukrainian-drone-attack-triggers-fire-at-a-russian-oil-terminal/article_b5e1c897-86ae-5b79-871e-c040dd8f5310.html"
+        "title": "Among the Victims of Russia May 24 Attack : Ukraine National Art Museum",
+        "text": "Among the Victims of Russia May 24 Attack : Ukraine National Art Museum.",
+        "source_url": "https://www.kyivpost.com/post/76822",
+        "publisher_hint": "https://www.kyivpost.com/post/76822"
       }
     },
     {
@@ -39,18 +39,18 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-24",
-        "event_date": "2026-05-24",
-        "ingested_at": "2026-05-24T07:59:45Z",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-26T08:42:50Z",
         "place": "Russian",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ru",
         "front_dist_km": null,
-        "title": "Ukrainian drone attack triggers fire at a Russian oil terminal",
-        "text": "Ukrainian drone attack triggers fire at a Russian oil terminal.",
-        "source_url": "https://www.asiaone.com:443/world/ukrainian-drone-attack-triggers-fire-russian-oil-terminal",
-        "publisher_hint": "https://www.asiaone.com:443/world/ukrainian-drone-attack-triggers-fire-russian-oil-terminal"
+        "title": "Russian troops captured after secret pipeline infiltration operation in Ukraine fails",
+        "text": "Russian troops captured after secret pipeline infiltration operation in Ukraine fails.",
+        "source_url": "https://news.az/news/russian-troops-captured-after-secret-pipeline-infiltration-operation-in-ukraine-fails",
+        "publisher_hint": "https://news.az/news/russian-troops-captured-after-secret-pipeline-infiltration-operation-in-ukraine-fails"
       }
     },
     {
@@ -58,25 +58,77 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.5241361,
-          50.4500336
+          37.6380818,
+          55.7582251
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-24",
-        "event_date": "2026-05-24",
-        "ingested_at": "2026-05-24T07:59:45Z",
-        "place": "Kiev",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-26T08:42:50Z",
+        "place": "Belarus",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukraine fears attack from Belarus in north , as Russia fears Ukraine offensive in south ( Ukraine Battlefield update , Day 1 , 548 )",
+        "text": "Ukraine fears attack from Belarus in north , as Russia fears Ukraine offensive in south ( Ukraine Battlefield update , Day 1 , 548 ).",
+        "source_url": "https://euobserver.com/218240/ukraine-fears-attack-from-belarus-in-north-as-russia-fears-ukraine-offensive-from-the-south-ukraine-battlefield-update-day-1548/",
+        "publisher_hint": "https://euobserver.com/218240/ukraine-fears-attack-from-belarus-in-north-as-russia-fears-ukraine-offensive-from-the-south-ukraine-battlefield-update-day-1548/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-26T08:42:50Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Fewer Germans buying into warnings of Russian attack",
+        "text": "Fewer Germans buying into warnings of Russian attack.",
+        "source_url": "http://www.russiaherald.com/news/279075686/fewer-germans-buying-into-warnings-of-russian-attack-poll",
+        "publisher_hint": "http://www.russiaherald.com/news/279075686/fewer-germans-buying-into-warnings-of-russian-attack-poll"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-26T08:42:50Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
         "country_code": "ua",
         "front_dist_km": null,
-        "title": "Efter nattens attack :  Fruktansvärd natt för Kiev",
-        "text": "Efter nattens attack :  Fruktansvärd natt för Kiev.",
-        "source_url": "https://www.aftonbladet.se/nyheter/a/BxyMvl/efter-nattens-attack-fruktansvard-natt-for-kiev",
-        "publisher_hint": "https://www.aftonbladet.se/nyheter/a/BxyMvl/efter-nattens-attack-fruktansvard-natt-for-kiev"
+        "title": "RIGHT SPEAK : 210 C - Clashes in F - Line : 35 in Pokrovsk Dir , 21 in Huliaipole Dir , 10 in Lyman Dir ; ISW : RU Strike on Kyiv was Putin Attempt to Erase Victory Day Parade Humiliation and Mask Battlefield Failures ; Stubb : RU Losing 8 Soldiers f...",
+        "text": "RIGHT SPEAK : 210 C - Clashes in F - Line : 35 in Pokrovsk Dir , 21 in Huliaipole Dir , 10 in Lyman Dir ; ISW : RU Strike on Kyiv was Putin Attempt to Erase Victory Day Parade Humiliation and Mask Battlefield Failures ; Stubb : RU Losing 8 Soldiers f....",
+        "source_url": "http://www.rightspeak.net/2026/05/210-c-clashes-in-f-line-35-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/210-c-clashes-in-f-line-35-in-pokrovsk.html"
       }
     },
     {
@@ -84,25 +136,103 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8,
-          52.6
+          36.2656849,
+          47.6655382
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-05-24",
-        "event_date": "2026-05-24",
-        "ingested_at": "2026-05-24T07:59:45Z",
-        "place": "Russian",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ru",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-26T08:42:50Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
         "front_dist_km": null,
-        "title": "Ukrainian drone attack causes fire at Russian oil terminal used for exports",
-        "text": "Ukrainian drone attack causes fire at Russian oil terminal used for exports.",
-        "source_url": "https://fortune.com/2026/05/23/ukrainian-drone-attack-russian-oil-terminal-exports-black-sea-long-range-strike-capabilities/",
-        "publisher_hint": "https://fortune.com/2026/05/23/ukrainian-drone-attack-russian-oil-terminal-exports-black-sea-long-range-strike-capabilities/"
+        "title": "RIGHT SPEAK : 197 C - Clashes in F - Line : 43 in Pokrovsk Dir , 23 in Huliaipole Dir , 19 in Kostyantynivka Dir ; Bild : Putin Losing War On 3 Fronts Simultaneously ; ISW : UKR Regains Tactical Initiative Across Front line ; UKR Aims to Inflict 200 ...",
+        "text": "RIGHT SPEAK : 197 C - Clashes in F - Line : 43 in Pokrovsk Dir , 23 in Huliaipole Dir , 19 in Kostyantynivka Dir ; Bild : Putin Losing War On 3 Fronts Simultaneously ; ISW : UKR Regains Tactical Initiative Across Front line ; UKR Aims to Inflict 200 ....",
+        "source_url": "http://www.rightspeak.net/2026/05/197-c-clashes-in-f-line-43-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/197-c-clashes-in-f-line-43-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-26T08:42:50Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 195 C - Clashes in F - Line : 23 in Pokrovsk Dir , 17 in Huliaipole Dir , 11 in Kostyantynivka Dir ;  Justified response  – ( Z ) elensky Releases Footage of UKR Strikes On RU Targets Deep Behind Enemy Lines ; Z Hails 1 , 000km Deep Str...",
+        "text": "RIGHT SPEAK : 195 C - Clashes in F - Line : 23 in Pokrovsk Dir , 17 in Huliaipole Dir , 11 in Kostyantynivka Dir ;  Justified response  – ( Z ) elensky Releases Footage of UKR Strikes On RU Targets Deep Behind Enemy Lines ; Z Hails 1 , 000km Deep Str....",
+        "source_url": "http://www.rightspeak.net/2026/05/195-c-clashes-in-f-line-23-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/195-c-clashes-in-f-line-23-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-26T08:42:50Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 189 C - Clashes in F - Line : 40 in Pokrovsk Dir , 16 in Huliaipole Dir , 11 in Kostyantynivka Dir ; UKR Melnyk to RU Demands at UN :  Youll get nothing but a kick in the teeth ; Putin Might  regret  Invading UKR , Xi allegedly Tells Tr...",
+        "text": "RIGHT SPEAK : 189 C - Clashes in F - Line : 40 in Pokrovsk Dir , 16 in Huliaipole Dir , 11 in Kostyantynivka Dir ; UKR Melnyk to RU Demands at UN :  Youll get nothing but a kick in the teeth ; Putin Might  regret  Invading UKR , Xi allegedly Tells Tr....",
+        "source_url": "http://www.rightspeak.net/2026/05/189-c-clashes-in-f-line-40-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/189-c-clashes-in-f-line-40-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-26T08:42:50Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 173 C - Clashes in F - Line : 36 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Kostiantynivka Dir ; UKR Kyiv Hit by Massive Missile , Drone Attack ; RU Oreshnik Missile Reportedly Used ( VIDEOS ); UKR GS Reports Strikes on RU Oil Termi...",
+        "text": "RIGHT SPEAK : 173 C - Clashes in F - Line : 36 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Kostiantynivka Dir ; UKR Kyiv Hit by Massive Missile , Drone Attack ; RU Oreshnik Missile Reportedly Used ( VIDEOS ); UKR GS Reports Strikes on RU Oil Termi....",
+        "source_url": "http://www.rightspeak.net/2026/05/173-c-clashes-in-f-line-36-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/173-c-clashes-in-f-line-36-in-pokrovsk.html"
       }
     }
   ]
