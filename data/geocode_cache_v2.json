@@ -2620,5 +2620,41 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Least": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Chernihiv Hit": {
+    "coords": [
+      31.3275294,
+      51.5134021
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Explosions Reported": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Massive Russian Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Sevastopol": {
+    "coords": [
+      33.5220842,
+      44.6054434
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Storm Shadow": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
