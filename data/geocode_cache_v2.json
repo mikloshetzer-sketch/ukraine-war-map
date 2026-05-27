@@ -2612,5 +2612,13 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Zelenyi Hai": {
+    "coords": [
+      23.4373,
+      49.698708
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

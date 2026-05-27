@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          30.1033125,
+          50.1699295
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-27T08:26:39Z",
+        "place": "Borova",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[21] Russian forces continued limited offensive operations northeast of Borova on May 26 as Ukrainian forces counterattacked south of Borova.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4373,
+          49.698708
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-26",
+        "event_date": "2026-05-26",
+        "ingested_at": "2026-05-27T08:26:39Z",
+        "place": "Zelenyi Hai",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[33] A Russian milblogger claimed that Ukrainian forces liberated Piddubne (northeast of Oleksandrivka) and are fighting in Zelenyi Hai (northwest of Piddubne).[34] The presence of Ukrainian forces in Piddubne and Zelenyi Hai indicates that Ukrainian forces likely liberated Ivanivka (north of Zelenyi Hai) and advanced east of Oleksandrohrad (southwest of Piddubne) on a prior date.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           35.1338908,
           47.8326667
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-05-25",
         "event_date": "2026-05-25",
-        "ingested_at": "2026-05-26T08:06:39Z",
+        "ingested_at": "2026-05-27T08:26:39Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,56 +81,12 @@
         "kind": "ground",
         "article_date": "2026-05-25",
         "event_date": "2026-05-25",
-        "ingested_at": "2026-05-26T08:06:39Z",
+        "ingested_at": "2026-05-27T08:26:39Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Geolocated footage published on May 24 shows Russian forces striking a Ukrainian position southwest of Novodanylivka (south of Orikhiv), indicating that Ukrainian forces recently advanced in the area.[75] Russian forces are reportedly suffering from drone shortages in western Zaporizhia Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-25-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.032302,
-          51.1227143
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-22",
-        "event_date": "2026-05-22",
-        "ingested_at": "2026-05-26T08:06:39Z",
-        "place": "Yunakivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed that Russian forces advanced east of Yunakivka (east of Varachyne).[20] Ukrainian 14th Army Corps Spokesperson Colonel Vitaliy Sarantsev stated on May 22 that the Ryasne area (southeast of Sumy City) is the most active in the Sumy direction.[21] Ukrainian forces continued frontline strikes against Russian military assets in the Sumy direction on the night of May 21 to 22.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-22-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-22",
-        "event_date": "2026-05-22",
-        "ingested_at": "2026-05-26T08:06:39Z",
-        "place": "Slovyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on May 21 indicates that Ukrainian forces recently advanced southeast of Kryva Luka (east of Slovyansk).[31] The presence of Ukrainian forces southeast of Kryva Luka indicates that Russian forces likely infiltrated around existing Ukrainian positions east of Kryva Luka.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-22-2026/"
       }
     }
   ]
