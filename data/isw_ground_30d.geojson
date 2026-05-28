@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.0805393,
+          48.3262489
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-27",
+        "event_date": "2026-05-27",
+        "ingested_at": "2026-05-28T08:27:44Z",
+        "place": "the Pokrovsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces advanced in the Pokrovsk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-27-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           30.1033125,
           50.1699295
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-05-26",
         "event_date": "2026-05-26",
-        "ingested_at": "2026-05-27T08:26:39Z",
+        "ingested_at": "2026-05-28T08:27:44Z",
         "place": "Borova",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-05-26",
         "event_date": "2026-05-26",
-        "ingested_at": "2026-05-27T08:26:39Z",
+        "ingested_at": "2026-05-28T08:27:44Z",
         "place": "Zelenyi Hai",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-05-25",
         "event_date": "2026-05-25",
-        "ingested_at": "2026-05-27T08:26:39Z",
+        "ingested_at": "2026-05-28T08:27:44Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-05-25",
         "event_date": "2026-05-25",
-        "ingested_at": "2026-05-27T08:26:39Z",
+        "ingested_at": "2026-05-28T08:27:44Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
