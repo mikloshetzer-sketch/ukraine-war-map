@@ -1,4 +1,213 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5765825,
+          55.8445181
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-29",
+        "event_date": "2026-05-29",
+        "ingested_at": "2026-05-29T08:51:14Z",
+        "place": "Among",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Among the Victims of Russia May 24 Attack : Ukraine National Art Museum",
+        "text": "Among the Victims of Russia May 24 Attack : Ukraine National Art Museum.",
+        "source_url": "https://www.kyivpost.com/post/76822",
+        "publisher_hint": "https://www.kyivpost.com/post/76822"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6380818,
+          55.7582251
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-29",
+        "event_date": "2026-05-29",
+        "ingested_at": "2026-05-29T08:51:14Z",
+        "place": "Belarus",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukraine fears attack from Belarus in north , as Russia fears Ukraine offensive in south ( Ukraine Battlefield update , Day 1 , 548 )",
+        "text": "Ukraine fears attack from Belarus in north , as Russia fears Ukraine offensive in south ( Ukraine Battlefield update , Day 1 , 548 ).",
+        "source_url": "https://euobserver.com/218240/ukraine-fears-attack-from-belarus-in-north-as-russia-fears-ukraine-offensive-from-the-south-ukraine-battlefield-update-day-1548/",
+        "publisher_hint": "https://euobserver.com/218240/ukraine-fears-attack-from-belarus-in-north-as-russia-fears-ukraine-offensive-from-the-south-ukraine-battlefield-update-day-1548/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-29",
+        "event_date": "2026-05-29",
+        "ingested_at": "2026-05-29T08:51:14Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 256 C - Clashes in F - Line : 47 in Pokrovsk Dir , 27 in Huliaipole Dir , 12 in Kostiantynivka Dir ; Gen Biletsky : UKR has 6 Months to Launch Major  turning point  in War with Exhausted RU ; At Site of RU Oreshnik Strike , Putin Propag...",
+        "text": "RIGHT SPEAK : 256 C - Clashes in F - Line : 47 in Pokrovsk Dir , 27 in Huliaipole Dir , 12 in Kostiantynivka Dir ; Gen Biletsky : UKR has 6 Months to Launch Major  turning point  in War with Exhausted RU ; At Site of RU Oreshnik Strike , Putin Propag....",
+        "source_url": "http://www.rightspeak.net/2026/05/256-c-clashes-in-f-line-47-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/256-c-clashes-in-f-line-47-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-29",
+        "event_date": "2026-05-29",
+        "ingested_at": "2026-05-29T08:51:14Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 232 C - Clashes in F - Line : 34 in Pokrovsk Dir , 27 in Huliaipole Dir , 20 in Kostiantynivka Dir ; UKR Now Has the  cards , US Must Force Putin to Make Concessions ; Kyiv Residents Defiant Over RU Threat of New Strikes ;  Average Life...",
+        "text": "RIGHT SPEAK : 232 C - Clashes in F - Line : 34 in Pokrovsk Dir , 27 in Huliaipole Dir , 20 in Kostiantynivka Dir ; UKR Now Has the  cards , US Must Force Putin to Make Concessions ; Kyiv Residents Defiant Over RU Threat of New Strikes ;  Average Life....",
+        "source_url": "http://www.rightspeak.net/2026/05/232-c-clashes-in-f-line-34-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/232-c-clashes-in-f-line-34-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-29",
+        "event_date": "2026-05-29",
+        "ingested_at": "2026-05-29T08:51:14Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 210 C - Clashes in F - Line : 35 in Pokrovsk Dir , 21 in Huliaipole Dir , 10 in Lyman Dir ; ISW : RU Strike on Kyiv was Putin Attempt to Erase Victory Day Parade Humiliation and Mask Battlefield Failures ; Stubb : RU Losing 8 Soldiers f...",
+        "text": "RIGHT SPEAK : 210 C - Clashes in F - Line : 35 in Pokrovsk Dir , 21 in Huliaipole Dir , 10 in Lyman Dir ; ISW : RU Strike on Kyiv was Putin Attempt to Erase Victory Day Parade Humiliation and Mask Battlefield Failures ; Stubb : RU Losing 8 Soldiers f....",
+        "source_url": "http://www.rightspeak.net/2026/05/210-c-clashes-in-f-line-35-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/210-c-clashes-in-f-line-35-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-29",
+        "event_date": "2026-05-29",
+        "ingested_at": "2026-05-29T08:51:14Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 197 C - Clashes in F - Line : 43 in Pokrovsk Dir , 23 in Huliaipole Dir , 19 in Kostyantynivka Dir ; Bild : Putin Losing War On 3 Fronts Simultaneously ; ISW : UKR Regains Tactical Initiative Across Front line ; UKR Aims to Inflict 200 ...",
+        "text": "RIGHT SPEAK : 197 C - Clashes in F - Line : 43 in Pokrovsk Dir , 23 in Huliaipole Dir , 19 in Kostyantynivka Dir ; Bild : Putin Losing War On 3 Fronts Simultaneously ; ISW : UKR Regains Tactical Initiative Across Front line ; UKR Aims to Inflict 200 ....",
+        "source_url": "http://www.rightspeak.net/2026/05/197-c-clashes-in-f-line-43-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/197-c-clashes-in-f-line-43-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-29",
+        "event_date": "2026-05-29",
+        "ingested_at": "2026-05-29T08:51:14Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 189 C - Clashes in F - Line : 25 in Pokrovsk Dir , 22 in Huliaipole Dir , 12 in Kostiantynivka Dir ; RU Brushes Off US Call Not to Launch  systemic strike on Kyiv ; Zelenskyy Pressing US for More Patriot Msls ; RU Deploys New Pantsir Sy...",
+        "text": "RIGHT SPEAK : 189 C - Clashes in F - Line : 25 in Pokrovsk Dir , 22 in Huliaipole Dir , 12 in Kostiantynivka Dir ; RU Brushes Off US Call Not to Launch  systemic strike on Kyiv ; Zelenskyy Pressing US for More Patriot Msls ; RU Deploys New Pantsir Sy....",
+        "source_url": "http://www.rightspeak.net/2026/05/189-c-clashes-in-f-line-25-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/189-c-clashes-in-f-line-25-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-29",
+        "event_date": "2026-05-29",
+        "ingested_at": "2026-05-29T08:51:14Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 173 C - Clashes in F - Line : 36 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Kostiantynivka Dir ; UKR Kyiv Hit by Massive Missile , Drone Attack ; RU Oreshnik Missile Reportedly Used ( VIDEOS ); UKR GS Reports Strikes on RU Oil Termi...",
+        "text": "RIGHT SPEAK : 173 C - Clashes in F - Line : 36 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Kostiantynivka Dir ; UKR Kyiv Hit by Massive Missile , Drone Attack ; RU Oreshnik Missile Reportedly Used ( VIDEOS ); UKR GS Reports Strikes on RU Oil Termi....",
+        "source_url": "http://www.rightspeak.net/2026/05/173-c-clashes-in-f-line-36-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/05/173-c-clashes-in-f-line-36-in-pokrovsk.html"
+      }
+    }
+  ]
 }

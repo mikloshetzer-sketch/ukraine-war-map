@@ -2676,5 +2676,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "War with Exhausted RU": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Launch": {
+    "coords": [
+      33.3230941,
+      58.0385606
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
