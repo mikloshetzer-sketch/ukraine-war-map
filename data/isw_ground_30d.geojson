@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          35.7855471,
+          47.5754426
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-05-28",
+        "event_date": "2026-05-28",
+        "ingested_at": "2026-05-29T08:25:51Z",
+        "place": "Orikhiv",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The map alleges that Russian forces seized Prymorske, Stepnohirsk, Richne, Veselyanka, Zaporozhets, Zapasne, Mali Shcherbaky, and Shcherbaky (all west of Orikhiv); southwestern Orikhiv up to the railway; and Novodanylivka, Mala Tokmachka, and Bilohiriya (all southeast of Orikhiv).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-28-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.0805393,
           48.3262489
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-05-27",
         "event_date": "2026-05-27",
-        "ingested_at": "2026-05-28T08:27:44Z",
+        "ingested_at": "2026-05-29T08:25:51Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-05-26",
         "event_date": "2026-05-26",
-        "ingested_at": "2026-05-28T08:27:44Z",
+        "ingested_at": "2026-05-29T08:25:51Z",
         "place": "Borova",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-05-26",
         "event_date": "2026-05-26",
-        "ingested_at": "2026-05-28T08:27:44Z",
+        "ingested_at": "2026-05-29T08:25:51Z",
         "place": "Zelenyi Hai",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-05-25",
         "event_date": "2026-05-25",
-        "ingested_at": "2026-05-28T08:27:44Z",
+        "ingested_at": "2026-05-29T08:25:51Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-05-25",
         "event_date": "2026-05-25",
-        "ingested_at": "2026-05-28T08:27:44Z",
+        "ingested_at": "2026-05-29T08:25:51Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
