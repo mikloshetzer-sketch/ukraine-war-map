@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-05-28",
         "event_date": "2026-05-28",
-        "ingested_at": "2026-05-29T08:25:51Z",
+        "ingested_at": "2026-05-30T07:26:04Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-05-27",
         "event_date": "2026-05-27",
-        "ingested_at": "2026-05-29T08:25:51Z",
+        "ingested_at": "2026-05-30T07:26:04Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-05-26",
         "event_date": "2026-05-26",
-        "ingested_at": "2026-05-29T08:25:51Z",
+        "ingested_at": "2026-05-30T07:26:04Z",
         "place": "Borova",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,56 +81,12 @@
         "kind": "ground",
         "article_date": "2026-05-26",
         "event_date": "2026-05-26",
-        "ingested_at": "2026-05-29T08:25:51Z",
+        "ingested_at": "2026-05-30T07:26:04Z",
         "place": "Zelenyi Hai",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[33] A Russian milblogger claimed that Ukrainian forces liberated Piddubne (northeast of Oleksandrivka) and are fighting in Zelenyi Hai (northwest of Piddubne).[34] The presence of Ukrainian forces in Piddubne and Zelenyi Hai indicates that Ukrainian forces likely liberated Ivanivka (north of Zelenyi Hai) and advanced east of Oleksandrohrad (southwest of Piddubne) on a prior date.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-26-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.1338908,
-          47.8326667
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-25",
-        "event_date": "2026-05-25",
-        "ingested_at": "2026-05-29T08:25:51Z",
-        "place": "western Zaporizhia Oblast",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-25-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.7855471,
-          47.5754426
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-25",
-        "event_date": "2026-05-25",
-        "ingested_at": "2026-05-29T08:25:51Z",
-        "place": "Orikhiv",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on May 24 shows Russian forces striking a Ukrainian position southwest of Novodanylivka (south of Orikhiv), indicating that Ukrainian forces recently advanced in the area.[75] Russian forces are reportedly suffering from drone shortages in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-25-2026/"
       }
     }
   ]
