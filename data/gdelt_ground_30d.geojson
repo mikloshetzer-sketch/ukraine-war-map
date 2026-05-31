@@ -1,4 +1,83 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6380818,
+          55.7582251
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-31",
+        "event_date": "2026-05-31",
+        "ingested_at": "2026-05-31T08:21:46Z",
+        "place": "Belarus",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Concerns mount that Belarus could be a launchpad for a new Russian offensive in Ukraine",
+        "text": "Concerns mount that Belarus could be a launchpad for a new Russian offensive in Ukraine.",
+        "source_url": "https://www.ktvo.com/news/nation-world/concerns-mount-that-belarus-could-be-a-launchpad-for-a-new-russian-offensive-in-ukraine/article_a4b3c553-330c-5008-b876-6f85a86f81c7.html",
+        "publisher_hint": "https://www.ktvo.com/news/nation-world/concerns-mount-that-belarus-could-be-a-launchpad-for-a-new-russian-offensive-in-ukraine/article_a4b3c553-330c-5008-b876-6f85a86f81c7.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6380818,
+          55.7582251
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-31",
+        "event_date": "2026-05-31",
+        "ingested_at": "2026-05-31T08:21:46Z",
+        "place": "Belarus",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Concerns mount that Belarus could be a launchpad for a new Russian offensive in Ukraine",
+        "text": "Concerns mount that Belarus could be a launchpad for a new Russian offensive in Ukraine.",
+        "source_url": "https://www.dailygazette.com/hv360/ap/national/concerns-mount-that-belarus-could-be-a-launchpad-for-a-new-russian-offensive-in-ukraine/article_9e0120a0-1d7b-510f-8f97-e3d082dd3e8c.html",
+        "publisher_hint": "https://www.dailygazette.com/hv360/ap/national/concerns-mount-that-belarus-could-be-a-launchpad-for-a-new-russian-offensive-in-ukraine/article_9e0120a0-1d7b-510f-8f97-e3d082dd3e8c.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6380818,
+          55.7582251
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-05-31",
+        "event_date": "2026-05-31",
+        "ingested_at": "2026-05-31T08:21:46Z",
+        "place": "Belarus",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Concerns mount that Belarus could be a launchpad for a new Russian offensive in Ukraine",
+        "text": "Concerns mount that Belarus could be a launchpad for a new Russian offensive in Ukraine.",
+        "source_url": "https://kdhnews.com/news/nation/concerns-mount-that-belarus-could-be-a-launchpad-for-a-new-russian-offensive-in-ukraine/article_82aa8540-8140-5649-a228-9c5aa8d7ff21.html",
+        "publisher_hint": "https://kdhnews.com/news/nation/concerns-mount-that-belarus-could-be-a-launchpad-for-a-new-russian-offensive-in-ukraine/article_82aa8540-8140-5649-a228-9c5aa8d7ff21.html"
+      }
+    }
+  ]
 }
