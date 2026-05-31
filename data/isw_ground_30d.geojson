@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-05-28",
         "event_date": "2026-05-28",
-        "ingested_at": "2026-05-30T07:26:04Z",
+        "ingested_at": "2026-05-31T07:57:29Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,56 +37,12 @@
         "kind": "ground",
         "article_date": "2026-05-27",
         "event_date": "2026-05-27",
-        "ingested_at": "2026-05-30T07:26:04Z",
+        "ingested_at": "2026-05-31T07:57:29Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces advanced in the Pokrovsk direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-27-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.1033125,
-          50.1699295
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-26",
-        "event_date": "2026-05-26",
-        "ingested_at": "2026-05-30T07:26:04Z",
-        "place": "Borova",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[21] Russian forces continued limited offensive operations northeast of Borova on May 26 as Ukrainian forces counterattacked south of Borova.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-26-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.4373,
-          49.698708
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-26",
-        "event_date": "2026-05-26",
-        "ingested_at": "2026-05-30T07:26:04Z",
-        "place": "Zelenyi Hai",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[33] A Russian milblogger claimed that Ukrainian forces liberated Piddubne (northeast of Oleksandrivka) and are fighting in Zelenyi Hai (northwest of Piddubne).[34] The presence of Ukrainian forces in Piddubne and Zelenyi Hai indicates that Ukrainian forces likely liberated Ivanivka (north of Zelenyi Hai) and advanced east of Oleksandrohrad (southwest of Piddubne) on a prior date.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-26-2026/"
       }
     }
   ]

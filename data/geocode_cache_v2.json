@@ -2689,5 +2689,10 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "central Kostyantynivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
