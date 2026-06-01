@@ -2699,5 +2699,36 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "APAC": {
+    "coords": [
+      53.6340292,
+      55.6059761
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Crude": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Europe": {
+    "coords": [
+      23.669289,
+      48.2963694
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Newsquawk EU Market Open": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukrainian attack in Kherson": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
