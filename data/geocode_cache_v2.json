@@ -2730,5 +2730,26 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "December 2024": {
+    "coords": [
+      33.1098418,
+      48.6704701
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "May 2025, compared to the 40": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Sribne": {
+    "coords": [
+      32.9174152,
+      50.661573
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

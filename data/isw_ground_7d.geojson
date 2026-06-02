@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.0805393,
+          48.3262489
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-01",
+        "event_date": "2026-06-01",
+        "ingested_at": "2026-06-02T08:53:19Z",
+        "place": "the Pokrovsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces advanced in the Pokrovsk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.9174152,
+          50.661573
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-01",
+        "event_date": "2026-06-01",
+        "ingested_at": "2026-06-02T08:53:19Z",
+        "place": "Sribne",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on May 31 shows Ukrainian forces striking a Russian BM-21 Grad multiple rocket launcher near Sribne (roughly 8.5 kilometers from the frontline).[31] Russian forces continued limited offensive operations in the Oleksandrivka direction on June 1 but did not advance.[32] Ukrainian forces continue to strike Russian military and fuel logistics assets in occupied Donetsk Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6127304,
           49.711199
         ]
@@ -15,34 +59,12 @@
         "kind": "ground",
         "article_date": "2026-05-31",
         "event_date": "2026-05-31",
-        "ingested_at": "2026-06-01T09:41:36Z",
+        "ingested_at": "2026-06-02T08:53:19Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces continue to struggle to advance and consolidate positions in the Kupyansk direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-31-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.7855471,
-          47.5754426
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-05-28",
-        "event_date": "2026-05-28",
-        "ingested_at": "2026-06-01T09:41:36Z",
-        "place": "Orikhiv",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "The map alleges that Russian forces seized Prymorske, Stepnohirsk, Richne, Veselyanka, Zaporozhets, Zapasne, Mali Shcherbaky, and Shcherbaky (all west of Orikhiv); southwestern Orikhiv up to the railway; and Novodanylivka, Mala Tokmachka, and Bilohiriya (all southeast of Orikhiv).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-may-28-2026/"
       }
     }
   ]
