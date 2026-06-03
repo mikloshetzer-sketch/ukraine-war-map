@@ -2751,5 +2751,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Economic Forum Kicks Off": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
