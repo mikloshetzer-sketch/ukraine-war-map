@@ -2756,5 +2756,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Crimea": {
+    "coords": [
+      34.2008188,
+      45.2835044
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Crimea governor": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

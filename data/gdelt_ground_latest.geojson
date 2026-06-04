@@ -1,4 +1,109 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2008188,
+          45.2835044
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-04",
+        "event_date": "2026-06-04",
+        "ingested_at": "2026-06-04T08:58:49Z",
+        "place": "Crimea",
+        "location_confidence": "pattern_title",
+        "candidate_score": 60,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Ukrainian drone attack kills three in Crimea",
+        "text": "Ukrainian drone attack kills three in Crimea.",
+        "source_url": "http://www.russiaherald.com/news/279101154/ukrainian-drone-attack-kills-three-in-crimea-governor",
+        "publisher_hint": "http://www.russiaherald.com/news/279101154/ukrainian-drone-attack-kills-three-in-crimea-governor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2008188,
+          45.2835044
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-04",
+        "event_date": "2026-06-04",
+        "ingested_at": "2026-06-04T08:58:49Z",
+        "place": "Crimea",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Ukrainian drone attack kills three in Crimea governor",
+        "text": "Ukrainian drone attack kills three in Crimea governor.",
+        "source_url": "http://www.russiaherald.com/news/279101110/ukrainian-drone-attack-kills-three-in-crimea-governor",
+        "publisher_hint": "http://www.russiaherald.com/news/279101110/ukrainian-drone-attack-kills-three-in-crimea-governor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2008188,
+          45.2835044
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-04",
+        "event_date": "2026-06-04",
+        "ingested_at": "2026-06-04T08:58:49Z",
+        "place": "Crimea",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Ukrainian drone attack kills three in Crimea governor",
+        "text": "Ukrainian drone attack kills three in Crimea governor.",
+        "source_url": "http://www.heraldglobe.com/news/279101110/ukrainian-drone-attack-kills-three-in-crimea-governor",
+        "publisher_hint": "http://www.heraldglobe.com/news/279101110/ukrainian-drone-attack-kills-three-in-crimea-governor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2008188,
+          45.2835044
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-04",
+        "event_date": "2026-06-04",
+        "ingested_at": "2026-06-04T08:58:49Z",
+        "place": "Crimea",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Ukrainian drone attack kills three in Crimea governor",
+        "text": "Ukrainian drone attack kills three in Crimea governor.",
+        "source_url": "http://www.austinglobe.com/news/279101110/ukrainian-drone-attack-kills-three-in-crimea-governor",
+        "publisher_hint": "http://www.austinglobe.com/news/279101110/ukrainian-drone-attack-kills-three-in-crimea-governor"
+      }
+    }
+  ]
 }
