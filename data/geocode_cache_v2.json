@@ -2769,5 +2769,23 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Kharkiv City": {
+    "coords": [
+      36.2723543,
+      49.9922189
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Novoyehorivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "southern Bilytske": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
