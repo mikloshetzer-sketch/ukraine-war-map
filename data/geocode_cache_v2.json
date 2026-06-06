@@ -2787,5 +2787,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Chervone": {
+    "coords": [
+      28.87532,
+      49.9528344
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

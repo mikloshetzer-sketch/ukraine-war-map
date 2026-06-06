@@ -6,21 +6,43 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.2723543,
-          49.9922189
+          37.0805393,
+          48.3262489
         ]
       },
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
-        "article_date": "2026-06-04",
-        "event_date": "2026-06-04",
-        "ingested_at": "2026-06-05T08:30:47Z",
-        "place": "Kharkiv City",
+        "article_date": "2026-06-05",
+        "event_date": "2026-06-05",
+        "ingested_at": "2026-06-06T07:33:37Z",
+        "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
-        "text": "[21] A Russian milblogger claimed that Russian forces advanced into Shevchenka (north of Kharkiv City).[22] Russian forces continued limited offensive operations in the Velykyi Burluk direction on June 4 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-4-2026/"
+        "text": "Ukrainian forces recently advanced in the Pokrovsk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-5-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.87532,
+          49.9528344
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-05",
+        "event_date": "2026-06-05",
+        "ingested_at": "2026-06-06T07:33:37Z",
+        "place": "Chervone",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on June 4 indicates that Russian forces recently advanced south of Chervone (northeast of Kostyantynivka).[62] ISW assesses that this event indicates a change in the Russian forward line of own troops (FLOT) as ISW has not observed a Ukrainian presence in the area between Chervone and Predtechyne (around Chervone) since March 2026.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-5-2026/"
       }
     },
     {
@@ -35,14 +57,14 @@
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
-        "article_date": "2026-06-01",
-        "event_date": "2026-06-01",
-        "ingested_at": "2026-06-05T08:30:48Z",
+        "article_date": "2026-06-05",
+        "event_date": "2026-06-05",
+        "ingested_at": "2026-06-06T07:33:37Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
-        "text": "Ukrainian forces advanced in the Pokrovsk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-1-2026/"
+        "text": "[65] Ukrainian forces recently advanced in the Pokrovsk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-5-2026/"
       }
     },
     {
@@ -50,21 +72,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.9174152,
-          50.661573
+          36.2723543,
+          49.9922189
         ]
       },
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
-        "article_date": "2026-06-01",
-        "event_date": "2026-06-01",
-        "ingested_at": "2026-06-05T08:30:48Z",
-        "place": "Sribne",
+        "article_date": "2026-06-04",
+        "event_date": "2026-06-04",
+        "ingested_at": "2026-06-06T07:33:37Z",
+        "place": "Kharkiv City",
         "country_code": "ua",
         "front_dist_km": null,
-        "text": "Geolocated footage published on May 31 shows Ukrainian forces striking a Russian BM-21 Grad multiple rocket launcher near Sribne (roughly 8.5 kilometers from the frontline).[31] Russian forces continued limited offensive operations in the Oleksandrivka direction on June 1 but did not advance.[32] Ukrainian forces continue to strike Russian military and fuel logistics assets in occupied Donetsk Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-1-2026/"
+        "text": "[21] A Russian milblogger claimed that Russian forces advanced into Shevchenka (north of Kharkiv City).[22] Russian forces continued limited offensive operations in the Velykyi Burluk direction on June 4 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-4-2026/"
       }
     }
   ]
