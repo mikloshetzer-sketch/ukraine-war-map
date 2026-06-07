@@ -2795,5 +2795,13 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Lypivka": {
+    "coords": [
+      24.566322,
+      49.51659
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

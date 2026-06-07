@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6387672,
+          55.7565821
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-06",
+        "event_date": "2026-06-06",
+        "ingested_at": "2026-06-07T08:06:58Z",
+        "place": "April",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "The source reported that Ukrainian forces liberated or cleared about 80 square kilometers in April 2026 while Russian forces seized between 150 to 160 square kilometers.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-6-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.566322,
+          49.51659
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "toward_only",
+        "article_date": "2026-06-06",
+        "event_date": "2026-06-06",
+        "ingested_at": "2026-06-07T08:06:58Z",
+        "place": "Lypivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Mashovets noted that Russian forces hold positions on the outskirts of Rai-Oleksandrivka and advanced to Lypivka, and that these positions are only about two and a half kilometers apart.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-6-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.0805393,
           48.3262489
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-06-05",
         "event_date": "2026-06-05",
-        "ingested_at": "2026-06-06T07:33:37Z",
+        "ingested_at": "2026-06-07T08:06:59Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-06-05",
         "event_date": "2026-06-05",
-        "ingested_at": "2026-06-06T07:33:37Z",
+        "ingested_at": "2026-06-07T08:06:59Z",
         "place": "Chervone",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-06-05",
         "event_date": "2026-06-05",
-        "ingested_at": "2026-06-06T07:33:37Z",
+        "ingested_at": "2026-06-07T08:06:59Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-06-04",
         "event_date": "2026-06-04",
-        "ingested_at": "2026-06-06T07:33:37Z",
+        "ingested_at": "2026-06-07T08:06:59Z",
         "place": "Kharkiv City",
         "country_code": "ua",
         "front_dist_km": null,
