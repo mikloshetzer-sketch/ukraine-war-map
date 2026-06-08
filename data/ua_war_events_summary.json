@@ -1,11 +1,10 @@
 {
-  "generated_at": "2026-06-07T18:43:06+00:00",
+  "generated_at": "2026-06-08T09:57:23+00:00",
   "count": 13,
   "by_event_type": {
-    "ground_clash": 4,
-    "drone_attack": 7,
-    "artillery": 1,
-    "missile_strike": 1
+    "drone_attack": 8,
+    "missile_strike": 4,
+    "ground_clash": 1
   },
   "by_source": {
     "ukrainenow": 10,
@@ -18,23 +17,7 @@
   },
   "top_sectors": [
     [
-      "lyman",
-      1
-    ],
-    [
       "pokrovsk",
-      1
-    ],
-    [
-      "orikhiv",
-      1
-    ],
-    [
-      "zaporizhzhia",
-      1
-    ],
-    [
-      "kherson",
       1
     ]
   ]
