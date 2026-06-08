@@ -2803,5 +2803,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Occ Crimea": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

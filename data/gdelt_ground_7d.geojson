@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-08",
+        "event_date": "2026-06-08",
+        "ingested_at": "2026-06-08T09:53:53Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 224 C - Clashes in F - Line : 33 in Pokrovsk Dir , 27 in Huliaipole Dir , 18 in Lyman Dir ; UKR Blasts Away at RU Ship , Air - Def - Systs , Fuel Depots in Occ Crimea ; UKR Takes Donetsk Airport , Converted Into Logistic Hub , Under Fir...",
+        "text": "RIGHT SPEAK : 224 C - Clashes in F - Line : 33 in Pokrovsk Dir , 27 in Huliaipole Dir , 18 in Lyman Dir ; UKR Blasts Away at RU Ship , Air - Def - Systs , Fuel Depots in Occ Crimea ; UKR Takes Donetsk Airport , Converted Into Logistic Hub , Under Fir....",
+        "source_url": "http://www.rightspeak.net/2026/06/224-c-clashes-in-f-line-33-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/06/224-c-clashes-in-f-line-33-in-pokrovsk.html"
+      }
+    }
+  ]
 }
