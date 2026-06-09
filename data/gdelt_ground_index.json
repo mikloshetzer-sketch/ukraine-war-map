@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-06-08T09:53:54Z",
-  "started_at_utc": "2026-06-08T09:53:43Z",
+  "generated_at_utc": "2026-06-09T08:39:55Z",
+  "started_at_utc": "2026-06-09T08:39:48Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -20,51 +20,36 @@
     "broad_places_count": 18
   },
   "stats": {
-    "articles_after_filters": 2,
-    "raw_events_total": 2,
-    "dedup_events_total": 2,
-    "features_latest": 1,
-    "features_7d": 1,
-    "features_30d": 1,
-    "events_total": 2,
-    "events_with_any_geo": 2,
-    "point_features": 1,
+    "articles_after_filters": 0,
+    "raw_events_total": 0,
+    "dedup_events_total": 0,
+    "features_latest": 0,
+    "features_7d": 0,
+    "features_30d": 0,
+    "events_total": 0,
+    "events_with_any_geo": 0,
+    "point_features": 0,
     "dropped_not_front_near": 0,
-    "dropped_geocode": 1,
+    "dropped_geocode": 0,
     "frontline_available": false,
-    "geocode_cache_hits": 2,
-    "geocode_cache_negative_hits": 6,
+    "geocode_cache_hits": 0,
+    "geocode_cache_negative_hits": 0,
     "geocode_new_success": 0,
-    "geocode_new_fail": 1,
-    "geocode_calls_this_run": 1,
+    "geocode_new_fail": 0,
+    "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 469,
-    "rejections_saved": 1,
+    "cache_entries_total": 470,
+    "rejections_saved": 0,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 1,
-      "items_before_filters": 80,
-      "items_with_date": 80,
-      "items_in_lookback_window": 54,
-      "items_keyword_matched": 5,
-      "items_action_matched": 2,
-      "items_after_dedup": 2,
-      "parser_debug": [
-        {
-          "query": "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)",
-          "parse_ok": true,
-          "root_tag": "rss",
-          "channel_found": true,
-          "item_count_raw": 80,
-          "sample_date_fields": [
-            "8 Jun 2026 08:15:00 +0000",
-            "8 Jun 2026 03:45:00 +0000",
-            "8 Jun 2026 21:00:00 +0000",
-            "8 Jun 2026 15:00:00 +0000",
-            "8 Jun 2026 13:45:00 +0000"
-          ]
-        }
-      ]
+      "queries_with_response": 0,
+      "items_before_filters": 0,
+      "items_with_date": 0,
+      "items_in_lookback_window": 0,
+      "items_keyword_matched": 0,
+      "items_action_matched": 0,
+      "items_after_dedup": 0,
+      "parser_debug": []
     }
   },
   "files": {
