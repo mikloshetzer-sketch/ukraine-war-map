@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-06-06",
         "event_date": "2026-06-06",
-        "ingested_at": "2026-06-08T09:12:45Z",
+        "ingested_at": "2026-06-09T08:07:19Z",
         "place": "April",
         "country_code": "ru",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "toward_only",
         "article_date": "2026-06-06",
         "event_date": "2026-06-06",
-        "ingested_at": "2026-06-08T09:12:45Z",
+        "ingested_at": "2026-06-09T08:07:19Z",
         "place": "Lypivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-06-05",
         "event_date": "2026-06-05",
-        "ingested_at": "2026-06-08T09:12:46Z",
+        "ingested_at": "2026-06-09T08:07:19Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-06-05",
         "event_date": "2026-06-05",
-        "ingested_at": "2026-06-08T09:12:46Z",
+        "ingested_at": "2026-06-09T08:07:19Z",
         "place": "Chervone",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,34 +103,12 @@
         "kind": "ground",
         "article_date": "2026-06-05",
         "event_date": "2026-06-05",
-        "ingested_at": "2026-06-08T09:12:46Z",
+        "ingested_at": "2026-06-09T08:07:19Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[65] Ukrainian forces recently advanced in the Pokrovsk direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.2723543,
-          49.9922189
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-04",
-        "event_date": "2026-06-04",
-        "ingested_at": "2026-06-08T09:12:46Z",
-        "place": "Kharkiv City",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[21] A Russian milblogger claimed that Russian forces advanced into Shevchenka (north of Kharkiv City).[22] Russian forces continued limited offensive operations in the Velykyi Burluk direction on June 4 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-4-2026/"
       }
     }
   ]
