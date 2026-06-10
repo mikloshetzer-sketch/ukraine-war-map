@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          38.8481322,
+          48.3160483
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-09",
+        "event_date": "2026-06-09",
+        "ingested_at": "2026-06-10T08:32:44Z",
+        "place": "Fedorivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Ukrainian General Staff reported on June 9 that Ukrainian forces struck a Russian material and technical warehouse near Fedorivka (southeast of Slovyansk) on June 8 or the night of June 8 to 9.[42] Ukrainian forces recently advanced in the Kostyantynivka-Druzhkivka tactical area as Russian forces infiltrated into Kostyantynivka itself.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-9-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6387672,
           55.7565821
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-06-06",
         "event_date": "2026-06-06",
-        "ingested_at": "2026-06-09T08:07:19Z",
+        "ingested_at": "2026-06-10T08:32:45Z",
         "place": "April",
         "country_code": "ru",
         "front_dist_km": null,
@@ -37,78 +59,12 @@
         "kind": "toward_only",
         "article_date": "2026-06-06",
         "event_date": "2026-06-06",
-        "ingested_at": "2026-06-09T08:07:19Z",
+        "ingested_at": "2026-06-10T08:32:45Z",
         "place": "Lypivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Mashovets noted that Russian forces hold positions on the outskirts of Rai-Oleksandrivka and advanced to Lypivka, and that these positions are only about two and a half kilometers apart.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.0805393,
-          48.3262489
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-05",
-        "event_date": "2026-06-05",
-        "ingested_at": "2026-06-09T08:07:19Z",
-        "place": "the Pokrovsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Pokrovsk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.87532,
-          49.9528344
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-05",
-        "event_date": "2026-06-05",
-        "ingested_at": "2026-06-09T08:07:19Z",
-        "place": "Chervone",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on June 4 indicates that Russian forces recently advanced south of Chervone (northeast of Kostyantynivka).[62] ISW assesses that this event indicates a change in the Russian forward line of own troops (FLOT) as ISW has not observed a Ukrainian presence in the area between Chervone and Predtechyne (around Chervone) since March 2026.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.0805393,
-          48.3262489
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-05",
-        "event_date": "2026-06-05",
-        "ingested_at": "2026-06-09T08:07:19Z",
-        "place": "the Pokrovsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[65] Ukrainian forces recently advanced in the Pokrovsk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-5-2026/"
       }
     }
   ]

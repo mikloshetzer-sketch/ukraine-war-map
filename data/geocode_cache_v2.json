@@ -2813,5 +2813,23 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "southern Kurylivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "central Lyman": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Fedorivka": {
+    "coords": [
+      38.8481322,
+      48.3160483
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
