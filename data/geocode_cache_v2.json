@@ -2831,5 +2831,36 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "the Kostyantynivka railway station": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "northwestern Lyman": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Mariupol": {
+    "coords": [
+      37.5499621,
+      47.0957648
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "the western Zaporizhia Oblast": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Lobkove": {
+    "coords": [
+      35.4384745,
+      47.5263541
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

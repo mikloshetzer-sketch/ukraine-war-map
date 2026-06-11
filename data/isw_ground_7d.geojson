@@ -6,6 +6,94 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.8373367,
+          48.5873911
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-10",
+        "event_date": "2026-06-10",
+        "ingested_at": "2026-06-11T09:01:49Z",
+        "place": "Chasiv Yar",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Kremlin-affiliated Russian milblogger claimed on June 9 that Ukrainian forces recently counterattacked near Chasiv Yar and maintain control over Podilske and Mykolaivka (both west of Chasiv Yar).[15] Russian forces are also struggling to advance toward Slovyansk on the northern flank of the Fortress Belt.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-10-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.0805393,
+          48.3262489
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-10",
+        "event_date": "2026-06-10",
+        "ingested_at": "2026-06-11T09:01:49Z",
+        "place": "the Pokrovsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[63] Russian forces continued offensive operations in the Pokrovsk and Novopavlivka directions on June 10 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-10-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5499621,
+          47.0957648
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-10",
+        "event_date": "2026-06-10",
+        "ingested_at": "2026-06-11T09:01:49Z",
+        "place": "Mariupol",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on June 10 confirms the strikes against the port in Mariupol.[68] Russian Supporting Effort: Southern Axis Russian objective: Maintain frontline positions, secure rear areas against Ukrainian strikes, and advance within tube artillery range of Zaporizhzhia City Russian forces continued offensive operations in the Hulyaipole direction on June 9 and 10 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-10-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4384745,
+          47.5263541
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-10",
+        "event_date": "2026-06-10",
+        "ingested_at": "2026-06-11T09:01:49Z",
+        "place": "Lobkove",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on June 8 indicates that Ukrainian forces advanced north of Lobkove (southwest of Orikhiv).[70] Russian forces attacked near southwest of Kherson City near Bilohrudyi Island on June 10 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-10-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           38.8481322,
           48.3160483
         ]
@@ -15,56 +103,12 @@
         "kind": "ground",
         "article_date": "2026-06-09",
         "event_date": "2026-06-09",
-        "ingested_at": "2026-06-10T08:32:44Z",
+        "ingested_at": "2026-06-11T09:01:49Z",
         "place": "Fedorivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "The Ukrainian General Staff reported on June 9 that Ukrainian forces struck a Russian material and technical warehouse near Fedorivka (southeast of Slovyansk) on June 8 or the night of June 8 to 9.[42] Ukrainian forces recently advanced in the Kostyantynivka-Druzhkivka tactical area as Russian forces infiltrated into Kostyantynivka itself.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-9-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6387672,
-          55.7565821
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-06",
-        "event_date": "2026-06-06",
-        "ingested_at": "2026-06-10T08:32:45Z",
-        "place": "April",
-        "country_code": "ru",
-        "front_dist_km": null,
-        "text": "The source reported that Ukrainian forces liberated or cleared about 80 square kilometers in April 2026 while Russian forces seized between 150 to 160 square kilometers.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.566322,
-          49.51659
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "toward_only",
-        "article_date": "2026-06-06",
-        "event_date": "2026-06-06",
-        "ingested_at": "2026-06-10T08:32:45Z",
-        "place": "Lypivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Mashovets noted that Russian forces hold positions on the outskirts of Rai-Oleksandrivka and advanced to Lypivka, and that these positions are only about two and a half kilometers apart.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-6-2026/"
       }
     }
   ]
