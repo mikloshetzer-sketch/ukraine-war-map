@@ -2862,5 +2862,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Death Spiral": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
