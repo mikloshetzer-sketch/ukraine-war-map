@@ -2867,5 +2867,23 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Velykyi Burluk on June": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "advance in the Kupyansk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "central Voskresenka": {
+    "coords": [
+      39.4521563,
+      54.2307999
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }

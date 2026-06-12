@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-11",
+        "event_date": "2026-06-11",
+        "ingested_at": "2026-06-12T08:46:21Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-11-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.4521563,
+          54.2307999
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-11",
+        "event_date": "2026-06-11",
+        "ingested_at": "2026-06-12T08:46:21Z",
+        "place": "central Voskresenka",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on June 10 indicates that Ukrainian forces recently advanced in central Voskresenka (east of Oleksandrivka).[58] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Donetsk Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-11-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.8373367,
           48.5873911
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-06-10",
         "event_date": "2026-06-10",
-        "ingested_at": "2026-06-11T09:01:49Z",
+        "ingested_at": "2026-06-12T08:46:21Z",
         "place": "Chasiv Yar",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-06-10",
         "event_date": "2026-06-10",
-        "ingested_at": "2026-06-11T09:01:49Z",
+        "ingested_at": "2026-06-12T08:46:21Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-06-10",
         "event_date": "2026-06-10",
-        "ingested_at": "2026-06-11T09:01:49Z",
+        "ingested_at": "2026-06-12T08:46:21Z",
         "place": "Mariupol",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-06-10",
         "event_date": "2026-06-10",
-        "ingested_at": "2026-06-11T09:01:49Z",
+        "ingested_at": "2026-06-12T08:46:21Z",
         "place": "Lobkove",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-06-09",
         "event_date": "2026-06-09",
-        "ingested_at": "2026-06-11T09:01:49Z",
+        "ingested_at": "2026-06-12T08:46:21Z",
         "place": "Fedorivka",
         "country_code": "ua",
         "front_dist_km": null,
