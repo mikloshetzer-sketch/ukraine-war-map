@@ -2885,5 +2885,21 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Voskresenka": {
+    "coords": [
+      30.598646,
+      50.4842146
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Novoandriivka": {
+    "coords": [
+      37.0412309,
+      48.1079093
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
