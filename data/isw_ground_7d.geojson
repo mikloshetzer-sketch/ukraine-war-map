@@ -13,9 +13,31 @@
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
+        "article_date": "2026-06-14",
+        "event_date": "2026-06-14",
+        "ingested_at": "2026-06-15T10:44:01Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Oleksandrivka and Hulyaipole directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-14-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
         "article_date": "2026-06-12",
         "event_date": "2026-06-12",
-        "ingested_at": "2026-06-14T08:31:43Z",
+        "ingested_at": "2026-06-15T10:44:01Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-06-12",
         "event_date": "2026-06-12",
-        "ingested_at": "2026-06-14T08:31:43Z",
+        "ingested_at": "2026-06-15T10:44:01Z",
         "place": "Voskresenka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-06-12",
         "event_date": "2026-06-12",
-        "ingested_at": "2026-06-14T08:31:43Z",
+        "ingested_at": "2026-06-15T10:44:01Z",
         "place": "Novoandriivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-06-11",
         "event_date": "2026-06-11",
-        "ingested_at": "2026-06-14T08:31:43Z",
+        "ingested_at": "2026-06-15T10:44:01Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,100 +125,12 @@
         "kind": "ground",
         "article_date": "2026-06-11",
         "event_date": "2026-06-11",
-        "ingested_at": "2026-06-14T08:31:43Z",
+        "ingested_at": "2026-06-15T10:44:01Z",
         "place": "central Voskresenka",
         "country_code": "ru",
         "front_dist_km": null,
         "text": "Geolocated footage published on June 10 indicates that Ukrainian forces recently advanced in central Voskresenka (east of Oleksandrivka).[58] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Donetsk Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-11-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.8373367,
-          48.5873911
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-10",
-        "event_date": "2026-06-10",
-        "ingested_at": "2026-06-14T08:31:43Z",
-        "place": "Chasiv Yar",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Kremlin-affiliated Russian milblogger claimed on June 9 that Ukrainian forces recently counterattacked near Chasiv Yar and maintain control over Podilske and Mykolaivka (both west of Chasiv Yar).[15] Russian forces are also struggling to advance toward Slovyansk on the northern flank of the Fortress Belt.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-10-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.0805393,
-          48.3262489
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-10",
-        "event_date": "2026-06-10",
-        "ingested_at": "2026-06-14T08:31:43Z",
-        "place": "the Pokrovsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[63] Russian forces continued offensive operations in the Pokrovsk and Novopavlivka directions on June 10 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-10-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.5499621,
-          47.0957648
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-10",
-        "event_date": "2026-06-10",
-        "ingested_at": "2026-06-14T08:31:43Z",
-        "place": "Mariupol",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on June 10 confirms the strikes against the port in Mariupol.[68] Russian Supporting Effort: Southern Axis Russian objective: Maintain frontline positions, secure rear areas against Ukrainian strikes, and advance within tube artillery range of Zaporizhzhia City Russian forces continued offensive operations in the Hulyaipole direction on June 9 and 10 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-10-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.4384745,
-          47.5263541
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-10",
-        "event_date": "2026-06-10",
-        "ingested_at": "2026-06-14T08:31:43Z",
-        "place": "Lobkove",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on June 8 indicates that Ukrainian forces advanced north of Lobkove (southwest of Orikhiv).[70] Russian forces attacked near southwest of Kherson City near Bilohrudyi Island on June 10 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-10-2026/"
       }
     }
   ]
