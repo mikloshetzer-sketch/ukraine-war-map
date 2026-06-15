@@ -2901,5 +2901,29 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Large": {
+    "coords": [
+      35.3032574,
+      47.8715604
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "UNESCO": {
+    "coords": [
+      25.5762308,
+      49.5459003
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Rybinsk": {
+    "coords": [
+      38.8558908,
+      58.0489536
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }

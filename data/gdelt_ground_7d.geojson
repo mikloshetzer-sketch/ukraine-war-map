@@ -1,4 +1,213 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-15",
+        "event_date": "2026-06-15",
+        "ingested_at": "2026-06-15T11:21:57Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian attack sets fire to religious site in Kyiv , kills 5 in Kharkiv",
+        "text": "Russian attack sets fire to religious site in Kyiv , kills 5 in Kharkiv.",
+        "source_url": "https://www.wyso.org/npr-news/2026-06-15/russian-attack-sets-fire-to-religious-site-in-kyiv-kills-5-in-kharkiv",
+        "publisher_hint": "https://www.wyso.org/npr-news/2026-06-15/russian-attack-sets-fire-to-religious-site-in-kyiv-kills-5-in-kharkiv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-15",
+        "event_date": "2026-06-15",
+        "ingested_at": "2026-06-15T11:21:57Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian attack sets fire to religious site in Kyiv , kills 5 in Kharkiv",
+        "text": "Russian attack sets fire to religious site in Kyiv , kills 5 in Kharkiv.",
+        "source_url": "https://www.wrvo.org/2026-06-15/russian-attack-sets-fire-to-religious-site-in-kyiv-kills-5-in-kharkiv",
+        "publisher_hint": "https://www.wrvo.org/2026-06-15/russian-attack-sets-fire-to-religious-site-in-kyiv-kills-5-in-kharkiv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3032574,
+          47.8715604
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-15",
+        "event_date": "2026-06-15",
+        "ingested_at": "2026-06-15T11:21:57Z",
+        "place": "Large",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Large - scale Russian attack sparks fire at historic monastery and other sites in Ukraine , in photos",
+        "text": "Large - scale Russian attack sparks fire at historic monastery and other sites in Ukraine , in photos.",
+        "source_url": "https://www.union-bulletin.com/news/world/large-scale-russian-attack-sparks-fire-at-historic-monastery-and-other-sites-in-ukraine-in/article_8bf8d755-73b5-5af7-af9e-ae28f41ca662.html",
+        "publisher_hint": "https://www.union-bulletin.com/news/world/large-scale-russian-attack-sparks-fire-at-historic-monastery-and-other-sites-in-ukraine-in/article_8bf8d755-73b5-5af7-af9e-ae28f41ca662.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.5762308,
+          49.5459003
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-15",
+        "event_date": "2026-06-15",
+        "ingested_at": "2026-06-15T11:21:57Z",
+        "place": "UNESCO",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "UNESCO heritage Kyiv monastery on fire after air attack",
+        "text": "UNESCO heritage Kyiv monastery on fire after air attack.",
+        "source_url": "https://www.mudgeeguardian.com.au/story/9291991/unesco-heritage-kyiv-monastery-on-fire-after-air-attack/",
+        "publisher_hint": "https://www.mudgeeguardian.com.au/story/9291991/unesco-heritage-kyiv-monastery-on-fire-after-air-attack/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-15",
+        "event_date": "2026-06-15",
+        "ingested_at": "2026-06-15T11:21:57Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian attack sets fire to religious site in Kyiv , kills 5 in Kharkiv",
+        "text": "Russian attack sets fire to religious site in Kyiv , kills 5 in Kharkiv.",
+        "source_url": "https://news.prairiepublic.org/news-from-npr/2026-06-15/russian-attack-sets-fire-to-religious-site-in-kyiv-kills-5-in-kharkiv",
+        "publisher_hint": "https://news.prairiepublic.org/news-from-npr/2026-06-15/russian-attack-sets-fire-to-religious-site-in-kyiv-kills-5-in-kharkiv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-15",
+        "event_date": "2026-06-15",
+        "ingested_at": "2026-06-15T11:21:57Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 196 C - Clashes in F - Line : 37 in Pokrovsk Dir , 20 in Huliaipole Dir , 13 in Lyman Dir ; Desperate Putin Planning Hail Mary Winter Off Against UKR as RU Economy in Death Spiral ; UKR Launches L - Range Strikes on Milt , Energy Sites ...",
+        "text": "RIGHT SPEAK : 196 C - Clashes in F - Line : 37 in Pokrovsk Dir , 20 in Huliaipole Dir , 13 in Lyman Dir ; Desperate Putin Planning Hail Mary Winter Off Against UKR as RU Economy in Death Spiral ; UKR Launches L - Range Strikes on Milt , Energy Sites ....",
+        "source_url": "http://www.rightspeak.net/2026/06/196-c-clashes-in-f-line-37-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/06/196-c-clashes-in-f-line-37-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-15",
+        "event_date": "2026-06-15",
+        "ingested_at": "2026-06-15T11:21:57Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 193 C - Clashes in F - Line : 30 in Pokrovsk Dir , 25 in Huliaipole Dir , 14 in Lyman Dir ; UKR War Has Lasted Longer Than WWI ; Putin Top Allies Admit RU Cant Win in UKR ; UKR Seeking $20B From Allies to Keep Up Momentum Against RU ; Z...",
+        "text": "RIGHT SPEAK : 193 C - Clashes in F - Line : 30 in Pokrovsk Dir , 25 in Huliaipole Dir , 14 in Lyman Dir ; UKR War Has Lasted Longer Than WWI ; Putin Top Allies Admit RU Cant Win in UKR ; UKR Seeking $20B From Allies to Keep Up Momentum Against RU ; Z....",
+        "source_url": "http://www.rightspeak.net/2026/06/193-c-clashes-in-f-line-30-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/06/193-c-clashes-in-f-line-30-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-15",
+        "event_date": "2026-06-15",
+        "ingested_at": "2026-06-15T11:21:57Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 118 C - Clashes in F - Line : 23 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Lyman Dir ; Mounting RU Losses Force RU Closer to Hard Choices Over UKR ; UKR Drones Torch RU Strategic Wartime Fuel Reserves in Rybinsk ; Gasoline Exhauste...",
+        "text": "RIGHT SPEAK : 118 C - Clashes in F - Line : 23 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Lyman Dir ; Mounting RU Losses Force RU Closer to Hard Choices Over UKR ; UKR Drones Torch RU Strategic Wartime Fuel Reserves in Rybinsk ; Gasoline Exhauste....",
+        "source_url": "http://www.rightspeak.net/2026/06/118-c-clashes-in-f-line-23-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/06/118-c-clashes-in-f-line-23-in-pokrovsk.html"
+      }
+    }
+  ]
 }
