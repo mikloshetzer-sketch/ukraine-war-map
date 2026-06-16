@@ -2925,5 +2925,15 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "central Bezsalivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "seize Vozdvyzhivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

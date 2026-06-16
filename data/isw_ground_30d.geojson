@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-06-14",
         "event_date": "2026-06-14",
-        "ingested_at": "2026-06-15T10:44:01Z",
+        "ingested_at": "2026-06-16T09:40:03Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-06-12",
         "event_date": "2026-06-12",
-        "ingested_at": "2026-06-15T10:44:01Z",
+        "ingested_at": "2026-06-16T09:40:03Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-06-12",
         "event_date": "2026-06-12",
-        "ingested_at": "2026-06-15T10:44:01Z",
+        "ingested_at": "2026-06-16T09:40:03Z",
         "place": "Voskresenka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,56 +81,12 @@
         "kind": "ground",
         "article_date": "2026-06-12",
         "event_date": "2026-06-12",
-        "ingested_at": "2026-06-15T10:44:01Z",
+        "ingested_at": "2026-06-16T09:40:03Z",
         "place": "Novoandriivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Another Russian milblogger refuted Russian claims that Russian forces advanced south of Novoandriivka (southwest of Orikhiv).[76] Ukrainian forces continue their intermediate-range strike campaign against occupied Zaporizhia Oblast, including against a Russian training ground.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-12-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-11",
-        "event_date": "2026-06-11",
-        "ingested_at": "2026-06-15T10:44:01Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-11-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          39.4521563,
-          54.2307999
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-11",
-        "event_date": "2026-06-11",
-        "ingested_at": "2026-06-15T10:44:01Z",
-        "place": "central Voskresenka",
-        "country_code": "ru",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on June 10 indicates that Ukrainian forces recently advanced in central Voskresenka (east of Oleksandrivka).[58] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Donetsk Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-11-2026/"
       }
     }
   ]
