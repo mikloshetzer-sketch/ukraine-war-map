@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          34.60075,
+          48.57983
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-16",
+        "event_date": "2026-06-16",
+        "ingested_at": "2026-06-17T09:19:19Z",
+        "place": "Kurylivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian milbloggers claimed that Russian forces advanced in Kurylivka, Kivsharivka (both southeast of Kupyansk), and Kupyansk-Vuzlovyi (south of Kupyansk).[36] Ukrainian forces&#8217; intermediate-range strike campaign continues to impede Russian logistics in the Kupyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-16-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.2984727,
           47.3139025
         ]
@@ -15,78 +37,12 @@
         "kind": "ground",
         "article_date": "2026-06-14",
         "event_date": "2026-06-14",
-        "ingested_at": "2026-06-16T09:40:03Z",
+        "ingested_at": "2026-06-17T09:19:19Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces recently advanced in the Oleksandrivka and Hulyaipole directions.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-14-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-12",
-        "event_date": "2026-06-12",
-        "ingested_at": "2026-06-16T09:40:03Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[64] Ukrainian forces recently advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-12-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.598646,
-          50.4842146
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-12",
-        "event_date": "2026-06-12",
-        "ingested_at": "2026-06-16T09:40:03Z",
-        "place": "Voskresenka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage posted on June 11 shows Russian forces shelling Ukrainian positions south of Voskresenka (east of Oleksandrivka), indicating that Ukrainian forces recently advanced in the area.[65] A Russian milblogger claimed that Russian forces seized Vorone (southeast of Oleksandrivka).[66] Ukrainian forces continue their intermediate-range strike campaign against the occupied Donetsk City area.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-12-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.0412309,
-          48.1079093
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-12",
-        "event_date": "2026-06-12",
-        "ingested_at": "2026-06-16T09:40:03Z",
-        "place": "Novoandriivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Another Russian milblogger refuted Russian claims that Russian forces advanced south of Novoandriivka (southwest of Orikhiv).[76] Ukrainian forces continue their intermediate-range strike campaign against occupied Zaporizhia Oblast, including against a Russian training ground.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-12-2026/"
       }
     }
   ]
