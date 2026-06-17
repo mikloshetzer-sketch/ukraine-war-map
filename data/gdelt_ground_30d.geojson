@@ -1,4 +1,83 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-17",
+        "event_date": "2026-06-17",
+        "ingested_at": "2026-06-17T10:01:42Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 196 C - Clashes in F - Line : 37 in Pokrovsk Dir , 20 in Huliaipole Dir , 13 in Lyman Dir ; Desperate Putin Planning Hail Mary Winter Off Against UKR as RU Economy in Death Spiral ; UKR Launches L - Range Strikes on Milt , Energy Sites ...",
+        "text": "RIGHT SPEAK : 196 C - Clashes in F - Line : 37 in Pokrovsk Dir , 20 in Huliaipole Dir , 13 in Lyman Dir ; Desperate Putin Planning Hail Mary Winter Off Against UKR as RU Economy in Death Spiral ; UKR Launches L - Range Strikes on Milt , Energy Sites ....",
+        "source_url": "http://www.rightspeak.net/2026/06/196-c-clashes-in-f-line-37-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/06/196-c-clashes-in-f-line-37-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-17",
+        "event_date": "2026-06-17",
+        "ingested_at": "2026-06-17T10:01:42Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 193 C - Clashes in F - Line : 30 in Pokrovsk Dir , 25 in Huliaipole Dir , 14 in Lyman Dir ; UKR War Has Lasted Longer Than WWI ; Putin Top Allies Admit RU Cant Win in UKR ; UKR Seeking $20B From Allies to Keep Up Momentum Against RU ; Z...",
+        "text": "RIGHT SPEAK : 193 C - Clashes in F - Line : 30 in Pokrovsk Dir , 25 in Huliaipole Dir , 14 in Lyman Dir ; UKR War Has Lasted Longer Than WWI ; Putin Top Allies Admit RU Cant Win in UKR ; UKR Seeking $20B From Allies to Keep Up Momentum Against RU ; Z....",
+        "source_url": "http://www.rightspeak.net/2026/06/193-c-clashes-in-f-line-30-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/06/193-c-clashes-in-f-line-30-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-17",
+        "event_date": "2026-06-17",
+        "ingested_at": "2026-06-17T10:01:42Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 118 C - Clashes in F - Line : 23 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Lyman Dir ; Mounting RU Losses Force RU Closer to Hard Choices Over UKR ; UKR Drones Torch RU Strategic Wartime Fuel Reserves in Rybinsk ; Gasoline Exhauste...",
+        "text": "RIGHT SPEAK : 118 C - Clashes in F - Line : 23 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Lyman Dir ; Mounting RU Losses Force RU Closer to Hard Choices Over UKR ; UKR Drones Torch RU Strategic Wartime Fuel Reserves in Rybinsk ; Gasoline Exhauste....",
+        "source_url": "http://www.rightspeak.net/2026/06/118-c-clashes-in-f-line-23-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/06/118-c-clashes-in-f-line-23-in-pokrovsk.html"
+      }
+    }
+  ]
 }
