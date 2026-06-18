@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.2746326,
+          47.9863996
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-17",
+        "event_date": "2026-06-17",
+        "ingested_at": "2026-06-18T09:04:18Z",
+        "place": "Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "ISW continues to assess that Russian forces intentionally target and terrorize civilians as a tool of war.[32] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces recently conducted infiltration missions in the Slovyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-17-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           34.60075,
           48.57983
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-06-16",
         "event_date": "2026-06-16",
-        "ingested_at": "2026-06-17T09:19:19Z",
+        "ingested_at": "2026-06-18T09:04:18Z",
         "place": "Kurylivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-06-14",
         "event_date": "2026-06-14",
-        "ingested_at": "2026-06-17T09:19:19Z",
+        "ingested_at": "2026-06-18T09:04:18Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
