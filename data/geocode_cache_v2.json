@@ -2960,5 +2960,51 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Senaste": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukrainsk": {
+    "coords": [
+      37.35866,
+      48.09471
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "English": {
+    "coords": [
+      36.2620279,
+      50.099688
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Pragativadi": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Breaking News": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Justified Response": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Latest Odisha News": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Zelensky Calls Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

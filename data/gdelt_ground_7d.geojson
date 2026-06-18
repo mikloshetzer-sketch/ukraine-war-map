@@ -6,25 +6,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.2656849,
-          47.6655382
+          31.2718321,
+          49.4871968
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-06-17",
-        "event_date": "2026-06-17",
-        "ingested_at": "2026-06-17T10:01:42Z",
-        "place": "Huliaipole",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
+        "article_date": "2026-06-18",
+        "event_date": "2026-06-18",
+        "ingested_at": "2026-06-18T09:43:24Z",
+        "place": "Ukraina",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
         "country_code": "ua",
         "front_dist_km": null,
-        "title": "RIGHT SPEAK : 196 C - Clashes in F - Line : 37 in Pokrovsk Dir , 20 in Huliaipole Dir , 13 in Lyman Dir ; Desperate Putin Planning Hail Mary Winter Off Against UKR as RU Economy in Death Spiral ; UKR Launches L - Range Strikes on Milt , Energy Sites ...",
-        "text": "RIGHT SPEAK : 196 C - Clashes in F - Line : 37 in Pokrovsk Dir , 20 in Huliaipole Dir , 13 in Lyman Dir ; Desperate Putin Planning Hail Mary Winter Off Against UKR as RU Economy in Death Spiral ; UKR Launches L - Range Strikes on Milt , Energy Sites ....",
-        "source_url": "http://www.rightspeak.net/2026/06/196-c-clashes-in-f-line-37-in-pokrovsk.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/06/196-c-clashes-in-f-line-37-in-pokrovsk.html"
+        "title": "Ukrainsk attack mot ryskt oljeraffinaderi – Senaste nytt om kriget i Ukraina",
+        "text": "Ukrainsk attack mot ryskt oljeraffinaderi – Senaste nytt om kriget i Ukraina.",
+        "source_url": "https://www.svt.se/nyheter/utrikes/direktrapport-forsamrat-sakerhetslage?inlagg=04b0e517e4370e5efdacf4da9b435e0a",
+        "publisher_hint": "https://www.svt.se/nyheter/utrikes/direktrapport-forsamrat-sakerhetslage?inlagg=04b0e517e4370e5efdacf4da9b435e0a"
       }
     },
     {
@@ -32,25 +32,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.2656849,
-          47.6655382
+          23.4200824,
+          48.6499199
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-06-17",
-        "event_date": "2026-06-17",
-        "ingested_at": "2026-06-17T10:01:42Z",
-        "place": "Huliaipole",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
+        "article_date": "2026-06-18",
+        "event_date": "2026-06-18",
+        "ingested_at": "2026-06-18T09:43:24Z",
+        "place": "Ukrainian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
         "country_code": "ua",
         "front_dist_km": null,
-        "title": "RIGHT SPEAK : 193 C - Clashes in F - Line : 30 in Pokrovsk Dir , 25 in Huliaipole Dir , 14 in Lyman Dir ; UKR War Has Lasted Longer Than WWI ; Putin Top Allies Admit RU Cant Win in UKR ; UKR Seeking $20B From Allies to Keep Up Momentum Against RU ; Z...",
-        "text": "RIGHT SPEAK : 193 C - Clashes in F - Line : 30 in Pokrovsk Dir , 25 in Huliaipole Dir , 14 in Lyman Dir ; UKR War Has Lasted Longer Than WWI ; Putin Top Allies Admit RU Cant Win in UKR ; UKR Seeking $20B From Allies to Keep Up Momentum Against RU ; Z....",
-        "source_url": "http://www.rightspeak.net/2026/06/193-c-clashes-in-f-line-30-in-pokrovsk.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/06/193-c-clashes-in-f-line-30-in-pokrovsk.html"
+        "title": "Ukraine - Russia war latest : Moscow suspends all flights as massive Ukrainian drone attack sparks oil refinery fire",
+        "text": "Ukraine - Russia war latest : Moscow suspends all flights as massive Ukrainian drone attack sparks oil refinery fire.",
+        "source_url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-g7-news-b2998092.html",
+        "publisher_hint": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-g7-news-b2998092.html"
       }
     },
     {
@@ -58,25 +58,51 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.2656849,
-          47.6655382
+          36.2620279,
+          50.099688
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-06-17",
-        "event_date": "2026-06-17",
-        "ingested_at": "2026-06-17T10:01:42Z",
-        "place": "Huliaipole",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
+        "article_date": "2026-06-18",
+        "event_date": "2026-06-18",
+        "ingested_at": "2026-06-18T09:43:24Z",
+        "place": "English",
+        "location_confidence": "pattern_title",
+        "candidate_score": 60,
         "country_code": "ua",
         "front_dist_km": null,
-        "title": "RIGHT SPEAK : 118 C - Clashes in F - Line : 23 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Lyman Dir ; Mounting RU Losses Force RU Closer to Hard Choices Over UKR ; UKR Drones Torch RU Strategic Wartime Fuel Reserves in Rybinsk ; Gasoline Exhauste...",
-        "text": "RIGHT SPEAK : 118 C - Clashes in F - Line : 23 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Lyman Dir ; Mounting RU Losses Force RU Closer to Hard Choices Over UKR ; UKR Drones Torch RU Strategic Wartime Fuel Reserves in Rybinsk ; Gasoline Exhauste....",
-        "source_url": "http://www.rightspeak.net/2026/06/118-c-clashes-in-f-line-23-in-pokrovsk.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/06/118-c-clashes-in-f-line-23-in-pokrovsk.html"
+        "title": "Ukraine Strikes Moscow Oil Refinery Again as Zelensky Calls Attack a  Justified Response  - Pragativadi I Latest Odisha News in English I Breaking News",
+        "text": "Ukraine Strikes Moscow Oil Refinery Again as Zelensky Calls Attack a  Justified Response  - Pragativadi I Latest Odisha News in English I Breaking News.",
+        "source_url": "https://pragativadi.com/ukraine-strikes-moscow-oil-refinery-again-as-zelensky-calls-attack-a-justified-response/",
+        "publisher_hint": "https://pragativadi.com/ukraine-strikes-moscow-oil-refinery-again-as-zelensky-calls-attack-a-justified-response/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-18",
+        "event_date": "2026-06-18",
+        "ingested_at": "2026-06-18T09:43:24Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukraine launches largest attack on Moscow in two years , Russian media says",
+        "text": "Ukraine launches largest attack on Moscow in two years , Russian media says.",
+        "source_url": "https://krdo.com/news/2026/06/18/ukraine-strikes-key-moscow-oil-refinery-for-the-second-time-in-a-week/",
+        "publisher_hint": "https://krdo.com/news/2026/06/18/ukraine-strikes-key-moscow-oil-refinery-for-the-second-time-in-a-week/"
       }
     }
   ]
