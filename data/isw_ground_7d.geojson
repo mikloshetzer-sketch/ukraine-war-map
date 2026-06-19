@@ -6,6 +6,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.8043,
+          49.18167
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-18",
+        "event_date": "2026-06-18",
+        "ingested_at": "2026-06-19T09:20:20Z",
+        "place": "Ridkodub",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[50] A Russian milblogger and a source reporting on the Russian Western Grouping of Forces claimed that Ukrainian forces counterattacked near Ridkodub, Nove, and Novyi Myr (all southeast of Borova) and Yatskivka and Karpivka (bout south of Borova).[51] Ukrainian forces are expanding their intermediate-range strike campaign against Russian military assets and logistics in occupied Luhansk Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-18-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.2746326,
+          47.9863996
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-18",
+        "event_date": "2026-06-18",
+        "ingested_at": "2026-06-19T09:20:20Z",
+        "place": "Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces recently marginally advanced in the Slovyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-18-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.896801,
+          47.532688
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "toward_only",
+        "article_date": "2026-06-18",
+        "event_date": "2026-06-18",
+        "ingested_at": "2026-06-19T09:20:20Z",
+        "place": "Mala Tokmachka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[73] A Ukrainian brigade operating in western Zaporizhia Oblast reported on June 17 that Ukrainian forces repelled a Russian motorized assault of more than 30 motorized vehicles, primarily motorcycles and all-terrain vehicles (ATVs), toward Mala Tokmachka (southeast of Orikhiv).[74] The brigade reported that Ukrainian forces destroyed over 20 motorcycles, up to 12 ATVs, and 10 Russian servicemembers.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-18-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.2746326,
           47.9863996
         ]
@@ -15,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-06-17",
         "event_date": "2026-06-17",
-        "ingested_at": "2026-06-18T09:04:18Z",
+        "ingested_at": "2026-06-19T09:20:20Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +103,12 @@
         "kind": "ground",
         "article_date": "2026-06-16",
         "event_date": "2026-06-16",
-        "ingested_at": "2026-06-18T09:04:18Z",
+        "ingested_at": "2026-06-19T09:20:21Z",
         "place": "Kurylivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian milbloggers claimed that Russian forces advanced in Kurylivka, Kivsharivka (both southeast of Kupyansk), and Kupyansk-Vuzlovyi (south of Kupyansk).[36] Ukrainian forces&#8217; intermediate-range strike campaign continues to impede Russian logistics in the Kupyansk direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-16-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-14",
-        "event_date": "2026-06-14",
-        "ingested_at": "2026-06-18T09:04:18Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Oleksandrivka and Hulyaipole directions.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-14-2026/"
       }
     }
   ]

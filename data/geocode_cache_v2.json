@@ -3006,5 +3006,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "central Vilcha": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ridkodub": {
+    "coords": [
+      37.8043,
+      49.18167
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
