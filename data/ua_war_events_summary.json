@@ -1,23 +1,22 @@
 {
-  "generated_at": "2026-06-20T08:28:55+00:00",
+  "generated_at": "2026-06-20T12:59:55+00:00",
   "count": 6,
   "by_event_type": {
-    "drone_attack": 4,
-    "artillery": 1,
+    "drone_attack": 5,
     "missile_strike": 1
   },
   "by_source": {
-    "generalstaffzsu": 1,
     "ukrainenow": 3,
-    "deepstateua": 2
+    "generalstaffzsu": 2,
+    "deepstateua": 1
   },
   "by_confidence": {
-    "high": 3,
-    "medium": 3
+    "medium": 3,
+    "high": 3
   },
   "top_sectors": [
     [
-      "pokrovsk",
+      "kherson",
       1
     ]
   ]
