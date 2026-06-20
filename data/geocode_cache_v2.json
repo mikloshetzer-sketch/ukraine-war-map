@@ -3019,5 +3019,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "degrade Ukrainian fortified positions": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
