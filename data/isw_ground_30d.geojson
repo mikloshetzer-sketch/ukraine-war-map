@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6141992,
+          49.7132963
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-20",
+        "event_date": "2026-06-20",
+        "ingested_at": "2026-06-21T08:46:50Z",
+        "place": "Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on June 20 shows two Russian servicemembers infiltrating into central Radkivka (north of Kupyansk).[39] Russian milbloggers claimed on June 20 that Russian forces advanced into Radkivka and northeast and west of Novovasylivka (northeast of Kupyansk).[40] Russian forces may be intensifying glide bomb strikes against Ukrainian drone operators and logistics in the Kupyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-20-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.8043,
           49.18167
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-06-18",
         "event_date": "2026-06-18",
-        "ingested_at": "2026-06-20T08:03:28Z",
+        "ingested_at": "2026-06-21T08:46:50Z",
         "place": "Ridkodub",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-06-18",
         "event_date": "2026-06-18",
-        "ingested_at": "2026-06-20T08:03:28Z",
+        "ingested_at": "2026-06-21T08:46:50Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "toward_only",
         "article_date": "2026-06-18",
         "event_date": "2026-06-18",
-        "ingested_at": "2026-06-20T08:03:28Z",
+        "ingested_at": "2026-06-21T08:46:50Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,34 +103,12 @@
         "kind": "ground",
         "article_date": "2026-06-17",
         "event_date": "2026-06-17",
-        "ingested_at": "2026-06-20T08:03:28Z",
+        "ingested_at": "2026-06-21T08:46:50Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "ISW continues to assess that Russian forces intentionally target and terrorize civilians as a tool of war.[32] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces recently conducted infiltration missions in the Slovyansk direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-17-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          34.60075,
-          48.57983
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-16",
-        "event_date": "2026-06-16",
-        "ingested_at": "2026-06-20T08:03:28Z",
-        "place": "Kurylivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian milbloggers claimed that Russian forces advanced in Kurylivka, Kivsharivka (both southeast of Kupyansk), and Kupyansk-Vuzlovyi (south of Kupyansk).[36] Ukrainian forces&#8217; intermediate-range strike campaign continues to impede Russian logistics in the Kupyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-16-2026/"
       }
     }
   ]
