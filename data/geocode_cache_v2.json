@@ -3024,5 +3024,31 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Terror": {
+    "coords": [
+      24.0223502,
+      49.851343
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Oreshnik": {
+    "coords": [
+      37.9694447,
+      53.3644599
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Shocked Russians": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Assault Corps": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

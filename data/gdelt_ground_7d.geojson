@@ -1,4 +1,83 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.669289,
+          48.2963694
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-21",
+        "event_date": "2026-06-21",
+        "ingested_at": "2026-06-21T09:01:50Z",
+        "place": "Europe",
+        "location_confidence": "pattern_title",
+        "candidate_score": 60,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "The unthinkable will happen  - Terror over scenarios of an Oreshnik attack on 7 targets in Europe",
+        "text": "The unthinkable will happen  - Terror over scenarios of an Oreshnik attack on 7 targets in Europe.",
+        "source_url": "https://www.bankingnews.gr/diethni/articles/882936/the-unthinkable-will-happen-terror-over-scenarios-of-an-oreshnik-attack-on-7-targets-in-europe-the-russians-are-finishing-with-donbass",
+        "publisher_hint": "https://www.bankingnews.gr/diethni/articles/882936/the-unthinkable-will-happen-terror-over-scenarios-of-an-oreshnik-attack-on-7-targets-in-europe-the-russians-are-finishing-with-donbass"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-21",
+        "event_date": "2026-06-21",
+        "ingested_at": "2026-06-21T09:01:50Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 204 C - Clashes in F - Line : 27 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Kostiantynivka Dir ; UKR Launches Largest Drone Attack on ( MOS ) cow Since Start of RU Full - Scale Invasion ; Z :  MOS will burn  if RU Strikes Continue ;...",
+        "text": "RIGHT SPEAK : 204 C - Clashes in F - Line : 27 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Kostiantynivka Dir ; UKR Launches Largest Drone Attack on ( MOS ) cow Since Start of RU Full - Scale Invasion ; Z :  MOS will burn  if RU Strikes Continue ;....",
+        "source_url": "http://www.rightspeak.net/2026/06/204-c-clashes-in-f-line-27-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/06/204-c-clashes-in-f-line-27-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-21",
+        "event_date": "2026-06-21",
+        "ingested_at": "2026-06-21T09:01:50Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 118 C - Clashes in F - Line : 23 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Lyman Dir ; Mounting RU Losses Force RU Closer to Hard Choices Over UKR ; UKR Drones Torch RU Strategic Wartime Fuel Reserves in Rybinsk ; Gasoline Exhauste...",
+        "text": "RIGHT SPEAK : 118 C - Clashes in F - Line : 23 in Pokrovsk Dir , 20 in Huliaipole Dir , 14 in Lyman Dir ; Mounting RU Losses Force RU Closer to Hard Choices Over UKR ; UKR Drones Torch RU Strategic Wartime Fuel Reserves in Rybinsk ; Gasoline Exhauste....",
+        "source_url": "http://www.rightspeak.net/2026/06/118-c-clashes-in-f-line-23-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/06/118-c-clashes-in-f-line-23-in-pokrovsk.html"
+      }
+    }
+  ]
 }

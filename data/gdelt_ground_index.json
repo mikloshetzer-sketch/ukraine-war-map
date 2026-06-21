@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-06-20T08:28:04Z",
-  "started_at_utc": "2026-06-20T08:27:55Z",
+  "generated_at_utc": "2026-06-21T09:01:54Z",
+  "started_at_utc": "2026-06-21T09:01:06Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -20,36 +20,51 @@
     "broad_places_count": 18
   },
   "stats": {
-    "articles_after_filters": 0,
-    "raw_events_total": 0,
-    "dedup_events_total": 0,
-    "features_latest": 0,
-    "features_7d": 0,
-    "features_30d": 0,
-    "events_total": 0,
-    "events_with_any_geo": 0,
-    "point_features": 0,
+    "articles_after_filters": 6,
+    "raw_events_total": 6,
+    "dedup_events_total": 6,
+    "features_latest": 3,
+    "features_7d": 3,
+    "features_30d": 3,
+    "events_total": 6,
+    "events_with_any_geo": 10,
+    "point_features": 3,
     "dropped_not_front_near": 0,
-    "dropped_geocode": 0,
+    "dropped_geocode": 3,
     "frontline_available": false,
-    "geocode_cache_hits": 0,
-    "geocode_cache_negative_hits": 0,
-    "geocode_new_success": 0,
-    "geocode_new_fail": 0,
-    "geocode_calls_this_run": 0,
+    "geocode_cache_hits": 8,
+    "geocode_cache_negative_hits": 14,
+    "geocode_new_success": 2,
+    "geocode_new_fail": 2,
+    "geocode_calls_this_run": 4,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 505,
-    "rejections_saved": 0,
+    "cache_entries_total": 509,
+    "rejections_saved": 3,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 0,
-      "items_before_filters": 0,
-      "items_with_date": 0,
-      "items_in_lookback_window": 0,
-      "items_keyword_matched": 0,
-      "items_action_matched": 0,
-      "items_after_dedup": 0,
-      "parser_debug": []
+      "queries_with_response": 1,
+      "items_before_filters": 80,
+      "items_with_date": 80,
+      "items_in_lookback_window": 80,
+      "items_keyword_matched": 10,
+      "items_action_matched": 6,
+      "items_after_dedup": 6,
+      "parser_debug": [
+        {
+          "query": "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)",
+          "parse_ok": true,
+          "root_tag": "rss",
+          "channel_found": true,
+          "item_count_raw": 80,
+          "sample_date_fields": [
+            "21 Jun 2026 05:15:00 +0000",
+            "21 Jun 2026 17:15:00 +0000",
+            "21 Jun 2026 11:15:00 +0000",
+            "21 Jun 2026 09:45:00 +0000",
+            "21 Jun 2026 09:15:00 +0000"
+          ]
+        }
+      ]
     }
   },
   "files": {
