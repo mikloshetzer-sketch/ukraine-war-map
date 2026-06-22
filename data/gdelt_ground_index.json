@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-06-21T09:01:54Z",
-  "started_at_utc": "2026-06-21T09:01:06Z",
+  "generated_at_utc": "2026-06-22T10:46:38Z",
+  "started_at_utc": "2026-06-22T10:46:13Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -32,13 +32,13 @@
     "dropped_not_front_near": 0,
     "dropped_geocode": 3,
     "frontline_available": false,
-    "geocode_cache_hits": 8,
-    "geocode_cache_negative_hits": 14,
-    "geocode_new_success": 2,
-    "geocode_new_fail": 2,
-    "geocode_calls_this_run": 4,
+    "geocode_cache_hits": 10,
+    "geocode_cache_negative_hits": 16,
+    "geocode_new_success": 0,
+    "geocode_new_fail": 0,
+    "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 509,
+    "cache_entries_total": 510,
     "rejections_saved": 3,
     "collect_debug": {
       "queries_total": 3,
@@ -46,7 +46,7 @@
       "items_before_filters": 80,
       "items_with_date": 80,
       "items_in_lookback_window": 80,
-      "items_keyword_matched": 10,
+      "items_keyword_matched": 9,
       "items_action_matched": 6,
       "items_after_dedup": 6,
       "parser_debug": [
@@ -57,11 +57,11 @@
           "channel_found": true,
           "item_count_raw": 80,
           "sample_date_fields": [
-            "21 Jun 2026 05:15:00 +0000",
-            "21 Jun 2026 17:15:00 +0000",
-            "21 Jun 2026 11:15:00 +0000",
-            "21 Jun 2026 09:45:00 +0000",
-            "21 Jun 2026 09:15:00 +0000"
+            "22 Jun 2026 10:00:00 +0000",
+            "22 Jun 2026 09:45:00 +0000",
+            "22 Jun 2026 09:30:00 +0000",
+            "22 Jun 2026 01:15:00 +0000",
+            "22 Jun 2026 20:30:00 +0000"
           ]
         }
       ]
