@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-06-20",
         "event_date": "2026-06-20",
-        "ingested_at": "2026-06-21T08:46:50Z",
+        "ingested_at": "2026-06-22T10:22:22Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-06-18",
         "event_date": "2026-06-18",
-        "ingested_at": "2026-06-21T08:46:50Z",
+        "ingested_at": "2026-06-22T10:22:22Z",
         "place": "Ridkodub",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-06-18",
         "event_date": "2026-06-18",
-        "ingested_at": "2026-06-21T08:46:50Z",
+        "ingested_at": "2026-06-22T10:22:22Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,34 +81,12 @@
         "kind": "toward_only",
         "article_date": "2026-06-18",
         "event_date": "2026-06-18",
-        "ingested_at": "2026-06-21T08:46:50Z",
+        "ingested_at": "2026-06-22T10:22:22Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[73] A Ukrainian brigade operating in western Zaporizhia Oblast reported on June 17 that Ukrainian forces repelled a Russian motorized assault of more than 30 motorized vehicles, primarily motorcycles and all-terrain vehicles (ATVs), toward Mala Tokmachka (southeast of Orikhiv).[74] The brigade reported that Ukrainian forces destroyed over 20 motorcycles, up to 12 ATVs, and 10 Russian servicemembers.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-18-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.2746326,
-          47.9863996
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-17",
-        "event_date": "2026-06-17",
-        "ingested_at": "2026-06-21T08:46:50Z",
-        "place": "Donbas",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "ISW continues to assess that Russian forces intentionally target and terrorize civilians as a tool of war.[32] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces recently conducted infiltration missions in the Slovyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-17-2026/"
       }
     }
   ]
