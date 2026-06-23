@@ -3055,5 +3055,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Ukrainian drone strikes": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Myrnohrad": {
+    "coords": [
+      37.2591,
+      48.30791
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
