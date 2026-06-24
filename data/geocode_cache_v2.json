@@ -3068,5 +3068,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Kostyantynivka with": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
