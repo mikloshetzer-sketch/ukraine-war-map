@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-24",
+        "event_date": "2026-06-24",
+        "ingested_at": "2026-06-25T08:00:12Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently marginally advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-24-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-24",
+        "event_date": "2026-06-24",
+        "ingested_at": "2026-06-25T08:00:12Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently marginally advanced in the Oleksandrivka direction, as Ukrainian forces advanced or maintained positions in the area.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-24-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6127304,
           49.711199
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-06-22",
         "event_date": "2026-06-22",
-        "ingested_at": "2026-06-24T07:59:33Z",
+        "ingested_at": "2026-06-25T08:00:12Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-06-22",
         "event_date": "2026-06-22",
-        "ingested_at": "2026-06-24T07:59:33Z",
+        "ingested_at": "2026-06-25T08:00:12Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,34 +103,12 @@
         "kind": "ground",
         "article_date": "2026-06-22",
         "event_date": "2026-06-22",
-        "ingested_at": "2026-06-24T07:59:33Z",
+        "ingested_at": "2026-06-25T08:00:12Z",
         "place": "Myrnohrad",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "The Ukrainian General Staff reported on June 22 that Ukrainian forces struck a Russian drone operator training ground near Myrnohrad (east of Pokrovsk) and a command and observation post near Pokrovsk.[53] Russian forces continued limited ground operations in the Novopavlivka direction on June 22 but did not advance.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-22-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6141992,
-          49.7132963
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-20",
-        "event_date": "2026-06-20",
-        "ingested_at": "2026-06-24T07:59:33Z",
-        "place": "Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on June 20 shows two Russian servicemembers infiltrating into central Radkivka (north of Kupyansk).[39] Russian milbloggers claimed on June 20 that Russian forces advanced into Radkivka and northeast and west of Novovasylivka (northeast of Kupyansk).[40] Russian forces may be intensifying glide bomb strikes against Ukrainian drone operators and logistics in the Kupyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-20-2026/"
       }
     }
   ]
