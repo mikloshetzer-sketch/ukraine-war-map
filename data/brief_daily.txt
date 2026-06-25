@@ -1,23 +1,23 @@
-Ukraine War Daily Brief – Russian pressure continues near Kreminna
+Ukraine War Daily Brief – Russian pressure continues near Avdiivka
 
-The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 967.71 km². The daily change amounts to +4.23 km² compared with 2026-06-23 (orosz területszerzés). The weekly balance shows +25.8 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Kreminna sector as a likely focal area.
+The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 968.74 km². The daily change amounts to +1.03 km² compared with 2026-06-24 (orosz területszerzés). The weekly balance shows +22.6 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Avdiivka sector as a likely focal area.
 
 Key numbers:
-- Occupied territory: 116 967.71 km²
-- Daily change: +4.23 km²
-- Weekly change: +25.8 km²
+- Occupied territory: 116 968.74 km²
+- Daily change: +1.03 km²
+- Weekly change: +22.6 km²
 - Ground raw events: n/a
 - Mapped points: n/a
 - Mapped lines: n/a
-- UAV events (7d): 809
+- UAV events (7d): 782
 
 Operational picture:
-The latest mapped territorial activity appears concentrated in the Kreminna sector. Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 809 recorded events in the past seven days.
+The latest mapped territorial activity appears concentrated in the Avdiivka sector. Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 782 recorded events in the past seven days.
 
 Key events:
-- Recent territorial change appears to be located in the Kreminna sector.
+- Recent territorial change appears to be located in the Avdiivka sector.
 - The gap between raw reporting and mapped events remains notable, suggesting that many reports are still only partially geolocated.
-- Sustained UAV activity continues to support reconnaissance and strike operations, with 809 events recorded over the past seven days.
+- Sustained UAV activity continues to support reconnaissance and strike operations, with 782 events recorded over the past seven days.
 
 Drivers of the day:
 - Ground combat activity level assessed as unknown.
