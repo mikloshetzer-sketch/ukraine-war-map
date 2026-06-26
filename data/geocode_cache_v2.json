@@ -3083,5 +3083,15 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "target Ukrainian logistics": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "approach Ukrainian positions": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
