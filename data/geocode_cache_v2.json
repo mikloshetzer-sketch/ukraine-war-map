@@ -3093,5 +3093,36 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Expert": {
+    "coords": [
+      37.4908883,
+      55.6836236
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "EXCLUSIVE": {
+    "coords": [
+      24.7074895,
+      48.9203298
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Russian drone attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Max Oseredchuk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Former ABC News": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

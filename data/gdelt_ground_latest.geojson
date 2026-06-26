@@ -1,4 +1,109 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.2047592,
+          44.4220236
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-26",
+        "event_date": "2026-06-26",
+        "ingested_at": "2026-06-26T08:35:09Z",
+        "place": "Putin",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukraine - Russia war latest : Zelensky orders 40 - day offensive to press Putin to end war",
+        "text": "Ukraine - Russia war latest : Zelensky orders 40 - day offensive to press Putin to end war.",
+        "source_url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-offensive-b3003430.html",
+        "publisher_hint": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-offensive-b3003430.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.2008188,
+          45.2835044
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-26",
+        "event_date": "2026-06-26",
+        "ingested_at": "2026-06-26T08:35:09Z",
+        "place": "Crimea",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Ukrainian attack on Crimea kills five , Russian officials say",
+        "text": "Ukrainian attack on Crimea kills five , Russian officials say.",
+        "source_url": "https://www.aljazeera.com/news/2026/6/25/ukrainian-attack-on-crimea-kills-five-russian-officials-say",
+        "publisher_hint": "https://www.aljazeera.com/news/2026/6/25/ukrainian-attack-on-crimea-kills-five-russian-officials-say"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6923754,
+          48.534905
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-26",
+        "event_date": "2026-06-26",
+        "ingested_at": "2026-06-26T08:35:09Z",
+        "place": "Kostiantynivka",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Expert : The battle for Kostiantynivka could become a turning point in the summer campaign - EXCLUSIVE",
+        "text": "Expert : The battle for Kostiantynivka could become a turning point in the summer campaign - EXCLUSIVE.",
+        "source_url": "https://news.az/news/expert-the-battle-for-kostiantynivka-could-become-a-turning-point-in-the-summer-campaign-exclusive",
+        "publisher_hint": "https://news.az/news/expert-the-battle-for-kostiantynivka-could-become-a-turning-point-in-the-summer-campaign-exclusive"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-26",
+        "event_date": "2026-06-26",
+        "ingested_at": "2026-06-26T08:35:09Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Former ABC News producer Max Oseredchuk dies in Russian drone attack",
+        "text": "Former ABC News producer Max Oseredchuk dies in Russian drone attack.",
+        "source_url": "https://abcnews.com/International/former-abc-news-producer-max-oseredchuk-dies-russian/story?id=134222117",
+        "publisher_hint": "https://abcnews.com/International/former-abc-news-producer-max-oseredchuk-dies-russian/story?id=134222117"
+      }
+    }
+  ]
 }
