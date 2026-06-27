@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          35.1338908,
+          47.8326667
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-26",
+        "event_date": "2026-06-26",
+        "ingested_at": "2026-06-27T07:36:09Z",
+        "place": "western Zaporizhia Oblast",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in western Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.2984727,
           47.3139025
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-06-24",
         "event_date": "2026-06-24",
-        "ingested_at": "2026-06-26T08:08:57Z",
+        "ingested_at": "2026-06-27T07:36:09Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,78 +59,12 @@
         "kind": "ground",
         "article_date": "2026-06-24",
         "event_date": "2026-06-24",
-        "ingested_at": "2026-06-26T08:08:57Z",
+        "ingested_at": "2026-06-27T07:36:09Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces recently marginally advanced in the Oleksandrivka direction, as Ukrainian forces advanced or maintained positions in the area.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-24-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-22",
-        "event_date": "2026-06-22",
-        "ingested_at": "2026-06-26T08:08:58Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently advanced in the Kupyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-22-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6141992,
-          49.7132963
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-22",
-        "event_date": "2026-06-22",
-        "ingested_at": "2026-06-26T08:08:58Z",
-        "place": "Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A source reporting on the Russian Western Grouping of Forces stated on June 22 that Russian forces recently seized Radkivka (north of Kupyansk).[37] Russian forces recently conducted infiltration missions in the Kupyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-22-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.2591,
-          48.30791
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-22",
-        "event_date": "2026-06-22",
-        "ingested_at": "2026-06-26T08:08:58Z",
-        "place": "Myrnohrad",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "The Ukrainian General Staff reported on June 22 that Ukrainian forces struck a Russian drone operator training ground near Myrnohrad (east of Pokrovsk) and a command and observation post near Pokrovsk.[53] Russian forces continued limited ground operations in the Novopavlivka direction on June 22 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-22-2026/"
       }
     }
   ]
