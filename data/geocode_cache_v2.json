@@ -3134,5 +3134,34 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Ballistic": {
+    "coords": [
+      30.5608615,
+      50.4284261
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Oak Park": {
+    "coords": [
+      30.3227737,
+      50.3312905
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Slavyansk Dir": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ahead": {
+    "coords": [
+      37.4923732,
+      55.733916
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
