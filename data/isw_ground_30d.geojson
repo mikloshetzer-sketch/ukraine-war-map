@@ -6,6 +6,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-28",
+        "event_date": "2026-06-28",
+        "ingested_at": "2026-06-29T09:16:00Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently advanced in the Kupyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-28-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-28",
+        "event_date": "2026-06-28",
+        "ingested_at": "2026-06-29T09:16:00Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian military observer Kostyantyn Mashovets reported on June 28 that Ukrainian forces withdrew from Rybne (south of Oleksandrivka) on a prior date and that Russian forces occupied part of Krasnohirske (just north of Rybne).[42] Mashovets added that Russian infiltrators are operating between Zlahoda (just north of Krasnohirske) and Dobropillya (southwest of Zlahoda).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-28-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.814541,
+          49.42337
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-06-28",
+        "event_date": "2026-06-28",
+        "ingested_at": "2026-06-29T09:16:00Z",
+        "place": "Plavni",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[55] A Russian milblogger claimed that Ukrainian forces are counterattacking in Plavni (west of Orikhiv) and that Russian forces seized Mali Shcherbaky (west of Orikhiv) and advanced north of the settlement.[56] Ukrainian forces continued their intermediate-range strike campaign against Russian military targets in occupied Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-28-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           35.1338908,
           47.8326667
         ]
@@ -15,56 +81,12 @@
         "kind": "ground",
         "article_date": "2026-06-26",
         "event_date": "2026-06-26",
-        "ingested_at": "2026-06-28T08:03:14Z",
+        "ingested_at": "2026-06-29T09:16:00Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces recently advanced in western Zaporizhia Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-26-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-24",
-        "event_date": "2026-06-24",
-        "ingested_at": "2026-06-28T08:03:15Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently marginally advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-24-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-24",
-        "event_date": "2026-06-24",
-        "ingested_at": "2026-06-28T08:03:15Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently marginally advanced in the Oleksandrivka direction, as Ukrainian forces advanced or maintained positions in the area.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-24-2026/"
       }
     }
   ]

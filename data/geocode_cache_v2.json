@@ -3163,5 +3163,13 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Plavni": {
+    "coords": [
+      33.814541,
+      49.42337
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
