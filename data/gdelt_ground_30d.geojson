@@ -13,9 +13,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-06-28",
-        "event_date": "2026-06-28",
-        "ingested_at": "2026-06-28T08:27:55Z",
+        "article_date": "2026-06-29",
+        "event_date": "2026-06-29",
+        "ingested_at": "2026-06-29T09:57:19Z",
         "place": "Russian",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
@@ -32,32 +32,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.5608615,
-          50.4284261
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-06-28",
-        "event_date": "2026-06-28",
-        "ingested_at": "2026-06-28T08:27:55Z",
-        "place": "Ballistic",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "Ballistic missile attack rocks Kyiv , Ukraine issues warning",
-        "text": "Ballistic missile attack rocks Kyiv , Ukraine issues warning.",
-        "source_url": "https://www.hindustantimes.com/world-news/ballistic-missile-attack-rocks-kyiv-ukraine-issues-warning-101782612876023.html",
-        "publisher_hint": "https://www.hindustantimes.com/world-news/ballistic-missile-attack-rocks-kyiv-ukraine-issues-warning-101782612876023.html"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           30.3227737,
           50.3312905
         ]
@@ -65,9 +39,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-06-28",
-        "event_date": "2026-06-28",
-        "ingested_at": "2026-06-28T08:27:55Z",
+        "article_date": "2026-06-29",
+        "event_date": "2026-06-29",
+        "ingested_at": "2026-06-29T09:57:19Z",
         "place": "Oak Park",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
@@ -91,9 +65,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-06-28",
-        "event_date": "2026-06-28",
-        "ingested_at": "2026-06-28T08:27:55Z",
+        "article_date": "2026-06-29",
+        "event_date": "2026-06-29",
+        "ingested_at": "2026-06-29T09:57:19Z",
         "place": "Line",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
