@@ -3171,5 +3171,15 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "nine kilometers from Slovyansk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "falsely paint Russia": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
