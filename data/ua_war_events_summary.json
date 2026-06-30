@@ -1,17 +1,18 @@
 {
-  "generated_at": "2026-06-30T08:38:33+00:00",
-  "count": 6,
+  "generated_at": "2026-06-30T13:17:18+00:00",
+  "count": 8,
   "by_event_type": {
+    "artillery": 1,
     "drone_attack": 5,
-    "missile_strike": 1
+    "missile_strike": 2
   },
   "by_source": {
-    "generalstaffzsu": 3,
-    "ukrainenow": 3
+    "generalstaffzsu": 4,
+    "ukrainenow": 4
   },
   "by_confidence": {
-    "high": 3,
-    "medium": 3
+    "high": 4,
+    "medium": 4
   },
   "top_sectors": [
     [
