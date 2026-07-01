@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7803939,
+          55.7103004
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-06-01",
+        "event_date": "2026-06-01",
+        "ingested_at": "2026-07-01T08:54:40Z",
+        "place": "Bomb",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian stuff blowing up : Bomb attack in Monaco targets ex - Urkrainian oligarch",
+        "text": "Russian stuff blowing up : Bomb attack in Monaco targets ex - Urkrainian oligarch.",
+        "source_url": "https://www.dailykos.com/stories/2026/6/30/800062952/community/russian-stuff-blowing-up/",
+        "publisher_hint": "https://www.dailykos.com/stories/2026/6/30/800062952/community/russian-stuff-blowing-up/"
+      }
+    }
+  ]
 }

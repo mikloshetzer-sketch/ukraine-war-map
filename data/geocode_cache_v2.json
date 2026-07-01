@@ -3186,5 +3186,31 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Monaco targets ex": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Bomb": {
+    "coords": [
+      37.7803939,
+      55.7103004
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Monaco": {
+    "coords": [
+      37.7008693,
+      55.8752914
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Urkrainian": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
