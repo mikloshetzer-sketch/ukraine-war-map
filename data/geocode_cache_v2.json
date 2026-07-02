@@ -3212,5 +3212,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "June": {
+    "coords": [
+      24.6918156,
+      48.9122821
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

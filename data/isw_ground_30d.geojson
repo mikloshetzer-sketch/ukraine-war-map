@@ -6,6 +6,94 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          24.6918156,
+          48.9122821
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-01",
+        "event_date": "2026-07-01",
+        "ingested_at": "2026-07-02T07:51:11Z",
+        "place": "June",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "ISW has observed evidence to assess that Russian forces seized or infiltrated 30.42 square kilometers in June 2026 and advanced or infiltrated at an average pace of 1.01 square kilometers per day.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6918156,
+          48.9122821
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-01",
+        "event_date": "2026-07-01",
+        "ingested_at": "2026-07-02T07:51:11Z",
+        "place": "June",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces comparatively seized 481.25 square kilometers in June 2025, advancing at an average pace of 16.04 square kilometers per day.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6918156,
+          48.9122821
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-01",
+        "event_date": "2026-07-01",
+        "ingested_at": "2026-07-02T07:51:11Z",
+        "place": "June",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Comparisons of Russia’s rate of advance in June 2026 with the same period last year show that Russia’s gains have slowed significantly, even when including Russian infiltrations.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1338908,
+          47.8326667
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-01",
+        "event_date": "2026-07-01",
+        "ingested_at": "2026-07-02T07:51:11Z",
+        "place": "western Zaporizhia Oblast",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces advanced in western Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6141992,
           49.7132963
         ]
@@ -15,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-06-30",
         "event_date": "2026-06-30",
-        "ingested_at": "2026-07-01T08:36:21Z",
+        "ingested_at": "2026-07-02T07:51:11Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-06-30",
         "event_date": "2026-06-30",
-        "ingested_at": "2026-07-01T08:36:21Z",
+        "ingested_at": "2026-07-02T07:51:11Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-06-28",
         "event_date": "2026-06-28",
-        "ingested_at": "2026-07-01T08:36:21Z",
+        "ingested_at": "2026-07-02T07:51:11Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-06-28",
         "event_date": "2026-06-28",
-        "ingested_at": "2026-07-01T08:36:21Z",
+        "ingested_at": "2026-07-02T07:51:11Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +191,7 @@
         "kind": "ground",
         "article_date": "2026-06-28",
         "event_date": "2026-06-28",
-        "ingested_at": "2026-07-01T08:36:21Z",
+        "ingested_at": "2026-07-02T07:51:11Z",
         "place": "Plavni",
         "country_code": "ua",
         "front_dist_km": null,
