@@ -1,19 +1,20 @@
 {
-  "generated_at": "2026-07-02T13:10:05+00:00",
-  "count": 17,
+  "generated_at": "2026-07-02T18:51:38+00:00",
+  "count": 19,
   "by_event_type": {
-    "ground_clash": 4,
-    "artillery": 5,
-    "drone_attack": 8
+    "ground_clash": 6,
+    "missile_strike": 2,
+    "drone_attack": 8,
+    "artillery": 3
   },
   "by_source": {
-    "ukrainenow": 10,
-    "generalstaffzsu": 3,
+    "ukrainenow": 11,
+    "generalstaffzsu": 4,
     "deepstateua": 4
   },
   "by_confidence": {
-    "medium": 10,
-    "high": 7
+    "medium": 11,
+    "high": 8
   },
   "top_sectors": [
     [
