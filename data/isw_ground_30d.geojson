@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-02T07:51:11Z",
+        "ingested_at": "2026-07-03T07:46:42Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-02T07:51:11Z",
+        "ingested_at": "2026-07-03T07:46:42Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-02T07:51:11Z",
+        "ingested_at": "2026-07-03T07:46:42Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-02T07:51:11Z",
+        "ingested_at": "2026-07-03T07:46:42Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-06-30",
         "event_date": "2026-06-30",
-        "ingested_at": "2026-07-02T07:51:11Z",
+        "ingested_at": "2026-07-03T07:46:42Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,78 +125,12 @@
         "kind": "ground",
         "article_date": "2026-06-30",
         "event_date": "2026-06-30",
-        "ingested_at": "2026-07-02T07:51:11Z",
+        "ingested_at": "2026-07-03T07:46:42Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[33] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces continued offensive operations in the Slovyansk direction on June 29 and 30 but did not advance.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-30-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-28",
-        "event_date": "2026-06-28",
-        "ingested_at": "2026-07-02T07:51:11Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently advanced in the Kupyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-28-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.5372813,
-          48.6252414
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-28",
-        "event_date": "2026-06-28",
-        "ingested_at": "2026-07-02T07:51:11Z",
-        "place": "Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian military observer Kostyantyn Mashovets reported on June 28 that Ukrainian forces withdrew from Rybne (south of Oleksandrivka) on a prior date and that Russian forces occupied part of Krasnohirske (just north of Rybne).[42] Mashovets added that Russian infiltrators are operating between Zlahoda (just north of Krasnohirske) and Dobropillya (southwest of Zlahoda).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-28-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.814541,
-          49.42337
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-28",
-        "event_date": "2026-06-28",
-        "ingested_at": "2026-07-02T07:51:11Z",
-        "place": "Plavni",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[55] A Russian milblogger claimed that Ukrainian forces are counterattacking in Plavni (west of Orikhiv) and that Russian forces seized Mali Shcherbaky (west of Orikhiv) and advanced north of the settlement.[56] Ukrainian forces continued their intermediate-range strike campaign against Russian military targets in occupied Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-28-2026/"
       }
     }
   ]
