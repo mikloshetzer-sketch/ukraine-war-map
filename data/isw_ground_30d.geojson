@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          38.5499934,
+          48.4836702
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-03",
+        "event_date": "2026-07-03",
+        "ingested_at": "2026-07-04T07:24:32Z",
+        "place": "Hannivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[43] A Russian milblogger claimed on July 3 that Russian forces advanced east of Hannivka (east of Dobropillya).[44] Russian forces continued limited offensive operations in the Pokrovsk direction on July 2 and July 3 but did not make confirmed advances.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-3-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-03",
+        "event_date": "2026-07-03",
+        "ingested_at": "2026-07-04T07:24:32Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[50] The Russian Ministry of Defense (MoD) claimed on July 3 that Russian forces seized Oleksandrivka and published footage purportedly showing Russian servicemembers raising flags in Oleksandrivka.[51] ISW is not prepared to assess if the footage was altered with artificial intelligence (AI) at this time.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-3-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           24.6918156,
           48.9122821
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-03T07:46:42Z",
+        "ingested_at": "2026-07-04T07:24:32Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-03T07:46:42Z",
+        "ingested_at": "2026-07-04T07:24:32Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-03T07:46:42Z",
+        "ingested_at": "2026-07-04T07:24:32Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-03T07:46:42Z",
+        "ingested_at": "2026-07-04T07:24:32Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-06-30",
         "event_date": "2026-06-30",
-        "ingested_at": "2026-07-03T07:46:42Z",
+        "ingested_at": "2026-07-04T07:24:32Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-06-30",
         "event_date": "2026-06-30",
-        "ingested_at": "2026-07-03T07:46:42Z",
+        "ingested_at": "2026-07-04T07:24:32Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,

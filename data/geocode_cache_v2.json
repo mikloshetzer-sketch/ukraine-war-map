@@ -3220,5 +3220,23 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "southern Podoly": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Hannivka": {
+    "coords": [
+      38.5499934,
+      48.4836702
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "occupied Zaporizhzhia": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
