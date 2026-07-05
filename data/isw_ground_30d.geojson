@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          24.6918156,
+          48.9122821
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-04",
+        "event_date": "2026-07-04",
+        "ingested_at": "2026-07-05T07:43:49Z",
+        "place": "June",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Putin claimed that Russian forces seized 133 settlements and over 3,000 square kilometers since January 1, 2026, and Gerasimov claimed that Russian forces seized 29 settlements and 636 square kilometers in June 2026.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-4-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.6918156,
+          48.9122821
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-04",
+        "event_date": "2026-07-04",
+        "ingested_at": "2026-07-05T07:43:49Z",
+        "place": "June",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "ISW previously assessed that Russian forces reportedly suffered around 1,298 casualties per square kilometer they seized or infiltrated in June 2026 and, at that rate, Russian forces would lose 6,574,590 servicemembers in capturing the remaining 5,065.17 square kilometers of Donetsk Oblast.[6] Putin and other Russian military commanders heavily aggrandized the claimed seizure of Kostyantynivka on July 3 and 4.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-4-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           38.5499934,
           48.4836702
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-03",
         "event_date": "2026-07-03",
-        "ingested_at": "2026-07-04T07:24:32Z",
+        "ingested_at": "2026-07-05T07:43:49Z",
         "place": "Hannivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-03",
         "event_date": "2026-07-03",
-        "ingested_at": "2026-07-04T07:24:32Z",
+        "ingested_at": "2026-07-05T07:43:49Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-04T07:24:32Z",
+        "ingested_at": "2026-07-05T07:43:49Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-04T07:24:32Z",
+        "ingested_at": "2026-07-05T07:43:49Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-04T07:24:32Z",
+        "ingested_at": "2026-07-05T07:43:49Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,56 +169,12 @@
         "kind": "ground",
         "article_date": "2026-07-01",
         "event_date": "2026-07-01",
-        "ingested_at": "2026-07-04T07:24:32Z",
+        "ingested_at": "2026-07-05T07:43:49Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces advanced in western Zaporizhia Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6141992,
-          49.7132963
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-30",
-        "event_date": "2026-06-30",
-        "ingested_at": "2026-07-04T07:24:32Z",
-        "place": "Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[31] A Russian milblogger implicitly refuted Russian President Vladimir Putin’s June 28 claims that Russian forces advanced south of Kupyansk.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-30-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.2746326,
-          47.9863996
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-06-30",
-        "event_date": "2026-06-30",
-        "ingested_at": "2026-07-04T07:24:32Z",
-        "place": "Donbas",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[33] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces continued offensive operations in the Slovyansk direction on June 29 and 30 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-june-30-2026/"
       }
     }
   ]

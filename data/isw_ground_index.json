@@ -1,7 +1,7 @@
 {
   "source": "isw_ground",
-  "generated_at_utc": "2026-07-04T07:24:34Z",
-  "started_at_utc": "2026-07-04T07:24:31Z",
+  "generated_at_utc": "2026-07-05T07:43:50Z",
+  "started_at_utc": "2026-07-05T07:43:48Z",
   "config": {
     "lookback_days": 30,
     "max_articles": 30,
@@ -30,13 +30,13 @@
     "dropped_geocode": 5,
     "dropped_too_long": 0,
     "frontline_available": false,
-    "geocode_cache_hits": 7,
+    "geocode_cache_hits": 8,
     "geocode_cache_negative_hits": 3,
-    "geocode_new_success": 1,
+    "geocode_new_success": 0,
     "geocode_new_fail": 2,
-    "geocode_calls_this_run": 3,
+    "geocode_calls_this_run": 2,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 540
+    "cache_entries_total": 542
   },
   "files": {
     "latest": "data/isw_ground_latest.geojson",
