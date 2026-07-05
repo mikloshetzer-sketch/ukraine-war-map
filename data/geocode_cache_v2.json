@@ -3248,5 +3248,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Sloviansk": {
+    "coords": [
+      37.6058241,
+      48.8522691
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Sloviansk Dir": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

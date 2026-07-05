@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-07-05",
+        "event_date": "2026-07-05",
+        "ingested_at": "2026-07-05T08:14:02Z",
+        "place": "Sloviansk",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 236 C - Clashes in F - Line : 27 in Huliaipole Dir , 23 in Pokrovsk Dir , 23 in Sloviansk Dir ; St . Pete Port on Fire After UKR Pummel RU 2nd Largest City ; UKR STILL CONTROLS Kostiantynivka ; ( Z ) elensky Calls ( P ) utin Kostiantyni...",
+        "text": "RIGHT SPEAK : 236 C - Clashes in F - Line : 27 in Huliaipole Dir , 23 in Pokrovsk Dir , 23 in Sloviansk Dir ; St . Pete Port on Fire After UKR Pummel RU 2nd Largest City ; UKR STILL CONTROLS Kostiantynivka ; ( Z ) elensky Calls ( P ) utin Kostiantyni....",
+        "source_url": "http://www.rightspeak.net/2026/07/236-c-clashes-in-f-line-27-in.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/07/236-c-clashes-in-f-line-27-in.html"
+      }
+    }
+  ]
 }
