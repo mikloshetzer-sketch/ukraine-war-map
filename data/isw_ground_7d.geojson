@@ -6,6 +6,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          28.2852657,
+          48.2455558
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-05",
+        "event_date": "2026-07-05",
+        "ingested_at": "2026-07-06T08:47:23Z",
+        "place": "Yampil",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[33] A Russian milblogger claimed that Russian forces advanced south of Yampil (northeast of Slovyansk) and in western Zakitne (east of Slovyansk).[34] Ukrainian forces maintain positions southwest of Kostyantynivka as Russian forces continue infiltration missions within the city.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-5-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.7855471,
+          47.5754426
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-05",
+        "event_date": "2026-07-05",
+        "ingested_at": "2026-07-06T08:47:23Z",
+        "place": "Orikhiv",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[50] Mashovets stated that Ukrainian forces have cleared Prymorske (west of Orikhiv), seized the road junction between Prymorske and Stepnohirsk (south of Prymorske), and gained a foothold in Plavni (south of Stepnohirsk).[51] Mashovets reported that Russian forces maintain positions on the southern outskirts of Stepnohirsk and conducted infiltration missions north of Stepove (southeast of Stepnohirsk).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-5-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.896801,
+          47.532688
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-05",
+        "event_date": "2026-07-05",
+        "ingested_at": "2026-07-06T08:47:23Z",
+        "place": "Mala Tokmachka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Mashovets reported that Russian forces withdrew from areas near Mala Tokmachka, Bilohirya, and Luhivske (all southeast of Orikhiv).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-5-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           24.6918156,
           48.9122821
         ]
@@ -15,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-04",
         "event_date": "2026-07-04",
-        "ingested_at": "2026-07-05T07:43:49Z",
+        "ingested_at": "2026-07-06T08:47:24Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-04",
         "event_date": "2026-07-04",
-        "ingested_at": "2026-07-05T07:43:49Z",
+        "ingested_at": "2026-07-06T08:47:24Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-03",
         "event_date": "2026-07-03",
-        "ingested_at": "2026-07-05T07:43:49Z",
+        "ingested_at": "2026-07-06T08:47:24Z",
         "place": "Hannivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,100 +147,12 @@
         "kind": "ground",
         "article_date": "2026-07-03",
         "event_date": "2026-07-03",
-        "ingested_at": "2026-07-05T07:43:49Z",
+        "ingested_at": "2026-07-06T08:47:24Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[50] The Russian Ministry of Defense (MoD) claimed on July 3 that Russian forces seized Oleksandrivka and published footage purportedly showing Russian servicemembers raising flags in Oleksandrivka.[51] ISW is not prepared to assess if the footage was altered with artificial intelligence (AI) at this time.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-3-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.6918156,
-          48.9122821
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-01",
-        "event_date": "2026-07-01",
-        "ingested_at": "2026-07-05T07:43:49Z",
-        "place": "June",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "ISW has observed evidence to assess that Russian forces seized or infiltrated 30.42 square kilometers in June 2026 and advanced or infiltrated at an average pace of 1.01 square kilometers per day.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.6918156,
-          48.9122821
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-01",
-        "event_date": "2026-07-01",
-        "ingested_at": "2026-07-05T07:43:49Z",
-        "place": "June",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces comparatively seized 481.25 square kilometers in June 2025, advancing at an average pace of 16.04 square kilometers per day.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.6918156,
-          48.9122821
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-01",
-        "event_date": "2026-07-01",
-        "ingested_at": "2026-07-05T07:43:49Z",
-        "place": "June",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Comparisons of Russia’s rate of advance in June 2026 with the same period last year show that Russia’s gains have slowed significantly, even when including Russian infiltrations.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.1338908,
-          47.8326667
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-01",
-        "event_date": "2026-07-01",
-        "ingested_at": "2026-07-05T07:43:49Z",
-        "place": "western Zaporizhia Oblast",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces advanced in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-1-2026/"
       }
     }
   ]

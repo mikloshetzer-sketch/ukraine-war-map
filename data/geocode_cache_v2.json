@@ -3261,5 +3261,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "occupied Luhansk Oblast": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Yampil": {
+    "coords": [
+      28.2852657,
+      48.2455558
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
