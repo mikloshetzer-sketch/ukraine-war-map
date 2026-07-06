@@ -6,25 +6,103 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.6058241,
-          48.8522691
+          36.8,
+          52.6
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-07-05",
-        "event_date": "2026-07-05",
-        "ingested_at": "2026-07-05T08:14:02Z",
-        "place": "Sloviansk",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
-        "country_code": "ua",
+        "article_date": "2026-07-06",
+        "event_date": "2026-07-06",
+        "ingested_at": "2026-07-06T09:09:31Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
         "front_dist_km": null,
-        "title": "RIGHT SPEAK : 236 C - Clashes in F - Line : 27 in Huliaipole Dir , 23 in Pokrovsk Dir , 23 in Sloviansk Dir ; St . Pete Port on Fire After UKR Pummel RU 2nd Largest City ; UKR STILL CONTROLS Kostiantynivka ; ( Z ) elensky Calls ( P ) utin Kostiantyni...",
-        "text": "RIGHT SPEAK : 236 C - Clashes in F - Line : 27 in Huliaipole Dir , 23 in Pokrovsk Dir , 23 in Sloviansk Dir ; St . Pete Port on Fire After UKR Pummel RU 2nd Largest City ; UKR STILL CONTROLS Kostiantynivka ; ( Z ) elensky Calls ( P ) utin Kostiantyni....",
-        "source_url": "http://www.rightspeak.net/2026/07/236-c-clashes-in-f-line-27-in.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/07/236-c-clashes-in-f-line-27-in.html"
+        "title": "Russian missile and drone attack on Kyiv kills 11",
+        "text": "Russian missile and drone attack on Kyiv kills 11.",
+        "source_url": "https://www.thecourier.com.au/story/9305047/russian-missile-and-drone-attack-on-kyiv-kills-11/",
+        "publisher_hint": "https://www.thecourier.com.au/story/9305047/russian-missile-and-drone-attack-on-kyiv-kills-11/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-07-06",
+        "event_date": "2026-07-06",
+        "ingested_at": "2026-07-06T09:09:31Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian missile and drone attack on Ukraine capital kills at least 11",
+        "text": "Russian missile and drone attack on Ukraine capital kills at least 11.",
+        "source_url": "https://www.oskaloosa.com/news/national_news/russian-missile-and-drone-attack-on-ukraines-capital-kills-at-least-11/article_ca3e72e3-04db-5862-9205-e24748dbefba.html",
+        "publisher_hint": "https://www.oskaloosa.com/news/national_news/russian-missile-and-drone-attack-on-ukraines-capital-kills-at-least-11/article_ca3e72e3-04db-5862-9205-e24748dbefba.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-07-06",
+        "event_date": "2026-07-06",
+        "ingested_at": "2026-07-06T09:09:31Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian missile and drone attack on Kyiv kills nine",
+        "text": "Russian missile and drone attack on Kyiv kills nine.",
+        "source_url": "https://www.dailyadvertiser.com.au/story/9305047/russian-missile-and-drone-attack-on-kyiv-kills-nine/",
+        "publisher_hint": "https://www.dailyadvertiser.com.au/story/9305047/russian-missile-and-drone-attack-on-kyiv-kills-nine/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-07-06",
+        "event_date": "2026-07-06",
+        "ingested_at": "2026-07-06T09:09:31Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian missile and drone attack on Ukraine capital kills at least 10",
+        "text": "Russian missile and drone attack on Ukraine capital kills at least 10.",
+        "source_url": "http://www.stardem.com/ap/world/russian-missile-and-drone-attack-on-ukraines-capital-kills-at-least-10/article_41722053-ef53-5f4d-98a5-7907891a5c04.html",
+        "publisher_hint": "http://www.stardem.com/ap/world/russian-missile-and-drone-attack-on-ukraines-capital-kills-at-least-10/article_41722053-ef53-5f4d-98a5-7907891a5c04.html"
       }
     }
   ]
