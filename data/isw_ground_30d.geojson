@@ -6,6 +6,94 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-06",
+        "event_date": "2026-07-06",
+        "ingested_at": "2026-07-07T08:00:08Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces advanced in the Oleksandrivka and Hulyaipole directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-6-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058009,
+          49.7187201
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-06",
+        "event_date": "2026-07-06",
+        "ingested_at": "2026-07-07T08:00:08Z",
+        "place": "central Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on July 6 shows Ukrainian forces striking a Russian position in central Kupyansk after what ISW assesses was a Russian infiltration mission.[46] Russian forces continued offensive operations in the Borova direction on July 5 and 6 but did not advance.[47] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Luhansk Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-6-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.2746326,
+          47.9863996
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-06",
+        "event_date": "2026-07-06",
+        "ingested_at": "2026-07-07T08:00:08Z",
+        "place": "Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Ukrainian forces continue to hold positions southeast of Lyman.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-6-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-06",
+        "event_date": "2026-07-06",
+        "ingested_at": "2026-07-07T08:00:08Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on July 6 that Ukrainian forces seized Piddubne and advanced into central Voskresenka and into Myrne (all east of Oleksandrivka).[64] The presence of Ukrainian forces in Myrne indicates that Russian forces do not control any part of the settlement, as ISW has previously assessed.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-6-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           28.2852657,
           48.2455558
         ]
@@ -15,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-05",
         "event_date": "2026-07-05",
-        "ingested_at": "2026-07-06T08:47:23Z",
+        "ingested_at": "2026-07-07T08:00:08Z",
         "place": "Yampil",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-05",
         "event_date": "2026-07-05",
-        "ingested_at": "2026-07-06T08:47:23Z",
+        "ingested_at": "2026-07-07T08:00:08Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-07-05",
         "event_date": "2026-07-05",
-        "ingested_at": "2026-07-06T08:47:23Z",
+        "ingested_at": "2026-07-07T08:00:08Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-07-04",
         "event_date": "2026-07-04",
-        "ingested_at": "2026-07-06T08:47:24Z",
+        "ingested_at": "2026-07-07T08:00:09Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +191,7 @@
         "kind": "ground",
         "article_date": "2026-07-04",
         "event_date": "2026-07-04",
-        "ingested_at": "2026-07-06T08:47:24Z",
+        "ingested_at": "2026-07-07T08:00:09Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +213,7 @@
         "kind": "ground",
         "article_date": "2026-07-03",
         "event_date": "2026-07-03",
-        "ingested_at": "2026-07-06T08:47:24Z",
+        "ingested_at": "2026-07-07T08:00:09Z",
         "place": "Hannivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,7 +235,7 @@
         "kind": "ground",
         "article_date": "2026-07-03",
         "event_date": "2026-07-03",
-        "ingested_at": "2026-07-06T08:47:24Z",
+        "ingested_at": "2026-07-07T08:00:09Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,

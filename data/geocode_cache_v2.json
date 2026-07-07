@@ -3274,5 +3274,18 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "central Kupyansk": {
+    "coords": [
+      37.6058009,
+      49.7187201
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "deny the Kremlin": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
