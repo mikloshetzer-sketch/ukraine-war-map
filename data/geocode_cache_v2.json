@@ -3287,5 +3287,31 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Govt": {
+    "coords": [
+      37.5272131,
+      55.8008155
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Vyshneve": {
+    "coords": [
+      30.3678999,
+      50.3917497
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Svyrydenko": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Kuleba": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

@@ -6,25 +6,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8,
-          52.6
+          37.5272131,
+          55.8008155
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-07-06",
-        "event_date": "2026-07-06",
-        "ingested_at": "2026-07-06T09:09:31Z",
-        "place": "Russian",
+        "article_date": "2026-07-07",
+        "event_date": "2026-07-07",
+        "ingested_at": "2026-07-07T08:39:14Z",
+        "place": "Govt",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ru",
         "front_dist_km": null,
-        "title": "Russian missile and drone attack on Kyiv kills 11",
-        "text": "Russian missile and drone attack on Kyiv kills 11.",
-        "source_url": "https://www.thecourier.com.au/story/9305047/russian-missile-and-drone-attack-on-kyiv-kills-11/",
-        "publisher_hint": "https://www.thecourier.com.au/story/9305047/russian-missile-and-drone-attack-on-kyiv-kills-11/"
+        "title": "Govt to allocate funds from reserve fund to help Vyshneve after Russian attack – Svyrydenko",
+        "text": "Govt to allocate funds from reserve fund to help Vyshneve after Russian attack – Svyrydenko.",
+        "source_url": "https://en.interfax.com.ua/news/general/1182763.html",
+        "publisher_hint": "https://en.interfax.com.ua/news/general/1182763.html"
       }
     },
     {
@@ -32,77 +32,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8,
-          52.6
+          30.3678999,
+          50.3917497
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-07-06",
-        "event_date": "2026-07-06",
-        "ingested_at": "2026-07-06T09:09:31Z",
-        "place": "Russian",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ru",
+        "article_date": "2026-07-07",
+        "event_date": "2026-07-07",
+        "ingested_at": "2026-07-07T08:39:14Z",
+        "place": "Vyshneve",
+        "location_confidence": "pattern_title",
+        "candidate_score": 60,
+        "country_code": "ua",
         "front_dist_km": null,
-        "title": "Russian missile and drone attack on Ukraine capital kills at least 11",
-        "text": "Russian missile and drone attack on Ukraine capital kills at least 11.",
-        "source_url": "https://www.oskaloosa.com/news/national_news/russian-missile-and-drone-attack-on-ukraines-capital-kills-at-least-11/article_ca3e72e3-04db-5862-9205-e24748dbefba.html",
-        "publisher_hint": "https://www.oskaloosa.com/news/national_news/russian-missile-and-drone-attack-on-ukraines-capital-kills-at-least-11/article_ca3e72e3-04db-5862-9205-e24748dbefba.html"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.8,
-          52.6
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-07-06",
-        "event_date": "2026-07-06",
-        "ingested_at": "2026-07-06T09:09:31Z",
-        "place": "Russian",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ru",
-        "front_dist_km": null,
-        "title": "Russian missile and drone attack on Kyiv kills nine",
-        "text": "Russian missile and drone attack on Kyiv kills nine.",
-        "source_url": "https://www.dailyadvertiser.com.au/story/9305047/russian-missile-and-drone-attack-on-kyiv-kills-nine/",
-        "publisher_hint": "https://www.dailyadvertiser.com.au/story/9305047/russian-missile-and-drone-attack-on-kyiv-kills-nine/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.8,
-          52.6
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-07-06",
-        "event_date": "2026-07-06",
-        "ingested_at": "2026-07-06T09:09:31Z",
-        "place": "Russian",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ru",
-        "front_dist_km": null,
-        "title": "Russian missile and drone attack on Ukraine capital kills at least 10",
-        "text": "Russian missile and drone attack on Ukraine capital kills at least 10.",
-        "source_url": "http://www.stardem.com/ap/world/russian-missile-and-drone-attack-on-ukraines-capital-kills-at-least-10/article_41722053-ef53-5f4d-98a5-7907891a5c04.html",
-        "publisher_hint": "http://www.stardem.com/ap/world/russian-missile-and-drone-attack-on-ukraines-capital-kills-at-least-10/article_41722053-ef53-5f4d-98a5-7907891a5c04.html"
+        "title": "Russian attack damages over 200 facilities and 7 railway worker dormitories in Vyshneve – Kuleba",
+        "text": "Russian attack damages over 200 facilities and 7 railway worker dormitories in Vyshneve – Kuleba.",
+        "source_url": "https://en.interfax.com.ua/news/general/1182759.html",
+        "publisher_hint": "https://en.interfax.com.ua/news/general/1182759.html"
       }
     }
   ]
