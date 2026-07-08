@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-07T08:00:08Z",
+        "ingested_at": "2026-07-08T07:06:00Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-07T08:00:08Z",
+        "ingested_at": "2026-07-08T07:06:00Z",
         "place": "central Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-07T08:00:08Z",
+        "ingested_at": "2026-07-08T07:06:00Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-07T08:00:08Z",
+        "ingested_at": "2026-07-08T07:06:00Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-05",
         "event_date": "2026-07-05",
-        "ingested_at": "2026-07-07T08:00:08Z",
+        "ingested_at": "2026-07-08T07:06:00Z",
         "place": "Yampil",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-05",
         "event_date": "2026-07-05",
-        "ingested_at": "2026-07-07T08:00:08Z",
+        "ingested_at": "2026-07-08T07:06:00Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-07-05",
         "event_date": "2026-07-05",
-        "ingested_at": "2026-07-07T08:00:08Z",
+        "ingested_at": "2026-07-08T07:06:00Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -169,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-07-04",
         "event_date": "2026-07-04",
-        "ingested_at": "2026-07-07T08:00:09Z",
+        "ingested_at": "2026-07-08T07:06:00Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
@@ -191,56 +191,12 @@
         "kind": "ground",
         "article_date": "2026-07-04",
         "event_date": "2026-07-04",
-        "ingested_at": "2026-07-07T08:00:09Z",
+        "ingested_at": "2026-07-08T07:06:00Z",
         "place": "June",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "ISW previously assessed that Russian forces reportedly suffered around 1,298 casualties per square kilometer they seized or infiltrated in June 2026 and, at that rate, Russian forces would lose 6,574,590 servicemembers in capturing the remaining 5,065.17 square kilometers of Donetsk Oblast.[6] Putin and other Russian military commanders heavily aggrandized the claimed seizure of Kostyantynivka on July 3 and 4.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-4-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.5499934,
-          48.4836702
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-03",
-        "event_date": "2026-07-03",
-        "ingested_at": "2026-07-07T08:00:09Z",
-        "place": "Hannivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[43] A Russian milblogger claimed on July 3 that Russian forces advanced east of Hannivka (east of Dobropillya).[44] Russian forces continued limited offensive operations in the Pokrovsk direction on July 2 and July 3 but did not make confirmed advances.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-3-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.5372813,
-          48.6252414
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-03",
-        "event_date": "2026-07-03",
-        "ingested_at": "2026-07-07T08:00:09Z",
-        "place": "Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[50] The Russian Ministry of Defense (MoD) claimed on July 3 that Russian forces seized Oleksandrivka and published footage purportedly showing Russian servicemembers raising flags in Oleksandrivka.[51] ISW is not prepared to assess if the footage was altered with artificial intelligence (AI) at this time.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-3-2026/"
       }
     }
   ]
