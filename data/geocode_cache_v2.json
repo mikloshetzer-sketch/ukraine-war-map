@@ -3313,5 +3313,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Memo": {
+    "coords": [
+      37.5623873,
+      55.7568742
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }

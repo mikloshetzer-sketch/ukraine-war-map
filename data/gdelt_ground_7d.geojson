@@ -6,25 +6,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.5272131,
-          55.8008155
+          37.6058241,
+          48.8522691
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-07-07",
-        "event_date": "2026-07-07",
-        "ingested_at": "2026-07-07T08:39:14Z",
-        "place": "Govt",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ru",
+        "article_date": "2026-07-08",
+        "event_date": "2026-07-08",
+        "ingested_at": "2026-07-08T07:40:37Z",
+        "place": "Sloviansk",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
         "front_dist_km": null,
-        "title": "Govt to allocate funds from reserve fund to help Vyshneve after Russian attack – Svyrydenko",
-        "text": "Govt to allocate funds from reserve fund to help Vyshneve after Russian attack – Svyrydenko.",
-        "source_url": "https://en.interfax.com.ua/news/general/1182763.html",
-        "publisher_hint": "https://en.interfax.com.ua/news/general/1182763.html"
+        "title": "RIGHT SPEAK : 219 C - Clashes in F - Line : 41 in Pokrovsk Dir , 23 in Sloviansk Dir , 19 in Huliaipole Dir ; UKR Pushes New Approach to End RU War Ahead of ( T ) rump -( Z ) elensky Meeting ; ( T ) to Warn NATO Countries No  funny math  on Defense ;...",
+        "text": "RIGHT SPEAK : 219 C - Clashes in F - Line : 41 in Pokrovsk Dir , 23 in Sloviansk Dir , 19 in Huliaipole Dir ; UKR Pushes New Approach to End RU War Ahead of ( T ) rump -( Z ) elensky Meeting ; ( T ) to Warn NATO Countries No  funny math  on Defense ;....",
+        "source_url": "http://www.rightspeak.net/2026/07/219-c-clashes-in-f-line-41-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/07/219-c-clashes-in-f-line-41-in-pokrovsk.html"
       }
     },
     {
@@ -32,25 +32,51 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.3678999,
-          50.3917497
+          37.6058241,
+          48.8522691
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-07-07",
-        "event_date": "2026-07-07",
-        "ingested_at": "2026-07-07T08:39:14Z",
-        "place": "Vyshneve",
-        "location_confidence": "pattern_title",
-        "candidate_score": 60,
+        "article_date": "2026-07-08",
+        "event_date": "2026-07-08",
+        "ingested_at": "2026-07-08T07:40:37Z",
+        "place": "Sloviansk",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
         "country_code": "ua",
         "front_dist_km": null,
-        "title": "Russian attack damages over 200 facilities and 7 railway worker dormitories in Vyshneve – Kuleba",
-        "text": "Russian attack damages over 200 facilities and 7 railway worker dormitories in Vyshneve – Kuleba.",
-        "source_url": "https://en.interfax.com.ua/news/general/1182759.html",
-        "publisher_hint": "https://en.interfax.com.ua/news/general/1182759.html"
+        "title": "RIGHT SPEAK : 214 C - Clashes in F - Line : 32 in Pokrovsk Dir , 25 in Kostiantynivka Dir , 23 in Sloviansk Dir ; Memo to Trump : Dont Go Wobbly on UKR at the NATO Summit ; ( Z ) elensky Slams World  absurd  Lack of Interceptor Missiles ; UKR Struck ...",
+        "text": "RIGHT SPEAK : 214 C - Clashes in F - Line : 32 in Pokrovsk Dir , 25 in Kostiantynivka Dir , 23 in Sloviansk Dir ; Memo to Trump : Dont Go Wobbly on UKR at the NATO Summit ; ( Z ) elensky Slams World  absurd  Lack of Interceptor Missiles ; UKR Struck ....",
+        "source_url": "http://www.rightspeak.net/2026/07/201-c-clashes-in-f-line-32-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/07/201-c-clashes-in-f-line-32-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-07-08",
+        "event_date": "2026-07-08",
+        "ingested_at": "2026-07-08T07:40:37Z",
+        "place": "Sloviansk",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 201 C - Clashes in F - Line : 22 in Pokrovsk Dir , 22 in Sloviansk Dir , 13 in Huliaipole Dir ; Vance : RU Off Capabilities in War with UKR are Approaching Zero ; UKR HITS : RU Airbase in Crimea ; Major Strikes Target Backbone of RU Log...",
+        "text": "RIGHT SPEAK : 201 C - Clashes in F - Line : 22 in Pokrovsk Dir , 22 in Sloviansk Dir , 13 in Huliaipole Dir ; Vance : RU Off Capabilities in War with UKR are Approaching Zero ; UKR HITS : RU Airbase in Crimea ; Major Strikes Target Backbone of RU Log....",
+        "source_url": "http://www.rightspeak.net/2026/07/201-c-clashes-in-f-line-22-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/07/201-c-clashes-in-f-line-22-in-pokrovsk.html"
       }
     }
   ]
