@@ -9,15 +9,15 @@ Key numbers:
 - Ground raw events: n/a
 - Mapped points: n/a
 - Mapped lines: n/a
-- UAV events (7d): 755
+- UAV events (7d): 768
 
 Operational picture:
-The latest mapped territorial activity appears concentrated in the Bakhmut sector. Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 755 recorded events in the past seven days.
+The latest mapped territorial activity appears concentrated in the Bakhmut sector. Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 768 recorded events in the past seven days.
 
 Key events:
 - Recent territorial change appears to be located in the Bakhmut sector.
 - The gap between raw reporting and mapped events remains notable, suggesting that many reports are still only partially geolocated.
-- Sustained UAV activity continues to support reconnaissance and strike operations, with 755 events recorded over the past seven days.
+- Sustained UAV activity continues to support reconnaissance and strike operations, with 768 events recorded over the past seven days.
 
 Drivers of the day:
 - Ground combat activity level assessed as unknown.
