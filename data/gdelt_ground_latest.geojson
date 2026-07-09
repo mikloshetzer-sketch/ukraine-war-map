@@ -6,77 +6,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.6058241,
-          48.8522691
+          37.7008693,
+          55.8752914
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-07-08",
-        "event_date": "2026-07-08",
-        "ingested_at": "2026-07-08T07:40:37Z",
-        "place": "Sloviansk",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
-        "country_code": "ua",
+        "article_date": "2026-07-09",
+        "event_date": "2026-07-09",
+        "ingested_at": "2026-07-09T08:44:19Z",
+        "place": "Monaco",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
         "front_dist_km": null,
-        "title": "RIGHT SPEAK : 219 C - Clashes in F - Line : 41 in Pokrovsk Dir , 23 in Sloviansk Dir , 19 in Huliaipole Dir ; UKR Pushes New Approach to End RU War Ahead of ( T ) rump -( Z ) elensky Meeting ; ( T ) to Warn NATO Countries No  funny math  on Defense ;...",
-        "text": "RIGHT SPEAK : 219 C - Clashes in F - Line : 41 in Pokrovsk Dir , 23 in Sloviansk Dir , 19 in Huliaipole Dir ; UKR Pushes New Approach to End RU War Ahead of ( T ) rump -( Z ) elensky Meeting ; ( T ) to Warn NATO Countries No  funny math  on Defense ;....",
-        "source_url": "http://www.rightspeak.net/2026/07/219-c-clashes-in-f-line-41-in-pokrovsk.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/07/219-c-clashes-in-f-line-41-in-pokrovsk.html"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-07-08",
-        "event_date": "2026-07-08",
-        "ingested_at": "2026-07-08T07:40:37Z",
-        "place": "Sloviansk",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "RIGHT SPEAK : 214 C - Clashes in F - Line : 32 in Pokrovsk Dir , 25 in Kostiantynivka Dir , 23 in Sloviansk Dir ; Memo to Trump : Dont Go Wobbly on UKR at the NATO Summit ; ( Z ) elensky Slams World  absurd  Lack of Interceptor Missiles ; UKR Struck ...",
-        "text": "RIGHT SPEAK : 214 C - Clashes in F - Line : 32 in Pokrovsk Dir , 25 in Kostiantynivka Dir , 23 in Sloviansk Dir ; Memo to Trump : Dont Go Wobbly on UKR at the NATO Summit ; ( Z ) elensky Slams World  absurd  Lack of Interceptor Missiles ; UKR Struck ....",
-        "source_url": "http://www.rightspeak.net/2026/07/201-c-clashes-in-f-line-32-in-pokrovsk.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/07/201-c-clashes-in-f-line-32-in-pokrovsk.html"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-07-08",
-        "event_date": "2026-07-08",
-        "ingested_at": "2026-07-08T07:40:37Z",
-        "place": "Sloviansk",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "RIGHT SPEAK : 201 C - Clashes in F - Line : 22 in Pokrovsk Dir , 22 in Sloviansk Dir , 13 in Huliaipole Dir ; Vance : RU Off Capabilities in War with UKR are Approaching Zero ; UKR HITS : RU Airbase in Crimea ; Major Strikes Target Backbone of RU Log...",
-        "text": "RIGHT SPEAK : 201 C - Clashes in F - Line : 22 in Pokrovsk Dir , 22 in Sloviansk Dir , 13 in Huliaipole Dir ; Vance : RU Off Capabilities in War with UKR are Approaching Zero ; UKR HITS : RU Airbase in Crimea ; Major Strikes Target Backbone of RU Log....",
-        "source_url": "http://www.rightspeak.net/2026/07/201-c-clashes-in-f-line-22-in-pokrovsk.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/07/201-c-clashes-in-f-line-22-in-pokrovsk.html"
+        "title": "Suspect in Monaco bomb attack on Ukrainian tycoon found dead in Kyiv - Blueprint Newspapers Limited",
+        "text": "Suspect in Monaco bomb attack on Ukrainian tycoon found dead in Kyiv - Blueprint Newspapers Limited.",
+        "source_url": "https://blueprint.ng/suspect-in-monaco-bomb-attack-on-ukrainian-tycoon-found-dead-in-kyiv/",
+        "publisher_hint": "https://blueprint.ng/suspect-in-monaco-bomb-attack-on-ukrainian-tycoon-found-dead-in-kyiv/"
       }
     }
   ]
