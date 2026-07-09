@@ -6,6 +6,116 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          35.1338908,
+          47.8326667
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-08",
+        "event_date": "2026-07-08",
+        "ingested_at": "2026-07-09T08:07:15Z",
+        "place": "western Zaporizhia Oblast",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in western Zaporizhia Oblast, and Russian forces recently advanced north of Kharkiv City.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.8027723,
+          50.9119775
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-08",
+        "event_date": "2026-07-08",
+        "ingested_at": "2026-07-09T08:07:15Z",
+        "place": "Sumy City",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on July 3 shows Ukrainian forces striking a Russian underground bunker southwest of Zhuralyovka, Belgorod Oblast (north of Sumy City and on the international border).[33] Russian forces continued offensive operations in the Velykyi Burluk direction on July 7 and 8 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.328251,
+          47.249451
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-08",
+        "event_date": "2026-07-08",
+        "ingested_at": "2026-07-09T08:07:15Z",
+        "place": "Pryshyb",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on July 7 shows Ukrainian forces striking Russian servicemembers in Pryshyb (north of Slovyansk) and in the fields south of Pryshyb after what ISW assesses was a Russian infiltration mission.[40] Ukrainian and Russian forces both recently advanced or maintained positions in the Kostyantynivka-Druzhkivka tactical area.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.1774549,
+          48.4515774
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-08",
+        "event_date": "2026-07-08",
+        "ingested_at": "2026-07-09T08:07:15Z",
+        "place": "Novyi Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[47] A Russian milblogger claimed that Ukrainian forces counterattacked near Novyi Donbas (east of Dobropillya).[48] Russian forces recently advanced or maintained positions in the Pokrovsk direction as Ukrainian forces counterattacked.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1338908,
+          47.8326667
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-08",
+        "event_date": "2026-07-08",
+        "ingested_at": "2026-07-09T08:07:15Z",
+        "place": "western Zaporizhia Oblast",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[57] Ukrainian forces recently advanced in western Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.2984727,
           47.3139025
         ]
@@ -15,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-08T07:06:00Z",
+        "ingested_at": "2026-07-09T08:07:15Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-08T07:06:00Z",
+        "ingested_at": "2026-07-09T08:07:15Z",
         "place": "central Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-08T07:06:00Z",
+        "ingested_at": "2026-07-09T08:07:15Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +191,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-08T07:06:00Z",
+        "ingested_at": "2026-07-09T08:07:15Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +213,7 @@
         "kind": "ground",
         "article_date": "2026-07-05",
         "event_date": "2026-07-05",
-        "ingested_at": "2026-07-08T07:06:00Z",
+        "ingested_at": "2026-07-09T08:07:15Z",
         "place": "Yampil",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +235,7 @@
         "kind": "ground",
         "article_date": "2026-07-05",
         "event_date": "2026-07-05",
-        "ingested_at": "2026-07-08T07:06:00Z",
+        "ingested_at": "2026-07-09T08:07:15Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,56 +257,12 @@
         "kind": "ground",
         "article_date": "2026-07-05",
         "event_date": "2026-07-05",
-        "ingested_at": "2026-07-08T07:06:00Z",
+        "ingested_at": "2026-07-09T08:07:15Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Mashovets reported that Russian forces withdrew from areas near Mala Tokmachka, Bilohirya, and Luhivske (all southeast of Orikhiv).",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.6918156,
-          48.9122821
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-04",
-        "event_date": "2026-07-04",
-        "ingested_at": "2026-07-08T07:06:00Z",
-        "place": "June",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Putin claimed that Russian forces seized 133 settlements and over 3,000 square kilometers since January 1, 2026, and Gerasimov claimed that Russian forces seized 29 settlements and 636 square kilometers in June 2026.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-4-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.6918156,
-          48.9122821
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-04",
-        "event_date": "2026-07-04",
-        "ingested_at": "2026-07-08T07:06:00Z",
-        "place": "June",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "ISW previously assessed that Russian forces reportedly suffered around 1,298 casualties per square kilometer they seized or infiltrated in June 2026 and, at that rate, Russian forces would lose 6,574,590 servicemembers in capturing the remaining 5,065.17 square kilometers of Donetsk Oblast.[6] Putin and other Russian military commanders heavily aggrandized the claimed seizure of Kostyantynivka on July 3 and 4.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-4-2026/"
       }
     }
   ]

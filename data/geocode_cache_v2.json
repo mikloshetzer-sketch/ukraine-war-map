@@ -3321,5 +3321,26 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Pryshyb": {
+    "coords": [
+      35.328251,
+      47.249451
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Novyi Donbas": {
+    "coords": [
+      37.1774549,
+      48.4515774
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Sumy Oblast on April": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
