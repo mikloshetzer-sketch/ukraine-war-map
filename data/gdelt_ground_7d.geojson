@@ -1,31 +1,4 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.7008693,
-          55.8752914
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-07-09",
-        "event_date": "2026-07-09",
-        "ingested_at": "2026-07-09T08:44:19Z",
-        "place": "Monaco",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ru",
-        "front_dist_km": null,
-        "title": "Suspect in Monaco bomb attack on Ukrainian tycoon found dead in Kyiv - Blueprint Newspapers Limited",
-        "text": "Suspect in Monaco bomb attack on Ukrainian tycoon found dead in Kyiv - Blueprint Newspapers Limited.",
-        "source_url": "https://blueprint.ng/suspect-in-monaco-bomb-attack-on-ukrainian-tycoon-found-dead-in-kyiv/",
-        "publisher_hint": "https://blueprint.ng/suspect-in-monaco-bomb-attack-on-ukrainian-tycoon-found-dead-in-kyiv/"
-      }
-    }
-  ]
+  "features": []
 }
