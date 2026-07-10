@@ -3357,5 +3357,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Katerynivka": {
+    "coords": [
+      37.3455878,
+      47.8756389
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Dobropillya": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

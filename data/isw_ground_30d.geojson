@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.3455878,
+          47.8756389
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-09",
+        "event_date": "2026-07-09",
+        "ingested_at": "2026-07-10T07:59:58Z",
+        "place": "Katerynivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[32] A source reporting on the Russian Western Grouping of Forces claimed on July 9 that Ukrainian forces counterattacked near Katerynivka, Nove, and Ridkodub (all southeast of Borova).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-9-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           35.1338908,
           47.8326667
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-09T08:07:15Z",
+        "ingested_at": "2026-07-10T07:59:58Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-09T08:07:15Z",
+        "ingested_at": "2026-07-10T07:59:58Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-09T08:07:15Z",
+        "ingested_at": "2026-07-10T07:59:58Z",
         "place": "Pryshyb",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-09T08:07:15Z",
+        "ingested_at": "2026-07-10T07:59:58Z",
         "place": "Novyi Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-09T08:07:15Z",
+        "ingested_at": "2026-07-10T07:59:58Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-09T08:07:15Z",
+        "ingested_at": "2026-07-10T07:59:59Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-09T08:07:15Z",
+        "ingested_at": "2026-07-10T07:59:59Z",
         "place": "central Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -169,7 +191,7 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-09T08:07:15Z",
+        "ingested_at": "2026-07-10T07:59:59Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -191,78 +213,12 @@
         "kind": "ground",
         "article_date": "2026-07-06",
         "event_date": "2026-07-06",
-        "ingested_at": "2026-07-09T08:07:15Z",
+        "ingested_at": "2026-07-10T07:59:59Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "A Russian milblogger claimed on July 6 that Ukrainian forces seized Piddubne and advanced into central Voskresenka and into Myrne (all east of Oleksandrivka).[64] The presence of Ukrainian forces in Myrne indicates that Russian forces do not control any part of the settlement, as ISW has previously assessed.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.2852657,
-          48.2455558
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-05",
-        "event_date": "2026-07-05",
-        "ingested_at": "2026-07-09T08:07:15Z",
-        "place": "Yampil",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[33] A Russian milblogger claimed that Russian forces advanced south of Yampil (northeast of Slovyansk) and in western Zakitne (east of Slovyansk).[34] Ukrainian forces maintain positions southwest of Kostyantynivka as Russian forces continue infiltration missions within the city.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.7855471,
-          47.5754426
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-05",
-        "event_date": "2026-07-05",
-        "ingested_at": "2026-07-09T08:07:15Z",
-        "place": "Orikhiv",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[50] Mashovets stated that Ukrainian forces have cleared Prymorske (west of Orikhiv), seized the road junction between Prymorske and Stepnohirsk (south of Prymorske), and gained a foothold in Plavni (south of Stepnohirsk).[51] Mashovets reported that Russian forces maintain positions on the southern outskirts of Stepnohirsk and conducted infiltration missions north of Stepove (southeast of Stepnohirsk).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.896801,
-          47.532688
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-05",
-        "event_date": "2026-07-05",
-        "ingested_at": "2026-07-09T08:07:15Z",
-        "place": "Mala Tokmachka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Mashovets reported that Russian forces withdrew from areas near Mala Tokmachka, Bilohirya, and Luhivske (all southeast of Orikhiv).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-5-2026/"
       }
     }
   ]
