@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-10",
+        "event_date": "2026-07-10",
+        "ingested_at": "2026-07-11T06:37:22Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-10-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.3455878,
           47.8756389
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-07-09",
         "event_date": "2026-07-09",
-        "ingested_at": "2026-07-10T07:59:58Z",
+        "ingested_at": "2026-07-11T06:37:22Z",
         "place": "Katerynivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-10T07:59:58Z",
+        "ingested_at": "2026-07-11T06:37:23Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-10T07:59:58Z",
+        "ingested_at": "2026-07-11T06:37:23Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-10T07:59:58Z",
+        "ingested_at": "2026-07-11T06:37:23Z",
         "place": "Pryshyb",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-10T07:59:58Z",
+        "ingested_at": "2026-07-11T06:37:23Z",
         "place": "Novyi Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,100 +147,12 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-10T07:59:58Z",
+        "ingested_at": "2026-07-11T06:37:23Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[57] Ukrainian forces recently advanced in western Zaporizhia Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-06",
-        "event_date": "2026-07-06",
-        "ingested_at": "2026-07-10T07:59:59Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces advanced in the Oleksandrivka and Hulyaipole directions.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058009,
-          49.7187201
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-06",
-        "event_date": "2026-07-06",
-        "ingested_at": "2026-07-10T07:59:59Z",
-        "place": "central Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on July 6 shows Ukrainian forces striking a Russian position in central Kupyansk after what ISW assesses was a Russian infiltration mission.[46] Russian forces continued offensive operations in the Borova direction on July 5 and 6 but did not advance.[47] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Luhansk Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.2746326,
-          47.9863996
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-06",
-        "event_date": "2026-07-06",
-        "ingested_at": "2026-07-10T07:59:59Z",
-        "place": "Donbas",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Ukrainian forces continue to hold positions southeast of Lyman.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.5372813,
-          48.6252414
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-06",
-        "event_date": "2026-07-06",
-        "ingested_at": "2026-07-10T07:59:59Z",
-        "place": "Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed on July 6 that Ukrainian forces seized Piddubne and advanced into central Voskresenka and into Myrne (all east of Oleksandrivka).[64] The presence of Ukrainian forces in Myrne indicates that Russian forces do not control any part of the settlement, as ISW has previously assessed.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-6-2026/"
       }
     }
   ]
