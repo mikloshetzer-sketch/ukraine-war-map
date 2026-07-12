@@ -3380,5 +3380,31 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Volokhivske": {
+    "coords": [
+      37.180481,
+      50.233269
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Shykhivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Kramatorsk": {
+    "coords": [
+      37.5843812,
+      48.7389415
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "occupied Donetsk Oblast": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

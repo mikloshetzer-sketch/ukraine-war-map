@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.180481,
+          50.233269
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-11",
+        "event_date": "2026-07-11",
+        "ingested_at": "2026-07-12T07:07:45Z",
+        "place": "Volokhivske",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[26] A Russian milblogger claimed that Russian forces advanced north of Volokhivske, south of Volokhivka, south of Okhrymivka, and south of Chaikivka (all northeast of Kharkiv City).[27] Russian forces continue offensive operations in the Velykyi Burluk direction on July 10 and 11 but did not make confirmed advances.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-11-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5843812,
+          48.7389415
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-11",
+        "event_date": "2026-07-11",
+        "ingested_at": "2026-07-12T07:07:45Z",
+        "place": "Kramatorsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Donetsk Oblast Prosecutor&#8217;s Office reported that Russian forces carried out seven airstrikes against Kramatorsk and Bilenke (immediately east of Kramatorsk) on July 10, killing four civilians, including a child, and injuring nine civilians.[42] Russian forces continued offensive operations in the Dobropillya direction on July 10 and 11 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-11-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.2984727,
           47.3139025
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-10",
         "event_date": "2026-07-10",
-        "ingested_at": "2026-07-11T06:37:22Z",
+        "ingested_at": "2026-07-12T07:07:45Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-09",
         "event_date": "2026-07-09",
-        "ingested_at": "2026-07-11T06:37:22Z",
+        "ingested_at": "2026-07-12T07:07:45Z",
         "place": "Katerynivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-11T06:37:23Z",
+        "ingested_at": "2026-07-12T07:07:45Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-11T06:37:23Z",
+        "ingested_at": "2026-07-12T07:07:45Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-11T06:37:23Z",
+        "ingested_at": "2026-07-12T07:07:45Z",
         "place": "Pryshyb",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-11T06:37:23Z",
+        "ingested_at": "2026-07-12T07:07:45Z",
         "place": "Novyi Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,7 +191,7 @@
         "kind": "ground",
         "article_date": "2026-07-08",
         "event_date": "2026-07-08",
-        "ingested_at": "2026-07-11T06:37:23Z",
+        "ingested_at": "2026-07-12T07:07:45Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
