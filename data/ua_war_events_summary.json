@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-07-12T07:37:53+00:00",
-  "count": 7,
+  "generated_at": "2026-07-12T12:08:38+00:00",
+  "count": 9,
   "by_event_type": {
-    "drone_attack": 6,
-    "ground_clash": 1
+    "ground_clash": 3,
+    "drone_attack": 6
   },
   "by_source": {
+    "ukrainenow": 5,
     "generalstaffzsu": 2,
-    "ukrainenow": 3,
     "deepstateua": 2
   },
   "by_confidence": {
-    "high": 4,
-    "medium": 3
+    "medium": 5,
+    "high": 4
   },
   "top_sectors": [
     [
       "kherson",
-      1
+      2
     ],
     [
       "kupiansk",
