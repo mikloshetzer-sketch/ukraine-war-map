@@ -3406,5 +3406,21 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Teatralna Street": {
+    "coords": [
+      24.0302594,
+      49.839693
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Bulgakov Street": {
+    "coords": [
+      37.5874235,
+      55.7478484
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }

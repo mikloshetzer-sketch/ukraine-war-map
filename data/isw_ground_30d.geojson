@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.5843812,
+          48.7389415
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-12",
+        "event_date": "2026-07-12",
+        "ingested_at": "2026-07-13T07:49:09Z",
+        "place": "Kramatorsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Russian Ministry of Defense (MoD) claimed that Russian forces conducted a Geran drone strike against a gas distribution station in Kramatorsk.[37] Russian forces continued offensive operations in the Dobropillya tactical area and the Pokrovsk direction on July 11 and 12 but did not advance.[38] Neither Ukrainian nor Russian sources reported ground activity in the Novopavlivka direction on July 12.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-12-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.180481,
           50.233269
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-07-11",
         "event_date": "2026-07-11",
-        "ingested_at": "2026-07-12T07:07:45Z",
+        "ingested_at": "2026-07-13T07:49:09Z",
         "place": "Volokhivske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-11",
         "event_date": "2026-07-11",
-        "ingested_at": "2026-07-12T07:07:45Z",
+        "ingested_at": "2026-07-13T07:49:09Z",
         "place": "Kramatorsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-10",
         "event_date": "2026-07-10",
-        "ingested_at": "2026-07-12T07:07:45Z",
+        "ingested_at": "2026-07-13T07:49:09Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,122 +103,12 @@
         "kind": "ground",
         "article_date": "2026-07-09",
         "event_date": "2026-07-09",
-        "ingested_at": "2026-07-12T07:07:45Z",
+        "ingested_at": "2026-07-13T07:49:09Z",
         "place": "Katerynivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[32] A source reporting on the Russian Western Grouping of Forces claimed on July 9 that Ukrainian forces counterattacked near Katerynivka, Nove, and Ridkodub (all southeast of Borova).",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-9-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.1338908,
-          47.8326667
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-08",
-        "event_date": "2026-07-08",
-        "ingested_at": "2026-07-12T07:07:45Z",
-        "place": "western Zaporizhia Oblast",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in western Zaporizhia Oblast, and Russian forces recently advanced north of Kharkiv City.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          34.8027723,
-          50.9119775
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-08",
-        "event_date": "2026-07-08",
-        "ingested_at": "2026-07-12T07:07:45Z",
-        "place": "Sumy City",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on July 3 shows Ukrainian forces striking a Russian underground bunker southwest of Zhuralyovka, Belgorod Oblast (north of Sumy City and on the international border).[33] Russian forces continued offensive operations in the Velykyi Burluk direction on July 7 and 8 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.328251,
-          47.249451
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-08",
-        "event_date": "2026-07-08",
-        "ingested_at": "2026-07-12T07:07:45Z",
-        "place": "Pryshyb",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Geolocated footage published on July 7 shows Ukrainian forces striking Russian servicemembers in Pryshyb (north of Slovyansk) and in the fields south of Pryshyb after what ISW assesses was a Russian infiltration mission.[40] Ukrainian and Russian forces both recently advanced or maintained positions in the Kostyantynivka-Druzhkivka tactical area.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.1774549,
-          48.4515774
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-08",
-        "event_date": "2026-07-08",
-        "ingested_at": "2026-07-12T07:07:45Z",
-        "place": "Novyi Donbas",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[47] A Russian milblogger claimed that Ukrainian forces counterattacked near Novyi Donbas (east of Dobropillya).[48] Russian forces recently advanced or maintained positions in the Pokrovsk direction as Ukrainian forces counterattacked.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.1338908,
-          47.8326667
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-08",
-        "event_date": "2026-07-08",
-        "ingested_at": "2026-07-12T07:07:45Z",
-        "place": "western Zaporizhia Oblast",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[57] Ukrainian forces recently advanced in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-8-2026/"
       }
     }
   ]
