@@ -3432,5 +3432,103 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Long": {
+    "coords": [
+      36.7362867,
+      55.3877972
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Front": {
+    "coords": [
+      36.5809772,
+      55.1246527
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Opinion": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Line Gains": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Range Attacks": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Tanker Strikes": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukraine War Update": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukraine Latest": {
+    "coords": [
+      38.4860194,
+      48.9279202
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Fuel Infrastructure": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Kyiv Expands Strikes": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Russia Presses Summer Offensive": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Msls": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Battle": {
+    "coords": [
+      37.5232039,
+      55.738765
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Why Russias": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Konstantinovka": {
+    "coords": [
+      37.6923755,
+      48.5348985
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Why Russia": {
+    "coords": [
+      37.7280556,
+      55.7054671
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
