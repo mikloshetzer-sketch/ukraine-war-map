@@ -3422,5 +3422,15 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "protect against Russia": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "northwestern Rai-Oleksandrivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

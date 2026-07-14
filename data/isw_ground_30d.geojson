@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-13",
+        "event_date": "2026-07-13",
+        "ingested_at": "2026-07-14T06:36:09Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-13-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.5843812,
           48.7389415
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-07-12",
         "event_date": "2026-07-12",
-        "ingested_at": "2026-07-13T07:49:09Z",
+        "ingested_at": "2026-07-14T06:36:09Z",
         "place": "Kramatorsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-11",
         "event_date": "2026-07-11",
-        "ingested_at": "2026-07-13T07:49:09Z",
+        "ingested_at": "2026-07-14T06:36:10Z",
         "place": "Volokhivske",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-11",
         "event_date": "2026-07-11",
-        "ingested_at": "2026-07-13T07:49:09Z",
+        "ingested_at": "2026-07-14T06:36:10Z",
         "place": "Kramatorsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,34 +103,12 @@
         "kind": "ground",
         "article_date": "2026-07-10",
         "event_date": "2026-07-10",
-        "ingested_at": "2026-07-13T07:49:09Z",
+        "ingested_at": "2026-07-14T06:36:10Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces recently advanced in the Oleksandrivka direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-10-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.3455878,
-          47.8756389
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-09",
-        "event_date": "2026-07-09",
-        "ingested_at": "2026-07-13T07:49:09Z",
-        "place": "Katerynivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[32] A source reporting on the Russian Western Grouping of Forces claimed on July 9 that Ukrainian forces counterattacked near Katerynivka, Nove, and Ridkodub (all southeast of Borova).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-9-2026/"
       }
     }
   ]
