@@ -3530,5 +3530,13 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Pazeno": {
+    "coords": [
+      37.97356,
+      48.765911
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
