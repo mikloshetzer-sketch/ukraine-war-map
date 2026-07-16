@@ -6,6 +6,94 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-15",
+        "event_date": "2026-07-15",
+        "ingested_at": "2026-07-16T07:03:00Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-15-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-15",
+        "event_date": "2026-07-15",
+        "ingested_at": "2026-07-16T07:03:00Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Mashovets assessed that the Russian military command appears unwilling to redirect forces from other areas to support Russian efforts toward Kupyansk and therefore concluded that Ukrainian forces will likely have the opportunity to strengthen their defenses in the Kupyansk direction.[39] Russian forces continued limited ground activity in the Borova direction on July 15 but did advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-15-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.2750575,
+          46.416632
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-15",
+        "event_date": "2026-07-15",
+        "ingested_at": "2026-07-16T07:03:00Z",
+        "place": "Mayaky",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on July 14 shows Russian forces striking a Ukrainian pontoon bridge across the Siverskyi Donets River near Mayaky (north of Slovyansk) with FAB-500 guided glide bombs.[44] Russian forces previously struck the same location on July 10.[45] Russian forces continued offensive operations in the Kostyantynivka-Druzhkivka tactical area on July 14 and 15 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-15-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.4216897,
+          50.5540647
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-15",
+        "event_date": "2026-07-15",
+        "ingested_at": "2026-07-16T07:03:00Z",
+        "place": "Oleksiivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[50] Geolocated footage published on July 14 shows Ukrainian forces conducting a first-person view (FPV) drone strike against a Russian Grad-1 Multiple Launch Rocket System (MLRS) north of Oleksiivka (southeast of Novopavlivka and 12 kilometers from the frontline).[51] Ukrainian forces recently maintained positions or advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-15-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.2746326,
           47.9863996
         ]
@@ -15,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-14",
         "event_date": "2026-07-14",
-        "ingested_at": "2026-07-15T06:37:30Z",
+        "ingested_at": "2026-07-16T07:03:00Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-14",
         "event_date": "2026-07-14",
-        "ingested_at": "2026-07-15T06:37:30Z",
+        "ingested_at": "2026-07-16T07:03:00Z",
         "place": "Pazeno",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-07-13",
         "event_date": "2026-07-13",
-        "ingested_at": "2026-07-15T06:37:30Z",
+        "ingested_at": "2026-07-16T07:03:00Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,56 +169,12 @@
         "kind": "ground",
         "article_date": "2026-07-12",
         "event_date": "2026-07-12",
-        "ingested_at": "2026-07-15T06:37:30Z",
+        "ingested_at": "2026-07-16T07:03:00Z",
         "place": "Kramatorsk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "The Russian Ministry of Defense (MoD) claimed that Russian forces conducted a Geran drone strike against a gas distribution station in Kramatorsk.[37] Russian forces continued offensive operations in the Dobropillya tactical area and the Pokrovsk direction on July 11 and 12 but did not advance.[38] Neither Ukrainian nor Russian sources reported ground activity in the Novopavlivka direction on July 12.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-12-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.180481,
-          50.233269
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-11",
-        "event_date": "2026-07-11",
-        "ingested_at": "2026-07-15T06:37:30Z",
-        "place": "Volokhivske",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[26] A Russian milblogger claimed that Russian forces advanced north of Volokhivske, south of Volokhivka, south of Okhrymivka, and south of Chaikivka (all northeast of Kharkiv City).[27] Russian forces continue offensive operations in the Velykyi Burluk direction on July 10 and 11 but did not make confirmed advances.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-11-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.5843812,
-          48.7389415
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-11",
-        "event_date": "2026-07-11",
-        "ingested_at": "2026-07-15T06:37:30Z",
-        "place": "Kramatorsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "The Donetsk Oblast Prosecutor&#8217;s Office reported that Russian forces carried out seven airstrikes against Kramatorsk and Bilenke (immediately east of Kramatorsk) on July 10, killing four civilians, including a child, and injuring nine civilians.[42] Russian forces continued offensive operations in the Dobropillya direction on July 10 and 11 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-11-2026/"
       }
     }
   ]

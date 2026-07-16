@@ -3538,5 +3538,21 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Mayaky": {
+    "coords": [
+      30.2750575,
+      46.416632
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Oleksiivka": {
+    "coords": [
+      26.4216897,
+      50.5540647
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
