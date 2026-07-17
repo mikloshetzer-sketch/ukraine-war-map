@@ -3554,5 +3554,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "central Andriivka-Klevstove": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
