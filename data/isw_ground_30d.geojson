@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-07-16",
         "event_date": "2026-07-16",
-        "ingested_at": "2026-07-17T06:40:41Z",
+        "ingested_at": "2026-07-18T06:29:46Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-07-16",
         "event_date": "2026-07-16",
-        "ingested_at": "2026-07-17T06:40:41Z",
+        "ingested_at": "2026-07-18T06:29:46Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-15",
         "event_date": "2026-07-15",
-        "ingested_at": "2026-07-17T06:40:42Z",
+        "ingested_at": "2026-07-18T06:29:46Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-15",
         "event_date": "2026-07-15",
-        "ingested_at": "2026-07-17T06:40:42Z",
+        "ingested_at": "2026-07-18T06:29:46Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-15",
         "event_date": "2026-07-15",
-        "ingested_at": "2026-07-17T06:40:42Z",
+        "ingested_at": "2026-07-18T06:29:46Z",
         "place": "Mayaky",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-15",
         "event_date": "2026-07-15",
-        "ingested_at": "2026-07-17T06:40:42Z",
+        "ingested_at": "2026-07-18T06:29:46Z",
         "place": "Oleksiivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-07-14",
         "event_date": "2026-07-14",
-        "ingested_at": "2026-07-17T06:40:42Z",
+        "ingested_at": "2026-07-18T06:29:46Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -169,34 +169,12 @@
         "kind": "ground",
         "article_date": "2026-07-14",
         "event_date": "2026-07-14",
-        "ingested_at": "2026-07-17T06:40:42Z",
+        "ingested_at": "2026-07-18T06:29:46Z",
         "place": "Pazeno",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "ISW has not observed evidence of Ukrainian forces operating in Pazeno (southeast of Slovyansk) or north and northwest of the settlement since January 14, indicating that Russian forces likely advanced in the area on a prior date.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-14-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-13",
-        "event_date": "2026-07-13",
-        "ingested_at": "2026-07-17T06:40:42Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-13-2026/"
       }
     }
   ]
