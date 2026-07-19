@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6141992,
+          49.7132963
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-18",
+        "event_date": "2026-07-18",
+        "ingested_at": "2026-07-19T07:06:57Z",
+        "place": "Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A source reporting on the Russian Northern Grouping of Forces (GoF) acknowledged on July 18 that Ukrainian forces again control Kupyansk-Vuzlovyi (just south of Kupyansk) after Russian forces previously conducted infiltration missions to the settlement.[37] Russian forces continued limited offensive operations in the Borova direction on July 17 and 18 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-18-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.2984727,
           47.3139025
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-07-16",
         "event_date": "2026-07-16",
-        "ingested_at": "2026-07-18T06:29:46Z",
+        "ingested_at": "2026-07-19T07:06:58Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-16",
         "event_date": "2026-07-16",
-        "ingested_at": "2026-07-18T06:29:46Z",
+        "ingested_at": "2026-07-19T07:06:58Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-07-15",
         "event_date": "2026-07-15",
-        "ingested_at": "2026-07-18T06:29:46Z",
+        "ingested_at": "2026-07-19T07:06:58Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-07-15",
         "event_date": "2026-07-15",
-        "ingested_at": "2026-07-18T06:29:46Z",
+        "ingested_at": "2026-07-19T07:06:58Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-07-15",
         "event_date": "2026-07-15",
-        "ingested_at": "2026-07-18T06:29:46Z",
+        "ingested_at": "2026-07-19T07:06:58Z",
         "place": "Mayaky",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,56 +147,12 @@
         "kind": "ground",
         "article_date": "2026-07-15",
         "event_date": "2026-07-15",
-        "ingested_at": "2026-07-18T06:29:46Z",
+        "ingested_at": "2026-07-19T07:06:58Z",
         "place": "Oleksiivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[50] Geolocated footage published on July 14 shows Ukrainian forces conducting a first-person view (FPV) drone strike against a Russian Grad-1 Multiple Launch Rocket System (MLRS) north of Oleksiivka (southeast of Novopavlivka and 12 kilometers from the frontline).[51] Ukrainian forces recently maintained positions or advanced in the Oleksandrivka direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-15-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.2746326,
-          47.9863996
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-14",
-        "event_date": "2026-07-14",
-        "ingested_at": "2026-07-18T06:29:46Z",
-        "place": "Donbas",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces continued limited offensive operations southeast of Borova on July 14 but did not advance.[38] Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces advanced southeast of Slovyansk.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-14-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.97356,
-          48.765911
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-14",
-        "event_date": "2026-07-14",
-        "ingested_at": "2026-07-18T06:29:46Z",
-        "place": "Pazeno",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "ISW has not observed evidence of Ukrainian forces operating in Pazeno (southeast of Slovyansk) or north and northwest of the settlement since January 14, indicating that Russian forces likely advanced in the area on a prior date.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-14-2026/"
       }
     }
   ]
