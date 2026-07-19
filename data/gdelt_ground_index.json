@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-07-18T07:06:05Z",
-  "started_at_utc": "2026-07-18T07:05:52Z",
+  "generated_at_utc": "2026-07-19T07:35:43Z",
+  "started_at_utc": "2026-07-19T07:35:12Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -42,14 +42,23 @@
     "rejections_saved": 0,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 0,
+      "queries_with_response": 1,
       "items_before_filters": 0,
       "items_with_date": 0,
       "items_in_lookback_window": 0,
       "items_keyword_matched": 0,
       "items_action_matched": 0,
       "items_after_dedup": 0,
-      "parser_debug": []
+      "parser_debug": [
+        {
+          "query": "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)",
+          "parse_ok": false,
+          "root_tag": "",
+          "channel_found": false,
+          "item_count_raw": 0,
+          "sample_date_fields": []
+        }
+      ]
     }
   },
   "files": {
