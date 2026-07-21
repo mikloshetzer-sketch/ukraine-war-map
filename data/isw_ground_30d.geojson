@@ -15,56 +15,12 @@
         "kind": "ground",
         "article_date": "2026-07-18",
         "event_date": "2026-07-18",
-        "ingested_at": "2026-07-20T07:42:30Z",
+        "ingested_at": "2026-07-21T07:13:00Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "A source reporting on the Russian Northern Grouping of Forces (GoF) acknowledged on July 18 that Ukrainian forces again control Kupyansk-Vuzlovyi (just south of Kupyansk) after Russian forces previously conducted infiltration missions to the settlement.[37] Russian forces continued limited offensive operations in the Borova direction on July 17 and 18 but did not advance.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-18-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-16",
-        "event_date": "2026-07-16",
-        "ingested_at": "2026-07-20T07:42:31Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces advanced in the Oleksandrivka direction, and Russian forces recently advanced in northern Kharkiv Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-16-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-16",
-        "event_date": "2026-07-16",
-        "ingested_at": "2026-07-20T07:42:31Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[47] Ukrainian forces recently advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-16-2026/"
       }
     }
   ]
