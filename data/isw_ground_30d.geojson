@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.0805393,
+          48.3262489
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-21",
+        "event_date": "2026-07-21",
+        "ingested_at": "2026-07-22T07:14:41Z",
+        "place": "the Pokrovsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces continued offensive operations in the Pokrovsk and Novopavlivka directions on July 20 and 21 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-21",
+        "event_date": "2026-07-21",
+        "ingested_at": "2026-07-22T07:14:41Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[49] Ukrainian forces recently advanced or maintained positions east of Oleksandrivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6141992,
           49.7132963
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-18",
         "event_date": "2026-07-18",
-        "ingested_at": "2026-07-21T07:13:00Z",
+        "ingested_at": "2026-07-22T07:14:42Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
