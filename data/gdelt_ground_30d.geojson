@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.5297149,
+          50.4498998
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-07-23",
+        "event_date": "2026-07-23",
+        "ingested_at": "2026-07-23T07:43:52Z",
+        "place": "Antique",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Antique seafarer killed in drone attack on vessel in Ukraine",
+        "text": "Antique seafarer killed in drone attack on vessel in Ukraine.",
+        "source_url": "https://www.manilatimes.net/2026/07/23/regions/antique-seafarer-killed-in-drone-attack-on-vessel-in-ukraine/2389941",
+        "publisher_hint": "https://www.manilatimes.net/2026/07/23/regions/antique-seafarer-killed-in-drone-attack-on-vessel-in-ukraine/2389941"
+      }
+    }
+  ]
 }

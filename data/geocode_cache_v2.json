@@ -3592,5 +3592,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Antique": {
+    "coords": [
+      30.5297149,
+      50.4498998
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
