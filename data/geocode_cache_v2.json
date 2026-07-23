@@ -3579,5 +3579,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Rai-Oleksandrivka": {
+    "coords": [
+      37.8516799,
+      48.8105407
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "the Toretsk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

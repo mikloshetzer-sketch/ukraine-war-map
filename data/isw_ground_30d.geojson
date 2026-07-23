@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.8516799,
+          48.8105407
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-22",
+        "event_date": "2026-07-22",
+        "ingested_at": "2026-07-23T07:08:02Z",
+        "place": "Rai-Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on July 21 that Russian forces advanced north and west of Rai-Oleksandrivka (southeast of Slovyansk).[46] Russian forces conducted FAB aerial bomb strikes against civilian infrastructure and a Ukrainian position in the Slovyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-22-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.0805393,
           48.3262489
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-07-21",
         "event_date": "2026-07-21",
-        "ingested_at": "2026-07-22T07:14:41Z",
+        "ingested_at": "2026-07-23T07:08:03Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +59,12 @@
         "kind": "ground",
         "article_date": "2026-07-21",
         "event_date": "2026-07-21",
-        "ingested_at": "2026-07-22T07:14:41Z",
+        "ingested_at": "2026-07-23T07:08:03Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[49] Ukrainian forces recently advanced or maintained positions east of Oleksandrivka.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-21-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6141992,
-          49.7132963
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-18",
-        "event_date": "2026-07-18",
-        "ingested_at": "2026-07-22T07:14:42Z",
-        "place": "Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A source reporting on the Russian Northern Grouping of Forces (GoF) acknowledged on July 18 that Ukrainian forces again control Kupyansk-Vuzlovyi (just south of Kupyansk) after Russian forces previously conducted infiltration missions to the settlement.[37] Russian forces continued limited offensive operations in the Borova direction on July 17 and 18 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-18-2026/"
       }
     }
   ]
