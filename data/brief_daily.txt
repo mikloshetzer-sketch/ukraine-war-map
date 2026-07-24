@@ -1,23 +1,23 @@
-Ukraine War Daily Brief – Russian pressure continues near Robotyne
+Ukraine War Daily Brief – Ukrainian counter-pressure observed
 
-The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 117 008.19 km². The daily change amounts to +6.33 km² compared with 2026-07-22 (orosz területszerzés). The weekly balance shows +24.9 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Robotyne sector as a likely focal area.
+The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 117 001.49 km². The daily change amounts to -6.69 km² compared with 2026-07-23 (ukrán visszafoglalás). The weekly balance shows +10.9 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend.
 
 Key numbers:
-- Occupied territory: 117 008.19 km²
-- Daily change: +6.33 km²
-- Weekly change: +24.9 km²
+- Occupied territory: 117 001.49 km²
+- Daily change: -6.69 km²
+- Weekly change: +10.9 km²
 - Ground raw events: n/a
 - Mapped points: n/a
 - Mapped lines: n/a
-- UAV events (7d): 718
+- UAV events (7d): 719
 
 Operational picture:
-The latest mapped territorial activity appears concentrated in the Robotyne sector. Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 718 recorded events in the past seven days.
+Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 719 recorded events in the past seven days.
 
 Key events:
-- Recent territorial change appears to be located in the Robotyne sector.
+- A localized loss or regain signal was detected in the Velyka Novosilka sector.
 - The gap between raw reporting and mapped events remains notable, suggesting that many reports are still only partially geolocated.
-- Sustained UAV activity continues to support reconnaissance and strike operations, with 718 events recorded over the past seven days.
+- Sustained UAV activity continues to support reconnaissance and strike operations, with 719 events recorded over the past seven days.
 
 Drivers of the day:
 - Ground combat activity level assessed as unknown.
@@ -25,7 +25,7 @@ Drivers of the day:
 - Territorial change remains gradual rather than breakthrough-driven.
 
 Assessment:
-The data indicates continued Russian positional pressure combined with attritional warfare dynamics.
+Local counter-movements continue to shape the frontline dynamics.
 
 Outlook:
 Short-term developments will likely remain driven by localized tactical engagements.
