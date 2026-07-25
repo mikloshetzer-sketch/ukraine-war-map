@@ -3600,5 +3600,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "advance in the Pokrovsk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
