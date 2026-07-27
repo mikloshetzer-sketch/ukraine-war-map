@@ -15,34 +15,12 @@
         "kind": "ground",
         "article_date": "2026-07-25",
         "event_date": "2026-07-25",
-        "ingested_at": "2026-07-26T07:12:35Z",
+        "ingested_at": "2026-07-27T08:03:24Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces continued offensive operations in the Pokrovsk and Novopavlivka directions on July 23 and 24 but did not advance.[39] Ukrainian forces recently advanced in the Oleksandrivka direction as Russian forces conducted infiltration missions.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-25-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.8516799,
-          48.8105407
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-22",
-        "event_date": "2026-07-22",
-        "ingested_at": "2026-07-26T07:12:35Z",
-        "place": "Rai-Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed on July 21 that Russian forces advanced north and west of Rai-Oleksandrivka (southeast of Slovyansk).[46] Russian forces conducted FAB aerial bomb strikes against civilian infrastructure and a Ukrainian position in the Slovyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-22-2026/"
       }
     }
   ]
