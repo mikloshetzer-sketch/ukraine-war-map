@@ -1,20 +1,24 @@
 {
-  "generated_at": "2026-07-27T13:44:50+00:00",
-  "count": 6,
+  "generated_at": "2026-07-27T18:50:53+00:00",
+  "count": 7,
   "by_event_type": {
+    "drone_attack": 5,
     "artillery": 1,
-    "ground_clash": 1,
-    "drone_attack": 4
+    "ground_clash": 1
   },
   "by_source": {
-    "generalstaffzsu": 1,
-    "ukrainenow": 5
+    "ukrainenow": 6,
+    "generalstaffzsu": 1
   },
   "by_confidence": {
-    "high": 1,
-    "medium": 5
+    "medium": 6,
+    "high": 1
   },
   "top_sectors": [
+    [
+      "zaporizhzhia",
+      2
+    ],
     [
       "lyman",
       1
@@ -33,10 +37,6 @@
     ],
     [
       "orikhiv",
-      1
-    ],
-    [
-      "zaporizhzhia",
       1
     ]
   ]
