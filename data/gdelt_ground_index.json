@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-07-27T08:45:38Z",
-  "started_at_utc": "2026-07-27T08:45:14Z",
+  "generated_at_utc": "2026-07-28T07:46:20Z",
+  "started_at_utc": "2026-07-28T07:46:03Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -42,14 +42,23 @@
     "rejections_saved": 0,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 0,
+      "queries_with_response": 1,
       "items_before_filters": 0,
       "items_with_date": 0,
       "items_in_lookback_window": 0,
       "items_keyword_matched": 0,
       "items_action_matched": 0,
       "items_after_dedup": 0,
-      "parser_debug": []
+      "parser_debug": [
+        {
+          "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
+          "parse_ok": false,
+          "root_tag": "",
+          "channel_found": false,
+          "item_count_raw": 0,
+          "sample_date_fields": []
+        }
+      ]
     }
   },
   "files": {
