@@ -1,7 +1,7 @@
 {
   "source": "isw_ground",
-  "generated_at_utc": "2026-07-27T08:03:25Z",
-  "started_at_utc": "2026-07-27T08:03:23Z",
+  "generated_at_utc": "2026-07-28T07:17:34Z",
+  "started_at_utc": "2026-07-28T07:17:32Z",
   "config": {
     "lookback_days": 30,
     "max_articles": 30,
@@ -31,10 +31,10 @@
     "dropped_too_long": 0,
     "frontline_available": false,
     "geocode_cache_hits": 1,
-    "geocode_cache_negative_hits": 1,
+    "geocode_cache_negative_hits": 2,
     "geocode_new_success": 0,
-    "geocode_new_fail": 1,
-    "geocode_calls_this_run": 1,
+    "geocode_new_fail": 0,
+    "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
     "cache_entries_total": 600
   },
