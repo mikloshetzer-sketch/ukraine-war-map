@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6058009,
+          49.7187201
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-28",
+        "event_date": "2026-07-28",
+        "ingested_at": "2026-07-29T07:22:27Z",
+        "place": "central Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Geolocated footage published on July 28 shows Ukrainian forces striking a Russian position in central Kupyansk after what ISW assesses was an infiltration mission.[32] Ukrainian forces recently advanced or maintained positions in the Borova direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-28-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.2291246,
+          47.9172764
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "toward_only",
+        "article_date": "2026-07-28",
+        "event_date": "2026-07-28",
+        "ingested_at": "2026-07-29T07:22:27Z",
+        "place": "Uspenivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger acknowledged on July 28 that Ukrainian forces advanced east of Solodke (north of Hulyaipole) and in Solodke itself.[54] The milblogger claimed that Ukrainian forces are successfully attacking toward Uspenivka (northeast of Hulyaipole).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-28-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.0805393,
           48.3262489
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-07-25",
         "event_date": "2026-07-25",
-        "ingested_at": "2026-07-28T07:17:33Z",
+        "ingested_at": "2026-07-29T07:22:27Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,

@@ -3610,5 +3610,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Uspenivka": {
+    "coords": [
+      37.2291246,
+      47.9172764
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
