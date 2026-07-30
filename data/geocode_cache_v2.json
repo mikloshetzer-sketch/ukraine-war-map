@@ -3618,5 +3618,29 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "the Velykyi Burluk": {
+    "coords": [
+      36.2354429,
+      49.9874339
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Artilne": {
+    "coords": [
+      37.6207775,
+      50.2447591
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Tykhonivka": {
+    "coords": [
+      37.7841226,
+      48.7180107
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
