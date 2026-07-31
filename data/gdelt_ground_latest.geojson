@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-07-31",
+        "event_date": "2026-07-31",
+        "ingested_at": "2026-07-31T08:09:08Z",
+        "place": "Sloviansk",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 226 C - Clashes in F - Line : 30 in Kostiantynivka Dir , 25 in Pokrovsk Dir , 22 in Sloviansk Dir ; Z : UKR Preparing  asymmetric  Response to RU Ballistic Missile Campaign ; UKR Just Torched RU Sea Drone Base ; UKR Parked a Drone on RU...",
+        "text": "RIGHT SPEAK : 226 C - Clashes in F - Line : 30 in Kostiantynivka Dir , 25 in Pokrovsk Dir , 22 in Sloviansk Dir ; Z : UKR Preparing  asymmetric  Response to RU Ballistic Missile Campaign ; UKR Just Torched RU Sea Drone Base ; UKR Parked a Drone on RU....",
+        "source_url": "http://www.rightspeak.net/2026/07/226-c-clashes-in-f-line-30-in.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/07/226-c-clashes-in-f-line-30-in.html"
+      }
+    }
+  ]
 }

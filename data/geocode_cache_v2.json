@@ -3642,5 +3642,13 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Drone": {
+    "coords": [
+      30.4398455,
+      50.4419229
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
