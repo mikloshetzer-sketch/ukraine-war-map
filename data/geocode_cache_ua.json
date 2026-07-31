@@ -3517,5 +3517,14 @@
   "tactical combat": null,
   "casualty care": null,
   "heimevernet": null,
-  "moscow times": null
+  "moscow times": null,
+  "експерти": null,
+  "international tattoo": null,
+  "pipes": null,
+  "drums": null,
+  "dancers": {
+    "lat": 50.4451489,
+    "lon": 30.5182014,
+    "display_name": "Танцівники на Театральній, вулиця Євгена Чикаленка, Центр, Шевченківський район, Київ, 01001, Україна"
+  }
 }
