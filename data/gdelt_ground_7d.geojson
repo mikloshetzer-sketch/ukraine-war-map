@@ -1,4 +1,57 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.4943638,
+          48.6427478
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-02",
+        "event_date": "2026-08-02",
+        "ingested_at": "2026-08-02T07:40:22Z",
+        "place": "Singapore",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "UK band Massive Attack banned from Singapore over  foreign  Palestinian flag at concert",
+        "text": "UK band Massive Attack banned from Singapore over  foreign  Palestinian flag at concert.",
+        "source_url": "https://www.thenationalnews.com/arts-culture/music-stage/2026/08/02/massive-attack-ban-singapore-palestine-flag/",
+        "publisher_hint": "https://www.thenationalnews.com/arts-culture/music-stage/2026/08/02/massive-attack-ban-singapore-palestine-flag/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5880903,
+          55.8962758
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-02",
+        "event_date": "2026-08-02",
+        "ingested_at": "2026-08-02T07:40:22Z",
+        "place": "Starlink",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukraine war briefing : Kyiv missile attack kills at least 10 as Zelenskyy seeks attack role for Starlink",
+        "text": "Ukraine war briefing : Kyiv missile attack kills at least 10 as Zelenskyy seeks attack role for Starlink.",
+        "source_url": "https://www.aol.co.uk/articles/ukraine-war-briefing-kyiv-missile-035559000.html",
+        "publisher_hint": "https://www.aol.co.uk/articles/ukraine-war-briefing-kyiv-missile-035559000.html"
+      }
+    }
+  ]
 }

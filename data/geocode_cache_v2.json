@@ -3650,5 +3650,31 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Singapore": {
+    "coords": [
+      39.4943638,
+      48.6427478
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Palestinian": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Massive Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Starlink": {
+    "coords": [
+      37.5880903,
+      55.8962758
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
