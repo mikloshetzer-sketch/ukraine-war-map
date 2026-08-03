@@ -3676,5 +3676,54 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "Pershomarivka": {
+    "coords": [
+      37.701441,
+      48.7348727
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "eastern Bilytske": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "July": {
+    "coords": [
+      50.2762645,
+      53.2252257
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "constrain Russia": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukraine remains low two": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Zaporizhzhia City in August": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "order to convince Ukraine": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Pysarivka": {
+    "coords": [
+      29.0464131,
+      48.0557079
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

@@ -1,4 +1,159 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.701441,
+          48.7348727
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-02",
+        "event_date": "2026-08-02",
+        "ingested_at": "2026-08-03T07:58:46Z",
+        "place": "Pershomarivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[53] A Russian milblogger claimed that Russian forces advanced south and southeast of Vasyutynske and north of Pershomarivka (both north of Kostyantynivka).[54] Russian forces continue to rely on glide bomb strikes to destroy buildings and enable infiltration missions and subsequent advances within Kostyantynivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-2-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.2762645,
+          53.2252257
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-01",
+        "event_date": "2026-08-01",
+        "ingested_at": "2026-08-03T07:58:46Z",
+        "place": "July",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "Even the Russian rate of advance and infiltration in July 2026 is a fraction of Russia&#8217;s rate of advance in July 2025, when Russian forces seized 455.74 square kilometers.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.2762645,
+          53.2252257
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-01",
+        "event_date": "2026-08-01",
+        "ingested_at": "2026-08-03T07:58:46Z",
+        "place": "July",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "Russian forces reportedly suffered the highest casualty rate of 2026 thus far in July, paying an increasingly high price for no significant increase in the rate of advance — despite the Kremlin&#8217;s cognitive warfare effort to deny this fact.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.2762645,
+          53.2252257
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-01",
+        "event_date": "2026-08-01",
+        "ingested_at": "2026-08-03T07:58:46Z",
+        "place": "July",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "Russian forces have advanced, infiltrated, or claimed to have advanced in 18.49 square kilometers per day in July 2026.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-1-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0464131,
+          48.0557079
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-31",
+        "event_date": "2026-07-31",
+        "ingested_at": "2026-08-03T07:58:47Z",
+        "place": "Pysarivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on July 31 that Ukrainian forces counterattacked near Pysarivka and Ivolzhanske (both north of Sumy City).[35] The Russian milblogger claimed that Russian forces are struggling to advance because the forested terrain north of Sumy City provides concealment for Ukrainian forces.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-31-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8043,
+          49.18167
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-31",
+        "event_date": "2026-07-31",
+        "ingested_at": "2026-08-03T07:58:47Z",
+        "place": "Ridkodub",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian milbloggers and a source reporting on the Russian Western Grouping of Forces claimed on July 31 that Ukrainian forces counterattacked near Ridkodub, Nove, Katerynivka, and Karpivka (all southeast of Borova) as Russian forces continued offensive operations.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-31-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.7855471,
+          47.5754426
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-07-30",
+        "event_date": "2026-07-30",
+        "ingested_at": "2026-08-03T07:58:47Z",
+        "place": "Orikhiv",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Mashovets reported that Ukrainian forces advanced along the Stepnohirsk – Plavni (west of Orikhiv) vector and that Russian forces attempted unsuccessfully to counterattack with infiltrators in southern Stepnohirsk and southern Prymorske.[84] Mashovets assessed that the Russian military command in this area is worried about its increasingly difficult situation as Ukrainian forces attack toward Kamyanske.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-30-2026/"
+      }
+    }
+  ]
 }
