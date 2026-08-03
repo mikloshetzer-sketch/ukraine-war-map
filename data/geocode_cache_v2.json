@@ -3725,5 +3725,31 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Brent": {
+    "coords": [
+      36.3608741,
+      49.9911249
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Stocks": {
+    "coords": [
+      29.2416303,
+      50.7653664
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "What Mayor Calls": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Brutal Terror Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
