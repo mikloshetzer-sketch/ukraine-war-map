@@ -1,17 +1,16 @@
 {
-  "generated_at": "2026-08-03T18:59:15+00:00",
-  "count": 8,
+  "generated_at": "2026-08-04T07:56:12+00:00",
+  "count": 9,
   "by_event_type": {
-    "drone_attack": 6,
-    "artillery": 2
+    "drone_attack": 9
   },
   "by_source": {
-    "ukrainenow": 1,
-    "generalstaffzsu": 4,
-    "deepstateua": 3
+    "ukrainenow": 2,
+    "generalstaffzsu": 3,
+    "deepstateua": 4
   },
   "by_confidence": {
-    "medium": 1,
+    "medium": 2,
     "high": 7
   },
   "top_sectors": [
@@ -30,6 +29,10 @@
     [
       "orikhiv",
       2
+    ],
+    [
+      "kherson",
+      1
     ]
   ]
 }
