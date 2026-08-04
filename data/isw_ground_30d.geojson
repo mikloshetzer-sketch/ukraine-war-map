@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-03",
+        "event_date": "2026-08-03",
+        "ingested_at": "2026-08-04T07:16:16Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Mashovets stated that Ukrainian forces likely liberated Myrne (east of Oleksandrivka), possibly advanced southwest of the settlement, and likely seized Voskresenka (east of Oleksandrivka and southwest of Myrne).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-3-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-03",
+        "event_date": "2026-08-03",
+        "ingested_at": "2026-08-04T07:16:16Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Mashovets stated that Ukrainian forces likely liberated Rybne (south of Oleksandrivka and west of Novohryhorivka) and advanced south of Rybne and to the area northeast of Pavlivka (southeast of Rybne).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-3-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.701441,
           48.7348727
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-02",
         "event_date": "2026-08-02",
-        "ingested_at": "2026-08-03T07:58:46Z",
+        "ingested_at": "2026-08-04T07:16:17Z",
         "place": "Pershomarivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-08-01",
         "event_date": "2026-08-01",
-        "ingested_at": "2026-08-03T07:58:46Z",
+        "ingested_at": "2026-08-04T07:16:17Z",
         "place": "July",
         "country_code": "ru",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-08-01",
         "event_date": "2026-08-01",
-        "ingested_at": "2026-08-03T07:58:46Z",
+        "ingested_at": "2026-08-04T07:16:17Z",
         "place": "July",
         "country_code": "ru",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-08-01",
         "event_date": "2026-08-01",
-        "ingested_at": "2026-08-03T07:58:46Z",
+        "ingested_at": "2026-08-04T07:16:17Z",
         "place": "July",
         "country_code": "ru",
         "front_dist_km": null,
@@ -103,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-07-31",
         "event_date": "2026-07-31",
-        "ingested_at": "2026-08-03T07:58:47Z",
+        "ingested_at": "2026-08-04T07:16:17Z",
         "place": "Pysarivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,34 +169,12 @@
         "kind": "ground",
         "article_date": "2026-07-31",
         "event_date": "2026-07-31",
-        "ingested_at": "2026-08-03T07:58:47Z",
+        "ingested_at": "2026-08-04T07:16:17Z",
         "place": "Ridkodub",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian milbloggers and a source reporting on the Russian Western Grouping of Forces claimed on July 31 that Ukrainian forces counterattacked near Ridkodub, Nove, Katerynivka, and Karpivka (all southeast of Borova) as Russian forces continued offensive operations.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-31-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.7855471,
-          47.5754426
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-30",
-        "event_date": "2026-07-30",
-        "ingested_at": "2026-08-03T07:58:47Z",
-        "place": "Orikhiv",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Mashovets reported that Ukrainian forces advanced along the Stepnohirsk – Plavni (west of Orikhiv) vector and that Russian forces attempted unsuccessfully to counterattack with infiltrators in southern Stepnohirsk and southern Prymorske.[84] Mashovets assessed that the Russian military command in this area is worried about its increasingly difficult situation as Ukrainian forces attack toward Kamyanske.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-30-2026/"
       }
     }
   ]
