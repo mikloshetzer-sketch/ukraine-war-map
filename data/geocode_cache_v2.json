@@ -3751,5 +3751,28 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Black Sea": {
+    "coords": [
+      39.6050994,
+      43.6764445
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Fresh Ukrainian Drone Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Novinite": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Wildberries Warehouse Burns": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

@@ -6,25 +6,77 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          44.088177,
-          43.308723
+          23.4200824,
+          48.6499199
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-08-03",
-        "event_date": "2026-08-03",
-        "ingested_at": "2026-08-03T08:41:19Z",
-        "place": "Iran",
+        "article_date": "2026-08-04",
+        "event_date": "2026-08-04",
+        "ingested_at": "2026-08-04T07:47:16Z",
+        "place": "Ukrainian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Russia - Ukrainian war : Ukraine accused of targeting civilians with drone attack on Black Sea resort",
+        "text": "Russia - Ukrainian war : Ukraine accused of targeting civilians with drone attack on Black Sea resort.",
+        "source_url": "https://www.watoday.com.au/world/europe/russia-alleges-ukraine-attacked-holidaymakers-with-drones-20260804-p60l53.html",
+        "publisher_hint": "https://www.watoday.com.au/world/europe/russia-alleges-ukraine-attacked-holidaymakers-with-drones-20260804-p60l53.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.6050994,
+          43.6764445
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-04",
+        "event_date": "2026-08-04",
+        "ingested_at": "2026-08-04T07:47:16Z",
+        "place": "Black Sea",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ru",
         "front_dist_km": null,
-        "title": "Stocks set for a firmer open as Brent sinks ~6 % on Iran de - escalation ; JPY extends gains on intervention threats - Newsquawk EU Market Open",
-        "text": "Stocks set for a firmer open as Brent sinks ~6 % on Iran de - escalation ; JPY extends gains on intervention threats - Newsquawk EU Market Open.",
-        "source_url": "https://www.zerohedge.com/markets/stocks-set-firmer-open-brent-sinks-6-iran-de-escalation-jpy-extends-gains-intervention",
-        "publisher_hint": "https://www.zerohedge.com/markets/stocks-set-firmer-open-brent-sinks-6-iran-de-escalation-jpy-extends-gains-intervention"
+        "title": "Russia - Ukraine war : Ukraine accused of targeting civilians with drone attack on Black Sea resort",
+        "text": "Russia - Ukraine war : Ukraine accused of targeting civilians with drone attack on Black Sea resort.",
+        "source_url": "https://www.smh.com.au/world/europe/russia-alleges-ukraine-attacked-holidaymakers-with-drones-20260804-p60l53.html",
+        "publisher_hint": "https://www.smh.com.au/world/europe/russia-alleges-ukraine-attacked-holidaymakers-with-drones-20260804-p60l53.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.4200824,
+          48.6499199
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-04",
+        "event_date": "2026-08-04",
+        "ingested_at": "2026-08-04T07:47:16Z",
+        "place": "Ukrainian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Russia - Ukrainian war : Ukraine accused of targeting civilians with drone attack on Black Sea resort",
+        "text": "Russia - Ukrainian war : Ukraine accused of targeting civilians with drone attack on Black Sea resort.",
+        "source_url": "https://www.brisbanetimes.com.au/world/europe/russia-alleges-ukraine-attacked-holidaymakers-with-drones-20260804-p60l53.html",
+        "publisher_hint": "https://www.brisbanetimes.com.au/world/europe/russia-alleges-ukraine-attacked-holidaymakers-with-drones-20260804-p60l53.html"
       }
     }
   ]

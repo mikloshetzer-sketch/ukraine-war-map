@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-08-03T08:41:22Z",
-  "started_at_utc": "2026-08-03T08:40:43Z",
+  "generated_at_utc": "2026-08-04T07:47:19Z",
+  "started_at_utc": "2026-08-04T07:46:55Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -20,43 +20,49 @@
     "broad_places_count": 18
   },
   "stats": {
-    "articles_after_filters": 2,
-    "raw_events_total": 2,
-    "dedup_events_total": 2,
-    "features_latest": 1,
-    "features_7d": 1,
-    "features_30d": 1,
-    "events_total": 2,
-    "events_with_any_geo": 3,
-    "point_features": 1,
+    "articles_after_filters": 4,
+    "raw_events_total": 4,
+    "dedup_events_total": 4,
+    "features_latest": 3,
+    "features_7d": 3,
+    "features_30d": 3,
+    "events_total": 4,
+    "events_with_any_geo": 5,
+    "point_features": 3,
     "dropped_not_front_near": 0,
     "dropped_geocode": 1,
     "frontline_available": false,
-    "geocode_cache_hits": 1,
-    "geocode_cache_negative_hits": 1,
-    "geocode_new_success": 2,
-    "geocode_new_fail": 2,
+    "geocode_cache_hits": 4,
+    "geocode_cache_negative_hits": 0,
+    "geocode_new_success": 1,
+    "geocode_new_fail": 3,
     "geocode_calls_this_run": 4,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 621,
+    "cache_entries_total": 625,
     "rejections_saved": 1,
     "collect_debug": {
       "queries_total": 3,
       "queries_with_response": 2,
-      "items_before_filters": 80,
-      "items_with_date": 80,
-      "items_in_lookback_window": 80,
-      "items_keyword_matched": 4,
-      "items_action_matched": 2,
-      "items_after_dedup": 2,
+      "items_before_filters": 160,
+      "items_with_date": 160,
+      "items_in_lookback_window": 160,
+      "items_keyword_matched": 5,
+      "items_action_matched": 4,
+      "items_after_dedup": 4,
       "parser_debug": [
         {
           "query": "\"Ukraine\" AND (attack OR assault OR advance OR fighting OR clashes)",
-          "parse_ok": false,
-          "root_tag": "",
-          "channel_found": false,
-          "item_count_raw": 0,
-          "sample_date_fields": []
+          "parse_ok": true,
+          "root_tag": "rss",
+          "channel_found": true,
+          "item_count_raw": 80,
+          "sample_date_fields": [
+            "4 Aug 2026 07:15:00 +0000",
+            "4 Aug 2026 07:15:00 +0000",
+            "4 Aug 2026 07:15:00 +0000",
+            "4 Aug 2026 07:15:00 +0000",
+            "4 Aug 2026 07:15:00 +0000"
+          ]
         },
         {
           "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
@@ -65,11 +71,11 @@
           "channel_found": true,
           "item_count_raw": 80,
           "sample_date_fields": [
-            "3 Aug 2026 08:15:00 +0000",
-            "3 Aug 2026 08:15:00 +0000",
-            "3 Aug 2026 08:15:00 +0000",
-            "3 Aug 2026 08:00:00 +0000",
-            "3 Aug 2026 08:00:00 +0000"
+            "4 Aug 2026 07:15:00 +0000",
+            "4 Aug 2026 07:00:00 +0000",
+            "4 Aug 2026 07:00:00 +0000",
+            "4 Aug 2026 07:00:00 +0000",
+            "4 Aug 2026 07:00:00 +0000"
           ]
         }
       ]
