@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-08-03",
         "event_date": "2026-08-03",
-        "ingested_at": "2026-08-04T07:16:16Z",
+        "ingested_at": "2026-08-05T07:17:50Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-08-03",
         "event_date": "2026-08-03",
-        "ingested_at": "2026-08-04T07:16:16Z",
+        "ingested_at": "2026-08-05T07:17:50Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-02",
         "event_date": "2026-08-02",
-        "ingested_at": "2026-08-04T07:16:17Z",
+        "ingested_at": "2026-08-05T07:17:50Z",
         "place": "Pershomarivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-08-01",
         "event_date": "2026-08-01",
-        "ingested_at": "2026-08-04T07:16:17Z",
+        "ingested_at": "2026-08-05T07:17:50Z",
         "place": "July",
         "country_code": "ru",
         "front_dist_km": null,
@@ -103,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-08-01",
         "event_date": "2026-08-01",
-        "ingested_at": "2026-08-04T07:16:17Z",
+        "ingested_at": "2026-08-05T07:17:50Z",
         "place": "July",
         "country_code": "ru",
         "front_dist_km": null,
@@ -125,56 +125,12 @@
         "kind": "ground",
         "article_date": "2026-08-01",
         "event_date": "2026-08-01",
-        "ingested_at": "2026-08-04T07:16:17Z",
+        "ingested_at": "2026-08-05T07:17:50Z",
         "place": "July",
         "country_code": "ru",
         "front_dist_km": null,
         "text": "Russian forces have advanced, infiltrated, or claimed to have advanced in 18.49 square kilometers per day in July 2026.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.0464131,
-          48.0557079
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-31",
-        "event_date": "2026-07-31",
-        "ingested_at": "2026-08-04T07:16:17Z",
-        "place": "Pysarivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed on July 31 that Ukrainian forces counterattacked near Pysarivka and Ivolzhanske (both north of Sumy City).[35] The Russian milblogger claimed that Russian forces are struggling to advance because the forested terrain north of Sumy City provides concealment for Ukrainian forces.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-31-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.8043,
-          49.18167
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-07-31",
-        "event_date": "2026-07-31",
-        "ingested_at": "2026-08-04T07:16:17Z",
-        "place": "Ridkodub",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian milbloggers and a source reporting on the Russian Western Grouping of Forces claimed on July 31 that Ukrainian forces counterattacked near Ridkodub, Nove, Katerynivka, and Karpivka (all southeast of Borova) as Russian forces continued offensive operations.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-july-31-2026/"
       }
     }
   ]
