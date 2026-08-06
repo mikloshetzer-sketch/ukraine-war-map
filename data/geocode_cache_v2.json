@@ -3774,5 +3774,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "intensified Russian drone": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Raipole": {
+    "coords": [
+      33.69149,
+      48.199951
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

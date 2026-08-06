@@ -6,6 +6,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          33.69149,
+          48.199951
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-05",
+        "event_date": "2026-08-05",
+        "ingested_at": "2026-08-06T07:19:19Z",
+        "place": "Raipole",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[61] A Russian milblogger claimed on August 5 that Russian forces advanced east of Raipole and east of Kolona-Mezhova (both west of Pokrovsk).[62] Neither Ukrainian nor Russian sources reported ground activity in the Novopavlivka direction on August 5.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-5-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-05",
+        "event_date": "2026-08-05",
+        "ingested_at": "2026-08-06T07:19:19Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-5-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-05",
+        "event_date": "2026-08-05",
+        "ingested_at": "2026-08-06T07:19:19Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian milbloggers have complained about Russian military commanders exaggerating claims of advance across the theater, including in the Oleksandrivka direction.[68] Russian forces continued offensive operations in western Zaporizhia Oblast on August 4 and 5 but did not advance, as Ukrainian forces counterattacked.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-5-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           38.5372813,
           48.6252414
         ]
@@ -15,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-08-03",
         "event_date": "2026-08-03",
-        "ingested_at": "2026-08-05T07:17:50Z",
+        "ingested_at": "2026-08-06T07:19:19Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-08-03",
         "event_date": "2026-08-03",
-        "ingested_at": "2026-08-05T07:17:50Z",
+        "ingested_at": "2026-08-06T07:19:19Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,78 +125,12 @@
         "kind": "ground",
         "article_date": "2026-08-02",
         "event_date": "2026-08-02",
-        "ingested_at": "2026-08-05T07:17:50Z",
+        "ingested_at": "2026-08-06T07:19:19Z",
         "place": "Pershomarivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "[53] A Russian milblogger claimed that Russian forces advanced south and southeast of Vasyutynske and north of Pershomarivka (both north of Kostyantynivka).[54] Russian forces continue to rely on glide bomb strikes to destroy buildings and enable infiltration missions and subsequent advances within Kostyantynivka.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-2-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          50.2762645,
-          53.2252257
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-01",
-        "event_date": "2026-08-01",
-        "ingested_at": "2026-08-05T07:17:50Z",
-        "place": "July",
-        "country_code": "ru",
-        "front_dist_km": null,
-        "text": "Even the Russian rate of advance and infiltration in July 2026 is a fraction of Russia&#8217;s rate of advance in July 2025, when Russian forces seized 455.74 square kilometers.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          50.2762645,
-          53.2252257
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-01",
-        "event_date": "2026-08-01",
-        "ingested_at": "2026-08-05T07:17:50Z",
-        "place": "July",
-        "country_code": "ru",
-        "front_dist_km": null,
-        "text": "Russian forces reportedly suffered the highest casualty rate of 2026 thus far in July, paying an increasingly high price for no significant increase in the rate of advance — despite the Kremlin&#8217;s cognitive warfare effort to deny this fact.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          50.2762645,
-          53.2252257
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-01",
-        "event_date": "2026-08-01",
-        "ingested_at": "2026-08-05T07:17:50Z",
-        "place": "July",
-        "country_code": "ru",
-        "front_dist_km": null,
-        "text": "Russian forces have advanced, infiltrated, or claimed to have advanced in 18.49 square kilometers per day in July 2026.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-1-2026/"
       }
     }
   ]
