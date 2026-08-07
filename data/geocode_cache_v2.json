@@ -3787,5 +3787,13 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Chernihivka": {
+    "coords": [
+      36.2075,
+      47.19486
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

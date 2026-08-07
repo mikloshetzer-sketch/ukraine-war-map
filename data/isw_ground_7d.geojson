@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          36.2075,
+          47.19486
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-06",
+        "event_date": "2026-08-06",
+        "ingested_at": "2026-08-07T05:56:35Z",
+        "place": "Chernihivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian milbloggers claimed on August 6 that Russian forces seized Shevchenko and Chernihivka and advanced near Chernihivka (both north of Pokrovsk).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-6-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.69149,
           48.199951
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-08-05",
         "event_date": "2026-08-05",
-        "ingested_at": "2026-08-06T07:19:19Z",
+        "ingested_at": "2026-08-07T05:56:35Z",
         "place": "Raipole",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-05",
         "event_date": "2026-08-05",
-        "ingested_at": "2026-08-06T07:19:19Z",
+        "ingested_at": "2026-08-07T05:56:35Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-08-05",
         "event_date": "2026-08-05",
-        "ingested_at": "2026-08-06T07:19:19Z",
+        "ingested_at": "2026-08-07T05:56:35Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-08-03",
         "event_date": "2026-08-03",
-        "ingested_at": "2026-08-06T07:19:19Z",
+        "ingested_at": "2026-08-07T05:56:35Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,34 +125,12 @@
         "kind": "ground",
         "article_date": "2026-08-03",
         "event_date": "2026-08-03",
-        "ingested_at": "2026-08-06T07:19:19Z",
+        "ingested_at": "2026-08-07T05:56:35Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Mashovets stated that Ukrainian forces likely liberated Rybne (south of Oleksandrivka and west of Novohryhorivka) and advanced south of Rybne and to the area northeast of Pavlivka (southeast of Rybne).",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-3-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.701441,
-          48.7348727
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-02",
-        "event_date": "2026-08-02",
-        "ingested_at": "2026-08-06T07:19:19Z",
-        "place": "Pershomarivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[53] A Russian milblogger claimed that Russian forces advanced south and southeast of Vasyutynske and north of Pershomarivka (both north of Kostyantynivka).[54] Russian forces continue to rely on glide bomb strikes to destroy buildings and enable infiltration missions and subsequent advances within Kostyantynivka.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-2-2026/"
       }
     }
   ]
