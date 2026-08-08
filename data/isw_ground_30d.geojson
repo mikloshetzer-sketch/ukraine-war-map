@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          50.2762645,
+          53.2252257
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-07",
+        "event_date": "2026-08-07",
+        "ingested_at": "2026-08-08T05:21:15Z",
+        "place": "July",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "The Russian monthly rate of advance in July 2026 is higher than the rate of advance in June 2026 but is still insufficient to seize the remainder of Donetsk Oblast by Putin’s newly set deadline of December 31, 2026.[6] It remains highly unlikely that Russian forces will be able to seize the Fortress Belt or the rest of Donbas any time soon, if at all.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-7-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.37411,
+          48.56335
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-07",
+        "event_date": "2026-08-07",
+        "ingested_at": "2026-08-08T05:21:15Z",
+        "place": "Novomykolaivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian milbloggers acknowledged on August 7 that Ukrainian forces control part of central Muravka (northeast of Novopavlivka).[44] Geolocated footage published on August 6 shows Ukrainian forces striking a Russian position north of Novomykolaivka (northeast of Novopavlivka), after what ISW assesses was a Russian infiltration mission.[45] Ukrainian forces recently advanced northeast of Oleksandrivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-7-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           36.2075,
           47.19486
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-06",
         "event_date": "2026-08-06",
-        "ingested_at": "2026-08-07T05:56:35Z",
+        "ingested_at": "2026-08-08T05:21:15Z",
         "place": "Chernihivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-08-05",
         "event_date": "2026-08-05",
-        "ingested_at": "2026-08-07T05:56:35Z",
+        "ingested_at": "2026-08-08T05:21:15Z",
         "place": "Raipole",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-08-05",
         "event_date": "2026-08-05",
-        "ingested_at": "2026-08-07T05:56:35Z",
+        "ingested_at": "2026-08-08T05:21:15Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,56 +125,12 @@
         "kind": "ground",
         "article_date": "2026-08-05",
         "event_date": "2026-08-05",
-        "ingested_at": "2026-08-07T05:56:35Z",
+        "ingested_at": "2026-08-08T05:21:15Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian milbloggers have complained about Russian military commanders exaggerating claims of advance across the theater, including in the Oleksandrivka direction.[68] Russian forces continued offensive operations in western Zaporizhia Oblast on August 4 and 5 but did not advance, as Ukrainian forces counterattacked.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.5372813,
-          48.6252414
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-03",
-        "event_date": "2026-08-03",
-        "ingested_at": "2026-08-07T05:56:35Z",
-        "place": "Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Mashovets stated that Ukrainian forces likely liberated Myrne (east of Oleksandrivka), possibly advanced southwest of the settlement, and likely seized Voskresenka (east of Oleksandrivka and southwest of Myrne).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-3-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.5372813,
-          48.6252414
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-03",
-        "event_date": "2026-08-03",
-        "ingested_at": "2026-08-07T05:56:35Z",
-        "place": "Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Mashovets stated that Ukrainian forces likely liberated Rybne (south of Oleksandrivka and west of Novohryhorivka) and advanced south of Rybne and to the area northeast of Pavlivka (southeast of Rybne).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-3-2026/"
       }
     }
   ]
