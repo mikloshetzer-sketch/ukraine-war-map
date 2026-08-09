@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.1774549,
+          48.4515774
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-08",
+        "event_date": "2026-08-08",
+        "ingested_at": "2026-08-09T05:29:53Z",
+        "place": "Novyi Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[38] A Russian milblogger claimed on August 8 that Russian forces advanced south of Novyi Donbas (southeast of Dobropillya).[39] Russian forces continued offensive operations in the Pokrovsk direction on August 7 and 8 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-8-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           50.2762645,
           53.2252257
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-08-07",
         "event_date": "2026-08-07",
-        "ingested_at": "2026-08-08T05:21:15Z",
+        "ingested_at": "2026-08-09T05:29:53Z",
         "place": "July",
         "country_code": "ru",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-07",
         "event_date": "2026-08-07",
-        "ingested_at": "2026-08-08T05:21:15Z",
+        "ingested_at": "2026-08-09T05:29:53Z",
         "place": "Novomykolaivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-08-06",
         "event_date": "2026-08-06",
-        "ingested_at": "2026-08-08T05:21:15Z",
+        "ingested_at": "2026-08-09T05:29:54Z",
         "place": "Chernihivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-08-05",
         "event_date": "2026-08-05",
-        "ingested_at": "2026-08-08T05:21:15Z",
+        "ingested_at": "2026-08-09T05:29:54Z",
         "place": "Raipole",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-08-05",
         "event_date": "2026-08-05",
-        "ingested_at": "2026-08-08T05:21:15Z",
+        "ingested_at": "2026-08-09T05:29:54Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-08-05",
         "event_date": "2026-08-05",
-        "ingested_at": "2026-08-08T05:21:15Z",
+        "ingested_at": "2026-08-09T05:29:54Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,

@@ -3795,5 +3795,15 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Bilyi Kolodyaz": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "the Orikhiv": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
