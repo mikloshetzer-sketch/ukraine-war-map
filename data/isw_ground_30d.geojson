@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-09",
+        "event_date": "2026-08-09",
+        "ingested_at": "2026-08-10T05:57:00Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Kupyansk and Borova directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-9-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.1774549,
           48.4515774
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-08-08",
         "event_date": "2026-08-08",
-        "ingested_at": "2026-08-09T05:29:53Z",
+        "ingested_at": "2026-08-10T05:57:00Z",
         "place": "Novyi Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-07",
         "event_date": "2026-08-07",
-        "ingested_at": "2026-08-09T05:29:53Z",
+        "ingested_at": "2026-08-10T05:57:00Z",
         "place": "July",
         "country_code": "ru",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-08-07",
         "event_date": "2026-08-07",
-        "ingested_at": "2026-08-09T05:29:53Z",
+        "ingested_at": "2026-08-10T05:57:00Z",
         "place": "Novomykolaivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,78 +103,12 @@
         "kind": "ground",
         "article_date": "2026-08-06",
         "event_date": "2026-08-06",
-        "ingested_at": "2026-08-09T05:29:54Z",
+        "ingested_at": "2026-08-10T05:57:00Z",
         "place": "Chernihivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian milbloggers claimed on August 6 that Russian forces seized Shevchenko and Chernihivka and advanced near Chernihivka (both north of Pokrovsk).",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.69149,
-          48.199951
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-05",
-        "event_date": "2026-08-05",
-        "ingested_at": "2026-08-09T05:29:54Z",
-        "place": "Raipole",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[61] A Russian milblogger claimed on August 5 that Russian forces advanced east of Raipole and east of Kolona-Mezhova (both west of Pokrovsk).[62] Neither Ukrainian nor Russian sources reported ground activity in the Novopavlivka direction on August 5.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-05",
-        "event_date": "2026-08-05",
-        "ingested_at": "2026-08-09T05:29:54Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-05",
-        "event_date": "2026-08-05",
-        "ingested_at": "2026-08-09T05:29:54Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian milbloggers have complained about Russian military commanders exaggerating claims of advance across the theater, including in the Oleksandrivka direction.[68] Russian forces continued offensive operations in western Zaporizhia Oblast on August 4 and 5 but did not advance, as Ukrainian forces counterattacked.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-5-2026/"
       }
     }
   ]
