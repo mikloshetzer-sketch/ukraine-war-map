@@ -3810,5 +3810,21 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Petropavlivka": {
+    "coords": [
+      39.26685,
+      48.80813
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Myrne": {
+    "coords": [
+      37.7344444,
+      47.4242451
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
