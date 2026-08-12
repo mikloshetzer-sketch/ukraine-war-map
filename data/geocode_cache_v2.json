@@ -3826,5 +3826,28 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Tuesday": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukraine Repels": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Combat Clashes": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Friday": {
+    "coords": [
+      37.6324573,
+      55.7313059
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
