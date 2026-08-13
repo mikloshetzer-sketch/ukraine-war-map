@@ -1,7 +1,7 @@
 {
   "source": "isw_ground",
-  "generated_at_utc": "2026-08-12T05:59:41Z",
-  "started_at_utc": "2026-08-12T05:59:39Z",
+  "generated_at_utc": "2026-08-13T06:00:24Z",
+  "started_at_utc": "2026-08-13T06:00:20Z",
   "config": {
     "lookback_days": 30,
     "max_articles": 30,
@@ -36,7 +36,7 @@
     "geocode_new_fail": 0,
     "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 633
+    "cache_entries_total": 637
   },
   "files": {
     "latest": "data/isw_ground_latest.geojson",
