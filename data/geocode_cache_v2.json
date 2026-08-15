@@ -3875,5 +3875,46 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Cluster Attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Possible Russian War Crime": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Potential War Crime": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Dnipropetrovsk": {
+    "coords": [
+      34.9501715,
+      48.662589
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Daily Grenada": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Grenada Chronicle": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Hide": {
+    "coords": [
+      37.5926104,
+      55.7809377
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
