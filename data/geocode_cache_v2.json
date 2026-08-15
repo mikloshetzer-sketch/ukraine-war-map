@@ -3849,5 +3849,31 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "northern Kutkivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Dibrova": {
+    "coords": [
+      27.9732065,
+      51.1586711
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Petrivka": {
+    "coords": [
+      38.6018666,
+      48.6013803
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "claim on August": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

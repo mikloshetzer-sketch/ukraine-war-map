@@ -1,4 +1,159 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-13",
+        "event_date": "2026-08-13",
+        "ingested_at": "2026-08-15T04:58:16Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently advanced in the Kupyansk and Slovyansk directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-13-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.9732065,
+          51.1586711
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-13",
+        "event_date": "2026-08-13",
+        "ingested_at": "2026-08-15T04:58:16Z",
+        "place": "Dibrova",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian military observer Kostyantyn Mashovets reported on August 13 that Russian forces seem to have consolidated some positions on the southeastern outskirts of Lyman and in Dibrova (southeast of Lyman).[39] Mashovets reported that Russian forces seized the forest area between Lyman and Yampil (east of Slovyansk) and are using the forest area to accumulate personnel for infiltration missions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-13-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.6018666,
+          48.6013803
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-13",
+        "event_date": "2026-08-13",
+        "ingested_at": "2026-08-15T04:58:16Z",
+        "place": "Petrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Donetsk People&#8217;s Republic (DNR) People&#8217;s Militia claimed on August 12 that elements of the Russian 102nd Motorized Rifle Regiment (150th Motorized Rifle Division, 8th Combined Arms Army, Southern Military District) seized Petrivka (northwest of Kostyantynivka) and published likely AI-altered footage of Russian soldiers raising a flag in Petrivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-13-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-12",
+        "event_date": "2026-08-12",
+        "ingested_at": "2026-08-15T04:58:16Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Kupyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-12-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5843812,
+          48.7389415
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-12",
+        "event_date": "2026-08-12",
+        "ingested_at": "2026-08-15T04:58:16Z",
+        "place": "Kramatorsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Donetsk Oblast State Emergency Services reported that Russian forces struck firefighters responding to a fire that earlier Russian shelling caused in Kramatorsk, damaging a fire truck.[55] Russian forces recently advanced in the Kostyantynivka-Druzhkivka tactical area.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-12-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.203369,
+          48.3539878
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-11",
+        "event_date": "2026-08-11",
+        "ingested_at": "2026-08-15T04:58:17Z",
+        "place": "Rodynske",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "ISW has observed evidence of Russian infiltrators operating west of Rodynske and within and north of Shevchenko, but Russian forces have not seized or consolidated the positions into which they have infiltrated.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-11-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.7855471,
+          47.5754426
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-11",
+        "event_date": "2026-08-11",
+        "ingested_at": "2026-08-15T04:58:17Z",
+        "place": "Orikhiv",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on August 10 that Russian forces cleared Plavni (west of Orikhiv).[74] ISW has observed evidence of Russian infiltrations into northern Plavni, but not of Russian advances.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-11-2026/"
+      }
+    }
+  ]
 }
