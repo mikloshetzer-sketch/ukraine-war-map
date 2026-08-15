@@ -1,20 +1,19 @@
 {
-  "generated_at": "2026-08-15T11:36:29+00:00",
-  "count": 17,
+  "generated_at": "2026-08-15T17:39:59+00:00",
+  "count": 14,
   "by_event_type": {
-    "drone_attack": 13,
+    "drone_attack": 11,
     "missile_strike": 2,
-    "airstrike": 1,
-    "ground_clash": 1
+    "airstrike": 1
   },
   "by_source": {
-    "ukrainenow": 5,
+    "ukrainenow": 3,
     "generalstaffzsu": 8,
-    "deepstateua": 4
+    "deepstateua": 3
   },
   "by_confidence": {
-    "medium": 5,
-    "high": 12
+    "medium": 3,
+    "high": 11
   },
   "top_sectors": [
     [
@@ -39,7 +38,7 @@
     ],
     [
       "kherson",
-      2
+      1
     ]
   ]
 }
