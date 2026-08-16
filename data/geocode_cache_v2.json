@@ -3916,5 +3916,10 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "previous Russian sources": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
