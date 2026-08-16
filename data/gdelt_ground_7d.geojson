@@ -13,9 +13,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-08-15",
-        "event_date": "2026-08-15",
-        "ingested_at": "2026-08-15T05:37:53Z",
+        "article_date": "2026-08-16",
+        "event_date": "2026-08-16",
+        "ingested_at": "2026-08-16T05:40:17Z",
         "place": "Friday",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
@@ -39,9 +39,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-08-15",
-        "event_date": "2026-08-15",
-        "ingested_at": "2026-08-15T05:37:53Z",
+        "article_date": "2026-08-16",
+        "event_date": "2026-08-16",
+        "ingested_at": "2026-08-16T05:40:17Z",
         "place": "Russian",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
@@ -65,9 +65,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-08-15",
-        "event_date": "2026-08-15",
-        "ingested_at": "2026-08-15T05:37:53Z",
+        "article_date": "2026-08-16",
+        "event_date": "2026-08-16",
+        "ingested_at": "2026-08-16T05:40:17Z",
         "place": "Russian",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
@@ -91,35 +91,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-08-15",
-        "event_date": "2026-08-15",
-        "ingested_at": "2026-08-15T05:37:53Z",
-        "place": "Sloviansk",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "RIGHT SPEAK : 216 C - Clashes in F - Line :, 23 in Pokrovsk Dir , 18 in Kostiantynivka Dir , 17 in Sloviansk Dir ; RU Drone Hunts , Taunts Street Vendor in UKR ; RU Soldier Kills Fellow Troop , 3 Civilians in Crimea ; US Imposes Additional Sanctions ...",
-        "text": "RIGHT SPEAK : 216 C - Clashes in F - Line :, 23 in Pokrovsk Dir , 18 in Kostiantynivka Dir , 17 in Sloviansk Dir ; RU Drone Hunts , Taunts Street Vendor in UKR ; RU Soldier Kills Fellow Troop , 3 Civilians in Crimea ; US Imposes Additional Sanctions ....",
-        "source_url": "http://www.rightspeak.net/2026/08/216-c-clashes-in-f-line-23-in-pokrovsk.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/08/216-c-clashes-in-f-line-23-in-pokrovsk.html"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-08-15",
-        "event_date": "2026-08-15",
-        "ingested_at": "2026-08-15T05:37:53Z",
+        "article_date": "2026-08-16",
+        "event_date": "2026-08-16",
+        "ingested_at": "2026-08-16T05:40:17Z",
         "place": "Sloviansk",
         "location_confidence": "known_front_title",
         "candidate_score": 100,
@@ -143,9 +117,9 @@
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-08-15",
-        "event_date": "2026-08-15",
-        "ingested_at": "2026-08-15T05:37:53Z",
+        "article_date": "2026-08-16",
+        "event_date": "2026-08-16",
+        "ingested_at": "2026-08-16T05:40:17Z",
         "place": "Sloviansk",
         "location_confidence": "known_front_title",
         "candidate_score": 100,
