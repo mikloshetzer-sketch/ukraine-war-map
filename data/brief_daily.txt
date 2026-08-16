@@ -1,21 +1,21 @@
-Ukraine War Daily Brief – Russian pressure continues near Pokrovsk
+Ukraine War Daily Brief – Russian pressure continues near Kupiansk
 
-The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 956.31 km². The daily change amounts to +4.05 km² compared with 2026-08-14 (orosz területszerzés). The weekly balance shows -91.2 km² change (ukrán visszafoglalás), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Pokrovsk sector as a likely focal area.
+The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 116 961.55 km². The daily change amounts to +5.24 km² compared with 2026-08-15 (orosz területszerzés). The weekly balance shows -92.2 km² change (ukrán visszafoglalás), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Kupiansk sector as a likely focal area.
 
 Key numbers:
-- Occupied territory: 116 956.31 km²
-- Daily change: +4.05 km²
-- Weekly change: -91.2 km²
+- Occupied territory: 116 961.55 km²
+- Daily change: +5.24 km²
+- Weekly change: -92.2 km²
 - Ground raw events: n/a
 - Mapped points: n/a
 - Mapped lines: n/a
 - UAV events (7d): 613
 
 Operational picture:
-The latest mapped territorial activity appears concentrated in the Pokrovsk sector. Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 613 recorded events in the past seven days.
+The latest mapped territorial activity appears concentrated in the Kupiansk sector. Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 613 recorded events in the past seven days.
 
 Key events:
-- Recent territorial change appears to be located in the Pokrovsk sector.
+- Recent territorial change appears to be located in the Kupiansk sector.
 - The gap between raw reporting and mapped events remains notable, suggesting that many reports are still only partially geolocated.
 - Sustained UAV activity continues to support reconnaissance and strike operations, with 613 events recorded over the past seven days.
 
