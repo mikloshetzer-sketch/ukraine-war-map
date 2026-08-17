@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-08-15",
         "event_date": "2026-08-15",
-        "ingested_at": "2026-08-16T05:02:07Z",
+        "ingested_at": "2026-08-17T05:10:48Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-08-13",
         "event_date": "2026-08-13",
-        "ingested_at": "2026-08-16T05:02:08Z",
+        "ingested_at": "2026-08-17T05:10:49Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-13",
         "event_date": "2026-08-13",
-        "ingested_at": "2026-08-16T05:02:08Z",
+        "ingested_at": "2026-08-17T05:10:49Z",
         "place": "Dibrova",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,56 +81,12 @@
         "kind": "ground",
         "article_date": "2026-08-13",
         "event_date": "2026-08-13",
-        "ingested_at": "2026-08-16T05:02:08Z",
+        "ingested_at": "2026-08-17T05:10:49Z",
         "place": "Petrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "The Donetsk People&#8217;s Republic (DNR) People&#8217;s Militia claimed on August 12 that elements of the Russian 102nd Motorized Rifle Regiment (150th Motorized Rifle Division, 8th Combined Arms Army, Southern Military District) seized Petrivka (northwest of Kostyantynivka) and published likely AI-altered footage of Russian soldiers raising a flag in Petrivka.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-13-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-12",
-        "event_date": "2026-08-12",
-        "ingested_at": "2026-08-16T05:02:08Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Kupyansk direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-12-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.5843812,
-          48.7389415
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-12",
-        "event_date": "2026-08-12",
-        "ingested_at": "2026-08-16T05:02:08Z",
-        "place": "Kramatorsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "The Donetsk Oblast State Emergency Services reported that Russian forces struck firefighters responding to a fire that earlier Russian shelling caused in Kramatorsk, damaging a fire truck.[55] Russian forces recently advanced in the Kostyantynivka-Druzhkivka tactical area.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-12-2026/"
       }
     }
   ]
