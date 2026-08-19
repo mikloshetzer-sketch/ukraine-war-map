@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          24.6918156,
+          48.9122821
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-18",
+        "event_date": "2026-08-18",
+        "ingested_at": "2026-08-19T05:03:48Z",
+        "place": "June",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Washington Post reported on August 18, citing Russian Central Bank data, that Russians withdrew 286.4 billion rubles (about $4.5 billion) in June 2026, $7.3 billion in July 2026, and $3.4 billion in the first two weeks of August 2026.[13] A senior executive at Sberbank, Russia’s biggest retail financial institution noted that withdrawals in 2026 may end up being nearly double those of 2022.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-18-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.2984727,
           47.3139025
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-08-15",
         "event_date": "2026-08-15",
-        "ingested_at": "2026-08-18T05:03:30Z",
+        "ingested_at": "2026-08-19T05:03:48Z",
         "place": "the Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
