@@ -3936,5 +3936,26 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Rest": {
+    "coords": [
+      30.2488932,
+      50.5195404
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Europe News": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukraine Mall": {
+    "coords": [
+      29.7379123,
+      50.0125591
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

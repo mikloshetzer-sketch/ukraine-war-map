@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.2488932,
+          50.5195404
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-22",
+        "event_date": "2026-08-22",
+        "ingested_at": "2026-08-22T05:39:41Z",
+        "place": "Rest",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Ukraine Mall , रूसी ड्रोन हमले ने यूक्रेन के शॉपिंग सेंटर में मचाई तबाही , 16 की मौत और 130 घायल , जेलेंस्की ने खाई बदला लेने की कसम - russia drone attack ukraine shopping center kills 16 130 injured zelensky vows response - Rest of Europe News",
+        "text": "Ukraine Mall , रूसी ड्रोन हमले ने यूक्रेन के शॉपिंग सेंटर में मचाई तबाही , 16 की मौत और 130 घायल , जेलेंस्की ने खाई बदला लेने की कसम - russia drone attack ukraine shopping center kills 16 130 injured zelensky vows response - Rest of Europe News.",
+        "source_url": "https://navbharattimes.indiatimes.com/world/rest-of-europe/russia-drone-attack-ukraine-shopping-center-kills-16-130-injured-zelensky-vows-response/articleshow/133417406.cms",
+        "publisher_hint": "https://navbharattimes.indiatimes.com/world/rest-of-europe/russia-drone-attack-ukraine-shopping-center-kills-16-130-injured-zelensky-vows-response/articleshow/133417406.cms"
+      }
+    }
+  ]
 }
