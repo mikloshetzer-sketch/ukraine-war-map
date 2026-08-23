@@ -3957,5 +3957,18 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "August": {
+    "coords": [
+      43.9877719,
+      56.3281097
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "eastern Zaporizhia Oblast": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

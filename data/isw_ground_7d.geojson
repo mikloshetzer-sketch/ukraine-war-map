@@ -6,21 +6,43 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.6918156,
-          48.9122821
+          43.9877719,
+          56.3281097
         ]
       },
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
-        "article_date": "2026-08-18",
-        "event_date": "2026-08-18",
-        "ingested_at": "2026-08-22T05:00:48Z",
-        "place": "June",
+        "article_date": "2026-08-22",
+        "event_date": "2026-08-22",
+        "ingested_at": "2026-08-23T05:03:33Z",
+        "place": "August",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "Russian forces have seized or infiltrated 8.52 square kilometers in August 2026 so far at an average rate of 0.39 square kilometers per day.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-22-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.7855471,
+          47.5754426
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-22",
+        "event_date": "2026-08-22",
+        "ingested_at": "2026-08-23T05:03:33Z",
+        "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
-        "text": "The Washington Post reported on August 18, citing Russian Central Bank data, that Russians withdrew 286.4 billion rubles (about $4.5 billion) in June 2026, $7.3 billion in July 2026, and $3.4 billion in the first two weeks of August 2026.[13] A senior executive at Sberbank, Russia’s biggest retail financial institution noted that withdrawals in 2026 may end up being nearly double those of 2022.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-18-2026/"
+        "text": "Geolocated footage published on August 21 indicates that Ukrainian forces recently advanced northeast of Stepove (west of Orikhiv).[58] Neither Russian nor Ukrainian sources reported ground activity in the Kherson direction on August 22.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-22-2026/"
       }
     }
   ]
