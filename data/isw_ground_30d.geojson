@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.2746326,
+          47.9863996
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-23",
+        "event_date": "2026-08-23",
+        "ingested_at": "2026-08-24T05:20:14Z",
+        "place": "Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Russian forces recently advanced in the Slovyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-23-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           43.9877719,
           56.3281097
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-08-22",
         "event_date": "2026-08-22",
-        "ingested_at": "2026-08-23T05:03:33Z",
+        "ingested_at": "2026-08-24T05:20:14Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-22",
         "event_date": "2026-08-22",
-        "ingested_at": "2026-08-23T05:03:33Z",
+        "ingested_at": "2026-08-24T05:20:14Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
