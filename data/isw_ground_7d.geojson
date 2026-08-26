@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-25",
+        "event_date": "2026-08-25",
+        "ingested_at": "2026-08-26T05:07:06Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Kupyansk and Borova directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-25-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6141992,
+          49.7132963
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-25",
+        "event_date": "2026-08-25",
+        "ingested_at": "2026-08-26T05:07:06Z",
+        "place": "Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Ukrainian assault regiment reported on August 25 that Ukrainian forces liberated northern Zapadne and advanced southwest of Dvorichna (both north of Kupyansk).[31] Ukrainian forces recently advanced in the Borova direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-25-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           27.9732065,
           51.1586711
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-24",
         "event_date": "2026-08-24",
-        "ingested_at": "2026-08-25T05:07:02Z",
+        "ingested_at": "2026-08-26T05:07:07Z",
         "place": "Dibrova",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-08-23",
         "event_date": "2026-08-23",
-        "ingested_at": "2026-08-25T05:07:02Z",
+        "ingested_at": "2026-08-26T05:07:07Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-08-22",
         "event_date": "2026-08-22",
-        "ingested_at": "2026-08-25T05:07:02Z",
+        "ingested_at": "2026-08-26T05:07:07Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-08-22",
         "event_date": "2026-08-22",
-        "ingested_at": "2026-08-25T05:07:02Z",
+        "ingested_at": "2026-08-26T05:07:07Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
