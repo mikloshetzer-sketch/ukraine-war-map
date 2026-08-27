@@ -1,31 +1,4 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-08-26",
-        "event_date": "2026-08-26",
-        "ingested_at": "2026-08-26T05:48:04Z",
-        "place": "Sloviansk",
-        "location_confidence": "known_front_title",
-        "candidate_score": 100,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "RIGHT SPEAK : 181 C - Clashes in F - Line : 29 in Pokrovsk Dir , 22 in Kostiantynivka Dir , 11 in Sloviansk Dir ; WSJ Learns Likely Reason for CIA Director Visit to Moscow ; US Asked UKR Not to Strike Moscow During CIA Chief Visit ; Z Confirms FR , u...",
-        "text": "RIGHT SPEAK : 181 C - Clashes in F - Line : 29 in Pokrovsk Dir , 22 in Kostiantynivka Dir , 11 in Sloviansk Dir ; WSJ Learns Likely Reason for CIA Director Visit to Moscow ; US Asked UKR Not to Strike Moscow During CIA Chief Visit ; Z Confirms FR , u....",
-        "source_url": "http://www.rightspeak.net/2026/08/181-c-clashes-in-f-line-29-in-pokrovsk.html",
-        "publisher_hint": "http://www.rightspeak.net/2026/08/181-c-clashes-in-f-line-29-in-pokrovsk.html"
-      }
-    }
-  ]
+  "features": []
 }
