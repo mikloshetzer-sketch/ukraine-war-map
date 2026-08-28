@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-28T17:28:30+00:00",
+  "generated_at": "2026-08-28T21:26:23+00:00",
   "count": 14,
   "by_event_type": {
+    "missile_strike": 4,
+    "drone_attack": 8,
     "ground_clash": 1,
-    "missile_strike": 3,
-    "drone_attack": 9,
     "artillery": 1
   },
   "by_source": {
@@ -22,16 +22,20 @@
       3
     ],
     [
-      "kostiantynivka",
-      3
-    ],
-    [
       "pokrovsk",
       3
     ],
     [
       "orikhiv",
       3
+    ],
+    [
+      "kostiantynivka",
+      2
+    ],
+    [
+      "toretsk",
+      1
     ],
     [
       "kherson",
