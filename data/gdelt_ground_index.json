@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-08-27T16:30:23Z",
-  "started_at_utc": "2026-08-27T16:28:53Z",
+  "generated_at_utc": "2026-08-28T17:25:48Z",
+  "started_at_utc": "2026-08-28T17:25:15Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -38,18 +38,46 @@
     "geocode_new_fail": 0,
     "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 659,
+    "cache_entries_total": 662,
     "rejections_saved": 0,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 1,
-      "items_before_filters": 0,
-      "items_with_date": 0,
-      "items_in_lookback_window": 0,
-      "items_keyword_matched": 0,
+      "queries_with_response": 3,
+      "items_before_filters": 160,
+      "items_with_date": 160,
+      "items_in_lookback_window": 160,
+      "items_keyword_matched": 1,
       "items_action_matched": 0,
       "items_after_dedup": 0,
       "parser_debug": [
+        {
+          "query": "\"Ukraine\" AND (attack OR assault OR advance OR fighting OR clashes)",
+          "parse_ok": true,
+          "root_tag": "rss",
+          "channel_found": true,
+          "item_count_raw": 80,
+          "sample_date_fields": [
+            "28 Aug 2026 17:00:00 +0000",
+            "28 Aug 2026 17:00:00 +0000",
+            "28 Aug 2026 17:00:00 +0000",
+            "28 Aug 2026 17:00:00 +0000",
+            "28 Aug 2026 17:00:00 +0000"
+          ]
+        },
+        {
+          "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
+          "parse_ok": true,
+          "root_tag": "rss",
+          "channel_found": true,
+          "item_count_raw": 80,
+          "sample_date_fields": [
+            "28 Aug 2026 17:00:00 +0000",
+            "28 Aug 2026 17:00:00 +0000",
+            "28 Aug 2026 17:00:00 +0000",
+            "28 Aug 2026 16:30:00 +0000",
+            "28 Aug 2026 16:30:00 +0000"
+          ]
+        },
         {
           "query": "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)",
           "parse_ok": false,
