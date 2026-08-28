@@ -3980,5 +3980,23 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Pyskunivka": {
+    "coords": [
+      37.8366441,
+      48.8879548
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "central Dobropillya": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "the Dovha Balka-Illinivka road": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
