@@ -1,4 +1,161 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-29",
+        "event_date": "2026-08-29",
+        "ingested_at": "2026-08-29T11:39:43Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "A Russian attack hits Ukraine Kyiv region , killing at least 27",
+        "text": "A Russian attack hits Ukraine Kyiv region , killing at least 27.",
+        "source_url": "https://www.wsbradio.com/news/world/russian-attack-hits/PJYMS2U3IM2TTOU7RPSP3BZTCY/",
+        "publisher_hint": "https://www.wsbradio.com/news/world/russian-attack-hits/PJYMS2U3IM2TTOU7RPSP3BZTCY/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-29",
+        "event_date": "2026-08-29",
+        "ingested_at": "2026-08-29T11:39:43Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "A Russian attack hits Ukraine Kyiv region , killing at least 27 – Winnipeg Free Press",
+        "text": "A Russian attack hits Ukraine Kyiv region , killing at least 27 – Winnipeg Free Press.",
+        "source_url": "https://www.winnipegfreepress.com/world/2026/08/29/a-russian-attack-hits-ukraines-kyiv-region-killing-at-least-27",
+        "publisher_hint": "https://www.winnipegfreepress.com/world/2026/08/29/a-russian-attack-hits-ukraines-kyiv-region-killing-at-least-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-29",
+        "event_date": "2026-08-29",
+        "ingested_at": "2026-08-29T11:39:43Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian air attack on Ukraine Kyiv kills at least 27 , injures 42",
+        "text": "Russian air attack on Ukraine Kyiv kills at least 27 , injures 42.",
+        "source_url": "https://www.hindustantimes.com/world-news/russian-air-attack-on-ukraines-kyiv-kills-at-least-27-injures-42-101787994194585.html",
+        "publisher_hint": "https://www.hindustantimes.com/world-news/russian-air-attack-on-ukraines-kyiv-kills-at-least-27-injures-42-101787994194585.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-29",
+        "event_date": "2026-08-29",
+        "ingested_at": "2026-08-29T11:39:43Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "A Russian attack hits Ukraine Kyiv region , killing at least 27 – Brandon Sun",
+        "text": "A Russian attack hits Ukraine Kyiv region , killing at least 27 – Brandon Sun.",
+        "source_url": "https://www.brandonsun.com/world/2026/08/29/a-russian-attack-hits-ukraines-kyiv-region-killing-at-least-27",
+        "publisher_hint": "https://www.brandonsun.com/world/2026/08/29/a-russian-attack-hits-ukraines-kyiv-region-killing-at-least-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-29",
+        "event_date": "2026-08-29",
+        "ingested_at": "2026-08-29T11:39:43Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "A Russian attack hits Ukraine Kyiv region , killing at least 27",
+        "text": "A Russian attack hits Ukraine Kyiv region , killing at least 27.",
+        "source_url": "https://panow.com/2026/08/29/a-russian-attack-hits-ukraines-kyiv-region-killing-at-least-27/",
+        "publisher_hint": "https://panow.com/2026/08/29/a-russian-attack-hits-ukraines-kyiv-region-killing-at-least-27/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-08-29",
+        "event_date": "2026-08-29",
+        "ingested_at": "2026-08-29T11:39:43Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "A Russian attack hits Ukraine Kyiv region , killing at least 27",
+        "text": "A Russian attack hits Ukraine Kyiv region , killing at least 27.",
+        "source_url": "https://krmg.com/2026/08/29/a-russian-attack-hits-ukraines-kyiv-region-killing-at-least-27/",
+        "publisher_hint": "https://krmg.com/2026/08/29/a-russian-attack-hits-ukraines-kyiv-region-killing-at-least-27/"
+      }
+    }
+  ]
 }

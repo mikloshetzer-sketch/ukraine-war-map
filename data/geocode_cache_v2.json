@@ -4006,5 +4006,15 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Winnipeg Free Press": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Brandon Sun": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
