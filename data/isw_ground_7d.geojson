@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          30.6244597,
+          47.5254688
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-28",
+        "event_date": "2026-08-28",
+        "ingested_at": "2026-08-29T11:18:41Z",
+        "place": "Charivne",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on August 28 that Russian forces advanced west of Charivne (east of Orikhiv), north of Novodanylivka (southeast of Orikhiv), and into central Bilohirya (southeast of Orikhiv).[67] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-28-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.8366441,
           48.8879548
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-08-27",
         "event_date": "2026-08-27",
-        "ingested_at": "2026-08-28T16:52:20Z",
+        "ingested_at": "2026-08-29T11:18:41Z",
         "place": "Pyskunivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-26",
         "event_date": "2026-08-26",
-        "ingested_at": "2026-08-28T16:52:20Z",
+        "ingested_at": "2026-08-29T11:18:41Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-08-26",
         "event_date": "2026-08-26",
-        "ingested_at": "2026-08-28T16:52:20Z",
+        "ingested_at": "2026-08-29T11:18:41Z",
         "place": "Katerynivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-08-25",
         "event_date": "2026-08-25",
-        "ingested_at": "2026-08-28T16:52:20Z",
+        "ingested_at": "2026-08-29T11:18:41Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,34 +125,12 @@
         "kind": "ground",
         "article_date": "2026-08-25",
         "event_date": "2026-08-25",
-        "ingested_at": "2026-08-28T16:52:20Z",
+        "ingested_at": "2026-08-29T11:18:41Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "A Ukrainian assault regiment reported on August 25 that Ukrainian forces liberated northern Zapadne and advanced southwest of Dvorichna (both north of Kupyansk).[31] Ukrainian forces recently advanced in the Borova direction.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-25-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.9732065,
-          51.1586711
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-24",
-        "event_date": "2026-08-24",
-        "ingested_at": "2026-08-28T16:52:20Z",
-        "place": "Dibrova",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced east of Dibrova (southwest of Lyman) according to geolocated footage published on August 23.[39] Russian forces continue attempts to isolate Ukrainian forces in Mykolaivka (east of Slovyansk).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-24-2026/"
       }
     }
   ]

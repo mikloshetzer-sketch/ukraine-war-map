@@ -3998,5 +3998,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Charivne": {
+    "coords": [
+      30.6244597,
+      47.5254688
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
