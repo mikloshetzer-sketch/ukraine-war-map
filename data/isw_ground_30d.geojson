@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-08-28",
         "event_date": "2026-08-28",
-        "ingested_at": "2026-08-29T11:18:41Z",
+        "ingested_at": "2026-08-30T10:04:31Z",
         "place": "Charivne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-08-27",
         "event_date": "2026-08-27",
-        "ingested_at": "2026-08-29T11:18:41Z",
+        "ingested_at": "2026-08-30T10:04:31Z",
         "place": "Pyskunivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-26",
         "event_date": "2026-08-26",
-        "ingested_at": "2026-08-29T11:18:41Z",
+        "ingested_at": "2026-08-30T10:04:31Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,56 +81,12 @@
         "kind": "ground",
         "article_date": "2026-08-26",
         "event_date": "2026-08-26",
-        "ingested_at": "2026-08-29T11:18:41Z",
+        "ingested_at": "2026-08-30T10:04:31Z",
         "place": "Katerynivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "A Kremlin-affiliated milblogger claimed on August 25 that Ukrainian forces counterattacked near Katerynivka, Nove, and Ridkodub (all southeast of Borova) and seized the area between Nove and Katerynivka.[30] The milblogger claimed that Russian forces near the Shandryholove salient (south of Borova) are under threat of Ukrainian encirclement and assessed that Russian forces are likely losing control of Shandryholove.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-26-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6127304,
-          49.711199
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-25",
-        "event_date": "2026-08-25",
-        "ingested_at": "2026-08-29T11:18:41Z",
-        "place": "the Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Kupyansk and Borova directions.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-25-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6141992,
-          49.7132963
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-25",
-        "event_date": "2026-08-25",
-        "ingested_at": "2026-08-29T11:18:41Z",
-        "place": "Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Ukrainian assault regiment reported on August 25 that Ukrainian forces liberated northern Zapadne and advanced southwest of Dvorichna (both north of Kupyansk).[31] Ukrainian forces recently advanced in the Borova direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-25-2026/"
       }
     }
   ]
