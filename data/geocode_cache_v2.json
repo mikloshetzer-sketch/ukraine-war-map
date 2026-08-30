@@ -4016,5 +4016,60 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Death": {
+    "coords": [
+      44.5418442,
+      48.7407428
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "village near Kyiv": {
+    "coords": [
+      30.521391,
+      50.207859
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Russian Strike": {
+    "coords": [
+      36.1902483,
+      49.9709665
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "The Yeshiva World": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukrainian Warehouse Kills": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Britain": {
+    "coords": [
+      37.6617913,
+      55.7537495
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Kremlin": {
+    "coords": [
+      37.6203201,
+      54.1950973
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "NATO Finlands": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-08-29T11:39:44Z",
-  "started_at_utc": "2026-08-29T11:38:50Z",
+  "generated_at_utc": "2026-08-30T10:28:52Z",
+  "started_at_utc": "2026-08-30T10:27:33Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -20,35 +20,35 @@
     "broad_places_count": 18
   },
   "stats": {
-    "articles_after_filters": 6,
-    "raw_events_total": 6,
-    "dedup_events_total": 6,
-    "features_latest": 6,
-    "features_7d": 6,
-    "features_30d": 6,
-    "events_total": 6,
-    "events_with_any_geo": 12,
-    "point_features": 6,
+    "articles_after_filters": 13,
+    "raw_events_total": 13,
+    "dedup_events_total": 13,
+    "features_latest": 12,
+    "features_7d": 12,
+    "features_30d": 12,
+    "events_total": 13,
+    "events_with_any_geo": 22,
+    "point_features": 12,
     "dropped_not_front_near": 0,
-    "dropped_geocode": 0,
+    "dropped_geocode": 1,
     "frontline_available": false,
-    "geocode_cache_hits": 12,
-    "geocode_cache_negative_hits": 0,
-    "geocode_new_success": 0,
-    "geocode_new_fail": 2,
-    "geocode_calls_this_run": 2,
+    "geocode_cache_hits": 17,
+    "geocode_cache_negative_hits": 1,
+    "geocode_new_success": 5,
+    "geocode_new_fail": 3,
+    "geocode_calls_this_run": 8,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 665,
-    "rejections_saved": 0,
+    "cache_entries_total": 673,
+    "rejections_saved": 1,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 1,
-      "items_before_filters": 80,
-      "items_with_date": 80,
-      "items_in_lookback_window": 80,
-      "items_keyword_matched": 6,
-      "items_action_matched": 6,
-      "items_after_dedup": 6,
+      "queries_with_response": 2,
+      "items_before_filters": 160,
+      "items_with_date": 160,
+      "items_in_lookback_window": 160,
+      "items_keyword_matched": 25,
+      "items_action_matched": 13,
+      "items_after_dedup": 13,
       "parser_debug": [
         {
           "query": "\"Ukraine\" AND (attack OR assault OR advance OR fighting OR clashes)",
@@ -57,11 +57,25 @@
           "channel_found": true,
           "item_count_raw": 80,
           "sample_date_fields": [
-            "29 Aug 2026 11:00:00 +0000",
-            "29 Aug 2026 11:00:00 +0000",
-            "29 Aug 2026 11:00:00 +0000",
-            "29 Aug 2026 11:00:00 +0000",
-            "29 Aug 2026 11:00:00 +0000"
+            "30 Aug 2026 10:00:00 +0000",
+            "30 Aug 2026 10:00:00 +0000",
+            "30 Aug 2026 10:00:00 +0000",
+            "30 Aug 2026 10:00:00 +0000",
+            "30 Aug 2026 10:00:00 +0000"
+          ]
+        },
+        {
+          "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
+          "parse_ok": true,
+          "root_tag": "rss",
+          "channel_found": true,
+          "item_count_raw": 80,
+          "sample_date_fields": [
+            "30 Aug 2026 10:00:00 +0000",
+            "30 Aug 2026 10:00:00 +0000",
+            "30 Aug 2026 10:00:00 +0000",
+            "30 Aug 2026 10:00:00 +0000",
+            "30 Aug 2026 10:00:00 +0000"
           ]
         }
       ]
