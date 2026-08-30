@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-30T10:30:07+00:00",
+  "generated_at": "2026-08-30T15:21:54+00:00",
   "count": 10,
   "by_event_type": {
-    "missile_strike": 2,
-    "drone_attack": 8
+    "drone_attack": 8,
+    "missile_strike": 2
   },
   "by_source": {
     "generalstaffzsu": 9,
