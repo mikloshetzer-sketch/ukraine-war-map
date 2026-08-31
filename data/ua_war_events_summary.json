@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-30T19:52:42+00:00",
-  "count": 10,
+  "generated_at": "2026-08-31T11:38:38+00:00",
+  "count": 12,
   "by_event_type": {
-    "drone_attack": 8,
-    "missile_strike": 2
+    "missile_strike": 3,
+    "drone_attack": 9
   },
   "by_source": {
-    "generalstaffzsu": 10
+    "generalstaffzsu": 12
   },
   "by_confidence": {
-    "high": 10
+    "high": 12
   },
   "top_sectors": [
     [
@@ -26,11 +26,11 @@
     ],
     [
       "kostiantynivka",
-      3
+      4
     ],
     [
       "toretsk",
-      3
+      2
     ],
     [
       "zaporizhzhia",
