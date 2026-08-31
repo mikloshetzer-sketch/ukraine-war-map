@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-31T18:01:08+00:00",
+  "generated_at": "2026-08-31T21:56:00+00:00",
   "count": 12,
   "by_event_type": {
-    "missile_strike": 3,
-    "drone_attack": 9
+    "drone_attack": 9,
+    "missile_strike": 3
   },
   "by_source": {
     "generalstaffzsu": 12
@@ -30,7 +30,7 @@
     ],
     [
       "toretsk",
-      2
+      1
     ],
     [
       "zaporizhzhia",
