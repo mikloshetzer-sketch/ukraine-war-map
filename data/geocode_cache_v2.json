@@ -4071,5 +4071,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Novoselivka": {
+    "coords": [
+      37.69735,
+      49.07541
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

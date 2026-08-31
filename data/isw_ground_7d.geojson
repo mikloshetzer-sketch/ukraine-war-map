@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-30",
+        "event_date": "2026-08-30",
+        "ingested_at": "2026-08-31T11:04:55Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Kupyansk and Slovyansk directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-30-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.69735,
+          49.07541
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-08-30",
+        "event_date": "2026-08-30",
+        "ingested_at": "2026-08-31T11:04:55Z",
+        "place": "Novoselivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced east of Novoselivka (northwest of Lyman) according to geolocated footage published on August 29.[28] A source reporting on the Russian Western GoF claimed that the Lyman direction has become more dynamic following a series of Ukrainian counterattacks in the area.[29] Russian forces continue infiltration missions in the Kostyantynivka-Druzhkivka tactical area.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-30-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           30.6244597,
           47.5254688
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-08-28",
         "event_date": "2026-08-28",
-        "ingested_at": "2026-08-30T10:04:31Z",
+        "ingested_at": "2026-08-31T11:04:55Z",
         "place": "Charivne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,56 +81,12 @@
         "kind": "ground",
         "article_date": "2026-08-27",
         "event_date": "2026-08-27",
-        "ingested_at": "2026-08-30T10:04:31Z",
+        "ingested_at": "2026-08-31T11:04:55Z",
         "place": "Pyskunivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "ISW has not observed evidence to assess that Russian forces have a presence (either through advances or infiltrations) in Pyskunivka, Pershomarivka, or Orikhuvatkha, and that Russian forces have advanced to roughly 14 kilometers from both Slovyansk and Kramatorsk.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-27-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6141992,
-          49.7132963
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-26",
-        "event_date": "2026-08-26",
-        "ingested_at": "2026-08-30T10:04:31Z",
-        "place": "Kupyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced southwest of Dvorichna (north of Kupyansk), according to geolocated footage published on August 25.[29] Russian reporting indicates that Ukrainian forces are likely advancing southeast of Borova.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-26-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.3455878,
-          47.8756389
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-26",
-        "event_date": "2026-08-26",
-        "ingested_at": "2026-08-30T10:04:31Z",
-        "place": "Katerynivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Kremlin-affiliated milblogger claimed on August 25 that Ukrainian forces counterattacked near Katerynivka, Nove, and Ridkodub (all southeast of Borova) and seized the area between Nove and Katerynivka.[30] The milblogger claimed that Russian forces near the Shandryholove salient (south of Borova) are under threat of Ukrainian encirclement and assessed that Russian forces are likely losing control of Shandryholove.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-26-2026/"
       }
     }
   ]
