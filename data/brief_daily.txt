@@ -1,21 +1,21 @@
-Ukraine War Daily Brief – Ukrainian counter-pressure observed
+Ukraine War Daily Brief – Russian pressure continues near Bakhmut
 
-The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 117 026.97 km². The daily change amounts to -2.33 km² compared with 2026-08-30 (ukrán visszafoglalás). The weekly balance shows +20.5 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend.
+The frontline situation continues to reflect a pattern of gradual positional warfare. According to the latest DeepState estimate, Russian-occupied territory stands at 117 030.23 km². The daily change amounts to +3.26 km² compared with 2026-08-31 (orosz területszerzés). The weekly balance shows +23.7 km² change (orosz területszerzés), suggesting that recent developments are part of a continuing operational trend. The latest mapped activity points toward the Bakhmut sector as a likely focal area.
 
 Key numbers:
-- Occupied territory: 117 026.97 km²
-- Daily change: -2.33 km²
-- Weekly change: +20.5 km²
+- Occupied territory: 117 030.23 km²
+- Daily change: +3.26 km²
+- Weekly change: +23.7 km²
 - Ground raw events: n/a
 - Mapped points: n/a
 - Mapped lines: n/a
 - UAV events (7d): 614
 
 Operational picture:
-Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 614 recorded events in the past seven days.
+The latest mapped territorial activity appears concentrated in the Bakhmut sector. Ground combat reporting remains available, but not all current event totals could be resolved into the brief. Drone and UAV activity remains a central operational factor, with 614 recorded events in the past seven days.
 
 Key events:
-- A localized loss or regain signal was detected in the Kupiansk sector.
+- Recent territorial change appears to be located in the Bakhmut sector.
 - The gap between raw reporting and mapped events remains notable, suggesting that many reports are still only partially geolocated.
 - Sustained UAV activity continues to support reconnaissance and strike operations, with 614 events recorded over the past seven days.
 
@@ -25,7 +25,7 @@ Drivers of the day:
 - Territorial change remains gradual rather than breakthrough-driven.
 
 Assessment:
-Local counter-movements continue to shape the frontline dynamics.
+The data indicates continued Russian positional pressure combined with attritional warfare dynamics.
 
 Outlook:
 Short-term developments will likely remain driven by localized tactical engagements.
