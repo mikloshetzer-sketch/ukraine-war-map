@@ -4079,5 +4079,25 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Tsimbulov": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "northern Kivsharivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "northern Novoselivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "advance toward Molocharka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
