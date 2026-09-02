@@ -4099,5 +4099,21 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Germany": {
+    "coords": [
+      26.0247071,
+      48.6394584
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Leipzig": {
+    "coords": [
+      29.0183844,
+      46.3040235
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

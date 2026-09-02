@@ -1,4 +1,57 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-02",
+        "event_date": "2026-09-02",
+        "ingested_at": "2026-09-02T09:35:34Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian attack hits rail workers in new deadly strikes on Kyiv",
+        "text": "Russian attack hits rail workers in new deadly strikes on Kyiv.",
+        "source_url": "https://thechronicle.com.gh/russian-attack-hits-rail-workers-in-new-deadly-strikes-on-kyiv/",
+        "publisher_hint": "https://thechronicle.com.gh/russian-attack-hits-rail-workers-in-new-deadly-strikes-on-kyiv/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.0247071,
+          48.6394584
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-02",
+        "event_date": "2026-09-02",
+        "ingested_at": "2026-09-02T09:35:34Z",
+        "place": "Germany",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "Germany says Russia behind Leipzig airport drone attack",
+        "text": "Germany says Russia behind Leipzig airport drone attack.",
+        "source_url": "https://srilankamirror.com/news/germany-says-russia-behind-leipzig-airport-drone-attack/",
+        "publisher_hint": "https://srilankamirror.com/news/germany-says-russia-behind-leipzig-airport-drone-attack/"
+      }
+    }
+  ]
 }
