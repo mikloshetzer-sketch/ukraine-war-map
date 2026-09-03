@@ -4123,5 +4123,13 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "German": {
+    "coords": [
+      37.7080893,
+      55.7684744
+    ],
+    "cc": "ru",
+    "negative": false
   }
 }
