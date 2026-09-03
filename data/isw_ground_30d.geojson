@@ -13,9 +13,119 @@
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
+        "article_date": "2026-09-02",
+        "event_date": "2026-09-02",
+        "ingested_at": "2026-09-03T09:07:23Z",
+        "place": "August",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "ISW has observed evidence to assess that Russian forces seized 73.14 square kilometers and advanced and infiltrated into 104.44 square kilometers of Donetsk Oblast in August 2026.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-2-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.2746326,
+          47.9863996
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-02",
+        "event_date": "2026-09-02",
+        "ingested_at": "2026-09-03T09:07:23Z",
+        "place": "Donbas",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #3 – Donetsk Oblast Russian objective: Capture the entirety of Donetsk Oblast, the claimed territory of Russia’s proxies in Donbas, and advance into Dnipropetrovsk Oblast Ukrainian forces recently defeated a Russian infiltration mission in the Slovyansk direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-2-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.7619191,
+          48.8610868
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-02",
+        "event_date": "2026-09-02",
+        "ingested_at": "2026-09-03T09:07:23Z",
+        "place": "Mykolaivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces captured Russian servicemembers during clearing operations in Mykolaivka (east of Slovyansk) according to geolocated footage published on September 1, indicating that Russian forces likely infiltrated Mykolaivka on a prior date.[32] Russian forces recently advanced in Kostyantynivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-2-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.0805393,
+          48.3262489
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-02",
+        "event_date": "2026-09-02",
+        "ingested_at": "2026-09-03T09:07:23Z",
+        "place": "the Pokrovsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on September 1 that Russian forces conducted ground operations in the Pokrovsk direction, but ISW has not observed evidence that Russian forces advanced.[36] Russian forces continued offensive operations in the Novopavlivka direction on September 1 and 2 but did not advance.[37] Neither Ukrainian nor Russian forces reported ground activity in the Oleksandrivka direction on September 2.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-2-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.9877719,
+          56.3281097
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-02",
+        "event_date": "2026-09-02",
+        "ingested_at": "2026-09-03T09:07:23Z",
+        "place": "August",
+        "country_code": "ru",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on September 2 that elements of the Russian Eastern Grouping of Forces seized nine settlements in August 2026, including Liubytske, Zirnytsya, Nove Pole, Rybalske, Novosoloshyne, Zelene, Dolynka, Nizhenka, and Shevchenkivske (roughly between 5 and 18 kilometers from the closest assessed Russian advances).[40] ISW has not observed any evidence to support these claims at this time.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-2-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.9877719,
+          56.3281097
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
         "article_date": "2026-09-01",
         "event_date": "2026-09-01",
-        "ingested_at": "2026-09-02T08:58:13Z",
+        "ingested_at": "2026-09-03T09:07:23Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
@@ -37,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-09-01",
         "event_date": "2026-09-01",
-        "ingested_at": "2026-09-02T08:58:13Z",
+        "ingested_at": "2026-09-03T09:07:23Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
@@ -59,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-08-31",
         "event_date": "2026-08-31",
-        "ingested_at": "2026-09-02T08:58:13Z",
+        "ingested_at": "2026-09-03T09:07:23Z",
         "place": "the Sumy",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +191,7 @@
         "kind": "ground",
         "article_date": "2026-08-31",
         "event_date": "2026-08-31",
-        "ingested_at": "2026-09-02T08:58:13Z",
+        "ingested_at": "2026-09-03T09:07:23Z",
         "place": "Novomykolaivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +213,7 @@
         "kind": "ground",
         "article_date": "2026-08-30",
         "event_date": "2026-08-30",
-        "ingested_at": "2026-09-02T08:58:14Z",
+        "ingested_at": "2026-09-03T09:07:23Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +235,7 @@
         "kind": "ground",
         "article_date": "2026-08-30",
         "event_date": "2026-08-30",
-        "ingested_at": "2026-09-02T08:58:14Z",
+        "ingested_at": "2026-09-03T09:07:23Z",
         "place": "Novoselivka",
         "country_code": "ua",
         "front_dist_km": null,

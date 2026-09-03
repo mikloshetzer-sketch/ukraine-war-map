@@ -4115,5 +4115,13 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Mykolaivka": {
+    "coords": [
+      37.7619191,
+      48.8610868
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
