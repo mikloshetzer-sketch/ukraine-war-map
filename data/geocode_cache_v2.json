@@ -4131,5 +4131,21 @@
     ],
     "cc": "ru",
     "negative": false
+  },
+  "September 2026": {
+    "coords": [
+      36.8437243,
+      49.4505348
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Kotlyarivka": {
+    "coords": [
+      34.5425638,
+      48.1054325
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

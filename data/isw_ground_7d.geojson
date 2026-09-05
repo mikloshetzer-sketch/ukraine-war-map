@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          34.5425638,
+          48.1054325
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-04",
+        "event_date": "2026-09-04",
+        "ingested_at": "2026-09-05T08:31:51Z",
+        "place": "Kotlyarivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced west of Kotlyarivka (just east of Novopavlivka) according to geolocated footage published on September 3.[56] Russian forces continued limited offensive operations in the Oleksandrivka direction on September 3 and 4 but did not advance.[57] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Donetsk Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-4-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6127304,
           49.711199
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-09-03",
         "event_date": "2026-09-03",
-        "ingested_at": "2026-09-04T09:00:08Z",
+        "ingested_at": "2026-09-05T08:31:51Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-04T09:00:08Z",
+        "ingested_at": "2026-09-05T08:31:51Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-04T09:00:08Z",
+        "ingested_at": "2026-09-05T08:31:51Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-04T09:00:08Z",
+        "ingested_at": "2026-09-05T08:31:51Z",
         "place": "Mykolaivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-04T09:00:08Z",
+        "ingested_at": "2026-09-05T08:31:51Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-04T09:00:08Z",
+        "ingested_at": "2026-09-05T08:31:51Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
@@ -147,7 +169,7 @@
         "kind": "ground",
         "article_date": "2026-09-01",
         "event_date": "2026-09-01",
-        "ingested_at": "2026-09-04T09:00:08Z",
+        "ingested_at": "2026-09-05T08:31:51Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
@@ -169,56 +191,12 @@
         "kind": "ground",
         "article_date": "2026-09-01",
         "event_date": "2026-09-01",
-        "ingested_at": "2026-09-04T09:00:08Z",
+        "ingested_at": "2026-09-05T08:31:51Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
         "text": "The Ukrainian General Staff reported on September 1 that Russian forces suffered 42,020 casualties in August 2026 — the second month in a row that Russian forces suffered over 40,000 casualties in a single month.[3] Russian forces suffered an average of 340 casualties per square kilometer of territory seized or infiltrated and 465 casualties per square kilometer seized in August 2026.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.2576246,
-          49.9997827
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-31",
-        "event_date": "2026-08-31",
-        "ingested_at": "2026-09-04T09:00:08Z",
-        "place": "the Sumy",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in the Sumy, Borova, and Slovyansk directions and the Kostyantynivka-Druzhkivka tactical area, and Russian forces recently advanced in the Slovyansk direction and Kostyantynivka-Druzhkivka tactical area.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-31-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.37411,
-          48.56335
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-08-31",
-        "event_date": "2026-08-31",
-        "ingested_at": "2026-09-04T09:00:08Z",
-        "place": "Novomykolaivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces conducted infiltration missions into Krasnyi Kut and Torske, according to geolocated footage published on August 31.[63] A Russian milblogger claimed that Russian forces advanced north of Novomykolaivka.[64] Russian forces continued offensive operations in the Dobropillya tactical area and the Pokrovsk, Novopavlivka, and Oleksandrivka directions on August 30 and 31 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-31-2026/"
       }
     }
   ]
