@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.0805393,
+          48.3262489
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-05",
+        "event_date": "2026-09-05",
+        "ingested_at": "2026-09-06T08:49:20Z",
+        "place": "the Pokrovsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces continued limited offensive operations in the Pokrovsk, Novopavlivka, and Oleksandrivka directions on September 4 and 5 but did not advance.[41] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Donetsk Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-5-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           34.5425638,
           48.1054325
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-09-04",
         "event_date": "2026-09-04",
-        "ingested_at": "2026-09-05T08:31:51Z",
+        "ingested_at": "2026-09-06T08:49:20Z",
         "place": "Kotlyarivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-09-03",
         "event_date": "2026-09-03",
-        "ingested_at": "2026-09-05T08:31:51Z",
+        "ingested_at": "2026-09-06T08:49:20Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-05T08:31:51Z",
+        "ingested_at": "2026-09-06T08:49:20Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
@@ -81,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-05T08:31:51Z",
+        "ingested_at": "2026-09-06T08:49:20Z",
         "place": "Donbas",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-05T08:31:51Z",
+        "ingested_at": "2026-09-06T08:49:20Z",
         "place": "Mykolaivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,7 +147,7 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-05T08:31:51Z",
+        "ingested_at": "2026-09-06T08:49:20Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -147,56 +169,12 @@
         "kind": "ground",
         "article_date": "2026-09-02",
         "event_date": "2026-09-02",
-        "ingested_at": "2026-09-05T08:31:51Z",
+        "ingested_at": "2026-09-06T08:49:20Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
         "text": "A Russian milblogger claimed on September 2 that elements of the Russian Eastern Grouping of Forces seized nine settlements in August 2026, including Liubytske, Zirnytsya, Nove Pole, Rybalske, Novosoloshyne, Zelene, Dolynka, Nizhenka, and Shevchenkivske (roughly between 5 and 18 kilometers from the closest assessed Russian advances).[40] ISW has not observed any evidence to support these claims at this time.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-2-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          43.9877719,
-          56.3281097
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-01",
-        "event_date": "2026-09-01",
-        "ingested_at": "2026-09-05T08:31:51Z",
-        "place": "August",
-        "country_code": "ru",
-        "front_dist_km": null,
-        "text": "Russian forces seized 505.55 square kilometers in August 2025, for example, highlighting how Russian forces’ rate of advance continues to slow.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-1-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          43.9877719,
-          56.3281097
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-01",
-        "event_date": "2026-09-01",
-        "ingested_at": "2026-09-05T08:31:51Z",
-        "place": "August",
-        "country_code": "ru",
-        "front_dist_km": null,
-        "text": "The Ukrainian General Staff reported on September 1 that Russian forces suffered 42,020 casualties in August 2026 — the second month in a row that Russian forces suffered over 40,000 casualties in a single month.[3] Russian forces suffered an average of 340 casualties per square kilometer of territory seized or infiltrated and 465 casualties per square kilometer seized in August 2026.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-1-2026/"
       }
     }
   ]
