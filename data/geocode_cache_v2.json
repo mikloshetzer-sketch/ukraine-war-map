@@ -4147,5 +4147,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "the Tsvitkove-Krynychne line": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
