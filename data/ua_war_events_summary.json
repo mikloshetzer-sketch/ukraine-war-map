@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-09-08T15:09:31+00:00",
-  "count": 15,
+  "generated_at": "2026-09-08T19:57:12+00:00",
+  "count": 16,
   "by_event_type": {
-    "artillery": 1,
-    "missile_strike": 4,
+    "missile_strike": 5,
     "drone_attack": 8,
-    "ground_clash": 2
+    "ground_clash": 2,
+    "artillery": 1
   },
   "by_source": {
-    "ukrainenow": 8,
+    "ukrainenow": 9,
     "generalstaffzsu": 6,
     "deepstateua": 1
   },
   "by_confidence": {
-    "medium": 8,
+    "medium": 9,
     "high": 7
   },
   "top_sectors": [
@@ -30,11 +30,7 @@
       3
     ],
     [
-      "zaporizhzhia",
-      1
-    ],
-    [
-      "toretsk",
+      "kostiantynivka",
       1
     ]
   ]
