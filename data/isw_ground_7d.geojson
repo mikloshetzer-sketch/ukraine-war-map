@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-09-06",
         "event_date": "2026-09-06",
-        "ingested_at": "2026-09-08T09:00:52Z",
+        "ingested_at": "2026-09-09T09:07:09Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
@@ -37,34 +37,12 @@
         "kind": "ground",
         "article_date": "2026-09-05",
         "event_date": "2026-09-05",
-        "ingested_at": "2026-09-08T09:00:52Z",
+        "ingested_at": "2026-09-09T09:07:09Z",
         "place": "the Pokrovsk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces continued limited offensive operations in the Pokrovsk, Novopavlivka, and Oleksandrivka directions on September 4 and 5 but did not advance.[41] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Donetsk Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-5-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          34.5425638,
-          48.1054325
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-04",
-        "event_date": "2026-09-04",
-        "ingested_at": "2026-09-08T09:00:52Z",
-        "place": "Kotlyarivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced west of Kotlyarivka (just east of Novopavlivka) according to geolocated footage published on September 3.[56] Russian forces continued limited offensive operations in the Oleksandrivka direction on September 3 and 4 but did not advance.[57] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Donetsk Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-4-2026/"
       }
     }
   ]
