@@ -1,4 +1,57 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.4628723,
+          50.4971663
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-10",
+        "event_date": "2026-09-10",
+        "ingested_at": "2026-09-10T09:40:48Z",
+        "place": "NATO",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "NATO scrambles fighter jets as Russia launches massive  air attack",
+        "text": "NATO scrambles fighter jets as Russia launches massive  air attack.",
+        "source_url": "https://www.express.co.uk/news/world/2247225/nato-scrambles-fighter-jets-russia",
+        "publisher_hint": "https://www.express.co.uk/news/world/2247225/nato-scrambles-fighter-jets-russia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-10",
+        "event_date": "2026-09-10",
+        "ingested_at": "2026-09-10T09:40:48Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukrainian air defences repel Russian drone attack , downing 128 of 149",
+        "text": "Ukrainian air defences repel Russian drone attack , downing 128 of 149.",
+        "source_url": "https://news.az/news/ukrainian-air-defences-repel-russian-drone-attack-downing-128-of-149",
+        "publisher_hint": "https://news.az/news/ukrainian-air-defences-repel-russian-drone-attack-downing-128-of-149"
+      }
+    }
+  ]
 }
