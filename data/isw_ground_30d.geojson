@@ -15,34 +15,12 @@
         "kind": "ground",
         "article_date": "2026-09-06",
         "event_date": "2026-09-06",
-        "ingested_at": "2026-09-09T09:07:09Z",
+        "ingested_at": "2026-09-10T09:05:27Z",
         "place": "August",
         "country_code": "ru",
         "front_dist_km": null,
         "text": "The Russian rate of advance across the theater was 2.91 square kilometers per day in August 2026, a slight increase compared to recent months.[11] The average Russian rate of advance for Russian forces’ priority effort in Donetsk Oblast was lower at only 2.36 square kilometers per day in August.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.0805393,
-          48.3262489
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-05",
-        "event_date": "2026-09-05",
-        "ingested_at": "2026-09-09T09:07:09Z",
-        "place": "the Pokrovsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces continued limited offensive operations in the Pokrovsk, Novopavlivka, and Oleksandrivka directions on September 4 and 5 but did not advance.[41] Ukrainian forces continued their intermediate-range strike campaign against Russian military assets in occupied Donetsk Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-5-2026/"
       }
     }
   ]
