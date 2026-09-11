@@ -6,21 +6,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          43.9877719,
-          56.3281097
+          32.8013654,
+          47.9645198
         ]
       },
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
-        "article_date": "2026-09-06",
-        "event_date": "2026-09-06",
-        "ingested_at": "2026-09-10T09:05:27Z",
-        "place": "August",
-        "country_code": "ru",
+        "article_date": "2026-09-10",
+        "event_date": "2026-09-10",
+        "ingested_at": "2026-09-11T09:03:45Z",
+        "place": "Novodanylivka",
+        "country_code": "ua",
         "front_dist_km": null,
-        "text": "The Russian rate of advance across the theater was 2.91 square kilometers per day in August 2026, a slight increase compared to recent months.[11] The average Russian rate of advance for Russian forces’ priority effort in Donetsk Oblast was lower at only 2.36 square kilometers per day in August.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-6-2026/"
+        "text": "Ukrainian forces maintain positions in Novodanylivka (south of Orikhiv) in areas where Russian forces previously infiltrated based on geolocated footage published on September 9.[60] A Russian milblogger claimed that Russian forces advanced in central Orikhiv.[61] Ukrainian forces continued their intermediate-range strike campaign in occupied Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-10-2026/"
       }
     }
   ]
