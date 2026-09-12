@@ -4157,5 +4157,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Zorivka": {
+    "coords": [
+      32.3784188,
+      46.678331
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
