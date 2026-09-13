@@ -4165,5 +4165,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "seize Dobropillya": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
