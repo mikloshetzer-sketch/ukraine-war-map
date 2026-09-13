@@ -1,18 +1,19 @@
 {
-  "generated_at": "2026-09-13T14:55:55+00:00",
-  "count": 14,
+  "generated_at": "2026-09-13T19:32:27+00:00",
+  "count": 13,
   "by_event_type": {
+    "artillery": 1,
+    "drone_attack": 9,
     "missile_strike": 2,
-    "drone_attack": 11,
     "ground_clash": 1
   },
   "by_source": {
-    "ukrainenow": 3,
-    "generalstaffzsu": 11
+    "ukrainenow": 4,
+    "generalstaffzsu": 9
   },
   "by_confidence": {
-    "medium": 3,
-    "high": 11
+    "medium": 4,
+    "high": 9
   },
   "top_sectors": [
     [
@@ -29,11 +30,15 @@
     ],
     [
       "toretsk",
-      2
+      3
+    ],
+    [
+      "kherson",
+      1
     ],
     [
       "kostiantynivka",
-      2
+      1
     ]
   ]
 }
