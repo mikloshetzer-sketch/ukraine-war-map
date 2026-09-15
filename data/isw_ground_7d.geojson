@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-09-13",
         "event_date": "2026-09-13",
-        "ingested_at": "2026-09-14T10:04:34Z",
+        "ingested_at": "2026-09-15T09:33:18Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +37,12 @@
         "kind": "ground",
         "article_date": "2026-09-11",
         "event_date": "2026-09-11",
-        "ingested_at": "2026-09-14T10:04:34Z",
+        "ingested_at": "2026-09-15T09:33:18Z",
         "place": "Zorivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "The Russian MoD claimed on September 11 that the Russian Eastern Grouping of Forces seized Zorivka (southwest of Oleksandrivka).[59] A Russian servicemember allegedly raised a flag in Zorivka, according to geolocated footage published on September 11.[60] ISW cannot verify with high confidence the reliability of the footage and has reason to assess that the footage splices together multiple video clips.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-11-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.8013654,
-          47.9645198
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-10",
-        "event_date": "2026-09-10",
-        "ingested_at": "2026-09-14T10:04:34Z",
-        "place": "Novodanylivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces maintain positions in Novodanylivka (south of Orikhiv) in areas where Russian forces previously infiltrated based on geolocated footage published on September 9.[60] A Russian milblogger claimed that Russian forces advanced in central Orikhiv.[61] Ukrainian forces continued their intermediate-range strike campaign in occupied Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-10-2026/"
       }
     }
   ]
