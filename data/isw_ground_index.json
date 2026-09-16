@@ -1,7 +1,7 @@
 {
   "source": "isw_ground",
-  "generated_at_utc": "2026-09-15T09:33:19Z",
-  "started_at_utc": "2026-09-15T09:33:18Z",
+  "generated_at_utc": "2026-09-16T09:27:56Z",
+  "started_at_utc": "2026-09-16T09:27:55Z",
   "config": {
     "lookback_days": 30,
     "max_articles": 30,

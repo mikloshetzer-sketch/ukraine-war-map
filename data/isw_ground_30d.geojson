@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          36.89724,
+          48.17737
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-15",
+        "event_date": "2026-09-15",
+        "ingested_at": "2026-09-16T09:27:55Z",
+        "place": "Muravka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on September 14 that Russian forces advanced west of Muravka and into Marivka (both northeast of Novopavlivka).[68] Neither Russian nor Ukrainian sources reported ground activity in the Oleksandrivka direction on September 15.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-15-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           35.1338908,
           47.8326667
         ]
@@ -15,34 +37,12 @@
         "kind": "ground",
         "article_date": "2026-09-13",
         "event_date": "2026-09-13",
-        "ingested_at": "2026-09-15T09:33:18Z",
+        "ingested_at": "2026-09-16T09:27:56Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces recently advanced in western Zaporizhia Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-13-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.3784188,
-          46.678331
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-11",
-        "event_date": "2026-09-11",
-        "ingested_at": "2026-09-15T09:33:18Z",
-        "place": "Zorivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "The Russian MoD claimed on September 11 that the Russian Eastern Grouping of Forces seized Zorivka (southwest of Oleksandrivka).[59] A Russian servicemember allegedly raised a flag in Zorivka, according to geolocated footage published on September 11.[60] ISW cannot verify with high confidence the reliability of the footage and has reason to assess that the footage splices together multiple video clips.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-11-2026/"
       }
     }
   ]
