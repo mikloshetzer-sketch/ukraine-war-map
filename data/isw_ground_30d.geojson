@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-16",
+        "event_date": "2026-09-16",
+        "ingested_at": "2026-09-17T09:36:49Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #2 – Advance on the Fortress Belt from the east Russian objective: Advance on Slovyansk, Kramatorsk, and Druzhkivka from the east – assessed objective of the Russian 3rd Combined Arms Army and Southern Grouping of Forces elements Ukrainian forces recently advanced east of Slovyansk.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-16-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           36.89724,
           48.17737
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-09-15",
         "event_date": "2026-09-15",
-        "ingested_at": "2026-09-16T09:27:55Z",
+        "ingested_at": "2026-09-17T09:36:49Z",
         "place": "Muravka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-09-13",
         "event_date": "2026-09-13",
-        "ingested_at": "2026-09-16T09:27:56Z",
+        "ingested_at": "2026-09-17T09:36:50Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
