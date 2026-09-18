@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-09-16",
         "event_date": "2026-09-16",
-        "ingested_at": "2026-09-17T09:36:49Z",
+        "ingested_at": "2026-09-18T09:08:36Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +37,12 @@
         "kind": "ground",
         "article_date": "2026-09-15",
         "event_date": "2026-09-15",
-        "ingested_at": "2026-09-17T09:36:49Z",
+        "ingested_at": "2026-09-18T09:08:36Z",
         "place": "Muravka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "A Russian milblogger claimed on September 14 that Russian forces advanced west of Muravka and into Marivka (both northeast of Novopavlivka).[68] Neither Russian nor Ukrainian sources reported ground activity in the Oleksandrivka direction on September 15.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-15-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.1338908,
-          47.8326667
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-13",
-        "event_date": "2026-09-13",
-        "ingested_at": "2026-09-17T09:36:50Z",
-        "place": "western Zaporizhia Oblast",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces recently advanced in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-13-2026/"
       }
     }
   ]
