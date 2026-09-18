@@ -1,6 +1,9 @@
 {
-  "gained_centroid": null,
+  "gained_centroid": [
+    37.19314,
+    48.39587
+  ],
   "lost_centroid": null,
-  "date": "2026-09-17",
-  "vs_date": "2026-09-16"
+  "date": "2026-09-18",
+  "vs_date": "2026-09-17"
 }
