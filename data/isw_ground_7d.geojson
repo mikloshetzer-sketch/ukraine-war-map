@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          32.3181396,
+          47.4282297
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-18",
+        "event_date": "2026-09-18",
+        "ingested_at": "2026-09-19T08:56:07Z",
+        "place": "Odradne",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[34] A Russian milblogger claimed that Russian forces advanced west of Odradne (east of Velykyi Burluk).[35] Russian milbloggers continue to make spurious claims about an encirclement in northeastern Kharkiv Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-18-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.8373367,
+          48.5873911
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-18",
+        "event_date": "2026-09-18",
+        "ingested_at": "2026-09-19T08:56:07Z",
+        "place": "Chasiv Yar",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #2 – Advance on the Fortress Belt from the east Russian objective: Advance on Slovyansk, Kramatorsk, and Druzhkivka from the east – assessed objective of the Russian 3rd Combined Arms Army and Southern Grouping of Forces elements Russian forces recently conducted an infiltration mission near Chasiv Yar.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-18-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6058241,
           48.8522691
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-09-16",
         "event_date": "2026-09-16",
-        "ingested_at": "2026-09-18T09:08:36Z",
+        "ingested_at": "2026-09-19T08:56:07Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-09-15",
         "event_date": "2026-09-15",
-        "ingested_at": "2026-09-18T09:08:36Z",
+        "ingested_at": "2026-09-19T08:56:07Z",
         "place": "Muravka",
         "country_code": "ua",
         "front_dist_km": null,

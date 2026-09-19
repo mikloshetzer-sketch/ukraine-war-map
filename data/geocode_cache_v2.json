@@ -4195,5 +4195,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Odradne": {
+    "coords": [
+      32.3181396,
+      47.4282297
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "northwestern Stepnohirsk": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
