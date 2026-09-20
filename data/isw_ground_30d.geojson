@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-09-18",
         "event_date": "2026-09-18",
-        "ingested_at": "2026-09-19T08:56:07Z",
+        "ingested_at": "2026-09-20T09:24:59Z",
         "place": "Odradne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-09-18",
         "event_date": "2026-09-18",
-        "ingested_at": "2026-09-19T08:56:07Z",
+        "ingested_at": "2026-09-20T09:24:59Z",
         "place": "Chasiv Yar",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,34 +59,12 @@
         "kind": "ground",
         "article_date": "2026-09-16",
         "event_date": "2026-09-16",
-        "ingested_at": "2026-09-19T08:56:07Z",
+        "ingested_at": "2026-09-20T09:24:59Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian Subordinate Main Effort #2 – Advance on the Fortress Belt from the east Russian objective: Advance on Slovyansk, Kramatorsk, and Druzhkivka from the east – assessed objective of the Russian 3rd Combined Arms Army and Southern Grouping of Forces elements Ukrainian forces recently advanced east of Slovyansk.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-16-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.89724,
-          48.17737
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-15",
-        "event_date": "2026-09-15",
-        "ingested_at": "2026-09-19T08:56:07Z",
-        "place": "Muravka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed on September 14 that Russian forces advanced west of Muravka and into Marivka (both northeast of Novopavlivka).[68] Neither Russian nor Ukrainian sources reported ground activity in the Oleksandrivka direction on September 15.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-15-2026/"
       }
     }
   ]
