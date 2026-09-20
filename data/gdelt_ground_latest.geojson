@@ -1,4 +1,83 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          53.197847,
+          56.8502401
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-20",
+        "event_date": "2026-09-20",
+        "ingested_at": "2026-09-20T09:47:11Z",
+        "place": "Hours",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Hours after a Russian attack destroys their home , a Ukrainian couple marries anyway",
+        "text": "Hours after a Russian attack destroys their home , a Ukrainian couple marries anyway.",
+        "source_url": "https://www.the-messenger.com/news/world/article_287e0b59-2c42-53f3-b471-1585e3fd5d0b.html",
+        "publisher_hint": "https://www.the-messenger.com/news/world/article_287e0b59-2c42-53f3-b471-1585e3fd5d0b.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-20",
+        "event_date": "2026-09-20",
+        "ingested_at": "2026-09-20T09:47:11Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Moscow claims capture of Veseloye , strikes arms ships ; Kyiv repels Russian air attack",
+        "text": "Moscow claims capture of Veseloye , strikes arms ships ; Kyiv repels Russian air attack.",
+        "source_url": "http://www.russiaherald.com/news/279302501/moscow-claims-capture-of-veseloye-strikes-arms-ships-kyiv-repels-russian-air-attack",
+        "publisher_hint": "http://www.russiaherald.com/news/279302501/moscow-claims-capture-of-veseloye-strikes-arms-ships-kyiv-repels-russian-air-attack"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6923754,
+          48.534905
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-20",
+        "event_date": "2026-09-20",
+        "ingested_at": "2026-09-20T09:47:11Z",
+        "place": "Kostiantynivka",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 188 C - Clashes in F - Line : 18 in Kostiantynivka Dir , 15 in Pokrovsk Dir , 7 in Lyman Dir ; US Advances $2 . 7B Arms Sale to UKR ; UN : RU Troop Barbaric Rape Campaign in UKR Includes 4yr - Old Girl ; RU Claims : UKR targets 16 RU Re...",
+        "text": "RIGHT SPEAK : 188 C - Clashes in F - Line : 18 in Kostiantynivka Dir , 15 in Pokrovsk Dir , 7 in Lyman Dir ; US Advances $2 . 7B Arms Sale to UKR ; UN : RU Troop Barbaric Rape Campaign in UKR Includes 4yr - Old Girl ; RU Claims : UKR targets 16 RU Re....",
+        "source_url": "http://www.rightspeak.net/2026/09/188-c-clashes-in-f-line-18-in.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/09/188-c-clashes-in-f-line-18-in.html"
+      }
+    }
+  ]
 }

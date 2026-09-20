@@ -4218,5 +4218,26 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Hours": {
+    "coords": [
+      53.197847,
+      56.8502401
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Veseloye": {
+    "coords": [
+      34.550657,
+      51.2873674
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "UKR Includes": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
