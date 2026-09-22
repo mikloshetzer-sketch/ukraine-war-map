@@ -6,6 +6,50 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.5843812,
+          48.7389415
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-21",
+        "event_date": "2026-09-21",
+        "ingested_at": "2026-09-22T09:26:27Z",
+        "place": "Kramatorsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed that Russian forces recently advanced east of Kramatorsk.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.5843812,
+          48.7389415
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-21",
+        "event_date": "2026-09-21",
+        "ingested_at": "2026-09-22T09:26:27Z",
+        "place": "Kramatorsk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger claimed on September 21 that elements of the Russian 17th Tank Regiment (70th Motorized Rifle Division, 18th Combined Arms Army [CAA], Southern Military District [SMD]) seized Vasyutynske.[38] Russian forces continued to employ “human safari” tactics on prior dates, purposefully hunting civilians in Kramatorsk and Druzhkivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           33.69149,
           48.199951
         ]
@@ -15,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-09-20",
         "event_date": "2026-09-20",
-        "ingested_at": "2026-09-21T10:09:40Z",
+        "ingested_at": "2026-09-22T09:26:27Z",
         "place": "Raipole",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-09-18",
         "event_date": "2026-09-18",
-        "ingested_at": "2026-09-21T10:09:40Z",
+        "ingested_at": "2026-09-22T09:26:27Z",
         "place": "Odradne",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-09-18",
         "event_date": "2026-09-18",
-        "ingested_at": "2026-09-21T10:09:40Z",
+        "ingested_at": "2026-09-22T09:26:27Z",
         "place": "Chasiv Yar",
         "country_code": "ua",
         "front_dist_km": null,
