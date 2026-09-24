@@ -6,6 +6,72 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6127304,
+          49.711199
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-23",
+        "event_date": "2026-09-23",
+        "ingested_at": "2026-09-24T09:27:35Z",
+        "place": "the Kupyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in the Kupyansk direction, in the Chasiv Yar tactical area, and in the Novopavlivka and Oleksandrivka directions.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-23-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.8027723,
+          50.9119775
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-23",
+        "event_date": "2026-09-23",
+        "ingested_at": "2026-09-24T09:27:35Z",
+        "place": "Sumy City",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "A Russian milblogger acknowledged on September 22 that the density of Ukrainian drones is making a Russian advance north of Sumy City “virtually impossible.”[26] Russian forces conducted a series of glide bomb strikes against Sumy City, as Russian forces continue to strike Ukrainian frontline cities.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-23-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2803026,
+          47.4431859
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-23",
+        "event_date": "2026-09-23",
+        "ingested_at": "2026-09-24T09:27:35Z",
+        "place": "Vasylivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces recently advanced north of Vasylivka and northeast of Novooleksandrivka (both south of Dobropillya) according to geolocated footage published on September 18.[50] Russian forces recently conducted an infiltration mission southwest of Dobropillya.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-23-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.5843812,
           48.7389415
         ]
@@ -15,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-09-21",
         "event_date": "2026-09-21",
-        "ingested_at": "2026-09-23T09:28:43Z",
+        "ingested_at": "2026-09-24T09:27:35Z",
         "place": "Kramatorsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-09-21",
         "event_date": "2026-09-21",
-        "ingested_at": "2026-09-23T09:28:43Z",
+        "ingested_at": "2026-09-24T09:27:35Z",
         "place": "Kramatorsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-09-20",
         "event_date": "2026-09-20",
-        "ingested_at": "2026-09-23T09:28:43Z",
+        "ingested_at": "2026-09-24T09:27:35Z",
         "place": "Raipole",
         "country_code": "ua",
         "front_dist_km": null,

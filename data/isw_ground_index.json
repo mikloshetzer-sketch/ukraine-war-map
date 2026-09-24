@@ -1,7 +1,7 @@
 {
   "source": "isw_ground",
-  "generated_at_utc": "2026-09-23T09:28:43Z",
-  "started_at_utc": "2026-09-23T09:28:42Z",
+  "generated_at_utc": "2026-09-24T09:27:36Z",
+  "started_at_utc": "2026-09-24T09:27:33Z",
   "config": {
     "lookback_days": 30,
     "max_articles": 30,
@@ -15,14 +15,14 @@
   "stats": {
     "article_links_found_in_window": 4,
     "articles_with_events": 4,
-    "raw_events_total": 9,
-    "dedup_events_total": 9,
+    "raw_events_total": 12,
+    "dedup_events_total": 12,
     "features_latest": 0,
-    "features_7d": 3,
-    "features_30d": 3,
-    "events_total": 9,
-    "events_with_any_geo": 3,
-    "point_features": 3,
+    "features_7d": 6,
+    "features_30d": 6,
+    "events_total": 12,
+    "events_with_any_geo": 6,
+    "point_features": 6,
     "line_features": 0,
     "movement_lines": 0,
     "inferred_lines": 0,
@@ -30,13 +30,13 @@
     "dropped_geocode": 6,
     "dropped_too_long": 0,
     "frontline_available": false,
-    "geocode_cache_hits": 3,
+    "geocode_cache_hits": 6,
     "geocode_cache_negative_hits": 5,
     "geocode_new_success": 0,
     "geocode_new_fail": 1,
     "geocode_calls_this_run": 1,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 705
+    "cache_entries_total": 706
   },
   "files": {
     "latest": "data/isw_ground_latest.geojson",
