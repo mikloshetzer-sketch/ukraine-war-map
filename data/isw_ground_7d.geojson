@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-09-23",
         "event_date": "2026-09-23",
-        "ingested_at": "2026-09-24T09:27:35Z",
+        "ingested_at": "2026-09-25T09:45:09Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-09-23",
         "event_date": "2026-09-23",
-        "ingested_at": "2026-09-24T09:27:35Z",
+        "ingested_at": "2026-09-25T09:45:09Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-09-23",
         "event_date": "2026-09-23",
-        "ingested_at": "2026-09-24T09:27:35Z",
+        "ingested_at": "2026-09-25T09:45:09Z",
         "place": "Vasylivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-09-21",
         "event_date": "2026-09-21",
-        "ingested_at": "2026-09-24T09:27:35Z",
+        "ingested_at": "2026-09-25T09:45:09Z",
         "place": "Kramatorsk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,34 +103,12 @@
         "kind": "ground",
         "article_date": "2026-09-21",
         "event_date": "2026-09-21",
-        "ingested_at": "2026-09-24T09:27:35Z",
+        "ingested_at": "2026-09-25T09:45:09Z",
         "place": "Kramatorsk",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "A Russian milblogger claimed on September 21 that elements of the Russian 17th Tank Regiment (70th Motorized Rifle Division, 18th Combined Arms Army [CAA], Southern Military District [SMD]) seized Vasyutynske.[38] Russian forces continued to employ “human safari” tactics on prior dates, purposefully hunting civilians in Kramatorsk and Druzhkivka.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-21-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.69149,
-          48.199951
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-20",
-        "event_date": "2026-09-20",
-        "ingested_at": "2026-09-24T09:27:35Z",
-        "place": "Raipole",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed that Russian forces advanced northeast of Serhiivka and south of Raipole (both southwest of Dobropillya).[51] Ukrainian strikes appear to be creating morale and logistics problems within Russian units and inhibiting Russian advances in the Dobropillya direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-20-2026/"
       }
     }
   ]
