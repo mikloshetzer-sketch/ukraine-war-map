@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-25",
+        "event_date": "2026-09-25",
+        "ingested_at": "2026-09-26T09:29:16Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #2 – Advance on the Fortress Belt from the east Russian objective: Advance on Slovyansk, Kramatorsk, and Druzhkivka from the east – assessed objective of the Russian 3rd Combined Arms Army and Southern Grouping of Forces elements Ukrainian forces recently advanced or maintained positions east of Slovyansk.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-25-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           37.6127304,
           49.711199
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-09-23",
         "event_date": "2026-09-23",
-        "ingested_at": "2026-09-25T09:45:09Z",
+        "ingested_at": "2026-09-26T09:29:16Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-09-23",
         "event_date": "2026-09-23",
-        "ingested_at": "2026-09-25T09:45:09Z",
+        "ingested_at": "2026-09-26T09:29:16Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,56 +81,12 @@
         "kind": "ground",
         "article_date": "2026-09-23",
         "event_date": "2026-09-23",
-        "ingested_at": "2026-09-25T09:45:09Z",
+        "ingested_at": "2026-09-26T09:29:16Z",
         "place": "Vasylivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces recently advanced north of Vasylivka and northeast of Novooleksandrivka (both south of Dobropillya) according to geolocated footage published on September 18.[50] Russian forces recently conducted an infiltration mission southwest of Dobropillya.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-23-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.5843812,
-          48.7389415
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-21",
-        "event_date": "2026-09-21",
-        "ingested_at": "2026-09-25T09:45:09Z",
-        "place": "Kramatorsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed that Russian forces recently advanced east of Kramatorsk.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-21-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.5843812,
-          48.7389415
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-21",
-        "event_date": "2026-09-21",
-        "ingested_at": "2026-09-25T09:45:09Z",
-        "place": "Kramatorsk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "A Russian milblogger claimed on September 21 that elements of the Russian 17th Tank Regiment (70th Motorized Rifle Division, 18th Combined Arms Army [CAA], Southern Military District [SMD]) seized Vasyutynske.[38] Russian forces continued to employ “human safari” tactics on prior dates, purposefully hunting civilians in Kramatorsk and Druzhkivka.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-21-2026/"
       }
     }
   ]
