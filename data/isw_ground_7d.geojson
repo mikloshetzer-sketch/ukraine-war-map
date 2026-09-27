@@ -13,9 +13,53 @@
       "properties": {
         "source": "isw_ground",
         "kind": "ground",
+        "article_date": "2026-09-26",
+        "event_date": "2026-09-26",
+        "ingested_at": "2026-09-27T10:09:48Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced east of Slovyansk and in western Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-09-26",
+        "event_date": "2026-09-26",
+        "ingested_at": "2026-09-27T10:09:48Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #2 – Advance on the Fortress Belt from the east Russian objective: Advance on Slovyansk, Kramatorsk, and Druzhkivka from the east – assessed objective of the Russian 3rd Combined Arms Army and Southern Grouping of Forces elements Ukrainian forces recently advanced east of Slovyansk.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-26-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
         "article_date": "2026-09-25",
         "event_date": "2026-09-25",
-        "ingested_at": "2026-09-26T09:29:16Z",
+        "ingested_at": "2026-09-27T10:09:48Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-09-23",
         "event_date": "2026-09-23",
-        "ingested_at": "2026-09-26T09:29:16Z",
+        "ingested_at": "2026-09-27T10:09:48Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-09-23",
         "event_date": "2026-09-23",
-        "ingested_at": "2026-09-26T09:29:16Z",
+        "ingested_at": "2026-09-27T10:09:48Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +125,7 @@
         "kind": "ground",
         "article_date": "2026-09-23",
         "event_date": "2026-09-23",
-        "ingested_at": "2026-09-26T09:29:16Z",
+        "ingested_at": "2026-09-27T10:09:48Z",
         "place": "Vasylivka",
         "country_code": "ua",
         "front_dist_km": null,
