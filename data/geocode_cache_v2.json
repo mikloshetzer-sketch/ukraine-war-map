@@ -4284,5 +4284,93 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Russia Says": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Zelensky Hails Gains": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "New Moscow": {
+    "coords": [
+      37.4316127,
+      55.554131
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Mass": {
+    "coords": [
+      37.6365909,
+      55.7515558
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Ukraine Vivaldi": {
+    "coords": [
+      27.0231797,
+      49.4442774
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "London Business News": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Ukrainians": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "There": {
+    "coords": [
+      40.0841567,
+      44.6079513
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "largest ever Attac": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Cool": {
+    "coords": [
+      38.9739749,
+      45.0639637
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Giving Up": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "UKR Truce": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Offices": {
+    "coords": [
+      50.1779504,
+      53.2259751
+    ],
+    "cc": "ru",
+    "negative": false
+  },
+  "Takes Out": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
