@@ -4372,5 +4372,26 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Korchakivka": {
+    "coords": [
+      34.895386,
+      51.091225
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "have slowed in September": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Kalynove": {
+    "coords": [
+      38.516096,
+      48.5651752
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
