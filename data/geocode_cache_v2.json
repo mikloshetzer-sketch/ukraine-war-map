@@ -4393,5 +4393,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Ukraine in September": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

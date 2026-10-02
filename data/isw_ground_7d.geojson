@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-09-30",
         "event_date": "2026-09-30",
-        "ingested_at": "2026-10-01T11:08:25Z",
+        "ingested_at": "2026-10-02T10:41:19Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-09-30",
         "event_date": "2026-09-30",
-        "ingested_at": "2026-10-01T11:08:25Z",
+        "ingested_at": "2026-10-02T10:41:19Z",
         "place": "Korchakivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-09-29",
         "event_date": "2026-09-29",
-        "ingested_at": "2026-10-01T11:08:25Z",
+        "ingested_at": "2026-10-02T10:41:19Z",
         "place": "Kalynove",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-09-28",
         "event_date": "2026-09-28",
-        "ingested_at": "2026-10-01T11:08:26Z",
+        "ingested_at": "2026-10-02T10:41:19Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,34 +103,12 @@
         "kind": "ground",
         "article_date": "2026-09-28",
         "event_date": "2026-09-28",
-        "ingested_at": "2026-10-01T11:08:26Z",
+        "ingested_at": "2026-10-02T10:41:19Z",
         "place": "Mala Tokmachka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces struck a Ukrainian position south of Mala Tokmachka, according to geolocated footage published on September 27, indicating that Ukrainian forces recently advanced in the area.[56] Ukrainian forces continued their frontline strikes against Russian military assets in occupied Zaporizhia Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-28-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.5372813,
-          48.6252414
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-27",
-        "event_date": "2026-09-27",
-        "ingested_at": "2026-10-01T11:08:26Z",
-        "place": "Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[52] Ukrainian forces recently advanced east of Oleksandrivka.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-27-2026/"
       }
     }
   ]
