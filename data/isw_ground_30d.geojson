@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-09-30",
         "event_date": "2026-09-30",
-        "ingested_at": "2026-10-02T10:41:19Z",
+        "ingested_at": "2026-10-03T10:00:26Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-09-30",
         "event_date": "2026-09-30",
-        "ingested_at": "2026-10-02T10:41:19Z",
+        "ingested_at": "2026-10-03T10:00:26Z",
         "place": "Korchakivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,56 +59,12 @@
         "kind": "ground",
         "article_date": "2026-09-29",
         "event_date": "2026-09-29",
-        "ingested_at": "2026-10-02T10:41:19Z",
+        "ingested_at": "2026-10-03T10:00:26Z",
         "place": "Kalynove",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces recently cleared Russian positions north of Kalynove (northwest of Kupyansk), according to geolocated footage published on September 28, indicating that Ukrainian forces advanced in the area.[43] The footage was accompanied by a Ukrainian regiment’s statements asserting that Ukrainian forces had cleared the entire forested area northwest of Kalynove.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-29-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.1338908,
-          47.8326667
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-28",
-        "event_date": "2026-09-28",
-        "ingested_at": "2026-10-02T10:41:19Z",
-        "place": "western Zaporizhia Oblast",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced in western Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-28-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.896801,
-          47.532688
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-28",
-        "event_date": "2026-09-28",
-        "ingested_at": "2026-10-02T10:41:19Z",
-        "place": "Mala Tokmachka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces struck a Ukrainian position south of Mala Tokmachka, according to geolocated footage published on September 27, indicating that Ukrainian forces recently advanced in the area.[56] Ukrainian forces continued their frontline strikes against Russian military assets in occupied Zaporizhia Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-28-2026/"
       }
     }
   ]
