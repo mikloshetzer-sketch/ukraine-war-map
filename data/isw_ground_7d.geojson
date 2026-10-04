@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-09-30",
         "event_date": "2026-09-30",
-        "ingested_at": "2026-10-03T10:00:26Z",
+        "ingested_at": "2026-10-04T10:43:13Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,34 +37,12 @@
         "kind": "ground",
         "article_date": "2026-09-30",
         "event_date": "2026-09-30",
-        "ingested_at": "2026-10-03T10:00:26Z",
+        "ingested_at": "2026-10-04T10:43:13Z",
         "place": "Korchakivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces recently advanced north of Korchakivka (north of Sumy City) based on geolocated footage published on September 29.[17] Russian sources continue to make unconfirmed claims of advance in northern Sumy Oblast.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-30-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.516096,
-          48.5651752
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-29",
-        "event_date": "2026-09-29",
-        "ingested_at": "2026-10-03T10:00:26Z",
-        "place": "Kalynove",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently cleared Russian positions north of Kalynove (northwest of Kupyansk), according to geolocated footage published on September 28, indicating that Ukrainian forces advanced in the area.[43] The footage was accompanied by a Ukrainian regiment’s statements asserting that Ukrainian forces had cleared the entire forested area northwest of Kalynove.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-29-2026/"
       }
     }
   ]
