@@ -4,23 +4,29 @@
     {
       "type": "Feature",
       "geometry": {
-        "type": "Point",
+        "type": "LineString",
         "coordinates": [
-          34.8027723,
-          50.9119775
+          [
+            37.919998,
+            49.245178
+          ],
+          [
+            37.9635093,
+            48.0448144
+          ]
         ]
       },
       "properties": {
         "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-30",
-        "event_date": "2026-09-30",
-        "ingested_at": "2026-10-04T10:43:13Z",
-        "place": "Sumy City",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced north of Sumy City.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-30-2026/"
+        "kind": "movement_line",
+        "article_date": "2026-10-04",
+        "event_date": "2026-10-04",
+        "ingested_at": "2026-10-05T11:46:49Z",
+        "from_place": "Hrekivka",
+        "to_place": "Makiivka",
+        "length_km": 133.51,
+        "text": "Mashovets reported that Russian forces hold positions about three kilometers west of Karmazynivka and that Ukrainian forces advanced two kilometers from Hrekivka toward Makiivka (all southeast of Borova).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-4-2026/"
       }
     },
     {
@@ -28,21 +34,21 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          34.895386,
-          51.091225
+          37.9635093,
+          48.0448144
         ]
       },
       "properties": {
         "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-09-30",
-        "event_date": "2026-09-30",
-        "ingested_at": "2026-10-04T10:43:13Z",
-        "place": "Korchakivka",
+        "kind": "movement",
+        "article_date": "2026-10-04",
+        "event_date": "2026-10-04",
+        "ingested_at": "2026-10-05T11:46:49Z",
+        "place": "Makiivka",
         "country_code": "ua",
         "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced north of Korchakivka (north of Sumy City) based on geolocated footage published on September 29.[17] Russian sources continue to make unconfirmed claims of advance in northern Sumy Oblast.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-september-30-2026/"
+        "text": "Mashovets reported that Russian forces hold positions about three kilometers west of Karmazynivka and that Ukrainian forces advanced two kilometers from Hrekivka toward Makiivka (all southeast of Borova).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-4-2026/"
       }
     }
   ]

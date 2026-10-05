@@ -4398,5 +4398,21 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Hrekivka": {
+    "coords": [
+      37.919998,
+      49.245178
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Makiivka": {
+    "coords": [
+      37.9635093,
+      48.0448144
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
