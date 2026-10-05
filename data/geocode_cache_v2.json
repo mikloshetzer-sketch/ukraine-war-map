@@ -4414,5 +4414,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Ukraine Regains Ground": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }

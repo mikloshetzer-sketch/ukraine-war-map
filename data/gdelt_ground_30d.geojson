@@ -6,25 +6,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          38.2047592,
-          44.4220236
+          38.4860194,
+          48.9279202
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-10-04",
-        "event_date": "2026-10-04",
-        "ingested_at": "2026-10-04T11:05:23Z",
-        "place": "Putin",
+        "article_date": "2026-10-05",
+        "event_date": "2026-10-05",
+        "ingested_at": "2026-10-05T12:14:24Z",
+        "place": "Ukraine Latest",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
-        "country_code": "ru",
+        "country_code": "ua",
         "front_dist_km": null,
-        "title": "Putin  plotting huge attack on 3 nuclear plant as terrifying Ukraine plan leaked",
-        "text": "Putin  plotting huge attack on 3 nuclear plant as terrifying Ukraine plan leaked.",
-        "source_url": "https://www.mirror.co.uk/news/world-news/russia-ukraine-nuclear-plants-putin-37726246",
-        "publisher_hint": "https://www.mirror.co.uk/news/world-news/russia-ukraine-nuclear-plants-putin-37726246"
+        "title": "Ukraine Latest : Ukraine Regains Ground as Russia Opens New Winter Energy Offensive",
+        "text": "Ukraine Latest : Ukraine Regains Ground as Russia Opens New Winter Energy Offensive.",
+        "source_url": "https://georgiatoday.ge/ukraine-latest-ukraine-regains-ground-as-russia-opens-new-winter-energy-offensive/",
+        "publisher_hint": "https://georgiatoday.ge/ukraine-latest-ukraine-regains-ground-as-russia-opens-new-winter-energy-offensive/"
       }
     },
     {
@@ -32,25 +32,155 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          38.2047592,
-          44.4220236
+          36.8,
+          52.6
         ]
       },
       "properties": {
         "source": "gdelt_ground",
         "kind": "ground_news",
-        "article_date": "2026-10-04",
-        "event_date": "2026-10-04",
-        "ingested_at": "2026-10-04T11:05:23Z",
-        "place": "Putin",
+        "article_date": "2026-09-05",
+        "event_date": "2026-09-05",
+        "ingested_at": "2026-10-05T12:14:24Z",
+        "place": "Russian",
         "location_confidence": "title_chunk",
         "candidate_score": 25,
         "country_code": "ru",
         "front_dist_km": null,
-        "title": "Putin  plotting huge attack on 3 nuclear plant as terrifying Ukraine plan leaked",
-        "text": "Putin  plotting huge attack on 3 nuclear plant as terrifying Ukraine plan leaked.",
-        "source_url": "https://www.aol.co.uk/articles/putin-plotting-huge-attack-3-081542000.html",
-        "publisher_hint": "https://www.aol.co.uk/articles/putin-plotting-huge-attack-3-081542000.html"
+        "title": "Ukraine Vivaldi offensive punches through Russian lines as Kyiv retakes 176 sq km - London Business News",
+        "text": "Ukraine Vivaldi offensive punches through Russian lines as Kyiv retakes 176 sq km - London Business News.",
+        "source_url": "https://londonlovesbusiness.com/ukraines-vivaldi-offensive-punches-through-russian-lines-as-kyiv-retakes-176-sq-km/",
+        "publisher_hint": "https://londonlovesbusiness.com/ukraines-vivaldi-offensive-punches-through-russian-lines-as-kyiv-retakes-176-sq-km/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-05",
+        "event_date": "2026-09-05",
+        "ingested_at": "2026-10-05T12:14:24Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Ukrainians captured 250 Russian soldiers during Operation Vivaldi ( Ukraine Battlefield update , Day 1 , 677 )",
+        "text": "Ukrainians captured 250 Russian soldiers during Operation Vivaldi ( Ukraine Battlefield update , Day 1 , 677 ).",
+        "source_url": "https://euobserver.com/240025/ukrainians-captured-250-russian-soldiers-during-operation-vivaldi-ukraine-battlefield-update-day-1677/",
+        "publisher_hint": "https://euobserver.com/240025/ukrainians-captured-250-russian-soldiers-during-operation-vivaldi-ukraine-battlefield-update-day-1677/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6923754,
+          48.534905
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-05",
+        "event_date": "2026-09-05",
+        "ingested_at": "2026-10-05T12:14:24Z",
+        "place": "Kostiantynivka",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 242 C - Clashes in F - Line : 30 in Kostiantynivka Dir , 13 in Lyman Dir , 12 in Pokrovsk Dir , Zelensky at UN : World Leaders Need to to keep choking RU Revenues , Limit Its War Efforts ; There are No Elections in RU , Only Theater ; U...",
+        "text": "RIGHT SPEAK : 242 C - Clashes in F - Line : 30 in Kostiantynivka Dir , 13 in Lyman Dir , 12 in Pokrovsk Dir , Zelensky at UN : World Leaders Need to to keep choking RU Revenues , Limit Its War Efforts ; There are No Elections in RU , Only Theater ; U....",
+        "source_url": "http://www.rightspeak.net/2026/09/242-c-clashes-in-f-line-30-in.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/09/242-c-clashes-in-f-line-30-in.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2656849,
+          47.6655382
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-05",
+        "event_date": "2026-09-05",
+        "ingested_at": "2026-10-05T12:14:24Z",
+        "place": "Huliaipole",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 185 C - Clashes in F - Line : 27 in Pokrovsk Dir , 17 in Kostiantynivka Dir , 5 in Huliaipole Dir ; Trump Best Bet to Cool the UKR War Starts with Elon Musk ; Z : For the 17th or 18th time , Putin Promised to Take Donetsk  in a few mont...",
+        "text": "RIGHT SPEAK : 185 C - Clashes in F - Line : 27 in Pokrovsk Dir , 17 in Kostiantynivka Dir , 5 in Huliaipole Dir ; Trump Best Bet to Cool the UKR War Starts with Elon Musk ; Z : For the 17th or 18th time , Putin Promised to Take Donetsk  in a few mont....",
+        "source_url": "http://www.rightspeak.net/2026/09/185-c-clashes-in-f-line-27-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/09/185-c-clashes-in-f-line-27-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6923754,
+          48.534905
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-05",
+        "event_date": "2026-09-05",
+        "ingested_at": "2026-10-05T12:14:24Z",
+        "place": "Kostiantynivka",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 134 C - Clashes in F - Line : 21 in Pokrovsk Dir , 19 in Kostiantynivka Dir , 12 in S . Slobozhansky Dir ; Key to UKR Truce : Putin Must See the West is Nowhere Near Giving Up ; UKR To RU : Stop Hitting Our Power , and We Stop Hitting Y...",
+        "text": "RIGHT SPEAK : 134 C - Clashes in F - Line : 21 in Pokrovsk Dir , 19 in Kostiantynivka Dir , 12 in S . Slobozhansky Dir ; Key to UKR Truce : Putin Must See the West is Nowhere Near Giving Up ; UKR To RU : Stop Hitting Our Power , and We Stop Hitting Y....",
+        "source_url": "http://www.rightspeak.net/2026/09/134-c-clashes-in-f-line-21-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/09/134-c-clashes-in-f-line-21-in-pokrovsk.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6923754,
+          48.534905
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-09-05",
+        "event_date": "2026-09-05",
+        "ingested_at": "2026-10-05T12:14:24Z",
+        "place": "Kostiantynivka",
+        "location_confidence": "known_front_title",
+        "candidate_score": 100,
+        "country_code": "ua",
+        "front_dist_km": null,
+        "title": "RIGHT SPEAK : 127 C - Clashes in F - Line : 26 in Pokrovsk Dir , 18 in Kostiantynivka Dir , 7 in S . Slobozhansky Dir ; New UKR Off - Op Vivaldi Recaptures Several Towns , Takes Out 2 , 000 RUs ; RU Hammers Apartments , Offices , Cultural Landmark in...",
+        "text": "RIGHT SPEAK : 127 C - Clashes in F - Line : 26 in Pokrovsk Dir , 18 in Kostiantynivka Dir , 7 in S . Slobozhansky Dir ; New UKR Off - Op Vivaldi Recaptures Several Towns , Takes Out 2 , 000 RUs ; RU Hammers Apartments , Offices , Cultural Landmark in....",
+        "source_url": "http://www.rightspeak.net/2026/09/127-c-clashes-in-f-line-26-in-pokrovsk.html",
+        "publisher_hint": "http://www.rightspeak.net/2026/09/127-c-clashes-in-f-line-26-in-pokrovsk.html"
       }
     }
   ]
