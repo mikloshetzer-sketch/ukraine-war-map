@@ -1,31 +1,4 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.4860194,
-          48.9279202
-        ]
-      },
-      "properties": {
-        "source": "gdelt_ground",
-        "kind": "ground_news",
-        "article_date": "2026-10-05",
-        "event_date": "2026-10-05",
-        "ingested_at": "2026-10-05T12:14:24Z",
-        "place": "Ukraine Latest",
-        "location_confidence": "title_chunk",
-        "candidate_score": 25,
-        "country_code": "ua",
-        "front_dist_km": null,
-        "title": "Ukraine Latest : Ukraine Regains Ground as Russia Opens New Winter Energy Offensive",
-        "text": "Ukraine Latest : Ukraine Regains Ground as Russia Opens New Winter Energy Offensive.",
-        "source_url": "https://georgiatoday.ge/ukraine-latest-ukraine-regains-ground-as-russia-opens-new-winter-energy-offensive/",
-        "publisher_hint": "https://georgiatoday.ge/ukraine-latest-ukraine-regains-ground-as-russia-opens-new-winter-energy-offensive/"
-      }
-    }
-  ]
+  "features": []
 }
