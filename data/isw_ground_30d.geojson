@@ -1,4 +1,203 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-09",
+        "event_date": "2026-10-09",
+        "ingested_at": "2026-10-10T10:45:47Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced northeast of Lyman and east of Oleksandrivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-9-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-09",
+        "event_date": "2026-10-09",
+        "ingested_at": "2026-10-10T10:45:47Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #2 – Advance on the Fortress Belt from the east Russian objective: Advance on Slovyansk, Kramatorsk, and Druzhkivka from the east – assessed objective of the Russian 3rd Combined Arms Army and Southern Grouping of Forces elements Evidence continues to emerge that Ukrainian forces have crossed the Siversky Donets River east of Slovyansk.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-9-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-09",
+        "event_date": "2026-10-09",
+        "ingested_at": "2026-10-10T10:45:47Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces advanced east of Oleksandrivka, and Russian forces recently conducted an infiltration mission southwest of Oleksandrivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-9-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-08",
+        "event_date": "2026-10-08",
+        "ingested_at": "2026-10-10T10:45:47Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian Subordinate Main Effort #2 – Advance on the Fortress Belt from the east Russian objective: Advance on Slovyansk, Kramatorsk, and Druzhkivka from the east – assessed objective of the Russian 3rd Combined Arms Army and Southern Grouping of Forces elements See topline text for reports on recent Ukrainian advances east of Slovyansk and Kramatorsk and Russian strikes against civilian buses in Kramatorsk.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-8-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.7855471,
+          47.5754426
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-08",
+        "event_date": "2026-10-08",
+        "ingested_at": "2026-10-10T10:45:47Z",
+        "place": "Orikhiv",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces struck a Russian position on the southwestern outskirts of Andriivka (west of Orikhiv), according to geolocated footage posted on October 7, indicating that Russian forces recently advanced in the area.[62] Neither Russian nor Ukrainian sources reported ground activity in the Kherson direction on October 7 or 8.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-8-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5372813,
+          48.6252414
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-07",
+        "event_date": "2026-10-07",
+        "ingested_at": "2026-10-10T10:45:47Z",
+        "place": "Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced east of Oleksandrivka.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-7-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.7855471,
+          47.5754426
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-06",
+        "event_date": "2026-10-06",
+        "ingested_at": "2026-10-10T10:45:48Z",
+        "place": "Orikhiv",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced east of Orikhiv.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-6-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6058241,
+          48.8522691
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-06",
+        "event_date": "2026-10-06",
+        "ingested_at": "2026-10-10T10:45:48Z",
+        "place": "Slovyansk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[21] Ukrainian 3rd Army Corps Chief of Staff and Deputy Commander Petro Horbatenko stated on September 19 that Ukrainian forces cleared Rai-Oleksandrivka, and ISW has observed evidence that Ukrainian forces are conducting counteroffensive actions east of Slovyansk.[22] Russian forces continued offensive operations east of Kramatorsk near Tykhonivka on October 5 and 6 but did not advance.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-6-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.2984727,
+          47.3139025
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-06",
+        "event_date": "2026-10-06",
+        "ingested_at": "2026-10-10T10:45:48Z",
+        "place": "the Oleksandrivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Russian forces are reportedly utilizing a combination of newly constructed fortified positions and former captured Ukrainian-constructed fortified positions for cover in the Oleksandrivka direction.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-6-2026/"
+      }
+    }
+  ]
 }
