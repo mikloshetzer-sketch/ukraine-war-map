@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-10-09",
         "event_date": "2026-10-09",
-        "ingested_at": "2026-10-10T10:45:47Z",
+        "ingested_at": "2026-10-11T10:58:36Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-10-09",
         "event_date": "2026-10-09",
-        "ingested_at": "2026-10-10T10:45:47Z",
+        "ingested_at": "2026-10-11T10:58:36Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-10-09",
         "event_date": "2026-10-09",
-        "ingested_at": "2026-10-10T10:45:47Z",
+        "ingested_at": "2026-10-11T10:58:36Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-10-08",
         "event_date": "2026-10-08",
-        "ingested_at": "2026-10-10T10:45:47Z",
+        "ingested_at": "2026-10-11T10:58:36Z",
         "place": "Slovyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-10-08",
         "event_date": "2026-10-08",
-        "ingested_at": "2026-10-10T10:45:47Z",
+        "ingested_at": "2026-10-11T10:58:36Z",
         "place": "Orikhiv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,78 +125,12 @@
         "kind": "ground",
         "article_date": "2026-10-07",
         "event_date": "2026-10-07",
-        "ingested_at": "2026-10-10T10:45:47Z",
+        "ingested_at": "2026-10-11T10:58:36Z",
         "place": "Oleksandrivka",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces recently advanced east of Oleksandrivka.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-7-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.7855471,
-          47.5754426
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-10-06",
-        "event_date": "2026-10-06",
-        "ingested_at": "2026-10-10T10:45:48Z",
-        "place": "Orikhiv",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced east of Orikhiv.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.6058241,
-          48.8522691
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-10-06",
-        "event_date": "2026-10-06",
-        "ingested_at": "2026-10-10T10:45:48Z",
-        "place": "Slovyansk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[21] Ukrainian 3rd Army Corps Chief of Staff and Deputy Commander Petro Horbatenko stated on September 19 that Ukrainian forces cleared Rai-Oleksandrivka, and ISW has observed evidence that Ukrainian forces are conducting counteroffensive actions east of Slovyansk.[22] Russian forces continued offensive operations east of Kramatorsk near Tykhonivka on October 5 and 6 but did not advance.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-6-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          33.2984727,
-          47.3139025
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-10-06",
-        "event_date": "2026-10-06",
-        "ingested_at": "2026-10-10T10:45:48Z",
-        "place": "the Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Russian forces are reportedly utilizing a combination of newly constructed fortified positions and former captured Ukrainian-constructed fortified positions for cover in the Oleksandrivka direction.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-6-2026/"
       }
     }
   ]
