@@ -1,7 +1,31 @@
 {
-  "generated_at": "2026-10-11T11:26:50+00:00",
-  "count": 18,
+  "generated_at": "2026-10-11T16:39:35+00:00",
+  "count": 20,
   "items": [
+    {
+      "source": "ukrainenow",
+      "kind": "telegram",
+      "channel": "UkraineNow",
+      "title": "Зеленський заявив, що вперше почув про припинення ударів по енергетичній інфраструктурі, про яке оголосив Трамп, — Axios",
+      "url": "https://t.me/UkraineNow/84596",
+      "published_at": "2026-10-11T15:00:46+00:00",
+      "text": "Зеленський заявив, що вперше почув про припинення ударів по енергетичній інфраструктурі, про яке оголосив Трамп, — Axios ✅ Ми у Telegram | Viber",
+      "tags": [
+        "удар"
+      ]
+    },
+    {
+      "source": "ukrainenow",
+      "kind": "telegram",
+      "channel": "UkraineNow",
+      "title": "Уламок дрона влучив у перехожого Київська область.",
+      "url": "https://t.me/UkraineNow/84594",
+      "published_at": "2026-10-11T13:03:42+00:00",
+      "text": "Уламок дрона влучив у перехожого Київська область. ✅ Ми у Telegram | Viber",
+      "tags": [
+        "дрон"
+      ]
+    },
     {
       "source": "generalstaffzsu",
       "kind": "telegram",

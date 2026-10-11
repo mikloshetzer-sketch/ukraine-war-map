@@ -6,6 +6,40 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          36.2693864,
+          50.0013602
+        ]
+      },
+      "properties": {
+        "id": "ukrainenow|уламок дрона влучив у перехожого київська область|уламок дрона влучив у перехожого київська область  ми у telegram  viber",
+        "source": "ukrainenow",
+        "channel": "UkraineNow",
+        "kind": "telegram",
+        "title": "Уламок дрона влучив у перехожого Київська область.",
+        "url": "https://t.me/UkraineNow/84594",
+        "published_at": "2026-10-11T13:03:42+00:00",
+        "event_type": "drone_attack",
+        "confidence": "medium",
+        "sector_hints": [],
+        "place_candidates": [
+          "Telegram",
+          "Viber",
+          "Уламок",
+          "Київська"
+        ],
+        "matched_place": "Київська",
+        "display_name": "Київська, вулиця Шевченка, Журавлівка, Київський район, Харків, Харківська міська громада, Харківський район, Харківська область, 61013, Україна",
+        "tags": [
+          "дрон"
+        ],
+        "text": "Уламок дрона влучив у перехожого Київська область. ✅ Ми у Telegram | Viber"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           22.2642285,
           48.6264594
         ]
