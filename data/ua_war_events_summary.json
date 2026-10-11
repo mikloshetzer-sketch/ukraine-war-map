@@ -1,17 +1,16 @@
 {
-  "generated_at": "2026-10-11T16:39:35+00:00",
-  "count": 8,
+  "generated_at": "2026-10-11T20:59:35+00:00",
+  "count": 7,
   "by_event_type": {
-    "drone_attack": 8
+    "drone_attack": 7
   },
   "by_source": {
     "ukrainenow": 2,
-    "generalstaffzsu": 5,
-    "deepstateua": 1
+    "generalstaffzsu": 5
   },
   "by_confidence": {
     "medium": 2,
-    "high": 6
+    "high": 5
   },
   "top_sectors": [
     [
@@ -27,11 +26,15 @@
       3
     ],
     [
+      "toretsk",
+      2
+    ],
+    [
       "zaporizhzhia",
       2
     ],
     [
-      "toretsk",
+      "kostiantynivka",
       1
     ]
   ]
