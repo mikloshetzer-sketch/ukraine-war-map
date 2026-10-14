@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-10-13T12:40:59Z",
-  "started_at_utc": "2026-10-13T12:40:25Z",
+  "generated_at_utc": "2026-10-14T10:08:57Z",
+  "started_at_utc": "2026-10-14T10:08:37Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -20,20 +20,20 @@
     "broad_places_count": 18
   },
   "stats": {
-    "articles_after_filters": 3,
-    "raw_events_total": 2,
-    "dedup_events_total": 2,
-    "features_latest": 2,
-    "features_7d": 2,
-    "features_30d": 2,
-    "events_total": 2,
-    "events_with_any_geo": 2,
-    "point_features": 2,
+    "articles_after_filters": 8,
+    "raw_events_total": 8,
+    "dedup_events_total": 8,
+    "features_latest": 1,
+    "features_7d": 1,
+    "features_30d": 7,
+    "events_total": 8,
+    "events_with_any_geo": 18,
+    "point_features": 7,
     "dropped_not_front_near": 0,
-    "dropped_geocode": 0,
+    "dropped_geocode": 1,
     "frontline_available": false,
-    "geocode_cache_hits": 2,
-    "geocode_cache_negative_hits": 0,
+    "geocode_cache_hits": 18,
+    "geocode_cache_negative_hits": 24,
     "geocode_new_success": 0,
     "geocode_new_fail": 0,
     "geocode_calls_this_run": 0,
@@ -42,40 +42,26 @@
     "rejections_saved": 1,
     "collect_debug": {
       "queries_total": 3,
-      "queries_with_response": 2,
-      "items_before_filters": 160,
-      "items_with_date": 160,
-      "items_in_lookback_window": 160,
-      "items_keyword_matched": 3,
-      "items_action_matched": 3,
-      "items_after_dedup": 3,
+      "queries_with_response": 1,
+      "items_before_filters": 80,
+      "items_with_date": 80,
+      "items_in_lookback_window": 80,
+      "items_keyword_matched": 24,
+      "items_action_matched": 8,
+      "items_after_dedup": 8,
       "parser_debug": [
         {
-          "query": "\"Ukraine\" AND (attack OR assault OR advance OR fighting OR clashes)",
+          "query": "(\"Pokrovsk\" OR \"Toretsk\" OR \"Chasiv Yar\" OR \"Kupiansk\" OR \"Lyman\" OR \"Vovchansk\" OR \"Orikhiv\") AND (attack OR fighting OR assault)",
           "parse_ok": true,
           "root_tag": "rss",
           "channel_found": true,
           "item_count_raw": 80,
           "sample_date_fields": [
-            "13 Oct 2026 06:45:00 +0000",
-            "13 Oct 2026 06:45:00 +0000",
-            "13 Oct 2026 06:45:00 +0000",
-            "13 Oct 2026 06:45:00 +0000",
-            "13 Oct 2026 06:45:00 +0000"
-          ]
-        },
-        {
-          "query": "(\"Donetsk\" OR \"Luhansk\" OR \"Kharkiv\" OR \"Zaporizhzhia\" OR \"Kherson\") AND (attack OR fighting OR assault OR advance)",
-          "parse_ok": true,
-          "root_tag": "rss",
-          "channel_found": true,
-          "item_count_raw": 80,
-          "sample_date_fields": [
-            "13 Oct 2026 06:45:00 +0000",
-            "13 Oct 2026 06:45:00 +0000",
-            "13 Oct 2026 05:30:00 +0000",
-            "13 Oct 2026 05:30:00 +0000",
-            "13 Oct 2026 08:30:00 +0000"
+            "14 Oct 2026 05:30:00 +0000",
+            "14 Oct 2026 06:00:00 +0000",
+            "14 Oct 2026 00:00:00 +0000",
+            "14 Oct 2026 19:15:00 +0000",
+            "14 Oct 2026 18:30:00 +0000"
           ]
         }
       ]
