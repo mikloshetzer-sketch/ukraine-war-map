@@ -1,4 +1,31 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8,
+          52.6
+        ]
+      },
+      "properties": {
+        "source": "gdelt_ground",
+        "kind": "ground_news",
+        "article_date": "2026-10-19",
+        "event_date": "2026-10-19",
+        "ingested_at": "2026-10-19T10:43:21Z",
+        "place": "Russian",
+        "location_confidence": "title_chunk",
+        "candidate_score": 25,
+        "country_code": "ru",
+        "front_dist_km": null,
+        "title": "Russian air strike kills woman in Kyiv and hits subway station amid  massive  attack – The Irish Times",
+        "text": "Russian air strike kills woman in Kyiv and hits subway station amid  massive  attack – The Irish Times.",
+        "source_url": "https://www.irishtimes.com/world/europe/2026/10/19/russian-air-strike-kills-woman-in-kyiv-and-hits-subway-station-amid-massive-attack/",
+        "publisher_hint": "https://www.irishtimes.com/world/europe/2026/10/19/russian-air-strike-kills-woman-in-kyiv-and-hits-subway-station-amid-massive-attack/"
+      }
+    }
+  ]
 }
