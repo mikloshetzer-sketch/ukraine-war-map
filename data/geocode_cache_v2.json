@@ -4459,5 +4459,13 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Zaporizhzhia City": {
+    "coords": [
+      35.1182867,
+      47.8507859
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

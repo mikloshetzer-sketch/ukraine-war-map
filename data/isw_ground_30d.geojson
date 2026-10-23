@@ -1,4 +1,93 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1338908,
+          47.8326667
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-21",
+        "event_date": "2026-10-21",
+        "ingested_at": "2026-10-23T09:30:11Z",
+        "place": "western Zaporizhia Oblast",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "ISW continues to assess that Russian sources are engaging in a sophisticated cognitive warfare effort that aims to portray Ukrainian forces as on the brink of collapse and assert that Russian forces are continuing to advance across the frontline.[44] Russian forces recently conducted an infiltration mission in western Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-21-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.8027723,
+          50.9119775
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-20",
+        "event_date": "2026-10-20",
+        "ingested_at": "2026-10-23T09:30:11Z",
+        "place": "Sumy City",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces advanced east of Sumy City, and Russian forces advanced south of Orikhiv.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-20-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2354429,
+          49.9874339
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-19",
+        "event_date": "2026-10-19",
+        "ingested_at": "2026-10-23T09:30:12Z",
+        "place": "the Velykyi Burluk",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[24] A Russian milblogger claimed on October 19 that Russian forces continued limited offensive operations in the Velykyi Burluk direction, but ISW did not observe evidence that Russian forces advanced.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-19-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1182867,
+          47.8507859
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-19",
+        "event_date": "2026-10-19",
+        "ingested_at": "2026-10-23T09:30:12Z",
+        "place": "Zaporizhzhia City",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "[42] Ukrainian forces recently advanced or maintained positions south of Zaporizhzhia City, as Russian forces recently conducted infiltration missions southeast of Zaporizhzhia City and northeast of Orikhiv.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-19-2026/"
+      }
+    }
+  ]
 }
