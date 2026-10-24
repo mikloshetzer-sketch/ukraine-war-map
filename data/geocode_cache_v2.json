@@ -4467,5 +4467,13 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "Kamyanka": {
+    "coords": [
+      29.422421,
+      49.926682
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }

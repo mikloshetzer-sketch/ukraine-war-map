@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          29.422421,
+          49.926682
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-10-23",
+        "event_date": "2026-10-23",
+        "ingested_at": "2026-10-24T09:02:52Z",
+        "place": "Kamyanka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "The Ukrainian General Staff reported that Ukrainian forces struck a Russian Rubikon Center for Advanced Unmanned Technologies manpower concentration near Kamyanka, Zaporizhia Oblast (roughly 31 kilometers from the frontline) on October 22 or overnight on October 22 to 23.[63] Neither Russian nor Ukrainian sources reported ground activity in the Kherson direction on October 23.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-23-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           35.1338908,
           47.8326667
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-10-21",
         "event_date": "2026-10-21",
-        "ingested_at": "2026-10-23T09:30:11Z",
+        "ingested_at": "2026-10-24T09:02:53Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,56 +59,12 @@
         "kind": "ground",
         "article_date": "2026-10-20",
         "event_date": "2026-10-20",
-        "ingested_at": "2026-10-23T09:30:11Z",
+        "ingested_at": "2026-10-24T09:02:53Z",
         "place": "Sumy City",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Ukrainian forces advanced east of Sumy City, and Russian forces advanced south of Orikhiv.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-20-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.2354429,
-          49.9874339
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-10-19",
-        "event_date": "2026-10-19",
-        "ingested_at": "2026-10-23T09:30:12Z",
-        "place": "the Velykyi Burluk",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[24] A Russian milblogger claimed on October 19 that Russian forces continued limited offensive operations in the Velykyi Burluk direction, but ISW did not observe evidence that Russian forces advanced.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-19-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.1182867,
-          47.8507859
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-10-19",
-        "event_date": "2026-10-19",
-        "ingested_at": "2026-10-23T09:30:12Z",
-        "place": "Zaporizhzhia City",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "[42] Ukrainian forces recently advanced or maintained positions south of Zaporizhzhia City, as Russian forces recently conducted infiltration missions southeast of Zaporizhzhia City and northeast of Orikhiv.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-19-2026/"
       }
     }
   ]
