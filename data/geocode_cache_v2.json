@@ -4475,5 +4475,10 @@
     ],
     "cc": "ua",
     "negative": false
+  },
+  "central Bilytske": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
