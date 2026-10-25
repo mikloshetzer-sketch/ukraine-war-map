@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-25T09:53:09+00:00",
+  "generated_at": "2026-10-25T14:57:46+00:00",
   "count": 20,
   "by_event_type": {
+    "missile_strike": 3,
     "drone_attack": 14,
-    "ground_clash": 3,
-    "missile_strike": 3
+    "ground_clash": 3
   },
   "by_source": {
     "ukrainenow": 8,
