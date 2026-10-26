@@ -4480,5 +4480,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Skudne": {
+    "coords": [
+      36.79845,
+      47.90949
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Orikhiv has slowed": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
