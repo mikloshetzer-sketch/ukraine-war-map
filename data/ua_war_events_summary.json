@@ -1,17 +1,18 @@
 {
-  "generated_at": "2026-10-29T11:34:23+00:00",
+  "generated_at": "2026-10-29T17:26:58+00:00",
   "count": 16,
   "by_event_type": {
-    "drone_attack": 16
+    "drone_attack": 15,
+    "missile_strike": 1
   },
   "by_source": {
-    "deepstateua": 2,
-    "ukrainenow": 5,
+    "ukrainenow": 3,
+    "deepstateua": 4,
     "generalstaffzsu": 9
   },
   "by_confidence": {
-    "high": 11,
-    "medium": 5
+    "medium": 3,
+    "high": 13
   },
   "top_sectors": [
     [
@@ -32,7 +33,7 @@
     ],
     [
       "zaporizhzhia",
-      3
+      2
     ],
     [
       "kostiantynivka",
