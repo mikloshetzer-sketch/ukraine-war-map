@@ -1,27 +1,4 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          36.79845,
-          47.90949
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "toward_only",
-        "article_date": "2026-10-25",
-        "event_date": "2026-10-25",
-        "ingested_at": "2026-10-30T10:59:20Z",
-        "place": "Skudne",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian military observer Kostyantyn Mashovets reported on October 25 that Ukrainian forces liberated Perebudova (east of Oleksandrivka), Komar (south of Perebudova on the opposite bank of the Mokri Yaly River), and Fedorivka (south of Komar).[1] Mashovets reported that Ukrainian forces advanced southwest of Vesele (southwest of Fedorivka) up to Skudne (southeast of Fedorivka).",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-25-2026/"
-      }
-    }
-  ]
+  "features": []
 }
