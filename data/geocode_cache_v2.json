@@ -4493,5 +4493,31 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Ukraine in October": {
+    "coords": [
+      33.6019067,
+      44.5352035
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "Hraniv": {
+    "coords": [
+      29.566227,
+      48.873363
+    ],
+    "cc": "ua",
+    "negative": false
+  },
+  "northern Stepanivka": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "the T-08-14 Hulyaipole-Orikhiv road": {
+    "coords": null,
+    "cc": null,
+    "negative": true
   }
 }
