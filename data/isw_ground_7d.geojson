@@ -15,7 +15,7 @@
         "kind": "ground",
         "article_date": "2026-11-01",
         "event_date": "2026-11-01",
-        "ingested_at": "2026-11-03T12:14:20Z",
+        "ingested_at": "2026-11-04T12:26:02Z",
         "place": "Ukraine in October",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-11-01",
         "event_date": "2026-11-01",
-        "ingested_at": "2026-11-03T12:14:20Z",
+        "ingested_at": "2026-11-04T12:26:02Z",
         "place": "Sumy",
         "country_code": "ua",
         "front_dist_km": null,
@@ -59,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-11-01",
         "event_date": "2026-11-01",
-        "ingested_at": "2026-11-03T12:14:20Z",
+        "ingested_at": "2026-11-04T12:26:02Z",
         "place": "the Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -81,7 +81,7 @@
         "kind": "ground",
         "article_date": "2026-10-31",
         "event_date": "2026-10-31",
-        "ingested_at": "2026-11-03T12:14:20Z",
+        "ingested_at": "2026-11-04T12:26:02Z",
         "place": "Hraniv",
         "country_code": "ua",
         "front_dist_km": null,
@@ -103,7 +103,7 @@
         "kind": "ground",
         "article_date": "2026-10-31",
         "event_date": "2026-10-31",
-        "ingested_at": "2026-11-03T12:14:20Z",
+        "ingested_at": "2026-11-04T12:26:02Z",
         "place": "Kupyansk",
         "country_code": "ua",
         "front_dist_km": null,
@@ -125,56 +125,12 @@
         "kind": "ground",
         "article_date": "2026-10-31",
         "event_date": "2026-10-31",
-        "ingested_at": "2026-11-03T12:14:20Z",
+        "ingested_at": "2026-11-04T12:26:02Z",
         "place": "Zelenyi Hai",
         "country_code": "ua",
         "front_dist_km": null,
         "text": "Russian forces shelled a Ukrainian position south of Zelenyi Hai (northeast of Borova), according to geolocated footage published on October 30, indicating that Ukrainian forces advanced in the area.[35] Ukrainian forces struck a Russian Mi-8 helicopter in occupied Luhansk Oblast as part of Ukraine’s ongoing intermediate-range strike campaign against Russian logistics and military assets.",
         "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-31-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          38.5372813,
-          48.6252414
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-10-30",
-        "event_date": "2026-10-30",
-        "ingested_at": "2026-11-03T12:14:20Z",
-        "place": "Oleksandrivka",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Ukrainian forces recently advanced south of Oleksandrivka.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-30-2026/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.7855471,
-          47.5754426
-        ]
-      },
-      "properties": {
-        "source": "isw_ground",
-        "kind": "ground",
-        "article_date": "2026-10-30",
-        "event_date": "2026-10-30",
-        "ingested_at": "2026-11-03T12:14:20Z",
-        "place": "Orikhiv",
-        "country_code": "ua",
-        "front_dist_km": null,
-        "text": "Mashovets stated that Russian forces effectively seized Charivne (east of Orikhiv) and that Russian forward units advanced northwest of Luhivske and north of Bilohirya (both southeast of Orikhiv).[42] Mashovets stated that Russian infiltration groups maintain an extensive presence in the area between Chervona Krynytsia (northeast of Orikhiv), Charivne, Luhanivske, and Bilohirya.",
-        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-30-2026/"
       }
     }
   ]
