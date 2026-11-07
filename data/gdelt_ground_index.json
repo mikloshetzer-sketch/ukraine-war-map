@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-11-06T12:54:47Z",
-  "started_at_utc": "2026-11-06T12:54:36Z",
+  "generated_at_utc": "2026-11-07T11:41:37Z",
+  "started_at_utc": "2026-11-07T11:41:24Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
