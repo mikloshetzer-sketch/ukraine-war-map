@@ -1,7 +1,7 @@
 {
   "source": "gdelt_ground",
-  "generated_at_utc": "2026-11-07T11:41:37Z",
-  "started_at_utc": "2026-11-07T11:41:24Z",
+  "generated_at_utc": "2026-11-08T11:54:22Z",
+  "started_at_utc": "2026-11-08T11:54:01Z",
   "config": {
     "lookback_days": 30,
     "latest_window_days": 1,
@@ -38,7 +38,7 @@
     "geocode_new_fail": 0,
     "geocode_calls_this_run": 0,
     "rejected_before_geocode": 0,
-    "cache_entries_total": 747,
+    "cache_entries_total": 748,
     "rejections_saved": 0,
     "collect_debug": {
       "queries_total": 3,
