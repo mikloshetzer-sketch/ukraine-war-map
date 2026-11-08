@@ -1,4 +1,49 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1338908,
+          47.8326667
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-11-05",
+        "event_date": "2026-11-05",
+        "ingested_at": "2026-11-08T11:27:53Z",
+        "place": "western Zaporizhia Oblast",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Ukrainian forces recently advanced in western Zaporizhia Oblast.",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-november-5-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.814541,
+          49.42337
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-11-05",
+        "event_date": "2026-11-05",
+        "ingested_at": "2026-11-08T11:27:53Z",
+        "place": "Plavni",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Mashovets stated that Russian infiltrators are using the former reservoir bed to bypass Ukrainian defenses in Plavni and advance towards Malokaterynivka (north of Prymorske).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-november-5-2026/"
+      }
+    }
+  ]
 }
