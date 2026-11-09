@@ -6,6 +6,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          37.7619191,
+          48.8610868
+        ]
+      },
+      "properties": {
+        "source": "isw_ground",
+        "kind": "ground",
+        "article_date": "2026-11-07",
+        "event_date": "2026-11-07",
+        "ingested_at": "2026-11-09T13:15:51Z",
+        "place": "Mykolaivka",
+        "country_code": "ua",
+        "front_dist_km": null,
+        "text": "Mashovets reported that Ukrainian forces cleared Mykolaivka of Russian infiltrators and that only one small Russian infantry group remains southeast of Orikhuvatka (south of Mykolaivka).",
+        "source_url": "https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-november-7-2026/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           35.1338908,
           47.8326667
         ]
@@ -15,7 +37,7 @@
         "kind": "ground",
         "article_date": "2026-11-05",
         "event_date": "2026-11-05",
-        "ingested_at": "2026-11-08T11:27:53Z",
+        "ingested_at": "2026-11-09T13:15:52Z",
         "place": "western Zaporizhia Oblast",
         "country_code": "ua",
         "front_dist_km": null,
@@ -37,7 +59,7 @@
         "kind": "ground",
         "article_date": "2026-11-05",
         "event_date": "2026-11-05",
-        "ingested_at": "2026-11-08T11:27:53Z",
+        "ingested_at": "2026-11-09T13:15:52Z",
         "place": "Plavni",
         "country_code": "ua",
         "front_dist_km": null,
