@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-20T23:11:06+00:00",
+  "generated_at": "2026-11-21T13:31:54+00:00",
   "count": 16,
   "by_event_type": {
-    "drone_attack": 12,
-    "missile_strike": 3,
-    "ground_clash": 1
+    "ground_clash": 2,
+    "drone_attack": 11,
+    "missile_strike": 3
   },
   "by_source": {
     "generalstaffzsu": 9,
@@ -17,31 +17,31 @@
   "top_sectors": [
     [
       "lyman",
-      6
+      5
     ],
     [
       "toretsk",
-      5
+      4
     ],
     [
       "pokrovsk",
-      5
+      4
     ],
     [
       "orikhiv",
-      5
-    ],
-    [
-      "kostiantynivka",
       4
     ],
     [
       "zaporizhzhia",
-      3
+      4
     ],
     [
       "siversk",
-      1
+      2
+    ],
+    [
+      "kostiantynivka",
+      2
     ]
   ]
 }
