@@ -4870,5 +4870,11 @@
   "drone crucible": null,
   "royal marines": null,
   "special operations": null,
-  "command europe": null
+  "command europe": null,
+  "приліт": null,
+  "новус": {
+    "lat": 50.3963069,
+    "lon": 30.632967,
+    "display_name": "Novus, 3, вулиця Михайла Гришка, 7-й «А» мікрорайон Осокорків, Осокорки, Дарницький район, Київ, 02141, Україна"
+  }
 }
