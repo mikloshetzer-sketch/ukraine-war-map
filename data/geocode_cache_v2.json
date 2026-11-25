@@ -4549,5 +4549,18 @@
     "coords": null,
     "cc": null,
     "negative": true
+  },
+  "Ukrainian attack": {
+    "coords": null,
+    "cc": null,
+    "negative": true
+  },
+  "Libya": {
+    "coords": [
+      30.4737561,
+      50.4704301
+    ],
+    "cc": "ua",
+    "negative": false
   }
 }
