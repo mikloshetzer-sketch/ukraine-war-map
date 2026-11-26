@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-26T15:25:12+00:00",
+  "generated_at": "2026-11-26T20:13:01+00:00",
   "count": 17,
   "by_event_type": {
+    "drone_attack": 10,
     "artillery": 1,
-    "missile_strike": 6,
-    "drone_attack": 10
+    "missile_strike": 6
   },
   "by_source": {
     "generalstaffzsu": 10,
