@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-11-26T20:13:01+00:00",
-  "count": 17,
+  "generated_at": "2026-11-27T01:03:14+00:00",
+  "count": 16,
   "by_event_type": {
-    "drone_attack": 10,
+    "drone_attack": 9,
     "artillery": 1,
     "missile_strike": 6
   },
   "by_source": {
     "generalstaffzsu": 10,
-    "ukrainenow": 5,
+    "ukrainenow": 4,
     "deepstateua": 2
   },
   "by_confidence": {
     "high": 12,
-    "medium": 5
+    "medium": 4
   },
   "top_sectors": [
     [
